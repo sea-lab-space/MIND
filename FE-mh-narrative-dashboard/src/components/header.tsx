@@ -10,13 +10,6 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import {
   Popover,
   PopoverContent,
   PopoverTrigger,
@@ -27,16 +20,20 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ChevronDown } from 'lucide-react';
 import type { HeaderProps } from "@/types/props";
 
 const Header: React.FC<HeaderProps> = (props) => {
-  const { patientNames, userName } = props;
+  const { patientNames, userName, retrospectHorizon } = props;
   const [open, setOpen] = useState(false);
-  const [selectedPerson, setSelectedPerson] = useState("John Doe");
+
+  // TODO: take person/retrospect selection global if needed
+  const [selectedPerson, setSelectedPerson] = useState<string>("John Doe");
+  const [selectedRetrospect, setSelectedRetrospect] = useState<string>(
+    Object.keys(retrospectHorizon)[0]
+  );
 
   // TODO: does not handle repeatitive name
   const people = patientNames.map((name: string) => ({
@@ -105,20 +102,22 @@ const Header: React.FC<HeaderProps> = (props) => {
         {/* Right - Retrospect Navigation and Avatar */}
         <div className="flex items-center gap-4 w-1/3 justify-end">
           <p>Retrospect:</p>
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent hover:bg-gray-50 text-black font-normal">
-                  2 Weeks
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div>
-                    TBD
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex bg-transparent hover:bg-gray-50 text-black font-normal h-[2.5em] items-center">
+              {selectedRetrospect}
+              <ChevronDown />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              {Object.entries(retrospectHorizon).map(([key, _]) => (
+                <DropdownMenuItem
+                  key={key}
+                  onClick={() => setSelectedRetrospect(key)}
+                >
+                  {key}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
 
           <Avatar className="w-10 h-10 bg-[#b3adad] border border-[#d9d9d9]">
             <AvatarFallback className="bg-[#b3adad] text-black font-semibold">

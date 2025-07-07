@@ -1,4 +1,5 @@
 import Header from "./components/header";
+import type { RetrospectOptions } from "./types/props";
 
 function App() {
   const nameList = [
@@ -16,11 +17,20 @@ function App() {
 
   const userName = "Ryan"
 
+  const retrospectHorizon: RetrospectOptions = {
+    "Since last encounter": 14,
+    "Last month": 30,
+    "Last 3 months": 90,
+    "Last 6 months": 180,
+    "Last year": 365,
+  }
+
   return (
     <>
       <Header 
         patientNames={nameList}
         userName={userName}
+        retrospectHorizon={retrospectHorizon}
       />
     </>
   );
