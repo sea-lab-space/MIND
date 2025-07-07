@@ -10,3 +10,13 @@ export interface HeaderProps {
 export type RetrospectOptions = {
   [key: string]: number;
 };
+
+// TODO: replace any with icon type
+export interface SectionProps {
+  title: string;
+  isExpanded: boolean;
+  onClick: () => void;
+  subtitle?: string;
+  icon?: any;
+  children?: React.ReactNode;
+}

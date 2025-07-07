@@ -76,6 +76,16 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  font-size: 1.2em;
+  line-height: 1.1;
+}
+
+span {
+  font-size: 1em;
+  line-height: 1.1;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
