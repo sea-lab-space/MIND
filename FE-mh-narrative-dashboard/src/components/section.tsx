@@ -9,9 +9,8 @@ const Section: React.FC<SectionProps> = (props) => {
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-4">
         <Button
-          variant="ghost"
           size="icon"
-          className="relative z-10 h-10 w-10"
+          className="relative rounded-full bg-white shadow-md transition-all hover:bg-gray-100 hover:shadow-lg"
           onClick={onClick}
         >
           <ChevronDown
@@ -20,15 +19,15 @@ const Section: React.FC<SectionProps> = (props) => {
             }`}
           />
         </Button>
-        <h2 className="text-2xl font-semibold text-[#000000]">
-          {title} -{" "}
-          <span className="text-2xl text-[#000000] font-normal">
-            {subtitle}
+        <h2 className="text-xl font-semibold text-[#000000]">
+          {title}
+          <span className="text-lg text-[#000000] font-normal">
+            {" "}- {subtitle}
           </span>
         </h2>
         {icon && <div className="flex-shrink-0">{icon}</div>}
       </div>
-      {children && <div className="px-15">{children}</div>}
+      {children && <div className="px-14">{children}</div>}
     </div>
   );
 };

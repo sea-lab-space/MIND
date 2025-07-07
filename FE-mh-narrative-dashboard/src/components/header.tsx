@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = (props) => {
       <div className="flex items-center justify-between px-6 py-2">
         {/* Left - Brand */}
         <div className="flex items-center w-1/3">
-          <h1 className="text-xl font-bold text-black tracking-tight">MIND</h1>
+          <h1 className="text-2xl font-bold text-black tracking-tight">MIND</h1>
         </div>
 
         {/* Center - Person Selector */}
@@ -57,7 +57,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                 variant="ghost"
                 role="combobox"
                 aria-expanded={open}
-                className="w-[200px] justify-between bg-transparent hover:bg-gray-50 text-black font-normal"
+                className="w-[200px] justify-between hover:bg-gray-50 text-black font-normal"
               >
                 {selectedPerson}
                 <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -101,9 +101,9 @@ const Header: React.FC<HeaderProps> = (props) => {
 
         {/* Right - Retrospect Navigation and Avatar */}
         <div className="flex items-center gap-4 w-1/3 justify-end">
-          <p>Retrospect:</p>
+          <p className="text-sm">Retrospect:</p>
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex bg-transparent hover:bg-gray-50 text-black font-normal h-[2.5em] items-center">
+            <DropdownMenuTrigger className="flex hover:bg-gray-50 text-black text-sm font-normal h-[2.5em] items-center">
               {selectedRetrospect}
               <ChevronDown />
             </DropdownMenuTrigger>

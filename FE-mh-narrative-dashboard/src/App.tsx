@@ -58,7 +58,7 @@ function App() {
 
     <div className="flex-1 overflow-y-auto p-4 relative">
         {/* Connection line - spans full height of container */}
-        <div className="absolute left-15 top-4 bottom-0 w-0.5 bg-[#d9d9d9]" />
+        <div className="absolute left-14.5 top-4 bottom-0 w-0.5 bg-[#d9d9d9]" />
 
         {/* Content with left padding to avoid overlapping the line */}
         <div className="flex flex-col gap-4 pl-6">
