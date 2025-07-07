@@ -1,3 +1,4 @@
-export interface TestProps {
-  // test: string;
+export interface HeaderProps {
+  patientNames: string[];
+  userName: string;
 }
