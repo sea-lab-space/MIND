@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { Watch, MessageSquare, StickyNote } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import InsightCardDetail from "@/components/InsightCardDetails";
 
 interface InsightCardProps {
@@ -12,8 +17,10 @@ interface InsightCardProps {
   onToggle?: (expanded: boolean) => void;
   isSelected?: boolean;
   onSelect?: () => void;
+  onClick?: () => void;
 }
 
+// TODO: link the insights with a uniformed id, just pass the id for global data retrieval
 export default function InsightCardComponent({
   isExpanded = false,
   title = "Growing Activity Level Despite Persistent Fatigue",
@@ -25,6 +32,7 @@ export default function InsightCardComponent({
   onToggle,
   isSelected = true,
   onSelect,
+  onClick,
 }: InsightCardProps) {
   const [detailExpanded, setDetailExpanded] = useState(isExpanded);
 
@@ -42,7 +50,10 @@ export default function InsightCardComponent({
   };
 
   return (
-    <Card className="w-full max-w-[700px] transition-all duration-200 hover:shadow-md border border-gray-200 bg-white text-left">
+    <Card
+      className="w-full max-w-[700px] transition-all duration-200 hover:shadow-md border border-gray-200 bg-white text-left"
+      onClick={onClick}
+    >
       <CardHeader className="pb-4">
         <div className="flex items-start gap-4">
           <div
@@ -79,7 +90,10 @@ export default function InsightCardComponent({
         <div className="flex items-center gap-2 ml-3">
           {sources.map((source, index) => (
             <div key={index} className="flex items-center">
-              {getSourceIcon(source.type)}
+              <Tooltip>
+                <TooltipTrigger>{getSourceIcon(source.type)}</TooltipTrigger>
+                <TooltipContent>{source.type}</TooltipContent>
+              </Tooltip>
             </div>
           ))}
         </div>

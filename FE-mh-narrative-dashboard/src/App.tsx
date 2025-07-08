@@ -1,13 +1,15 @@
-import InsightCardComponent from "@/components/InsightCardComponent"
+import InsightCardComponent from "@/components/InsightCardComponent";
 import { useState } from "react";
 import Header from "./components/header";
 import SectionTitle from "./components/section";
 import type { RetrospectOptions } from "./types/props";
+import { Button } from "./components/ui/button";
+import InfoSheet from "./components/InfoSheet";
 
 
 function App() {
-  const [selectedCards, setSelectedCards] = useState<number[]>([0])
-  const [isExpanded, setIsExpanded] = useState<boolean>(true)
+  const [selectedCards, setSelectedCards] = useState<number[]>([0]);
+  const [isExpanded, setIsExpanded] = useState<boolean>(true);
 
   const nameList = [
     "John Doe",
@@ -47,20 +49,19 @@ function App() {
     }));
   };
 
-
   const handleCardSelect = (index: number) => {
     setSelectedCards((prev) =>
-        prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
-    )
-  }
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
+  };
 
   const handleToggleAll = () => {
-    setIsExpanded((prev) => !prev)
-  }
+    setIsExpanded((prev) => !prev);
+  };
 
   const handleSelectAll = () => {
-    setSelectedCards(selectedCards.length === cardData.length ? [] : [0, 1, 2])
-  }
+    setSelectedCards(selectedCards.length === cardData.length ? [] : [0, 1, 2]);
+  };
 
   const cardData = [
     {
@@ -73,7 +74,10 @@ function App() {
     },
     {
       title: "Growing Activity Level Despite Persistent Fatigue",
-      sources: [{ type: "passive-sensing" as const }, { type: "clinical-notes" as const }],
+      sources: [
+        { type: "passive-sensing" as const },
+        { type: "clinical-notes" as const },
+      ],
     },
     {
       title: "Enhanced Cognitive Function and Focus",
@@ -83,7 +87,10 @@ function App() {
         { type: "clinical-notes" as const },
       ],
     },
-  ]
+  ];
+
+  const [isDrillDown, setIsDrillDown] = useState(false);
+
 
   return (
     <div className="flex flex-col h-screen">
@@ -93,73 +100,87 @@ function App() {
         retrospectHorizon={retrospectHorizon}
       />
 
-    <div className="flex-1 overflow-y-auto p-4 relative">
-        {/* Connection line - spans full height of container */}
-        <div className="absolute left-14.5 top-4 bottom-0 w-0.5 bg-[#d9d9d9]" />
+      <div className="flex h-screen bg-white">
+        <div className={`flex-1 overflow-y-scroll p-4 ${isDrillDown ? 'w-2/5' : 'w-full'}`}>
+          <div className="relative flex">
+            {/* Connection line - spans full height of container */}
+            <div className="absolute left-10.5 top-4 h-full w-0.5 bg-[#d9d9d9]" />
 
-        {/* Content with left padding to avoid overlapping the line */}
-        <div className="flex flex-col gap-4 pl-6">
-          <SectionTitle
-            title="Overview"
-            subtitle="test"
-            isExpanded={expandedSections.overview}
-            onClick={() => toggleSection("overview")}
-          >
-            {expandedSections.overview && (
-              <p className="text-[#000000]">
-                Insights content would go here...
-              </p>
-            )}
-          </SectionTitle>
+            {/* Content with left padding to avoid overlapping the line */}
+            <div className="flex flex-col gap-4 pl-6">
+              <SectionTitle
+                title="Overview"
+                subtitle="test"
+                isExpanded={expandedSections.overview}
+                onClick={() => toggleSection("overview")}
+              >
+                {expandedSections.overview && (
+                  <p className="text-[#000000]">
+                    Insights content would go here...
+                  </p>
+                )}
+              </SectionTitle>
 
-          <SectionTitle
-            title="Data-driven Insights"
-            subtitle="test"
-            isExpanded={expandedSections.insights}
-            onClick={() => toggleSection("insights")}
-          >
-            {expandedSections.insights && (
-                <div className="p-8 space-y-8 bg-gray-50 min-h-screen">
+              <SectionTitle
+                title="Data-driven Insights"
+                subtitle="test"
+                isExpanded={expandedSections.insights}
+                onClick={() => toggleSection("insights")}
+              >
+                {expandedSections.insights && (
+                  <div className="p-8 space-y-8 bg-gray-50 min-h-screen">
+                    {/* Grid with 6 columns for layout */}
+                    <div className="grid grid-cols-6 gap-6">
+                      {/* TODO: Turn this into a declarative spec: team definition of data */}
+                      {cardData.map((card, index) => {
+                        // TODO: this isExpanded variable is not used currently
+                        const colSpan = isExpanded
+                          ? "col-span-3"
+                          : "col-span-2";
 
-                  {/* Grid with 6 columns for layout */}
-                  <div className="grid grid-cols-6 gap-6">
-                    {cardData.map((card, index) => {
-                      const colSpan = isExpanded ? "col-span-3" : "col-span-2"
-
-                      return (
+                        return (
                           <div key={index} className={`${colSpan}`}>
                             <InsightCardComponent
-                                title={card.title}
-                                sources={card.sources}
-                                isExpanded={isExpanded}
-                                isSelected={selectedCards.includes(index)}
-                                onSelect={() => handleCardSelect(index)}
-                                onToggle={handleToggleAll} // toggles global state
+                              title={card.title}
+                              sources={card.sources}
+                              isExpanded={isExpanded}
+                              isSelected={selectedCards.includes(index)}
+                              onSelect={() => handleCardSelect(index)}
+                              onToggle={handleToggleAll} // toggles global state
+                              onClick={() => setIsDrillDown(true)}
                             />
                           </div>
-                      )
-                    })}
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-            )}
-          </SectionTitle>
+                )}
+              </SectionTitle>
 
-          <SectionTitle
-            title="Patient Communication"
-            subtitle="test"
-            isExpanded={expandedSections.communication}
-            onClick={() => toggleSection("communication")}
-          >
-            {expandedSections.communication && (
-              <p className="text-[#000000]">
-                Insights content would go here...
-              </p>
-            )}
-          </SectionTitle>
+              <SectionTitle
+                title="Patient Communication"
+                subtitle="test"
+                isExpanded={expandedSections.communication}
+                onClick={() => toggleSection("communication")}
+              >
+                {expandedSections.communication && (
+                  <p className="text-[#000000]">
+                    Insights content would go here...
+                  </p>
+                )}
+              </SectionTitle>
+            </div>
+          </div>
         </div>
+
+        {isDrillDown && (
+          <div className="w-3/5 transition-all duration-300 ease-in-out">
+            <InfoSheet onClick={() => setIsDrillDown(false)} />
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
-export default App
+export default App;
