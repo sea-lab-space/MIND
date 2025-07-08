@@ -1,6 +1,5 @@
 import InsightCardComponent from "@/components/InsightCardComponent"
 import { useState } from "react";
-import { useWindowSize } from "usehooks-ts";
 import Header from "./components/header";
 import SectionTitle from "./components/section";
 import type { RetrospectOptions } from "./types/props";
@@ -9,7 +8,6 @@ import type { RetrospectOptions } from "./types/props";
 function App() {
   const [selectedCards, setSelectedCards] = useState<number[]>([0])
   const [isExpanded, setIsExpanded] = useState<boolean>(true)
-  const { width = 0, height = 0 } = useWindowSize();
 
   const nameList = [
     "John Doe",
