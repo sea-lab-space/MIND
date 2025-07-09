@@ -93,15 +93,19 @@ function App() {
 
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen overflow-hidden">
       <Header
         patientNames={nameList}
         userName={userName}
         retrospectHorizon={retrospectHorizon}
       />
 
-      <div className="flex h-screen bg-white">
-        <div className={`flex-1 overflow-y-scroll p-4 ${isDrillDown ? 'w-2/5' : 'w-full'}`}>
+      <div className="flex flex-1 bg-white min-h-0">
+        <div
+          className={`flex-1 overflow-y-scroll p-4 ${
+            isDrillDown ? "w-2/5" : "w-full"
+          }`}
+        >
           <div className="relative flex">
             {/* Connection line - spans full height of container */}
             <div className="absolute left-10.5 top-4 h-full w-0.5 bg-[#d9d9d9]" />
