@@ -2,9 +2,9 @@ import InsightCardComponent from "@/components/InsightCardComponent";
 import { useState } from "react";
 import Header from "./components/header";
 import SectionTitle from "./components/section";
-import type { RetrospectOptions } from "./types/props";
+import type { DatasourceIconType, RetrospectOptions } from "./types/props";
 import { Button } from "./components/ui/button";
-import InfoSheet from "./components/InfoSheet";
+import DrilldownPanel from "./components/DrilldownPanel";
 
 
 function App() {
@@ -67,24 +67,26 @@ function App() {
     {
       title: "Increased social activity, yet remains in a closed circle",
       sources: [
-        { type: "passive-sensing" as const },
-        { type: "clinical-notes" as const },
-        { type: "patient-data" as const },
+        { type: "measurement score" as DatasourceIconType },
+        { type: "notes" as DatasourceIconType },
+        { type: "transcripts" as DatasourceIconType },
       ],
     },
     {
       title: "Growing Activity Level Despite Persistent Fatigue",
       sources: [
-        { type: "passive-sensing" as const },
-        { type: "clinical-notes" as const },
+        { type: "measurement score" as DatasourceIconType },
+        { type: "notes" as DatasourceIconType },
+        { type: "transcripts" as DatasourceIconType },
       ],
     },
     {
       title: "Enhanced Cognitive Function and Focus",
       sources: [
-        { type: "patient-data" as const },
-        { type: "passive-sensing" as const },
-        { type: "clinical-notes" as const },
+        { type: "measurement score" as DatasourceIconType },
+        { type: "notes" as DatasourceIconType },
+        { type: "transcripts" as DatasourceIconType },
+        { type: "passive sensing" as DatasourceIconType },
       ],
     },
   ];
@@ -103,7 +105,7 @@ function App() {
       <div className="flex flex-1 bg-white min-h-0">
         <div
           className={`flex-1 overflow-y-scroll p-4 ${
-            isDrillDown ? "w-2/5" : "w-full"
+            isDrillDown ? "w-1/3" : "w-full"
           }`}
         >
           <div className="relative flex">
@@ -178,8 +180,8 @@ function App() {
         </div>
 
         {isDrillDown && (
-          <div className="w-3/5 transition-all duration-300 ease-in-out">
-            <InfoSheet onClick={() => setIsDrillDown(false)} />
+          <div className="w-2/3 overflow-y-scroll overflow-x-hidden">
+            <DrilldownPanel onClose={() => setIsDrillDown(false)} />
           </div>
         )}
       </div>
