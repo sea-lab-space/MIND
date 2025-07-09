@@ -1,3 +1,17 @@
+export const DatasourceIconTypes = {
+  passiveSensing: 'passive sensing',
+  clinicalNotes: 'notes',
+  clinicalTranscripts: 'transcripts',
+  measurementScore: 'measurement score'
+ } as const;
+
+export type DatasourceIconType = typeof DatasourceIconTypes[keyof typeof DatasourceIconTypes];
+
+export interface DatasourceIconProps {
+  iconType: DatasourceIconType;
+  showType?: boolean;
+}
+
 export interface HeaderProps {
   patientNames: string[];
   userName: string;

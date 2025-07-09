@@ -1,18 +1,16 @@
 import { useState } from "react";
-import { Watch, MessageSquare, StickyNote } from "lucide-react";
+
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+
 import InsightCardDetail from "@/components/InsightCardDetails";
+import DataSourceIcon from "./DataSourceIcon";
+import type { DatasourceIconType } from "../types/props";
 
 interface InsightCardProps {
   isExpanded?: boolean;
   title?: string;
   sources?: Array<{
-    type: "passive-sensing" | "clinical-notes" | "patient-data";
+    type: DatasourceIconType;
   }>;
   onToggle?: (expanded: boolean) => void;
   isSelected?: boolean;
@@ -25,9 +23,9 @@ export default function InsightCardComponent({
   isExpanded = false,
   title = "Growing Activity Level Despite Persistent Fatigue",
   sources = [
-    { type: "passive-sensing" },
-    { type: "clinical-notes" },
-    { type: "patient-data" },
+    { type: "passive sensing" },
+    { type: "notes" },
+    { type: "measurement score" },
   ],
   onToggle,
   isSelected = true,
@@ -35,19 +33,6 @@ export default function InsightCardComponent({
   onClick,
 }: InsightCardProps) {
   const [detailExpanded, setDetailExpanded] = useState(isExpanded);
-
-  const getSourceIcon = (type: string) => {
-    switch (type) {
-      case "passive-sensing":
-        return <Watch className="w-5 h-5 text-slate-500" />;
-      case "clinical-notes":
-        return <MessageSquare className="w-5 h-5 text-green-500" />;
-      case "patient-data":
-        return <StickyNote className="w-5 h-5 text-orange-500" />;
-      default:
-        return <StickyNote className="w-5 h-5 text-gray-500" />;
-    }
-  };
 
   return (
     <Card
@@ -90,10 +75,7 @@ export default function InsightCardComponent({
         <div className="flex items-center gap-2 ml-3">
           {sources.map((source, index) => (
             <div key={index} className="flex items-center">
-              <Tooltip>
-                <TooltipTrigger>{getSourceIcon(source.type)}</TooltipTrigger>
-                <TooltipContent>{source.type}</TooltipContent>
-              </Tooltip>
+              <DataSourceIcon iconType={source.type} />
             </div>
           ))}
         </div>
