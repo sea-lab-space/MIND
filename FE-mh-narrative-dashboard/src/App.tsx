@@ -2,7 +2,7 @@ import InsightCardComponent from "@/components/InsightCardComponent";
 import { useState } from "react";
 import Header from "./components/header";
 import SectionTitle from "./components/section";
-import type { DatasourceIconType, RetrospectOptions } from "./types/props";
+import { DatasourceIconTypes, type DatasourceIconType, type RetrospectOptions } from "./types/props";
 import { Button } from "./components/ui/button";
 import DrilldownPanel from "./components/DrilldownPanel";
 
@@ -67,26 +67,25 @@ function App() {
     {
       title: "Increased social activity, yet remains in a closed circle",
       sources: [
-        { type: "measurement score" as DatasourceIconType },
-        { type: "notes" as DatasourceIconType },
-        { type: "transcripts" as DatasourceIconType },
+        { type: DatasourceIconTypes.measurementScore },
+        { type: DatasourceIconTypes.clinicalNotes },
+        { type: DatasourceIconTypes.clinicalTranscripts },
       ],
     },
     {
       title: "Growing Activity Level Despite Persistent Fatigue",
       sources: [
-        { type: "measurement score" as DatasourceIconType },
-        { type: "notes" as DatasourceIconType },
-        { type: "transcripts" as DatasourceIconType },
+        { type: DatasourceIconTypes.measurementScore },
+        { type: DatasourceIconTypes.clinicalNotes },
       ],
     },
     {
       title: "Enhanced Cognitive Function and Focus",
       sources: [
-        { type: "measurement score" as DatasourceIconType },
-        { type: "notes" as DatasourceIconType },
-        { type: "transcripts" as DatasourceIconType },
-        { type: "passive sensing" as DatasourceIconType },
+        { type: DatasourceIconTypes.measurementScore },
+        { type: DatasourceIconTypes.clinicalNotes },
+        { type: DatasourceIconTypes.clinicalTranscripts },
+        { type: DatasourceIconTypes.passiveSensing },
       ],
     },
   ];

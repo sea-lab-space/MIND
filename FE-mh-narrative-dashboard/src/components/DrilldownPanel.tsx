@@ -6,7 +6,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import DataSourceIcon from "./DataSourceIcon";
+import DataSourceIcon from "./DatasourceIcon";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import type { DatasourceIconType } from "@/types/props";

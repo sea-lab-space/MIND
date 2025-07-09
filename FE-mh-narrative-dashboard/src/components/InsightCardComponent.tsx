@@ -1,15 +1,15 @@
 import { useState } from "react";
-
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-
 import InsightCardDetail from "@/components/InsightCardDetails";
-import DataSourceIcon from "./DataSourceIcon";
 import type { DatasourceIconType } from "../types/props";
+import DataSourceIcon from "./DatasourceIcon";
+import { Button } from "./ui/button";
+import { Search } from "lucide-react";
 
 interface InsightCardProps {
   isExpanded?: boolean;
   title?: string;
-  sources?: Array<{
+  sources: Array<{
     type: DatasourceIconType;
   }>;
   onToggle?: (expanded: boolean) => void;
@@ -22,11 +22,7 @@ interface InsightCardProps {
 export default function InsightCardComponent({
   isExpanded = false,
   title = "Growing Activity Level Despite Persistent Fatigue",
-  sources = [
-    { type: "passive sensing" },
-    { type: "notes" },
-    { type: "measurement score" },
-  ],
+  sources,
   onToggle,
   isSelected = true,
   onSelect,
@@ -35,10 +31,7 @@ export default function InsightCardComponent({
   const [detailExpanded, setDetailExpanded] = useState(isExpanded);
 
   return (
-    <Card
-      className="w-full max-w-[700px] transition-all duration-200 hover:shadow-md border border-gray-200 bg-white text-left"
-      onClick={onClick}
-    >
+    <Card className="w-full max-w-[700px] transition-all duration-200 hover:shadow-md border border-gray-200 bg-white text-left">
       <CardHeader className="pb-4">
         <div className="flex items-start gap-4">
           <div
@@ -61,6 +54,10 @@ export default function InsightCardComponent({
           <h2 className="text-lg font-bold text-gray-900 leading-tight">
             {title}
           </h2>
+          {/* TODO: buttons fly off card */}
+          <Button onClick={onClick} className="ml-auto" variant='outline'>
+            <Search />
+          </Button>
         </div>
       </CardHeader>
 
