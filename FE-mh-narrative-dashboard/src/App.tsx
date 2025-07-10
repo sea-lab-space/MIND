@@ -1,15 +1,44 @@
 import InsightCardComponent from "@/components/InsightCardComponent";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Header from "./components/header";
 import SectionTitle from "./components/section";
-import { DatasourceIconTypes, type DatasourceIconType, type RetrospectOptions } from "./types/props";
-import { Button } from "./components/ui/button";
+import { DatasourceIconTypes, type RetrospectOptions } from "./types/props";
 import DrilldownPanel from "./components/DrilldownPanel";
-
+import OverviewComponent from "@/components/OverviewComponent";
 
 function App() {
-  const [selectedCards, setSelectedCards] = useState<number[]>([0]);
-  const [isExpanded, setIsExpanded] = useState<boolean>(true);
+  const [selectedInsightHeader, setSelectedInsightHeader] = useState<number[]>([]);
+  const [selectedInsightCard, setSelectedInsightCard] = useState<number | null>(null);
+  const [isDrillDown, setIsDrillDown] = useState(false);
+  const [expandedSections, setExpandedSections] = useState<{
+    [key: string]: boolean;
+  }>({
+    overview: false,
+    insights: false,
+    communication: false,
+  });
+
+  const handleInsightCardHeaderSelect = (index: number) => {
+    setSelectedInsightHeader((prev) =>
+        prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
+  };
+
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const handleCardSelection = (index: number) => {
+    setSelectedInsightCard(index);
+    setIsDrillDown(true);
+    setTimeout(() => {
+      const cardEl = cardRefs.current[index];
+      if (cardEl) {
+        cardEl.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }
+    }, 100);
+  };
 
   const nameList = [
     "John Doe",
@@ -34,33 +63,11 @@ function App() {
     "Last year": 365,
   };
 
-  const [expandedSections, setExpandedSections] = useState<{
-    [key: string]: boolean;
-  }>({
-    overview: false,
-    insights: false,
-    communication: false,
-  });
-
   const toggleSection = (section: string) => {
     setExpandedSections((prev) => ({
       ...prev,
       [section]: !prev[section],
     }));
-  };
-
-  const handleCardSelect = (index: number) => {
-    setSelectedCards((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
-    );
-  };
-
-  const handleToggleAll = () => {
-    setIsExpanded((prev) => !prev);
-  };
-
-  const handleSelectAll = () => {
-    setSelectedCards(selectedCards.length === cardData.length ? [] : [0, 1, 2]);
   };
 
   const cardData = [
@@ -90,101 +97,96 @@ function App() {
     },
   ];
 
-  const [isDrillDown, setIsDrillDown] = useState(false);
-
-
   return (
-    <div className="flex flex-col h-screen overflow-hidden">
-      <Header
-        patientNames={nameList}
-        userName={userName}
-        retrospectHorizon={retrospectHorizon}
-      />
+      <div className="flex flex-col h-screen overflow-hidden">
+        <Header
+            patientNames={nameList}
+            userName={userName}
+            retrospectHorizon={retrospectHorizon}
+        />
 
-      <div className="flex flex-1 bg-white min-h-0">
-        <div
-          className={`flex-1 overflow-y-scroll p-4 ${
-            isDrillDown ? "w-1/3" : "w-full"
-          }`}
-        >
-          <div className="relative flex">
-            {/* Connection line - spans full height of container */}
-            <div className="absolute left-10.5 top-4 h-full w-0.5 bg-[#d9d9d9]" />
+        {/* Main content container */}
+        <div className="w-full flex flex-1 bg-white min-h-0 flex-col sm:flex-row">
+          <div
+              className={`overflow-y-scroll p-4 ${
+                  isDrillDown ? "basis-full sm:basis-1/3 flex-none" : "basis-full flex-none"
+              }`}
+          >
+            <div className="w-full">
+              {/*<div className="left-10 inset-y-0 w-0.5 bg-[#d9d9d9]" />*/}
+              <div className="flex flex-col gap-4 pl-6">
+                <SectionTitle
+                    title="Overview"
+                    subtitle="test"
+                    isExpanded={expandedSections.overview}
+                    onClick={() => toggleSection("overview")}
+                >
+                  <OverviewComponent isExpanded={expandedSections.overview} />
+                </SectionTitle>
 
-            {/* Content with left padding to avoid overlapping the line */}
-            <div className="flex flex-col gap-4 pl-6">
-              <SectionTitle
-                title="Overview"
-                subtitle="test"
-                isExpanded={expandedSections.overview}
-                onClick={() => toggleSection("overview")}
-              >
-                {expandedSections.overview && (
-                  <p className="text-[#000000]">
-                    Insights content would go here...
-                  </p>
-                )}
-              </SectionTitle>
-
-              <SectionTitle
-                title="Data-driven Insights"
-                subtitle="test"
-                isExpanded={expandedSections.insights}
-                onClick={() => toggleSection("insights")}
-              >
-                {expandedSections.insights && (
-                  <div className="p-8 space-y-8 bg-gray-50 min-h-screen">
-                    {/* Grid with 6 columns for layout */}
-                    <div className="grid grid-cols-6 gap-6">
-                      {/* TODO: Turn this into a declarative spec: team definition of data */}
+                <SectionTitle
+                    title="Data-driven Insights"
+                    subtitle="test"
+                    isExpanded={expandedSections.insights}
+                    onClick={() => toggleSection("insights")}
+                >
+                  <div className="p-8 space-y-8 bg-gray-50 w-full">
+                    <div className="grid grid-cols-6 gap-6 w-full">
                       {cardData.map((card, index) => {
-                        // TODO: this isExpanded variable is not used currently
-                        const colSpan = isExpanded
-                          ? "col-span-3"
-                          : "col-span-2";
-
+                        const colSpan = isDrillDown
+                            ? "col-span-6"
+                            : expandedSections.insights
+                                ? "col-span-3"
+                                : "col-span-2";
                         return (
-                          <div key={index} className={`${colSpan}`}>
-                            <InsightCardComponent
-                              title={card.title}
-                              sources={card.sources}
-                              isExpanded={isExpanded}
-                              isSelected={selectedCards.includes(index)}
-                              onSelect={() => handleCardSelect(index)}
-                              onToggle={handleToggleAll} // toggles global state
-                              onClick={() => setIsDrillDown(true)}
-                            />
-                          </div>
+                            <div
+                                key={index}
+                                ref={(el) => (cardRefs.current[index] = el)}
+                                className={`${colSpan} w-full`}
+                            >
+                              <InsightCardComponent
+                                  title={card.title}
+                                  sources={card.sources}
+                                  isExpanded={expandedSections.insights}
+                                  isInsightHeaderSelected={selectedInsightHeader.includes(index)}
+                                  isInsightCardSelected={selectedInsightCard === index}
+                                  handleCardSelect={() => handleCardSelection(index)}
+                                  handleCardHeaderClick={() => handleInsightCardHeaderSelect(index)}
+                              />
+                            </div>
                         );
                       })}
                     </div>
                   </div>
-                )}
-              </SectionTitle>
+                </SectionTitle>
 
-              <SectionTitle
-                title="Patient Communication"
-                subtitle="test"
-                isExpanded={expandedSections.communication}
-                onClick={() => toggleSection("communication")}
-              >
-                {expandedSections.communication && (
-                  <p className="text-[#000000]">
-                    Insights content would go here...
-                  </p>
-                )}
-              </SectionTitle>
+                <SectionTitle
+                    title="Patient Communication"
+                    subtitle="test"
+                    isExpanded={expandedSections.communication}
+                    onClick={() => toggleSection("communication")}
+                >
+                  {expandedSections.communication && (
+                      <p className="text-[#000000]">Insights content would go here...</p>
+                  )}
+                </SectionTitle>
+              </div>
             </div>
           </div>
-        </div>
 
-        {isDrillDown && (
-          <div className="w-2/3 overflow-y-scroll overflow-x-hidden">
-            <DrilldownPanel onClose={() => setIsDrillDown(false)} />
-          </div>
-        )}
+          {/* Right panel: drilldown, only show when isDrillDown true */}
+          {isDrillDown && (
+              <div className="overflow-y-scroll overflow-x-hidden basis-full sm:basis-2/3 flex-none">
+                <DrilldownPanel
+                    onClose={() => {
+                      setIsDrillDown(false);
+                      setSelectedInsightCard(null);
+                    }}
+                />
+              </div>
+          )}
+        </div>
       </div>
-    </div>
   );
 }
 
