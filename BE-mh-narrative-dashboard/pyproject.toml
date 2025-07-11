@@ -1,0 +1,9 @@
+[project]
+name = "be-mh-narrative-dashboard"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "openai>=1.95.1",
+]
