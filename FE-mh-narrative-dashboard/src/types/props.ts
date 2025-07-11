@@ -1,3 +1,5 @@
+import type { HTMLAttributes } from "react";
+
 export const DatasourceIconTypes = {
   passiveSensing: 'passive sensing',
   clinicalNotes: 'notes',
@@ -33,4 +35,5 @@ export interface SectionProps {
   subtitle?: string;
   icon?: any;
   children?: React.ReactNode;
+  className?: string;
 }

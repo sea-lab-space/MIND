@@ -1,12 +1,13 @@
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { SectionProps } from "@/types/props";
+import { cn } from "@/lib/utils";
 
 const Section: React.FC<SectionProps> = (props) => {
-  const { title, isExpanded, onClick, subtitle, icon, children } = props;
+  const { title, isExpanded, onClick, subtitle, icon, children, className } = props;
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 w-full">
       <div className="flex items-center gap-4">
         <Button
           size="icon"
@@ -22,12 +23,13 @@ const Section: React.FC<SectionProps> = (props) => {
         <h2 className="text-xl font-semibold text-[#000000]">
           {title}
           <span className="text-lg text-[#000000] font-normal">
-            {" "}- {subtitle}
+            {" "}
+            - {subtitle}
           </span>
         </h2>
         {icon && <div className="flex-shrink-0">{icon}</div>}
       </div>
-      {children && <div className="px-14">{children}</div>}
+      {children && <div className={cn("px-14", className)}>{children}</div>}
     </div>
   );
 };
