@@ -5,5 +5,21 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
+    "fastapi>=0.116.1",
+    "langchain>=0.3.26",
+    "matplotlib==3.8.4",
+    "msgpack>=1.1.1",
+    "numpy>=2.0.2",
     "openai>=1.95.1",
+    "pandas>=2.3.1",
+    "scikit-learn>=1.6.1",
+    "scipy>=1.13.1",
+    "seaborn>=0.13.2",
+    "transformers>=4.53.2",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "ipython>=8.18.1",
 ]

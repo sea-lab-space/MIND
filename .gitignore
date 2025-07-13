@@ -1,3 +1,6 @@
+# Datasets
+/BE-mh-narrative-dashboard/passive_data_extraction/data_raw
+
 # Logs
 logs
 *.log
