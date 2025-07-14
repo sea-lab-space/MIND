@@ -2,7 +2,6 @@ import os, sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from utils.common_settings import *
 from utils import path_definitions
-from data import data_factory
 
 class DatasetDict():
     """A data structor of saving a dataset, including the dataset key, prediction target, 
