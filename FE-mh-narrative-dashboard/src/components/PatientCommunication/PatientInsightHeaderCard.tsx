@@ -9,7 +9,7 @@ interface PatientInsightHeaderCardProps {
 function PatientInsightHeaderCard({ insights=[] }: PatientInsightHeaderCardProps) {
     return (
         <Card className="border border-gray-200 w-full">
-            <CardContent className="p-6">
+            <CardContent className="px-6 py-2">
                 <div className="flex items-start gap-3">
                     <Lightbulb className="text-yellow-500 mt-1" size={20} />
                     <div>

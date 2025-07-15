@@ -4,12 +4,14 @@ interface OverviewCardComponentProps {
     icon ;
     title: string;
     children: ReactNode;
+    isExpanded: boolean;
 }
 
 export default function OverviewCardComponent({
                                                   icon: Icon,
                                                   title,
                                                   children,
+                                                    isExpanded,
                                               }: OverviewCardComponentProps) {
     return (
         <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm w-full">

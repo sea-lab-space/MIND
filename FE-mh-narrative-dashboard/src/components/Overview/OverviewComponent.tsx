@@ -11,7 +11,6 @@ export default function OverviewComponent({
                                           }: OverviewComponentProps) {
   return (
       <div className="transition-all duration-300">
-        {isExpanded && (
             <div
                 className={`flex gap-4 mx-auto items-stretch ${
                     isDrillDown ? "flex-col" : "flex-col sm:flex-row"
@@ -27,24 +26,24 @@ export default function OverviewComponent({
                 </div>
               </div>
 
-              <div className={`flex flex-col gap-4 ${isDrillDown ? "w-full" : "sm:w-3/4"}`}>
-                <OverviewCardComponent icon={Activity} title="Physical Activity">
-                  Patient is maintaining regular walking routines, averaging 8,000
-                  steps daily.
-                </OverviewCardComponent>
+                    <div className={`flex flex-col gap-4 ${isDrillDown ? "w-full" : "sm:w-3/4"}`}>
+                        <OverviewCardComponent icon={Activity} title="Physical Activity" isExpanded={isExpanded}>
+                            Patient is maintaining regular walking routines, averaging 8,000
+                            steps daily.
+                        </OverviewCardComponent>
 
-                <OverviewCardComponent icon={Brain} title="Cognitive Status">
-                  Noted improvement in memory recall and sustained attention over
-                  recent weeks.
-                </OverviewCardComponent>
+                        <OverviewCardComponent icon={Brain} title="Cognitive Status" isExpanded={isExpanded}>
+                            Noted improvement in memory recall and sustained attention over
+                            recent weeks.
+                        </OverviewCardComponent>
 
-                <OverviewCardComponent icon={Heart} title="Mood & Emotion">
-                  Patient reports stable mood with occasional anxiety in social
-                  situations.
-                </OverviewCardComponent>
-              </div>
+                        <OverviewCardComponent icon={Heart} title="Mood & Emotion" isExpanded={isExpanded}>
+                            Patient reports stable mood with occasional anxiety in social
+                            situations.
+                        </OverviewCardComponent>
+                    </div>
+
             </div>
-        )}
       </div>
   );
 }

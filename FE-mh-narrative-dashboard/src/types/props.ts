@@ -36,4 +36,5 @@ export interface SectionProps {
   icon?: any;
   children?: React.ReactNode;
   className?: string;
+  action?: React.ReactNode;
 }
