@@ -1,0 +1,114 @@
+{
+  "response": [
+    {
+      "feature_name": "avgsumsteps",
+      "rank": 7,
+      "explanation": "Average daily step count is a highly useful indicator of overall physical activity, which is closely linked to mental health. Lower average steps may indicate depressive symptoms, low motivation, or social withdrawal, while higher averages can reflect better mood and engagement. Clinicians often use changes in activity as a proxy for mental health status."
+    },
+    {
+      "feature_name": "stdsumsteps",
+      "rank": 6,
+      "explanation": "The standard deviation of daily step count reflects variability in activity. High variability may indicate fluctuating mood or inconsistent routines, which are relevant in conditions like bipolar disorder or depression. Consistent low variability at a low level may suggest persistent low energy or anhedonia."
+    },
+    {
+      "feature_name": "sumsteps",
+      "rank": 6,
+      "explanation": "Total step count over a time segment provides a cumulative measure of activity, useful for tracking overall engagement and changes over time. It can help clinicians assess the impact of interventions or the progression of symptoms."
+    },
+    {
+      "feature_name": "countepisodesedentarybout",
+      "rank": 7,
+      "explanation": "The number of sedentary bouts is highly relevant, as increased sedentary behavior is associated with poorer mental health outcomes. Frequent sedentary episodes may indicate withdrawal, fatigue, or lack of motivation, all of which are important in mental health assessment."
+    },
+    {
+      "feature_name": "sumdurationsedentarybout",
+      "rank": 7,
+      "explanation": "Total duration of sedentary bouts is a strong indicator of inactivity, which is often linked to depression and anxiety. Prolonged sedentary time can signal worsening symptoms or lack of engagement in daily life."
+    },
+    {
+      "feature_name": "avgdurationactivebout",
+      "rank": 6,
+      "explanation": "The average duration of active bouts provides insight into the quality and sustainability of physical activity. Short, infrequent active bouts may suggest low energy or motivation, while longer bouts can indicate better functioning."
+    },
+    {
+      "feature_name": "countepisodeactivebout",
+      "rank": 6,
+      "explanation": "The number of active bouts reflects how often a person initiates activity, which can be a marker of motivation and engagement. A low count may be a red flag for clinicians monitoring for depressive symptoms."
+    },
+    {
+      "feature_name": "maxsumsteps",
+      "rank": 5,
+      "explanation": "The maximum daily step count can highlight peak activity days, which may be useful for identifying outliers or periods of improved mood or functioning. However, it is less informative about overall patterns."
+    },
+    {
+      "feature_name": "minsumsteps",
+      "rank": 5,
+      "explanation": "The minimum daily step count can help identify days of very low activity, which may correspond to particularly bad days for the patient. This can be useful for risk assessment or intervention planning."
+    },
+    {
+      "feature_name": "mediansumsteps",
+      "rank": 5,
+      "explanation": "The median daily step count is useful for understanding the typical activity level, especially if the data is skewed by outliers. It provides a robust measure of central tendency."
+    },
+    {
+      "feature_name": "maxsteps",
+      "rank": 4,
+      "explanation": "Maximum step count during a time segment may indicate the most active period, but without context, it is less useful than averages or totals for mental health assessment."
+    },
+    {
+      "feature_name": "minsteps",
+      "rank": 4,
+      "explanation": "Minimum step count during a time segment can help identify periods of inactivity, but is less informative than overall patterns."
+    },
+    {
+      "feature_name": "avgsteps",
+      "rank": 5,
+      "explanation": "Average step count during a time segment is similar to avgsumsteps and provides a useful summary of activity, though the time segment definition matters for interpretation."
+    },
+    {
+      "feature_name": "stdsteps",
+      "rank": 4,
+      "explanation": "Standard deviation of step count during a time segment gives some information about variability, but is less directly interpretable than daily variability."
+    },
+    {
+      "feature_name": "maxdurationsedentarybout",
+      "rank": 6,
+      "explanation": "The maximum duration of a sedentary bout can highlight periods of prolonged inactivity, which are clinically significant for identifying risk of worsening mental health."
+    },
+    {
+      "feature_name": "mindurationsedentarybout",
+      "rank": 2,
+      "explanation": "The minimum duration of sedentary bouts is less informative, as very short bouts may not be clinically meaningful."
+    },
+    {
+      "feature_name": "avgdurationsedentarybout",
+      "rank": 5,
+      "explanation": "The average duration of sedentary bouts helps to understand typical inactivity patterns, which can be relevant for monitoring mental health."
+    },
+    {
+      "feature_name": "stddurationsedentarybout",
+      "rank": 3,
+      "explanation": "Standard deviation of sedentary bout duration provides some information about variability, but is less directly actionable for clinicians."
+    },
+    {
+      "feature_name": "sumdurationactivebout",
+      "rank": 6,
+      "explanation": "Total duration of all active bouts is a strong indicator of overall activity, which is important for assessing engagement and energy levels."
+    },
+    {
+      "feature_name": "maxdurationactivebout",
+      "rank": 5,
+      "explanation": "The maximum duration of an active bout can indicate the ability to sustain activity, which may be relevant for assessing improvement or decline."
+    },
+    {
+      "feature_name": "mindurationactivebout",
+      "rank": 2,
+      "explanation": "The minimum duration of active bouts is less useful, as very short bouts may not reflect meaningful activity."
+    },
+    {
+      "feature_name": "stddurationactivebout",
+      "rank": 3,
+      "explanation": "Standard deviation of active bout duration gives some information about variability in activity, but is less directly useful for clinical decision-making."
+    }
+  ]
+}

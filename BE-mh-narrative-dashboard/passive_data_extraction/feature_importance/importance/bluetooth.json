@@ -1,0 +1,54 @@
+{
+  "response": [
+    {
+      "feature_name": "countscans",
+      "rank": 6,
+      "explanation": "The total number of Bluetooth scans in a time segment reflects how long the participant's phone was in proximity to other Bluetooth devices. This can be a strong proxy for social exposure or time spent in public or social environments, which is highly relevant for assessing social withdrawal or engagement\u2014key factors in many mental health conditions such as depression or social anxiety."
+    },
+    {
+      "feature_name": "uniquedevices",
+      "rank": 7,
+      "explanation": "The number of unique Bluetooth devices sensed is a direct indicator of the diversity of social or public contacts. A higher number may suggest greater social interaction or time spent in populated areas, while a lower number could indicate isolation. This is extremely useful for clinicians monitoring social functioning, which is a core aspect of mental health assessment."
+    },
+    {
+      "feature_name": "meanscans",
+      "rank": 5,
+      "explanation": "The mean number of scans per device within a segment gives an idea of the average duration of proximity to each device. This can help differentiate between brief encounters (e.g., passing people in a hallway) and longer interactions (e.g., sitting with someone), which can be relevant for understanding the quality of social interactions."
+    },
+    {
+      "feature_name": "stdscans",
+      "rank": 4,
+      "explanation": "The standard deviation of scans per device within a segment reflects the variability in the duration of proximity to different devices. High variability might indicate a mix of brief and prolonged encounters, while low variability could suggest more routine or structured social patterns. This can provide nuanced insight into the nature of a person's social environment."
+    },
+    {
+      "feature_name": "countscansmostfrequentdevicewithinsegments",
+      "rank": 6,
+      "explanation": "The number of scans of the most sensed device within a segment likely represents close contact with a specific individual or device (e.g., a family member, roommate, or work colleague). Tracking this can help clinicians understand the presence and consistency of close social relationships, which are important for mental health."
+    },
+    {
+      "feature_name": "countscansleastfrequentdevicewithinsegments",
+      "rank": 2,
+      "explanation": "The number of scans of the least sensed device within a segment is less informative, as it may represent incidental or fleeting contacts that are less relevant to meaningful social interaction or mental health assessment."
+    },
+    {
+      "feature_name": "countscansmostfrequentdeviceacrosssegments",
+      "rank": 5,
+      "explanation": "The number of scans of the most sensed device across similar time segments can indicate ongoing, repeated contact with a specific person or device over time. This can be useful for tracking the stability of social relationships or routines, which are relevant for mental health monitoring."
+    },
+    {
+      "feature_name": "countscansleastfrequentdeviceacrosssegments",
+      "rank": 1,
+      "explanation": "The number of scans of the least sensed device across segments is likely to be noise, representing rare or accidental encounters. This is generally not useful for clinical assessment."
+    },
+    {
+      "feature_name": "countscansmostfrequentdeviceacrossdataset",
+      "rank": 4,
+      "explanation": "The number of scans of the most sensed device across the entire dataset can indicate the presence of a consistently close relationship (e.g., a partner or family member). While useful, it is less temporally specific than within-segment or across-segment measures."
+    },
+    {
+      "feature_name": "countscansleastfrequentdeviceacrossdataset",
+      "rank": 1,
+      "explanation": "The number of scans of the least sensed device across the dataset is unlikely to provide meaningful information for mental health assessment, as it likely represents random or one-off encounters."
+    }
+  ]
+}

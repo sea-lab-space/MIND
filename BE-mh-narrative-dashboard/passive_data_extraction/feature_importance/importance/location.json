@@ -1,0 +1,179 @@
+{
+  "response": [
+    {
+      "feature_name": "hometime",
+      "rank": 7,
+      "explanation": "Time spent at home is a highly informative feature for mental health assessment. Increased hometime can be associated with social withdrawal, depression, or anxiety, while decreased hometime may indicate increased social or occupational engagement. Changes in this metric over time can signal shifts in mental health status."
+    },
+    {
+      "feature_name": "disttravelled",
+      "rank": 6,
+      "explanation": "Total distance traveled reflects overall activity and mobility. Reduced mobility is often seen in depression or during periods of low motivation, while increased mobility may be associated with mania or improved mood. This feature helps clinicians monitor behavioral activation."
+    },
+    {
+      "feature_name": "rog",
+      "rank": 6,
+      "explanation": "Radius of Gyration quantifies the spatial extent of a person's daily movements. A low value may indicate restricted movement (potentially due to depression or anxiety), while a high value suggests broader engagement with the environment. Useful for detecting changes in routine or isolation."
+    },
+    {
+      "feature_name": "maxdiam",
+      "rank": 5,
+      "explanation": "Maximum diameter between pauses gives a sense of the largest distance covered in a day. It can help identify outlier days or significant events (e.g., travel, avoidance behaviors). Less informative than overall patterns but still useful contextually."
+    },
+    {
+      "feature_name": "maxhomedist",
+      "rank": 5,
+      "explanation": "Maximum distance from home can indicate willingness or ability to venture out. Sudden decreases may signal agoraphobia or depressive symptoms, while increases may reflect improved functioning or manic episodes."
+    },
+    {
+      "feature_name": "siglocsvisited",
+      "rank": 6,
+      "explanation": "The number of significant locations visited is a proxy for social and occupational engagement. Fewer locations may indicate withdrawal or routine, while more locations suggest active engagement. Useful for monitoring changes in social behavior."
+    },
+    {
+      "feature_name": "avgflightlen",
+      "rank": 4,
+      "explanation": "Average length of all flights (movements) provides insight into the typical range of movement. While informative, it is less directly interpretable than overall distance or number of locations."
+    },
+    {
+      "feature_name": "stdflightlen",
+      "rank": 3,
+      "explanation": "Standard deviation of flight lengths reflects variability in movement. High variability may indicate irregular routines, which can be relevant in mood disorders, but is less directly actionable."
+    },
+    {
+      "feature_name": "avgflightdur",
+      "rank": 4,
+      "explanation": "Mean duration of all flights can indicate the pace of life or energy levels. Shorter durations may reflect brisk activity, while longer durations may indicate lethargy or avoidance."
+    },
+    {
+      "feature_name": "stdflightdur",
+      "rank": 3,
+      "explanation": "Variability in flight duration may reflect irregular routines or changes in energy/motivation, but is less directly interpretable for clinical purposes."
+    },
+    {
+      "feature_name": "probpause",
+      "rank": 5,
+      "explanation": "Fraction of the day spent paused (stationary) is a good indicator of activity level. High values may indicate inactivity or withdrawal, while low values suggest engagement. Useful for monitoring behavioral activation."
+    },
+    {
+      "feature_name": "siglocentropy",
+      "rank": 6,
+      "explanation": "Entropy of time spent at significant locations reflects routine diversity. Low entropy suggests rigid routines (potentially depressive or anxious states), while high entropy indicates varied engagement. Useful for detecting behavioral changes."
+    },
+    {
+      "feature_name": "circdnrtn",
+      "rank": 7,
+      "explanation": "Circadian routine regularity is highly relevant for mental health. Disrupted routines are common in mood and anxiety disorders. This feature helps clinicians monitor sleep/wake and activity regularity, which are key in many conditions."
+    },
+    {
+      "feature_name": "wkenddayrtn",
+      "rank": 6,
+      "explanation": "Comparing circadian routines on weekdays vs. weekends can reveal work-life balance, social engagement, or disruptions. Changes may indicate stress, burnout, or mood changes."
+    },
+    {
+      "feature_name": "locationvariance",
+      "rank": 4,
+      "explanation": "Variance in location provides a sense of movement spread. While related to other mobility features, it is less directly interpretable but can support overall assessment."
+    },
+    {
+      "feature_name": "loglocationvariance",
+      "rank": 3,
+      "explanation": "Log-transformed variance is a statistical transformation that may help with modeling but is less directly interpretable for clinicians."
+    },
+    {
+      "feature_name": "totaldistance",
+      "rank": 6,
+      "explanation": "Total distance traveled is a direct measure of mobility and activity, which are key behavioral markers in mental health. Useful for tracking changes over time."
+    },
+    {
+      "feature_name": "avgspeed",
+      "rank": 4,
+      "explanation": "Average speed can reflect energy levels or agitation. Low speed may indicate lethargy, while high speed may suggest restlessness or mania. Context is important for interpretation."
+    },
+    {
+      "feature_name": "varspeed",
+      "rank": 3,
+      "explanation": "Variance in speed may indicate irregular activity patterns, but is less directly actionable for clinical assessment."
+    },
+    {
+      "feature_name": "numberofsignificantplaces",
+      "rank": 6,
+      "explanation": "Number of significant places visited is a strong indicator of social and occupational engagement. Changes can signal withdrawal or increased activity."
+    },
+    {
+      "feature_name": "numberlocationtransitions",
+      "rank": 5,
+      "explanation": "Number of transitions between locations reflects activity and engagement. Fewer transitions may indicate withdrawal, while more transitions suggest active engagement."
+    },
+    {
+      "feature_name": "radiusgyration",
+      "rank": 6,
+      "explanation": "Similar to 'rog', this feature quantifies the area covered and is useful for assessing mobility and routine changes."
+    },
+    {
+      "feature_name": "timeattop1location",
+      "rank": 6,
+      "explanation": "Time spent at the most significant location (often home or work) can indicate routine, stability, or withdrawal. Sudden changes may signal shifts in mental health."
+    },
+    {
+      "feature_name": "timeattop2location",
+      "rank": 5,
+      "explanation": "Time at the second most significant location provides additional context about routine and engagement outside the primary location."
+    },
+    {
+      "feature_name": "timeattop3location",
+      "rank": 4,
+      "explanation": "Time at the third most significant location is less informative but can help identify changes in broader engagement."
+    },
+    {
+      "feature_name": "movingtostaticratio",
+      "rank": 5,
+      "explanation": "Ratio of moving to stationary time is a good summary of activity level. High stationary time may indicate withdrawal or low energy."
+    },
+    {
+      "feature_name": "outlierstimepercent",
+      "rank": 4,
+      "explanation": "Time spent in non-significant clusters may indicate erratic or unstructured activity, which can be relevant in certain mental health conditions."
+    },
+    {
+      "feature_name": "maxlengthstayatclusters",
+      "rank": 5,
+      "explanation": "Maximum time spent in a location can indicate periods of inactivity or withdrawal, especially if this is at home or a single location."
+    },
+    {
+      "feature_name": "minlengthstayatclusters",
+      "rank": 3,
+      "explanation": "Minimum time spent in a location is less informative, as brief visits may not be clinically relevant."
+    },
+    {
+      "feature_name": "avglengthstayatclusters",
+      "rank": 5,
+      "explanation": "Average time spent at locations helps assess routine and engagement. High averages may indicate withdrawal, while low averages suggest active engagement."
+    },
+    {
+      "feature_name": "stdlengthstayatclusters",
+      "rank": 3,
+      "explanation": "Standard deviation of time at locations reflects routine variability, but is less directly interpretable."
+    },
+    {
+      "feature_name": "locationentropy",
+      "rank": 6,
+      "explanation": "Entropy of location visits is a strong indicator of routine diversity. Low entropy may indicate rigid routines or withdrawal, while high entropy suggests varied engagement."
+    },
+    {
+      "feature_name": "normalizedlocationentropy",
+      "rank": 5,
+      "explanation": "Normalized entropy provides a standardized measure of routine diversity, useful for comparing across individuals or time periods."
+    },
+    {
+      "feature_name": "timeathome",
+      "rank": 7,
+      "explanation": "Time spent at home is a key indicator of social withdrawal, depression, or anxiety. Tracking this over time is highly valuable for clinicians."
+    },
+    {
+      "feature_name": "timeat[PLACE]",
+      "rank": 6,
+      "explanation": "Time spent at specific places (e.g., exercise, study, greenspace) provides context about healthy behaviors, social engagement, and routine. Changes can indicate shifts in mental health status."
+    }
+  ]
+}

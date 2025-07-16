@@ -1,9 +1,10 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
+import pandas as pd
 from utils.feature_loader import PassiveFeatureLoader
 
 
-def plot_feature(df: PassiveFeatureLoader):
+def plot_feature(df: PassiveFeatureLoader, daily: bool = True):
     # Set up the grid layout
     n_features = len(df.include_features)
     n_cols = 2  # Number of columns in the grid
@@ -22,8 +23,13 @@ def plot_feature(df: PassiveFeatureLoader):
     # Plot each feature in its own subplot
     for i, feat in enumerate(df.include_features):
         ax = axes[i]
+
+        if daily:
+            plot_data = df.data_long.groupby(['pid', pd.Grouper(key='datetime', freq='D')])[feat].sum().reset_index()
+        else:
+            plot_data = df.data_long
         sns.lineplot(
-            data=df.data_long,
+            data=plot_data,
             x='datetime',
             y=feat,
             hue='pid',

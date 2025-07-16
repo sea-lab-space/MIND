@@ -30,7 +30,7 @@ class PassiveFeatureLoader:
         self.data_long = self._process_data_long_form(interpolate)
 
     def _load_csv(self, filterPID = None):
-        df = pd.read_csv(self.directory)
+        df = pd.read_csv(self.directory, low_memory=False)
         if filterPID is not None:
             return df[df['pid'].isin(filterPID)]
         else:
@@ -85,35 +85,57 @@ class PassiveFeatureLoader:
             dropna=False 
         ).reset_index()
 
-        # TODO: a very lousy solution to matching
+        # Improved solution for unambiguous column renaming
         rename = {}
         for col in pivoted_data.columns:
             parts = col.split(':')
             if len(parts) >= 2:
                 feature_part = parts[1]
-                candidates = [feature for feature in self.include_features if feature in feature_part]
-                if len(candidates) == 1:
-                    rename[col] = candidates[0]
-                elif len(candidates) > 1:
-                    # feature name should be the complete one after the word rapids_
-                    feature_split = feature_part.split("_")
-                    ctrl = False
-                    final_name = []
-                    for split in feature_split:
-                        if ctrl:
-                            final_name.append(split)
-                            continue
-                        if split == "rapids" or split == "doryab":
-                            ctrl = True
-                        else:
-                            continue
-                    final_feat_name = "_".join(final_name)
-                    rename[col] = final_feat_name
+                # split by _
+                feature_name_split = feature_part.split("_")
+                # get actual feature name
+                feature_name_after = ["rapids", "doryab", "barnett", "locmap"]
+                actual_name_split = []
+                flag = False
+                for feature_split in feature_name_split:
+                    if flag:
+                        actual_name_split.append(feature_split)
+                    if feature_split in feature_name_after:
+                        flag = True
+                        continue
+                actual_name = "_".join(actual_name_split)
+                if actual_name in self.include_features:
+                    rename[col] = actual_name
+                else:
+                    # drop this column
+                    pivoted_data = pivoted_data.drop(columns=[col])
             else:
-                rename[col] = col
+                rename[col] = col  # malformed or unexpected column format
+
         pivoted_data = pivoted_data.rename(columns=rename)
 
         return pivoted_data
+    
+    def _get_usable_feature_name(self, col):
+            parts = col.split(':')
+            if len(parts) >= 2:
+                feature_part = parts[1]
+                # split by _
+                feature_name_split = feature_part.split("_")
+                # get actual feature name
+                feature_name_after = ["rapids", "doryab", "barnett", "locmap"]
+                actual_name_split = []
+                flag = False
+                for feature_split in feature_name_split:
+                    if flag:
+                        actual_name_split.append(feature_split)
+                    if feature_split in feature_name_after:
+                        flag = True
+                        continue
+                actual_name = "_".join(actual_name_split)
+                return actual_name + ":" + parts[-1]
+            else:
+                return col
     
     def _attach_datetime(self, df):
         df['date'] = pd.to_datetime(df['date'])
@@ -149,8 +171,10 @@ class PassiveFeatureLoader:
         identifiers = [
             feat + segment for feat in self.include_features for segment in TIME_KEYWORDS
         ]
-        use_columns = [col for col in columns if (col.lower() in ['pid', 'date'] or any(
-            feat.lower() in col.lower() for feat in identifiers))]
+        use_columns = [col for col in columns if (self._get_usable_feature_name(col) in ['pid', 'date'] or any(
+            feat.lower() == self._get_usable_feature_name(col).lower() for feat in identifiers))]
+        
+        print(len(use_columns), use_columns)
         return df[use_columns]
     
     def save_data(self):

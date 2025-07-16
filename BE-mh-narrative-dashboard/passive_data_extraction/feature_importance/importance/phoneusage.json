@@ -1,0 +1,74 @@
+{
+  "response": [
+    {
+      "feature_name": "sumduration",
+      "rank": 7,
+      "explanation": "Total phone usage duration is highly relevant for mental health assessment. Excessive phone use is associated with depression, anxiety, and sleep disturbances. Tracking this over time can help clinicians identify behavioral changes or problematic patterns."
+    },
+    {
+      "feature_name": "maxduration",
+      "rank": 6,
+      "explanation": "The longest single phone use episode can indicate episodes of rumination, distraction, or avoidance, which are clinically significant in mood and anxiety disorders. It may also reflect difficulty disengaging from the device."
+    },
+    {
+      "feature_name": "minduration",
+      "rank": 2,
+      "explanation": "The shortest unlock episode is less clinically meaningful, as brief checks are common and not strongly linked to mental health status. It may only be useful in the context of other features."
+    },
+    {
+      "feature_name": "avgduration",
+      "rank": 6,
+      "explanation": "Average duration of phone use per episode provides insight into typical engagement patterns. Longer averages may suggest difficulties with self-regulation or increased avoidance behaviors."
+    },
+    {
+      "feature_name": "stdduration",
+      "rank": 5,
+      "explanation": "Standard deviation of episode duration reflects variability in phone use. High variability may indicate mood instability or inconsistent routines, which are relevant in many mental health conditions."
+    },
+    {
+      "feature_name": "countepisode",
+      "rank": 7,
+      "explanation": "The number of unlock episodes is a strong indicator of phone checking behavior, which is linked to anxiety, impulsivity, and distractibility. Frequent checking can be a marker of restlessness or compulsive behavior."
+    },
+    {
+      "feature_name": "firstuseafter",
+      "rank": 4,
+      "explanation": "Time until first phone use can reflect sleep patterns, morning routines, or impulsivity. Early or immediate use upon waking may be associated with poor sleep hygiene or anxiety."
+    },
+    {
+      "feature_name": "sumduration[PLACE]",
+      "rank": 6,
+      "explanation": "Total phone use duration in specific contexts (e.g., living, exercise, study, greens) is highly informative. For example, high use during study or exercise may indicate distraction or avoidance, while use in green spaces may reflect disengagement from the environment."
+    },
+    {
+      "feature_name": "maxduration[PLACE]",
+      "rank": 5,
+      "explanation": "Longest phone use episode in a specific place can highlight problematic use in contexts where engagement is expected (e.g., long use during exercise or study may be concerning)."
+    },
+    {
+      "feature_name": "minduration[PLACE]",
+      "rank": 2,
+      "explanation": "Shortest episode in a place is generally not clinically meaningful, as brief checks can occur for many reasons and are not strongly linked to mental health."
+    },
+    {
+      "feature_name": "avgduration[PLACE]",
+      "rank": 5,
+      "explanation": "Average duration in a place can reveal context-specific patterns, such as difficulty focusing during study or disengagement during social or outdoor activities."
+    },
+    {
+      "feature_name": "stdduration[PLACE]",
+      "rank": 4,
+      "explanation": "Variability of phone use in a place may indicate inconsistent engagement or mood instability in specific contexts, which can be clinically relevant."
+    },
+    {
+      "feature_name": "countepisode[PLACE]",
+      "rank": 6,
+      "explanation": "Number of unlocks in a place is useful for identifying context-specific compulsive or avoidant behaviors, such as frequent checking during study or social situations."
+    },
+    {
+      "feature_name": "firstuseafter[PLACE]",
+      "rank": 3,
+      "explanation": "Time until first use in a place is less directly relevant, but may provide some insight into how quickly a person disengages from an activity or environment."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "response": [
+    {
+      "feature_name": "countscans",
+      "rank": 6,
+      "explanation": "The number of scanned WiFi access points (countscans) can be a strong proxy for a person's mobility and environmental exposure. Higher counts may indicate time spent in public or crowded places, while lower counts could suggest staying at home or in isolated environments. Changes in this feature over time could signal shifts in social engagement or withdrawal, which are important in assessing depression, anxiety, or agoraphobia. However, it does not directly indicate the type of location or the quality of social interaction, so it is not the most definitive feature."
+    },
+    {
+      "feature_name": "uniquedevices",
+      "rank": 7,
+      "explanation": "The number of unique access points (uniquedevices) is highly useful for mental health assessment as it reflects the diversity of environments a person is exposed to. A higher number suggests varied daily routines and potentially greater social interaction, while a consistently low number may indicate social isolation or restricted movement, which are key indicators in many mental health conditions. This feature is particularly valuable for monitoring changes in behavior over time."
+    },
+    {
+      "feature_name": "countscansmostuniquedevice",
+      "rank": 4,
+      "explanation": "The number of scans of the most scanned access point (countscansmostuniquedevice) can indicate how much time a person spends in a single location, such as home or work. While this can be useful for identifying routines or possible isolation, it is less informative on its own compared to the diversity of environments (uniquedevices) or overall mobility (countscans). It is best interpreted in combination with other features to understand patterns of behavior."
+    }
+  ]
+}
