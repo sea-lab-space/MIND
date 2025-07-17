@@ -78,11 +78,11 @@ export default function App() {
           </div>
           <FilterSelector/>
 
-          <div className={`flex flex-grow p-6 gap-6 overflow-y-auto ${!isDrillDown ? "flex-col w-full mx-auto" : ""}`}>
+          <div className={`flex flex-grow py-2 px-4 gap-4 overflow-y-auto ${!isDrillDown ? "flex-col w-full mx-auto" : ""}`}>
             <div className={`flex flex-col relative ${isDrillDown ? "w-1/3 h-full overflow-y-auto" : "w-full mx-auto"}`}>
               <div className="absolute left-8.5 top-4 h-full w-0.5 bg-[#d9d9d9] z-0" />
-              {/* Overview */}
-              <div className="bg-red-200/50 rounded p-4 mb-6 relative z-10">
+              {/* Overview bg-red-200/50 */}
+              <div className="rounded p-4 relative z-10">
                 <SectionTitle
                     title="Overview"
                     subtitle="test"
@@ -96,15 +96,15 @@ export default function App() {
                 </SectionTitle>
               </div>
 
-              {/* Data-driven Insights */}
-              <div className="bg-green-200/50 rounded p-4 mb-6 relative z-10">
+              {/* Data-driven Insights bg-green-200/50 */}
+              <div className="rounded p-4 mb-2 relative z-10">
                 <SectionTitle
                     title="Data-driven Insights"
                     subtitle="test"
                     isExpanded={expandedSections.insights}
                     onClick={() => toggleSection("insights")}
                 >
-                  <div className={`${isDrillDown ? "flex flex-col gap-6" : "grid grid-cols-1 sm:grid-cols-2 gap-6"}`}>
+                  <div className={`${isDrillDown ? "flex flex-col gap-4" : "grid grid-cols-1 sm:grid-cols-2 gap-4"}`}>
                     {insightCardData.map((card, index) => (
                         <div
                             key={card.key}
@@ -127,8 +127,8 @@ export default function App() {
                 </SectionTitle>
               </div>
 
-              {/* Patient Communication */}
-              <div className="bg-yellow-200/50 rounded p-4 relative z-10">
+              {/* Patient Communication bg-yellow-200/50  */}
+              <div className="rounded p-4 relative z-10">
                 <SectionTitle
                     title="Patient Communication"
                     subtitle="test"

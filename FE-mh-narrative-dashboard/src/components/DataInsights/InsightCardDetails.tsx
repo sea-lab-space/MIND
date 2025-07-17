@@ -9,8 +9,8 @@ export default function InsightCardDetail({
                                             insightCardData
                                           }: InsightCardDetailProps) {
   return (
-    <div className="space-y-6 pt-0 text-sm">
-      <div className="space-y-4">
+    <div className="space-y-2 pt-0 text-sm">
+      <div className="space-y-2">
         <div className="flex items-start gap-3">
           <div className="w-2 h-2 bg-gray-600 rounded-full mt-2 flex-shrink-0"></div>
           <div>

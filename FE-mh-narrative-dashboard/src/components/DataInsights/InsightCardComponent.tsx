@@ -29,10 +29,13 @@ export default function InsightCardComponent({
                                                  handleCardHeaderClick,
                                              }: InsightCardProps) {
     return (
-        <Card
-            className={`w-full min-w-[200px] transition-all duration-200 hover:shadow-md border text-left flex flex-col ${isInsightCardSelected ? "bg-gray-100 border-gray-300 ring-2 ring-blue-500" : "bg-white border-gray-200"}`}
+        <div
+            className={`w-full min-w-[200px] transition-all duration-200 rounded-xl px-3 py-2 text-left flex flex-col 
+    ${isInsightCardSelected
+                ? "bg-gray-100 border-gray-300 ring-2 ring-blue-500"
+                : "bg-white border-gray-200 shadow-sm hover:shadow-md"
+            }`}
         >
-            <CardHeader>
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                     {/* Left: Checkbox + Title */}
                     <div className="flex items-start gap-3">
@@ -59,19 +62,19 @@ export default function InsightCardComponent({
                     </div>
 
                     {/* Right: Drilldown Button */}
-                    <Button onClick={handleCardSelect} className="self-start sm:self-auto" variant="outline">
+                    <Button onClick={handleCardSelect} className="self-start sm:self-auto" variant="outline"   size="sm"
+                    >
                         <Search />
                     </Button>
                 </div>
-            </CardHeader>
 
             {isExpanded && (
-                <CardContent className="pt-0 space-y-6 text-left">
+                <div className="pt-0 space-y-2 text-left">
                     <InsightCardDetail insightCardData={insightCardData}/>
-                </CardContent>
+                </div>
             )}
 
-            <div className="flex items-center gap-1 pt-4 pl-5 pb-2 text-left justify-start">
+            <div className="flex items-center gap-1 pt-2 pl-5 text-left justify-start">
                 <span className="text-xs font-medium italic">Sources:</span>
                 <div className="flex items-center gap-2 ml-3">
                     {insightCardData.sources?.map((source, index) => (
@@ -81,6 +84,6 @@ export default function InsightCardComponent({
                     ))}
                 </div>
             </div>
-        </Card>
+        </div>
     );
 }

@@ -16,9 +16,9 @@ const Section: React.FC<SectionProps> = (props) => {
   } = props;
 
   return (
-      <div className="flex flex-col gap-4 w-full">
+      <div className="flex flex-col gap-1 w-full">
         {/* Header row with button after the title */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <Button
               size="icon"
               className="relative rounded-full bg-white shadow-md transition-all hover:bg-gray-100 hover:shadow-lg"
@@ -31,7 +31,7 @@ const Section: React.FC<SectionProps> = (props) => {
             />
           </Button>
 
-          <h2 className="text-xl font-semibold text-[#000000]">
+          <h2 className="text-lg font-semibold text-[#000000]">
             {title}
             <span className="text-lg text-[#000000] font-normal"> - {subtitle}</span>
           </h2>
