@@ -1,28 +1,42 @@
 from copy import deepcopy
 import os
+from typing import Literal
 import pandas as pd
-
 import sys
-project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print(project_root)
-sys.path.append(project_root)
+from pathlib import Path
+
+project_root = Path(__file__).parent.parent
+# print(f"Project root: {project_root}")
+sys.path.append(str(project_root))
+
+save_dir = project_root.parent
 
 from utils.date_filter import DATE_RANGE, filter_dates
 
-TIME_KEYWORDS = [":morning", ":afternoon", ":evening", ":night"]
+TIME_KEYWORDS = {
+    'finest': [":morning", ":afternoon", ":evening", ":night"],
+    'allday': [":allday"]
+}
 
 SEGMENT_TO_TIME = {
-    'morning': '05:59:59',    # 6AM
-    'afternoon': '11:59:59',  # 12PM (noon)
-    'evening': '17:59:59',    # 6PM
-    'night': '23:59:59'       # 12AM (midnight)
+    'finest': {
+        'morning': '05:59:59',    # 6AM
+        'afternoon': '11:59:59',  # 12PM (noon)
+        'evening': '17:59:59',    # 6PM
+        'night': '23:59:59'       # 12AM (midnight)
+    },
+    "allday": {
+        'allday': '12:00:00'  # Noon — representative time for allday
+    }
 }
 
 class PassiveFeatureLoader:
     global TIME_KEYWORDS 
     global SEGMENT_TO_TIME
 
-    def __init__(self, setName: str, featureName: str, includeFeatures: list, filterPID: list = None, interpolate: bool = True):
+    def __init__(self, setName: str, featureName: str, includeFeatures: list, filterPID: list = None, interpolate: bool = False, granularity: Literal["allday", "finest"] = "finest"):
+        self.granularity = granularity
+        print(self.granularity)
         self.setName, self.featureName = setName, featureName
         self.directory = os.path.join(project_root, "data_raw", "INS-W_" + setName, "FeatureData", featureName + ".csv")
         self.include_features = includeFeatures
@@ -58,7 +72,8 @@ class PassiveFeatureLoader:
 
         # Group by 'pid' and 'segment'; time and linear is essentially the same because the interval is assigned the same
         df[self.include_features] = df.groupby(['pid', 'segment'])[self.include_features].transform(
-            lambda x: x.interpolate(method='time', limit_direction='both')
+            lambda x: x.interpolate(
+                method='time', limit_direction='both')
         )
         # Reset the index to bring 'datetime' back as a column
         return df.reset_index()
@@ -76,7 +91,7 @@ class PassiveFeatureLoader:
 
         melted_data['segment'] = None
 
-        for time_segment in SEGMENT_TO_TIME.keys():
+        for time_segment in SEGMENT_TO_TIME[self.granularity].keys():
             time_suffix = ":" + time_segment
             mask = melted_data['variable'].str.endswith(time_suffix)
             melted_data.loc[mask, 'segment'] = time_segment
@@ -146,9 +161,12 @@ class PassiveFeatureLoader:
         df['date'] = pd.to_datetime(df['date'])
         df['datetime'] = df.apply(
             lambda row: row['date'].replace(
-                hour=int(SEGMENT_TO_TIME[row['segment']].split(':')[0]),
-                minute=int(SEGMENT_TO_TIME[row['segment']].split(':')[1]),
-                second=int(SEGMENT_TO_TIME[row['segment']].split(':')[2])
+                hour=int(SEGMENT_TO_TIME[self.granularity]
+                         [row['segment']].split(':')[0]),
+                minute=int(SEGMENT_TO_TIME[self.granularity]
+                           [row['segment']].split(':')[1]),
+                second=int(SEGMENT_TO_TIME[self.granularity]
+                           [row['segment']].split(':')[2])
             ),
             axis=1
         )
@@ -162,7 +180,7 @@ class PassiveFeatureLoader:
             if (
                 col.lower() in ['pid', 'date']
                 or (
-                    any(keyword in col.lower() for keyword in TIME_KEYWORDS)
+                    any(keyword in col.lower() for keyword in TIME_KEYWORDS[self.granularity])
                     and
                     not any(term in col.lower().split(":")[-1].split("_")
                             for term in ["norm", "dis"])
@@ -174,7 +192,7 @@ class PassiveFeatureLoader:
     def _include_features(self, df):
         columns = df.columns
         identifiers = [
-            feat + segment for feat in self.include_features for segment in TIME_KEYWORDS
+            feat + segment for feat in self.include_features for segment in TIME_KEYWORDS[self.granularity]
         ]
         use_columns = [col for col in columns if (self._get_usable_feature_name(col) in ['pid', 'date'] or any(
             feat.lower() == self._get_usable_feature_name(col).lower() for feat in identifiers))]
@@ -183,7 +201,7 @@ class PassiveFeatureLoader:
         return df[use_columns]
     
     def save_data(self):
-        self.data_long.to_csv(os.path.join(project_root, "data_processed", "INS-W_" + self.setName + "_" + self.featureName + ".csv"), index=False)
+        self.data_long.to_csv(os.path.join(save_dir, "data", f"INS-W_{self.setName}_{self.featureName}_{self.granularity}.csv"), index=False)
         
         
 # if __name__ == "__main__":
