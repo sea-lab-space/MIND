@@ -27,7 +27,8 @@ class PassiveFeatureLoader:
         self.directory = os.path.join(project_root, "data_raw", "INS-W_" + setName, "FeatureData", featureName + ".csv")
         self.include_features = includeFeatures
         self.data_raw = filter_dates(self._load_csv(filterPID), DATE_RANGE[int(setName)]['start'], DATE_RANGE[int(setName)]['end'])
-        self.data_long = self._process_data_long_form(interpolate)
+        self.data_filtered = self._filter_data(self.data_raw)
+        self.data_long = self._process_data_long_form(self.data_filtered, interpolate)
 
     def _load_csv(self, filterPID = None):
         df = pd.read_csv(self.directory, low_memory=False)
@@ -35,11 +36,15 @@ class PassiveFeatureLoader:
             return df[df['pid'].isin(filterPID)]
         else:
             return df
-        
-    def _process_data_long_form(self, interpolate: bool):
-        df = deepcopy(self.data_raw)
+    
+    def _filter_data(self, df_i):
+        df = deepcopy(df_i)
         df = self._exclude_features(df)
         df = self._include_features(df)
+        return df
+        
+    def _process_data_long_form(self, df_i, interpolate: bool):
+        df = deepcopy(df_i)
         df = self._pivot_features(df)
         df = self._attach_datetime(df)
         if interpolate:

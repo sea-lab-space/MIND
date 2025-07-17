@@ -11,7 +11,7 @@ DE_TASK_PROMPT = """
 
     You are asked to help them rank the usefulness of each feature in the dataset, and explain why. 
     The ranking should be on a 1-7 likert scale, where 1 is the least useful and 7 is the most useful.
-    The explaination should include how the feature map to mental health assessment, and how it might be interpreted.
+    The explanation should include how the feature map to mental health assessment, and how it might be interpreted.
 """
 
 
