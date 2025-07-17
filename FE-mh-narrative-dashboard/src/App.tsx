@@ -2,7 +2,6 @@ import InsightCardComponent from "@/components/DataInsights/InsightCardComponent
 import { useState, useRef } from "react";
 import Header from "./components/header";
 import SectionTitle from "./components/section";
-import { DatasourceIconTypes, type RetrospectOptions } from "./types/props";
 import DrilldownPanel from "./components/DrilldownPanel";
 import OverviewComponent from "@/components/Overview/OverviewComponent";
 import PatientCommunicationComponent from "@/components/PatientCommunication/PatientCommunicationComponent";
@@ -11,6 +10,7 @@ import { useWindowSize } from "usehooks-ts";
 import { Button } from "@/components/ui";
 import { Pencil } from "lucide-react";
 import {FilterSelector} from "@/components/FilterSelector";
+import {cardData, data, retrospectHorizon} from "@/data/data";
 
 const nameList = [
   "John Doe", "Jane Smith", "Mike Johnson", "Sarah Wilson", "David Brown",
@@ -18,13 +18,7 @@ const nameList = [
 ];
 
 const userName = "Ryan";
-const retrospectHorizon: RetrospectOptions = {
-  "Since last encounter": 14,
-  "Last month": 30,
-  "Last 3 months": 90,
-  "Last 6 months": 180,
-  "Last year": 365,
-};
+
 
 export default function App() {
   const [selectedInsightHeader, setSelectedInsightHeader] = useState<string[]>([]);
@@ -36,6 +30,8 @@ export default function App() {
     communication: false,
   });
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const insightCardData = data.insights;
+  const patientCommunicationData = data.patientCommunication;
 
   const toggleSection = (section: string) => {
     setExpandedSections((prev) => ({
@@ -65,39 +61,10 @@ export default function App() {
     }, 100);
   };
 
-  const cardData = [
-    {
-      key: "insight-1",
-      title: "Increased social activity, yet remains in a closed circle",
-      sources: [
-        { type: DatasourceIconTypes.measurementScore },
-        { type: DatasourceIconTypes.clinicalNotes },
-        { type: DatasourceIconTypes.clinicalTranscripts },
-      ],
-    },
-    {
-      key: "insight-2",
-      title: "Growing Activity Level Despite Persistent Fatigue",
-      sources: [
-        { type: DatasourceIconTypes.measurementScore },
-        { type: DatasourceIconTypes.clinicalNotes },
-      ],
-    },
-    {
-      key: "insight-3",
-      title: "Enhanced Cognitive Function and Focus",
-      sources: [
-        { type: DatasourceIconTypes.measurementScore },
-        { type: DatasourceIconTypes.clinicalNotes },
-        { type: DatasourceIconTypes.clinicalTranscripts },
-        { type: DatasourceIconTypes.passiveSensing },
-      ],
-    },
-  ];
 
-  const selectedInsightCardTitles = cardData
+  const selectedInsightCardTitles = insightCardData
       .filter((card) => selectedInsightHeader.includes(card.key))
-      .map((card) => card.title);
+      .map((card) => card.summaryTitle);
 
   return (
       <>
@@ -138,14 +105,15 @@ export default function App() {
                     onClick={() => toggleSection("insights")}
                 >
                   <div className={`${isDrillDown ? "flex flex-col gap-6" : "grid grid-cols-1 sm:grid-cols-2 gap-6"}`}>
-                    {cardData.map((card, index) => (
+                    {insightCardData.map((card, index) => (
                         <div
                             key={card.key}
                             ref={(el) => (cardRefs.current[index] = el)}
                             className="w-full"
                         >
                           <InsightCardComponent
-                              title={card.title}
+                              insightCardData={card}
+                              title={card.summaryTitle}
                               sources={card.sources}
                               isExpanded={expandedSections.insights}
                               isInsightHeaderSelected={selectedInsightHeader.includes(card.key)}

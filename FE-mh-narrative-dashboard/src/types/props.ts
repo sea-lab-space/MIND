@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from "react";
+import { Heart, Brain, Activity, Pill, History } from "lucide-react";
 
 export const DatasourceIconTypes = {
   passiveSensing: 'passive sensing',
@@ -38,3 +38,27 @@ export interface SectionProps {
   className?: string;
   action?: React.ReactNode;
 }
+
+export interface InsightExpandViewItem {
+  summarySentence: string;
+  dataPoints: Record<string, number>;
+  sources: { type: DatasourceIconType }[];
+}
+
+export interface InsightCardData {
+  key: string;
+  summaryTitle: string;
+  sources: { type: DatasourceIconType }[];
+  expandView: InsightExpandViewItem[];
+}
+
+
+export const iconMap: Record<string, React.ElementType> = {
+  heart: Heart,
+  brain: Brain,
+  activity: Activity,
+  medication: Pill,
+  history: History,
+
+  // Add more mappings as needed
+};

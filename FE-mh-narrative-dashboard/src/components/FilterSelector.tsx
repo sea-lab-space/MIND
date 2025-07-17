@@ -84,8 +84,8 @@ export function FilterSelector() {
                     className={cn(
                         "flex items-center rounded-2 transition-colors",
                         selected.includes(key)
-                            ? "bg-primary text-white hover:bg-primary/90"
-                            : "hover:bg-muted"
+                            ? "bg-gray-200 text-black hover:bg-gray-200"
+                            : "bg-white text-gray-700 hover:bg-gray-100"
                     )}
                 >
                     {icon}

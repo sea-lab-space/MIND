@@ -1,9 +1,15 @@
 // InsightCardDetail.tsx
-export interface InsightCardDetailProps {}
+import {type InsightCardData} from "@/types/props";
 
-export default function InsightCardDetail({}: InsightCardDetailProps) {
+export interface InsightCardDetailProps {
+  insightCardData: InsightCardData;
+}
+
+export default function InsightCardDetail({
+                                            insightCardData
+                                          }: InsightCardDetailProps) {
   return (
-    <div className="space-y-6 pt-0">
+    <div className="space-y-6 pt-0 text-sm">
       <div className="space-y-4">
         <div className="flex items-start gap-3">
           <div className="w-2 h-2 bg-gray-600 rounded-full mt-2 flex-shrink-0"></div>

@@ -4,10 +4,12 @@ import type { DatasourceIconType } from "../../types/props";
 import DataSourceIcon from "../DatasourceIcon";
 import { Button } from "../ui/button";
 import { Search } from "lucide-react";
+import { type InsightCardData } from "../../types/props";
 
 interface InsightCardProps {
     isExpanded?: boolean;
     title?: string;
+    insightCardData: InsightCardData;
     sources: Array<{
         type: DatasourceIconType;
     }>;
@@ -20,8 +22,7 @@ interface InsightCardProps {
 
 export default function InsightCardComponent({
                                                  isExpanded,
-                                                 title = "Growing Activity Level Despite Persistent Fatigue",
-                                                 sources,
+                                                 insightCardData,
                                                  isInsightHeaderSelected = false,
                                                  isInsightCardSelected = false,
                                                  handleCardSelect,
@@ -31,12 +32,12 @@ export default function InsightCardComponent({
         <Card
             className={`w-full min-w-[200px] transition-all duration-200 hover:shadow-md border text-left flex flex-col ${isInsightCardSelected ? "bg-gray-100 border-gray-300 ring-2 ring-blue-500" : "bg-white border-gray-200"}`}
         >
-            <CardHeader className="pb-4">
+            <CardHeader>
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                     {/* Left: Checkbox + Title */}
                     <div className="flex items-start gap-3">
                         <div
-                            className="relative w-5 h-5 min-w-[20px] min-h-[20px] max-w-[20px] max-h-[20px] cursor-pointer mt-[3px]"
+                            className="relative w-5 h-5 min-w-[20px] min-h-[20px] max-w-[20px] max-h-[20px] cursor-pointer mt-[1px]"
                             onClick={(e) => {
                                 e.stopPropagation();
                                 handleCardHeaderClick?.();
@@ -52,8 +53,8 @@ export default function InsightCardComponent({
                                 )}
                             </div>
                         </div>
-                        <h2 className="text-lg font-bold text-gray-900 leading-tight">
-                            {title}
+                        <h2 className="text font-bold text-gray-900 leading-tight">
+                            {insightCardData.summaryTitle}
                         </h2>
                     </div>
 
@@ -66,14 +67,14 @@ export default function InsightCardComponent({
 
             {isExpanded && (
                 <CardContent className="pt-0 space-y-6 text-left">
-                    <InsightCardDetail />
+                    <InsightCardDetail insightCardData={insightCardData}/>
                 </CardContent>
             )}
 
-            <div className="flex items-center gap-1 pt-4 pl-5 pb-4 text-left justify-start">
+            <div className="flex items-center gap-1 pt-4 pl-5 pb-2 text-left justify-start">
                 <span className="text-xs font-medium italic">Sources:</span>
                 <div className="flex items-center gap-2 ml-3">
-                    {sources.map((source, index) => (
+                    {insightCardData.sources?.map((source, index) => (
                         <div key={index} className="flex items-center">
                             <DataSourceIcon iconType={source.type} />
                         </div>
