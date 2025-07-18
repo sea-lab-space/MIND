@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from kb.data_description.survey_score import PHQ4, PSS4, PANAS, PANAS_POS, PANAS_NEG
+from discoverer.data_description.survey_score import PHQ4, PSS4, PANAS, PANAS_POS, PANAS_NEG
 from kb.data_description.bluetooth import 
 
 class DataModalities(BaseModel):
