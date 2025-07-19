@@ -17,3 +17,9 @@ Sync dependencies:
 `uv sync`
 
 Remember to add packages using uv (if not possible, use uv pip).
+
+
+
+## Data
+
+* The ema data is stored in separate files because the times does not align with each data: each test is administered at different times.

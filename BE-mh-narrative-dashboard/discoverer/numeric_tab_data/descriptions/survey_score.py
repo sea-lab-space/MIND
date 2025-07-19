@@ -4,6 +4,14 @@ Name: PHQ-4 (Patient Health Questionnaire 4)
 Description: A 4-item scale assessing (a) mental health, (b) anxiety, and (c) depression. Higher values indicate higher risk of mental health, anxiety, and depression.
 """
 
+PHQ4_ANXIETY = """
+Subscore about anxiety in PHQ4, range from 0 to 3. Higher values indicate higher risk of anxiety.
+"""
+
+PHQ4_DEPRESSION = """
+Subscore about depression in PHQ4, range from 0 to 3. Higher values indicate higher risk of depression.
+"""
+
 PSS4 = """
 Name: PSS-4 (Perceived Stress Scale 4)
 

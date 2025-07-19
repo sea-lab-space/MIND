@@ -18,7 +18,7 @@ LOCATION_TOTAL_DISTANCE = """
 Total distance traveled in a time segment in meters.
 """
 
-LOCATION_DURATION_IN_LOCAMP_EXERCISE = """
+LOCATION_DURATION_IN_EXERCISE = """
 Time spent at the location labeled as 'exercise' in minutes.
 """
 

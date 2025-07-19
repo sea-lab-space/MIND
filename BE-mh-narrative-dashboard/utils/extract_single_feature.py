@@ -1,14 +1,22 @@
-from typing import Literal
+from typing import Dict, List, Literal
 import pandas as pd
 from pathlib import Path
 import sys, os
+
+from pydantic import BaseModel
 
 project_root = Path(__file__).parent.parent
 # print(f"Project root: {project_root}")
 sys.path.append(str(project_root))
 
+class FeatureInputType(BaseModel):
+    modality_type: Literal['passive sensing', 'survey']
+    modality_source: str
+    feature_name: str
+    data: List[Dict]
 
-def feature_transform(pid: str, granularity: Literal['finest', 'allday'] = 'allday'):
+
+def feature_transform(pid: str, granularity: Literal['finest', 'allday'] = 'allday') -> List[FeatureInputType]:
     directory = f'{project_root}/data/'
     # list directories
     files = os.listdir(directory)
@@ -30,8 +38,16 @@ def feature_transform(pid: str, granularity: Literal['finest', 'allday'] = 'alld
             prompt_data = df[[date_col_name, col]]
             # if len(prompt_data) != 70: # 10 weeks
             #     print(col)
+            if "survey" in file:
+                feature_type = "survey"
+                feature_source = "survey"
+            else:
+                feature_type = "passive sensing"
+                feature_source = file.split('_')[2]
             feature_list.append(
                 {
+                    'modality_type': feature_type,
+                    'modality_source': feature_source,
                     'feature_name': col,
                     'data': prompt_data.to_dict(orient='records'),
                 }
