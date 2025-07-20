@@ -10,158 +10,152 @@
     "description": "Mei Lin is a 20-year-old first-generation college student of Asian descent, currently studying biology at a large public university. She comes from a low-income background, working part-time on campus to support herself financially, which leaves her little time for rest or social activities. As the first in her family to attend college, Mei often feels immense pressure to succeed academically and make her parents proud. She struggles with persistent feelings of isolation, impostor syndrome, and guilt for not being able to support her family more. Recently, she has been experiencing low energy, difficulty concentrating, and trouble sleeping\u9225\u6515ymptoms that have gradually intensified over the past semester. Mei tends to internalize her struggles, fearing she might burden others or confirm cultural stigmas around mental health. Though high-achieving and thoughtful, she is quietly battling depression, uncertain of how to ask for help or where to start.",
     "medication": [
       {
-        "date": "2020-05-15",
-        "medication": "Loratadine",
-        "dosage": "10 mg",
+        "date": "2019-09-12",
+        "medication": "Sertraline",
+        "dosage": "25 mg",
         "frequency": "Once daily"
       },
       {
-        "date": "2020-06-18",
+        "date": "2020-04-15",
         "medication": "Ferrous sulfate",
         "dosage": "325 mg",
-        "frequency": "Once daily"
+        "frequency": "Once daily with food"
       },
       {
-        "date": "2020-09-10",
-        "medication": "Benzoyl peroxide 5% gel",
-        "dosage": "Apply thin layer",
+        "date": "2020-10-10",
+        "medication": "Cholecalciferol (Vitamin D3)",
+        "dosage": "2000 IU",
         "frequency": "Once daily"
-      },
-      {
-        "date": "2020-11-20",
-        "medication": "Olopatadine ophthalmic solution 0.1%",
-        "dosage": "1 drop in each eye",
-        "frequency": "Twice daily"
       }
     ],
     "encounters": [
       {
-        "date": "2019-08-15",
+        "date": "2018-09-10",
         "type": "Office Visit",
-        "medical_condition": "Routine college entrance physical",
-        "ICD_10_CM": "Z00.00",
-        "CPT_code": "99385",
-        "notes": "Mei Lin, a 20-year-old female, presents for a routine physical examination required for college entrance. She reports no significant past medical history. She is a first-generation college student, recently moved to campus, and is adjusting to her new environment. She denies any acute complaints. Vitals are within normal limits. Physical exam is unremarkable. She is advised on healthy lifestyle habits, importance of sleep, and stress management as she transitions to college life. Immunizations are up to date. She is encouraged to establish care with student health services for ongoing support."
-      },
-      {
-        "date": "2019-10-02",
-        "type": "Office Visit",
-        "medical_condition": "Upper respiratory infection",
-        "ICD_10_CM": "J06.9",
+        "medical_condition": "Seasonal Allergic Rhinitis",
+        "ICD_10_CM": "J30.2",
         "CPT_code": "99213",
-        "notes": "Mei presents with a 4-day history of sore throat, nasal congestion, and mild cough. She denies fever, shortness of breath, or chest pain. She is currently managing a full course load and working part-time, which she notes has been stressful. On exam, she has mild pharyngeal erythema and clear nasal discharge. Lungs are clear. She is diagnosed with a viral upper respiratory infection and advised on supportive care, hydration, and rest. She is reminded to monitor for worsening symptoms and to return if not improving."
+        "notes": "Mei Lin, a 17-year-old female, presents for evaluation of nasal congestion, sneezing, and itchy eyes that have persisted for the past two weeks. She reports these symptoms occur every fall, especially when she is outdoors on campus. No fever, cough, or shortness of breath. She denies any history of asthma or eczema. On exam, nasal mucosa is pale and boggy, with clear discharge. Lungs are clear to auscultation. Mei is a first-generation college student, recently started her freshman year, and is adjusting to campus life. She expresses concern about missing classes due to her symptoms. Discussed environmental control measures and started on a non-sedating antihistamine. Advised to follow up if symptoms worsen or if she develops wheezing or shortness of breath."
       },
       {
-        "date": "2019-11-20",
+        "date": "2018-12-05",
         "type": "Office Visit",
-        "medical_condition": "Tension headache",
+        "medical_condition": "Acute Pharyngitis",
+        "ICD_10_CM": "J02.9",
+        "CPT_code": "99213",
+        "notes": "Mei presents with a sore throat, mild fever, and difficulty swallowing for the past three days. She denies cough, runny nose, or ear pain. No sick contacts reported. On exam, pharynx is erythematous without exudate, tonsils not enlarged, no cervical lymphadenopathy. Rapid strep test is negative. Advised supportive care with warm fluids, throat lozenges, and acetaminophen for discomfort. Discussed signs of worsening infection and when to return. Mei appears somewhat withdrawn and tired, but attributes this to finals week stress."
+      },
+      {
+        "date": "2019-03-15",
+        "type": "Office Visit",
+        "medical_condition": "Mild Acne Vulgaris",
+        "ICD_10_CM": "L70.0",
+        "CPT_code": "99212",
+        "notes": "Mei is seen for concerns about mild acne on her forehead and chin, which has worsened since starting college. She has tried over-the-counter benzoyl peroxide with minimal improvement. No history of cystic lesions or scarring. On exam, scattered comedones and a few papules noted. No nodules or cysts. Discussed skin care regimen, importance of gentle cleansing, and prescribed topical adapalene. Advised to avoid picking at lesions. Mei expresses some embarrassment about her skin, especially during social events."
+      },
+      {
+        "date": "2019-06-20",
+        "type": "Office Visit",
+        "medical_condition": "Tension-Type Headache",
         "ICD_10_CM": "G44.209",
         "CPT_code": "99213",
-        "notes": "Mei reports frequent headaches over the past two weeks, described as a dull, bilateral pressure, worse in the evenings after studying. She attributes this to increased academic stress and lack of sleep. She denies visual changes, nausea, or neurological symptoms. Physical exam is normal. She is counseled on sleep hygiene, regular meals, hydration, and stress reduction techniques. Over-the-counter acetaminophen is recommended as needed. She is encouraged to seek support if stress becomes overwhelming."
+        "notes": "Mei reports intermittent headaches over the past month, described as a dull, bilateral pressure, often occurring in the late afternoon or evening. She denies visual changes, nausea, vomiting, or photophobia. No family history of migraines. She attributes headaches to long hours of studying and working part-time. On exam, no focal neurological deficits. Advised on sleep hygiene, regular meals, hydration, and stress management techniques. Provided handout on relaxation exercises. Mei appears anxious about her academic performance and balancing work commitments."
       },
       {
-        "date": "2020-01-10",
+        "date": "2019-09-12",
         "type": "Office Visit",
-        "medical_condition": "Mild depressive episode",
-        "ICD_10_CM": "F32.0",
+        "medical_condition": "Generalized Anxiety Disorder",
+        "ICD_10_CM": "F41.1",
         "CPT_code": "99214",
-        "notes": "Mei presents with low mood, decreased energy, and difficulty concentrating, which have persisted for several weeks. She reports feeling isolated and overwhelmed by academic and financial pressures. She denies suicidal ideation but admits to trouble sleeping and loss of interest in activities she previously enjoyed. She is hesitant to discuss her feelings with family due to cultural stigma. PHQ-9 score indicates mild depression. She is provided psychoeducation about depression, encouraged to consider counseling services, and given resources for student mental health support. Follow-up is scheduled in 4 weeks."
+        "notes": "Mei presents with complaints of persistent worry, difficulty relaxing, and frequent muscle tension. She reports feeling overwhelmed by academic and financial pressures, and has trouble falling asleep most nights. She denies panic attacks, but admits to feeling restless and irritable. No suicidal ideation. On mental status exam, Mei is cooperative but appears tense and guarded. Discussed diagnosis of generalized anxiety disorder, provided psychoeducation, and reviewed coping strategies. Offered referral to campus counseling services, which Mei is hesitant to accept due to cultural stigma and concerns about confidentiality. Encouraged follow-up and open communication about her mental health."
       },
       {
-        "date": "2020-02-07",
+        "date": "2019-11-18",
+        "type": "Office Visit",
+        "medical_condition": "Upper Respiratory Infection",
+        "ICD_10_CM": "J06.9",
+        "CPT_code": "99213",
+        "notes": "Mei presents with nasal congestion, sore throat, and mild cough for four days. No fever, shortness of breath, or chest pain. On exam, mild erythema of the pharynx, clear nasal discharge, lungs clear. Diagnosis of viral URI made. Advised supportive care, rest, and fluids. Mei appears fatigued and mentions difficulty keeping up with coursework due to illness. Briefly discussed stress management and importance of self-care during illness."
+      },
+      {
+        "date": "2020-01-22",
         "type": "Office Visit",
         "medical_condition": "Insomnia",
         "ICD_10_CM": "G47.00",
-        "CPT_code": "99213",
-        "notes": "Mei returns with ongoing sleep difficulties, including trouble falling and staying asleep. She reports increased academic workload and persistent worry about her performance and family expectations. She denies use of caffeine or stimulants. Sleep hygiene is reviewed in detail, including establishing a regular bedtime routine, limiting screen time before bed, and creating a restful environment. She is encouraged to practice relaxation techniques and to follow up if symptoms persist or worsen."
-      },
-      {
-        "date": "2020-03-12",
-        "type": "Office Visit",
-        "medical_condition": "Acute pharyngitis",
-        "ICD_10_CM": "J02.9",
-        "CPT_code": "99213",
-        "notes": "Mei presents with sore throat, mild fever, and fatigue for 2 days. She is concerned about missing classes and work. Exam reveals mild erythema of the pharynx without exudate. Rapid strep test is negative. She is diagnosed with viral pharyngitis and advised on supportive care. She is reminded to rest and stay hydrated. The provider checks in on her mental health, and Mei admits to ongoing stress but is not ready to seek counseling. She is encouraged to reach out if she needs support."
-      },
-      {
-        "date": "2020-04-20",
-        "type": "Office Visit",
-        "medical_condition": "Generalized anxiety disorder",
-        "ICD_10_CM": "F41.1",
         "CPT_code": "99214",
-        "notes": "Mei reports persistent anxiety, excessive worry about academic performance, and difficulty relaxing. She describes muscle tension, restlessness, and occasional palpitations. She continues to struggle with sleep and concentration. She is open to discussing mental health more and is screened for anxiety, scoring high on the GAD-7. Psychoeducation is provided, and she is referred to campus counseling services. She is encouraged to practice mindfulness and relaxation exercises. Follow-up is planned in 1 month."
+        "notes": "Mei reports ongoing difficulty falling and staying asleep for the past two months, with frequent nighttime awakenings and early morning waking. She feels tired during the day and has trouble concentrating in class. She attributes her insomnia to academic stress and worries about her family's financial situation. No caffeine or stimulant use. On review of systems, denies snoring, restless legs, or nightmares. Discussed sleep hygiene, cognitive behavioral strategies, and the impact of stress on sleep. Provided handout and encouraged follow-up. Mei is reluctant to try medication and prefers non-pharmacologic approaches."
       },
       {
-        "date": "2020-05-15",
+        "date": "2020-03-10",
         "type": "Office Visit",
-        "medical_condition": "Allergic rhinitis",
-        "ICD_10_CM": "J30.9",
-        "CPT_code": "99213",
-        "notes": "Mei presents with nasal congestion, sneezing, and itchy eyes, worse in the spring. She has no fever or cough. Exam shows boggy nasal turbinates and clear discharge. She is diagnosed with allergic rhinitis and started on a non-sedating antihistamine. Environmental control measures are discussed. She is reminded to continue self-care and to follow up for ongoing mental health support as needed."
+        "medical_condition": "Mild Depressive Episode",
+        "ICD_10_CM": "F32.0",
+        "CPT_code": "99214",
+        "notes": "Mei presents with low mood, decreased energy, and loss of interest in activities she previously enjoyed. She reports difficulty concentrating, feelings of guilt about not being able to help her family more, and social withdrawal. No suicidal ideation or psychotic symptoms. She is hesitant to discuss her feelings, expressing concern about burdening others and cultural stigma. On mental status exam, Mei is tearful at times, with restricted affect. Discussed diagnosis of depression, provided psychoeducation, and reviewed options for therapy and support. Offered referral to campus mental health services and encouraged regular follow-up. Emphasized that seeking help is a sign of strength, not weakness."
       },
       {
-        "date": "2020-06-18",
+        "date": "2020-04-15",
         "type": "Office Visit",
-        "medical_condition": "Iron deficiency anemia",
+        "medical_condition": "Iron Deficiency Anemia",
         "ICD_10_CM": "D50.9",
         "CPT_code": "99213",
-        "notes": "Mei reports increased fatigue and occasional dizziness. She has heavy menstrual periods. Labs reveal mild iron deficiency anemia. She is started on oral iron supplementation and counseled on dietary sources of iron. She is advised to monitor for side effects and to return for repeat labs in 3 months. The provider checks in on her mood, and Mei reports some improvement with counseling support."
+        "notes": "Mei reports increased fatigue, lightheadedness, and occasional palpitations. She has a history of heavy menstrual periods. Recent labs show low hemoglobin and ferritin levels consistent with iron deficiency anemia. On exam, conjunctivae are pale, heart rate is mildly elevated. Discussed dietary sources of iron, started oral iron supplementation, and advised on potential gastrointestinal side effects. Recommended follow-up labs in 2 months. Mei expresses concern about missing classes due to fatigue and is encouraged to prioritize her health."
       },
       {
-        "date": "2020-07-22",
+        "date": "2020-06-02",
         "type": "Office Visit",
-        "medical_condition": "Adjustment disorder with mixed anxiety and depressed mood",
-        "ICD_10_CM": "F43.23",
+        "medical_condition": "Adjustment Disorder with Depressed Mood",
+        "ICD_10_CM": "F43.21",
         "CPT_code": "99214",
-        "notes": "Mei returns for follow-up, reporting ongoing adjustment difficulties related to the COVID-19 pandemic, remote learning, and family financial stress. She describes fluctuating mood, anxiety, and occasional tearfulness. She is actively engaged in counseling and finds it helpful, though she still struggles with guilt and self-doubt. Coping strategies and self-care are reinforced. She is encouraged to maintain regular contact with her support network and to continue therapy."
+        "notes": "Mei returns for follow-up, reporting ongoing sadness, difficulty adjusting to remote learning due to the COVID-19 pandemic, and increased feelings of isolation. She misses her campus community and feels disconnected from friends and family. She continues to struggle with guilt and self-doubt. No suicidal ideation. On exam, Mei is subdued, with low energy and poor eye contact. Discussed coping strategies for adjustment, encouraged virtual social connections, and reviewed mental health resources. Provided reassurance and scheduled follow-up to monitor progress."
       },
       {
-        "date": "2020-09-10",
-        "type": "Office Visit",
-        "medical_condition": "Acne vulgaris",
-        "ICD_10_CM": "L70.0",
-        "CPT_code": "99213",
-        "notes": "Mei presents with mild to moderate acne, which she finds distressing and believes is worsened by stress and mask-wearing. Exam reveals comedones and a few inflammatory papules on the face. She is started on topical benzoyl peroxide and advised on gentle skin care. The impact of stress on skin is discussed. She is reminded to continue mental health support and to return if acne worsens."
-      },
-      {
-        "date": "2020-10-15",
-        "type": "Office Visit",
-        "medical_condition": "Recurrent depressive disorder, current episode moderate",
-        "ICD_10_CM": "F33.1",
-        "CPT_code": "99214",
-        "notes": "Mei reports a recurrence of depressive symptoms, including persistent low mood, anhedonia, fatigue, and difficulty concentrating. She is struggling to keep up with academic demands and feels isolated from peers. She denies suicidal ideation but expresses hopelessness about the future. She is actively participating in counseling and is open to considering medication if symptoms do not improve. The risks and benefits of antidepressant therapy are discussed. She is encouraged to maintain regular follow-up and to reach out if her symptoms worsen."
-      },
-      {
-        "date": "2020-11-20",
-        "type": "Office Visit",
-        "medical_condition": "Seasonal allergic conjunctivitis",
-        "ICD_10_CM": "H10.45",
-        "CPT_code": "99213",
-        "notes": "Mei presents with itchy, watery eyes and mild redness, worse in the mornings. She has a history of seasonal allergies. Exam confirms conjunctival injection without discharge. She is prescribed antihistamine eye drops and advised on allergen avoidance. She is reminded to continue self-care and to seek support for ongoing mental health concerns."
-      },
-      {
-        "date": "2021-01-05",
-        "type": "Office Visit",
-        "medical_condition": "Social anxiety disorder",
-        "ICD_10_CM": "F40.10",
-        "CPT_code": "99214",
-        "notes": "Mei discusses ongoing difficulty with social interactions, particularly in group settings and presentations. She experiences significant anxiety, sweating, and palpitations before social events. She is working with a counselor on exposure and cognitive-behavioral strategies. She is encouraged to continue therapy and to practice skills learned in sessions. The provider reassures her that progress may be gradual and that support is available."
-      },
-      {
-        "date": "2021-02-18",
+        "date": "2020-07-20",
         "type": "Office Visit",
         "medical_condition": "Dysmenorrhea",
         "ICD_10_CM": "N94.6",
         "CPT_code": "99213",
-        "notes": "Mei reports painful menstrual cramps interfering with her daily activities. She has tried over-the-counter NSAIDs with partial relief. Menstrual history is otherwise unremarkable. She is counseled on regular NSAID use at the onset of symptoms, use of heat therapy, and tracking her cycles. She is advised to return if symptoms worsen or if she develops new concerns. The provider checks in on her mental health, and Mei reports ongoing therapy and gradual improvement in mood and coping."
+        "notes": "Mei presents with complaints of severe menstrual cramps interfering with her daily activities. She reports pain for the first two days of her period, associated with nausea and fatigue. No abnormal bleeding or pelvic masses on exam. Discussed use of NSAIDs, heating pads, and lifestyle modifications. Provided education on menstrual health and when to seek further evaluation. Mei is encouraged to track her symptoms and follow up if pain worsens or new symptoms develop."
       },
       {
-        "date": "2021-03-10",
+        "date": "2020-09-01",
         "type": "Office Visit",
-        "medical_condition": "Major depressive disorder, recurrent, in partial remission",
-        "ICD_10_CM": "F33.41",
+        "medical_condition": "Major Depressive Disorder, Recurrent, Moderate",
+        "ICD_10_CM": "F33.1",
+        "CPT_code": "99215",
+        "notes": "Mei returns for follow-up, reporting worsening depressive symptoms, including persistent sadness, hopelessness, and difficulty functioning academically. She has missed several classes and is struggling to keep up with assignments. She denies suicidal ideation but feels overwhelmed and isolated. On mental status exam, Mei is withdrawn, with flat affect and slow speech. Discussed treatment options, including therapy and possible medication. Mei is open to counseling but remains hesitant about medication. Provided information on campus mental health services and crisis resources. Scheduled close follow-up to monitor safety and progress."
+      },
+      {
+        "date": "2020-10-10",
+        "type": "Office Visit",
+        "medical_condition": "Vitamin D Deficiency",
+        "ICD_10_CM": "E55.9",
+        "CPT_code": "99213",
+        "notes": "Mei presents for follow-up of recent lab work, which reveals low vitamin D levels. She reports spending most of her time indoors due to remote learning and work commitments. No bone pain or muscle weakness. Discussed importance of vitamin D for bone health, started supplementation, and advised on safe sun exposure. Encouraged regular physical activity and follow-up labs in 3 months. Mei expresses concern about her overall health and fatigue, which may be multifactorial."
+      },
+      {
+        "date": "2020-11-18",
+        "type": "Office Visit",
+        "medical_condition": "Social Anxiety Disorder",
+        "ICD_10_CM": "F40.10",
         "CPT_code": "99214",
-        "notes": "Mei presents for follow-up regarding her depression. She reports some improvement in mood and energy since starting therapy and implementing self-care strategies, though she continues to experience occasional low days and difficulty with motivation. She is maintaining her academic responsibilities and has reconnected with a few friends, which has helped her sense of isolation. She is not currently taking medication but is open to it if symptoms worsen. The provider commends her progress and encourages continued engagement with counseling and support networks. Mei is reminded that recovery is a process and that setbacks are normal. She is scheduled for follow-up in 2 months."
+        "notes": "Mei reports increased anxiety in social situations, particularly during virtual group projects and presentations. She fears being judged by peers and worries about making mistakes. She avoids participating in discussions and feels isolated. No panic attacks or avoidance of all social contact. On mental status exam, Mei is anxious, with hesitant speech. Discussed diagnosis of social anxiety disorder, provided psychoeducation, and reviewed cognitive behavioral strategies. Offered referral to therapy, which Mei is considering. Encouraged gradual exposure to social situations and self-compassion."
+      },
+      {
+        "date": "2021-01-12",
+        "type": "Office Visit",
+        "medical_condition": "Gastroesophageal Reflux Disease (GERD)",
+        "ICD_10_CM": "K21.9",
+        "CPT_code": "99213",
+        "notes": "Mei presents with complaints of heartburn and regurgitation, especially after late-night studying and meals. She denies weight loss, dysphagia, or GI bleeding. On exam, abdomen is soft, non-tender. Discussed dietary modifications, avoidance of late meals, and started trial of a proton pump inhibitor. Advised to follow up if symptoms persist or worsen. Mei is encouraged to manage stress, as it may contribute to her symptoms."
+      },
+      {
+        "date": "2021-03-15",
+        "type": "Office Visit",
+        "medical_condition": "Major Depressive Disorder, Recurrent, Moderate",
+        "ICD_10_CM": "F33.1",
+        "CPT_code": "99215",
+        "notes": "Mei returns for follow-up of her depression. She reports some improvement in mood with regular counseling sessions, but continues to struggle with low energy, poor concentration, and feelings of inadequacy. She is attending therapy regularly and has started journaling as a coping strategy. No suicidal ideation. On mental status exam, Mei is more engaged, though affect remains subdued. Discussed ongoing treatment plan, importance of self-care, and maintaining support systems. Encouraged continued therapy and regular follow-up. Mei is reminded that recovery is a gradual process and that she is not alone in her struggles."
       }
     ]
   },
@@ -176,21 +170,21 @@
     "description": "Liam is a 21-year-old undergraduate student studying computer science at a large urban university. He immigrated to the U.S. with his family from Eastern Europe at the age of 13. While fluent in English, he often feels caught between two cultures, struggling to meet both his family's expectations and the demands of academic life. Financial stress is a constant\u9225\u6508e works part-time in a campus IT help desk to support himself, but still relies on scholarships and student aid. Over the past year, Liam has experienced increasing symptoms of depression: persistent fatigue, difficulty concentrating on coursework, feelings of isolation, and a growing sense of hopelessness about his future. Although he is usually quiet and reserved, those close to him have noticed a withdrawal from social activities and a change in demeanor. Liam has not yet sought formal help, partly due to cultural stigma and partly because he worries about the cost and confidentiality of mental health services.",
     "medication": [
       {
-        "date": "2020-09-01",
-        "medication": "Vitamin D3",
-        "dosage": "2000 IU daily",
-        "frequency": "Once daily"
-      },
-      {
-        "date": "2020-10-20",
-        "medication": "Fluticasone nasal spray",
-        "dosage": "1 spray per nostril",
-        "frequency": "Once daily"
-      },
-      {
-        "date": "2020-12-05",
+        "date": "2021-02-15",
         "medication": "Sertraline",
         "dosage": "50 mg",
+        "frequency": "Once daily"
+      },
+      {
+        "date": "2020-09-30",
+        "medication": "Vitamin D3",
+        "dosage": "1000 IU",
+        "frequency": "Once daily"
+      },
+      {
+        "date": "2020-12-18",
+        "medication": "Cetirizine",
+        "dosage": "10 mg",
         "frequency": "Once daily"
       }
     ],
@@ -201,127 +195,127 @@
         "medical_condition": "Routine Adolescent Health Exam",
         "ICD_10_CM": "Z00.00",
         "CPT_code": "99394",
-        "notes": "Liam Novak, a 19-year-old male, presented for a routine adolescent health exam as part of his university's health requirements. He reports no acute complaints at this time. He is a full-time undergraduate student, recently immigrated from Eastern Europe, and is adjusting to life in the U.S. He describes himself as generally healthy, with no significant past medical history. He denies tobacco, alcohol, or drug use. He is up to date on immunizations. Physical exam is unremarkable. Discussed importance of regular exercise, balanced diet, and sleep hygiene, especially given the demands of college life. Provided information on campus health resources. No mental health concerns were raised at this visit."
+        "notes": "Liam Novak, a 21-year-old male, presented for a routine adolescent health exam as part of his university's health requirements. He reports no significant medical history and is up to date on immunizations. He recently immigrated from Eastern Europe and is adjusting to life in the U.S. He denies any acute complaints. Physical exam is unremarkable. Discussed importance of regular exercise, balanced diet, and sleep hygiene, especially given the demands of college life. No signs of acute distress. Patient appears reserved but cooperative. No mental health concerns raised at this time. Plan: Continue routine care, follow up as needed."
       },
       {
-        "date": "2018-12-03",
+        "date": "2018-12-05",
         "type": "Office Visit",
         "medical_condition": "Acute Pharyngitis",
         "ICD_10_CM": "J02.9",
         "CPT_code": "99213",
-        "notes": "Liam presented with a sore throat, mild fever, and fatigue for the past 3 days. He denies cough, shortness of breath, or ear pain. On examination, pharynx is erythematous without exudate, no cervical lymphadenopathy. Rapid strep test negative. Advised supportive care with fluids, rest, and acetaminophen as needed. Discussed signs of worsening infection and when to return. No concerns about mood or mental health raised at this time."
+        "notes": "Liam presents with a sore throat, mild fever, and fatigue for the past three days. Denies cough or shortness of breath. On exam, pharynx is erythematous without exudate, no cervical lymphadenopathy. Rapid strep test negative. Advised supportive care with fluids, rest, and acetaminophen as needed. Discussed signs of worsening infection and when to return. Patient appears somewhat tired but otherwise well. No mental health concerns discussed."
       },
       {
-        "date": "2019-02-15",
+        "date": "2019-03-15",
         "type": "Office Visit",
         "medical_condition": "Mild Acne Vulgaris",
         "ICD_10_CM": "L70.0",
         "CPT_code": "99213",
-        "notes": "Liam reports increased facial acne over the past few months, likely related to stress and dietary changes since starting college. Exam reveals mild comedonal and inflammatory lesions on the forehead and cheeks. No cystic lesions. Discussed skin hygiene, avoidance of harsh scrubbing, and prescribed topical benzoyl peroxide. Advised follow-up if no improvement. Patient appears somewhat withdrawn but denies mood changes when asked."
+        "notes": "Liam reports increased facial acne, which he finds embarrassing. He is concerned about appearance and social interactions. On exam, mild comedonal and inflammatory lesions on the face. No scarring. Discussed skin hygiene, over-the-counter benzoyl peroxide, and stress management. Patient is quiet and somewhat withdrawn, but engages in discussion. No overt signs of depression or anxiety noted at this time."
       },
       {
-        "date": "2019-05-20",
+        "date": "2019-08-22",
         "type": "Office Visit",
         "medical_condition": "Allergic Rhinitis",
         "ICD_10_CM": "J30.9",
         "CPT_code": "99213",
-        "notes": "Liam presents with nasal congestion, sneezing, and itchy eyes, worse in the spring. No fever or sinus pain. Exam shows boggy nasal turbinates and clear nasal discharge. Diagnosed with allergic rhinitis. Recommended over-the-counter antihistamines and nasal saline rinses. Discussed environmental control measures. No acute distress noted. Briefly discussed stress of finals; patient reports feeling 'a bit overwhelmed' but attributes it to normal academic pressure."
+        "notes": "Liam presents with nasal congestion, sneezing, and itchy eyes, worse during late summer. No fever or cough. Exam reveals boggy nasal turbinates and clear nasal discharge. Diagnosed with allergic rhinitis. Recommended non-sedating antihistamines and environmental control measures. Patient reports increased stress due to upcoming semester and family expectations. Briefly discussed stress management; patient declined further mental health discussion."
       },
       {
-        "date": "2019-10-01",
+        "date": "2019-11-10",
         "type": "Office Visit",
-        "medical_condition": "Adjustment Disorder with Anxiety",
-        "ICD_10_CM": "F43.22",
+        "medical_condition": "Adjustment Disorder with Depressed Mood",
+        "ICD_10_CM": "F43.21",
         "CPT_code": "99214",
-        "notes": "Liam reports increased anxiety since the start of the academic year, with difficulty sleeping, restlessness, and worry about academic performance and family expectations. He describes feeling caught between cultures and struggling to balance work, school, and family obligations. No suicidal ideation or psychosis. Mental status exam: alert, oriented, anxious affect, logical thought process. Provided psychoeducation about adjustment disorder and coping strategies. Encouraged use of campus counseling services, but patient is hesitant due to concerns about confidentiality and stigma. Scheduled follow-up in 4 weeks."
+        "notes": "Liam reports persistent fatigue, difficulty concentrating, and low mood since the start of the semester. He describes feeling overwhelmed by academic and family pressures, and has withdrawn from social activities. Denies suicidal ideation. On mental status exam, he appears downcast, with slowed speech and affect. Discussed adjustment disorder and coping strategies. Provided information on campus counseling services, but patient is hesitant due to concerns about confidentiality and cost. Encouraged follow-up and open communication about mental health."
       },
       {
-        "date": "2019-11-05",
-        "type": "Office Visit",
-        "medical_condition": "Tension-Type Headache",
-        "ICD_10_CM": "G44.209",
-        "CPT_code": "99213",
-        "notes": "Liam presents with recurrent headaches, described as a dull, bilateral pressure, often occurring in the late afternoon or evening. He attributes them to stress and long hours at the computer. No visual changes, nausea, or focal neurological symptoms. Exam normal. Advised on stress management, regular breaks from screens, hydration, and over-the-counter analgesics as needed. Briefly discussed ongoing anxiety; patient reports some improvement with self-care strategies."
-      },
-      {
-        "date": "2020-01-15",
+        "date": "2020-01-18",
         "type": "Office Visit",
         "medical_condition": "Upper Respiratory Infection",
         "ICD_10_CM": "J06.9",
         "CPT_code": "99213",
-        "notes": "Liam reports nasal congestion, sore throat, and mild cough for 4 days. No fever or shortness of breath. Exam reveals mild pharyngeal erythema, clear nasal discharge, and normal lung sounds. Diagnosed with viral URI. Advised supportive care, rest, and fluids. Patient appears tired and somewhat withdrawn; when asked, he attributes it to a busy semester and lack of sleep."
+        "notes": "Liam presents with nasal congestion, sore throat, and mild cough for four days. No fever or shortness of breath. Exam consistent with viral URI. Advised supportive care, hydration, and rest. Patient appears tired and somewhat withdrawn. Briefly screened for depression; patient acknowledges ongoing stress but declines further discussion."
       },
       {
-        "date": "2020-03-10",
-        "type": "Office Visit",
-        "medical_condition": "Insomnia",
-        "ICD_10_CM": "G47.00",
-        "CPT_code": "99214",
-        "notes": "Liam presents with difficulty falling and staying asleep for the past 2 months, coinciding with increased academic stress and part-time work. He reports daytime fatigue, poor concentration, and irritability. Denies use of caffeine or stimulants. No history of sleep apnea or restless legs. Mental status exam: alert, oriented, affect subdued. Discussed sleep hygiene, stress reduction, and cognitive behavioral strategies. Provided handouts and recommended follow-up if symptoms persist. Patient expresses reluctance to seek counseling due to cultural stigma."
-      },
-      {
-        "date": "2020-05-22",
-        "type": "Office Visit",
-        "medical_condition": "Mild Depressive Episode",
-        "ICD_10_CM": "F32.0",
-        "CPT_code": "99214",
-        "notes": "Liam reports persistent low mood, fatigue, and loss of interest in activities for several months. He describes difficulty concentrating, feelings of worthlessness, and social withdrawal. No suicidal ideation or psychosis. He attributes symptoms to academic and financial stress, as well as feeling isolated from both his family and peers. Mental status exam: affect depressed, speech slow, thought process logical. Discussed diagnosis of mild depression, benefits of therapy, and available campus resources. Patient is ambivalent about seeking formal help but agrees to consider it. Provided information on crisis resources and scheduled follow-up."
-      },
-      {
-        "date": "2020-07-14",
+        "date": "2020-03-02",
         "type": "Office Visit",
         "medical_condition": "Generalized Anxiety Disorder",
         "ICD_10_CM": "F41.1",
         "CPT_code": "99214",
-        "notes": "Liam returns for follow-up, reporting ongoing anxiety, muscle tension, and difficulty relaxing. He continues to struggle with balancing work, school, and family expectations. He has not yet accessed counseling services. No panic attacks or suicidal ideation. Mental status exam: anxious affect, normal thought content. Discussed cognitive behavioral therapy and stress management techniques. Encouraged gradual engagement with mental health services. Patient remains hesitant but receptive to further discussion."
+        "notes": "Liam returns for follow-up, reporting increased anxiety, restlessness, and difficulty sleeping. He worries about academic performance and financial stability. He describes muscle tension and frequent headaches. On exam, he appears tense and fidgety. Discussed diagnosis of generalized anxiety disorder. Provided psychoeducation and recommended cognitive behavioral therapy. Patient is ambivalent about seeking therapy due to stigma and cost. Discussed stress management techniques and encouraged follow-up."
       },
       {
-        "date": "2020-09-01",
+        "date": "2020-05-10",
+        "type": "Office Visit",
+        "medical_condition": "Insomnia",
+        "ICD_10_CM": "G47.00",
+        "CPT_code": "99213",
+        "notes": "Liam reports persistent difficulty falling and staying asleep, with resulting daytime fatigue and poor concentration. He attributes this to academic stress and worries about his future. Sleep hygiene reviewed in detail, including limiting screen time, establishing a regular bedtime, and avoiding caffeine. Patient is receptive to suggestions but expresses skepticism about their effectiveness. No evidence of substance use. Encouraged to monitor sleep patterns and return if symptoms persist."
+      },
+      {
+        "date": "2020-07-15",
+        "type": "Office Visit",
+        "medical_condition": "Major Depressive Disorder, Single Episode, Moderate",
+        "ICD_10_CM": "F32.1",
+        "CPT_code": "99214",
+        "notes": "Liam presents with worsening depressive symptoms: persistent low mood, anhedonia, fatigue, and hopelessness. He reports difficulty concentrating, poor appetite, and social withdrawal. Denies suicidal ideation. On mental status exam, he is tearful, with flat affect and slow speech. Discussed diagnosis of major depressive disorder. Reviewed treatment options, including psychotherapy and pharmacotherapy. Patient is hesitant to start medication due to concerns about side effects and stigma. Provided resources for campus mental health services and encouraged follow-up."
+      },
+      {
+        "date": "2020-08-20",
+        "type": "Office Visit",
+        "medical_condition": "Tension-Type Headache",
+        "ICD_10_CM": "G44.209",
+        "CPT_code": "99213",
+        "notes": "Liam reports frequent headaches, described as a dull, bilateral pressure, often associated with stress and poor sleep. No visual changes, nausea, or neurological deficits. Exam unremarkable. Diagnosed with tension-type headache. Advised on stress reduction, regular sleep, and over-the-counter analgesics as needed. Patient acknowledges ongoing stress and mood symptoms. Encouraged to continue mental health follow-up."
+      },
+      {
+        "date": "2020-09-30",
         "type": "Office Visit",
         "medical_condition": "Vitamin D Deficiency",
         "ICD_10_CM": "E55.9",
         "CPT_code": "82306",
-        "notes": "Routine labs reveal low vitamin D levels. Liam reports limited sun exposure due to long hours indoors studying and working. No bone pain or muscle weakness. Prescribed vitamin D supplementation and advised on safe sun exposure. Discussed importance of nutrition and self-care, especially given ongoing mental health concerns. Patient appears somewhat more withdrawn than previous visits."
+        "notes": "Routine labs reveal low vitamin D levels. Liam reports limited sun exposure due to studying indoors and pandemic restrictions. No bone pain or muscle weakness. Advised vitamin D supplementation and safe sun exposure. Patient expresses frustration with ongoing fatigue and low mood. Reiterated importance of addressing both physical and mental health concerns."
       },
       {
-        "date": "2020-10-20",
-        "type": "Office Visit",
-        "medical_condition": "Seasonal Allergic Rhinitis",
-        "ICD_10_CM": "J30.2",
-        "CPT_code": "99213",
-        "notes": "Liam presents with recurrent nasal congestion, sneezing, and itchy eyes, worse in the fall. Symptoms interfere with sleep and concentration. Exam shows allergic shiners and boggy turbinates. Advised continuation of antihistamines and added intranasal corticosteroid. Discussed impact of allergies on sleep and mood. Patient reports ongoing fatigue and low motivation, which he attributes to both allergies and academic stress."
-      },
-      {
-        "date": "2020-12-05",
-        "type": "Office Visit",
-        "medical_condition": "Major Depressive Disorder, Recurrent, Moderate",
-        "ICD_10_CM": "F33.1",
-        "CPT_code": "99215",
-        "notes": "Liam presents with worsening depressive symptoms: persistent sadness, anhedonia, significant fatigue, poor concentration, and social withdrawal. He reports difficulty keeping up with coursework and part-time job. No suicidal ideation, but expresses hopelessness about the future. Mental status exam: depressed mood, flat affect, slow speech, logical thought process. Discussed diagnosis of recurrent moderate depression. Strongly encouraged engagement with mental health services; provided information on low-cost and confidential options. Patient expresses concern about stigma and cost but agrees to consider therapy. Safety plan reviewed. Scheduled close follow-up."
-      },
-      {
-        "date": "2021-01-18",
-        "type": "Office Visit",
-        "medical_condition": "Gastroesophageal Reflux Disease (GERD)",
-        "ICD_10_CM": "K21.9",
-        "CPT_code": "99213",
-        "notes": "Liam reports intermittent heartburn and acid regurgitation, especially after late-night studying and irregular meals. No dysphagia, weight loss, or GI bleeding. Exam unremarkable. Advised dietary modifications, avoidance of late meals, and trial of OTC antacids. Discussed impact of stress on GI symptoms. Patient continues to report low mood and fatigue, but denies acute distress."
-      },
-      {
-        "date": "2021-02-22",
+        "date": "2020-11-12",
         "type": "Office Visit",
         "medical_condition": "Social Anxiety Disorder",
         "ICD_10_CM": "F40.10",
         "CPT_code": "99214",
-        "notes": "Liam presents with ongoing difficulty in social situations, including avoidance of group activities and presentations. He describes intense fear of negative evaluation and embarrassment, which has worsened over the past year. Symptoms interfere with academic performance and relationships. No panic attacks or suicidal ideation. Mental status exam: anxious affect, normal thought process. Discussed diagnosis of social anxiety disorder, benefits of therapy, and available resources. Patient remains hesitant but acknowledges impact on functioning. Provided handouts and encouraged gradual exposure to social situations."
+        "notes": "Liam presents with increased anxiety in social situations, particularly in group projects and presentations. He describes blushing, sweating, and fear of negative evaluation. Symptoms have led to avoidance of social and academic activities. On exam, he is visibly anxious when discussing these issues. Diagnosed with social anxiety disorder. Discussed cognitive behavioral therapy and exposure techniques. Patient is open to therapy but concerned about cost and confidentiality. Provided information on low-cost campus resources."
       },
       {
-        "date": "2021-03-15",
+        "date": "2020-12-18",
         "type": "Office Visit",
-        "medical_condition": "Fatigue, Unspecified",
-        "ICD_10_CM": "R53.83",
+        "medical_condition": "Seasonal Allergic Rhinitis",
+        "ICD_10_CM": "J30.2",
         "CPT_code": "99213",
-        "notes": "Liam reports persistent fatigue despite adequate sleep and improved nutrition. He continues to struggle with academic and financial stress, as well as ongoing symptoms of depression and anxiety. No new medical complaints. Exam unremarkable. Reviewed recent labs, which are within normal limits except for previously noted vitamin D deficiency (now improved with supplementation). Discussed importance of self-care, stress management, and ongoing mental health support. Patient is encouraged to follow up with counseling services and to return if symptoms worsen."
+        "notes": "Liam reports recurrent nasal congestion, sneezing, and itchy eyes during winter months. Symptoms interfere with sleep and concentration. Exam reveals allergic shiners and pale nasal mucosa. Advised continued use of antihistamines and nasal corticosteroids. Patient also reports ongoing fatigue and low mood, which may be exacerbated by seasonal changes. Encouraged to maintain follow-up for both allergy and mental health concerns."
+      },
+      {
+        "date": "2021-01-10",
+        "type": "Hospital Encounter",
+        "medical_condition": "Acute Gastroenteritis",
+        "ICD_10_CM": "A09",
+        "CPT_code": "99221",
+        "notes": "Liam admitted for observation after presenting to the ED with vomiting, diarrhea, and dehydration. No recent travel or sick contacts. Labs reveal mild electrolyte imbalance, corrected with IV fluids. Symptoms resolved within 24 hours. During admission, patient appears withdrawn and reports ongoing stress and low mood. Social work consulted for support and to discuss mental health resources. Discharged in stable condition with follow-up instructions."
+      },
+      {
+        "date": "2021-02-15",
+        "type": "Office Visit",
+        "medical_condition": "Major Depressive Disorder, Recurrent, Moderate",
+        "ICD_10_CM": "F33.1",
+        "CPT_code": "99214",
+        "notes": "Liam returns for follow-up, reporting persistent depressive symptoms despite lifestyle modifications. He continues to struggle with motivation, concentration, and social withdrawal. Denies suicidal ideation. On exam, affect is flat and speech is slow. Discussed benefits and risks of antidepressant therapy. Patient agrees to trial of SSRI and referral to campus counseling. Provided education on medication adherence and potential side effects. Scheduled close follow-up to monitor response and safety."
+      },
+      {
+        "date": "2021-03-10",
+        "type": "Office Visit",
+        "medical_condition": "Medication Management for Depression",
+        "ICD_10_CM": "Z79.899",
+        "CPT_code": "99213",
+        "notes": "Liam presents for medication management after starting SSRI for depression. He reports mild improvement in mood and energy, but continues to experience fatigue and difficulty concentrating. No side effects reported. Encouraged continued adherence and regular follow-up. Discussed importance of therapy in conjunction with medication. Patient expresses hope for improvement but remains concerned about stigma and confidentiality. Reinforced support and availability of resources."
       }
     ]
   },
@@ -337,32 +331,20 @@
     "medication": [
       {
         "date": "2020-01-15",
-        "medication": "Benzoyl Peroxide 5% Topical Gel",
-        "dosage": "Apply thin layer to affected areas",
+        "medication": "Sertraline",
+        "dosage": "25 mg",
         "frequency": "Once daily"
       },
       {
-        "date": "2020-04-22",
-        "medication": "Sertraline",
-        "dosage": "25 mg",
-        "frequency": "Once daily in the morning"
-      },
-      {
-        "date": "2020-08-12",
+        "date": "2020-06-10",
         "medication": "Ferrous Sulfate",
         "dosage": "325 mg",
-        "frequency": "Once daily with food"
+        "frequency": "Once daily"
       },
       {
-        "date": "2020-09-16",
-        "medication": "Albuterol Inhaler",
-        "dosage": "2 puffs (90 mcg/puff)",
-        "frequency": "As needed for wheezing or shortness of breath"
-      },
-      {
-        "date": "2020-12-16",
+        "date": "2020-10-05",
         "medication": "Vitamin D3",
-        "dosage": "2000 IU",
+        "dosage": "1000 IU",
         "frequency": "Once daily"
       }
     ],
@@ -370,10 +352,10 @@
       {
         "date": "2019-09-10",
         "type": "Office Visit",
-        "medical_condition": "Routine Adolescent Health Exam",
-        "ICD_10_CM": "Z00.129",
-        "CPT_code": "99394",
-        "notes": "Jordan Adebayo, a 19-year-old non-binary college student, presented for a routine adolescent health exam. Jordan reported generally good health but noted increased stress related to starting college and balancing academic expectations with part-time work. No acute complaints. Physical exam was unremarkable. Discussed importance of sleep hygiene, nutrition, and regular exercise. Provided anticipatory guidance on college adjustment, stress management, and campus resources. Jordan expressed some concerns about fitting in and managing cultural expectations as a second-generation Nigerian-American. Encouraged open communication and offered referral to campus counseling services if needed. No follow-up required unless new concerns arise."
+        "medical_condition": "Generalized Anxiety Disorder",
+        "ICD_10_CM": "F41.1",
+        "CPT_code": "99213",
+        "notes": "Jordan presented for their first visit at the student health center, reporting persistent feelings of worry and nervousness since starting college. They described difficulty concentrating on coursework, restlessness, and trouble sleeping. Jordan shared that they often feel pressure to meet academic expectations and to represent their family well, which contributes to their anxiety. They also expressed concern about being able to afford textbooks and supplies. The provider discussed coping strategies, recommended regular follow-up, and provided information about campus counseling services. Jordan was receptive but expressed concern about whether the counseling staff would understand their cultural and gender identity."
       },
       {
         "date": "2019-11-05",
@@ -381,119 +363,119 @@
         "medical_condition": "Acute Pharyngitis",
         "ICD_10_CM": "J02.9",
         "CPT_code": "99213",
-        "notes": "Jordan presented with a sore throat, mild fever, and fatigue for three days. Denied cough or shortness of breath. On exam, pharynx erythematous without exudate, no cervical lymphadenopathy. Rapid strep test negative. Diagnosis: viral pharyngitis. Advised supportive care: fluids, rest, acetaminophen as needed. Jordan mentioned feeling run down due to academic workload and part-time job. Briefly discussed stress management and self-care. No antibiotics prescribed. Advised to return if symptoms worsen or persist beyond one week."
+        "notes": "Jordan came in with a sore throat, mild fever, and fatigue for three days. On examination, their throat was erythematous without exudate. No significant lymphadenopathy. Rapid strep test was negative. Jordan reported increased stress due to midterms and working extra shifts at the library. The provider recommended supportive care, rest, and hydration. Jordan was advised to return if symptoms worsened or did not improve in a week."
       },
       {
         "date": "2020-01-15",
         "type": "Office Visit",
-        "medical_condition": "Mild Acne Vulgaris",
-        "ICD_10_CM": "L70.0",
-        "CPT_code": "99213",
-        "notes": "Jordan reported increased facial acne over the past two months, likely exacerbated by stress and irregular sleep. Physical exam revealed mild comedonal and inflammatory lesions on the forehead and cheeks. No cystic lesions. Discussed skin care routine, recommended gentle cleanser, and initiated topical benzoyl peroxide. Reviewed potential side effects and importance of adherence. Jordan expressed concern about appearance and self-esteem, especially in social settings. Provided reassurance and encouraged follow-up if no improvement in 8 weeks."
-      },
-      {
-        "date": "2020-02-20",
-        "type": "Office Visit",
-        "medical_condition": "Generalized Anxiety Disorder",
-        "ICD_10_CM": "F41.1",
-        "CPT_code": "99214",
-        "notes": "Jordan presented with persistent worry, difficulty concentrating, and restlessness for several months, worsening with academic pressures. They described frequent feelings of nervousness, muscle tension, and occasional panic episodes before exams. No suicidal ideation. Jordan shared challenges related to cultural expectations and gender identity, feeling isolated and unsupported. Screened positive for generalized anxiety disorder. Discussed non-pharmacologic interventions: mindfulness, cognitive behavioral strategies, and campus counseling. Provided information on mental health resources sensitive to cultural and gender identity issues. Scheduled follow-up in 4 weeks to assess progress."
-      },
-      {
-        "date": "2020-03-18",
-        "type": "Office Visit",
-        "medical_condition": "Allergic Rhinitis",
-        "ICD_10_CM": "J30.9",
-        "CPT_code": "99213",
-        "notes": "Jordan reported nasal congestion, sneezing, and itchy eyes for the past week, consistent with seasonal allergies. No fever or respiratory distress. Physical exam: clear nasal discharge, boggy turbinates. Recommended over-the-counter antihistamines and environmental modifications. Jordan mentioned increased fatigue, which may be multifactorial. Advised to monitor symptoms and return if no improvement. Briefly checked in on mental health; Jordan reported ongoing stress but no acute concerns at this visit."
-      },
-      {
-        "date": "2020-04-22",
-        "type": "Office Visit",
         "medical_condition": "Major Depressive Disorder, Single Episode, Moderate",
         "ICD_10_CM": "F32.1",
         "CPT_code": "99214",
-        "notes": "Jordan presented with persistent low mood, anhedonia, fatigue, and social withdrawal for over two months. They reported difficulty sleeping, poor appetite, and declining academic performance. Jordan described a sense of hopelessness and isolation, particularly related to their cultural background and gender identity. No active suicidal ideation, but passive thoughts of 'not wanting to be here.' Screened positive for moderate major depressive disorder. Discussed treatment options, including psychotherapy and possible pharmacotherapy. Provided crisis resources and scheduled referral to a culturally competent mental health provider. Encouraged regular follow-up and support from trusted individuals."
+        "notes": "Jordan reported persistent low mood, loss of interest in activities, and difficulty getting out of bed for the past month. They described feeling isolated from peers and family, and struggling to keep up with assignments. Jordan denied suicidal ideation but admitted to feeling hopeless about the future. The provider discussed the diagnosis of depression, reviewed treatment options including therapy and medication, and encouraged Jordan to consider counseling. Jordan expressed concern about stigma and whether a therapist would understand their background. A follow-up appointment was scheduled in two weeks."
+      },
+      {
+        "date": "2020-02-01",
+        "type": "Office Visit",
+        "medical_condition": "Insomnia Disorder",
+        "ICD_10_CM": "G47.00",
+        "CPT_code": "99213",
+        "notes": "Jordan returned for follow-up, reporting ongoing difficulty falling and staying asleep. They attributed this to racing thoughts about school and family expectations. Jordan noted that fatigue was affecting their ability to attend classes and work. The provider discussed sleep hygiene techniques, recommended limiting caffeine, and suggested a regular bedtime routine. Jordan was encouraged to continue seeking support for their mental health and to follow up with counseling services."
+      },
+      {
+        "date": "2020-03-10",
+        "type": "Office Visit",
+        "medical_condition": "Allergic Rhinitis",
+        "ICD_10_CM": "J30.9",
+        "CPT_code": "99212",
+        "notes": "Jordan presented with nasal congestion, sneezing, and itchy eyes, which they reported as seasonal. No fever or cough. The provider diagnosed allergic rhinitis and recommended over-the-counter antihistamines. Jordan was advised to monitor symptoms and return if they worsened. Brief discussion about ongoing stress and fatigue; Jordan stated they were trying to manage with self-care."
+      },
+      {
+        "date": "2020-04-20",
+        "type": "Office Visit",
+        "medical_condition": "Adjustment Disorder with Depressed Mood",
+        "ICD_10_CM": "F43.21",
+        "CPT_code": "99214",
+        "notes": "Jordan reported increased sadness and difficulty adjusting to remote learning due to the COVID-19 pandemic. They described missing campus life and feeling disconnected from friends. Jordan also expressed concern about their family's financial situation. The provider discussed coping strategies for adjustment disorder, encouraged virtual social connections, and provided resources for financial and academic support. Jordan was receptive and agreed to check in again in a month."
       },
       {
         "date": "2020-05-15",
         "type": "Office Visit",
-        "medical_condition": "Insomnia, Unspecified",
-        "ICD_10_CM": "G47.00",
+        "medical_condition": "Tension-Type Headache",
+        "ICD_10_CM": "G44.209",
         "CPT_code": "99213",
-        "notes": "Jordan reported ongoing difficulty falling and staying asleep, with frequent nighttime awakenings. Sleep issues have contributed to daytime fatigue and impaired concentration. Jordan attributed insomnia to academic stress, financial worries, and ongoing mood symptoms. Reviewed sleep hygiene strategies, including regular sleep schedule, limiting screen time, and relaxation techniques. Discussed possible short-term use of melatonin. Encouraged continued engagement with mental health services. Scheduled follow-up in 2 weeks to reassess sleep and mood."
+        "notes": "Jordan presented with frequent headaches, described as a dull, bilateral pressure, often occurring in the afternoons. They attributed the headaches to increased screen time and stress from online classes. No visual changes, nausea, or neurological symptoms. The provider recommended regular breaks from screens, hydration, and over-the-counter analgesics as needed. Jordan was advised to monitor headache frequency and return if symptoms changed."
       },
       {
         "date": "2020-06-10",
         "type": "Office Visit",
-        "medical_condition": "Tension-Type Headache, Unspecified",
-        "ICD_10_CM": "G44.209",
-        "CPT_code": "99213",
-        "notes": "Jordan presented with recurrent headaches, described as bilateral, pressing, and non-pulsatile, occurring several times per week. Headaches often coincide with periods of high stress and poor sleep. No visual changes, nausea, or neurological deficits. Physical exam normal. Diagnosis: tension-type headache. Recommended stress management, regular sleep, hydration, and over-the-counter analgesics as needed. Advised to keep a headache diary. Reinforced importance of ongoing mental health support. No red flag symptoms identified."
-      },
-      {
-        "date": "2020-07-08",
-        "type": "Office Visit",
-        "medical_condition": "Adjustment Disorder with Mixed Anxiety and Depressed Mood",
-        "ICD_10_CM": "F43.23",
-        "CPT_code": "99214",
-        "notes": "Jordan reported worsening mood and anxiety following recent academic setbacks and increased family expectations. Symptoms include tearfulness, irritability, and difficulty coping with daily responsibilities. Jordan expressed feeling overwhelmed by the intersection of cultural identity, financial stress, and personal expression. No suicidal ideation. Diagnosis: adjustment disorder with mixed anxiety and depressed mood. Provided psychoeducation, encouraged use of campus mental health resources, and discussed coping strategies. Scheduled follow-up in 4 weeks."
-      },
-      {
-        "date": "2020-08-12",
-        "type": "Office Visit",
         "medical_condition": "Iron Deficiency Anemia, Unspecified",
         "ICD_10_CM": "D50.9",
         "CPT_code": "99213",
-        "notes": "Jordan presented with persistent fatigue, pallor, and occasional dizziness. Laboratory evaluation revealed low hemoglobin and ferritin, consistent with iron deficiency anemia. Dietary history notable for limited intake of iron-rich foods due to financial constraints. Initiated oral iron supplementation and provided dietary counseling. Discussed importance of adherence and follow-up labs in 8 weeks. Jordan expressed concern about managing health with limited resources. Provided information on campus food pantry and community support services."
+        "notes": "Jordan reported persistent fatigue and occasional dizziness. Blood work revealed mild iron deficiency anemia. The provider discussed dietary sources of iron and recommended an iron supplement. Jordan was advised to follow up in two months for repeat labs. Brief discussion about ongoing stress and sleep issues; Jordan stated they were trying to manage but continued to feel overwhelmed."
       },
       {
-        "date": "2020-09-16",
+        "date": "2020-07-20",
+        "type": "Office Visit",
+        "medical_condition": "Acne Vulgaris",
+        "ICD_10_CM": "L70.0",
+        "CPT_code": "99212",
+        "notes": "Jordan presented with concerns about worsening acne, which they felt was affecting their self-esteem. The provider reviewed skincare routines and prescribed a topical retinoid. Jordan was encouraged to follow up if there was no improvement in 8 weeks. The provider also checked in about Jordan's mood and stress levels, and Jordan reported some improvement with self-care strategies."
+      },
+      {
+        "date": "2020-08-15",
         "type": "Office Visit",
         "medical_condition": "Asthma, Unspecified",
         "ICD_10_CM": "J45.909",
         "CPT_code": "99213",
-        "notes": "Jordan reported intermittent wheezing and shortness of breath, especially during physical activity and exposure to dust in the library. No hospitalizations or ER visits. Physical exam: mild expiratory wheeze. Spirometry confirmed mild intermittent asthma. Prescribed albuterol inhaler for as-needed use and reviewed inhaler technique. Discussed trigger avoidance and importance of medication adherence. Scheduled follow-up in 3 months or sooner if symptoms worsen."
+        "notes": "Jordan reported occasional shortness of breath and wheezing, especially during physical activity. No recent hospitalizations or ER visits. The provider reviewed asthma triggers and prescribed a rescue inhaler. Jordan was educated on inhaler technique and advised to monitor symptoms. The provider also briefly discussed stress management, as Jordan noted that symptoms sometimes worsened during periods of anxiety."
       },
       {
-        "date": "2020-10-14",
-        "type": "Office Visit",
-        "medical_condition": "Low Back Pain, Unspecified",
-        "ICD_10_CM": "M54.5",
-        "CPT_code": "99213",
-        "notes": "Jordan presented with low back pain for two weeks, likely related to prolonged sitting and poor ergonomics while studying and working at the library. No radiation, weakness, or numbness. Physical exam: mild paraspinal tenderness, normal neurologic exam. Advised on posture, stretching exercises, and use of supportive seating. Recommended over-the-counter NSAIDs as needed. Provided handout on back care. No imaging indicated at this time. Encouraged regular movement breaks during study sessions."
-      },
-      {
-        "date": "2020-11-18",
+        "date": "2020-09-10",
         "type": "Office Visit",
         "medical_condition": "Social Anxiety Disorder",
         "ICD_10_CM": "F40.10",
         "CPT_code": "99214",
-        "notes": "Jordan described significant anxiety in social and academic settings, including fear of judgment and avoidance of group activities. Symptoms have led to missed classes and difficulty forming peer relationships. Jordan linked these feelings to both cultural expectations and challenges related to their non-binary identity. Screened positive for social anxiety disorder. Discussed cognitive behavioral therapy and exposure strategies. Provided referral to a therapist with experience in LGBTQ+ and multicultural issues. Encouraged gradual participation in supportive campus groups."
+        "notes": "Jordan described significant anxiety in social situations, particularly in group projects and presentations. They reported avoiding social gatherings and feeling self-conscious about their gender identity and cultural background. The provider discussed the diagnosis of social anxiety disorder, reviewed cognitive-behavioral strategies, and encouraged Jordan to consider group therapy. Jordan expressed interest but was concerned about finding a supportive environment. A follow-up was scheduled in one month."
       },
       {
-        "date": "2020-12-16",
+        "date": "2020-10-05",
         "type": "Office Visit",
         "medical_condition": "Vitamin D Deficiency, Unspecified",
         "ICD_10_CM": "E55.9",
         "CPT_code": "99213",
-        "notes": "Jordan presented for follow-up of ongoing fatigue. Labs revealed low vitamin D levels. Discussed dietary sources and importance of safe sun exposure. Initiated vitamin D supplementation. Jordan expressed frustration with multiple health issues and ongoing stress. Provided reassurance and encouraged continued engagement with health and counseling services. Scheduled repeat labs in 3 months."
+        "notes": "Routine labs revealed low vitamin D levels. Jordan reported limited sun exposure due to remote learning and staying indoors. The provider recommended a vitamin D supplement and encouraged safe outdoor activity. Jordan was advised to follow up in three months for repeat labs. Brief discussion about mood and energy levels; Jordan reported ongoing fatigue but some improvement in mood."
       },
       {
-        "date": "2021-01-20",
+        "date": "2020-11-20",
         "type": "Office Visit",
-        "medical_condition": "Recurrent Major Depressive Disorder, Moderate",
-        "ICD_10_CM": "F33.1",
+        "medical_condition": "Recurrent Major Depressive Disorder, Mild",
+        "ICD_10_CM": "F33.0",
         "CPT_code": "99214",
-        "notes": "Jordan returned with ongoing symptoms of depression, including persistent low mood, loss of interest in activities, and social withdrawal. They reported some improvement with therapy but continued to struggle with motivation and academic performance. Jordan described feeling unsupported in both cultural and LGBTQ+ communities. No active suicidal ideation. Adjusted treatment plan to include more frequent therapy sessions and consideration of pharmacotherapy. Provided crisis resources and encouraged use of campus support networks. Scheduled follow-up in 2 weeks."
+        "notes": "Jordan returned for follow-up, reporting a recurrence of depressive symptoms, including low mood, poor motivation, and social withdrawal. They described difficulty keeping up with coursework and feeling disconnected from friends and family. The provider reviewed treatment options, including therapy and medication, and encouraged Jordan to reach out to campus mental health services. Jordan expressed willingness to try therapy again and was provided with a list of culturally competent providers."
       },
       {
-        "date": "2021-02-24",
+        "date": "2020-12-15",
         "type": "Office Visit",
-        "medical_condition": "Generalized Anxiety Disorder",
-        "ICD_10_CM": "F41.1",
+        "medical_condition": "Seasonal Allergic Rhinitis",
+        "ICD_10_CM": "J30.2",
+        "CPT_code": "99212",
+        "notes": "Jordan presented with nasal congestion, sneezing, and itchy eyes, consistent with seasonal allergies. The provider recommended continuing antihistamines and using a saline nasal spray. Jordan was advised to monitor symptoms and return if they worsened. Brief check-in about mental health; Jordan reported ongoing stress but was attending therapy sessions."
+      },
+      {
+        "date": "2021-01-10",
+        "type": "Hospital Encounter",
+        "medical_condition": "Acute Gastroenteritis",
+        "ICD_10_CM": "A09",
+        "CPT_code": "99221",
+        "notes": "Jordan was admitted overnight for observation after presenting to the emergency department with vomiting, diarrhea, and dehydration. They reported feeling weak and unable to keep fluids down for 24 hours. IV fluids were administered, and Jordan's symptoms improved. The provider discussed the importance of hydration and reviewed dietary recommendations. Jordan was discharged the next day with instructions to follow up with their primary care provider if symptoms recurred."
+      },
+      {
+        "date": "2021-02-20",
+        "type": "Office Visit",
+        "medical_condition": "Panic Disorder Without Agoraphobia",
+        "ICD_10_CM": "F41.0",
         "CPT_code": "99214",
-        "notes": "Jordan presented for follow-up of anxiety symptoms. They reported ongoing worry about academic performance, finances, and future career prospects. Jordan described difficulty sleeping, muscle tension, and irritability. They expressed appreciation for therapy but noted barriers to consistent attendance due to work and class schedules. Discussed time management strategies and potential for telehealth counseling. Reinforced importance of self-care and regular check-ins. No medication changes at this time. Scheduled follow-up in 4 weeks."
+        "notes": "Jordan reported experiencing sudden episodes of intense fear, palpitations, and shortness of breath, particularly before exams or presentations. They described feeling overwhelmed and sometimes avoiding situations that might trigger these episodes. The provider discussed the diagnosis of panic disorder, reviewed breathing and relaxation techniques, and encouraged Jordan to continue therapy. Jordan was receptive and agreed to follow up in one month."
       }
     ]
   }

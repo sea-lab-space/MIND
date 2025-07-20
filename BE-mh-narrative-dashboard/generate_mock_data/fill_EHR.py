@@ -2,7 +2,7 @@
 
 import os
 import sys
-import asyncio
+from tqdm import tqdm
 import json
 from pathlib import Path
 from dotenv import load_dotenv
@@ -21,7 +21,7 @@ class Encounter(BaseModel):
     date: str = Field(...,
                       description="The date of the encounter, in YYYY-MM-DD format.")
     type: Literal['Hospital Encounter', 'Office Visit'] = Field(
-        ..., description="The type of encounter.")
+        ..., description="The type of encounter, one of 'Office Visit' or 'Hospital Encounter'.")
     medical_condition: str = Field(..., description="The medical condition being treated.")
     ICD_10_CM: str = Field(..., description="The ICD-10-CM code for the medical condition.")
     CPT_code: str = Field(..., description="The CPT code for the encounter.")
@@ -31,6 +31,7 @@ class EncounterResponse(BaseModel):
     response: List[Encounter]
 
 # why 400 - 600 words? https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2782054
+# Definition source: https://dictionary.i2b2.unc.edu/encounter-details/encounter-type/
 ENCOUNTER_PROMPT = """
 You are a knowledgeable medical expert with expertise in EHR data.
 You have previously read a lot of EHR data and have a good understanding of the medical conditions and treatments that are commonly seen in EHR data.
@@ -38,7 +39,11 @@ You have previously read a lot of EHR data and have a good understanding of the 
 You are given a depression patient's persona.
 Your task is to generate at least 15 past encounters of the patient. 
 
-Requirements:
+Definitions
+Hospital Encounter: An encounter that occurs within the hospital. Most inpatient admissions will be classified as hospital encounters.
+Office Visit: A typical visit to the physician’s office. Most standard outpatient encounters will be classified as office visits.
+
+Requirements
 1) The encounters should be in chronological order. 
 2) The encounters should include the date, type of encounter, medical condition, ICD-10-CM code, CPT code, and progress note.
 3) The encounters should be generated based on the patient's persona.
@@ -81,7 +86,7 @@ if __name__ == '__main__':
 
     with open('./generate_mock_data/personas_stub.json', 'r') as f:
         data = json.load(f)
-    for patient, persona in data.items():
+    for patient, persona in tqdm(data.items()):
         # Step 1: Generate encounter (clinical events) from persona
         # print(persona)
         encounter_prompt = f'''
