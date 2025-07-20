@@ -3,9 +3,11 @@ from typing import List, Optional, Type
 from pydantic import BaseModel
 from typing import List
 from abc import ABC, abstractmethod
+from datetime import datetime
 
 from discoverer.numeric_tab_data.descriptions.defs import NUMERICAL_FEATURE_DEFS
 
+# TODO: Didn't consider - 1) tool use (but left API), 2) time retrospect (debatable: should we consider?)
 class BaseDiscovererAgent(ABC):
     """
     BaseDiscoverer: A generic base class for data-driven discoverer agents.
@@ -22,10 +24,15 @@ class BaseDiscovererAgent(ABC):
     def __init__(
         self,
         retrospect_date: str,
+        before_date: str,
         model: str = "gpt-4.1-nano",
         tools: Optional[List] = None
     ):
+        assert datetime.strptime(
+            retrospect_date, "%Y-%m-%d") < datetime.strptime(before_date, "%Y-%m-%d"), "Retrospect date must be before or equal to before date."
+        
         self.retrospect_date = retrospect_date
+        self.before_date = before_date
         self.model = model
         self.tools = tools or []
 
@@ -45,7 +52,14 @@ class BaseDiscovererAgent(ABC):
 
     def _feature_to_csv(self, feature_data) -> str:
         """Convert feature data (list of dicts) to CSV string."""
-        return pd.DataFrame(feature_data).to_csv(index=False)
+        df = pd.DataFrame(feature_data)
+        df["datetime"] = pd.to_datetime(df["date"])
+        before_dt = datetime.strptime(self.before_date, "%Y-%m-%d")
+        df = df[df["datetime"] <= before_dt]
+        # delete this excess column
+        df = df.drop(columns=["datetime"])
+        # print(df.to_csv(index=False))
+        return df.to_csv(index=False)
 
     async def run(self, feature: dict, verbose: bool = False) -> dict:
         """

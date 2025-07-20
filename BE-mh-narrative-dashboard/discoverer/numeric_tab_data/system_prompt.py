@@ -1,6 +1,8 @@
 def get_mh_data_expert_system_prompt():
+    # ! Use case tailored prompt
     return f"""
         You are a mental health expert with over 20 years of experience and is well versed with mental health data and data analysis. 
+        You will be treating a patient with depression. 
     """
 
 def get_mh_data_expert_modality_prompt(modality_source):
@@ -28,5 +30,20 @@ def get_mh_data_expert_requriements_prompt():
         Ensure this description is useful for mental health inference, but just describe the data fact. For example, do not say the data 'indicates' or 'suggests' anything.
         Leave the description focused on this type of data fact type. 
         
-        Return as many data facts that follow the definition of this fact type as possible.
+        You are expected to return at least 3 data facts per fact type. 
+        Specifically: 1) you are encouraged to discover more: you will be awared if you can find the complete set of data facts; 2) you are penalized if you hallucinate: so if you cannot find 3 data facts, you should return what you have found, even if less than 3.
+
+        Remember to think step by step.
     """
+
+def get_mh_data_date_prompt(retrospect_date_str: str, before_date_str: str, is_comparison: bool = False):
+    common = f"You should put the most attention on data fact between {retrospect_date_str} and {before_date_str}."
+    if is_comparison:
+        return f"""
+            By default, you should compare the data before {retrospect_date_str} and between {retrospect_date_str} and {before_date_str}.
+            You should also add extra comparison if there is any other interesting data facts.
+        """
+    else:
+        return f"""
+            {common}
+        """

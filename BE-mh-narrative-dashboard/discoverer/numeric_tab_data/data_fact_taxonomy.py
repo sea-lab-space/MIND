@@ -1,8 +1,3 @@
-from pydantic import BaseModel
-
-class DataFactTaxonomy(BaseModel):
-    pass
-
 DATA_FACT_DEFINITION = {
     "comparison": {
         "definition": '''
