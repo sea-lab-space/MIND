@@ -15,7 +15,8 @@ class FactTrendConfig(BaseModel):
                       description="The end time of trend, in YYYY-MM-DD format.")
     fact_description: str = Field(
         ..., description="[name] is [attribute] from [time_1] to [time_2].")
-
+    fact_type: Literal['trend']
+    
 class TrendDiscovererOutput(BaseModel):
     facts: List[FactTrendConfig]
 

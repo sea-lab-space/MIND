@@ -14,6 +14,7 @@ class FactExtremeConfig(BaseModel):
     # value: float = Field(..., description="The numeric value of the feature.")
     fact_description: str = Field(
         ..., description="The [attribute] of [name] is [value] at [time].")
+    fact_type: Literal['extreme']
 
 class ExtremeDiscovererOutput(BaseModel):
     facts: List[FactExtremeConfig]

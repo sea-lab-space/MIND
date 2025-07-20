@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import List
+from typing import List, Literal
 from discoverer.numeric_tab_data.discoverer_agents.base_agent import BaseDiscovererAgent
 
 class TimeDuration(BaseModel):
@@ -22,8 +22,9 @@ class FactComparisonConfig(BaseModel):
         ..., description="The second time period of comparison, in YYYY-MM-DD format."
     )
     fact_description: str = Field(
-        ..., description="The [name] [attribute] from [time_dur_1] to [time_dur_2]."
+        ..., description="The [name] [attribute] from [time_dur_1] [value_description] to [time_dur_2] [value_description]."
     )
+    fact_type: Literal['comparison']
 
 
 class ComparisonDiscovererOutput(BaseModel):

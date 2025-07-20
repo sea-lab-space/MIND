@@ -13,8 +13,9 @@ class FactDifferenceConfig(BaseModel):
     time_2: str = Field(...,
                         description="The second timepoint, in YYYY-MM-DD format.")
     fact_description: str = Field(
-        ..., description="The [name] is [attribute] comparing [time_1] to [time_2]."
+        ..., description="The [name] is [attribute] from [time_1] at [value] to [time_2] at [value]."
     )
+    fact_type: Literal['difference']
 
 
 class DifferenceDiscovererOutput(BaseModel):

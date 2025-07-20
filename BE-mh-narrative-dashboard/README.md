@@ -18,6 +18,9 @@ Sync dependencies:
 
 Remember to add packages using uv (if not possible, use uv pip).
 
+## Running the scripts
+
+Make sure the project root is the BE-MH-Narrative-Dashboard Folder
 
 
 ## Data
