@@ -11,7 +11,7 @@ class FactExtremeConfig(BaseModel):
         ..., description="The attribute of the feature, max or min.")
     time: str = Field(...,
                       description="The time of the feature, in YYYY-MM-DD format.")
-    # value: float = Field(..., description="The numeric value of the feature.")
+    value: float = Field(..., description="The numeric value of the feature.")
     fact_description: str = Field(
         ..., description="The [attribute] of [name] is [value] at [time].")
     fact_type: Literal['extreme']

@@ -21,8 +21,10 @@ class FactComparisonConfig(BaseModel):
     time_dur_2: TimeDuration = Field(
         ..., description="The second time period of comparison, in YYYY-MM-DD format."
     )
+    value_dur_1: float = Field(..., description="The [attribute] of the feature in time_dur_1.")
+    value_dur_2: float = Field(..., description="The [attribute] of the feature in time_dur_2.")
     fact_description: str = Field(
-        ..., description="The [name] [attribute] from [time_dur_1] [value_description] to [time_dur_2] [value_description]."
+        ..., description="The [name] [attribute] from [time_dur_1] [value_dur_1] to [time_dur_2] [value_dur_2]."
     )
     fact_type: Literal['comparison']
 

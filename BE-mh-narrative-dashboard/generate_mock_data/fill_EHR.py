@@ -136,5 +136,5 @@ if __name__ == '__main__':
         data[patient]['medication'] = medications
         data[patient]['encounters'] = encounters
     
-    with open('./generate_mock_data/personas_full.json', 'w', encoding='utf-8') as f:
+    with open('./generate_mock_data/context/personas_full.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)

@@ -6,7 +6,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import DataSourceIcon from "./DatasourceIcon";
+import DataSourceIcon from "../DatasourceIcon";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import type { DatasourceIconType } from "@/types/props";
@@ -51,13 +51,14 @@ const DrilldownPanel: React.FC<DrilldownPanelProps> = (props) => {
         <Button
           variant="secondary"
           size="icon"
-          className="full bg-white shadow-md transition-all hover:bg-gray-100 hover:shadow-lg w-5 h-20 rounded-none rounded-tr-md rounded-br-md"
+          className="full bg-white shadow-md transition-all hover:bg-gray-100 hover:shadow-lg w-5 h-20 rounded-none rounded-tr-md rounded-br-md border-l-2 border-gray-300"
           onClick={onClose}
         >
           <ChevronRight className="w-5 h-5" />
         </Button>
       </div>
-      <div className="bg-[#f5f5f5] p-8 w-full">
+
+      <div className="bg-gray-100 p-8 w-full border-l-2 border-gray-300">
         <div className="w-full max-w-[1800px] mx-auto space-y-6">
           {/* Header */}
           <div className="flex items-center justify-between">
@@ -98,9 +99,7 @@ const DrilldownPanel: React.FC<DrilldownPanelProps> = (props) => {
             <span>Sources:</span>
             {dataSources.map((ds) => (
               <DataSourceIcon showType iconType={ds as DatasourceIconType} />
-            )
-            )  
-            }
+            ))}
           </div>
           {/* Passive Sensing Data Section */}
           <Card className="bg-white border-[#eaeaea]">

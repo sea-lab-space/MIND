@@ -1,10 +1,10 @@
-import { ReactNode } from "react";
+import { type ReactNode } from "react";
 
 interface OverviewCardComponentProps {
-    icon ;
-    title: string;
-    children: ReactNode;
-    isExpanded: boolean;
+  // TODO: any type
+  icon: any;
+  title: string;
+  children: ReactNode;
 }
 
 export default function OverviewCardComponent({

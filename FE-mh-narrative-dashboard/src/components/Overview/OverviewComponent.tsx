@@ -38,7 +38,7 @@ export default function OverviewComponent({
                 </div>
               </div>
 
-                    <div className={`flex flex-col gap-2 ${isDrillDown ? "w-full" : "sm:w-3/4"}`}>
+                    <div className={`flex flex-col gap-2 ${isDrillDown ? "w-full" : "sm:w-4/5"}`}>
                         {infoData.map((card, index) => {
                             const Icon = iconMap[card.icon]; // dynamically resolve icon component
                             return (

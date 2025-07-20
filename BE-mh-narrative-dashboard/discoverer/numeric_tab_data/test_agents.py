@@ -1,8 +1,8 @@
+import os
 import sys, asyncio, json
 from pathlib import Path
-from typing import TypedDict
-from agents import function_tool
 from dotenv import load_dotenv
+from tqdm import tqdm
 
 project_root = Path(__file__).parent.parent.parent
 print(project_root)
@@ -16,7 +16,7 @@ from utils.extract_single_feature import feature_transform
 
 if __name__ == "__main__":
     USER_ID = "INS-W_963"
-    MODEL_NAME = "gpt-4.1-nano"
+    MODEL_NAME = "gpt-4.1"
     feature_list = feature_transform(USER_ID)
 
     DATES = [
@@ -34,7 +34,16 @@ if __name__ == "__main__":
         "data_facts": [],
     }]
 
-    for i in range(1, len(DATES)):
+    if os.path.exists(f"./generate_mock_data/context/encounters_mock_{USER_ID}.json"):
+        confirm = input(f"Insight already generated for {USER_ID}. Do you want to proceed? Type 'yes' to proceed: ")
+        if confirm.lower() != 'yes':
+            print("Aborted.")
+            exit(1)
+        else:
+            print("Proceeding...")
+    exit()
+
+    for i in tqdm(range(1, len(DATES))):
         # 1. Determine retrospect_date and before_date
         retrospect_date = DATES[i-1]
         before_date = DATES[i]
@@ -65,18 +74,23 @@ if __name__ == "__main__":
 
         # 3. Run discoverer agents
         data_facts = []
+        print([feat['feature_name'] for feat in feature_list])
+
+        # exit()
         # TODO: remove :5 (test with only 5 features)
-        for feature in feature_list[:5]:
+        for feature in tqdm(feature_list):
+            feature_insights = []
             for discoverer in discoverers:
                 # print(feature)
-                data_fact = asyncio.run(discoverer.run(feature, verbose=True))
+                data_fact = asyncio.run(discoverer.run(feature, verbose=False))
                 if data_fact:
-                    data_facts.append({
-                        "modality_type": feature['modality_type'],
-                        "modality_source": feature['modality_source'],
-                        "feature_name": feature['feature_name'],
-                        "data_fact": data_fact
-                    })
+                    feature_insights.extend(data_fact)
+            data_facts.append({
+                "modality_type": feature['modality_type'],
+                "modality_source": feature['modality_source'],
+                "feature_name": feature['feature_name'],
+                "data_facts": feature_insights
+            })
 
         # 4. Append to encounters_mock
         encounters_mock.append({
@@ -84,12 +98,13 @@ if __name__ == "__main__":
             "retrospect_date": retrospect_date,
             "before_date": before_date,
             "transcript": [],
-            "data_facts": data_facts,
+            "data_facts": data_facts
         })
 
         # 5. Save encounters_mock to file (to prevent network issues)
-        with open(f"encounters_mock_{USER_ID}.json", "w") as f:
+        with open(f"./generate_mock_data/context/encounters_mock_{USER_ID}.json", "w") as f:
             json.dump(encounters_mock, f, indent=2)
+
     print(encounters_mock[0])
 
 

@@ -12,8 +12,10 @@ class FactDifferenceConfig(BaseModel):
                         description="The first timepoint, in YYYY-MM-DD format.")
     time_2: str = Field(...,
                         description="The second timepoint, in YYYY-MM-DD format.")
+    value_1: float = Field(..., description="The value of the feature at time_1.")
+    value_2: float = Field(..., description="The value of the feature at time_2.")
     fact_description: str = Field(
-        ..., description="The [name] is [attribute] from [time_1] at [value] to [time_2] at [value]."
+        ..., description="The [name] is [attribute] from [time_1] at [value_1] to [time_2] at [value_2]."
     )
     fact_type: Literal['difference']
 

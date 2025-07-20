@@ -79,16 +79,18 @@ async def main():
     )
 
     # Create a session instance
-    session = SQLiteSession("conversation_123")
+    session_patient = SQLiteSession("patient")
+    session_clinician = SQLiteSession("clinician")
 
     # First message from patient
-    result = await Runner.run(patient_agent, input="", session=session)
+    result = await Runner.run(patient_agent, input="", session=session_patient)
     print(f"{patient_agent.name}: {result.final_output}")
     last_output = result.final_output
 
     # 49 more turns, alternating speaker
     for i in range(21):
         speaker = clinician_agent if i % 2 == 0 else patient_agent
+        session = session_clinician if i % 2 == 0 else session_patient
         result = await Runner.run(speaker, input=last_output, session=session)
         print(f"{speaker.name}: {result.final_output}")
         # if "thank you" or "goodbye" in result.final_output.lower():
@@ -96,10 +98,14 @@ async def main():
         last_output = result.final_output
 
     # Save session to JSON
-    all_items = await session.get_items()
+    all_items_patient = await session_patient.get_items()
+    all_items_clinician = await session_clinician.get_items()
 
-    with open('conversation_123.json', 'w', encoding='utf-8') as f:
-        json.dump(all_items, f, indent=2, ensure_ascii=False)
+    with open('./generate_mock_data/patient.json', 'w', encoding='utf-8') as f:
+        json.dump(all_items_patient, f, indent=2, ensure_ascii=False)
+
+    with open('./generate_mock_data/clinician.json', 'w', encoding='utf-8') as f:
+        json.dump(all_items_clinician, f, indent=2, ensure_ascii=False)
 
 
 if __name__ == "__main__":
