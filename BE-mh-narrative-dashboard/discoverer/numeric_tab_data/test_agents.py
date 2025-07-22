@@ -27,7 +27,7 @@ if __name__ == "__main__":
     ]
 
     encounters_mock = [{
-        "encounter_id": 0,
+        "encounter_id": 1,
         "retrospect_date": "",
         "before_date": DATES[0],
         "transcript": [],
