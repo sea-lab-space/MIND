@@ -84,7 +84,7 @@ if __name__ == '__main__':
     client = openai.OpenAI()
     MODEL_NAME = "gpt-4.1"
 
-    with open('./generate_mock_data/personas_stub.json', 'r') as f:
+    with open('./generate_mock_data/context/personas_stub.json', 'r') as f:
         data = json.load(f)
     for patient, persona in tqdm(data.items()):
         # Step 1: Generate encounter (clinical events) from persona

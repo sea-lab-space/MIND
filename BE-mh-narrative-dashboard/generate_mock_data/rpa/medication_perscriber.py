@@ -1,7 +1,6 @@
 from agents import Agent, ModelSettings, Runner
 from generate_mock_data.fill_EHR import MedicationResponse
 
-
 async def prescribe_medication(transcript: str, model_name: str) -> MedicationResponse:
     medication_prescriber_agent = Agent(
         name="medication_prescriber_agent",

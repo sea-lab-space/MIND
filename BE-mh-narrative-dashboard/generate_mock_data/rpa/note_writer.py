@@ -1,6 +1,4 @@
-import asyncio
 from agents import Agent, ModelSettings, Runner
-
 
 async def write_progress_note(transcript, medication, model_name):
     note_writing_agent = Agent(

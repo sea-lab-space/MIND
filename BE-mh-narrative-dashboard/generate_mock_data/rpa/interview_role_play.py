@@ -141,8 +141,8 @@ async def simulate_session(patient_id: str, context: str, encounter_count: int =
             break
         i += 1
     
-    await patient_agent.dump_session(f"./generate_mock_data")
-    await clinician_agent.dump_session(f"./generate_mock_data")
+    # await patient_agent.dump_session(f"./generate_mock_data")
+    # await clinician_agent.dump_session(f"./generate_mock_data")
 
     patient_transcript = await patient_agent.return_session()
     clinician_transcript = await clinician_agent.return_session()
@@ -157,8 +157,8 @@ async def simulate_session(patient_id: str, context: str, encounter_count: int =
                 "patient": patient_transcript[i]["content"][0]['text']
             })
     # save combined transcript
-    with open(f"./generate_mock_data/{patient_id}_combined_transcript.json", "w", encoding='utf-8') as f:
-        json.dump(combined_transcript, f, indent=2)
+    # with open(f"./generate_mock_data/{patient_id}_combined_transcript.json", "w", encoding='utf-8') as f:
+    #     json.dump(combined_transcript, f, indent=2)
     return combined_transcript
 
 if __name__ == "__main__":

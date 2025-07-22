@@ -10,10 +10,9 @@ project_root = Path(__file__).parent.parent
 sys.path.append(str(project_root))
 load_dotenv()
 
-
-from generate_mock_data.interview_role_play import simulate_session
-from generate_mock_data.note_writer import write_progress_note
-from generate_mock_data.medication_perscriber import prescribe_medication
+from generate_mock_data.rpa.interview_role_play import simulate_session
+from generate_mock_data.rpa.note_writer import write_progress_note
+from generate_mock_data.rpa.medication_perscriber import prescribe_medication
 
 def load_json(path):
     with open(path, 'r') as f:
