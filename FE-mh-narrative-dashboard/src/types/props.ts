@@ -62,3 +62,20 @@ export const iconMap: Record<string, React.ElementType> = {
 
   // Add more mappings as needed
 };
+
+
+export enum InsightType {
+  SLEEP = "sleep",
+  ACTIVITY = "activity",
+  DIGITAL = "digital",
+  EMOTIONAL = "emotional",
+  SOCIAL = "social",
+  MEDICATION = "medication"
+}
+
+export enum DataSourceType {
+  TREND = "trend",
+  EXTREME = "extreme",
+  DIFFERENCE = "difference",
+  COMPARISON = "comparison",
+}

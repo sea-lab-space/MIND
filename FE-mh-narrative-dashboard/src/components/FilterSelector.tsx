@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
 import {
     BedDouble,
     Activity,
@@ -10,80 +7,79 @@ import {
     Pill,
     Filter
 } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { InsightType } from "@/types/props";
 
-type FilterKey =
-    | "sleep"
-    | "activity"
-    | "digital"
-    | "emotional"
-    | "social"
-    | "meds"
 
-type FilterOption = {
-    key: FilterKey
-    label: string
-    icon: React.ReactNode
-}
-
-const FILTER_OPTIONS: FilterOption[] = [
-    {
-        key: "sleep",
+const InsightTypeMeta: Record<InsightType, {
+    label: string;
+    icon: React.ElementType;         // component reference
+    iconNode?: React.ReactNode;      // pre-rendered JSX if needed
+}> = {
+    [InsightType.SLEEP]: {
         label: "Sleep Patterns",
-        icon: <BedDouble className="w-4 h-4 mr-2" />
+        icon: BedDouble,
+        iconNode: <BedDouble className="w-4 h-4 mr-2" />
     },
-    {
-        key: "activity",
+    [InsightType.ACTIVITY]: {
         label: "Physical Activity",
-        icon: <Activity className="w-4 h-4 mr-2" />
+        icon: Activity,
+        iconNode: <Activity className="w-4 h-4 mr-2" />
     },
-    {
-        key: "digital",
+    [InsightType.DIGITAL]: {
         label: "Digital Engagement",
-        icon: <PhoneCall className="w-4 h-4 mr-2" />
+        icon: PhoneCall,
+        iconNode: <PhoneCall className="w-4 h-4 mr-2" />
     },
-    {
-        key: "emotional",
+    [InsightType.EMOTIONAL]: {
         label: "Emotional State",
-        icon: <Brain className="w-4 h-4 mr-2" />
+        icon: Brain,
+        iconNode: <Brain className="w-4 h-4 mr-2" />
     },
-    {
-        key: "social",
+    [InsightType.SOCIAL]: {
         label: "Social Interaction",
-        icon: <Users2 className="w-4 h-4 mr-2" />
+        icon: Users2,
+        iconNode: <Users2 className="w-4 h-4 mr-2" />
     },
-    {
-        key: "meds",
+    [InsightType.MEDICATION]: {
         label: "Medication & Treatment",
-        icon: <Pill className="w-4 h-4 mr-2" />
+        icon: Pill,
+        iconNode: <Pill className="w-4 h-4 mr-2" />
     }
-]
+};
 
-export function FilterSelector() {
-    const [selected, setSelected] = useState<FilterKey[]>([])
 
-    const toggleFilter = (key: FilterKey) => {
-        setSelected(prev =>
-            prev.includes(key)
-                ? prev.filter(k => k !== key)
-                : [...prev, key]
-        )
-    }
 
+const FILTER_OPTIONS = Object.entries(InsightTypeMeta).map(([type, meta]) => ({
+    type: type as InsightType,
+    label: meta.label,
+    icon: meta.iconNode
+}));
+
+type FilterSelectorProps = {
+    selected: InsightType[];
+    onToggle: (type: InsightType) => void;
+};
+
+export function FilterSelector({ selected, onToggle }: FilterSelectorProps) {
     return (
         <div className="flex items-center gap-4 flex-wrap mx-6 mt-2">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Filter className="w-4 h-4" />
                 <span>Filter By:</span>
             </div>
-            {FILTER_OPTIONS.map(({ key, label, icon }) => (
+
+            {FILTER_OPTIONS.map(({ type, label, icon }) => (
                 <Button
-                    key={key}
+                    key={type}
                     variant="outline"
                     size="sm"
-                    onClick={() => toggleFilter(key)}
+                    onClick={() => onToggle(type)}
                     className={cn(
                         "flex items-center rounded-2 transition-colors",
-                        selected.includes(key)
+                        selected.includes(type)
                             ? "bg-gray-200 text-black hover:bg-gray-200"
                             : "bg-white text-gray-700 hover:bg-gray-100"
                     )}
@@ -93,5 +89,5 @@ export function FilterSelector() {
                 </Button>
             ))}
         </div>
-    )
+    );
 }

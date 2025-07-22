@@ -10,12 +10,9 @@ import { useWindowSize } from "usehooks-ts";
 import { Button } from "@/components/ui";
 import { Pencil } from "lucide-react";
 import {FilterSelector} from "@/components/FilterSelector";
-import {cardData, data, retrospectHorizon} from "@/data/data";
+import {cardData, data, nameList, retrospectHorizon} from "@/data/data";
+import {InsightType} from "@/types/props";
 
-const nameList = [
-  "John Doe", "Jane Smith", "Mike Johnson", "Sarah Wilson", "David Brown",
-  "Lisa Davis", "Tom Miller", "Emma Garcia", "Alex Martinez", "Olivia Taylor",
-];
 
 const userName = "Ryan";
 
@@ -23,6 +20,7 @@ const userName = "Ryan";
 export default function App() {
   const [selectedInsightHeader, setSelectedInsightHeader] = useState<string[]>([]);
   const [selectedInsightCard, setSelectedInsightCard] = useState<number | null>(null);
+  const [selectedInsightTypes, setSelectedInsightTypes] = useState<InsightType[]>([]);
   const [isDrillDown, setIsDrillDown] = useState(false);
   const [expandedSections, setExpandedSections] = useState({
     overview: false,
@@ -61,6 +59,13 @@ export default function App() {
     }, 100);
   };
 
+  const filteredInsightCards = selectedInsightTypes.length === 0
+      ? insightCardData
+      : insightCardData.filter(card =>
+          Array.isArray(card.insightType) &&
+          card.insightType.some(type => selectedInsightTypes.includes(type))
+      );
+
 
   const selectedInsightCardTitles = insightCardData
       .filter((card) => selectedInsightHeader.includes(card.key))
@@ -76,7 +81,16 @@ export default function App() {
             retrospectHorizon={retrospectHorizon}
           />
         </div>
-        <FilterSelector />
+        <FilterSelector
+            selected={selectedInsightTypes}
+            onToggle={(type) => {
+              setSelectedInsightTypes((prev) =>
+                  prev.includes(type)
+                      ? prev.filter((t) => t !== type)
+                      : [...prev, type]
+              );
+            }}
+        />
 
         <div
           className={`flex flex-grow py-2 px-4 gap-4 overflow-y-auto ${
@@ -120,7 +134,7 @@ export default function App() {
                         : "grid grid-cols-1 sm:grid-cols-2 gap-4"
                     }`}
                   >
-                    {insightCardData.map((card, index) => (
+                    {filteredInsightCards.map((card, index) => (
                       <div
                         key={card.key}
                         ref={(el) => (cardRefs.current[index] = el)}
