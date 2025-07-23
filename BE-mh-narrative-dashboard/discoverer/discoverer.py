@@ -29,7 +29,7 @@ class Discoverer:
         data_facts = []
         # print([feat['feature_name'] for feat in feature_list])
 
-        for feature in tqdm(feature_list[:2]):
+        for feature in tqdm(feature_list):
             feature_insights = []
             for discoverer in self.numeric_agents:
                 # print(feature)
@@ -71,10 +71,13 @@ class Discoverer:
             self.retrospect_date: next((feat['clinical_note']
                           for feat in text_input if feat['encounter_date'] == self.retrospect_date), None)}
         transcript_input = self._prep_transcript(text_input)
+        
+        print("---- Running Text Data Fact Discovery ----")
         note_facts = self._run_text_discovery('clinical note', note_input)
         transcript_facts = self._run_text_discovery(
             'clinical transcript', transcript_input)
         
+        print("---- Running Numerical Data Fact Discovery ----")
         # Find fact from time series data
         numeric_input = features['numerical_data']
         numeric_facts = self._run_numeric_discovery(numeric_input)

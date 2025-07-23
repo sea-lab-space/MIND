@@ -5,7 +5,7 @@ import asyncio
 import json
 from pathlib import Path
 from dotenv import load_dotenv
-from tqdm import tqdm
+from utils.prompt_commons import get_mh_data_expert_system_prompt
 
 project_root = Path(__file__).parent.parent.parent
 print(project_root)
@@ -17,12 +17,7 @@ from typing import List, Literal
 from agents import Agent, ModelSettings, Runner
 from pydantic import BaseModel, Field
 
-def get_mh_data_expert_system_prompt():
-    # ! Using case tailored prompt
-    return f"""
-        You are a mental health expert with over 20 years of experience in practice.
-        You will be treating a patient with depression. 
-    """
+
 
 def get_mh_data_expert_modality_prompt(modality_source: Literal['clinical transcript', 'clinical notes']):
     return f"""
@@ -42,9 +37,8 @@ def get_mh_data_expert_requirements_prompt():
         Ensure this description is useful for mental health inference, but just describe the data fact. For example, do not say the data 'indicates' or 'suggests' anything.
         Leave the description focused on this type of data fact type. 
         
-        You are expected to return at least 3 data facts per fact type. 
-        Specifically: 1) you are encouraged to discover more: you will be awared if you can find the complete set of data facts; 2) you are penalized if you hallucinate: if you cannot find 3 data facts, you should return what you have found, even if less than 3.
-
+        You should return as many data facts as possible. Each data fact should be a single sentence.
+    
         Return both the data fact and the evidences in original source text that support it.
         Let’s think step by step. 
     """
@@ -54,7 +48,7 @@ class TextEvidence(BaseModel):
     text: str = Field(..., description="The text of the evidence.")
 
 class TextInsight(BaseModel):
-    insight_text: str
+    fact_text: str
     evidence: List[TextEvidence]
 
 class TextDataDiscoveryOutputModel(BaseModel):

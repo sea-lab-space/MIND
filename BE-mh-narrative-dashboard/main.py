@@ -8,9 +8,12 @@ from discoverer import (
     TranscriptsDiscovererAgent,
     Discoverer
 )
+from synthesizer import (
+    Synthesizer,
+)
 from utils.extract_single_feature import feature_transform
 
-MODEL_NAME = 'gpt-4.1-nano'
+MODEL_NAME = 'gpt-4.1'
 
 def run_data_prep(patient_id):
     """
@@ -81,7 +84,9 @@ def run_discoverer(data):
 
 
 def run_synthesizer(data):
-    pass
+    synthesizer = Synthesizer(data_fact_source=data, model_name=MODEL_NAME)
+    result = synthesizer.run(data)
+    return result
 
 def exec(patient_id, save_interm = False):
     if save_interm:
@@ -107,10 +112,10 @@ def exec(patient_id, save_interm = False):
 
 
 if __name__ == "__main__":
-    # exec(patient_id="INS-W_963", save_interm=True)
+    exec(patient_id="INS-W_963", save_interm=True)
 
     # read data_facts.json
-    with open("data_facts.json", "r") as f:
+    with open("mock_data/data_facts.json", "r") as f:
         data_facts = json.load(f)
         f.close()
     
