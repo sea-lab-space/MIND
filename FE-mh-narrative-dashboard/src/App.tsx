@@ -10,8 +10,8 @@ import { useWindowSize } from "usehooks-ts";
 import { Button } from "@/components/ui";
 import { Pencil } from "lucide-react";
 import {FilterSelector} from "@/components/FilterSelector";
-import {cardData, data, nameList, retrospectHorizon} from "@/data/data";
-import {InsightType} from "@/types/props";
+import {data, defaultInsightCardData, nameList, retrospectHorizon} from "@/data/data";
+import type {InsightType} from "@/types/props";
 
 
 const userName = "Ryan";
@@ -19,7 +19,7 @@ const userName = "Ryan";
 
 export default function App() {
   const [selectedInsightHeader, setSelectedInsightHeader] = useState<string[]>([]);
-  const [selectedInsightCard, setSelectedInsightCard] = useState<number | null>(null);
+  const [selectedInsightCard, setSelectedInsightCard] = useState<string | null>(null);
   const [selectedInsightTypes, setSelectedInsightTypes] = useState<InsightType[]>([]);
   const [isDrillDown, setIsDrillDown] = useState(false);
   const [expandedSections, setExpandedSections] = useState({
@@ -27,6 +27,7 @@ export default function App() {
     insights: false,
     communication: false,
   });
+
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const insightCardData = data.insights;
   const patientCommunicationData = data.patientCommunication;
@@ -48,8 +49,8 @@ export default function App() {
     );
   };
 
-  const handleCardSelection = (index: number) => {
-    setSelectedInsightCard(index);
+  const handleCardSelection = (key: string, index: number) => {
+    setSelectedInsightCard(key);
     setIsDrillDown(true);
     setTimeout(() => {
       const cardEl = cardRefs.current[index];
@@ -58,6 +59,7 @@ export default function App() {
       }
     }, 100);
   };
+
 
   const filteredInsightCards = selectedInsightTypes.length === 0
       ? insightCardData
@@ -148,8 +150,8 @@ export default function App() {
                           isInsightHeaderSelected={selectedInsightHeader.includes(
                             card.key
                           )}
-                          isInsightCardSelected={selectedInsightCard === index}
-                          handleCardSelect={() => handleCardSelection(index)}
+                          isInsightCardSelected={selectedInsightCard === card.key}
+                          handleCardSelect={() => handleCardSelection(card.key, index)}
                           handleCardHeaderClick={() =>
                             handleInsightCardHeaderSelect(card.key)
                           }
@@ -192,6 +194,7 @@ export default function App() {
               style={{ width: rightPanelWidth }}
             >
               <DrilldownPanel
+                  insightData={insightCardData.find((data) => data.key === selectedInsightCard) || defaultInsightCardData}
                 onClose={() => {
                   setIsDrillDown(false);
                   setSelectedInsightCard(null);

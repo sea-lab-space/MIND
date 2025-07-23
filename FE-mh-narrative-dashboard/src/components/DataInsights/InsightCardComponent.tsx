@@ -10,9 +10,7 @@ interface InsightCardProps {
     isExpanded?: boolean;
     title?: string;
     insightCardData: InsightCardData;
-    sources: Array<{
-        type: DatasourceIconType;
-    }>;
+    sources: Array<{ type: DatasourceIconType }>
     onToggle?: (expanded: boolean) => void;
     isInsightHeaderSelected?: boolean;
     isInsightCardSelected?: boolean;

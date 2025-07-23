@@ -15,6 +15,7 @@ export type RetrospectOptions = {
 
 // For each insight's expandable detail
 export interface InsightExpandView {
+    key: string;
     summarySentence: string;
     dataPoints: Record<string, number>;
     sources: { type: DatasourceIconTypes }[];

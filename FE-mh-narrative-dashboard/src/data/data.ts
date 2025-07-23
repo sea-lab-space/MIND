@@ -15,35 +15,15 @@ export const retrospectHorizon: RetrospectOptions = {
     "Last year": 365,
 };
 
-export const cardData = [
-    {
-        key: "insight-1",
-        title: "Increased social activity, yet remains in a closed circle",
+export const defaultInsightCardData = {
+        key: "insight-NONE",
+        summaryTitle: "No Data Found",
         sources: [
-            { type: DatasourceIconTypes.measurementScore },
-            { type: DatasourceIconTypes.clinicalNotes },
-            { type: DatasourceIconTypes.clinicalTranscripts }
+        ],
+        insightType: [InsightType.SOCIAL, InsightType.EMOTIONAL],
+        expandView: [
         ]
-    },
-    {
-        key: "insight-2",
-        title: "Growing Activity Level Despite Persistent Fatigue",
-        sources: [
-            { type: DatasourceIconTypes.measurementScore },
-            { type: DatasourceIconTypes.clinicalNotes }
-        ]
-    },
-    {
-        key: "insight-3",
-        title: "Enhanced Cognitive Function and Focus",
-        sources: [
-            { type: DatasourceIconTypes.measurementScore },
-            { type: DatasourceIconTypes.clinicalNotes },
-            { type: DatasourceIconTypes.clinicalTranscripts },
-            { type: DatasourceIconTypes.passiveSensing }
-        ]
-    }
-];
+    } as InsightCard;
 
 // Main data export
 export const data = {
@@ -103,6 +83,7 @@ export const data = {
             insightType: [InsightType.SOCIAL, InsightType.EMOTIONAL],
             expandView: [
                 {
+                    key: "insight-1-detail-1",
                     summarySentence: "Social App Usage: Daily active time increased by 30%.",
                     dataPoints: { week1: 10, week2: 12, week3: 14, week4: 18 },
                     sources: [
@@ -113,6 +94,7 @@ export const data = {
                     dataSourceType: DataSourceType.DIFFERENCE
                 },
                 {
+                    key: "insight-1-detail-2",
                     summarySentence: "GPS Data (New Locations Visited per Week): Average 1 new non-routine location/week",
                     dataPoints: { morning: 3, afternoon: 5, evening: 15, night: 2 },
                     sources: [
@@ -123,6 +105,7 @@ export const data = {
                     dataSourceType: DataSourceType.COMPARISON
                 },
                 {
+                    key: "insight-1-detail-3",
                     summarySentence: "Patient Report: Increased effort in communication, primarily with their sister.",
                     dataPoints: { morning: 3, afternoon: 5, evening: 15, night: 2 },
                     sources: [
@@ -145,6 +128,7 @@ export const data = {
             insightType: [InsightType.ACTIVITY],
             expandView: [
                 {
+                    key: "insight-2-detail-1",
                     summarySentence: "Social interactions increased by 20% over the last month.",
                     dataPoints: { week1: 10, week2: 12, week3: 14, week4: 18 },
                     sources: [
@@ -154,6 +138,7 @@ export const data = {
                     ]
                 },
                 {
+                    key: "insight-2-detail-2",
                     summarySentence: "Peak social activity occurs in evenings.",
                     dataPoints: { morning: 3, afternoon: 5, evening: 15, night: 2 },
                     sources: [
@@ -175,6 +160,7 @@ export const data = {
             insightType: [InsightType.EMOTIONAL, InsightType.SOCIAL],
             expandView: [
                 {
+                    key: "insight-3-detail-1",
                     summarySentence: "Social interactions increased by 20% over the last month.",
                     dataPoints: {
                         week1: 10,
@@ -189,6 +175,7 @@ export const data = {
                     ]
                 },
                 {
+                    key: "insight-3-detail-2",
                     summarySentence: "Peak social activity occurs in evenings.",
                     dataPoints: {
                         morning: 3,
@@ -215,6 +202,7 @@ export const data = {
             insightType: [InsightType.SOCIAL, InsightType.DIGITAL],
             expandView: [
                 {
+                    key: "insight-4-detail-1",
                     summarySentence: "Social interactions increased by 20% over the last month.",
                     dataPoints: {
                         week1: 10,
@@ -229,6 +217,7 @@ export const data = {
                     ]
                 },
                 {
+                    key: "insight-4-detail-2",
                     summarySentence: "Peak social activity occurs in evenings.",
                     dataPoints: {
                         morning: 3,
@@ -255,6 +244,7 @@ export const data = {
             insightType: [InsightType.SOCIAL, InsightType.EMOTIONAL],
             expandView: [
                 {
+                    key: "insight-5-detail-1",
                     summarySentence: "Social interactions increased by 20% over the last month.",
                     dataPoints: {
                         week1: 10,
@@ -269,6 +259,7 @@ export const data = {
                     ]
                 },
                 {
+                    key: "insight-5-detail-2",
                     summarySentence: "Peak social activity occurs in evenings.",
                     dataPoints: {
                         morning: 3,
@@ -283,7 +274,7 @@ export const data = {
                     ]
                 }
             ]
-        },
+        }
     ] as InsightCard[],
     patientCommunication: {
         suggestedActivities: [
