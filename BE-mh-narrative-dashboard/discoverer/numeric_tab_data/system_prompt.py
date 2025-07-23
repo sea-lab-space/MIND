@@ -22,7 +22,7 @@ def get_mh_data_expert_task_prompt(fact_type, fact_definition):
         {fact_definition}
     """
 
-def get_mh_data_expert_requriements_prompt():
+def get_mh_data_expert_requirements_prompt():
     return f"""
         The data fact you extracted should be of mental health clinical interest.
         
@@ -33,7 +33,7 @@ def get_mh_data_expert_requriements_prompt():
         You are expected to return at least 3 data facts per fact type. 
         Specifically: 1) you are encouraged to discover more: you will be awared if you can find the complete set of data facts; 2) you are penalized if you hallucinate: if you cannot find 3 data facts, you should return what you have found, even if less than 3.
 
-        Remember to think step by step.
+        Let’s think step by step.
     """
 
 def get_mh_data_date_prompt(retrospect_date_str: str, before_date_str: str, is_comparison: bool = False):

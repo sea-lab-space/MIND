@@ -31,7 +31,7 @@ class ExtremeDiscovererAgent(BaseDiscovererAgent):
             get_mh_data_expert_feature_prompt,
             get_mh_data_expert_system_prompt,
             get_mh_data_expert_task_prompt,
-            get_mh_data_expert_requriements_prompt,
+            get_mh_data_expert_requirements_prompt,
             get_mh_data_date_prompt
         )
 
@@ -42,5 +42,5 @@ class ExtremeDiscovererAgent(BaseDiscovererAgent):
             {get_mh_data_expert_modality_prompt(modality_source=modality_source)}
             {get_mh_data_expert_feature_prompt(feature_name=feature_name, feature_definition=feature_definition)}
             {get_mh_data_expert_task_prompt(fact_type="extreme", fact_definition=self.DEFINITION)}       
-            {get_mh_data_expert_requriements_prompt()}
+            {get_mh_data_expert_requirements_prompt()}
         """.replace("\r", "").replace("\n\n", "\n")

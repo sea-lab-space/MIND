@@ -1,0 +1,304 @@
+{
+  "numeric_facts": [
+    {
+      "modality_type": "passive sensing",
+      "modality_source": "bluetooth",
+      "feature_name": "uniquedevices",
+      "data_facts": [
+        {
+          "name": "uniquedevices",
+          "attribute": "cyclic",
+          "time_1": "2021-03-29",
+          "time_2": "2021-04-02",
+          "fact_description": "uniquedevices is cyclic from 2021-03-29 to 2021-04-02.",
+          "fact_type": "trend"
+        },
+        {
+          "name": "uniquedevices",
+          "attribute": "cyclic",
+          "time_1": "2021-04-06",
+          "time_2": "2021-04-10",
+          "fact_description": "uniquedevices is cyclic from 2021-04-06 to 2021-04-10.",
+          "fact_type": "trend"
+        },
+        {
+          "name": "uniquedevices",
+          "attribute": "cyclic",
+          "time_1": "2021-04-22",
+          "time_2": "2021-05-02",
+          "fact_description": "uniquedevices is cyclic from 2021-04-22 to 2021-05-02.",
+          "fact_type": "trend"
+        },
+        {
+          "name": "uniquedevices",
+          "attribute": "max",
+          "time": "2021-04-22",
+          "value": 22.0,
+          "fact_description": "The maximum number of unique Bluetooth devices sensed is 22 on 2021-04-22.",
+          "fact_type": "extreme"
+        },
+        {
+          "name": "uniquedevices",
+          "attribute": "max",
+          "time": "2021-05-14",
+          "value": 19.0,
+          "fact_description": "The maximum number of unique Bluetooth devices sensed is 19 on 2021-05-14.",
+          "fact_type": "extreme"
+        },
+        {
+          "name": "uniquedevices",
+          "attribute": "min",
+          "time": "2021-04-19",
+          "value": 1.0,
+          "fact_description": "The minimum number of unique Bluetooth devices sensed is 1 on 2021-04-19.",
+          "fact_type": "extreme"
+        },
+        {
+          "name": "uniquedevices",
+          "attribute": "more",
+          "time_1": "2021-03-29",
+          "time_2": "2021-05-09",
+          "value_1": 3.0,
+          "value_2": 1.0,
+          "fact_description": "The number of unique devices sensed decreased from 3 on 2021-03-29 to 1 on 2021-05-09.",
+          "fact_type": "difference"
+        },
+        {
+          "name": "uniquedevices",
+          "attribute": "more",
+          "time_1": "2021-05-09",
+          "time_2": "2021-06-06",
+          "value_1": 1.0,
+          "value_2": 4.0,
+          "fact_description": "The number of unique devices sensed increased from 1 on 2021-05-09 to 4 on 2021-06-06.",
+          "fact_type": "difference"
+        },
+        {
+          "name": "uniquedevices",
+          "attribute": "more",
+          "time_1": "2021-04-22",
+          "time_2": "2021-04-24",
+          "value_1": 22.0,
+          "value_2": 0.0,
+          "fact_description": "The number of unique devices sensed decreased from 22 on 2021-04-22 to 0 on 2021-04-24.",
+          "fact_type": "difference"
+        },
+        {
+          "name": "uniquedevices",
+          "attribute": "greater than",
+          "time_dur_1": {
+            "time_start": "2021-03-29",
+            "time_end": "2021-05-08"
+          },
+          "time_dur_2": {
+            "time_start": "2021-05-09",
+            "time_end": "2021-06-06"
+          },
+          "value_dur_1": 4.0,
+          "value_dur_2": 4.0,
+          "fact_description": "The number of unique devices sensed from 2021-03-29 to 2021-05-08 was equal to the number sensed from 2021-05-09 to 2021-06-06.",
+          "fact_type": "comparison"
+        },
+        {
+          "name": "uniquedevices",
+          "attribute": "greater than",
+          "time_dur_1": {
+            "time_start": "2021-03-29",
+            "time_end": "2021-05-08"
+          },
+          "time_dur_2": {
+            "time_start": "2021-05-09",
+            "time_end": "2021-06-06"
+          },
+          "value_dur_1": 4.0,
+          "value_dur_2": 4.0,
+          "fact_description": "The average number of unique devices in the first period was equal to that in the second period.",
+          "fact_type": "comparison"
+        },
+        {
+          "name": "uniquedevices",
+          "attribute": "greater than",
+          "time_dur_1": {
+            "time_start": "2021-03-29",
+            "time_end": "2021-05-08"
+          },
+          "time_dur_2": {
+            "time_start": "2021-05-09",
+            "time_end": "2021-06-06"
+          },
+          "value_dur_1": 4.0,
+          "value_dur_2": 4.0,
+          "fact_description": "The total number of unique devices sensed in the first period was equal to that in the second period.",
+          "fact_type": "comparison"
+        }
+      ]
+    },
+    {
+      "modality_type": "passive sensing",
+      "modality_source": "call",
+      "feature_name": "outgoing_count",
+      "data_facts": [
+        {
+          "name": "outgoing_count",
+          "attribute": "rise",
+          "time_1": "2021-06-02",
+          "time_2": "2021-06-03",
+          "fact_description": "outgoing_count is rise from 2021-06-02 to 2021-06-03.",
+          "fact_type": "trend"
+        },
+        {
+          "name": "outgoing_count",
+          "attribute": "fall",
+          "time_1": "2021-04-20",
+          "time_2": "2021-04-21",
+          "fact_description": "outgoing_count is fall from 2021-04-20 to 2021-04-21.",
+          "fact_type": "trend"
+        },
+        {
+          "name": "outgoing_count",
+          "attribute": "cyclic",
+          "time_1": "2021-04-15",
+          "time_2": "2021-04-15",
+          "fact_description": "outgoing_count is cyclic on 2021-04-15.",
+          "fact_type": "trend"
+        },
+        {
+          "name": "outgoing_count",
+          "attribute": "max",
+          "time": "2021-06-02",
+          "value": 6.0,
+          "fact_description": "The maximum outgoing call count is 6 at 2021-06-02.",
+          "fact_type": "extreme"
+        },
+        {
+          "name": "outgoing_count",
+          "attribute": "max",
+          "time": "2021-05-24",
+          "value": 4.0,
+          "fact_description": "The maximum outgoing call count is 4 at 2021-05-24.",
+          "fact_type": "extreme"
+        },
+        {
+          "name": "outgoing_count",
+          "attribute": "min",
+          "time": "2021-03-31",
+          "value": 0.0,
+          "fact_description": "The minimum outgoing call count is 0 at 2021-03-31.",
+          "fact_type": "extreme"
+        },
+        {
+          "name": "outgoing_count",
+          "attribute": "more",
+          "time_1": "2021-03-29",
+          "time_2": "2021-05-09",
+          "value_1": 1.0,
+          "value_2": 0.0,
+          "fact_description": "The outgoing_count is more from 2021-03-29 at 1.0 to 2021-05-09 at 0.0.",
+          "fact_type": "difference"
+        },
+        {
+          "name": "outgoing_count",
+          "attribute": "more",
+          "time_1": "2021-03-29",
+          "time_2": "2021-06-06",
+          "value_1": 1.0,
+          "value_2": 1.0,
+          "fact_description": "The outgoing_count is more from 2021-03-29 at 1.0 to 2021-06-06 at 1.0.",
+          "fact_type": "difference"
+        },
+        {
+          "name": "outgoing_count",
+          "attribute": "less",
+          "time_1": "2021-04-20",
+          "time_2": "2021-05-23",
+          "value_1": 3.0,
+          "value_2": 3.0,
+          "fact_description": "The outgoing_count is less from 2021-04-20 at 3.0 to 2021-05-23 at 3.0.",
+          "fact_type": "difference"
+        },
+        {
+          "name": "outgoing_count",
+          "attribute": "greater than",
+          "time_dur_1": {
+            "time_start": "2021-03-29",
+            "time_end": "2021-05-08"
+          },
+          "time_dur_2": {
+            "time_start": "2021-05-09",
+            "time_end": "2021-06-06"
+          },
+          "value_dur_1": 0.75,
+          "value_dur_2": 1.75,
+          "fact_description": "The outgoing call count increased from the period before 2021-05-09 to the period after 2021-05-09.",
+          "fact_type": "comparison"
+        }
+      ]
+    }
+  ],
+  "note_facts": [
+    {
+      "insight_text": "Mei Lin reports experiencing significant fatigue, frustration, and hopelessness on many days.",
+      "evidence": [
+        {
+          "date": "2021-05-09",
+          "text": "She continues to experience significant fatigue, frustration, and hopelessness on many days."
+        }
+      ]
+    },
+    {
+      "insight_text": "Mei Lin describes persistent negative self-evaluations, including feelings of inadequacy and failure.",
+      "evidence": [
+        {
+          "date": "2021-05-09",
+          "text": "She identified persistent negative self-evaluations, especially during periods of low mood and fatigue. Mei Lin frequently experiences thoughts of inadequacy, feeling like a failure, and worries about not being able to meet expectations\u2014both academically and in supporting her family."
+        }
+      ]
+    },
+    {
+      "insight_text": "Mei Lin reports physical somatic symptoms such as heaviness in her chest, anxiety, stomach upset, numbness, and mental fogginess.",
+      "evidence": [
+        {
+          "date": "2021-05-09",
+          "text": "These thoughts are often accompanied by physical sensations, including heaviness in her chest, anxiety, stomach upset, numbness, and mental fogginess."
+        }
+      ]
+    }
+  ],
+  "transcript_facts": [
+    {
+      "insight_text": "The patient reports experiencing feelings of fatigue, frustration, and hopelessness.",
+      "evidence": [
+        {
+          "date": "2021-05-09",
+          "text": "you experience feelings of fatigue, frustration, and hopelessness."
+        }
+      ]
+    },
+    {
+      "insight_text": "The patient describes having persistent negative thoughts about self-worth, including feelings of not being good enough and fears of disappointing others.",
+      "evidence": [
+        {
+          "date": "2021-05-09",
+          "text": "when I feel really tired and down, I start thinking that I\u2019m just not good enough. Like, no matter what I do, I still mess up or fall behind."
+        },
+        {
+          "date": "2021-05-09",
+          "text": "I often think that if I fail or don\u2019t do well, I\u2019m just not good enough. Like, I\u2019m not smart enough or strong enough to handle everything."
+        },
+        {
+          "date": "2021-05-09",
+          "text": "I guess I often think that if I fail or don\u2019t do well, I\u2019m just not good enough. Like, I\u2019m not smart enough or strong enough to handle everything. I worry that I\u2019ll disappoint my family or make them ashamed."
+        }
+      ]
+    },
+    {
+      "insight_text": "The patient reports experiencing physical sensations such as heaviness in the chest, anxiety, and a foggy or numb feeling in the mind.",
+      "evidence": [
+        {
+          "date": "2021-05-09",
+          "text": "I think I feel a kind of heaviness in my chest, like a weight pressing down. Sometimes I get really anxious, and my stomach feels upset. I also feel kind of numb, like I don\u2019t really feel anything, even when I try to focus or do my work."
+        }
+      ]
+    }
+  ]
+}

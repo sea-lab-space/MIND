@@ -41,7 +41,6 @@ if __name__ == "__main__":
             exit(1)
         else:
             print("Proceeding...")
-    exit()
 
     for i in tqdm(range(1, len(DATES))):
         # 1. Determine retrospect_date and before_date

@@ -36,7 +36,7 @@ class DifferenceDiscovererAgent(BaseDiscovererAgent):
             get_mh_data_expert_feature_prompt,
             get_mh_data_expert_system_prompt,
             get_mh_data_expert_task_prompt,
-            get_mh_data_expert_requriements_prompt,
+            get_mh_data_expert_requirements_prompt,
             get_mh_data_date_prompt
         )
 
@@ -48,5 +48,5 @@ class DifferenceDiscovererAgent(BaseDiscovererAgent):
             {get_mh_data_expert_feature_prompt(feature_name=feature_name, feature_definition=feature_definition)}
             {get_mh_data_expert_task_prompt(fact_type="difference", fact_definition=self.DEFINITION)}       
             {get_mh_data_date_prompt(retrospect_date_str=self.retrospect_date, before_date_str=self.before_date, is_comparison=True)}
-            {get_mh_data_expert_requriements_prompt()}
+            {get_mh_data_expert_requirements_prompt()}
         """.replace("\r", "").replace("\n\n", "\n")
