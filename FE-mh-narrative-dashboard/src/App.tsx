@@ -1,5 +1,5 @@
 import InsightCardComponent from "@/components/DataInsights/InsightCardComponent";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Header from "./components/header";
 import SectionTitle from "./components/section";
 import DrilldownPanel from "./components/Drilldown/DrilldownPanel";
@@ -11,7 +11,7 @@ import { Button } from "@/components/ui";
 import { Pencil } from "lucide-react";
 import {FilterSelector} from "@/components/FilterSelector";
 import {data, defaultInsightCardData, nameList, retrospectHorizon} from "@/data/data";
-import type {InsightType} from "@/types/props";
+import {DatasourceIconTypes, InsightType, type DatasourceIconType} from "@/types/props";
 
 
 const userName = "Ryan";
@@ -28,8 +28,46 @@ export default function App() {
     communication: false,
   });
 
+  const [insightsDataTemp, setInsightsDataTemp] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/data/Visualizer_INS-W_963.json");
+        if (!response.ok) throw new Error("Failed to fetch");
+        const data = await response.json();
+        const map_modality: Record<string, DatasourceIconType> = {
+          "passive sensing": DatasourceIconTypes.passiveSensing,
+          survey: DatasourceIconTypes.measurementScore,
+          "clinical note": DatasourceIconTypes.clinicalNotes,
+          "session transcript": DatasourceIconTypes.clinicalTranscripts,
+        };
+        const LabelToInsightTypeMap: Record<string, InsightType> = {
+          "Sleep Patterns": InsightType.SLEEP,
+          "Physical Activity": InsightType.ACTIVITY,
+          "Digital Engagement": InsightType.DIGITAL,
+          "Emotional State": InsightType.EMOTIONAL,
+          "Social Interaction": InsightType.SOCIAL,
+          "Medication & Treatment": InsightType.MEDICATION,
+        };
+        const insightsData = data.insights.map((insight: any) => ({
+          ...insight,
+          insightType: insight.insightType.map((type: string) => {type: LabelToInsightTypeMap[type]}),
+          sources: insight.sources.map((type: string) => map_modality[type]),
+        }))
+        setInsightsDataTemp(insightsData);
+      }
+      catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const insightCardData = data.insights;
+  // const insightCardData = data.insights;
+  const insightCardData = insightsDataTemp.length > 0 ? insightsDataTemp : defaultInsightCardData;
   const patientCommunicationData = data.patientCommunication;
 
   const toggleSection = (section: string) => {

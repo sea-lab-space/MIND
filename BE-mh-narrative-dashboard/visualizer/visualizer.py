@@ -60,7 +60,7 @@ class Visualizer:
                 {
                     "key": f"insight-{self.insight_count}",
                     "summaryTitle": insight["insight_description"],
-                    "sources": inference_sources,
+                    "sources": list(set(inference_sources)),
                     "insightType": insight['insight_category'],
                     "expandView": expand_view
                 }
