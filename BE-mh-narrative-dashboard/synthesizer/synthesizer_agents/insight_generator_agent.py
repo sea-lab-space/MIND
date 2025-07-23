@@ -15,12 +15,53 @@ sys.path.append(str(project_root))
 load_dotenv()
 
 
+SYNT_DATA_PROMPT = f"""
+You are provided with a list of data facts described in the following format:
+[|fact-id|] <|modality_type|: |feature_name|> |Data fact description|
+where:
+* |fact-id| is the unique identifier of the fact
+* |modality_type| is either 'text', 'survey' or 'passive sensing'
+* |feature_name| is the name of the feature
+* |Data fact description| is a textual description of the data fact
+"""
+
+SYNT_CATEGORY_PROMPT = f"""
+You should consider the generated insight based on the following |category/categories|:
+* Sleep Patterns
+* Physical Activity
+* Digital Engagement
+* Emotional State
+* Social Interaction
+* Medication & Treatment
+"""
 
 
+SYNT_TASK_PROMPT = """
+Your task is to list all data driven insights interesting to a mental health clinician.
 
+Consider the following rules:
+* Prioritize insights that uses multiple modalities. The best insight comes from seeing a combination of text, survey and passive sensing data.
+* Seek for inconsistencies and consistencies between the different features.
+* Prioritize covering the above mentioned |category/categories|. Each insight could either be around one or multiple categories.
+* Prioritize insights that can be used as conversation starters to help clinicians better understand the patient.
+* Prioritize insights that can be used to help clinicians make better decisions.
+* Describe the insight succinctly.
+* Describe data insight that could be useful for mental health clinicians, but do not say the insight 'indicates' or 'suggests' anything. 
+
+You should also attribute your insight to data facts.
+For each insight, do not use more than 10 data facts.
+
+Generate as much data insight as possible (at least 10). Let's think step by step.
+"""
+
+
+class InsightSpec(BaseModel):
+    insight_description: str = Field(..., description="The description of the insight, in 15 words")
+    insight_source: List[str] = Field(..., description="The |fact-id|s that derives this insight")
+    insight_category: List[str] = Field(..., description="The |category/categories| of the insight")
 
 class InsightProposalOutputModel(BaseModel):
-    insights: List[TextInsight]
+    insights: List[InsightSpec]
 
 
 class InsightProposalAgent:
@@ -38,28 +79,20 @@ class InsightProposalAgent:
     def _glue_instructions(self):
         return f"""
             {get_mh_data_expert_system_prompt()}
-            {get_mh_data_expert_modality_prompt(self.modality_source)}
-            {get_mh_data_expert_task_prompt()}
-            {get_mh_data_expert_requirements_prompt()}
+            {SYNT_DATA_PROMPT}
+            {SYNT_CATEGORY_PROMPT}
+            {SYNT_TASK_PROMPT}
         """
+        # {get_mh_data_expert_modality_prompt(self.modality_source)}
+        # {get_mh_data_expert_task_prompt()}
+        # {get_mh_data_expert_requirements_prompt()}
 
-    async def run(self, text_pieces, verbose: bool = False):
-        """
-        Execute the agent to extract structured facts from the selected clinical texts.
-
-        Args:
-            text_pieces (Dict[str, str]): A mapping of date strings to raw text data.
-            verbose (bool): If True, prints the formatted text and results for debugging.
-
-        Returns:
-            Union[Dict[str, Any], Any]: A dictionary containing extracted factual data, or raw model output if no facts found.
-        """
+    async def run(self, data_facts, verbose: bool = False):
         self.agent.instructions = self._glue_instructions()
-        formatted_text = self._glue_text_pieces(text_pieces)
         if verbose:
-            print(formatted_text)
-        res = await Runner.run(self.agent, formatted_text)
+            print(data_facts)
+        res = await Runner.run(self.agent, data_facts)
         res_dict = res.final_output.model_dump()
         if verbose:
-            print(res_dict.get("facts"))
-        return res_dict.get("facts") or res_dict
+            print(res_dict.get("insights"))
+        return res_dict.get("insights") or res_dict
