@@ -41,3 +41,4 @@ We also use synthetic data to simulate patient encounters. To see how its raw fo
 
 ## 🧋 TODOs (Engineering perspective)
 - [ ] Use asyncio for concurrent API calls (currently sequential)
+- [ ] Change NaN to null in generated dataset.

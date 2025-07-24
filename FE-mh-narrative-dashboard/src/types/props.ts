@@ -1,11 +1,11 @@
 import { Heart, Brain, Activity, Pill, History } from "lucide-react";
 
 export const DatasourceIconTypes = {
-  passiveSensing: 'passive sensing',
-  clinicalNotes: 'notes',
-  clinicalTranscripts: 'transcripts',
-  measurementScore: 'measurement score'
- } as const;
+  passiveSensing: "passive sensing",
+  clinicalNotes: "clinical note",
+  clinicalTranscripts: "session transcript",
+  measurementScore: "survey"
+} as const;
 
 export type DatasourceIconType = typeof DatasourceIconTypes[keyof typeof DatasourceIconTypes];
 
@@ -43,6 +43,7 @@ export interface InsightExpandViewItem {
   summarySentence: string;
   dataPoints: Record<string, number>;
   sources: { type: DatasourceIconType }[];
+  dataSourceType: DataSourceType;
 }
 
 export interface InsightCardData {
@@ -65,12 +66,12 @@ export const iconMap: Record<string, React.ElementType> = {
 
 
 export enum InsightType {
-  SLEEP = "sleep",
-  ACTIVITY = "activity",
-  DIGITAL = "digital",
-  EMOTIONAL = "emotional",
-  SOCIAL = "social",
-  MEDICATION = "medication"
+  SLEEP = "Sleep Patterns",
+  ACTIVITY = "Physical Activity",
+  DIGITAL = "Digital Engagement",
+  EMOTIONAL = "Emotional State",
+  SOCIAL = "Social Interaction",
+  MEDICATION = "Medication & Treatment"
 }
 
 export enum DataSourceType {
@@ -78,4 +79,5 @@ export enum DataSourceType {
   EXTREME = "extreme",
   DIFFERENCE = "difference",
   COMPARISON = "comparison",
+  TEXT = "text"
 }

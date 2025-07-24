@@ -3,8 +3,8 @@
     "key": "insight-0",
     "summaryTitle": "Sleep duration and quality remain low despite improvements in mood and stress survey scores.",
     "sources": [
-      "passive sensing",
-      "survey"
+      "survey",
+      "passive sensing"
     ],
     "insightType": [
       "Sleep Patterns",
@@ -16,7 +16,7 @@
         "dataPoints": [
           {
             "date": "2021-03-29",
-            "avgdurationasleepunifiedmain": NaN
+            "avgdurationasleepunifiedmain": null
           },
           {
             "date": "2021-03-30",
@@ -305,7 +305,7 @@
         "dataPoints": [
           {
             "date": "2021-03-29",
-            "avgdurationasleepunifiedmain": NaN
+            "avgdurationasleepunifiedmain": null
           },
           {
             "date": "2021-03-30",
@@ -594,7 +594,7 @@
         "dataPoints": [
           {
             "date": "2021-03-29",
-            "avgdurationasleepunifiedmain": NaN
+            "avgdurationasleepunifiedmain": null
           },
           {
             "date": "2021-03-30",
@@ -979,11 +979,11 @@
     ]
   },
   {
-    "key": "insight-0",
+    "key": "insight-1",
     "summaryTitle": "Physical activity increased, with more steps and less sedentary time, coinciding with reduced negative affect.",
     "sources": [
-      "passive sensing",
-      "survey"
+      "survey",
+      "passive sensing"
     ],
     "insightType": [
       "Physical Activity",
@@ -1949,12 +1949,12 @@
     ]
   },
   {
-    "key": "insight-0",
+    "key": "insight-2",
     "summaryTitle": "Patient reports persistent fatigue and hopelessness despite some improvement in survey and session mood ratings.",
     "sources": [
       "session transcript",
-      "survey",
-      "clinical note"
+      "clinical note",
+      "survey"
     ],
     "insightType": [
       "Emotional State"
@@ -1972,7 +1972,7 @@
           "clinical note"
         ],
         "dataSourceType": "text",
-        "relevance": 0.31824815399718076
+        "relevance": 0.9670773677938123
       },
       {
         "summarySentence": "The patient continues to experience persistent feelings of fatigue, frustration, and hopelessness despite some improvement with grounding exercises.",
@@ -1990,7 +1990,7 @@
           "session transcript"
         ],
         "dataSourceType": "text",
-        "relevance": 0.7007151701854791
+        "relevance": 0.6147281866412455
       },
       {
         "summarySentence": "The average phq4_EMA score decreased from 5.2 before 2021-05-09 to 3.2 between 2021-05-09 and 2021-06-06.",
@@ -2044,11 +2044,11 @@
     ]
   },
   {
-    "key": "insight-0",
+    "key": "insight-3",
     "summaryTitle": "Digital engagement at home decreased, with shorter and fewer phone unlocks, as mood improved.",
     "sources": [
-      "passive sensing",
-      "survey"
+      "survey",
+      "passive sensing"
     ],
     "insightType": [
       "Digital Engagement",
@@ -2128,11 +2128,11 @@
           },
           {
             "date": "2021-04-15",
-            "sumdurationunlock_locmap_home": NaN
+            "sumdurationunlock_locmap_home": null
           },
           {
             "date": "2021-04-16",
-            "sumdurationunlock_locmap_home": NaN
+            "sumdurationunlock_locmap_home": null
           },
           {
             "date": "2021-04-17",
@@ -2417,11 +2417,11 @@
           },
           {
             "date": "2021-04-15",
-            "sumdurationunlock_locmap_home": NaN
+            "sumdurationunlock_locmap_home": null
           },
           {
             "date": "2021-04-16",
-            "sumdurationunlock_locmap_home": NaN
+            "sumdurationunlock_locmap_home": null
           },
           {
             "date": "2021-04-17",
@@ -2706,11 +2706,11 @@
           },
           {
             "date": "2021-04-15",
-            "avgdurationunlock_locmap_home": NaN
+            "avgdurationunlock_locmap_home": null
           },
           {
             "date": "2021-04-16",
-            "avgdurationunlock_locmap_home": NaN
+            "avgdurationunlock_locmap_home": null
           },
           {
             "date": "2021-04-17",
@@ -2974,7 +2974,7 @@
     ]
   },
   {
-    "key": "insight-0",
+    "key": "insight-4",
     "summaryTitle": "Patient\u2019s social interaction increased, with more outgoing calls and unique device contacts post-2021-05-09.",
     "sources": [
       "passive sensing"
@@ -3056,11 +3056,11 @@
           },
           {
             "date": "2021-04-15",
-            "outgoing_count": NaN
+            "outgoing_count": null
           },
           {
             "date": "2021-04-16",
-            "outgoing_count": NaN
+            "outgoing_count": null
           },
           {
             "date": "2021-04-17",
@@ -3345,11 +3345,11 @@
           },
           {
             "date": "2021-04-15",
-            "outgoing_count": NaN
+            "outgoing_count": null
           },
           {
             "date": "2021-04-16",
-            "outgoing_count": NaN
+            "outgoing_count": null
           },
           {
             "date": "2021-04-17",
@@ -3618,15 +3618,15 @@
           },
           {
             "date": "2021-04-11",
-            "uniquedevices": NaN
+            "uniquedevices": null
           },
           {
             "date": "2021-04-12",
-            "uniquedevices": NaN
+            "uniquedevices": null
           },
           {
             "date": "2021-04-13",
-            "uniquedevices": NaN
+            "uniquedevices": null
           },
           {
             "date": "2021-04-14",
@@ -3634,11 +3634,11 @@
           },
           {
             "date": "2021-04-15",
-            "uniquedevices": NaN
+            "uniquedevices": null
           },
           {
             "date": "2021-04-16",
-            "uniquedevices": NaN
+            "uniquedevices": null
           },
           {
             "date": "2021-04-17",
@@ -3670,7 +3670,7 @@
           },
           {
             "date": "2021-04-24",
-            "uniquedevices": NaN
+            "uniquedevices": null
           },
           {
             "date": "2021-04-25",
@@ -3678,7 +3678,7 @@
           },
           {
             "date": "2021-04-26",
-            "uniquedevices": NaN
+            "uniquedevices": null
           },
           {
             "date": "2021-04-27",
@@ -3726,7 +3726,7 @@
           },
           {
             "date": "2021-05-08",
-            "uniquedevices": NaN
+            "uniquedevices": null
           },
           {
             "date": "2021-05-09",
@@ -3742,7 +3742,7 @@
           },
           {
             "date": "2021-05-12",
-            "uniquedevices": NaN
+            "uniquedevices": null
           },
           {
             "date": "2021-05-13",
@@ -3786,7 +3786,7 @@
           },
           {
             "date": "2021-05-23",
-            "uniquedevices": NaN
+            "uniquedevices": null
           },
           {
             "date": "2021-05-24",
@@ -3794,7 +3794,7 @@
           },
           {
             "date": "2021-05-25",
-            "uniquedevices": NaN
+            "uniquedevices": null
           },
           {
             "date": "2021-05-26",
@@ -3838,7 +3838,7 @@
           },
           {
             "date": "2021-06-05",
-            "uniquedevices": NaN
+            "uniquedevices": null
           },
           {
             "date": "2021-06-06",
@@ -3923,11 +3923,11 @@
           },
           {
             "date": "2021-04-15",
-            "uniquedevices": NaN
+            "uniquedevices": null
           },
           {
             "date": "2021-04-16",
-            "uniquedevices": NaN
+            "uniquedevices": null
           },
           {
             "date": "2021-04-17",
@@ -4142,7 +4142,7 @@
     ]
   },
   {
-    "key": "insight-0",
+    "key": "insight-5",
     "summaryTitle": "Patient identifies academic pressure, poor sleep, and perfectionism as triggers for distress and negative thoughts.",
     "sources": [
       "session transcript",
@@ -4165,7 +4165,7 @@
           "clinical note"
         ],
         "dataSourceType": "text",
-        "relevance": 0.6288912930826586
+        "relevance": 0.40421032339821583
       },
       {
         "summarySentence": "Academic pressures, concerns about family, and poor sleep are identified as triggers that worsen the patient's distress and negative thoughts.",
@@ -4179,7 +4179,7 @@
           "session transcript"
         ],
         "dataSourceType": "text",
-        "relevance": 0.3535693321305562
+        "relevance": 0.20377072194966162
       },
       {
         "summarySentence": "She acknowledges a strong internal pressure to be perfect and a fear of letting others down.",
@@ -4193,12 +4193,12 @@
           "clinical note"
         ],
         "dataSourceType": "text",
-        "relevance": 0.9013093714544439
+        "relevance": 0.32305812621336316
       }
     ]
   },
   {
-    "key": "insight-0",
+    "key": "insight-6",
     "summaryTitle": "Despite no psychotropic medication, patient shows some benefit from mindfulness and grounding exercises.",
     "sources": [
       "session transcript",
@@ -4225,7 +4225,7 @@
           "clinical note"
         ],
         "dataSourceType": "text",
-        "relevance": 0.8955222991885826
+        "relevance": 0.40975304209986574
       },
       {
         "summarySentence": "Mei Lin responded positively to in-session exercises, including mindfulness-based thought observation and grounding techniques.",
@@ -4239,7 +4239,7 @@
           "clinical note"
         ],
         "dataSourceType": "text",
-        "relevance": 0.885438914518493
+        "relevance": 0.9256496638030828
       },
       {
         "summarySentence": "The patient finds grounding exercises, such as the 5-4-3-2-1 technique, somewhat helpful in reducing feelings of overwhelm and bringing a sense of calm.",
@@ -4261,16 +4261,16 @@
           "session transcript"
         ],
         "dataSourceType": "text",
-        "relevance": 0.026919694097993108
+        "relevance": 0.4095097933400713
       }
     ]
   },
   {
-    "key": "insight-0",
+    "key": "insight-7",
     "summaryTitle": "Patient\u2019s time in green spaces and exercise locations increased, aligning with improved mood and reduced stress.",
     "sources": [
-      "passive sensing",
-      "survey"
+      "survey",
+      "passive sensing"
     ],
     "insightType": [
       "Physical Activity",
@@ -4350,11 +4350,11 @@
           },
           {
             "date": "2021-04-15",
-            "duration_in_locmap_exercise": NaN
+            "duration_in_locmap_exercise": null
           },
           {
             "date": "2021-04-16",
-            "duration_in_locmap_exercise": NaN
+            "duration_in_locmap_exercise": null
           },
           {
             "date": "2021-04-17",
@@ -4639,11 +4639,11 @@
           },
           {
             "date": "2021-04-15",
-            "duration_in_locmap_greens": NaN
+            "duration_in_locmap_greens": null
           },
           {
             "date": "2021-04-16",
-            "duration_in_locmap_greens": NaN
+            "duration_in_locmap_greens": null
           },
           {
             "date": "2021-04-17",
@@ -4907,7 +4907,7 @@
     ]
   },
   {
-    "key": "insight-0",
+    "key": "insight-8",
     "summaryTitle": "Patient struggles with consistent use of coping strategies, often feeling overwhelmed or forgetful.",
     "sources": [
       "session transcript",
@@ -4930,7 +4930,7 @@
           "clinical note"
         ],
         "dataSourceType": "text",
-        "relevance": 0.5715566427771673
+        "relevance": 0.28498335810531006
       },
       {
         "summarySentence": "The patient reports difficulty consistently using coping strategies such as journaling and reminders due to feeling overwhelmed or forgetting.",
@@ -4944,12 +4944,12 @@
           "session transcript"
         ],
         "dataSourceType": "text",
-        "relevance": 0.8793979592159211
+        "relevance": 0.41553352197225424
       }
     ]
   },
   {
-    "key": "insight-0",
+    "key": "insight-9",
     "summaryTitle": "Patient\u2019s negative self-evaluations and perfectionistic beliefs are persistent, contributing to emotional distress.",
     "sources": [
       "session transcript",
@@ -4971,7 +4971,7 @@
           "clinical note"
         ],
         "dataSourceType": "text",
-        "relevance": 0.4563694957350275
+        "relevance": 0.9531603340957293
       },
       {
         "summarySentence": "Her thought process was logical and coherent, but her thought content was marked by self-critical and perfectionistic themes.",
@@ -4985,7 +4985,7 @@
           "clinical note"
         ],
         "dataSourceType": "text",
-        "relevance": 0.24778452010578544
+        "relevance": 0.5475313623869782
       },
       {
         "summarySentence": "The patient frequently experiences negative self-evaluative thoughts, including beliefs of not being good enough, being a failure, and fears of never catching up or doing well enough.",
@@ -4999,7 +4999,7 @@
           "session transcript"
         ],
         "dataSourceType": "text",
-        "relevance": 0.028983623326166552
+        "relevance": 0.16696831974370385
       },
       {
         "summarySentence": "The patient holds perfectionistic beliefs and fears of disappointing others, particularly family, which contribute to her distress.",
@@ -5017,12 +5017,12 @@
           "session transcript"
         ],
         "dataSourceType": "text",
-        "relevance": 0.6765526240263033
+        "relevance": 0.798894632120053
       }
     ]
   },
   {
-    "key": "insight-0",
+    "key": "insight-10",
     "summaryTitle": "Patient\u2019s affect and reported mood are congruent, with anxiety and tearfulness noted in session.",
     "sources": [
       "clinical note"
@@ -5043,7 +5043,7 @@
           "clinical note"
         ],
         "dataSourceType": "text",
-        "relevance": 0.5495245222797428
+        "relevance": 0.35440239559774156
       },
       {
         "summarySentence": "Mei Lin continues to experience significant fatigue, frustration, and hopelessness on many days.",
@@ -5057,12 +5057,12 @@
           "clinical note"
         ],
         "dataSourceType": "text",
-        "relevance": 0.8567968376541628
+        "relevance": 0.7016760480691425
       }
     ]
   },
   {
-    "key": "insight-0",
+    "key": "insight-11",
     "summaryTitle": "Patient\u2019s daily routine shows increased variability in significant places visited and total distance traveled.",
     "sources": [
       "passive sensing"
@@ -5145,11 +5145,11 @@
           },
           {
             "date": "2021-04-15",
-            "numberofsignificantplaces": NaN
+            "numberofsignificantplaces": null
           },
           {
             "date": "2021-04-16",
-            "numberofsignificantplaces": NaN
+            "numberofsignificantplaces": null
           },
           {
             "date": "2021-04-17",
@@ -5434,11 +5434,11 @@
           },
           {
             "date": "2021-04-15",
-            "numberofsignificantplaces": NaN
+            "numberofsignificantplaces": null
           },
           {
             "date": "2021-04-16",
-            "numberofsignificantplaces": NaN
+            "numberofsignificantplaces": null
           },
           {
             "date": "2021-04-17",
@@ -5723,11 +5723,11 @@
           },
           {
             "date": "2021-04-15",
-            "totaldistance": NaN
+            "totaldistance": null
           },
           {
             "date": "2021-04-16",
-            "totaldistance": NaN
+            "totaldistance": null
           },
           {
             "date": "2021-04-17",
@@ -5942,7 +5942,7 @@
     ]
   },
   {
-    "key": "insight-0",
+    "key": "insight-12",
     "summaryTitle": "Patient\u2019s digital engagement patterns show more frequent but shorter unlocks, possibly reflecting changes in focus.",
     "sources": [
       "passive sensing"
@@ -6024,11 +6024,11 @@
           },
           {
             "date": "2021-04-15",
-            "countepisodeunlock": NaN
+            "countepisodeunlock": null
           },
           {
             "date": "2021-04-16",
-            "countepisodeunlock": NaN
+            "countepisodeunlock": null
           },
           {
             "date": "2021-04-17",
@@ -6313,11 +6313,11 @@
           },
           {
             "date": "2021-04-15",
-            "avgdurationunlock": NaN
+            "avgdurationunlock": null
           },
           {
             "date": "2021-04-16",
-            "avgdurationunlock": NaN
+            "avgdurationunlock": null
           },
           {
             "date": "2021-04-17",
@@ -6602,11 +6602,11 @@
           },
           {
             "date": "2021-04-15",
-            "avgdurationunlock": NaN
+            "avgdurationunlock": null
           },
           {
             "date": "2021-04-16",
-            "avgdurationunlock": NaN
+            "avgdurationunlock": null
           },
           {
             "date": "2021-04-17",
@@ -6821,7 +6821,7 @@
     ]
   },
   {
-    "key": "insight-0",
+    "key": "insight-13",
     "summaryTitle": "Patient\u2019s perceived stress and negative affect decreased, but positive affect remains low and unchanged.",
     "sources": [
       "survey"
@@ -7060,7 +7060,7 @@
     ]
   },
   {
-    "key": "insight-0",
+    "key": "insight-14",
     "summaryTitle": "Patient\u2019s sleep onset and wake times became more consistent, but average sleep duration decreased.",
     "sources": [
       "passive sensing"
@@ -7363,7 +7363,7 @@
         "dataPoints": [
           {
             "date": "2021-03-29",
-            "firstwaketimemain": NaN
+            "firstwaketimemain": null
           },
           {
             "date": "2021-03-30",
@@ -7652,7 +7652,7 @@
         "dataPoints": [
           {
             "date": "2021-03-29",
-            "avgdurationasleepunifiedmain": NaN
+            "avgdurationasleepunifiedmain": null
           },
           {
             "date": "2021-03-30",
@@ -7939,7 +7939,7 @@
     ]
   },
   {
-    "key": "insight-0",
+    "key": "insight-15",
     "summaryTitle": "Patient\u2019s goals include regular grounding, journaling, and improving energy and focus, reflecting insight and motivation.",
     "sources": [
       "session transcript",
@@ -7962,7 +7962,7 @@
           "clinical note"
         ],
         "dataSourceType": "text",
-        "relevance": 0.605113020066903
+        "relevance": 0.44852278120421507
       },
       {
         "summarySentence": "The patient sets goals to use grounding exercises more regularly, resume journaling, and improve her understanding and management of her feelings, as well as to increase her energy and focus.",
@@ -7976,7 +7976,7 @@
           "session transcript"
         ],
         "dataSourceType": "text",
-        "relevance": 0.5697652775932607
+        "relevance": 0.5967011234601135
       }
     ]
   }

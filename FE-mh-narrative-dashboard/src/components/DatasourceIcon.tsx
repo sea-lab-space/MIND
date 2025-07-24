@@ -5,46 +5,36 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {DatasourceIconTypes} from "../types/props";
 
-const DataSourceIcon: React.FC<DatasourceIconProps> = (props) => {
-  const { iconType, showType = false } = props;
+const iconMap: Record<DatasourceIconType, JSX.Element> = {
+  [DatasourceIconTypes.passiveSensing]: <Watch className="w-5 h-5" />,
+  [DatasourceIconTypes.clinicalTranscripts]: <MessageSquare className="w-5 h-5" />,
+  [DatasourceIconTypes.clinicalNotes]: <StickyNote className="w-5 h-5" />,
+  [DatasourceIconTypes.measurementScore]: <ClipboardList className="w-5 h-5" />
+};
 
-  const iconColor: {[key in DatasourceIconType]: string} = {
-    "passive sensing": "text-slate-500",
-    "transcripts": "text-emerald-500",
-    "notes": "text-orange-500",
-    "measurement score": "text-yellow-500"
-  }
+const iconColorMap: Record<DatasourceIconType, string> = {
+  [DatasourceIconTypes.passiveSensing]: "text-slate-500",
+  [DatasourceIconTypes.clinicalTranscripts]: "text-emerald-500",
+  [DatasourceIconTypes.clinicalNotes]: "text-orange-500",
+  [DatasourceIconTypes.measurementScore]: "text-yellow-500"
+};
 
-  const getSourceIcon = (type: DatasourceIconType) => {
-    switch (type) {
-      case "passive sensing":
-        return <Watch className="w-5 h-5" />;
-      case "transcripts":
-        return <MessageSquare className="w-5 h-5" />;
-      case "notes":
-        return <StickyNote className="w-5 h-5" />;
-      case "measurement score":
-        return <ClipboardList className="w-5 h-5" />;
-      default:
-        return <StickyNote className="w-5 h-5" />;
-    }
-  };
-
-  const getIconColor = {}
+const DataSourceIcon: React.FC<DatasourceIconProps> = ({ iconType, showType = false }) => {
+  const icon = iconMap[iconType] ?? <StickyNote className="w-5 h-5" />;
+  const color = iconColorMap[iconType] ?? "text-gray-400";
 
   return (
-    <>
       <Tooltip>
         <TooltipTrigger>
-          <div className={`inline-flex items-center gap-2 ${iconColor[iconType]}`}>
-            {getSourceIcon(iconType)}
+          <div className={`inline-flex items-center gap-2 ${color}`}>
+            {icon}
             {showType && iconType}
           </div>
         </TooltipTrigger>
-        {showType === false && <TooltipContent>{iconType}</TooltipContent>}
+        {!showType && <TooltipContent>{iconType}</TooltipContent>}
       </Tooltip>
-    </>
   );
 };
 
