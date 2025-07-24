@@ -26,30 +26,31 @@ export default function InsightGraph({ dataSourceType, data }: InsightGraphProps
     const isBarChart = [DataSourceType.EXTREME, DataSourceType.DIFFERENCE].includes(dataSourceType);
 
     return (
-        <ResponsiveContainer width="100%" height="100%">
-            {isLineChart ? (
-                <LineChart data={data}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-                    <YAxis />
-                    <Tooltip />
-                    <Line
-                        type="monotone"
-                        dataKey={metricKey}
-                        stroke="#626681"
-                        dot={{ r: 2 }}
-                        strokeWidth={2}
-                    />
-                </LineChart>
-            ) : isBarChart ? (
-                <BarChart data={data}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-                    <YAxis />
-                    <Tooltip />
-                    <Bar dataKey={metricKey} fill="#626681" />
-                </BarChart>
-            ) : null}
-        </ResponsiveContainer>
+      <ResponsiveContainer width="100%" height="100%">
+        {isLineChart ? (
+          <LineChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="date" tick={{ fontSize: 10 }} />
+            <YAxis />
+            <Tooltip />
+            <Line
+              type="monotone"
+              dataKey={metricKey}
+              stroke="#626681"
+              dot={{ r: 2 }}
+              strokeWidth={2}
+              isAnimationActive={false}
+            />
+          </LineChart>
+        ) : isBarChart ? (
+          <BarChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="date" tick={{ fontSize: 10 }} />
+            <YAxis />
+            <Tooltip />
+            <Bar dataKey={metricKey} fill="#626681" isAnimationActive={false} />
+          </BarChart>
+        ) : null}
+      </ResponsiveContainer>
     );
 }

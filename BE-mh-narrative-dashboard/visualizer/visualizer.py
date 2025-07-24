@@ -46,7 +46,8 @@ class Visualizer:
                     expand_view.append(
                         {
                             "summarySentence": fact['fact_text'],
-                            # ! Here dataPoints means source text
+                            # ! Here dataPoints means source text + evidence
+                            # TODO: add source transcript & notes
                             "dataPoints": fact['evidence'],
                             "sources": [fact['modality_source']],
                             # ! Here dataSourceType means "text" add in FE
@@ -65,6 +66,7 @@ class Visualizer:
                     "expandView": expand_view
                 }
             )
+            self.insight_count += 1
         
         return specification
     
