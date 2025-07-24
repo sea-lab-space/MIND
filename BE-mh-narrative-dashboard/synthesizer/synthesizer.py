@@ -44,7 +44,7 @@ class Synthesizer:
             for fact in facts["data_facts"]:
 
                 def is_include_fact(fact):
-                    if fact['fact_type'] == 'difference' or fact['fact_type'] == 'trend':
+                    if fact['fact_type'] == 'difference' or fact['fact_type'] == 'trend' or fact['fact_type'] == 'derived value':
                         return date_between(fact['time_2'], self.retrospect_date, self.before_date)
                     elif fact['fact_type'] == 'extreme':
                         return date_between(fact['time'], self.retrospect_date, self.before_date)
