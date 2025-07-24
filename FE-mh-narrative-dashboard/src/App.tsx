@@ -33,10 +33,6 @@ export default function App() {
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const insightCardData = convertGroupedInsightResultsToFE();
-  console.log(insightCardData)
-
-  // const insightCardData = data.insights;
-  // console.log(insightCardData1)
   const patientCommunicationData = data.patientCommunication;
 
   const toggleSection = (section: string) => {
@@ -67,13 +63,35 @@ export default function App() {
     }, 100);
   };
 
+  insightCardData.filter(card => {
+    const matchedTypes = card.insightType.filter(type =>
+    {
+      console.log(type, selectedInsightTypes, selectedInsightTypes.includes(type))
+      selectedInsightTypes.includes(type)
+    }
+    );
 
-  const filteredInsightCards = selectedInsightTypes.length === 0
-      ? insightCardData
-      : insightCardData.filter(card =>
-          Array.isArray(card.insightType) &&
-          card.insightType.some(type => selectedInsightTypes.includes(type))
-      );
+    if (matchedTypes.length > 0) {
+      console.log("Matched types:", matchedTypes);
+      return true;
+    }
+
+    return false;
+  });
+
+  const filteredInsightCards =
+      selectedInsightTypes.length === 0
+          ? insightCardData
+          : insightCardData.filter(card =>
+              Array.isArray(card.insightType) &&
+              card.insightType.some(insight =>
+                  selectedInsightTypes.includes(insight.type)
+              )
+          );
+
+  const leftColumnCards = filteredInsightCards.filter((_, i) => i % 2 === 0);
+  const rightColumnCards = filteredInsightCards.filter((_, i) => i % 2 !== 0);
+
 
   const selectedInsightCardTitles = insightCardData
       .filter((card) => selectedInsightHeader.includes(card.key))
@@ -135,36 +153,61 @@ export default function App() {
                   isExpanded={expandedSections.insights}
                   onClick={() => toggleSection("insights")}
                 >
+
+
                   <div
-                    className={`${
-                      isDrillDown
-                        ? "flex flex-col gap-4"
-                        : "grid grid-cols-1 sm:grid-cols-2 gap-4"
-                    }`}
+                      className={`${
+                          isDrillDown
+                              ? "flex flex-col gap-4"
+                              : "grid grid-cols-1 sm:grid-cols-2 gap-4"
+                      }`}
                   >
-                    {filteredInsightCards.map((card, index) => (
-                      <div
-                        key={card.key}
-                        ref={(el) => (cardRefs.current[index] = el)}
-                        className="w-full"
-                      >
-                        <InsightCardComponent
-                          insightCardData={card}
-                          title={card.summaryTitle}
-                          sources={card.sources}
-                          isExpanded={expandedSections.insights}
-                          isInsightHeaderSelected={selectedInsightHeader.includes(
-                            card.key
-                          )}
-                          isInsightCardSelected={selectedInsightCard === card.key}
-                          handleCardSelect={() => handleCardSelection(card.key, index)}
-                          handleCardHeaderClick={() =>
-                            handleInsightCardHeaderSelect(card.key)
-                          }
-                        />
-                      </div>
-                    ))}
+                    {/* Left column */}
+                    <div className="flex flex-col gap-4">
+                      {leftColumnCards.map((card, index) => (
+                          <div
+                              key={card.key}
+                              ref={(el) => (cardRefs.current[index * 2] = el)}
+                              className="w-full"
+                          >
+                            <InsightCardComponent
+                                insightCardData={card}
+                                title={card.summaryTitle}
+                                sources={card.sources}
+                                isExpanded={expandedSections.insights}
+                                isInsightHeaderSelected={selectedInsightHeader.includes(card.key)}
+                                isInsightCardSelected={selectedInsightCard === card.key}
+                                handleCardSelect={() => handleCardSelection(card.key, index * 2)}
+                                handleCardHeaderClick={() => handleInsightCardHeaderSelect(card.key)}
+                            />
+                          </div>
+                      ))}
+                    </div>
+
+                    {/* Right column */}
+                    <div className="flex flex-col gap-4">
+                      {rightColumnCards.map((card, index) => (
+                          <div
+                              key={card.key}
+                              ref={(el) => (cardRefs.current[index * 2 + 1] = el)}
+                              className="w-full"
+                          >
+                            <InsightCardComponent
+                                insightCardData={card}
+                                title={card.summaryTitle}
+                                sources={card.sources}
+                                isExpanded={expandedSections.insights}
+                                isInsightHeaderSelected={selectedInsightHeader.includes(card.key)}
+                                isInsightCardSelected={selectedInsightCard === card.key}
+                                handleCardSelect={() => handleCardSelection(card.key, index * 2 + 1)}
+                                handleCardHeaderClick={() => handleInsightCardHeaderSelect(card.key)}
+                            />
+                          </div>
+                      ))}
+                    </div>
                   </div>
+
+
                 </SectionTitle>
               </div>
 
