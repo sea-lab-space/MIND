@@ -26,7 +26,7 @@ class BaseDiscovererAgent(ABC):
         retrospect_date: str,
         before_date: str,
         model: str = "gpt-4.1-nano",
-        tools: Optional[List] = None
+        tools = None
     ):
         assert datetime.strptime(
             retrospect_date, "%Y-%m-%d") < datetime.strptime(before_date, "%Y-%m-%d"), "Retrospect date must be before or equal to before date."
@@ -34,7 +34,7 @@ class BaseDiscovererAgent(ABC):
         self.retrospect_date = retrospect_date
         self.before_date = before_date
         self.model = model
-        self.tools = tools or []
+        self.tools = tools or getattr(self, "TOOLS", [])
 
         from agents import Agent, ModelSettings
 
@@ -83,7 +83,8 @@ class BaseDiscovererAgent(ABC):
         data_input = f'Data:\n{csv_str}'
 
         from agents import Runner
-        res = await Runner.run(self.agent, input=data_input)
+        res = await Runner.run(self.agent, input=data_input, max_turns=1000000,
+                               context=feature['data'])
         res_dict = res.final_output.model_dump()
         if verbose:
             print(res_dict.get("facts"))

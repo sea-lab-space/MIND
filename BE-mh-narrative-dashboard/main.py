@@ -4,6 +4,7 @@ from discoverer import (
     ExtremeDiscovererAgent,
     DifferenceDiscovererAgent,
     ComparisonDiscovererAgent,
+    DerivedValueDiscovererAgent,
     NotesDiscovererAgent,
     TranscriptsDiscovererAgent,
     Discoverer
@@ -71,8 +72,9 @@ def run_discoverer(data):
         numeric_agents=[
             TrendDiscovererAgent,
             ExtremeDiscovererAgent,
-            DifferenceDiscovererAgent,
             ComparisonDiscovererAgent,
+            DifferenceDiscovererAgent,
+            DerivedValueDiscovererAgent,
         ],
         text_agents=[
             NotesDiscovererAgent,
@@ -135,9 +137,7 @@ def exec(patient_id, save_interm = False):
 if __name__ == "__main__":
     # res = exec(patient_id="INS-W_963", save_interm=True)
 
-
-
-    # read data_facts.json
+    # # read data_facts.json
     # with open("mock_data/data_facts_INS-W_963.json", "r") as f:
     #     data_facts = json.load(f)
     #     f.close()

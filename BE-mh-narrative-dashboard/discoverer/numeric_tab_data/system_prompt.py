@@ -36,6 +36,7 @@ def get_mh_data_expert_requirements_prompt():
         Let’s think step by step.
     """
 
+# ! scrapped this (causes unecessary wrong outputs)
 def get_mh_data_date_prompt(retrospect_date_str: str, before_date_str: str, is_comparison: bool = False):
     common = f"You should put the most attention on data fact between {retrospect_date_str} and {before_date_str}."
     if is_comparison:
@@ -47,3 +48,8 @@ def get_mh_data_date_prompt(retrospect_date_str: str, before_date_str: str, is_c
         return f"""
             {common}
         """
+    
+def get_mh_eveness_prompt():
+    return f"""
+        Ensure your fact discovery accounts for all provided time points in the dataset.
+    """
