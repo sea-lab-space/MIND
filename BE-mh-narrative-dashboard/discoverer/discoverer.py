@@ -1,4 +1,5 @@
 import asyncio
+from copy import deepcopy
 from typing import Literal
 from tqdm import tqdm
 
@@ -25,25 +26,40 @@ class Discoverer:
         res = asyncio.run(running_agent.run(context, verbose = False))
         return res
 
-    def _run_numeric_discovery(self, feature_list):
-        data_facts = []
-        # print([feat['feature_name'] for feat in feature_list])
 
-        for feature in tqdm(feature_list):
-            feature_insights = []
-            for discoverer in self.numeric_agents:
-                # print(feature)
-                data_fact = asyncio.run(discoverer.run(feature, verbose=False))
-                if data_fact:
-                    feature_insights.extend(data_fact)
-            data_facts.append({
-                "modality_type": feature['modality_type'],
-                "modality_source": feature['modality_source'],
-                "feature_name": feature['feature_name'],
-                "data_facts": feature_insights
-            })
+    async def _async_run_numeric_discovery(self, feature_list, is_testing):
+        if is_testing:
+            feature_list = feature_list[:1]
+
+        tasks = []
+        for discoverer in self.numeric_agents:
+            for feature in feature_list:
+                tasks.append((deepcopy(discoverer), feature))
+
+        async def run_task(discoverer, feature):
+            result = await discoverer.run(feature, verbose=False)
+            return discoverer, feature, result
+
+        coroutines = [run_task(d, f) for d, f in tasks]
+        results = await asyncio.gather(*coroutines)
+
+        data_facts = []
+        for _, feature, data_fact in results:
+            if data_fact:
+                data_facts.append({
+                    "modality_type": feature['modality_type'],
+                    "modality_source": feature['modality_source'],
+                    "feature_name": feature['feature_name'],
+                    "data_facts": data_fact
+                })
 
         return data_facts
+
+
+    def _run_numeric_discovery(self, feature_list, is_testing):
+        return asyncio.run(self._async_run_numeric_discovery(feature_list, is_testing))
+    
+
     
     def _prep_transcript(self, text_input):
         matching_feat = next(
@@ -63,26 +79,33 @@ class Discoverer:
         transcript_input = {self.retrospect_date: formatted_transcript}
         return transcript_input
     
-    def run(self, features):
-        # Find fact from text data
-        text_input = features['this_series']
-        # extract on exact date
-        note_input = {
-            self.retrospect_date: next((feat['clinical_note']
-                          for feat in text_input if feat['encounter_date'] == self.retrospect_date), None)}
-        transcript_input = self._prep_transcript(text_input)
+    def run(self, features, is_testing = False):
+        if len(self.text_agents) > 0:
+            # Find fact from text data
+            text_input = features['this_series']
+            # extract on exact date
+            note_input = {
+                self.retrospect_date: next((feat['clinical_note']
+                            for feat in text_input if feat['encounter_date'] == self.retrospect_date), None)}
+            transcript_input = self._prep_transcript(text_input)
+            
+            print("---- Running Text Data Fact Discovery ----")
+            note_facts = self._run_text_discovery('clinical note', note_input)
+            transcript_facts = self._run_text_discovery(
+                'clinical transcript', transcript_input)
+        else:
+            print("---- Skipping Text Data Fact Discovery ----")
+            note_facts = []
+            transcript_facts = []
         
-        print("---- Running Text Data Fact Discovery ----")
-        note_facts = self._run_text_discovery('clinical note', note_input)
-        transcript_facts = self._run_text_discovery(
-            'clinical transcript', transcript_input)
-        
-        print("---- Running Numerical Data Fact Discovery ----")
-        # Find fact from time series data
-        numeric_input = features['numerical_data']
-        numeric_facts = self._run_numeric_discovery(numeric_input)
+        if len(self.numeric_agents) > 0:
+            print("---- Running Numerical Data Fact Discovery ----")
+            # Find fact from time series data
+            numeric_input = features['numerical_data']
+            numeric_facts = self._run_numeric_discovery(numeric_input, is_testing)
+        else:
+            print("---- Skipping Numerical Data Fact Discovery ----")
 
-        
         return {
             "numeric_facts": numeric_facts,
             "note_facts": note_facts,

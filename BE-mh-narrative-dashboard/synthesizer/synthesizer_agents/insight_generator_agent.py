@@ -7,7 +7,7 @@ import asyncio
 import json
 from pathlib import Path
 from dotenv import load_dotenv
-from utils.prompt_commons import get_mh_data_expert_system_prompt
+from utils.prompt_commons import OPENAI_AGENTIC_REC, get_mh_data_expert_system_prompt
 
 project_root = Path(__file__).parent.parent.parent
 print(project_root)
@@ -71,13 +71,14 @@ class InsightProposalAgent:
         self.model = model
         self.agent = Agent(
             name=f"Insight proposal agent",
-            model_settings=ModelSettings(temperature=0.0),
+            model_settings=ModelSettings(temperature=0.2, top_p=0.1),
             model=model,
             output_type=self.OUTPUT_MODEL,
         )
 
     def _glue_instructions(self):
         return f"""
+            {OPENAI_AGENTIC_REC}
             {get_mh_data_expert_system_prompt()}
             {SYNT_DATA_PROMPT}
             {SYNT_CATEGORY_PROMPT}

@@ -5,7 +5,7 @@ import asyncio
 import json
 from pathlib import Path
 from dotenv import load_dotenv
-from utils.prompt_commons import get_mh_data_expert_system_prompt
+from utils.prompt_commons import OPENAI_AGENTIC_REC, get_mh_data_expert_system_prompt
 
 project_root = Path(__file__).parent.parent.parent
 print(project_root)
@@ -103,6 +103,8 @@ class BaseTextDiscovererAgent:
             str: The combined system prompt containing task definitions, modality-specific information, and requirements.
         """
         return f"""
+            {OPENAI_AGENTIC_REC}
+
             {get_mh_data_expert_system_prompt()}
             {get_mh_data_expert_modality_prompt(self.modality_source)}
             {get_mh_data_expert_task_prompt()}

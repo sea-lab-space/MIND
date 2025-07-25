@@ -8,7 +8,7 @@ from utils.tools import (
     agent_tool_calculate_min,
     agent_tool_calculate_stdev,
 )
-
+from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE, OPENAI_AGENTIC_PLANNING
 
 class FactDerivedValueConfig(BaseModel):
     name: str = Field(...,
@@ -60,6 +60,9 @@ class DerivedValueDiscovererAgent(BaseDiscovererAgent):
         #                          before_date_str=self.before_date, is_comparison=True)}
 
         return f"""
+            {OPENAI_AGENTIC_REC}
+            {OPENAI_AGENTIC_TOOL_USE}
+            {OPENAI_AGENTIC_PLANNING}
             {get_mh_data_expert_system_prompt()}
             {get_mh_data_expert_modality_prompt(modality_source=modality_source)}
             {get_mh_data_expert_feature_prompt(feature_name=feature_name, feature_definition=feature_definition)}

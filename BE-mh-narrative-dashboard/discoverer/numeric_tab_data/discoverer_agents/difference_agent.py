@@ -2,6 +2,7 @@ from pydantic import BaseModel, Field
 from typing import List, Literal
 from discoverer.numeric_tab_data.discoverer_agents.base_agent import BaseDiscovererAgent
 from utils.tools import agent_tool_validate_fact_value
+from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE, OPENAI_AGENTIC_PLANNING
 class FactDifferenceConfig(BaseModel):
     name: str = Field(...,
                       description="Name of the feature being analyzed or transformed.")
@@ -43,6 +44,9 @@ class DifferenceDiscovererAgent(BaseDiscovererAgent):
         # {get_mh_data_date_prompt(retrospect_date_str=self.retrospect_date, before_date_str=self.before_date)}
 
         return f"""
+            {OPENAI_AGENTIC_REC}
+            {OPENAI_AGENTIC_TOOL_USE}
+{OPENAI_AGENTIC_PLANNING}
             {get_mh_data_expert_system_prompt()}
             {get_mh_data_expert_modality_prompt(modality_source=modality_source)}
             {get_mh_data_expert_feature_prompt(feature_name=feature_name, feature_definition=feature_definition)}

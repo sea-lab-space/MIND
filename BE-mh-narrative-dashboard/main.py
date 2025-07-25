@@ -135,45 +135,45 @@ def exec(patient_id, save_interm = False):
 
 
 if __name__ == "__main__":
-    # res = exec(patient_id="INS-W_963", save_interm=True)
+    res = exec(patient_id="INS-W_963", save_interm=True)
 
     # read data_facts.json
-    with open("mock_data/data_facts_INS-W_963.json", "r") as f:
-        data_facts = json.load(f)
-        f.close()
+    # with open("mock_data/data_facts_INS-W_963.json", "r") as f:
+    #     data_facts = json.load(f)
+    #     f.close()
 
-    data_insights, data_fact_list = run_synthesizer(data_facts)
-    with open(f"mock_data/data_insights_INS-W_963.json", "w") as f:
-        json.dump(data_insights, f, indent=2)
-        f.close()
+    # data_insights, data_fact_list = run_synthesizer(data_facts)
+    # with open(f"mock_data/data_insights_INS-W_963.json", "w") as f:
+    #     json.dump(data_insights, f, indent=2)
+    #     f.close()
 
-    with open(f"mock_data/data_facts_list_INS-W_963.json", "w") as f:
-        json.dump(data_fact_list, f, indent=2)
-        f.close()
+    # with open(f"mock_data/data_facts_list_INS-W_963.json", "w") as f:
+    #     json.dump(data_fact_list, f, indent=2)
+    #     f.close()
 
-    # read data_insights
-    with open("mock_data/data_insights_INS-W_963.json", "r") as f:
-        data_insights = json.load(f)
-        f.close()
+    # # read data_insights
+    # with open("mock_data/data_insights_INS-W_963.json", "r") as f:
+    #     data_insights = json.load(f)
+    #     f.close()
 
-    # read data_facts_list
-    with open("mock_data/data_facts_list_INS-W_963.json", "r") as f:
-        data_facts_list = json.load(f)
-        f.close()
+    # # read data_facts_list
+    # with open("mock_data/data_facts_list_INS-W_963.json", "r") as f:
+    #     data_facts_list = json.load(f)
+    #     f.close()
 
-    # read raw_data
-    with open("mock_data/data_input_INS-W_963.json", "r") as f:
-        data = json.load(f)
-        f.close()
+    # # read raw_data
+    # with open("mock_data/data_input_INS-W_963.json", "r") as f:
+    #     data = json.load(f)
+    #     f.close()
 
-    visualizer = Visualizer(
-        data_insights=data_insights,
-        data_fact_list=data_facts_list,
-        raw_data=data,
-    )
+    # visualizer = Visualizer(
+    #     data_insights=data_insights,
+    #     data_fact_list=data_facts_list,
+    #     raw_data=data,
+    # )
 
-    res = visualizer.run()
-    print(res)
+    # res = visualizer.run()
+    # print(res)
 
     # save res to file
     with open(f"mock_data/Visualizer_INS-W_963.json", "w") as f:

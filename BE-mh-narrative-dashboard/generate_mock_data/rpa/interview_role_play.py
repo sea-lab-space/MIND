@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from pydantic import TypeAdapter
 from pathlib import Path
 import sys
+from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE
 
 project_root = Path(__file__).parent.parent
 sys.path.append(str(project_root))
@@ -16,7 +17,7 @@ class EncounterPersona:
         self.agent = Agent(
             name=self.name,
             instructions=instructions,
-            model_settings=ModelSettings(temperature=0.0),
+            model_settings=ModelSettings(temperature=0.7),
             model=model_name
         )
         self.session = SQLiteSession(f"{self.name}")
@@ -37,7 +38,9 @@ class EncounterPersona:
             json.dump(session_dict, f, indent=2)
 
 
-PATIENT_SYSTEM_PROMPT = """
+PATIENT_SYSTEM_PROMPT = f"""
+{OPENAI_AGENTIC_REC}
+
 You are a depression patient to conduct a therapy session with a mental health clinician.
 
 Your task is to express your mental health challenges to the clinician and seek feedback from the clinician.
@@ -54,7 +57,9 @@ Specifically, consider the following guidelines:
 10) Say "Goodbye" when the conversation is over.
 """
 
-CLINICIAN_SYSTEM_PROMPT = """
+CLINICIAN_SYSTEM_PROMPT = f"""
+{OPENAI_AGENTIC_REC}
+
 You are a renowned mental health clinician with 20+ years of practice experience, with expertise in depression treatment. You are also skilled in evidence-based treatment, and understand how to use data to inform clinical assessment and treatment.
 
 You are leading a mental health therapy session with a depression patient. Broadly structure your session into three stages:

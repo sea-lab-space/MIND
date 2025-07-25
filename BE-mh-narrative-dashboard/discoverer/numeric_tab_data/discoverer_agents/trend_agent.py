@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import List, Literal
 from discoverer.numeric_tab_data.discoverer_agents.base_agent import BaseDiscovererAgent
+from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE
 
 class FactTrendConfig(BaseModel):
     # fact_description: The natural language description of the data fact
@@ -23,7 +24,8 @@ class TrendDiscovererOutput(BaseModel):
 
 class TrendDiscovererAgent(BaseDiscovererAgent):
     DEFINITION = r"""
-        Trend describes the general tendency of a feature over a specified time period, characterized as one of the following: rise, fall, stable, or cyclic.
+        Trend describes the general tendency of a feature over a specified time period, characterized as one of the following: rise, fall, stable, or cyclic. 
+        Focus on longer term trends, specifically trend patterns that persist at least 3 days.
     """
     OUTPUT_MODEL = TrendDiscovererOutput
 
@@ -40,6 +42,7 @@ class TrendDiscovererAgent(BaseDiscovererAgent):
         # {get_mh_data_date_prompt(retrospect_date_str=self.retrospect_date, before_date_str=self.before_date)}
 
         return f"""
+            {OPENAI_AGENTIC_REC}
             {get_mh_data_expert_system_prompt()}
             {get_mh_data_expert_modality_prompt(modality_source=modality_source)}
             {get_mh_data_expert_feature_prompt(feature_name=feature_name, feature_definition=feature_definition)}

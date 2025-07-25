@@ -40,5 +40,5 @@ We also use synthetic data to simulate patient encounters. To see how its raw fo
 * [Qiu and Lan. Interactive Agents: Simulating Counselor-Client Psychological Counseling via Role-Playing LLM-to-LLM Interactions [arXiv'24]](http://arxiv.org/abs/2408.15787)
 
 ## 🧋 TODOs (Engineering perspective)
-- [ ] Use asyncio for concurrent API calls (currently sequential)
+- [x] Use asyncio for concurrent API calls (currently sequential)
 - [x] Change NaN to null in generated dataset.

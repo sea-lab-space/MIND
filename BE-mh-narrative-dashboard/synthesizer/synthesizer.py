@@ -91,9 +91,11 @@ class Synthesizer:
             if key == "numeric_facts":
                 numeric_fact_list = self._flatten_tag_numeric(value)
                 facts.extend(numeric_fact_list)
-            else:
+            elif key == "notes_facts" or key == "transcript_facts":
                 text_fact_list = self._tag_text(key, value)
                 facts.extend(text_fact_list)
+            else:
+                continue
         return facts
     
     def _glue_prompt_input(self):

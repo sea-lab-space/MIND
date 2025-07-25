@@ -1,227 +1,187 @@
 [
   {
-    "insight_description": "Patient reports persistent fatigue and hopelessness, consistent with low positive affect and high negative self-evaluation.",
+    "insight_description": "Depressive symptoms decreased as reported in surveys, aligning with increased physical activity and time outdoors.",
     "insight_source": [
-      "transcript_facts-350",
-      "note_facts-337",
-      "note_facts-339",
-      "sv-survey-285"
-    ],
-    "insight_category": [
-      "Emotional State"
-    ]
-  },
-  {
-    "insight_description": "Periods of increased academic pressure and poor sleep coincide with heightened distress and negative emotional states.",
-    "insight_source": [
-      "transcript_facts-355",
-      "note_facts-341",
-      "ps-sleep-188",
-      "sv-survey-323"
-    ],
-    "insight_category": [
-      "Sleep Patterns",
-      "Emotional State"
-    ]
-  },
-  {
-    "insight_description": "Patient struggles to maintain coping strategies, often feeling overwhelmed, which aligns with reported forgetfulness.",
-    "insight_source": [
-      "note_facts-338",
-      "transcript_facts-352"
+      "sv-survey-89",
+      "sv-survey-169",
+      "ps-steps-72",
+      "ps-location-181",
+      "ps-location-179"
     ],
     "insight_category": [
       "Emotional State",
-      "Medication & Treatment"
-    ]
-  },
-  {
-    "insight_description": "Grounding exercises provide some relief, but inconsistent use due to feeling overwhelmed or forgetful.",
-    "insight_source": [
-      "transcript_facts-359",
-      "transcript_facts-351",
-      "note_facts-349"
-    ],
-    "insight_category": [
-      "Emotional State",
-      "Medication & Treatment"
-    ]
-  },
-  {
-    "insight_description": "Physical symptoms such as chest heaviness and stomach upset accompany negative thoughts and emotional distress.",
-    "insight_source": [
-      "note_facts-340",
-      "transcript_facts-354"
-    ],
-    "insight_category": [
-      "Emotional State"
-    ]
-  },
-  {
-    "insight_description": "Patient is not prescribed psychotropic medication and relies on behavioral and cognitive strategies for management.",
-    "insight_source": [
-      "note_facts-346"
-    ],
-    "insight_category": [
-      "Medication & Treatment"
-    ]
-  },
-  {
-    "insight_description": "Sleep patterns show increased time awake in bed and variable sleep episode counts, coinciding with distress periods.",
-    "insight_source": [
-      "ps-sleep-188",
-      "ps-sleep-187",
-      "ps-sleep-222",
-      "ps-sleep-223"
-    ],
-    "insight_category": [
-      "Sleep Patterns"
-    ]
-  },
-  {
-    "insight_description": "Physical activity increased after a period of stability, with a sharp rise in steps and exercise duration.",
-    "insight_source": [
-      "ps-steps-265",
-      "ps-steps-267",
-      "ps-location-89",
-      "ps-location-95"
-    ],
-    "insight_category": [
       "Physical Activity"
     ]
   },
   {
-    "insight_description": "Sedentary bouts increased over time, despite periods of increased physical activity, indicating fluctuating activity levels.",
+    "insight_description": "Patient\u2019s negative self-evaluative thoughts and perfectionism are persistent despite some improvement in mood scores.",
     "insight_source": [
-      "ps-steps-269",
-      "ps-steps-273",
-      "ps-steps-274"
-    ],
-    "insight_category": [
-      "Physical Activity"
-    ]
-  },
-  {
-    "insight_description": "Digital engagement at home decreased in duration and frequency, especially during periods of low mood and energy.",
-    "insight_source": [
-      "ps-screen-127",
-      "ps-screen-130",
-      "ps-screen-154",
-      "ps-screen-180"
-    ],
-    "insight_category": [
-      "Digital Engagement"
-    ]
-  },
-  {
-    "insight_description": "Social interaction via calls showed low and variable outgoing activity, with missed calls frequently at minimum.",
-    "insight_source": [
-      "ps-call-36",
-      "ps-call-55",
-      "ps-call-31",
-      "ps-call-25"
-    ],
-    "insight_category": [
-      "Social Interaction"
-    ]
-  },
-  {
-    "insight_description": "Patient\u2019s negative self-evaluation and perfectionism are consistent with self-reported emotional distress and session observations.",
-    "insight_source": [
-      "note_facts-344",
-      "note_facts-339",
-      "transcript_facts-353"
+      "transcript_facts-300",
+      "transcript_facts-305",
+      "sv-survey-89",
+      "sv-survey-169"
     ],
     "insight_category": [
       "Emotional State"
     ]
   },
   {
-    "insight_description": "Periods of increased movement and visiting more significant places coincide with improved physical activity and digital engagement.",
+    "insight_description": "Periods of increased physical activity and outdoor time coincide with improved positive affect and reduced negative affect.",
     "insight_source": [
-      "ps-location-122",
-      "ps-location-121",
-      "ps-steps-267",
-      "ps-screen-172"
+      "ps-steps-72",
+      "ps-location-181",
+      "sv-survey-220",
+      "sv-survey-282"
     ],
     "insight_category": [
       "Physical Activity",
-      "Digital Engagement"
-    ]
-  },
-  {
-    "insight_description": "Patient\u2019s affect is congruent with reported mood, which is anxious, subdued, and sometimes tearful.",
-    "insight_source": [
-      "note_facts-343"
-    ],
-    "insight_category": [
       "Emotional State"
     ]
   },
   {
-    "insight_description": "Patient demonstrates insight into unhelpful thought patterns and is beginning to recognize their impact.",
+    "insight_description": "Sleep patterns are irregular, with frequent changes in bedtime and wake time, and fragmented sleep episodes.",
     "insight_source": [
-      "note_facts-347"
-    ],
-    "insight_category": [
-      "Emotional State",
-      "Medication & Treatment"
-    ]
-  },
-  {
-    "insight_description": "Stress and negative affect scores decreased over time, aligning with some improvement in self-reported mood.",
-    "insight_source": [
-      "sv-survey-321",
-      "sv-survey-281",
-      "sv-survey-320"
-    ],
-    "insight_category": [
-      "Emotional State"
-    ]
-  },
-  {
-    "insight_description": "Patient\u2019s digital engagement and physical activity both show variability, possibly reflecting fluctuating energy and motivation.",
-    "insight_source": [
-      "ps-screen-154",
-      "ps-steps-266",
-      "ps-steps-273"
-    ],
-    "insight_category": [
-      "Digital Engagement",
-      "Physical Activity"
-    ]
-  },
-  {
-    "insight_description": "Patient\u2019s social interaction is limited, with low outgoing calls and minimal missed calls, suggesting reduced outreach.",
-    "insight_source": [
-      "ps-call-36",
-      "ps-call-31",
-      "ps-call-25"
-    ],
-    "insight_category": [
-      "Social Interaction"
-    ]
-  },
-  {
-    "insight_description": "Patient\u2019s sleep duration and quality fluctuate, with periods of increased time awake in bed and fragmented sleep.",
-    "insight_source": [
-      "ps-sleep-188",
-      "ps-sleep-187",
-      "ps-sleep-222",
-      "ps-sleep-223"
+      "ps-sleep-137",
+      "ps-sleep-138",
+      "ps-sleep-139",
+      "ps-sleep-207",
+      "ps-sleep-149",
+      "ps-sleep-142"
     ],
     "insight_category": [
       "Sleep Patterns"
     ]
   },
   {
-    "insight_description": "Patient\u2019s engagement with coping strategies is inconsistent, often due to feeling overwhelmed or forgetful.",
+    "insight_description": "Patient reports physical symptoms of distress, which coincide with periods of high stress and poor sleep quality.",
     "insight_source": [
-      "note_facts-338",
-      "transcript_facts-352"
+      "transcript_facts-301",
+      "sv-survey-293",
+      "ps-sleep-154",
+      "ps-sleep-156"
     ],
     "insight_category": [
-      "Medication & Treatment"
+      "Emotional State",
+      "Sleep Patterns"
+    ]
+  },
+  {
+    "insight_description": "Social interaction is variable, with periods of increased calls and device contacts, but also frequent missed calls.",
+    "insight_source": [
+      "ps-call-100",
+      "ps-call-99",
+      "ps-call-96",
+      "ps-bluetooth-0",
+      "ps-bluetooth-94"
+    ],
+    "insight_category": [
+      "Social Interaction"
+    ]
+  },
+  {
+    "insight_description": "Digital engagement at home decreased over time, with shorter and fewer phone unlocks, possibly reflecting reduced motivation.",
+    "insight_source": [
+      "ps-screen-203",
+      "ps-screen-201",
+      "ps-screen-204",
+      "ps-screen-46",
+      "ps-screen-134"
+    ],
+    "insight_category": [
+      "Digital Engagement"
+    ]
+  },
+  {
+    "insight_description": "Patient identifies academic and family pressures, and poor sleep, as key triggers for emotional distress.",
+    "insight_source": [
+      "transcript_facts-302",
+      "ps-sleep-154",
+      "ps-sleep-156"
+    ],
+    "insight_category": [
+      "Emotional State",
+      "Sleep Patterns"
+    ]
+  },
+  {
+    "insight_description": "Despite some improvement, patient struggles to maintain coping strategies due to feeling overwhelmed and fatigued.",
+    "insight_source": [
+      "transcript_facts-299",
+      "transcript_facts-298",
+      "sv-survey-293"
+    ],
+    "insight_category": [
+      "Emotional State"
+    ]
+  },
+  {
+    "insight_description": "Patient finds grounding and mindfulness exercises helpful, but sustaining their use remains a challenge.",
+    "insight_source": [
+      "transcript_facts-306",
+      "transcript_facts-307",
+      "transcript_facts-298"
+    ],
+    "insight_category": [
+      "Emotional State"
+    ]
+  },
+  {
+    "insight_description": "Periods of increased sedentary behavior alternate with bursts of activity, reflecting fluctuating energy and motivation.",
+    "insight_source": [
+      "ps-steps-78",
+      "ps-steps-219",
+      "ps-steps-218",
+      "ps-steps-161"
+    ],
+    "insight_category": [
+      "Physical Activity"
+    ]
+  },
+  {
+    "insight_description": "Routine regularity, as measured by circadian rhythm, fluctuates and aligns with changes in sleep and activity.",
+    "insight_source": [
+      "ps-location-10",
+      "ps-location-11",
+      "ps-sleep-137",
+      "ps-sleep-207"
+    ],
+    "insight_category": [
+      "Sleep Patterns",
+      "Physical Activity"
+    ]
+  },
+  {
+    "insight_description": "Patient\u2019s digital engagement shows cyclic patterns, with alternating periods of high and low phone use.",
+    "insight_source": [
+      "ps-screen-35",
+      "ps-screen-45",
+      "ps-screen-47"
+    ],
+    "insight_category": [
+      "Digital Engagement"
+    ]
+  },
+  {
+    "insight_description": "Patient\u2019s social contact via Bluetooth and WiFi devices fluctuates, possibly reflecting changes in social environment.",
+    "insight_source": [
+      "ps-bluetooth-0",
+      "ps-bluetooth-94",
+      "ps-wifi-172",
+      "ps-wifi-174"
+    ],
+    "insight_category": [
+      "Social Interaction"
+    ]
+  },
+  {
+    "insight_description": "Despite improvements in mood and activity, patient continues to experience cycles of negative thoughts and emotional distress.",
+    "insight_source": [
+      "transcript_facts-304",
+      "sv-survey-89",
+      "ps-steps-72"
+    ],
+    "insight_category": [
+      "Emotional State"
     ]
   }
 ]

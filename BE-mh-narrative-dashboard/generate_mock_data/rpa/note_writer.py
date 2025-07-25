@@ -8,7 +8,7 @@ async def write_progress_note(transcript, medication, model_name):
             Your task is to write a progress note based on the transcript and the perscribed medication. The progress note should be in a format that is easy to read and understand. 
             The progress note should be around 400 - 600 words. Ensure consistency between the transcript, medication, and notes.
         """,
-        model_settings=ModelSettings(temperature=0.0),
+        model_settings=ModelSettings(temperature=0.2, top_p=0.1),
         model=model_name
     )
 

@@ -6,6 +6,8 @@ from pydantic import BaseModel, Field, TypeAdapter
 from pathlib import Path
 import sys
 
+
+
 project_root = Path(__file__).parent.parent
 sys.path.append(str(project_root))
 load_dotenv()
@@ -13,6 +15,7 @@ load_dotenv()
 from generate_mock_data.rpa.interview_role_play import simulate_session
 from generate_mock_data.rpa.note_writer import write_progress_note
 from generate_mock_data.rpa.medication_perscriber import prescribe_medication
+from synthesizer.synthesizer import Synthesizer
 
 def load_json(path):
     with open(path, 'r') as f:
@@ -33,7 +36,7 @@ def synthesize_data_facts(data_facts):
             # print(feature_data_facts)
             if feature_data_facts['modality_type'] == "survey":
                 text = "\n".join([
-                    f"{feature_data_facts['modality_source']} - {feature_data_facts['feature_name']} - {fact['fact_type']} : {fact['fact_description']}" for fact in feature_data_facts['data_facts']])
+                f"{feature_data_facts['modality_source']} - {feature_data_facts['feature_name']} : {fact['fact_description']}" for fact in feature_data_facts['data_facts']])
                 texts.append(text)
         return "\n\n".join(texts)
 
@@ -61,7 +64,9 @@ if __name__ == "__main__":
         summarization_agent = Agent(
             name = "summarization",
             instructions = "You are an health expert. Summarize the patient's medical history into a 100 word pragraph. Output only the summary text without anything else.",
-            model_settings=ModelSettings(temperature=0.0),
+            model_settings=ModelSettings(
+                temperature=0.2,
+                top_p=0.1),
             model=MODEL_NAME,
         )
         encounter_summary = asyncio.run(Runner.run(summarization_agent, input = all_history_encounter_str))
@@ -72,9 +77,13 @@ if __name__ == "__main__":
         # Step 2: talk to patient
         past_session_notes = []
         for mh_encounter in mock_mh_encounters:
+            if mh_encounter['encounter_id'] >= 4:
+                break
+
             # Input 1: passive sensing / measurement scores data facts
-            data_facts_str = synthesize_data_facts(mh_encounter['data_facts'])
-            # print(data_facts_str)
+            data_facts_str = synthesize_data_facts(
+                mh_encounter['numeric_facts'])
+            print(data_facts_str)
             
             # Input 2: last encounters notes
             if mh_encounter['encounter_id'] != 1:
@@ -109,7 +118,7 @@ if __name__ == "__main__":
             print(context)
 
             combined_transcript = asyncio.run(simulate_session(person_id, context, mh_encounter['encounter_id'], verbose=True))
-            
+
             # read combined_transcript
             # with open(f'./generate_mock_data/{person_id}_combined_transcript.json', 'r') as f:
             #     combined_transcript = json.load(f)

@@ -50,7 +50,13 @@ Requirements
 4) The encounters do not have to be mental health-related: it could be any medical condition that the patient has.
 5) Make sure at least 5 encounters are mental health disorder-related, but they do not need to be depression.
 6) All encounters should be before 2021-03-28.
-7) The progress note should be around 400 - 600 words.
+7) The progress note should be written in the SOAP (Subjective, Objective, Assessment, and Plan) note format, with a length for about 400 - 600 words.
+
+Template for medical note:
+Subjective: |note content|
+Objective: |note content|
+Assessment : |note content|
+Plan: |note content|
 """
 
 class Medication(BaseModel):
@@ -78,6 +84,10 @@ Requirements:
 6) Make sure that at least 3 prescribed medication was made.
 """
 
+class PersonaResponse(BaseModel):
+    name: str = Field(..., description="The name of the patient.")
+    description: str = Field(..., description="The description of the patient's persona.")
+
 
 if __name__ == '__main__':
     openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -87,6 +97,28 @@ if __name__ == '__main__':
     with open('./generate_mock_data/context/personas_stub.json', 'r') as f:
         data = json.load(f)
     for patient, persona in tqdm(data.items()):
+        # Step 0: Generate name and description of the patient
+        # generate_persona_prompt = f'''
+        #     Help me generate the name and persona description of this depression patient:  
+
+        #     {persona}      
+        # '''
+        # response = client.responses.parse(
+        #     model=MODEL_NAME,
+        #     input=[
+        #         {"role": "system", "content": generate_persona_prompt}
+        #     ],
+        #     text_format=PersonaResponse,
+        #     temperature=0
+        # )
+        # persona_description = response.output_parsed
+        # # pydantic to dict
+        # persona_dict = persona_description.model_dump()
+        # persona['name'] = persona_dict['name']
+        # persona['description'] = persona_dict['description']
+
+        # print(persona)
+
         # Step 1: Generate encounter (clinical events) from persona
         # print(persona)
         encounter_prompt = f'''
