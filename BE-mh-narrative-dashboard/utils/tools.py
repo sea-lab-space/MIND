@@ -189,4 +189,23 @@ def agent_tool_calculate_max(wrapper: RunContextWrapper[List], time_start: str, 
 
     print("Using calculate max tool", np.nanmax(values), "between", time_start, "and", time_end)
     return np.nanmax(values)
+
+@function_tool
+def retrive_data_facts(wrapper: RunContextWrapper[List], fact_ids: List[str]) -> str:
+    """
+    Retrieve the data facts with the given fact_ids.
+
+    Args:
+        fact_ids: A list of unique identifiers of the fact.
+    """
+    data = wrapper.context
+    included_facts = [
+        fact for fact in data if fact["id"] in fact_ids
+    ]
+    fact_list_str = "\n".join([
+        f"[{fact['id']}] {fact['full_description']}" for fact in included_facts
+    ])
+    print(fact_list_str)
+    print("--------")
+    return fact_list_str
     

@@ -1,24 +1,23 @@
 
 
 import asyncio
+from collections import Counter
+from copy import deepcopy
 import random
 import re
-from synthesizer.synthesizer_agents.insight_generator_agent import InsightProposalAgent
+from scipy.stats import entropy
+import numpy as np
+
+from tqdm import tqdm, trange
+from synthesizer.synthesizer_agents.actor import InsightProposalActorAgent
 from datetime import datetime
 
-def strip_date(date):
-    match = re.search(r'\d{4}-\d{2}-\d{2}', date)
-    if not match:
-        return None
-    return datetime.strptime(match.group(), '%Y-%m-%d')
+from synthesizer.synthesizer_agents.reflection import InsightReflectionAgent
+from utils.datetime_checker import date_between
 
-def date_between(date, start_date, end_date):
-    date = strip_date(date)
-    start_date = strip_date(start_date)
-    end_date = strip_date(end_date)
-    if not date or not start_date or not end_date:
-        return False
-    return start_date <= date < end_date
+random.seed(42)
+
+
 class Synthesizer:
     # TODO: Implement critiquer & narrator
     def __init__(self, data_fact_source, retrospect_date, before_date, model_name):
@@ -27,10 +26,11 @@ class Synthesizer:
         self.retrospect_date = retrospect_date
         self.data_fact_source = data_fact_source
         self.data_fact_list = self._flatten_tag_source()
+        self.data_fact_id_set = set([fact["id"] for fact in self.data_fact_list])
         
-        self.generator_agent = InsightProposalAgent(model_name)
-        self.critiquer_agent = None
-        self.narrator_agent = None
+        self.actor_agent = InsightProposalActorAgent(self.data_fact_list, model_name)
+        self.reflection_agent = InsightReflectionAgent(model_name)
+        self.reflection_mem = []
 
     # ! This is glue code: improve Discoverer data_fact data structure
     def _flatten_tag_numeric(self, num_fact_list):
@@ -77,7 +77,7 @@ class Synthesizer:
             "transcript_facts": "session transcript"
         }
         for text in text_list:
-            text["id"] = f"{modality}-{self.fact_count}"
+            text["id"] = f"text-{modality}-{self.fact_count}"
             text["modality_type"] = "text"
             text["modality_source"] = txt_map[modality]
             text["full_description"] = f"<Text: {txt_map[modality]}> {text['fact_text']}"
@@ -98,21 +98,108 @@ class Synthesizer:
                 continue
         return facts
     
-    def _glue_prompt_input(self):
+    def _glue_data_fact_input(self, data_fact_set):
         # set fixed randomizer to shuffle data facts
         # ! Not validated if this could be better than keep original ordering (where same modality facts come in order)
-        random.seed(42)
-        random.shuffle(self.data_fact_list)
+        data_fact_list = [
+            fact for fact in self.data_fact_list if fact["id"] in data_fact_set
+        ]        
+        random.shuffle(data_fact_list)
 
         prompt_text_list = []
-        for fact in self.data_fact_list:
+        for fact in data_fact_list:
             prompt_text_list.append(
                 f"[{fact['id']}] {fact['full_description']}"
             )
         return "\n".join(prompt_text_list)
     
-    def run(self):
-        prompt = self._glue_prompt_input()
-        data_insights = asyncio.run(self.generator_agent.run(prompt, True))
+
+    def _shuffle_insight(self, data_insights):
+        mm_entropies = []
+        for insight in data_insights:
+            insights_sources = insight["insight_source"]
+            modality_origin = Counter()  # e.g., sv, ps, ...
+            modality_type = Counter()    # e.g., survey, location, steps, ...
+
+            for insight_source in insights_sources:
+                source_list = insight_source.split("-")
+                if len(source_list) >= 2:
+                    modality_origin[source_list[0]] += 1
+                    modality_type[source_list[1]] += 1
+
+            # Convert counts to probability distributions
+            origin_counts = np.array(list(modality_origin.values()))
+            origin_probs = origin_counts / origin_counts.sum()
+
+            type_counts = np.array(list(modality_type.values()))
+            type_probs = type_counts / type_counts.sum()
+
+            # Calculate entropy (in bits; change base=2 if desired)
+            entropy_origin = entropy(origin_probs)
+            entropy_type = entropy(type_probs)
+
+            # Weighted (balanced) entropy
+            alpha = 0.5
+            mm_entropy = alpha * entropy_origin + (1 - alpha) * entropy_type
+            insight["entropy"] = mm_entropy
+            mm_entropies.append(mm_entropy)
+            
+        # Sort by entropy descending
+        return sorted(data_insights, key=lambda x: x["entropy"], reverse=True), np.mean(mm_entropies)
+
+    def _compute_coverage(self, data_insights):
+        used_insight_id_set = set(
+            [source for insight in data_insights for source in insight["insight_source"]])
+        coverage = len(used_insight_id_set) / len(self.data_fact_list)
+        return used_insight_id_set, coverage
+    
+    def run(self, iters=2):
+        full_insight_id_set = set(deepcopy(self.data_fact_id_set))
+        data_insights = []
+        coverage = 0
+        insight_entropy = 0
+        insight_num = 0
+        
+        pbar = trange(iters, desc="Initializing...")
+        for iter in pbar:
+            mem_str = "\n".join(self.reflection_mem)
+            mem_str_recent = self.reflection_mem[-1] if self.reflection_mem else ""
+            
+            # Step 1: Actor run
+            prompt = f"""
+                Below are all the data facts.
+                {self._glue_data_fact_input(full_insight_id_set)}
+
+                Previously generated insights:
+                {data_insights}
+                
+                The most recent reflection:
+                {mem_str_recent}
+            """
+            data_insights_single_run = asyncio.run(self.actor_agent.run(prompt, False))
+            data_insights = data_insights_single_run
+            
+            # Step 2: Evaluator run
+            # * Assign entropy to data facts used to infer insights
+            # * Calculate coverage and determine which data facts has not yet being considered
+            data_insights, entp_num = self._shuffle_insight(data_insights)
+            used_set, cover = self._compute_coverage(data_insights)
+
+            coverage = cover
+            insight_entropy = entp_num
+            insight_num = len(data_insights)
+            
+            # Step 3: Reflection run
+            # optimize coverage (consider insights that are not used), entropy (use multimodal insight)
+            reflection = asyncio.run(self.reflection_agent.run(
+                data_insights,
+                entropy=entp_num,
+                coverage=cover,
+                history=mem_str,
+                verbose=False))
+            self.reflection_mem.append(reflection)
+
+            pbar.set_description(
+                f"Coverage: {coverage:.2f}, Entropy: {insight_entropy:.2f}, # Insights: {insight_num}")
         return data_insights
 

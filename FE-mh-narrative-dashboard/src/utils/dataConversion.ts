@@ -1,16 +1,16 @@
-import type {DatasourceIconTypes, DataSourceType, InsightCardData} from "@/types/props";
+import type {DatasourceIconType, DatasourceIconTypes, DataSourceType, InsightCardData} from "@/types/props";
 import visualizerData from "@/data/Visualizer_INS-W_963.json";
 import {InsightType} from "@/types/props";
 
 export const convertGroupedInsightResultsToFE = (): InsightCardData[] => {
-    return visualizerData.map((group, index): InsightCardData => ({
+    return visualizerData.insights.map((group, index): InsightCardData => ({
         key: `insight-${index + 1}`,
         summaryTitle: group.summaryTitle,
         sources: group.sources.map((type: string) => ({
-            type: type.trim() as keyof typeof DatasourceIconTypes
+            type: type.trim() as DatasourceIconType
         })),
         insightType: group.insightType.map((type: string) => ({
-            type: type as keyof typeof InsightType
+            type: type as InsightType
         })),
         expandView: group.expandView.map((insight: any, idx: number) => ({
             key: `insight-${index + 1}-detail-${idx+1}`,
@@ -23,6 +23,11 @@ export const convertGroupedInsightResultsToFE = (): InsightCardData[] => {
         }))
     }));
 };
+
+// TODO: type definition
+export const convertOverviewResultsToFE = (): any => {
+    return visualizerData.overview;
+}
 
 
 export function normalizeDataPoints(

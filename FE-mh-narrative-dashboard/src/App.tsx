@@ -12,7 +12,10 @@ import { Pencil } from "lucide-react";
 import {FilterSelector} from "@/components/FilterSelector";
 import {data, defaultInsightCardData, nameList, retrospectHorizon} from "@/data/data";
 import {DatasourceIconTypes, InsightType, type DatasourceIconType} from "@/types/props";
-import {convertGroupedInsightResultsToFE} from "@/utils/dataConversion";
+import {
+  convertGroupedInsightResultsToFE,
+  convertOverviewResultsToFE,
+} from "@/utils/dataConversion";
 
 
 const userName = "Ryan";
@@ -32,6 +35,7 @@ export default function App() {
   const [insightsDataTemp, setInsightsDataTemp] = useState([]);
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const overviewCardData = convertOverviewResultsToFE();
   const insightCardData = convertGroupedInsightResultsToFE();
   const patientCommunicationData = data.patientCommunication;
 
@@ -108,14 +112,14 @@ export default function App() {
           />
         </div>
         <FilterSelector
-            selected={selectedInsightTypes}
-            onToggle={(type) => {
-              setSelectedInsightTypes((prev) =>
-                  prev.includes(type)
-                      ? prev.filter((t) => t !== type)
-                      : [...prev, type]
-              );
-            }}
+          selected={selectedInsightTypes}
+          onToggle={(type) => {
+            setSelectedInsightTypes((prev) =>
+              prev.includes(type)
+                ? prev.filter((t) => t !== type)
+                : [...prev, type]
+            );
+          }}
         />
 
         <div
@@ -139,6 +143,7 @@ export default function App() {
                   onClick={() => toggleSection("overview")}
                 >
                   <OverviewComponent
+                    overviewData={overviewCardData}
                     isExpanded={expandedSections.overview}
                     isDrillDown={isDrillDown}
                   />
@@ -153,61 +158,73 @@ export default function App() {
                   isExpanded={expandedSections.insights}
                   onClick={() => toggleSection("insights")}
                 >
-
-
                   <div
-                      className={`${
-                          isDrillDown
-                              ? "flex flex-col gap-4"
-                              : "grid grid-cols-1 sm:grid-cols-2 gap-4"
-                      }`}
+                    className={`${
+                      isDrillDown
+                        ? "flex flex-col gap-4"
+                        : "grid grid-cols-1 sm:grid-cols-2 gap-4"
+                    }`}
                   >
                     {/* Left column */}
                     <div className="flex flex-col gap-4">
                       {leftColumnCards.map((card, index) => (
-                          <div
-                              key={card.key}
-                              ref={(el) => (cardRefs.current[index * 2] = el)}
-                              className="w-full"
-                          >
-                            <InsightCardComponent
-                                insightCardData={card}
-                                title={card.summaryTitle}
-                                sources={card.sources}
-                                isExpanded={expandedSections.insights}
-                                isInsightHeaderSelected={selectedInsightHeader.includes(card.key)}
-                                isInsightCardSelected={selectedInsightCard === card.key}
-                                handleCardSelect={() => handleCardSelection(card.key, index * 2)}
-                                handleCardHeaderClick={() => handleInsightCardHeaderSelect(card.key)}
-                            />
-                          </div>
+                        <div
+                          key={card.key}
+                          ref={(el) => (cardRefs.current[index * 2] = el)}
+                          className="w-full"
+                        >
+                          <InsightCardComponent
+                            insightCardData={card}
+                            title={card.summaryTitle}
+                            sources={card.sources}
+                            isExpanded={expandedSections.insights}
+                            isInsightHeaderSelected={selectedInsightHeader.includes(
+                              card.key
+                            )}
+                            isInsightCardSelected={
+                              selectedInsightCard === card.key
+                            }
+                            handleCardSelect={() =>
+                              handleCardSelection(card.key, index * 2)
+                            }
+                            handleCardHeaderClick={() =>
+                              handleInsightCardHeaderSelect(card.key)
+                            }
+                          />
+                        </div>
                       ))}
                     </div>
 
                     {/* Right column */}
                     <div className="flex flex-col gap-4">
                       {rightColumnCards.map((card, index) => (
-                          <div
-                              key={card.key}
-                              ref={(el) => (cardRefs.current[index * 2 + 1] = el)}
-                              className="w-full"
-                          >
-                            <InsightCardComponent
-                                insightCardData={card}
-                                title={card.summaryTitle}
-                                sources={card.sources}
-                                isExpanded={expandedSections.insights}
-                                isInsightHeaderSelected={selectedInsightHeader.includes(card.key)}
-                                isInsightCardSelected={selectedInsightCard === card.key}
-                                handleCardSelect={() => handleCardSelection(card.key, index * 2 + 1)}
-                                handleCardHeaderClick={() => handleInsightCardHeaderSelect(card.key)}
-                            />
-                          </div>
+                        <div
+                          key={card.key}
+                          ref={(el) => (cardRefs.current[index * 2 + 1] = el)}
+                          className="w-full"
+                        >
+                          <InsightCardComponent
+                            insightCardData={card}
+                            title={card.summaryTitle}
+                            sources={card.sources}
+                            isExpanded={expandedSections.insights}
+                            isInsightHeaderSelected={selectedInsightHeader.includes(
+                              card.key
+                            )}
+                            isInsightCardSelected={
+                              selectedInsightCard === card.key
+                            }
+                            handleCardSelect={() =>
+                              handleCardSelection(card.key, index * 2 + 1)
+                            }
+                            handleCardHeaderClick={() =>
+                              handleInsightCardHeaderSelect(card.key)
+                            }
+                          />
+                        </div>
                       ))}
                     </div>
                   </div>
-
-
                 </SectionTitle>
               </div>
 
@@ -243,7 +260,11 @@ export default function App() {
               style={{ width: rightPanelWidth }}
             >
               <DrilldownPanel
-                  insightData={insightCardData.find((data) => data.key === selectedInsightCard) || defaultInsightCardData}
+                insightData={
+                  insightCardData.find(
+                    (data) => data.key === selectedInsightCard
+                  ) || defaultInsightCardData
+                }
                 onClose={() => {
                   setIsDrillDown(false);
                   setSelectedInsightCard(null);

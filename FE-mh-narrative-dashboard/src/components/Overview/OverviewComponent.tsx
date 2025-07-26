@@ -1,17 +1,16 @@
 import OverviewCardComponent from "@/components/Overview/OverviewCardComponent";
-import { Activity, Brain, Heart } from "lucide-react";
-import {data} from "@/data/data";
 import {iconMap} from "@/types/props";
 
 interface OverviewComponentProps {
+  overviewData: any;
   isExpanded: boolean;
   isDrillDown: boolean;
 }
 export default function OverviewComponent({
+                                            overviewData,
                                             isExpanded,
                                             isDrillDown,
                                           }: OverviewComponentProps) {
-    const overviewData = data.overview;
     const basicInfoCardData = overviewData.basicInfoCard;
     const infoData = overviewData.infoCards;
 

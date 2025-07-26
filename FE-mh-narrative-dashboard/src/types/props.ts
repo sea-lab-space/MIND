@@ -50,6 +50,7 @@ export interface InsightCardData {
   key: string;
   summaryTitle: string;
   sources: { type: DatasourceIconType }[];
+  insightType: { type: InsightType }[];
   expandView: InsightExpandViewItem[];
 }
 
@@ -64,20 +65,23 @@ export const iconMap: Record<string, React.ElementType> = {
   // Add more mappings as needed
 };
 
+export const InsightType = {
+  SLEEP: "Sleep Patterns",
+  ACTIVITY: "Physical Activity",
+  DIGITAL: "Digital Engagement",
+  EMOTIONAL: "Emotional State",
+  SOCIAL: "Social Interaction",
+  MEDICATION: "Medication & Treatment",
+} as const;
 
-export enum InsightType {
-  SLEEP = "Sleep Patterns",
-  ACTIVITY = "Physical Activity",
-  DIGITAL = "Digital Engagement",
-  EMOTIONAL = "Emotional State",
-  SOCIAL = "Social Interaction",
-  MEDICATION = "Medication & Treatment"
-}
+export type InsightType = typeof InsightType[keyof typeof InsightType];
 
-export enum DataSourceType {
-  TREND = "trend",
-  EXTREME = "extreme",
-  DIFFERENCE = "difference",
-  COMPARISON = "comparison",
-  TEXT = "text"
-}
+export const DataSourceType = {
+  TREND: "trend",
+  EXTREME: "extreme",
+  DIFFERENCE: "difference",
+  COMPARISON: "comparison",
+  TEXT: "text",
+} as const;
+
+export type DataSourceType = typeof DataSourceType[keyof typeof DataSourceType];
