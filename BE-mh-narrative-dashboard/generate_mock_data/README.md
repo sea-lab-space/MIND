@@ -2,10 +2,36 @@
 
 ## Data Usage
 
+### Passive sensing and survey scores (GLOBEM dataset)
 * Use patient ids: 963, 1044, 1077 in GLOBEM
 * See rationale and process in `passive_data_extraction` folder
 
-## Synthetic Data Generation Process
+### Medical setting (simulated sessions)
+
+- **Case 1**: [Judith Johnson] Case study clinical example CBT: First session with a client with symptoms of depression (CBT model): "Lucy" [[link]](https://www.youtube.com/watch?v=7LD8iC4NqXM)
+- **Case 2**: [Judith Johnson] Case study clinical example: First session with a client with symptoms of depression (CBT model): "Gabriella" [[link]](https://www.youtube.com/watch?v=JKUFWK6iSsw)
+- **Case 3**: [University of Nottingham] Psychiatric Interviews for Teaching: Depression: "Alison" [[link]](https://www.youtube.com/watch?v=4YhpWZCdiZc)
+
+> All materials above could be accessed publically online. We do not share the videos for copyright reasons, but encourage readers to access the source materials themselves.
+> 
+> **Disclaimer**: This is not a comprehensive list of all the materials online. We included only depression related interviews to set up our user study cases. The "patient"(s) in all the materials are "actors", and has no link to the data from the GLOBEM dataset. 
+
+### Pairing
+
+We keep the persona introducted in the simulated sessions (i.e., "Lucy", "Gabriella", "Alison") as the persona for the user study cases. We then "reverse engineer" their medical history, past encounters, and subsequent encounters with LLM. Those generated contents are subsequently **screened by practicing mental health clinicians** to ensure the realism of the data.
+
+**User study test cases:**
+- Case 1 - [963] - "Lucy"
+- Case 2 - [1044] - "Gabriella"
+
+> **Rationale**: Both tutorial cases are from the same clinician's tutorial; and the patient demographic setup is similar to that in the GLOBEM dataset. 
+
+**Onboarding & introduction case:**
+- Case 3 - [1077] - "Alison"
+
+> **Note**: This is a different setup than the previous two cases. Under the British setting, this interview is conducted by a GP (General Practitioner, or PCP (Primary Care Physician) in the US). The cases 1 & 2 are with a psychiatrist (specialist).
+
+## LLM Generation Process
 
 1. Preliminary persona (see `personas_stub.json`)
    * Directly prompt LLM for persona generation under constraint

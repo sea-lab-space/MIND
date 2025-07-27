@@ -53,10 +53,10 @@ Requirements
 7) The progress note should be written in the SOAP (Subjective, Objective, Assessment, and Plan) note format, with a length for about 400 - 600 words.
 
 Template for medical note:
-Subjective: |note content|
-Objective: |note content|
-Assessment : |note content|
-Plan: |note content|
+**Subjective**: |note content|
+**Objective**: |note content|
+**Assessment**: |note content|
+**Plan**: |note content|
 """
 
 class Medication(BaseModel):
