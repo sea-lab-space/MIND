@@ -5,6 +5,8 @@ import sys, os
 
 from pydantic import BaseModel
 
+from discoverer.numeric_tab_data.descriptions.defs import NUMERICAL_FEATURE_KB
+
 project_root = Path(__file__).parent.parent
 # print(f"Project root: {project_root}")
 sys.path.append(str(project_root))
@@ -44,10 +46,16 @@ def feature_transform(pid: str, granularity: Literal['finest', 'allday'] = 'alld
             else:
                 feature_type = "passive sensing"
                 feature_source = file.split('_')[2]
+            
+            # rename col
+            col_name_new = NUMERICAL_FEATURE_KB[feature_source][col]['rename']
+            prompt_data.columns = ['date', col_name_new]
+
             feature_list.append(
                 {
                     'modality_type': feature_type,
                     'modality_source': feature_source,
+                    'feature_name_renamed': col_name_new,
                     'feature_name': col,
                     'data': prompt_data.to_dict(orient='records'),
                 }

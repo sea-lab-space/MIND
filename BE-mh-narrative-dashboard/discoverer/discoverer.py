@@ -49,7 +49,7 @@ class Discoverer:
                 data_facts.append({
                     "modality_type": feature['modality_type'],
                     "modality_source": feature['modality_source'],
-                    "feature_name": feature['feature_name'],
+                    "feature_name": feature['feature_name_renamed'],
                     "data_facts": data_fact
                 })
 

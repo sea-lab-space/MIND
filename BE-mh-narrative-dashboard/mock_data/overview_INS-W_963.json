@@ -13,24 +13,24 @@
       "icon": "history",
       "overviewHeadTitle": "Medical History",
       "cardContent": {
-        "folded": "Young female college student with allergies, infections, acne, headaches, anxiety, depression, anemia, vitamin D deficiency.",
-        "expanded": "17-year-old college student with history of allergic rhinitis, anxiety, depression, iron deficiency anemia, and recent vitamin D deficiency. Previously on sertraline, ferrous sulfate, and vitamin D3."
+        "folded": "Seasonal allergies, pharyngitis, acne, headaches, anxiety, insomnia, depression, anemia, dysmenorrhea, GERD, vitamin D deficiency.",
+        "expanded": "History of anxiety, depression, insomnia, iron and vitamin D deficiency, dysmenorrhea, GERD, mild acne, and seasonal allergies; previously treated with sertraline, iron, and vitamin D."
       }
     },
     {
       "icon": "history",
       "overviewHeadTitle": "Sessions Recap",
       "cardContent": {
-        "folded": "Patient reports ongoing fatigue, negative thoughts, some improvement with grounding, struggles with consistency.",
-        "expanded": "Mei Lin's sessions focused on managing depression, anxiety, negative thoughts, and perfectionism through grounding, journaling, and cognitive strategies, with gradual symptom improvement."
+        "folded": "Mei Lin struggles with fatigue, negative self-beliefs, perfectionism, academic stress, and inconsistent coping.",
+        "expanded": "Mei Lin reports persistent fatigue, low mood, anxiety, negative self-beliefs, and difficulty maintaining coping strategies. She shows insight, is open to therapy, and benefits from grounding exercises."
       }
     },
     {
       "icon": "brain",
       "overviewHeadTitle": "Current Concerns",
       "cardContent": {
-        "folded": "Persistent fatigue, negative self-beliefs, difficulty maintaining coping strategies, feelings of hopelessness.",
-        "expanded": "Persistent fatigue, negative self-beliefs, difficulty maintaining coping strategies, and ongoing feelings of hopelessness and overwhelm."
+        "folded": "Persistent hopelessness, self-criticism, difficulty maintaining coping strategies, academic and family pressures, low mood.",
+        "expanded": "Ongoing fatigue, hopelessness, perfectionism, academic and family stress, negative self-worth, and struggles with consistency in self-care and coping strategies."
       }
     },
     {

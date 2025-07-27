@@ -42,3 +42,4 @@ We also use synthetic data to simulate patient encounters. To see how its raw fo
 ## 🧋 TODOs (Engineering perspective)
 - [x] Use asyncio for concurrent API calls (currently sequential)
 - [x] Change NaN to null in generated dataset.
+- [ ] Unit conversions (minutes --> hours, meters --> feet/miles etc.)? 

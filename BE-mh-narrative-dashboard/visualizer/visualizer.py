@@ -20,7 +20,7 @@ class Visualizer:
             
     def _search_raw_data(self, source, name):
         for data in self.raw_data['numerical_data']:
-            if data['modality_source'] == source and data['feature_name'] == name:
+            if data['modality_source'] == source and data['feature_name_renamed'] == name:
                 return self._replace_NaNs_to_null(data['data'])
     
     def _search_raw_text_data(self, source):

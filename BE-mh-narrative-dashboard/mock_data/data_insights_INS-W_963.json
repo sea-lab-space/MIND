@@ -1,58 +1,95 @@
 [
   {
-    "insight_description": "Patient\u2019s physical symptoms of distress are reported during periods of high negative affect and poor sleep.",
+    "insight_description": "Despite high digital engagement, positive affect remains low, and self-reported fatigue and distress persist.",
     "insight_source": [
-      "text-transcript_facts-301",
-      "ps-sleep-139",
-      "ps-sleep-138",
-      "sv-survey-282"
+      "ps-screen-426",
+      "sv-survey-519",
+      "text-transcript_facts-547"
+    ],
+    "insight_category": [
+      "Digital Engagement",
+      "Emotional State"
+    ],
+    "entropy": 1.0986122886681096
+  },
+  {
+    "insight_description": "Patient\u2019s reported triggers for distress (academic, family, sleep) align with periods of increased stress and disrupted routines.",
+    "insight_source": [
+      "text-transcript_facts-551",
+      "sv-survey-105",
+      "ps-location-10"
+    ],
+    "insight_category": [
+      "Emotional State",
+      "Sleep Patterns",
+      "Physical Activity"
+    ],
+    "entropy": 1.0986122886681096
+  },
+  {
+    "insight_description": "Despite high routine regularity, sleep and activity patterns remain inconsistent, with frequent fluctuations in energy and mood.",
+    "insight_source": [
+      "ps-location-371",
+      "ps-sleep-59",
+      "ps-steps-89",
+      "sv-survey-512"
     ],
     "insight_category": [
       "Sleep Patterns",
-      "Emotional State"
-    ],
-    "entropy": 1.0397207708399179
-  },
-  {
-    "insight_description": "Periods of high academic and family stress coincide with poor sleep and increased emotional distress.",
-    "insight_source": [
-      "text-transcript_facts-302",
-      "ps-sleep-139",
-      "ps-sleep-138",
-      "ps-sleep-137",
-      "sv-survey-293"
-    ],
-    "insight_category": [
-      "Sleep Patterns",
-      "Emotional State"
-    ],
-    "entropy": 0.9502705392332347
-  },
-  {
-    "insight_description": "Patient\u2019s depressive symptoms decreased as physical activity and time in green spaces increased after May 27.",
-    "insight_source": [
-      "sv-survey-89",
-      "sv-survey-169",
-      "ps-steps-72",
-      "ps-steps-159",
-      "ps-location-241",
-      "ps-location-108"
-    ],
-    "insight_category": [
       "Physical Activity",
+      "Emotional State"
+    ],
+    "entropy": 0.9743147528693494
+  },
+  {
+    "insight_description": "Patient\u2019s self-reported positive affect remains low, even during periods of increased physical activity and digital engagement.",
+    "insight_source": [
+      "sv-survey-519",
+      "ps-steps-263",
+      "ps-screen-426"
+    ],
+    "insight_category": [
+      "Emotional State",
+      "Physical Activity",
+      "Digital Engagement"
+    ],
+    "entropy": 0.8675632284814612
+  },
+  {
+    "insight_description": "Routine disruptions, such as changes in bedtime or travel, often precede increases in stress and negative affect.",
+    "insight_source": [
+      "ps-sleep-75",
+      "ps-location-10",
+      "sv-survey-94"
+    ],
+    "insight_category": [
       "Sleep Patterns",
       "Emotional State"
     ],
     "entropy": 0.8675632284814612
   },
   {
-    "insight_description": "Patient\u2019s positive affect increased as physical activity and time in green spaces increased.",
+    "insight_description": "Patient\u2019s self-reported stress and anxiety decreased as routine regularity and sleep stability improved.",
     "insight_source": [
-      "sv-survey-220",
-      "sv-survey-283",
-      "ps-location-241",
-      "ps-location-108",
-      "ps-steps-159"
+      "sv-survey-100",
+      "sv-survey-105",
+      "ps-location-11",
+      "ps-sleep-80"
+    ],
+    "insight_category": [
+      "Emotional State",
+      "Sleep Patterns"
+    ],
+    "entropy": 0.8664339756999315
+  },
+  {
+    "insight_description": "Periods of improved mood and reduced stress align with increased physical activity and more time outdoors.",
+    "insight_source": [
+      "sv-survey-96",
+      "sv-survey-100",
+      "ps-steps-90",
+      "ps-location-211",
+      "ps-location-136"
     ],
     "insight_category": [
       "Physical Activity",
@@ -61,122 +98,130 @@
     "entropy": 0.8639659174977004
   },
   {
-    "insight_description": "Patient\u2019s social interaction, as measured by calls and unique devices, fluctuates with mood and stress levels.",
+    "insight_description": "Physical symptoms such as chest heaviness, anxiety, and mental fogginess are associated with emotional distress and poor sleep.",
     "insight_source": [
-      "ps-call-100",
-      "ps-call-99",
-      "ps-call-97",
-      "ps-bluetooth-1",
-      "ps-bluetooth-232",
-      "sv-survey-293"
+      "text-transcript_facts-550",
+      "ps-sleep-447"
     ],
     "insight_category": [
-      "Social Interaction",
-      "Emotional State"
+      "Emotional State",
+      "Sleep Patterns"
     ],
-    "entropy": 0.7309827367868282
+    "entropy": 0.6931471805599453
   },
   {
-    "insight_description": "Patient\u2019s self-reported negative affect decreased as time spent in green spaces and exercise increased.",
+    "insight_description": "Patient\u2019s engagement with study and exercise spaces remains minimal, despite academic pressures and goals to increase activity.",
     "insight_source": [
-      "sv-survey-282",
-      "sv-survey-79",
-      "ps-location-241",
-      "ps-location-244",
-      "ps-location-182"
+      "ps-location-380",
+      "ps-location-404",
+      "text-transcript_facts-551",
+      "text-transcript_facts-555"
     ],
     "insight_category": [
       "Physical Activity",
       "Emotional State"
     ],
-    "entropy": 0.6730116670092565
+    "entropy": 0.6931471805599453
   },
   {
-    "insight_description": "Patient\u2019s ability to use coping strategies is challenged during periods of overwhelm and high negative affect.",
+    "insight_description": "Periods of increased steps and travel coincide with more unique Bluetooth and WiFi devices, indicating greater social exposure.",
     "insight_source": [
-      "text-transcript_facts-299",
-      "text-transcript_facts-304",
-      "sv-survey-282"
+      "ps-steps-189",
+      "ps-location-147",
+      "ps-bluetooth-109",
+      "ps-wifi-199"
     ],
     "insight_category": [
+      "Physical Activity",
+      "Social Interaction"
+    ],
+    "entropy": 0.6931471805599453
+  },
+  {
+    "insight_description": "Periods of increased missed calls and low outgoing calls coincide with higher negative affect and stress scores.",
+    "insight_source": [
+      "ps-call-357",
+      "ps-call-207",
+      "sv-survey-512",
+      "sv-survey-539"
+    ],
+    "insight_category": [
+      "Social Interaction",
+      "Emotional State"
+    ],
+    "entropy": 0.6931471805599453
+  },
+  {
+    "insight_description": "Patient\u2019s self-reported mood sometimes diverges from behavioral data, such as high digital engagement during low affect periods.",
+    "insight_source": [
+      "sv-survey-519",
+      "ps-screen-426"
+    ],
+    "insight_category": [
+      "Digital Engagement",
+      "Emotional State"
+    ],
+    "entropy": 0.6931471805599453
+  },
+  {
+    "insight_description": "Periods of increased digital engagement do not correspond with improved mood or reduced negative affect.",
+    "insight_source": [
+      "ps-screen-426",
+      "sv-survey-519",
+      "sv-survey-512"
+    ],
+    "insight_category": [
+      "Digital Engagement",
       "Emotional State"
     ],
     "entropy": 0.6365141682948128
   },
   {
-    "insight_description": "Patient\u2019s ability to use coping strategies is challenged during periods of overwhelm and high negative affect.",
+    "insight_description": "Despite setting goals for increased activity and coping, actual engagement in exercise and study spaces remains low.",
     "insight_source": [
-      "text-transcript_facts-299",
-      "text-transcript_facts-304",
-      "sv-survey-282"
+      "text-transcript_facts-555",
+      "ps-location-404",
+      "ps-location-380"
     ],
     "insight_category": [
+      "Medication & Treatment",
+      "Physical Activity"
+    ],
+    "entropy": 0.6365141682948128
+  },
+  {
+    "insight_description": "Patient\u2019s sleep disruptions and frequent awakenings are consistent with reported fatigue and difficulty managing emotions.",
+    "insight_source": [
+      "ps-sleep-476",
+      "ps-sleep-447",
+      "text-transcript_facts-547"
+    ],
+    "insight_category": [
+      "Sleep Patterns",
       "Emotional State"
     ],
     "entropy": 0.6365141682948128
   },
   {
-    "insight_description": "Patient\u2019s beliefs about self-worth and perfectionism are prominent during periods of high stress and low mood.",
+    "insight_description": "Periods of increased sedentary episodes coincide with lower mood and higher reported fatigue.",
     "insight_source": [
-      "text-transcript_facts-300",
-      "text-transcript_facts-305",
-      "text-transcript_facts-303",
-      "sv-survey-293"
+      "ps-steps-259",
+      "ps-steps-258",
+      "sv-survey-512"
     ],
     "insight_category": [
+      "Physical Activity",
       "Emotional State"
     ],
-    "entropy": 0.5623351446188083
+    "entropy": 0.6365141682948128
   },
   {
-    "insight_description": "Patient\u2019s outgoing call activity increased during periods of improved mood and decreased stress.",
+    "insight_description": "Increased time at home and minimal time in study/exercise spaces coincide with academic stress and low mood.",
     "insight_source": [
-      "ps-call-236",
-      "ps-call-234",
-      "ps-call-101",
-      "sv-survey-227"
-    ],
-    "insight_category": [
-      "Social Interaction",
-      "Emotional State"
-    ],
-    "entropy": 0.5623351446188083
-  },
-  {
-    "insight_description": "Patient\u2019s outgoing call activity remained low during periods of high stress and negative affect.",
-    "insight_source": [
-      "ps-call-176",
-      "ps-call-177",
-      "ps-call-178",
-      "sv-survey-293"
-    ],
-    "insight_category": [
-      "Social Interaction",
-      "Emotional State"
-    ],
-    "entropy": 0.5623351446188083
-  },
-  {
-    "insight_description": "Patient\u2019s digital engagement fluctuated with mood, with increased unlocks during periods of higher stress.",
-    "insight_source": [
-      "ps-screen-38",
-      "ps-screen-197",
-      "ps-screen-196",
-      "sv-survey-293"
-    ],
-    "insight_category": [
-      "Digital Engagement",
-      "Emotional State"
-    ],
-    "entropy": 0.5623351446188083
-  },
-  {
-    "insight_description": "Patient\u2019s time in green spaces and exercise increased after May 27, coinciding with improved mood.",
-    "insight_source": [
-      "ps-location-241",
-      "ps-location-244",
-      "ps-location-182",
-      "sv-survey-220"
+      "ps-location-399",
+      "ps-location-380",
+      "ps-location-404",
+      "text-transcript_facts-551"
     ],
     "insight_category": [
       "Physical Activity",
@@ -185,70 +230,27 @@
     "entropy": 0.5623351446188083
   },
   {
-    "insight_description": "Patient\u2019s social interaction via calls increased during periods of improved mood and decreased stress.",
+    "insight_description": "Periods of increased travel and visits to significant places correspond with higher step counts and more social contact.",
     "insight_source": [
-      "ps-call-236",
-      "ps-call-234",
-      "ps-call-101",
-      "sv-survey-227"
+      "ps-location-144",
+      "ps-location-139",
+      "ps-steps-189",
+      "ps-call-204"
     ],
     "insight_category": [
-      "Social Interaction",
-      "Emotional State"
+      "Physical Activity",
+      "Social Interaction"
     ],
-    "entropy": 0.5623351446188083
+    "entropy": 0.5198603854199589
   },
   {
-    "insight_description": "Patient\u2019s beliefs about self-worth and perfectionism are prominent during periods of high stress and low mood.",
+    "insight_description": "Sleep duration and quality are highly variable, with frequent awakenings and inconsistent bedtimes, matching reported fatigue.",
     "insight_source": [
-      "text-transcript_facts-300",
-      "text-transcript_facts-305",
-      "text-transcript_facts-303",
-      "sv-survey-293"
-    ],
-    "insight_category": [
-      "Emotional State"
-    ],
-    "entropy": 0.5623351446188083
-  },
-  {
-    "insight_description": "Patient\u2019s digital engagement at home decreased as depressive symptoms improved, with less screen time as mood improved.",
-    "insight_source": [
-      "ps-screen-203",
-      "ps-screen-201",
-      "ps-screen-204",
-      "ps-screen-205",
-      "sv-survey-227"
-    ],
-    "insight_category": [
-      "Digital Engagement",
-      "Emotional State"
-    ],
-    "entropy": 0.5004024235381879
-  },
-  {
-    "insight_description": "Patient\u2019s digital engagement at home showed a cyclic pattern, possibly reflecting attempts to self-regulate mood.",
-    "insight_source": [
-      "ps-screen-45",
-      "ps-screen-47",
-      "ps-screen-35",
-      "ps-screen-44",
-      "sv-survey-293"
-    ],
-    "insight_category": [
-      "Digital Engagement",
-      "Emotional State"
-    ],
-    "entropy": 0.5004024235381879
-  },
-  {
-    "insight_description": "Patient\u2019s sleep onset and wake times became more regular as depressive symptoms improved.",
-    "insight_source": [
-      "ps-sleep-209",
-      "ps-sleep-208",
-      "ps-sleep-266",
-      "ps-sleep-140",
-      "sv-survey-227"
+      "ps-sleep-447",
+      "ps-sleep-476",
+      "ps-sleep-481",
+      "ps-sleep-61",
+      "text-transcript_facts-547"
     ],
     "insight_category": [
       "Sleep Patterns",
@@ -257,13 +259,28 @@
     "entropy": 0.5004024235381879
   },
   {
-    "insight_description": "Patient\u2019s routine regularity (circdnrtn) fluctuated, with dips during periods of high stress and low mood.",
+    "insight_description": "Physical activity and sedentary episodes fluctuate, with inconsistent routines and periods of low energy.",
+    "insight_source": [
+      "ps-steps-508",
+      "ps-steps-261",
+      "ps-steps-258",
+      "ps-steps-259",
+      "text-transcript_facts-547"
+    ],
+    "insight_category": [
+      "Physical Activity",
+      "Emotional State"
+    ],
+    "entropy": 0.5004024235381879
+  },
+  {
+    "insight_description": "Routine regularity is generally high but interrupted by short-term drops, often coinciding with increased stress or negative affect.",
     "insight_source": [
       "ps-location-10",
-      "ps-location-237",
-      "ps-location-11",
-      "ps-location-9",
-      "sv-survey-293"
+      "ps-location-371",
+      "ps-location-368",
+      "ps-location-285",
+      "sv-survey-94"
     ],
     "insight_category": [
       "Physical Activity",
@@ -272,252 +289,50 @@
     "entropy": 0.5004024235381879
   },
   {
-    "insight_description": "Patient\u2019s screen unlock duration at home decreased as mood improved, indicating less digital engagement.",
+    "insight_description": "Patient\u2019s social interaction is limited, with low outgoing call counts and high missed call variability, despite reported loneliness.",
     "insight_source": [
-      "ps-screen-46",
-      "ps-screen-48",
-      "ps-screen-204",
-      "ps-screen-205",
-      "sv-survey-227"
+      "ps-call-360",
+      "ps-call-364",
+      "ps-call-357",
+      "ps-call-356",
+      "text-transcript_facts-549"
     ],
     "insight_category": [
-      "Digital Engagement",
+      "Social Interaction",
       "Emotional State"
     ],
     "entropy": 0.5004024235381879
   },
   {
-    "insight_description": "Patient\u2019s sleep duration increased as depressive symptoms decreased, with more consolidated sleep episodes.",
+    "insight_description": "Outgoing call counts and social contact increase during periods of higher travel and visits to significant places.",
     "insight_source": [
-      "ps-sleep-62",
-      "ps-sleep-275",
-      "ps-sleep-276",
-      "ps-sleep-153",
-      "sv-survey-227"
+      "ps-call-204",
+      "ps-location-139",
+      "ps-location-218"
     ],
     "insight_category": [
-      "Sleep Patterns",
-      "Emotional State"
-    ],
-    "entropy": 0.5004024235381879
-  },
-  {
-    "insight_description": "Patient\u2019s sedentary behavior showed high variability, with more sedentary bouts during periods of higher stress.",
-    "insight_source": [
-      "ps-steps-218",
-      "ps-steps-219",
-      "ps-steps-160",
-      "ps-steps-161",
-      "sv-survey-293"
-    ],
-    "insight_category": [
-      "Physical Activity",
-      "Emotional State"
-    ],
-    "entropy": 0.5004024235381879
-  },
-  {
-    "insight_description": "Patient\u2019s digital engagement at home decreased as depressive symptoms improved, with less screen time as mood improved.",
-    "insight_source": [
-      "ps-screen-203",
-      "ps-screen-201",
-      "ps-screen-204",
-      "ps-screen-205",
-      "sv-survey-227"
-    ],
-    "insight_category": [
-      "Digital Engagement",
-      "Emotional State"
-    ],
-    "entropy": 0.5004024235381879
-  },
-  {
-    "insight_description": "Patient\u2019s sleep onset and wake times became more regular as depressive symptoms improved.",
-    "insight_source": [
-      "ps-sleep-209",
-      "ps-sleep-208",
-      "ps-sleep-266",
-      "ps-sleep-140",
-      "sv-survey-227"
-    ],
-    "insight_category": [
-      "Sleep Patterns",
-      "Emotional State"
-    ],
-    "entropy": 0.5004024235381879
-  },
-  {
-    "insight_description": "Patient\u2019s routine regularity (circdnrtn) fluctuated, with dips during periods of high stress and low mood.",
-    "insight_source": [
-      "ps-location-10",
-      "ps-location-237",
-      "ps-location-11",
-      "ps-location-9",
-      "sv-survey-293"
-    ],
-    "insight_category": [
-      "Physical Activity",
-      "Emotional State"
-    ],
-    "entropy": 0.5004024235381879
-  },
-  {
-    "insight_description": "Patient\u2019s screen unlock duration at home decreased as mood improved, indicating less digital engagement.",
-    "insight_source": [
-      "ps-screen-46",
-      "ps-screen-48",
-      "ps-screen-204",
-      "ps-screen-205",
-      "sv-survey-227"
-    ],
-    "insight_category": [
-      "Digital Engagement",
-      "Emotional State"
-    ],
-    "entropy": 0.5004024235381879
-  },
-  {
-    "insight_description": "Patient\u2019s sleep duration increased as depressive symptoms decreased, with more consolidated sleep episodes.",
-    "insight_source": [
-      "ps-sleep-62",
-      "ps-sleep-275",
-      "ps-sleep-276",
-      "ps-sleep-153",
-      "sv-survey-227"
-    ],
-    "insight_category": [
-      "Sleep Patterns",
-      "Emotional State"
-    ],
-    "entropy": 0.5004024235381879
-  },
-  {
-    "insight_description": "Patient\u2019s digital engagement at home decreased as depressive symptoms improved, with less screen time as mood improved.",
-    "insight_source": [
-      "ps-screen-203",
-      "ps-screen-201",
-      "ps-screen-204",
-      "ps-screen-205",
-      "sv-survey-227"
-    ],
-    "insight_category": [
-      "Digital Engagement",
-      "Emotional State"
-    ],
-    "entropy": 0.5004024235381879
-  },
-  {
-    "insight_description": "Periods of increased sedentary bouts coincide with lower physical activity and higher reported stress.",
-    "insight_source": [
-      "ps-steps-217",
-      "ps-steps-219",
-      "ps-steps-218",
-      "ps-steps-161",
-      "ps-steps-160",
-      "sv-survey-293"
-    ],
-    "insight_category": [
-      "Physical Activity",
-      "Emotional State"
-    ],
-    "entropy": 0.45056120886630463
-  },
-  {
-    "insight_description": "Sleep became more consolidated with fewer awakenings and longer sleep episodes as mood improved.",
-    "insight_source": [
-      "ps-sleep-268",
-      "ps-sleep-141",
-      "ps-sleep-53",
-      "ps-sleep-59",
-      "ps-sleep-60",
-      "sv-survey-227"
-    ],
-    "insight_category": [
-      "Sleep Patterns",
-      "Emotional State"
-    ],
-    "entropy": 0.45056120886630463
-  },
-  {
-    "insight_description": "Patient\u2019s sleep fragmentation decreased as mood improved, with fewer awakenings and longer sleep episodes.",
-    "insight_source": [
-      "ps-sleep-268",
-      "ps-sleep-141",
-      "ps-sleep-53",
-      "ps-sleep-59",
-      "ps-sleep-60",
-      "sv-survey-227"
-    ],
-    "insight_category": [
-      "Sleep Patterns",
-      "Emotional State"
-    ],
-    "entropy": 0.45056120886630463
-  },
-  {
-    "insight_description": "Periods of increased sedentary bouts coincide with lower physical activity and higher reported stress.",
-    "insight_source": [
-      "ps-steps-217",
-      "ps-steps-219",
-      "ps-steps-218",
-      "ps-steps-161",
-      "ps-steps-160",
-      "sv-survey-293"
-    ],
-    "insight_category": [
-      "Physical Activity",
-      "Emotional State"
-    ],
-    "entropy": 0.45056120886630463
-  },
-  {
-    "insight_description": "Sleep became more consolidated with fewer awakenings and longer sleep episodes as mood improved.",
-    "insight_source": [
-      "ps-sleep-268",
-      "ps-sleep-141",
-      "ps-sleep-53",
-      "ps-sleep-59",
-      "ps-sleep-60",
-      "sv-survey-227"
-    ],
-    "insight_category": [
-      "Sleep Patterns",
-      "Emotional State"
-    ],
-    "entropy": 0.45056120886630463
-  },
-  {
-    "insight_description": "Patient\u2019s engagement in mindfulness and grounding exercises is associated with some improvement in emotional regulation.",
-    "insight_source": [
-      "text-transcript_facts-306",
-      "text-transcript_facts-307",
-      "text-transcript_facts-298"
-    ],
-    "insight_category": [
-      "Emotional State"
-    ],
-    "entropy": 0.0
-  },
-  {
-    "insight_description": "Patient\u2019s time in study locations remained low, even as mood and activity levels improved.",
-    "insight_source": [
-      "ps-location-187",
-      "ps-location-184",
-      "ps-location-185",
-      "ps-location-186"
-    ],
-    "insight_category": [
+      "Social Interaction",
       "Physical Activity"
     ],
+    "entropy": 0.3182570841474064
+  },
+  {
+    "insight_description": "Patient sets goals for coping strategies but struggles with adherence, often due to feeling overwhelmed or forgetful.",
+    "insight_source": [
+      "text-transcript_facts-555",
+      "text-transcript_facts-548"
+    ],
+    "insight_category": [
+      "Medication & Treatment",
+      "Emotional State"
+    ],
     "entropy": 0.0
   },
   {
-    "insight_description": "Patient\u2019s reported stress remained high despite improvements in mood and physical activity.",
+    "insight_description": "Patient\u2019s negative self-evaluative thoughts and perfectionistic beliefs are frequent, contributing to emotional distress and low motivation.",
     "insight_source": [
-      "sv-survey-293",
-      "sv-survey-295",
-      "sv-survey-296",
-      "sv-survey-297"
+      "text-transcript_facts-549",
+      "text-transcript_facts-552"
     ],
     "insight_category": [
       "Emotional State"
@@ -525,11 +340,25 @@
     "entropy": 0.0
   },
   {
-    "insight_description": "Patient\u2019s engagement in mindfulness and grounding exercises is associated with some improvement in emotional regulation.",
+    "insight_description": "Despite some improvements, persistent negative thoughts and emotional distress remain, with only partial benefit from coping strategies.",
     "insight_source": [
-      "text-transcript_facts-306",
-      "text-transcript_facts-307",
-      "text-transcript_facts-298"
+      "text-transcript_facts-547",
+      "text-transcript_facts-549",
+      "text-transcript_facts-554"
+    ],
+    "insight_category": [
+      "Emotional State",
+      "Medication & Treatment"
+    ],
+    "entropy": 0.0
+  },
+  {
+    "insight_description": "Negative affect and PHQ-4 depression scores show a general downward trend, with recent improvements in mood.",
+    "insight_source": [
+      "sv-survey-94",
+      "sv-survey-102",
+      "sv-survey-340",
+      "sv-survey-337"
     ],
     "insight_category": [
       "Emotional State"
@@ -537,40 +366,37 @@
     "entropy": 0.0
   },
   {
-    "insight_description": "Patient\u2019s time in study locations remained low, even as mood and activity levels improved.",
+    "insight_description": "Patient\u2019s use of grounding exercises is somewhat helpful, but emotional symptoms and fatigue remain prominent.",
     "insight_source": [
-      "ps-location-187",
-      "ps-location-184",
-      "ps-location-185",
-      "ps-location-186"
+      "text-transcript_facts-554",
+      "text-transcript_facts-547"
     ],
     "insight_category": [
-      "Physical Activity"
-    ],
-    "entropy": 0.0
-  },
-  {
-    "insight_description": "Patient\u2019s engagement in mindfulness and grounding exercises is associated with some improvement in emotional regulation.",
-    "insight_source": [
-      "text-transcript_facts-306",
-      "text-transcript_facts-307",
-      "text-transcript_facts-298"
-    ],
-    "insight_category": [
+      "Medication & Treatment",
       "Emotional State"
     ],
     "entropy": 0.0
   },
   {
-    "insight_description": "Patient\u2019s time in study locations remained low, even as mood and activity levels improved.",
+    "insight_description": "Patient\u2019s engagement with coping strategies is inconsistent, with periods of high motivation followed by lapses.",
     "insight_source": [
-      "ps-location-187",
-      "ps-location-184",
-      "ps-location-185",
-      "ps-location-186"
+      "text-transcript_facts-555",
+      "text-transcript_facts-548"
     ],
     "insight_category": [
-      "Physical Activity"
+      "Medication & Treatment",
+      "Emotional State"
+    ],
+    "entropy": 0.0
+  },
+  {
+    "insight_description": "Despite some improvements in mood, patient continues to experience persistent negative thoughts and emotional distress.",
+    "insight_source": [
+      "text-transcript_facts-547",
+      "text-transcript_facts-549"
+    ],
+    "insight_category": [
+      "Emotional State"
     ],
     "entropy": 0.0
   }

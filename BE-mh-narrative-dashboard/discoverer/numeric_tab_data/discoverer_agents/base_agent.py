@@ -5,7 +5,7 @@ from typing import List
 from abc import ABC, abstractmethod
 from datetime import datetime
 
-from discoverer.numeric_tab_data.descriptions.defs import NUMERICAL_FEATURE_DEFS
+from discoverer.numeric_tab_data.descriptions.defs import NUMERICAL_FEATURE_DEFS, NUMERICAL_FEATURE_KB
 
 # TODO: Didn't consider - 1) tool use (but left API), 2) time retrospect (debatable: should we consider?)
 class BaseDiscovererAgent(ABC):
@@ -74,9 +74,10 @@ class BaseDiscovererAgent(ABC):
         """
         self.agent.instructions = self._glue_instructions(
             modality_source=feature["modality_source"],  # e.g., bluetooth
-            feature_name=feature["feature_name"],  # e.g., battery level
-            feature_definition=NUMERICAL_FEATURE_DEFS[feature["modality_source"]
-                                                      ][feature["feature_name"]]
+            # e.g., battery level
+            feature_name=feature["feature_name_renamed"],
+            feature_definition=NUMERICAL_FEATURE_KB[feature["modality_source"]
+                                                      ][feature["feature_name"]]['description']
         )
 
         csv_str = self._feature_to_csv(feature['data'])
@@ -88,4 +89,9 @@ class BaseDiscovererAgent(ABC):
         res_dict = res.final_output.model_dump()
         if verbose:
             print(res_dict.get("facts"))
-        return res_dict.get("facts") or res_dict
+
+        # name check
+        data_facts = res_dict.get("facts") or []
+        for fact in data_facts:
+            fact['name'] = feature["feature_name_renamed"]
+        return data_facts

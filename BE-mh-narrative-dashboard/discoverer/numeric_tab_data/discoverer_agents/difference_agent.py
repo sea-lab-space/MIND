@@ -46,7 +46,7 @@ class DifferenceDiscovererAgent(BaseDiscovererAgent):
         return f"""
             {OPENAI_AGENTIC_REC}
             {OPENAI_AGENTIC_TOOL_USE}
-{OPENAI_AGENTIC_PLANNING}
+            {OPENAI_AGENTIC_PLANNING}
             {get_mh_data_expert_system_prompt()}
             {get_mh_data_expert_modality_prompt(modality_source=modality_source)}
             {get_mh_data_expert_feature_prompt(feature_name=feature_name, feature_definition=feature_definition)}
