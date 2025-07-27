@@ -1,3 +1,4 @@
+from datetime import time
 import json
 from discoverer import (
     TrendDiscovererAgent,
@@ -113,6 +114,9 @@ def exec(patient_id, save_interm = False):
             json.dump(data_facts, f, indent=2)
             f.close()
 
+    # sleep to prevent connection err
+    time.sleep(10)
+
     print("-- Running synthesizer...")
     data_insights, data_fact_list = run_synthesizer(data_facts, iters=2)
     if save_interm:
@@ -198,7 +202,6 @@ if __name__ == "__main__":
     )
 
     res = visualizer.run()
-    print(res)
 
     final_output = {
         "overview": overview_res,

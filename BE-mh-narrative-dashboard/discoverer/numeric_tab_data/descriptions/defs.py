@@ -306,7 +306,7 @@ NUMERICAL_FEATURE_KB = {
     },
     "survey": {
         "phq4_EMA": {
-            "rename": "PHQ-4 Depression Score",
+            "rename": "PHQ-4 Score",
             "unit": None,
             "description": PHQ4
         },
@@ -321,7 +321,7 @@ NUMERICAL_FEATURE_KB = {
             "description": PHQ4 + PHQ4_DEPRESSION,
         },
         "pss4_EMA": {
-            "rename": "PSS-4 Stress Score",
+            "rename": "PSS-4 Score",
             "unit": None,
             "description": PSS4,
         },

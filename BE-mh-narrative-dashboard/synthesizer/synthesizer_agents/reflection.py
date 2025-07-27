@@ -3,11 +3,9 @@ from agents import Agent, ModelSettings, Runner
 from typing import List, Literal
 from datetime import datetime
 import sys
-import asyncio
-import json
 from pathlib import Path
 from dotenv import load_dotenv
-from synthesizer.synthesizer_agents.actor import SYNT_TASK_PROMPT
+from synthesizer.synthesizer_commons import SYNT_CATEGORY_PROMPT, SYNT_RULES, SYNT_EXAMPLES
 from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE, OPENAI_AGENTIC_PLANNING, get_mh_data_expert_system_prompt
 from utils.tools import retrive_data_facts
 
@@ -17,68 +15,96 @@ sys.path.append(str(project_root))
 load_dotenv()
 
 
-SYNT_CRITIQIUE_DATA_PROMPT = f"""
-You are provided with a list of data insights generated in the following format:
-{{
+SYNT_CRITIQIUE_DATA_PROMPT = """
+You are provided with a list of data insights in the following format:
+{
     "insight_description": str,
-    "insight_source": List[str],
-    "insight_category": List[str],
-    "entropy": float
-}}
+    "insight_source": List[str],      # Format: [modality]-[source]-[id]
+    "insight_category": List[str],    # Insight categories
+    "entropy": float                  # Diversity of data source types
+}
 Where:
-- `insight_description` is a textual description of the insight.
-- `insight_source` is a list of data fact IDs that support the insight, each in the format: `[modality]-[source]-[id]`.  
-  - `[modality]` can be:
+- `modality` can be: 
     - `sv` (survey)
     - `ps` (passive sensing)
-    - `text` (clinical notes or session transcript)
-  - Data type could be one of survey, passive sensing, clinical notes, or session transcript.
-- `insight_category` is a list of categories the insight belongs to.
-- `entropy` represents the diversity of information sources supporting the insight.
+    - `text` (session transcript or clinical notes)
+- `insight_source` refers to supporting fact IDs from different modalities.
 """
 
-SYNT_CATEGORY_PROMPT = f"""
-You should consider the generated insight based on the following |category/categories|:
-* Sleep Patterns
-* Physical Activity
-* Digital Engagement
-* Emotional State
-* Social Interaction
-* Medication & Treatment
-"""
+SYNT_CRITIQUE_PROMPT = f"""
+You are a reflective clinical insight generation assistant. 
+You have previously generated a set of data-driven insights based on a multi-modal mental health dataset.
 
+You are now given:
+1. All the data facts available
+2. The previously generated insights
+3. The entropy (source diversity) of each insight
+4. The overall entropy and data coverage
+5. Your past self-reflections
 
-SYNT_CRITIQUE_PROMPT = """
-You are provided with your previously |generated insights| derived from a corpus of data facts, along with the following feedback:
-* The |entropy| of each individual insight (indicating the diversity of its information sources)
-* The |overall entropy| across all insights
-* The |coverage| of data facts used in generating your insights
-* Your own |self-reflection history| on those insights
+---
 
-Your task is to critically evaluate the |generated insights| using both the external feedback (entropy and coverage) and your internal reflection.
-Consider the following facets:
-* Are your insights too narrow or too broad?
-* Are they supported by a diverse and balanced set of data sources (that increases |entropy|)?
-* Is there redundancy or overlooked information (that increases |coverage|)?
-* How well do your insights covers all the |category/categories| of insights clinicians expect?
+Your goals in this task are:
+* **Diagnose** the quality of your past insights
+* **Reflect** on what worked and what didn't
+* **Plan** concrete improvements for your next iteration
 
-Based on this reflection, propose improvements to your original insights.
-Specifically, propose what kind of new data facts you would include to improve your insights, and what kind of new |category/categories| of insights you would like to generate.
-However, do not over optimize: different data types should be represented in a balanced way.
+Use the following guiding questions in your reflection:
+- Did you over-rely on any one modality (e.g., only survey or only transcript)?
+- Did your insights cover a broad range of the expected categories?
+- Were any insights redundant or overlapping?
+- Did you miss important signals from unused data facts?
+- How well did your insights support clinical understanding or decision-making?
+
+{SYNT_CATEGORY_PROMPT}
+
+---
+
+Then, in your response, do the following:
+
+### Step 1: Critique
+Critically assess the strengths and weaknesses of your generated insights.
+
+### Step 2: Reflection
+Summarize your key learning from this critique. What could you do better next time?
+
+### Step 3: Forward Projection
+Propose improvements for the next generation of insights:
+- What kinds of data facts would you include?
+- What insight categories would you aim to better cover?
+- How would you better balance the use of different modalities?
+
+Focus on creating meaningful, balanced, and clinically relevant insights.
+Do not blindly maximize entropy or include too much.
 
 Let's think step by step.
 """
 
-def get_reflection_prompt(insights, overall_entropy, coverage, reflection_history):
+
+def get_reflection_prompt(data_facts: str, insights: str, overall_entropy: float, coverage: float, reflection_history: str) -> str:
     return f"""
+        |data facts|:
+        {data_facts}
+        
         |generated insights|:
         {insights}
+
         |overall entropy|: {overall_entropy}
-        |coverage|: {coverage}
+        |coverage|: {coverage:.2f}
 
-        |self-reflection history|: {reflection_history}
-    """
+        |self-reflection history|:
+        {reflection_history}
 
+        Please format your response as:
+        Critique:
+        ...
+
+        Reflection:
+        ...
+
+        Forward Projection:
+        ...
+        """.strip()
 
 class InsightReflectionOutputModel(BaseModel):
     reflection: str
@@ -97,16 +123,16 @@ class InsightReflectionAgent:
             {OPENAI_AGENTIC_REC}
             {get_mh_data_expert_system_prompt()}
             {SYNT_CRITIQUE_PROMPT}
-            {SYNT_CATEGORY_PROMPT}
             {SYNT_CRITIQIUE_DATA_PROMPT}
-            {SYNT_TASK_PROMPT}
+            {SYNT_RULES}
+            {SYNT_EXAMPLES}
         """
 
-    async def run(self, data_insights, entropy, coverage, history, verbose: bool = False):
+    async def run(self, data_facts, data_insights, entropy, coverage, history, verbose: bool = False):
         self.agent.instructions = self._glue_instructions()
         
-
         res = await Runner.run(self.agent, get_reflection_prompt(
+            data_facts,
             data_insights,
             entropy,
             coverage,

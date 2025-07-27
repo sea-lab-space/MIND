@@ -17,7 +17,6 @@ from utils.datetime_checker import date_between
 
 random.seed(42)
 
-
 class Synthesizer:
     # TODO: Implement critiquer & narrator
     def __init__(self, data_fact_source, retrospect_date, before_date, model_name):
@@ -192,6 +191,7 @@ class Synthesizer:
             # Step 3: Reflection run
             # optimize coverage (consider insights that are not used), entropy (use multimodal insight)
             reflection = asyncio.run(self.reflection_agent.run(
+                self._glue_data_fact_input(full_insight_id_set),
                 data_insights,
                 entropy=entp_num,
                 coverage=cover,

@@ -5,6 +5,7 @@ from datetime import datetime
 import sys
 from pathlib import Path
 from dotenv import load_dotenv
+from synthesizer.synthesizer_commons import SYNT_CATEGORY_PROMPT, SYNT_DATA_PROMPT, SYNT_EXAMPLES, SYNT_RULES
 from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE, OPENAI_AGENTIC_PLANNING, get_mh_data_expert_system_prompt
 from utils.tools import retrive_data_facts
 
@@ -13,58 +14,10 @@ print(project_root)
 sys.path.append(str(project_root))
 load_dotenv()
 
-
-SYNT_DATA_PROMPT = f"""
-You are provided with a list of data facts described in the following format:
-[|fact-id|] <|modality_type|: |feature_name|> |Data fact description|
-where:
-* |fact-id| is the unique identifier of the fact
-* |modality_type| is either 'text', 'survey' or 'passive sensing'
-* |feature_name| is the name of the feature
-* |Data fact description| is a textual description of the data fact
-"""
-
-SYNT_CATEGORY_PROMPT = f"""
-You should consider the generated insight based on the following |category/categories|:
-* Sleep Patterns
-* Physical Activity
-* Digital Engagement
-* Emotional State
-* Social Interaction
-* Medication & Treatment
-"""
-
-
 SYNT_TASK_PROMPT = """
 Your task is to list all data driven insights interesting to a mental health clinician.
-
-Consider the following rules:
-* Prioritize insights that uses multiple modalities. The best insight comes from seeing a combination of text, survey and passive sensing data.
-* Seek for inconsistencies and consistencies between the different features.
-* Prioritize covering the above mentioned |category/categories|. Each insight could either be around one or multiple categories.
-* Prioritize insights that can be used as conversation starters to help clinicians better understand the patient.
-* Prioritize insights that can be used to help clinicians make better decisions.
-* Describe the insight succinctly.
-* Describe data insight that could be useful for mental health clinicians, but do not say the insight 'indicates' or 'suggests' anything. 
-
-You should also attribute your insight to data facts.
-For each insight, do not use more than 10 data facts.
-"""
-
-
-SYNT_REACT_PROMPT = """
-You have access to the following tools:
-retrive_data_fact_spec: Accurately returns the data facts in the given format.
-
-Use the tool and analyze the data facts to generate insights for mental health clinicians. Use the following format:
-
-Thought [n]: The multimodal data insight you propose
-Act [n]: Retrive the data facts that supports the insight, use [retrive_data_fact_spec]
-Observation [n]: Observe if 1) the insight is grounded by the data facts, and 2) how well it follows the above mentioned rules.
-
-... (this Thought/Act/Observation can repeat n times)
-
-Begin!
+Attribute your insight to data facts. 
+For each insight, use no more than 10 data facts.
 """
 
 class InsightSpec(BaseModel):
@@ -95,9 +48,13 @@ class InsightProposalActorAgent:
             {OPENAI_AGENTIC_REC}
 
             {get_mh_data_expert_system_prompt()}
+            {SYNT_TASK_PROMPT}
+            
             {SYNT_DATA_PROMPT}
             {SYNT_CATEGORY_PROMPT}
-            {SYNT_TASK_PROMPT}
+            {SYNT_RULES}
+            {SYNT_EXAMPLES}
+
             Generate as much data insight as possible (at least 15).
             If provided, incorporate feedbacks of your previous versions. Improve exsisting work, and add new insights.
             Let's think step by step.
