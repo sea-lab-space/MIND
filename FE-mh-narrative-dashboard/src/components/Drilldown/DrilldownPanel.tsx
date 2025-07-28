@@ -16,7 +16,6 @@ interface DrilldownPanelProps {
 
 const DrilldownPanel: React.FC<DrilldownPanelProps> = ({ onClose, insightData }) => {
   const [linkViewsEnabled, setLinkViewsEnabled] = useState(true);
-
   return (
       <div className="flex-1">
         <div className="absolute z-10 items-center justify-center bottom-1/2 top-1/2">

@@ -70,16 +70,12 @@ export default function App() {
   insightCardData.filter(card => {
     const matchedTypes = card.insightType.filter(type =>
     {
-      console.log(type, selectedInsightTypes, selectedInsightTypes.includes(type))
       selectedInsightTypes.includes(type)
     }
     );
-
     if (matchedTypes.length > 0) {
-      console.log("Matched types:", matchedTypes);
       return true;
     }
-
     return false;
   });
 
@@ -260,11 +256,8 @@ export default function App() {
               style={{ width: rightPanelWidth }}
             >
               <DrilldownPanel
-                insightData={
-                  insightCardData.find(
-                    (data) => data.key === selectedInsightCard
-                  ) || defaultInsightCardData
-                }
+                  key={selectedInsightCard}
+                  insightData={insightCardData.find((data) => data.key === selectedInsightCard) || defaultInsightCardData}
                 onClose={() => {
                   setIsDrillDown(false);
                   setSelectedInsightCard(null);

@@ -1,7 +1,9 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import type {InsightCard} from "@/types/dataTypes";
+import InsightGraph from "@/components/DataInsights/InsightGraph";
+import {shouldShowChart} from "@/utils/helper";
 
 const chartData = [
     { value: 0.8, type: "history" },
@@ -31,20 +33,31 @@ interface PassiveSensingCardProps {
 const PassiveSensingCard = ({
                                 insightData
                             }) => {
-    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     const factsData = insightData.expandView;
-    console.log(insightData.expandView)
+    const [selectedKey, setSelectedKey] = useState<string | null>(null);
+    const selectedInsight = factsData.find((fact) => fact.key === selectedKey);
 
-    const insights = [
-        {
-            title: "Outbound phone communication",
-            detail: "increased to 4-5 calls/texts daily",
-        },
-        {
-            title: "Outings to Social Hubs",
-            detail: "remains similar to before",
-        },
-    ];
+    useEffect(() => {
+        if (factsData.length > 0 && !selectedKey) {
+            setSelectedKey(factsData[0].key);
+        }
+    }, [insightData]);
+
+    if (!selectedInsight) {
+        return (
+            <Card className="bg-white border-[#eaeaea]">
+                <CardHeader className="pb-4">
+                    <span className="text-[#757575] font-medium">Passive Sensing Data</span>
+                </CardHeader>
+                <CardContent>
+                    <div className="text-gray-500 text-sm">Loading insight data...</div>
+                </CardContent>
+            </Card>
+        );
+    }
+
+    const showChart = shouldShowChart(selectedInsight.dataSourceType, selectedInsight.dataPoints);
+    console.log(selectedInsight, "printing correct one", selectedInsight.dataSourceType, showChart)
 
     return (
         <Card className="bg-white border-[#eaeaea]">
@@ -58,54 +71,34 @@ const PassiveSensingCard = ({
                 <div className="flex gap-6">
                     {/* Left Buttons */}
                     <div className="flex-shrink-0 space-y-4 w-80">
-                        {factsData.map((insight, index) => (
+                        {factsData.map((insight) => (
                             <Button
-                                key={index}
+                                key={insight.key}
                                 variant="outline"
-                                onClick={() => setSelectedIndex(index)}
+                                onClick={() => setSelectedKey(insight.key)}
                                 className={`w-full justify-start h-auto text-left whitespace-normal p-4 text-sm text-[#1e1e1e] border-[#d9d9d9] ${
-                                    selectedIndex === index ? "bg-[#f7f5f5]" : "bg-white"
+                                    selectedKey === insight.key ? "bg-[#f7f5f5]" : "bg-white"
                                 }`}
                             >
                                 <div className="flex items-start gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-[#757575] mt-2" />
+                                    <div className="w-2 h-2 bg-gray-600 rounded-full mt-2 flex-shrink-0"></div>
                                     <span>
-                                        {/*<strong>{insight.summarySentence}</strong> {insight.detail}*/}
-                                        {insight.summarySentence}
-                                    </span>
+                {insight.summarySentence}
+            </span>
                                 </div>
                             </Button>
                         ))}
                     </div>
 
                     {/* Right Chart */}
-                    <div className="flex-1">
-                        <div className="relative h-64">
-                            <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-[#be123c] font-medium">
-                                <span>4.68</span>
-                                <span>1.25</span>
-                            </div>
-                            <div className="ml-12 h-full relative">
-                                <div className="absolute w-full border-t border-dashed border-[#be123c] opacity-50" style={{ top: "20%" }} />
-                                <div className="absolute w-full border-t border-dashed border-[#be123c] opacity-50" style={{ top: "80%" }} />
-                                <div className="flex items-end justify-between h-full pb-8">
-                                    {chartData.map((item, index) => (
-                                        <div
-                                            key={index}
-                                            className={`w-4 rounded-t ${item.type === "history" ? "bg-[#b2b2b2]" : "bg-[#626681]"}`}
-                                            style={{ height: `${(item.value / maxValue) * 80}%` }}
-                                        />
-                                    ))}
-                                </div>
-                                <div className="absolute bottom-0 w-full flex justify-between text-xs text-[#757575]">
-                                    <span>history</span>
-                                    <span>retrospective</span>
-                                    <span>Time</span>
-                                </div>
-                                <div className="absolute left-0 top-1/2 -translate-y-1/2 -rotate-90 text-xs text-[#757575] origin-center">
-                                    calls/day
-                                </div>
-                            </div>
+                    <div className="bg-red-100 flex items-center justify-center">
+                        <div className="h-64 w-120">
+                            {showChart && selectedInsight && (
+                                <InsightGraph
+                                    dataSourceType={selectedInsight.dataSourceType}
+                                    data={selectedInsight.dataPoints}
+                                />
+                            )}
                         </div>
                     </div>
                 </div>
