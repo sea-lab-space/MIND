@@ -2,13 +2,15 @@
 
 
 
+import asyncio
 import math
-import random
-
+from visualizer.narrator import NarratorAgent
 
 class Visualizer:
-    def __init__(self, data_insights, data_fact_list, raw_data):
+    def __init__(self, data_insights, data_fact_list, raw_data, model_name):
         self.data_insights = data_insights
+        self.narrator_agent = NarratorAgent(model_name)
+        self.data_insights_narrative = None
         self.data_fact_list = data_fact_list
         self.raw_data = raw_data
         self.insight_count = 0
@@ -43,9 +45,9 @@ class Visualizer:
         return data
 
     def run(self):
+        self.data_insights_narrative = asyncio.run(self.narrator_agent.run(self.data_insights))
         specification = []
-
-        for insight in self.data_insights:
+        for insight in self.data_insights_narrative:
             fact_ids = insight['insight_source']
             inference_sources = []
             expand_view = []

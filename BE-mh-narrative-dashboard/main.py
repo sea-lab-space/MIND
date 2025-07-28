@@ -1,4 +1,4 @@
-from datetime import time
+import time
 import json
 from discoverer import (
     TrendDiscovererAgent,
@@ -131,6 +131,7 @@ def exec(patient_id, save_interm = False):
         data_insights=data_insights,
         data_fact_list=data_fact_list,
         raw_data=data,
+        model_name=MODEL_NAME
     )
     visualization_spec = visualizer.run()
 
@@ -199,6 +200,7 @@ if __name__ == "__main__":
         data_insights=data_insights,
         data_fact_list=data_facts_list,
         raw_data=data,
+        model_name=MODEL_NAME
     )
 
     res = visualizer.run()

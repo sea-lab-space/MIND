@@ -89,6 +89,9 @@ class Discoverer:
                             for feat in text_input if feat['encounter_date'] == self.retrospect_date), None)}
             transcript_input = self._prep_transcript(text_input)
             
+            # assert both should not be a empty dict
+            assert len(note_input) > 0 and len(transcript_input) > 0, "No text data found for the given date"
+            
             print("---- Running Text Data Fact Discovery ----")
             note_facts = self._run_text_discovery('clinical note', note_input)
             transcript_facts = self._run_text_discovery(

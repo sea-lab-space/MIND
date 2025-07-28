@@ -1,12 +1,16 @@
-SYNT_CATEGORY_PROMPT = f"""
-You should consider the generated insight based on the following |category/categories|:
-* Sleep Patterns
-* Physical Activity
-* Digital Engagement
-* Emotional State
-* Social Interaction
-* Medication & Treatment
-"""
+CATEGORIES = [
+    "Sleep Patterns",
+    "Physical Activity",
+    "Digital Engagement",
+    "Emotional State",
+    "Social Interaction",
+    "Medication & Treatment"
+]
+
+SYNT_CATEGORY_PROMPT = (
+    "You should consider the generated insight based on the following |category/categories|:\n"
+    + "\n".join(f"* {category}" for category in CATEGORIES)
+)
 
 SYNT_DATA_PROMPT = f"""
 You are provided with a list of data facts described in the following format:

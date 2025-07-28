@@ -5,7 +5,7 @@ import asyncio
 import json
 from pathlib import Path
 from dotenv import load_dotenv
-from utils.prompt_commons import OPENAI_AGENTIC_REC, get_mh_data_expert_system_prompt
+
 
 project_root = Path(__file__).parent.parent.parent
 print(project_root)
@@ -16,7 +16,7 @@ from typing import List, Literal
 
 from agents import Agent, ModelSettings, Runner
 from pydantic import BaseModel, Field
-
+from utils.prompt_commons import OPENAI_AGENTIC_REC, get_mh_data_expert_system_prompt
 
 
 def get_mh_data_expert_modality_prompt(modality_source: Literal['clinical transcript', 'clinical notes']):

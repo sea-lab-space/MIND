@@ -79,7 +79,7 @@ class Synthesizer:
             text["id"] = f"text-{modality}-{self.fact_count}"
             text["modality_type"] = "text"
             text["modality_source"] = txt_map[modality]
-            text["full_description"] = f"<Text: {txt_map[modality]}> {text['fact_text']}"
+            text["full_description"] = f"<Text: {txt_map[modality]}> {text['fact_text']} on {', '.join([evi['date'] for evi in text['evidence']])}"
             self.fact_count += 1
         return text_list
 
@@ -90,7 +90,7 @@ class Synthesizer:
             if key == "numeric_facts":
                 numeric_fact_list = self._flatten_tag_numeric(value)
                 facts.extend(numeric_fact_list)
-            elif key == "notes_facts" or key == "transcript_facts":
+            elif key == "note_facts" or key == "transcript_facts":
                 text_fact_list = self._tag_text(key, value)
                 facts.extend(text_fact_list)
             else:

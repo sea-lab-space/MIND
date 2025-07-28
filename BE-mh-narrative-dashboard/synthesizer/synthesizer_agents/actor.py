@@ -16,8 +16,8 @@ load_dotenv()
 
 SYNT_TASK_PROMPT = """
 Your task is to list all data driven insights interesting to a mental health clinician.
-Attribute your insight to data facts. 
-For each insight, use no more than 10 data facts.
+Attribute your insight to data facts. Note if text (clinical transcript) data fact is selected, remember to include one text (clinical note) data fact to support or contrast the insight.
+For each insight, use no more than 10 data facts. Rank the used data facts by their importance and list the most important first.
 """
 
 class InsightSpec(BaseModel):
