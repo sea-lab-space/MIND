@@ -7,28 +7,20 @@ import json
 from pathlib import Path
 from dotenv import load_dotenv
 import openai
+from MIND_types import (
+    MedicationResponse,
+    EncounterResponse
+)
 
 project_root = Path(__file__).parent.parent
 print(project_root)
 sys.path.append(str(project_root))
 load_dotenv()
 
-from typing import List, Literal
 from pydantic import BaseModel, Field
 
 
-class Encounter(BaseModel):
-    date: str = Field(...,
-                      description="The date of the encounter, in YYYY-MM-DD format.")
-    type: Literal['Hospital Encounter', 'Office Visit'] = Field(
-        ..., description="The type of encounter, one of 'Office Visit' or 'Hospital Encounter'.")
-    medical_condition: str = Field(..., description="The medical condition being treated.")
-    ICD_10_CM: str = Field(..., description="The ICD-10-CM code for the medical condition.")
-    CPT_code: str = Field(..., description="The CPT code for the encounter.")
-    notes: str = Field(..., description="Progress note about the encounter.")
 
-class EncounterResponse(BaseModel):
-    response: List[Encounter]
 
 # why 400 - 600 words? https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2782054
 # Definition source: https://dictionary.i2b2.unc.edu/encounter-details/encounter-type/
@@ -58,15 +50,6 @@ Template for medical note:
 **Assessment**: |note content|
 **Plan**: |note content|
 """
-
-class Medication(BaseModel):
-    date: str = Field(..., description="The date when the medication was prescribed, in YYYY-MM-DD format.")
-    medication: str = Field(..., description="The name of the medication.")
-    dosage: str = Field(..., description="The dosage of the medication.")
-    frequency: str = Field(..., description="The frequency of the medication.")
-
-class MedicationResponse(BaseModel):
-    response: List[Medication]
 
 MEDICATION_PROMPT = f"""
 You are a knowledgeable medical expert with expertise in EHR data.

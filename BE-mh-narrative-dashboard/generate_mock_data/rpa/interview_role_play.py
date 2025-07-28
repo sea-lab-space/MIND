@@ -2,7 +2,6 @@ import asyncio
 import json
 from agents import Agent, ModelSettings, Runner, SQLiteSession
 from dotenv import load_dotenv
-from pydantic import TypeAdapter
 from pathlib import Path
 import sys
 from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE

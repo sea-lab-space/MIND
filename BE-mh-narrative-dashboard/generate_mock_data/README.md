@@ -12,7 +12,7 @@
 - **Case 2**: [Judith Johnson] Case study clinical example: First session with a client with symptoms of depression (CBT model): "Gabriella" [[link]](https://www.youtube.com/watch?v=JKUFWK6iSsw)
 - **Case 3**: [University of Nottingham] Psychiatric Interviews for Teaching: Depression: "Alison" [[link]](https://www.youtube.com/watch?v=4YhpWZCdiZc)
 
-> All materials above could be accessed publically online. We do not share the videos for copyright reasons, but encourage readers to access the source materials themselves.
+> All materials above could be accessed publically online. We document a modified (i.e., persona-aligned), automatically processed transcript for research use.
 > 
 > **Disclaimer**: This is not a comprehensive list of all the materials online. We included only depression related interviews to set up our user study cases. The "patient"(s) in all the materials are "actors", and has no link to the data from the GLOBEM dataset. 
 
