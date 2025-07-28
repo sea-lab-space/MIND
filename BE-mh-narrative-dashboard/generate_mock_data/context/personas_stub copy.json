@@ -1,0 +1,35 @@
+{
+  "INS-W_963": {
+    "name": "Mei Lin",
+    "ethnicity": "Asian",
+    "age": 20,
+    "gender": "Female",
+    "income": "0k-5k",
+    "occupation": "Student",
+    "generation": "First Generation",
+    "marital_status": "single",
+    "description": "Mei Lin is a 20-year-old first-generation single college student of Asian descent, currently studying biology at a large public university. She comes from a low-income background, working part-time on campus to support herself financially, which leaves her little time for rest or social activities. As the first in her family to attend college, Mei often feels immense pressure to succeed academically and make her parents proud. She struggles with persistent feelings of isolation, impostor syndrome, and guilt for not being able to support her family more. Recently, she has been experiencing low energy, difficulty concentrating, and trouble sleeping—symptoms that have gradually intensified over the past semester. Mei tends to internalize her struggles, fearing she might burden others or confirm cultural stigmas around mental health. Though high-achieving and thoughtful, she is quietly battling depression, uncertain of how to ask for help or where to start."
+  },
+  "INS-W_1044": {
+    "name": "Liam Novak",
+    "ethnicity": "White",
+    "age": 21,
+    "gender": "Male",
+    "income": "0k-5k",
+    "occupation": "Student",
+    "generation": "Immigrant",
+    "marital_status": "single",
+    "description": "Liam is a 21-year-old single undergraduate student studying computer science at a large urban university. He immigrated to the U.S. with his family from Eastern Europe at the age of 13. While fluent in English, he often feels caught between two cultures, struggling to meet both his family's expectations and the demands of academic life. Financial stress is a constant—he works part-time in a campus IT help desk to support himself, but still relies on scholarships and student aid. Over the past year, Liam has experienced increasing symptoms of depression: persistent fatigue, difficulty concentrating on coursework, feelings of isolation, and a growing sense of hopelessness about his future. Although he is usually quiet and reserved, those close to him have noticed a withdrawal from social activities and a change in demeanor. Liam has not yet sought formal help, partly due to cultural stigma and partly because he worries about the cost and confidentiality of mental health services."
+  },
+  "INS-W_1077": {
+    "name": "Jordan Adebayo",
+    "ethnicity": "Black or African",
+    "age": 19,
+    "gender": "Non Binary",
+    "income": "0k-5k",
+    "occupation": "Student",
+    "generation": "Second Generation",
+    "marital_status": "single",
+    "description": "Jordan is a 19-year-old single second-generation Nigerian-American college student studying graphic design. They identify as non-binary and often feel pressure to balance academic expectations, cultural identity, and personal expression. Coming from a low-income background, Jordan works part-time at the campus library to make ends meet. Over the past few months, they’ve struggled with persistent fatigue, social withdrawal, and a sense of hopelessness, which has impacted their coursework and relationships. Jordan often feels isolated, especially due to a lack of mental health support that understands both their cultural background and gender identity."
+  }
+}

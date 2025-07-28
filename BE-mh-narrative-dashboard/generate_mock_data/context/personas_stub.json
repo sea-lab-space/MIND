@@ -1,6 +1,6 @@
 {
   "INS-W_963": {
-    "name": "Mei Lin",
+    "name": "Gabriella Lin",
     "ethnicity": "Asian",
     "age": 20,
     "gender": "Female",
@@ -8,28 +8,28 @@
     "occupation": "Student",
     "generation": "First Generation",
     "marital_status": "single",
-    "description": "Mei Lin is a 20-year-old first-generation single college student of Asian descent, currently studying biology at a large public university. She comes from a low-income background, working part-time on campus to support herself financially, which leaves her little time for rest or social activities. As the first in her family to attend college, Mei often feels immense pressure to succeed academically and make her parents proud. She struggles with persistent feelings of isolation, impostor syndrome, and guilt for not being able to support her family more. Recently, she has been experiencing low energy, difficulty concentrating, and trouble sleeping—symptoms that have gradually intensified over the past semester. Mei tends to internalize her struggles, fearing she might burden others or confirm cultural stigmas around mental health. Though high-achieving and thoughtful, she is quietly battling depression, uncertain of how to ask for help or where to start."
+    "description": "Gabriella Lin is a 20-year-old Asian American woman of first-generation college status. She comes from a low-income family and currently lives with her mother. Gabriella attends a large public university and was previously a medical student but is taking a year out from her studies. She works part-time, including recent experience waitressing at a restaurant owned by a family friend, to help support herself financially. Gabriella is single and manages her responsibilities largely on her own, without much social support."
   },
   "INS-W_1044": {
-    "name": "Liam Novak",
+    "name": "Lucy Sutton",
     "ethnicity": "White",
     "age": 21,
-    "gender": "Male",
+    "gender": "Female",
     "income": "0k-5k",
     "occupation": "Student",
     "generation": "Immigrant",
     "marital_status": "single",
-    "description": "Liam is a 21-year-old single undergraduate student studying computer science at a large urban university. He immigrated to the U.S. with his family from Eastern Europe at the age of 13. While fluent in English, he often feels caught between two cultures, struggling to meet both his family's expectations and the demands of academic life. Financial stress is a constant—he works part-time in a campus IT help desk to support himself, but still relies on scholarships and student aid. Over the past year, Liam has experienced increasing symptoms of depression: persistent fatigue, difficulty concentrating on coursework, feelings of isolation, and a growing sense of hopelessness about his future. Although he is usually quiet and reserved, those close to him have noticed a withdrawal from social activities and a change in demeanor. Liam has not yet sought formal help, partly due to cultural stigma and partly because he worries about the cost and confidentiality of mental health services."
+    "description": "Lucy Sutton is a 21-year-old single female undergraduate student currently pursuing a degree in computer science at a large urban university in the United States. She immigrated to the U.S. from Eastern Europe with her family when she was 13 years old. Lucy is fluent in English and has been living in the U.S. for about 8 years. She resides off-campus in shared housing with friends located close to her university. To help cover her living and educational expenses, Lucy works part-time at the university’s IT help desk. Additionally, she depends on scholarships and student financial aid. Her family remains in the U.S., though she does not live with them currently."
   },
   "INS-W_1077": {
-    "name": "Jordan Adebayo",
+    "name": "Alison Daniels",
     "ethnicity": "Black or African",
-    "age": 19,
-    "gender": "Non Binary",
-    "income": "0k-5k",
-    "occupation": "Student",
+    "age": 38,
+    "gender": "Female",
+    "income": "5k-10k",
+    "occupation": "Retail Sales Worker",
     "generation": "Second Generation",
-    "marital_status": "single",
-    "description": "Jordan is a 19-year-old single second-generation Nigerian-American college student studying graphic design. They identify as non-binary and often feel pressure to balance academic expectations, cultural identity, and personal expression. Coming from a low-income background, Jordan works part-time at the campus library to make ends meet. Over the past few months, they’ve struggled with persistent fatigue, social withdrawal, and a sense of hopelessness, which has impacted their coursework and relationships. Jordan often feels isolated, especially due to a lack of mental health support that understands both their cultural background and gender identity."
+    "marital_status": "divorced",
+    "description": "Alison Daniels is a 38-year-old Black or African American woman and a second-generation immigrant. She lives in an urban, diverse community. Alison is divorced and currently in a long-term relationship. She works as a retail sales worker at a supermarket, though her job has recently become unstable due to workplace changes. Alison is a mother to two children: a daughter aged 11 and a son aged 9. She balances her cultural heritage with the demands of her family and work life. Alison’s household experiences financial pressures typical of working-class families. She faces challenges accessing culturally sensitive mental health services that address her unique needs."
   }
 }

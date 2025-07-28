@@ -1,5 +1,6 @@
 import asyncio
 import json
+import os
 from agents import Agent, ModelSettings, Runner, SQLiteSession
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field, TypeAdapter
@@ -22,7 +23,7 @@ def load_json(path):
         return json.load(f)
 
 def format_history_encounters(encounter_hist):
-    return "\n".join([f"{encounter['date']} - {encounter['type']} - {encounter['medical_condition']}: {encounter['notes']}" for encounter in encounter_hist])
+    return "\n".join([f"{encounter['date']} - {encounter['type']} - {encounter['medical_condition']}" for encounter in encounter_hist])
 
 def format_history_medications(medication_hist):
     return "\n".join([f"{medication['date']} - {medication['medication']} - {medication['dosage']} - {medication['frequency']}" for medication in medication_hist])
@@ -60,70 +61,63 @@ if __name__ == "__main__":
         # Step 1: see all history (excluding this mh session series)
         all_history_encounter_str = format_history_encounters(persona['encounters'])
         
-        # TODO: summarize all history into 50 words
-        summarization_agent = Agent(
-            name = "summarization",
-            instructions = "You are an health expert. Summarize the patient's medical history into a 100 word pragraph. Output only the summary text without anything else.",
-            model_settings=ModelSettings(
-                temperature=0.2,
-                top_p=0.1),
-            model=MODEL_NAME,
-        )
-        encounter_summary = asyncio.run(Runner.run(summarization_agent, input = all_history_encounter_str))
-        encounter_summary = encounter_summary.final_output
+        # summarization_agent = Agent(
+        #     name = "summarization",
+        #     instructions = "You are an health expert. Summarize the patient's medical history into a 100 word pragraph. Output only the summary text without anything else.",
+        #     model_settings=ModelSettings(
+        #         temperature=0.2,
+        #         top_p=0.1),
+        #     model=MODEL_NAME,
+        # )
+        # encounter_summary = asyncio.run(Runner.run(summarization_agent, input = all_history_encounter_str))
+        # encounter_summary = encounter_summary.final_output
 
         all_history_medication_str = format_history_medications(persona['medication'])
 
         # Step 2: talk to patient
+        past_session_transcripts = []
+        past_session_medications = []
         past_session_notes = []
         for mh_encounter in mock_mh_encounters:
+            # only generate encounter 2, 3 transcripts; encounter 4 is not happening yet (test case)
             if mh_encounter['encounter_id'] >= 4:
                 break
-
-            # Input 1: passive sensing / measurement scores data facts
-            data_facts_str = synthesize_data_facts(
-                mh_encounter['numeric_facts'])
-            print(data_facts_str)
             
-            # Input 2: last encounters notes
-            if mh_encounter['encounter_id'] != 1:
-                mh_history_notes = "\n\n".join([past_session_notes[i] for i in range(0, mh_encounter['encounter_id'] - 1)])
+            # Read the first transcript in
+            if mh_encounter['encounter_id'] == 1:
+                # read seed transcript
+                # Step 0: Inject first encounter transcript as background
+                patient_name_key = persona['name'].split(" ")[0]
+                # find the file in ./generate_mock_data/online_materials that contains the name_key
+                for file in os.listdir('./generate_mock_data/online_materials'):
+                    if patient_name_key in file and file.endswith('.json'):
+                        with open(f'./generate_mock_data/online_materials/{file}', 'r') as f:
+                            transcript = json.load(f)
+
+                # assert transcript is not none
+                assert transcript is not None and transcript != {}
+                combined_transcript = transcript
             else:
-                mh_history_notes = ""
-            # Modality 3: patient persona
-            persona_description = []
-            for key, value in persona.items():
-                if key != 'medication' and key != 'encounters':
-                    persona_description.append(f"{key}: {value}")
-            persona_description = "\n".join(persona_description)
+                data_insights_str = "Data insights:\n" + "\n".join(mh_encounter['data_insights'])
+                print(data_insights_str)
+                                
+                persona_description = []
+                for key, value in persona.items():
+                    if key != 'medication' and key != 'encounters':
+                        persona_description.append(f"{key}: {value}")
+                persona_description = "\n".join(persona_description)
 
-            context = f"""
-                ## Patient Info
-                ### Persona
-                {persona_description}
-
-                ### Past encounters
-                {encounter_summary}
-
-                ### Past medications
-                {all_history_medication_str}
-
-                ### Session notes with the current clinician
-                {mh_history_notes}
-
-                ### Data-driven evidences
-                {data_facts_str}
-            """
-
-            print(context)
-
-            combined_transcript = asyncio.run(simulate_session(person_id, context, mh_encounter['encounter_id'], verbose=True))
-
-            # read combined_transcript
-            # with open(f'./generate_mock_data/{person_id}_combined_transcript.json', 'r') as f:
-            #     combined_transcript = json.load(f)
-
-            # print(combined_transcript)
+                combined_transcript = asyncio.run(
+                    simulate_session(
+                        patient_id=person_id, 
+                        context_persona=persona_description,
+                        context_medical=all_history_encounter_str + all_history_medication_str,
+                        context_transcript=f"{past_session_transcripts}",
+                        context_medications=f"{past_session_medications}",
+                        context_medical_notes=f"{past_session_notes}",
+                        context_data_insights=data_insights_str,
+                        encounter_count=mh_encounter['encounter_id'],
+                        verbose=True))
 
             # Step 3: perscribe medicine and log encounter
             medications = asyncio.run(prescribe_medication(combined_transcript, MODEL_NAME))
@@ -141,15 +135,15 @@ if __name__ == "__main__":
             mh_encounter['medication'] = medications
             mh_encounter['clinical_note'] = clinical_note
 
-            combined_transcript_str = "\n".join([f"Clinician: {turn['clinician']}\nPatient: {turn['patient']}" for turn in combined_transcript])
+            combined_transcript_dict = {
+                "date": mh_encounter['before_date'],
+                "transcript": combined_transcript
+            }
 
-            past_session_notes.append(combined_transcript_str)
-            # print(combined_transcript_str)
+            past_session_transcripts.append(combined_transcript_dict)
+            past_session_medications.extend(medications)
+            past_session_notes.append(clinical_note)
 
-            # temp = {
-            #     "medication": medications,
-            #     "clinical_note": clinical_note
-            # }
             with open(f'./generate_mock_data/context/{person_id}_full.json', 'w') as f:
                 # save temp using json
                 json.dump(mock_mh_encounters, f, indent=2)

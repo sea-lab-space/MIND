@@ -1,6 +1,7 @@
 from typing import List, Literal
 from pydantic import BaseModel, Field
 
+# Definition source: https://dictionary.i2b2.unc.edu/encounter-details/encounter-type/
 class EncounterSpec(BaseModel):
     date: str = Field(...,
                       description="The date of the encounter, in YYYY-MM-DD format.")
@@ -11,7 +12,7 @@ class EncounterSpec(BaseModel):
     ICD_10_CM: str = Field(...,
                            description="The ICD-10-CM code for the medical condition.")
     CPT_code: str = Field(..., description="The CPT code for the encounter.")
-    notes: str = Field(..., description="Progress note about the encounter.")
+    # notes: str = Field(..., description="Progress note about the encounter.")
 
 
 class EncounterResponse(BaseModel):

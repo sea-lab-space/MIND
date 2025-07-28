@@ -25,7 +25,8 @@ if __name__ == "__main__":
 
     with pd.ExcelWriter(output_path, engine='openpyxl') as writer:
         for encounter in encounters:
-            df = pd.DataFrame(encounter['transcript'])
-            sheet_name = f"enc_{encounter['encounter_id']}"[
-                :31]  # Excel limit: 31 chars
-            df.to_excel(writer, sheet_name=sheet_name, index=False)
+            if encounter.get('transcript'):
+                df = pd.DataFrame(encounter['transcript'])
+                sheet_name = f"enc_{encounter['encounter_id']}"[
+                    :31]  # Excel limit: 31 chars
+                df.to_excel(writer, sheet_name=sheet_name, index=False)

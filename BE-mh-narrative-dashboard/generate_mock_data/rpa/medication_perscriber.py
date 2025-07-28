@@ -9,7 +9,7 @@ async def prescribe_medication(transcript: str, model_name: str) -> MedicationRe
             Your task is to prescribe medication to a patient who just had a conversation with you.
             Determine if the patient needs medication based on the conversation, and output the medications in the given format.
         """,
-        model_settings=ModelSettings(temperature=0.2, top_p=0.1),
+        model_settings=ModelSettings(temperature=0.5, top_p=0.5),
         model=model_name,
         output_type=MedicationResponse
     )
