@@ -1,67 +1,10 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import { FileText } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import type {InsightExpandView} from "@/types/dataTypes";
+import {formatDate} from "@/utils/helper";
 
-// Sample transcript data
-const transcriptData = [
-    {
-        date: "2025-07-23",
-        relevance: 0.9,
-        lines: [
-            {
-                speaker: "Patient (John Doe)",
-                content:
-                    "Honestly, it's still pretty quiet. I mostly just talk to my sister. She calls me, or I'll text her back. Sometimes I even call her first, which is new for me, so that feels like something.",
-            },
-            {
-                speaker: "Psychiatrist (Dr. R)",
-                content:
-                    "Thanks for sharing that. You mentioned calling your sister first sometimes, and that's a new thing for you. Can you tell me a little more about what that's like?",
-            },
-        ],
-    },
-    {
-        date: "2025-07-10",
-        relevance: 0.6,
-        lines: [
-            {
-                speaker: "Patient (John Doe)",
-                content:
-                    "I haven’t really spoken to anyone. It’s just been a lot lately, and I feel like avoiding everyone.",
-            },
-            {
-                speaker: "Psychiatrist (Dr. R)",
-                content:
-                    "It sounds like you’ve needed some space. Have you noticed any patterns in when you feel this way?",
-            },
-        ],
-    },
-    {
-        date: "2025-07-01",
-        relevance: 0.4,
-        lines: [
-            {
-                speaker: "Patient (John Doe)",
-                content:
-                    "Sometimes I just want to be left alone, but I also feel lonely. It’s confusing.",
-            },
-            {
-                speaker: "Psychiatrist (Dr. R)",
-                content:
-                    "Those mixed feelings are valid. Let's explore where that confusion might be coming from.",
-            },
-        ],
-    },
-];
-
-// Format date
-const formatDate = (iso: string) =>
-    new Date(iso).toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-        year: "numeric",
-    });
 
 // Background color by relevance
 const getColorByRelevance = (relevance: number) => {
@@ -70,55 +13,105 @@ const getColorByRelevance = (relevance: number) => {
     return "bg-[#d9b238]"; // yellow-green
 };
 
-const TranscriptCard = () => {
-    const [selectedIndex, setSelectedIndex] = useState<number>(0);
-    const selectedTranscript = transcriptData[selectedIndex];
+interface clinicalTranscriptsFactsProps {
+    clinicalTranscriptsFacts: InsightExpandView[];
+}
+
+const TranscriptCard = ({clinicalTranscriptsFacts} : clinicalTranscriptsFactsProps) => {
+    const [selectedDate, setSelectedDate] = useState<string | null>(null);
+    const [selectedFactKey, setSelectedFactKey] = useState<string | null>(null);
+
+    useEffect(() => {
+        if (clinicalTranscriptsFacts.length > 0) {
+            setSelectedFactKey(clinicalTranscriptsFacts[0].key);
+        } else {
+            setSelectedFactKey(null);
+        }
+    }, [clinicalTranscriptsFacts]);
+
+    // Find selected fact based on selectedFactKey
+    const selectedFact = clinicalTranscriptsFacts.find(fact => fact.key === selectedFactKey);
+    const dates = selectedFact?.dataPoints?.map(fact => fact.date);
+
+    useEffect(() => {
+        if (dates && dates.length > 0 && !selectedDate) {
+            setSelectedDate(dates[0]);
+        }
+    }, [dates, selectedDate]);
 
     return (
         <Card className="bg-white border-[#eaeaea]">
             <CardContent className="px-6">
-                <div className="flex items-center gap-2">
-                    <FileText className="w-4 h-4 text-[#9fb40f]" />
-                    <span className="text-[#9fb40f] font-medium">Transcript</span>
+                {/* Header */}
+                <div className="flex items-center gap-2 mb-4">
+                    <FileText className="w-4 h-4 text-[#ffc100]" />
+                    <span className="text-[#ffc100] font-medium">Clinical Notes</span>
                 </div>
-                <div className="text-xs text-[#757575]">*Color hue indicates relevance</div>
+
+                {/* Date buttons on top */}
+                <div className="flex gap-4 mb-6 overflow-x-auto no-scrollbar">
+                    {dates?.map((date) => (
+                        <Button
+                            key={date}
+                            variant="outline"
+                            onClick={() => setSelectedDate(date)}
+                            className={`whitespace-nowrap px-4 py-2 text-sm border-[#d9d9d9] ${
+                                selectedDate === date ? "bg-[#f7f5f5] border-2 border-[#1e1e1e]" : "bg-white"
+                            }`}
+                        >
+                            {formatDate(date)}
+                        </Button>
+                    ))}
+                </div>
+
                 <div className="flex gap-8">
-                    {/* Left: Date Buttons */}
-                    <div className="space-y-2 w-64 flex-shrink-0">
-                        {transcriptData.map((entry, index) => {
-                            const isSelected = selectedIndex === index;
-                            const bgColor = getColorByRelevance(entry.relevance);
-                            return (
-                                <Button
-                                    key={index}
-                                    variant="outline"
-                                    onClick={() => setSelectedIndex(index)}
-                                    className={`w-full justify-start text-left whitespace-normal p-4 text-sm text-[#1e1e1e] border ${
-                                        isSelected ? "border-2 border-[#1e1e1e]" : "border border-[#d9d9d9]"
-                                    } ${bgColor}`}
-                                >
-                                    <div className="flex items-start gap-2">
-                                        <div className="w-2 h-2 rounded-full bg-[#757575] mt-2" />
-                                        <span>{formatDate(entry.date)}</span>
-                                    </div>
-                                </Button>
-                            );
-                        })}
+                    {/* Left vertical buttons (summary sentences for selected date) */}
+                    <div className="flex-shrink-0 space-y-4 w-80">
+                        {clinicalTranscriptsFacts.map((fact) => (
+                            <Button
+                                key={fact.key}
+                                variant="outline"
+                                onClick={() => setSelectedFactKey(fact.key)}
+                                className={`w-full justify-start h-auto text-left whitespace-normal p-4 text-sm border-[#d9d9d9] ${
+                                    selectedFactKey === fact.key ? "bg-[#f7f5f5]" : "bg-white"
+                                }`}
+                            >
+                                <div className="flex items-start gap-2">
+                                    <div className="w-2 h-2 bg-gray-600 rounded-full mt-2 flex-shrink-0" />
+                                    <span>{fact.summarySentence}</span>
+                                </div>
+                            </Button>
+                        ))}
                     </div>
 
-                    {/* Right: Transcript Content */}
-                    <div className="space-y-4 text-sm text-[#2c2c2c]">
-                        {selectedTranscript.lines.map((line, idx) => (
-                            <div key={idx}>
-                                <strong className="text-[#1e1e1e]">{line.speaker}:</strong>
-                                <p className="mt-1">{line.content}</p>
-                            </div>
-                        ))}
+                    {/* Right side: selected fact details */}
+                    <div
+                        className="space-y-6 text-sm text-[#2c2c2c] overflow-y-auto"
+                        style={{ flex: 1, maxHeight: "500px" /* match container height */, paddingRight: "1rem" }}
+                    >
+                        {selectedFact?.dataPoints
+                            ?.filter(dp => dp.date === selectedDate)
+                            .map((dp, index) => (
+                                <div key={index} className="space-y-1">
+                                    <div className="prose prose-sm max-w-none text-[#2c2c2c]">
+                                        {dp.record?.map((recordInfo, i) => (
+                                            <div key={i} className="mb-4 space-y-2">
+                                                {Object.keys(recordInfo).map((key) => (
+                                                    <div key={key}>
+                                                        <strong className="block capitalize">{key}:</strong>
+                                                        <p>{recordInfo[key]}</p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+
                     </div>
                 </div>
             </CardContent>
         </Card>
     );
 };
-
 export default TranscriptCard;

@@ -82,6 +82,7 @@ export const DataSourceType = {
   DIFFERENCE: "difference",
   COMPARISON: "comparison",
   TEXT: "text",
+  DERIVED_VALUE: "derived value"
 } as const;
 
 export type DataSourceType = typeof DataSourceType[keyof typeof DataSourceType];

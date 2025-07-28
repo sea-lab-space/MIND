@@ -8,6 +8,8 @@ import ClinicalNotesCard from "./ClinicalNotesCard";
 import TranscriptCard from "./TranscriptCard";
 import MeasurementScalesCard from "./MeasurementScalesCard";
 import type {InsightCard} from "@/types/dataTypes";
+import {groupInsightsBySource} from "@/utils/helper";
+import type {InsightExpandView} from "@/types/dataTypes";
 
 interface DrilldownPanelProps {
   onClose: () => void;
@@ -16,6 +18,18 @@ interface DrilldownPanelProps {
 
 const DrilldownPanel: React.FC<DrilldownPanelProps> = ({ onClose, insightData }) => {
   const [linkViewsEnabled, setLinkViewsEnabled] = useState(true);
+    const {
+        passiveSensingFacts = [],
+        clinicalNotesFacts = [],
+        clinicalTranscriptsFacts = [],
+        measurementScoreFacts = [],
+    }: {
+        passiveSensingFacts?: InsightExpandView[];
+        clinicalNotesFacts?: InsightExpandView[];
+        clinicalTranscriptsFacts?: InsightExpandView[];
+        measurementScoreFacts?: InsightExpandView[];
+    } = groupInsightsBySource(insightData?.expandView);
+
   return (
       <div className="flex-1">
         <div className="absolute z-10 items-center justify-center bottom-1/2 top-1/2">
@@ -37,10 +51,18 @@ const DrilldownPanel: React.FC<DrilldownPanelProps> = ({ onClose, insightData })
                 title={insightData.summaryTitle}
             />
             <SourcesSection />
-            <PassiveSensingCard insightData={insightData}/>
-              <ClinicalNotesCard />
-              <TranscriptCard />
-            <MeasurementScalesCard />
+              {passiveSensingFacts?.length > 0 && (
+                  <PassiveSensingCard passiveSensingFacts={passiveSensingFacts} />
+              )}
+              {clinicalNotesFacts?.length > 0 && (
+                  <ClinicalNotesCard clinicalNotesFacts={clinicalNotesFacts} />
+              )}
+              {clinicalTranscriptsFacts?.length > 0 && (
+                  <TranscriptCard clinicalTranscriptsFacts={clinicalTranscriptsFacts} />
+              )}
+              {measurementScoreFacts?.length > 0 && (
+                  <MeasurementScalesCard measurementScoreFacts={measurementScoreFacts} />
+              )}
           </div>
         </div>
       </div>

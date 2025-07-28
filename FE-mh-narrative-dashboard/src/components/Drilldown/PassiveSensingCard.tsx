@@ -1,47 +1,24 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import type {InsightCard} from "@/types/dataTypes";
+import type { InsightCard } from "@/types/dataTypes";
 import InsightGraph from "@/components/DataInsights/InsightGraph";
-import {shouldShowChart} from "@/utils/helper";
-
-const chartData = [
-    { value: 0.8, type: "history" },
-    { value: 1.2, type: "history" },
-    { value: 1.5, type: "history" },
-    { value: 0.9, type: "history" },
-    { value: 1.1, type: "history" },
-    { value: 1.3, type: "history" },
-    { value: 1.8, type: "history" },
-    { value: 2.1, type: "retrospective" },
-    { value: 2.8, type: "retrospective" },
-    { value: 3.2, type: "retrospective" },
-    { value: 2.9, type: "retrospective" },
-    { value: 3.5, type: "retrospective" },
-    { value: 3.8, type: "retrospective" },
-    { value: 4.2, type: "retrospective" },
-    { value: 3.9, type: "retrospective" },
-    { value: 4.1, type: "retrospective" },
-];
-
-const maxValue = Math.max(...chartData.map((d) => d.value));
+import { shouldShowChart } from "@/utils/helper";
+import type {InsightExpandView} from "@/types/dataTypes";
 
 interface PassiveSensingCardProps {
-    insightData: InsightCard;
+    passiveSensingFacts: InsightExpandView[];
 }
 
-const PassiveSensingCard = ({
-                                insightData
-                            }) => {
-    const factsData = insightData.expandView;
+const PassiveSensingCard = ({ passiveSensingFacts }: PassiveSensingCardProps) => {
     const [selectedKey, setSelectedKey] = useState<string | null>(null);
-    const selectedInsight = factsData.find((fact) => fact.key === selectedKey);
+    const selectedInsight = passiveSensingFacts.find((fact) => fact.key === selectedKey);
 
     useEffect(() => {
-        if (factsData.length > 0 && !selectedKey) {
-            setSelectedKey(factsData[0].key);
+        if (passiveSensingFacts.length > 0 && !selectedKey) {
+            setSelectedKey(passiveSensingFacts[0].key);
         }
-    }, [insightData]);
+    }, [passiveSensingFacts]);
 
     if (!selectedInsight) {
         return (
@@ -57,8 +34,6 @@ const PassiveSensingCard = ({
     }
 
     const showChart = shouldShowChart(selectedInsight.dataSourceType, selectedInsight.dataPoints);
-    console.log(selectedInsight, "printing correct one", selectedInsight.dataSourceType, showChart)
-
     return (
         <Card className="bg-white border-[#eaeaea]">
             <CardHeader className="pb-4">
@@ -68,10 +43,10 @@ const PassiveSensingCard = ({
                 </div>
             </CardHeader>
             <CardContent>
-                <div className="flex gap-6">
-                    {/* Left Buttons */}
+                <div className="flex gap-6 min-h-[400px]">
+                    {/* Left Side: Button List */}
                     <div className="flex-shrink-0 space-y-4 w-80">
-                        {factsData.map((insight) => (
+                        {passiveSensingFacts.map((insight) => (
                             <Button
                                 key={insight.key}
                                 variant="outline"
@@ -81,18 +56,16 @@ const PassiveSensingCard = ({
                                 }`}
                             >
                                 <div className="flex items-start gap-2">
-                                    <div className="w-2 h-2 bg-gray-600 rounded-full mt-2 flex-shrink-0"></div>
-                                    <span>
-                {insight.summarySentence}
-            </span>
+                                    <div className="w-2 h-2 bg-gray-600 rounded-full mt-2 flex-shrink-0" />
+                                    <span>{insight.summarySentence}</span>
                                 </div>
                             </Button>
                         ))}
                     </div>
 
-                    {/* Right Chart */}
-                    <div className="bg-red-100 flex items-center justify-center">
-                        <div className="h-64 w-120">
+                    {/* Right Side: Chart */}
+                    <div className="flex items-center justify-center flex-1">
+                        <div className="w-full max-w-4xl">
                             {showChart && selectedInsight && (
                                 <InsightGraph
                                     dataSourceType={selectedInsight.dataSourceType}

@@ -17,9 +17,10 @@ export const convertGroupedInsightResultsToFE = (): InsightCardData[] => {
             summarySentence: insight.summarySentence,
             dataPoints: insight.dataPoints,
             dataSourceType: insight.dataSourceType as DataSourceType,
-            sources: insight.sources.map((type: string) => ({
-                type: type as keyof typeof DatasourceIconTypes
-            }))
+            // sources: insight.sources.map((type: string) => ({
+            //     type: type as keyof typeof DatasourceIconTypes
+            // }))
+            source: insight.sources[0] as keyof typeof DatasourceIconTypes,
         }))
     }));
 };

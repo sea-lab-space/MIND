@@ -1,96 +1,85 @@
-import { useState } from "react";
-import { BarChart3 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import {useEffect, useState} from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {shouldShowChart} from "@/utils/helper";
+import InsightGraph from "@/components/DataInsights/InsightGraph";
+import type {InsightExpandView} from "@/types/dataTypes";
 
-const MeasurementScalesCard = () => {
-    const [selectedScale, setSelectedScale] = useState("PHQ-9");
+interface measurementScoreFactsProps {
+    measurementScoreFacts: InsightExpandView[];
+}
 
-    const graphData = {
-        "PHQ-9": {
-            points: "0,80 50,60 100,70 150,50 200,65 250,45 300,40 350,55 400,35 450,50",
-            yValues: [80, 60, 70, 50, 65, 45, 40, 55, 35, 50],
-        },
-        "MADRS": {
-            points: "0,70 50,65 100,60 150,55 200,50 250,45 300,40 350,35 400,30 450,25",
-            yValues: [70, 65, 60, 55, 50, 45, 40, 35, 30, 25],
-        },
-    };
+const MeasurementScalesCard = ({measurementScoreFacts} :measurementScoreFactsProps) => {
+const [selectedKey, setSelectedKey] = useState<string | null>(null);
+const selectedInsight = measurementScoreFacts.find((fact) => fact.key === selectedKey);
 
-    const currentGraph = graphData[selectedScale];
+console.log(selectedInsight)
 
+useEffect(() => {
+    if (measurementScoreFacts.length > 0 && !selectedKey) {
+        setSelectedKey(measurementScoreFacts[0].key);
+    }
+}, [measurementScoreFacts]);
+
+if (!selectedInsight) {
     return (
         <Card className="bg-white border-[#eaeaea]">
             <CardHeader className="pb-4">
-                <div className="flex items-center gap-2">
-                    <BarChart3 className="w-4 h-4 text-[#fb923c]" />
-                    <span className="text-[#fb923c] font-medium">Measurement Scales</span>
-                </div>
-                <div className="text-sm text-[#1e1e1e] font-medium mt-2">Relevant Context</div>
+                <span className="text-[#757575] font-medium">Passive Sensing Data</span>
             </CardHeader>
             <CardContent>
-                <div className="flex gap-6">
-                    <div className="flex-shrink-0 space-y-2 w-48">
-                        {["PHQ-9", "MADRS"].map((label) => {
-                            const isSelected = selectedScale === label;
-                            return (
-                                <Button
-                                    key={label}
-                                    variant="ghost"
-                                    onClick={() => setSelectedScale(label)}
-                                    className={`w-full justify-start border border-[#d9d9d9] text-sm ${
-                                        isSelected ? "bg-[#f7f5f5]" : "bg-white"
-                                    } hover:bg-[#f7f5f5]`}
-                                >
-                                    <div className="flex items-center gap-2 text-[#1e1e1e]">
-                                        <div className="w-2 h-2 rounded-full bg-[#fb923c]" />
-                                        {label}
-                                    </div>
-                                </Button>
-                            );
-                        })}
-                    </div>
-                    <div className="flex-1">
-                        <div className="relative h-48">
-                            <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-[#be123c] font-medium">
-                                <span>{selectedScale}</span>
-                                <span>23</span>
-                                <span>11</span>
-                            </div>
-                            <div className="absolute top-0 right-20 flex gap-2">
-                                {["Q1", "Q2"].map((q) => (
-                                    <Badge key={q} variant="outline" className="text-[#fb923c] border-[#fb923c]">
-                                        {q}
-                                    </Badge>
-                                ))}
-                            </div>
-                            <div className="ml-12 h-full relative">
-                                <div className="absolute bottom-8 w-full h-16 bg-[#eaeaea] opacity-50 rounded" />
-                                <svg className="absolute bottom-8 w-full h-32">
-                                    <polyline
-                                        fill="none"
-                                        stroke="#fb923c"
-                                        strokeWidth="2"
-                                        points={currentGraph.points}
-                                    />
-                                    {currentGraph.yValues.map((y, i) => (
-                                        <circle key={i} cx={i * 50} cy={y} r="3" fill="#fb923c" />
-                                    ))}
-                                </svg>
-                                <div className="absolute bottom-8 left-3/4 w-px h-32 border-l border-dashed border-[#757575]" />
-                                <div className="absolute bottom-0 w-full flex justify-between text-xs text-[#757575]">
-                                    <span>history</span>
-                                    <span>retrospective</span>
-                                    <span>Time</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div className="text-gray-500 text-sm">Loading insight data...</div>
             </CardContent>
         </Card>
     );
-};
+}
 
+const showChart = shouldShowChart(selectedInsight.dataSourceType, selectedInsight.dataPoints);
+return (
+    <Card className="bg-white border-[#eaeaea]">
+        <CardHeader className="pb-4">
+            <div className="flex items-center gap-2">
+                <div className="w-4 h-4 rounded-full bg-[#fb923c]" />
+                <span className="text-[#fb923c] font-medium">Measurement Scales</span>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <div className="flex gap-6 min-h-[400px]">
+                {/* Left Side: Button List */}
+                <div className="flex-shrink-0 space-y-4 w-80">
+                    {measurementScoreFacts.map((insight) => (
+                        <Button
+                            key={insight.key}
+                            variant="outline"
+                            onClick={() => setSelectedKey(insight.key)}
+                            className={`w-full justify-start h-auto text-left whitespace-normal p-4 text-sm text-[#1e1e1e] border-[#d9d9d9] ${
+                                selectedKey === insight.key ? "bg-[#f7f5f5]" : "bg-white"
+                            }`}
+                        >
+                            <div className="flex items-start gap-2">
+                                <div className="w-2 h-2 bg-[#fb923c] rounded-full mt-2 flex-shrink-0" />
+                                <span>{insight.summarySentence}</span>
+                            </div>
+                        </Button>
+                    ))}
+                </div>
+
+                {/* Right Side: Chart */}
+                <div className="flex items-center justify-center flex-1">
+                    <div className="w-full max-w-4xl">
+                        {showChart && selectedInsight && (
+                            <InsightGraph
+                                dataSourceType={selectedInsight.dataSourceType}
+                                data={selectedInsight.dataPoints}
+                                color={'#fb923c'}
+                                isSurvey={true}
+                            />
+                        )}
+                    </div>
+                </div>
+            </div>
+        </CardContent>
+    </Card>
+);
+};
 export default MeasurementScalesCard;
