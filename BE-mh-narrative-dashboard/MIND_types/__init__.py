@@ -1,2 +1,3 @@
 from .medication_type import MedicationResponse
 from .encounter_type import EncounterResponse
+from .transcript_type import TranscriptResponse

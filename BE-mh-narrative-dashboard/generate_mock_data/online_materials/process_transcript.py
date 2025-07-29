@@ -14,14 +14,11 @@ print(project_root)
 sys.path.append(str(project_root))
 load_dotenv()
 
+from MIND_types import (
+    TranscriptResponse
+)
+
 from tqdm import tqdm
-
-class TranscriptBase(BaseModel):
-    clinician: str = Field(..., description="Clinician speaking")
-    patient: str = Field(..., description="Patient speaking")
-
-class ReturnTranscript(BaseModel):
-    response: List[TranscriptBase] = Field(..., description="Transcript")
 
 if __name__ == "__main__":
     print("Run this under caution: remove the exit() beneth. Transcripts have already been processed to align with the user study")
@@ -68,7 +65,7 @@ if __name__ == "__main__":
             input=[
                 {"role": "system", "content": encounter_prompt}
             ],
-            text_format=ReturnTranscript,
+            text_format=TranscriptResponse,
             temperature=0
         )
         event = response.output_parsed

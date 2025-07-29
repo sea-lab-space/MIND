@@ -21,9 +21,15 @@ from synthesizer.synthesizer import Synthesizer
 from main import run_data_prep
 
 if __name__ == "__main__":
-    USER_ID = "INS-W_963"
+    # USER_ID = "INS-W_963"
+    # USER_ID = "INS-W_1044"
+    USER_ID = "INS-W_1077"
+    
     MODEL_NAME = "gpt-4.1"
-    data = run_data_prep(USER_ID)
+    # data = run_data_prep(USER_ID)
+    data = {}
+    feature_list = feature_transform(pid=USER_ID, granularity="allday")
+    data['numerical_data'] = feature_list
 
     DATES = [
         '2021-03-28', # first check
@@ -39,7 +45,7 @@ if __name__ == "__main__":
         "data_insights": [],
     }]
 
-    if os.path.exists(f"./generate_mock_data/context/encounters_mock_{USER_ID}.json"):
+    if os.path.exists(f"./generate_mock_data/context/{USER_ID}"):
         confirm = input(f"Insight already generated for {USER_ID}. Do you want to proceed? Type yes to proceed, yes-clean to do a full regeneration: ")
         target_folder = f"./generate_mock_data/context/{USER_ID}"
         if confirm.lower() == 'yes':
@@ -57,6 +63,8 @@ if __name__ == "__main__":
         else:
             print("Aborted.")
             exit(1)
+    else:
+        os.makedirs(f"./generate_mock_data/context/{USER_ID}", exist_ok=True)
 
 
     for i in tqdm(range(1, len(DATES))):
@@ -81,7 +89,6 @@ if __name__ == "__main__":
         )
 
         # check if data_facts already exsist
-        # ! comment out / delete original files to override
         target_file = f"./generate_mock_data/context/{USER_ID}/encounter_{i+1}_facts.json"
         if os.path.exists(target_file):
             with open(target_file, "r") as f:

@@ -44,7 +44,7 @@ type SpecAttribute =
   | ComparisonDifferenceAttributes
   | ExtremeAttributes;
 
-type SpecAggregation = 'average' | 'stdev' | 'median' |'max' | 'min'
+type SpecAggregation = 'average' | 'stdev' | 'median' | 'max' | 'min'
 
 const factTypes = [
   "derived value",
