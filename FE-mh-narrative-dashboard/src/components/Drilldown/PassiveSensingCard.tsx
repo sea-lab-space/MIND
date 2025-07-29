@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import type { InsightCard } from "@/types/dataTypes";
 import InsightGraph from "@/components/DataInsights/InsightGraph";
 import { shouldShowChart } from "@/utils/helper";
 import type {InsightExpandView} from "@/types/dataTypes";
@@ -65,7 +64,7 @@ const PassiveSensingCard = ({ passiveSensingFacts }: PassiveSensingCardProps) =>
 
                     {/* Right Side: Chart */}
                     <div className="flex items-center justify-center flex-1">
-                        <div className="w-full max-w-4xl">
+                        <div className="w-full h-72">
                             {showChart && selectedInsight && (
                                 <InsightGraph
                                     dataSourceType={selectedInsight.dataSourceType}

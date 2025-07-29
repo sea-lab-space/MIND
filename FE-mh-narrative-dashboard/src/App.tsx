@@ -252,7 +252,7 @@ export default function App() {
           {/* Right drilldown panel */}
           {isDrillDown && (
             <div
-              className="bg-blue-300 rounded overflow-y-auto overflow-x-hidden h-full"
+              className="bg-gray-100 rounded overflow-y-auto overflow-x-hidden h-full"
               style={{ width: rightPanelWidth }}
             >
               <DrilldownPanel

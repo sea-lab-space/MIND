@@ -28,7 +28,7 @@ export default function InsightGraph({ dataSourceType, data, color, isSurvey= fa
     }
 
     return (
-        <ResponsiveContainer width="100%"  height={300}>
+        <ResponsiveContainer width="100%" height="100%">
             {isLineChart ? (
                 <LineChart data={normalized}>
                     <CartesianGrid strokeDasharray="3 3"/>

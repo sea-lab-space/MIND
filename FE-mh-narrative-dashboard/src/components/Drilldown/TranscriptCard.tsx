@@ -20,7 +20,6 @@ interface clinicalTranscriptsFactsProps {
 const TranscriptCard = ({clinicalTranscriptsFacts} : clinicalTranscriptsFactsProps) => {
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
     const [selectedFactKey, setSelectedFactKey] = useState<string | null>(null);
-
     useEffect(() => {
         if (clinicalTranscriptsFacts.length > 0) {
             setSelectedFactKey(clinicalTranscriptsFacts[0].key);
@@ -32,6 +31,12 @@ const TranscriptCard = ({clinicalTranscriptsFacts} : clinicalTranscriptsFactsPro
     // Find selected fact based on selectedFactKey
     const selectedFact = clinicalTranscriptsFacts.find(fact => fact.key === selectedFactKey);
     const dates = selectedFact?.dataPoints?.map(fact => fact.date);
+    const selectedFactSpec = selectedFact?.spec;
+    const highlightDates = new Set(
+        (Array.isArray(selectedFact?.spec) ? selectedFact?.spec : [])
+            .map(spec => spec?.date)
+    );
+
 
     useEffect(() => {
         if (dates && dates.length > 0 && !selectedDate) {
@@ -39,29 +44,56 @@ const TranscriptCard = ({clinicalTranscriptsFacts} : clinicalTranscriptsFactsPro
         }
     }, [dates, selectedDate]);
 
+    const specTexts = (Array.isArray(selectedFactSpec) ? selectedFactSpec : [])
+        .filter((s) => s?.date === selectedDate)
+        .map((s) => s?.text);
+
+    function highlightMatches(text: string, highlights: string[]): string {
+        if (!text || !highlights?.length) return text;
+
+        let result = text;
+
+        highlights.forEach((highlight) => {
+            if (!highlight) return;
+            // Escape special regex chars
+            const escaped = highlight.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
+            const regex = new RegExp(`(${escaped})`, "gi");
+            result = result.replace(regex, '<mark style="background-color: rgba(159, 180, 15, 0.4);">$1</mark>');
+        });
+
+        return result;
+    }
+
     return (
         <Card className="bg-white border-[#eaeaea]">
             <CardContent className="px-6">
                 {/* Header */}
                 <div className="flex items-center gap-2 mb-4">
-                    <FileText className="w-4 h-4 text-[#ffc100]" />
-                    <span className="text-[#ffc100] font-medium">Clinical Notes</span>
+                    <FileText className="w-4 h-4 text-[#9FB40F]" />
+                    <span className="text-[#9FB40F] font-medium">Transcript</span>
                 </div>
 
                 {/* Date buttons on top */}
                 <div className="flex gap-4 mb-6 overflow-x-auto no-scrollbar">
-                    {dates?.map((date) => (
-                        <Button
-                            key={date}
-                            variant="outline"
-                            onClick={() => setSelectedDate(date)}
-                            className={`whitespace-nowrap px-4 py-2 text-sm border-[#d9d9d9] ${
-                                selectedDate === date ? "bg-[#f7f5f5] border-2 border-[#1e1e1e]" : "bg-white"
-                            }`}
-                        >
-                            {formatDate(date)}
-                        </Button>
-                    ))}
+                    {dates?.map((date) => {
+                        const isSelected = selectedDate === date;
+                        const isHighlighted = highlightDates.has(date);
+
+                        const baseClasses = "whitespace-nowrap px-4 py-2 text-sm border-[#d9d9d9]";
+                        const highlightBg = "bg-[#9FB40F]/40";
+                        const selectedBorder = "border-2 border-[#1e1e1e]";
+
+                        return (
+                            <Button
+                                key={date}
+                                variant="outline"
+                                onClick={() => setSelectedDate(date)}
+                                className={`${baseClasses} ${isHighlighted ? highlightBg : "bg-white"} ${isSelected ? selectedBorder : ""}`}
+                            >
+                                {formatDate(date)}
+                            </Button>
+                        );
+                    })}
                 </div>
 
                 <div className="flex gap-8">
@@ -96,12 +128,20 @@ const TranscriptCard = ({clinicalTranscriptsFacts} : clinicalTranscriptsFactsPro
                                     <div className="prose prose-sm max-w-none text-[#2c2c2c]">
                                         {dp.record?.map((recordInfo, i) => (
                                             <div key={i} className="mb-4 space-y-2">
-                                                {Object.keys(recordInfo).map((key) => (
-                                                    <div key={key}>
-                                                        <strong className="block capitalize">{key}:</strong>
-                                                        <p>{recordInfo[key]}</p>
-                                                    </div>
-                                                ))}
+                                                {Object.keys(recordInfo).map((key) => {
+                                                    const value = recordInfo[key];
+                                                    const highlightedValue = highlightMatches(value, specTexts);
+
+                                                    return (
+                                                        <div key={key}>
+                                                            <strong className="block capitalize">{key}:</strong>
+                                                            <p
+                                                                className="whitespace-pre-wrap"
+                                                                dangerouslySetInnerHTML={{ __html: highlightedValue }}
+                                                            />
+                                                        </div>
+                                                    );
+                                                })}
                                             </div>
                                         ))}
                                     </div>

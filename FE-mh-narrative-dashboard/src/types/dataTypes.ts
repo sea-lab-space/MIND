@@ -20,6 +20,7 @@ export interface InsightExpandView {
     dataPoints: Record<string, number>;
     sources: { type: DatasourceIconTypes }[];
     insightType?: InsightType;
+    spec: any[]
 }
 
 // High-level insight card

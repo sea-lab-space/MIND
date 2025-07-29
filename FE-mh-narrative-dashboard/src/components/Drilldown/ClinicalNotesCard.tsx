@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import type { InsightExpandView } from "@/types/dataTypes";
 import ReactMarkdown from "react-markdown";
 import {formatDate} from "@/utils/helper";
+import rehypeRaw from "rehype-raw";
+
 
 interface clinicalNotesFactsProps {
     clinicalNotesFacts: InsightExpandView[];
@@ -24,7 +26,13 @@ const ClinicalNotesCard = ({ clinicalNotesFacts }: clinicalNotesFactsProps) => {
 
     // Find selected fact based on selectedFactKey
     const selectedFact = clinicalNotesFacts.find(fact => fact.key === selectedFactKey);
+    const selectedFactSpec = selectedFact?.spec;
     const dates = selectedFact?.dataPoints?.map(fact => fact.date);
+    const highlightDates = new Set(
+        (Array.isArray(selectedFact?.spec) ? selectedFact?.spec : [])
+            .map(spec => spec?.date)
+    );
+
 
     useEffect(() => {
         if (dates && dates.length > 0 && !selectedDate) {
@@ -32,8 +40,19 @@ const ClinicalNotesCard = ({ clinicalNotesFacts }: clinicalNotesFactsProps) => {
         }
     }, [dates, selectedDate]);
 
+    function highlightTextInRecord(record: string, highlights: string[]): string {
+        let highlighted = record;
+        highlights.forEach((text) => {
+            if (text && highlighted.includes(text)) {
+                const escapedText = text.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&'); // Escape regex
+                const regex = new RegExp(escapedText, "g");
+                highlighted = highlighted.replace(regex, `<mark>${text}</mark>`);
+            }
+        });
+        return highlighted;
+    }
 
-
+    console.log(selectedFact)
     return (
         <Card className="bg-white border-[#eaeaea]">
             <CardContent className="px-6">
@@ -45,18 +64,25 @@ const ClinicalNotesCard = ({ clinicalNotesFacts }: clinicalNotesFactsProps) => {
 
                 {/* Date buttons on top */}
                 <div className="flex gap-4 mb-6 overflow-x-auto no-scrollbar">
-                    {dates?.map((date) => (
-                        <Button
-                            key={date}
-                            variant="outline"
-                            onClick={() => setSelectedDate(date)}
-                            className={`whitespace-nowrap px-4 py-2 text-sm border-[#d9d9d9] ${
-                                selectedDate === date ? "bg-[#f7f5f5] border-2 border-[#1e1e1e]" : "bg-white"
-                            }`}
-                        >
-                            {formatDate(date)}
-                        </Button>
-                    ))}
+                    {dates?.map((date) => {
+                        const isSelected = selectedDate === date;
+                        const isHighlighted = highlightDates.has(date);
+
+                        const baseClasses = "whitespace-nowrap px-4 py-2 text-sm border-[#d9d9d9]";
+                        const highlightBg = "bg-[#FFC100]/40";
+                        const selectedBorder = "border-2 border-[#1e1e1e]";
+
+                        return (
+                            <Button
+                                key={date}
+                                variant="outline"
+                                onClick={() => setSelectedDate(date)}
+                                className={`${baseClasses} ${isHighlighted ? highlightBg : "bg-white"} ${isSelected ? selectedBorder : ""}`}
+                            >
+                                {formatDate(date)}
+                            </Button>
+                        );
+                    })}
                 </div>
 
                 <div className="flex gap-8">
@@ -89,7 +115,28 @@ const ClinicalNotesCard = ({ clinicalNotesFacts }: clinicalNotesFactsProps) => {
                             .map((dp, index) => (
                                 <div key={index} className="space-y-1">
                                     <div className="prose prose-sm max-w-none text-[#2c2c2c]">
-                                        <ReactMarkdown>{dp.record}</ReactMarkdown>
+                                        <ReactMarkdown
+                                            rehypePlugins={[rehypeRaw]}
+                                            components={{
+                                                mark: ({ node, ...props }) => (
+                                                    <mark
+                                                        style={{
+                                                            backgroundColor: "#FFC100",
+                                                            padding: "0.1rem 0.25rem",
+                                                            borderRadius: "0.25rem",
+                                                        }}
+                                                        {...props}
+                                                    />
+                                                ),
+                                            }}
+                                        >
+                                            {
+                                                highlightTextInRecord(
+                                                    dp.record || '',
+                                                    (Array.isArray(selectedFactSpec) ? selectedFactSpec : []).filter(s => s.date === dp.date).map(s => s.text)
+                                                )
+                                            }
+                                        </ReactMarkdown>
                                     </div>
                                 </div>
                             ))}

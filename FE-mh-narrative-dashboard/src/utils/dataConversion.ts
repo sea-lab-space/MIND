@@ -17,6 +17,7 @@ export const convertGroupedInsightResultsToFE = (): InsightCardData[] => {
             summarySentence: insight.summarySentence,
             dataPoints: insight.dataPoints,
             dataSourceType: insight.dataSourceType as DataSourceType,
+            spec: insight.spec,
             // sources: insight.sources.map((type: string) => ({
             //     type: type as keyof typeof DatasourceIconTypes
             // }))
