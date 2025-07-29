@@ -1,6 +1,8 @@
 import type {DatasourceIconType, DatasourceIconTypes, DataSourceType, InsightCardData} from "@/types/props";
 import visualizerData from "@/data/Visualizer_INS-W_963.json";
 import {InsightType} from "@/types/props";
+import type { HighlightSpec } from "@/types/insightSpec";
+import type { InsightExpandView } from "@/types/dataTypes";
 
 export const convertGroupedInsightResultsToFE = (): InsightCardData[] => {
     return visualizerData.insights.map((group, index): InsightCardData => ({
@@ -17,12 +19,12 @@ export const convertGroupedInsightResultsToFE = (): InsightCardData[] => {
             summarySentence: insight.summarySentence,
             dataPoints: insight.dataPoints,
             dataSourceType: insight.dataSourceType as DataSourceType,
-            spec: insight.spec,
+            highlightSpec: insight.spec as HighlightSpec,
             // sources: insight.sources.map((type: string) => ({
             //     type: type as keyof typeof DatasourceIconTypes
             // }))
             source: insight.sources[0] as keyof typeof DatasourceIconTypes,
-        }))
+        }) as InsightExpandView)
     }));
 };
 

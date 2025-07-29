@@ -1,4 +1,5 @@
 import { Heart, Brain, Activity, Pill, History } from "lucide-react";
+import type { HighlightSpec } from "./insightSpec";
 
 export const DatasourceIconTypes = {
   passiveSensing: "passive sensing",
@@ -43,6 +44,7 @@ export interface InsightExpandViewItem {
   summarySentence: string;
   dataPoints: Record<string, number>;
   sources: { type: DatasourceIconType }[];
+  highlightSpec: HighlightSpec;
   dataSourceType: DataSourceType;
 }
 

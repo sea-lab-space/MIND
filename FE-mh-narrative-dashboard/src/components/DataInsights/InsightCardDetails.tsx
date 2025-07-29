@@ -30,6 +30,7 @@ export default function InsightCardDetail({
                                 <div className="mt-2 bg-gray-50 border border-gray-200 rounded-lg h-48 pr-4 pt-2">
                                     <InsightGraph
                                         data={detail.dataPoints}
+                                        highlightSpec={detail.highlightSpec}
                                         dataSourceType={detail.dataSourceType}
                                     />
                                 </div>

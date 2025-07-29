@@ -80,7 +80,13 @@ class Visualizer:
                             # ! Here dataPoints means source text + evidence
                             # TODO: add source transcript & notes
                             "dataPoints": self._search_raw_text_data(map_text_keys[fact['modality_source']]),
-                            "spec": fact['evidence'],
+                            "spec": [
+                                {
+                                    "fact_type": "text",
+                                    **evidence
+                                }
+                                for evidence in fact["evidence"]
+                            ],
                             "sources": [fact['modality_source']],
                             # ! Here dataSourceType means "text" add in FE
                             "dataSourceType": fact['modality_type'],

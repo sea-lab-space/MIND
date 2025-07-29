@@ -68,6 +68,7 @@ const PassiveSensingCard = ({ passiveSensingFacts }: PassiveSensingCardProps) =>
                             {showChart && selectedInsight && (
                                 <InsightGraph
                                     dataSourceType={selectedInsight.dataSourceType}
+                                    highlightSpec={selectedInsight.highlightSpec}
                                     data={selectedInsight.dataPoints}
                                 />
                             )}

@@ -70,6 +70,7 @@ return (
                         {showChart && selectedInsight && (
                             <InsightGraph
                                 dataSourceType={selectedInsight.dataSourceType}
+                                highlightSpec={selectedInsight.highlightSpec}
                                 data={selectedInsight.dataPoints}
                                 color={'#fb923c'}
                                 isSurvey={true}

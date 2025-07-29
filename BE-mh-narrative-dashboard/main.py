@@ -162,18 +162,18 @@ if __name__ == "__main__":
     # final_output = exec(patient_id="INS-W_963", save_interm=True)
 
     # read data_facts.json
-    with open("mock_data/data_facts_INS-W_963.json", "r") as f:
-        data_facts = json.load(f)
-        f.close()
+    # with open("mock_data/data_facts_INS-W_963.json", "r") as f:
+    #     data_facts = json.load(f)
+    #     f.close()
 
-    data_insights, data_fact_list = run_synthesizer(data_facts, iters=2)
-    with open(f"mock_data/data_insights_INS-W_963.json", "w") as f:
-        json.dump(data_insights, f, indent=2)
-        f.close()
+    # data_insights, data_fact_list = run_synthesizer(data_facts, iters=2)
+    # with open(f"mock_data/data_insights_INS-W_963.json", "w") as f:
+    #     json.dump(data_insights, f, indent=2)
+    #     f.close()
 
-    with open(f"mock_data/data_facts_list_INS-W_963.json", "w") as f:
-        json.dump(data_fact_list, f, indent=2)
-        f.close()
+    # with open(f"mock_data/data_facts_list_INS-W_963.json", "w") as f:
+    #     json.dump(data_fact_list, f, indent=2)
+    #     f.close()
 
 
     # read data_insights

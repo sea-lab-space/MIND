@@ -1,5 +1,6 @@
 // Datasource types for icons
 import {InsightType} from "@/types/props";
+import type { HighlightSpec } from "./insightSpec";
 
 export enum DatasourceIconTypes {
     measurementScore = "measurementScore",
@@ -15,12 +16,13 @@ export type RetrospectOptions = {
 
 // For each insight's expandable detail
 export interface InsightExpandView {
-    key: string;
-    summarySentence: string;
-    dataPoints: Record<string, number>;
-    sources: { type: DatasourceIconTypes }[];
-    insightType?: InsightType;
-    spec: any[]
+  key: string;
+  summarySentence: string;
+  dataSource: any;
+  dataPoints: Record<string, number>;
+  highlightSpec: HighlightSpec;
+  sources: { type: DatasourceIconTypes }[];
+  insightType?: InsightType;
 }
 
 // High-level insight card

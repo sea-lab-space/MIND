@@ -678,6 +678,7 @@
           ],
           "spec": [
             {
+              "fact_type": "text",
               "date": "2021-05-09",
               "text": "She noted that these symptoms intensify during periods of high academic pressure, poor sleep, or when she is preoccupied with concerns about disappointing others."
             }
@@ -969,6 +970,7 @@
           ],
           "spec": [
             {
+              "fact_type": "text",
               "date": "2021-05-09",
               "text": "when I have a lot of assignments due or if I think about my family and how I can't support them enough, it gets worse. Also, if I don\u2019t sleep well, everything feels more intense."
             }
@@ -1014,6 +1016,7 @@
           ],
           "spec": [
             {
+              "fact_type": "text",
               "date": "2021-05-09",
               "text": "She noted that these symptoms intensify during periods of high academic pressure, poor sleep, or when she is preoccupied with concerns about disappointing others."
             }
@@ -1305,6 +1308,7 @@
           ],
           "spec": [
             {
+              "fact_type": "text",
               "date": "2021-05-09",
               "text": "when I have a lot of assignments due or if I think about my family and how I can't support them enough, it gets worse. Also, if I don\u2019t sleep well, everything feels more intense."
             }
@@ -4078,6 +4082,7 @@
           ],
           "spec": [
             {
+              "fact_type": "text",
               "date": "2021-05-09",
               "text": "However, she continues to experience significant fatigue, frustration, and hopelessness on many days."
             }
@@ -4123,6 +4128,7 @@
           ],
           "spec": [
             {
+              "fact_type": "text",
               "date": "2021-05-09",
               "text": "However, she continues to experience significant fatigue, frustration, and hopelessness on many days."
             }
@@ -5076,6 +5082,7 @@
           ],
           "spec": [
             {
+              "fact_type": "text",
               "date": "2021-05-09",
               "text": "Mei Lin described difficulty maintaining consistency with coping strategies such as journaling and using reminders, often feeling too overwhelmed or forgetful to engage with them regularly."
             }
@@ -5367,6 +5374,7 @@
           ],
           "spec": [
             {
+              "fact_type": "text",
               "date": "2021-05-09",
               "text": "I try to use the reminders and journal, but I forget or just feel too overwhelmed to do it."
             }
@@ -6008,6 +6016,7 @@
           ],
           "spec": [
             {
+              "fact_type": "text",
               "date": "2021-05-09",
               "text": "She identified persistent negative self-evaluations, especially during periods of low mood and fatigue. Mei Lin frequently experiences thoughts of inadequacy, feeling like a failure, and worries about not being able to meet expectations\u2014both academically and in supporting her family."
             }
@@ -7979,6 +7988,7 @@
           ],
           "spec": [
             {
+              "fact_type": "text",
               "date": "2021-05-09",
               "text": "Mei Lin identified goals of using grounding exercises more consistently, journaling about her feelings, and working towards improved energy and focus."
             }
@@ -8270,6 +8280,7 @@
           ],
           "spec": [
             {
+              "fact_type": "text",
               "date": "2021-05-09",
               "text": "I think I want to try using the grounding exercise more when I feel really anxious or sad. Maybe I can also journal about my thoughts and feelings, like I used to. I\u2019d like to understand my feelings better and find ways to handle them without feeling so overwhelmed. I hope I can get a little more energy and focus, too."
             }

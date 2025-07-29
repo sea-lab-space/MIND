@@ -4,18 +4,22 @@ import {
 } from "recharts";
 import { DataSourceType } from "@/types/props";
 import {normalizeDataPoints} from "@/utils/dataConversion";
+import type { HighlightSpec } from "@/types/insightSpec";
 
 
 interface InsightGraphProps {
-    dataSourceType: DataSourceType;
-    data: Record<String,number>;
-    color?: string;
-    isSurvey: boolean;
+  dataSourceType: DataSourceType;
+  highlightSpec: HighlightSpec;
+  data: Record<string, number>;
+  color?: string;
+  isSurvey?: boolean;
 }
 
-export default function InsightGraph({ dataSourceType, data, color, isSurvey= false }: InsightGraphProps) {
+export default function InsightGraph({ dataSourceType, highlightSpec, data, color, isSurvey= false }: InsightGraphProps) {
     const normalized = normalizeDataPoints(data);
     const metricKey = Object.keys(normalized[0] || {}).find((k) => k !== "date") ?? "";
+
+    console.log(highlightSpec.fact_type)
 
     console.log(dataSourceType)
     const isLineChart = [DataSourceType.TREND, DataSourceType.COMPARISON].includes(dataSourceType) || isSurvey;
