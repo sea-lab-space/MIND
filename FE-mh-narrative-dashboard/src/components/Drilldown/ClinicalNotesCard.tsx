@@ -26,10 +26,10 @@ const ClinicalNotesCard = ({ clinicalNotesFacts }: clinicalNotesFactsProps) => {
 
     // Find selected fact based on selectedFactKey
     const selectedFact = clinicalNotesFacts.find(fact => fact.key === selectedFactKey);
-    const selectedFactSpec = selectedFact?.spec;
+    const selectedFactSpec = selectedFact?.highlightSpec;
     const dates = selectedFact?.dataPoints?.map(fact => fact.date);
     const highlightDates = new Set(
-        (Array.isArray(selectedFact?.spec) ? selectedFact?.spec : [])
+        (Array.isArray(selectedFact?.highlightSpec) ? selectedFact?.highlightSpec : [])
             .map(spec => spec?.date)
     );
 
