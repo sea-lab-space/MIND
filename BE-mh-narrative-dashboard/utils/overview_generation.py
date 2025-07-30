@@ -122,7 +122,6 @@ class SummarizationAgent:
             if date_before(encounter['encounter_date'], self.before_date)
         ])
 
-
         medication_history = set()
 
         for med in self.data['this_series']:

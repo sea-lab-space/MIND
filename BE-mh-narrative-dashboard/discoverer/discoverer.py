@@ -89,10 +89,15 @@ class Discoverer:
                             for feat in text_input if feat['encounter_date'] == self.retrospect_date), None)}
             transcript_input = self._prep_transcript(text_input)
             
+            
             # assert both should not be a empty dict
             assert len(note_input) > 0 and len(transcript_input) > 0, "No text data found for the given date"
             
             print("---- Running Text Data Fact Discovery ----")
+            # medication don't need a llm process
+            # medication_facts = [
+            #     f"The patient is on {fact['medication']} ({fact['dosage']}) {fact['frequency'].lower()} since {fact['date']}" for fact in features['medication'] if fact['date'] == self.retrospect_date
+            # ]
             note_facts = self._run_text_discovery('clinical note', note_input)
             transcript_facts = self._run_text_discovery(
                 'clinical transcript', transcript_input)
@@ -100,6 +105,7 @@ class Discoverer:
             print("---- Skipping Text Data Fact Discovery ----")
             note_facts = []
             transcript_facts = []
+            # medication_facts = []
         
         if len(self.numeric_agents) > 0:
             print("---- Running Numerical Data Fact Discovery ----")
@@ -112,5 +118,6 @@ class Discoverer:
         return {
             "numeric_facts": numeric_facts,
             "note_facts": note_facts,
-            "transcript_facts": transcript_facts
+            "transcript_facts": transcript_facts,
+            # "medication_facts": medication_facts
         }

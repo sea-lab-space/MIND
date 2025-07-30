@@ -1,0 +1,389 @@
+[
+  {
+    "insight_description": "Increased physical activity and steps, but mood and energy remain low and inconsistent.",
+    "insight_source": [
+      "ps-steps-97",
+      "ps-steps-265",
+      "ps-steps-267",
+      "text-note_facts-562",
+      "text-transcript_facts-577",
+      "sv-survey-273"
+    ],
+    "insight_category": [
+      "Physical Activity",
+      "Emotional State"
+    ],
+    "entropy": 1.1269287948006759
+  },
+  {
+    "insight_description": "Sedentary episodes decreased as steps increased, but energy and mood did not improve proportionally.",
+    "insight_source": [
+      "ps-steps-268",
+      "ps-steps-265",
+      "ps-steps-267",
+      "text-note_facts-562",
+      "sv-survey-273"
+    ],
+    "insight_category": [
+      "Physical Activity",
+      "Emotional State"
+    ],
+    "entropy": 0.9502705392332347
+  },
+  {
+    "insight_description": "Screen time rises during stress, used as coping, but disrupts sleep and worsens mood.",
+    "insight_source": [
+      "ps-screen-158",
+      "ps-screen-159",
+      "ps-screen-303",
+      "ps-screen-424",
+      "text-transcript_facts-578",
+      "text-note_facts-552"
+    ],
+    "insight_category": [
+      "Digital Engagement",
+      "Sleep Patterns",
+      "Emotional State"
+    ],
+    "entropy": 0.7520386983881371
+  },
+  {
+    "insight_description": "Social support is primarily from family, with limited broader social engagement and work contact.",
+    "insight_source": [
+      "text-note_facts-563",
+      "text-transcript_facts-583",
+      "ps-call-211",
+      "ps-call-212",
+      "ps-call-209",
+      "ps-call-349"
+    ],
+    "insight_category": [
+      "Social Interaction"
+    ],
+    "entropy": 0.752038698388137
+  },
+  {
+    "insight_description": "Sleep is fragmented and inconsistent, with brief improvement after reducing nighttime screen use.",
+    "insight_source": [
+      "ps-sleep-486",
+      "ps-sleep-491",
+      "ps-sleep-92",
+      "ps-sleep-184",
+      "ps-sleep-182",
+      "text-note_facts-552",
+      "text-transcript_facts-575"
+    ],
+    "insight_category": [
+      "Sleep Patterns",
+      "Digital Engagement"
+    ],
+    "entropy": 0.6972906143795352
+  },
+  {
+    "insight_description": "Outgoing and incoming call counts show variability, but most calls are to family, not work.",
+    "insight_source": [
+      "ps-call-211",
+      "ps-call-212",
+      "ps-call-209",
+      "ps-call-349",
+      "text-note_facts-557"
+    ],
+    "insight_category": [
+      "Social Interaction"
+    ],
+    "entropy": 0.5004024235381879
+  },
+  {
+    "insight_description": "Time in green and exercise spaces increased briefly, but not sustained; minimal impact on mood.",
+    "insight_source": [
+      "ps-location-136",
+      "ps-location-219",
+      "ps-location-297",
+      "ps-location-143",
+      "ps-location-226",
+      "text-transcript_facts-573"
+    ],
+    "insight_category": [
+      "Physical Activity",
+      "Emotional State"
+    ],
+    "entropy": 0.45056120886630463
+  },
+  {
+    "insight_description": "Guilt and self-criticism are prominent, especially regarding parenting and work engagement.",
+    "insight_source": [
+      "text-note_facts-554",
+      "text-note_facts-561",
+      "text-transcript_facts-585",
+      "text-transcript_facts-582"
+    ],
+    "insight_category": [
+      "Emotional State"
+    ],
+    "entropy": 0.34657359027997264
+  },
+  {
+    "insight_description": "Appetite is poor, with frequent skipped meals and only occasional small portions eaten.",
+    "insight_source": [
+      "text-note_facts-553",
+      "text-transcript_facts-576"
+    ],
+    "insight_category": [
+      "Emotional State"
+    ],
+    "entropy": 0.34657359027997264
+  },
+  {
+    "insight_description": "Patient maintains a safety plan and identifies protective factors, including willingness to engage in therapy.",
+    "insight_source": [
+      "text-transcript_facts-587",
+      "text-note_facts-568"
+    ],
+    "insight_category": [
+      "Medication & Treatment",
+      "Social Interaction"
+    ],
+    "entropy": 0.34657359027997264
+  },
+  {
+    "insight_description": "Patient finds some relief from music, podcasts, and journaling, though effects are brief.",
+    "insight_source": [
+      "text-transcript_facts-579",
+      "text-note_facts-550"
+    ],
+    "insight_category": [
+      "Emotional State"
+    ],
+    "entropy": 0.34657359027997264
+  },
+  {
+    "insight_description": "Patient expresses concern that current state may represent her maximum possible improvement.",
+    "insight_source": [
+      "text-transcript_facts-589",
+      "text-note_facts-558"
+    ],
+    "insight_category": [
+      "Emotional State"
+    ],
+    "entropy": 0.34657359027997264
+  },
+  {
+    "insight_description": "Patient experiences both loneliness and relief from partner\u2019s distance, reflecting ambivalent social needs.",
+    "insight_source": [
+      "text-note_facts-555",
+      "text-transcript_facts-580"
+    ],
+    "insight_category": [
+      "Social Interaction",
+      "Emotional State"
+    ],
+    "entropy": 0.34657359027997264
+  },
+  {
+    "insight_description": "Patient\u2019s children are aware of her distress and provide emotional and physical support.",
+    "insight_source": [
+      "text-transcript_facts-584",
+      "text-note_facts-559"
+    ],
+    "insight_category": [
+      "Social Interaction",
+      "Emotional State"
+    ],
+    "entropy": 0.34657359027997264
+  },
+  {
+    "insight_description": "Patient denies current thoughts of self-harm or hopelessness, but feels overwhelmed and wishes for relief.",
+    "insight_source": [
+      "text-transcript_facts-586",
+      "text-note_facts-556"
+    ],
+    "insight_category": [
+      "Emotional State"
+    ],
+    "entropy": 0.34657359027997264
+  },
+  {
+    "insight_description": "Behavioral activation strategies are attempted, but benefits are subtle and not sustained.",
+    "insight_source": [
+      "text-note_facts-567",
+      "text-note_facts-549",
+      "text-transcript_facts-572",
+      "text-transcript_facts-573",
+      "text-note_facts-550"
+    ],
+    "insight_category": [
+      "Emotional State",
+      "Physical Activity"
+    ],
+    "entropy": 0.33650583350462826
+  },
+  {
+    "insight_description": "Support from sister and children provides transient mood improvement and emotional release.",
+    "insight_source": [
+      "text-note_facts-557",
+      "text-transcript_facts-581",
+      "text-note_facts-568",
+      "text-note_facts-559",
+      "text-transcript_facts-584"
+    ],
+    "insight_category": [
+      "Social Interaction",
+      "Emotional State"
+    ],
+    "entropy": 0.33650583350462826
+  },
+  {
+    "insight_description": "Stressors include financial insecurity, reduced work hours, and relationship difficulties with partner.",
+    "insight_source": [
+      "text-note_facts-569",
+      "text-transcript_facts-588",
+      "text-note_facts-555"
+    ],
+    "insight_category": [
+      "Emotional State",
+      "Social Interaction"
+    ],
+    "entropy": 0.3182570841474064
+  },
+  {
+    "insight_description": "Routine regularity and time at home decreased, with increased variability in daily structure.",
+    "insight_source": [
+      "ps-location-229",
+      "ps-location-231",
+      "ps-location-230",
+      "ps-location-285",
+      "ps-location-286",
+      "ps-location-287"
+    ],
+    "insight_category": [
+      "Sleep Patterns",
+      "Physical Activity"
+    ],
+    "entropy": 0.0
+  },
+  {
+    "insight_description": "Digital engagement is fragmented, with high variability in screen unlocks and durations.",
+    "insight_source": [
+      "ps-screen-425",
+      "ps-screen-415",
+      "ps-screen-400",
+      "ps-screen-395",
+      "ps-screen-430",
+      "ps-screen-423"
+    ],
+    "insight_category": [
+      "Digital Engagement"
+    ],
+    "entropy": 0.0
+  },
+  {
+    "insight_description": "Mood and stress scores remain elevated, with high variability in PHQ-4 and PSS-4.",
+    "insight_source": [
+      "sv-survey-200",
+      "sv-survey-534",
+      "sv-survey-538",
+      "sv-survey-537",
+      "sv-survey-536",
+      "sv-survey-532"
+    ],
+    "insight_category": [
+      "Emotional State"
+    ],
+    "entropy": 0.0
+  },
+  {
+    "insight_description": "No current pharmacological intervention; patient is relying on therapy and behavioral strategies.",
+    "insight_source": [
+      "text-note_facts-570",
+      "text-note_facts-565"
+    ],
+    "insight_category": [
+      "Medication & Treatment"
+    ],
+    "entropy": 0.0
+  },
+  {
+    "insight_description": "No evidence of psychosis, mania, or active suicidal ideation; thought process remains logical.",
+    "insight_source": [
+      "text-note_facts-564",
+      "text-note_facts-561"
+    ],
+    "insight_category": [
+      "Emotional State"
+    ],
+    "entropy": 0.0
+  },
+  {
+    "insight_description": "Increased number of significant places visited, but routine regularity and time at home decreased.",
+    "insight_source": [
+      "ps-location-221",
+      "ps-location-140",
+      "ps-location-229",
+      "ps-location-231",
+      "ps-location-285"
+    ],
+    "insight_category": [
+      "Physical Activity",
+      "Sleep Patterns"
+    ],
+    "entropy": 0.0
+  },
+  {
+    "insight_description": "Maximum screen unlock duration at home is highly variable, reflecting inconsistent digital engagement patterns.",
+    "insight_source": [
+      "ps-screen-409",
+      "ps-screen-410",
+      "ps-screen-411",
+      "ps-screen-413",
+      "ps-screen-420"
+    ],
+    "insight_category": [
+      "Digital Engagement"
+    ],
+    "entropy": 0.0
+  },
+  {
+    "insight_description": "Number of sleep episodes and awake episodes are highly variable, indicating fragmented sleep architecture.",
+    "insight_source": [
+      "ps-sleep-77",
+      "ps-sleep-468",
+      "ps-sleep-462",
+      "ps-sleep-463",
+      "ps-sleep-464"
+    ],
+    "insight_category": [
+      "Sleep Patterns"
+    ],
+    "entropy": 0.0
+  },
+  {
+    "insight_description": "Patient is hesitant to disclose struggles at work, confiding only in one trusted coworker.",
+    "insight_source": [
+      "text-transcript_facts-583"
+    ],
+    "insight_category": [
+      "Social Interaction"
+    ],
+    "entropy": 0.0
+  },
+  {
+    "insight_description": "Patient\u2019s affect is flat to mildly reactive, with some positive emotions when discussing family.",
+    "insight_source": [
+      "text-note_facts-559"
+    ],
+    "insight_category": [
+      "Emotional State"
+    ],
+    "entropy": 0.0
+  },
+  {
+    "insight_description": "Patient\u2019s speech is normal in rate and tone, and coherent, despite low mood.",
+    "insight_source": [
+      "text-note_facts-560"
+    ],
+    "insight_category": [
+      "Emotional State"
+    ],
+    "entropy": 0.0
+  }
+]

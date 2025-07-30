@@ -51,11 +51,15 @@ Mock patient history data.
 
 ### Simulated Encounters
 
-Mock depression encounter sessions (4 encounters) with multimodal data (see `fill_session.py`)
+We use different strategies to fill in the simulated encounters (see `fill_session.py`):
+* Session 1: Use the video transcript mentioned above
+* Sessions 2 & 3: LLM generation with human supervision
+* Session 4: The session clinicians (participants) will prepare
+
+For sessions 2 & 3, we generate through the following pipeline:
 * I/O: Takes `context/personas_full.json` & `context/encounters_mock_{patient_id}` as input and output `{patient_id}_full.json` with multimodal data.
-* Description: Generate mock data (transcript, medication, medical notes) for 4 simulated encounters spanning 10 weeks (at 0, 2, 6, 10 weeks respectively).
-* Context provided for generation: patient persona, past encounter and medication history, past encounter with this clinician (this series of mh assessment), and measurement score insights.
-* Transcript: Role-play agents (clinician & patient), using prompt inspired by [Interactive Agents: Simulating Counselor-Client Psychological Counseling via Role-Playing LLM-to-LLM Interactions](http://arxiv.org/abs/2408.15787).
-* Medication: 0-shot generation of medication based on transcript
-* Medical notes: 0-shot generation of medical notes based on transcript & medication (to ensure consistency)
+* Description: Generate mock data (transcript, medication, medical notes) for 2 simulated encounters spanning 10 weeks (for 2, 6 week encounter among the 4 encounters at 0, 2, 6, 10 weeks respectively).
+* Transcript: 0-shot generation based on patient persona, past encounter and medication history, past encounter with this clinician (this series of mh assessment), and passive sensing/survey score insights.
+* Medication: 0-shot generation of medication based on transcript.
+* Medical notes: 0-shot generation of medical notes based on transcript & medication (to ensure consistency).
 * Note: **Running this script will generate data for ALL mock patients.**

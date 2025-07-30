@@ -1,0 +1,45 @@
+{
+  "basicInfoCard": {
+    "name": "Lucy Sutton",
+    "ethnicity": "White",
+    "gender": "Female",
+    "age": 21,
+    "income": "0k-5k",
+    "occupation": "Student",
+    "generation": "Immigrant"
+  },
+  "infoCards": [
+    {
+      "icon": "history",
+      "overviewHeadTitle": "Medical History",
+      "cardContent": {
+        "folded": "Healthy young woman, history of asthma, allergic rhinitis, migraines, recurrent depression, anxiety, social anxiety, insomnia, UTI.",
+        "expanded": "21-year-old female with mild asthma, allergic rhinitis, migraines, recurrent moderate major depressive disorder, social and generalized anxiety, and history of UTI; currently on sertraline."
+      }
+    },
+    {
+      "icon": "history",
+      "overviewHeadTitle": "Sessions Recap",
+      "cardContent": {
+        "folded": "Persistent low mood, anhedonia, social withdrawal, academic stress, sleep/appetite issues, negative self-talk, minimal improvement.",
+        "expanded": "Lucy has persistent low mood, anhedonia, social withdrawal, sleep/appetite issues, academic stress, and negative self-evaluation. She is adherent to sertraline and therapy, with slow progress."
+      }
+    },
+    {
+      "icon": "brain",
+      "overviewHeadTitle": "Current Concerns",
+      "cardContent": {
+        "folded": "Ongoing low motivation, negative self-evaluation, academic backlog, poor sleep, social isolation, passive numbness.",
+        "expanded": "Ongoing low motivation, negative self-talk, academic overwhelm, social isolation, sleep/appetite disturbance, and difficulty sustaining behavioral activation; no active suicidal ideation but passive numbness."
+      }
+    },
+    {
+      "icon": "medication",
+      "overviewHeadTitle": "Medication and Treatment",
+      "cardContent": {
+        "folded": "No medication history with current sessions.",
+        "expanded": "No medication history with current sessions."
+      }
+    }
+  ]
+}

@@ -37,7 +37,7 @@ We also use synthetic data to simulate patient encounters. To see how its raw fo
 
 ## 📕 Prompt References
 * [Englhardt et al. From Classification to Clinical Insights: Towards Analyzing and Reasoning About Mobile and Behavioral Health Data With Large Language Models [IMWUT'24]](https://github.com/ubicomplab/classification-to-clinical)
-* [Qiu and Lan. Interactive Agents: Simulating Counselor-Client Psychological Counseling via Role-Playing LLM-to-LLM Interactions [arXiv'24]](http://arxiv.org/abs/2408.15787)
+
 
 ## 🧋 TODOs (Engineering perspective)
 - [x] Use asyncio for concurrent API calls (currently sequential)

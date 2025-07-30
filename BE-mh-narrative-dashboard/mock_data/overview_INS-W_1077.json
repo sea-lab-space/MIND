@@ -1,0 +1,45 @@
+{
+  "basicInfoCard": {
+    "name": "Alison Daniels",
+    "ethnicity": "Black or African",
+    "gender": "Female",
+    "age": 38,
+    "income": "5k-10k",
+    "occupation": "Retail Sales Worker",
+    "generation": "Second Generation"
+  },
+  "infoCards": [
+    {
+      "icon": "history",
+      "overviewHeadTitle": "Medical History",
+      "cardContent": {
+        "folded": "38-year-old woman with hypertension, obesity, anemia, depression, anxiety, insomnia, relationship distress, chronic stress.",
+        "expanded": "38-year-old woman with hypertension, obesity, iron deficiency anemia, recurrent depression/anxiety (including suicide attempt), insomnia, allergic rhinitis, and chronic psychosocial stressors; on sertraline, lisinopril, fluticasone, and iron."
+      }
+    },
+    {
+      "icon": "history",
+      "overviewHeadTitle": "Sessions Recap",
+      "cardContent": {
+        "folded": "Persistent low mood, anhedonia, fatigue, insomnia, poor appetite, guilt, strained relationships, financial stress.",
+        "expanded": "Alison has persistent low mood, anhedonia, fatigue, poor sleep and appetite, guilt, and functional impairment. She is making small behavioral changes, supported by her sister, with no current suicidal ideation."
+      }
+    },
+    {
+      "icon": "brain",
+      "overviewHeadTitle": "Current Concerns",
+      "cardContent": {
+        "folded": "Mood unchanged, low energy, poor sleep, guilt, loneliness, financial worries, subtle progress with strategies.",
+        "expanded": "Ongoing depression, low motivation, poor sleep and appetite, guilt about parenting and work, financial stress, relationship difficulties, and worries about lack of improvement."
+      }
+    },
+    {
+      "icon": "medication",
+      "overviewHeadTitle": "Medication and Treatment",
+      "cardContent": {
+        "folded": "No medication history with current sessions.",
+        "expanded": "No medication history with current sessions."
+      }
+    }
+  ]
+}
