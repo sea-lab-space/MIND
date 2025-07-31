@@ -26,11 +26,10 @@ import { ChevronDown } from 'lucide-react';
 import type { HeaderProps } from "@/types/props";
 
 const Header: React.FC<HeaderProps> = (props) => {
-  const { patientNames, userName, retrospectHorizon } = props;
+  const { patientNames, userName, retrospectHorizon, isHomePage=true, selectedPatient, setSelectedPatient } = props;
   const [open, setOpen] = useState(false);
 
   // TODO: take person/retrospect selection global if needed
-  const [selectedPerson, setSelectedPerson] = useState<string>("John Doe");
   const [selectedRetrospect, setSelectedRetrospect] = useState<string>(
     Object.keys(retrospectHorizon)[0]
   );
@@ -46,7 +45,7 @@ const Header: React.FC<HeaderProps> = (props) => {
       <div className="flex items-center justify-between px-6 py-2">
         {/* Left - Brand */}
         <div className="flex items-center w-1/3">
-          <h1 className="text-2xl font-bold text-black tracking-tight">MIND</h1>
+          <h1 className="text-2xl font-bold text-black tracking-tight">{isHomePage? 'MIND': ''}</h1>
         </div>
 
         {/* Center - Person Selector */}
@@ -59,7 +58,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                 aria-expanded={open}
                 className="w-[200px] justify-between hover:bg-gray-50 text-black font-normal"
               >
-                {selectedPerson}
+                {selectedPatient}
                 <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
               </Button>
             </PopoverTrigger>
@@ -77,14 +76,14 @@ const Header: React.FC<HeaderProps> = (props) => {
                           const selectedPersonData = people.find(
                             (p) => p.value === currentValue
                           );
-                          setSelectedPerson(selectedPersonData?.label || "");
+                          setSelectedPatient(selectedPersonData?.label || "");
                           setOpen(false);
                         }}
                       >
                         <Check
                           className={cn(
                             "mr-2 h-4 w-4",
-                            selectedPerson === person.label
+                              setSelectedPatient === person.label
                               ? "opacity-100"
                               : "opacity-0"
                           )}

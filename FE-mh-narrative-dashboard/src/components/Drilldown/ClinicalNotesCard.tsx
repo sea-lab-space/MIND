@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import { ClipboardList } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import type { InsightExpandView } from "@/types/dataTypes";
 import ReactMarkdown from "react-markdown";
 import {formatDate} from "@/utils/helper";
 import rehypeRaw from "rehype-raw";
+import type {InsightExpandViewItem} from "@/types/props";
 
 
 interface clinicalNotesFactsProps {
-    clinicalNotesFacts: InsightExpandView[];
+    clinicalNotesFacts: InsightExpandViewItem[];
 }
 
 const ClinicalNotesCard = ({ clinicalNotesFacts }: clinicalNotesFactsProps) => {

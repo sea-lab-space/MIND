@@ -3,10 +3,10 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import InsightGraph from "@/components/DataInsights/InsightGraph";
 import { shouldShowChart } from "@/utils/helper";
-import type {InsightExpandView} from "@/types/dataTypes";
+import type {InsightExpandViewItem} from "@/types/props";
 
 interface PassiveSensingCardProps {
-    passiveSensingFacts: InsightExpandView[];
+    passiveSensingFacts: InsightExpandViewItem[];
 }
 
 const PassiveSensingCard = ({ passiveSensingFacts }: PassiveSensingCardProps) => {

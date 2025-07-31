@@ -1,11 +1,32 @@
 import type {DatasourceIconType, DatasourceIconTypes, DataSourceType, InsightCardData} from "@/types/props";
 import visualizerData from "@/data/Visualizer_INS-W_963.json";
-import {InsightType} from "@/types/props";
+import Gabriella_Lin_Data from "@/data/Visualizer_INS-W_963.json"
+import Lucy_Sutton_Data from "@/data/Visualizer_INS-W_1044.json"
+import Alison_Daniels_Data from "@/data/Visualizer_INS-W_1077.json"
+import type {InsightExpandViewItem, InsightType} from "@/types/props";
 import type { HighlightSpec } from "@/types/insightSpec";
-import type { InsightExpandView } from "@/types/dataTypes";
 
-export const convertGroupedInsightResultsToFE = (): InsightCardData[] => {
-    return visualizerData.insights.map((group, index): InsightCardData => ({
+const personDataMap: Record<string, typeof visualizerData> = {
+    "Gabriella Lin": Gabriella_Lin_Data,
+    "Lucy Sutton": Lucy_Sutton_Data,
+    "Alison Daniels": Alison_Daniels_Data,
+};
+
+
+export const getVisualizerDataForPerson = (personName: string) => {
+    const personData = personDataMap[personName];
+
+    if (!personData) {
+        console.warn(`No data found for ${personName}`);
+        return {
+            overviewCardData: [],
+            insightCardData: [],
+        };
+    }
+
+    const overviewCardData = personData.overview;
+
+    const insightCardData: InsightCardData[] = personData.insights.map((group, index) => ({
         key: `insight-${index + 1}`,
         summaryTitle: group.summaryTitle,
         sources: group.sources.map((type: string) => ({
@@ -20,18 +41,16 @@ export const convertGroupedInsightResultsToFE = (): InsightCardData[] => {
             dataPoints: insight.dataPoints,
             dataSourceType: insight.dataSourceType as DataSourceType,
             highlightSpec: insight.spec as HighlightSpec,
-            // sources: insight.sources.map((type: string) => ({
-            //     type: type as keyof typeof DatasourceIconTypes
-            // }))
             source: insight.sources[0] as keyof typeof DatasourceIconTypes,
-        }) as InsightExpandView)
+        }) as InsightExpandViewItem)
     }));
+
+    return {
+        overviewCardData,
+        insightCardData,
+    };
 };
 
-// TODO: type definition
-export const convertOverviewResultsToFE = (): any => {
-    return visualizerData.overview;
-}
 
 
 export function normalizeDataPoints(

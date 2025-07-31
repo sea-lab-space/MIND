@@ -1,8 +1,8 @@
 import InsightCardComponent from "@/components/DataInsights/InsightCardComponent";
 import { useState, useRef, useEffect } from "react";
-import Header from "./components/header";
-import SectionTitle from "./components/section";
-import DrilldownPanel from "./components/Drilldown/DrilldownPanel";
+import Header from "../components/header";
+import SectionTitle from "../components/section";
+import DrilldownPanel from "../components/Drilldown/DrilldownPanel";
 import OverviewComponent from "@/components/Overview/OverviewComponent";
 import PatientCommunicationComponent from "@/components/PatientCommunication/PatientCommunicationComponent";
 import PatientMessageDialog from "@/components/PatientCommunication/PatientMessageDialog";
@@ -11,20 +11,20 @@ import { Button } from "@/components/ui";
 import { Pencil } from "lucide-react";
 import {FilterSelector} from "@/components/FilterSelector";
 import {data, defaultInsightCardData, nameList, retrospectHorizon} from "@/data/data";
-import {DatasourceIconTypes, InsightType, type DatasourceIconType} from "@/types/props";
+import { InsightType } from "@/types/props";
 import {
-  convertGroupedInsightResultsToFE,
-  convertOverviewResultsToFE,
+   getVisualizerDataForPerson,
 } from "@/utils/dataConversion";
 
 
 const userName = "Ryan";
 
 
-export default function App() {
+export default function HomePage() {
   const [selectedInsightHeader, setSelectedInsightHeader] = useState<string[]>([]);
   const [selectedInsightCard, setSelectedInsightCard] = useState<string | null>(null);
   const [selectedInsightTypes, setSelectedInsightTypes] = useState<InsightType[]>([]);
+  const [selectedPatient, setSelectedPatient] = useState<string>("Gabriella Lin");
   const [isDrillDown, setIsDrillDown] = useState(false);
   const [expandedSections, setExpandedSections] = useState({
     overview: false,
@@ -35,8 +35,7 @@ export default function App() {
   const [insightsDataTemp, setInsightsDataTemp] = useState([]);
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const overviewCardData = convertOverviewResultsToFE();
-  const insightCardData = convertGroupedInsightResultsToFE();
+  const { overviewCardData, insightCardData } = getVisualizerDataForPerson(selectedPatient);
   const patientCommunicationData = data.patientCommunication;
 
   const toggleSection = (section: string) => {
@@ -105,6 +104,8 @@ export default function App() {
             patientNames={nameList}
             userName={userName}
             retrospectHorizon={retrospectHorizon}
+            selectedPatient={selectedPatient}
+            setSelectedPatient={setSelectedPatient}
           />
         </div>
         <FilterSelector
@@ -130,7 +131,7 @@ export default function App() {
           >
             <div className="relative">
               <div className="absolute left-8.5 top-4 bottom-0 w-0.5 bg-[#d9d9d9] z-0" />
-              {/* Overview bg-red-200/50 */}
+              {/* ChartReview bg-red-200/50 */}
               <div className="rounded p-4 relative z-10">
                 <SectionTitle
                   title="Overview"

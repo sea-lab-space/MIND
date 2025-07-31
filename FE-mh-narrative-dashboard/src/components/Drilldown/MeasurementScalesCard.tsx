@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {shouldShowChart} from "@/utils/helper";
 import InsightGraph from "@/components/DataInsights/InsightGraph";
-import type {InsightExpandView} from "@/types/dataTypes";
+import type {InsightExpandViewItem} from "@/types/props";
 
 interface measurementScoreFactsProps {
-    measurementScoreFacts: InsightExpandView[];
+    measurementScoreFacts: InsightExpandViewItem[];
 }
 
 const MeasurementScalesCard = ({measurementScoreFacts} :measurementScoreFactsProps) => {

@@ -1,5 +1,5 @@
 // Datasource types for icons
-import {InsightType} from "@/types/props";
+import type {InsightType, InsightExpandViewItem } from "@/types/props";
 import type { HighlightSpec } from "./insightSpec";
 
 export enum DatasourceIconTypes {
@@ -14,27 +14,16 @@ export type RetrospectOptions = {
     [label: string]: number; // e.g., "Last 3 months": 90
 };
 
-// For each insight's expandable detail
-export interface InsightExpandView {
-  key: string;
-  summarySentence: string;
-  dataSource: any;
-  dataPoints: Record<string, number>;
-  highlightSpec: HighlightSpec;
-  sources: { type: DatasourceIconTypes }[];
-  insightType?: InsightType;
-}
-
 // High-level insight card
 export interface InsightCard {
     key: string;
     summaryTitle: string;
     sources: { type: DatasourceIconTypes }[];
     insightType?: InsightType[]; // optional: to show combined insights
-    expandView: InsightExpandView[];
+    expandView: InsightExpandViewItem[];
 }
 
-// Overview info
+// ChartReview info
 export interface BasicInfoCard {
     name: string;
     age: number;
@@ -43,7 +32,7 @@ export interface BasicInfoCard {
     relationship: string;
 }
 
-// Overview section card
+// ChartReview section card
 export interface OverviewInfoCard {
     icon: string;
     overviewHeadTitle: string;

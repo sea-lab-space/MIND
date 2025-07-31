@@ -1,5 +1,5 @@
-import {DatasourceIconTypes, DataSourceType} from "@/types/props";
-import type {InsightExpandView} from "@/types/dataTypes";
+import {DatasourceIconTypes, DataSourceType } from "@/types/props";
+import type { InsightExpandViewItem, InsightCardData} from "@/types/props";
 
 
 const validChartTypes: DataSourceType[] = [
@@ -28,8 +28,12 @@ const reverseMap = Object.entries(DatasourceIconTypes).reduce((acc, [key, value]
     return acc;
 }, {} as Record<string, string>);
 
-export function groupInsightsBySource(insights: InsightExpandView[] | undefined) {
-    const grouped: Record<string, InsightExpandView[]> = {};
+export function flattenAllExpandViews(insightCards: InsightCardData[]): InsightExpandViewItem[] {
+    return insightCards.flatMap(card => card.expandView ?? []);
+}
+
+export function groupInsightsBySource(insights: InsightExpandViewItem[] | undefined) {
+    const grouped: Record<string, InsightExpandViewItem[]> = {};
 
     for (const insight of insights) {
         const rawSource = insight.source;

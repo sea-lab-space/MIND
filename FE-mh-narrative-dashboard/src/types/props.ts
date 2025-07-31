@@ -16,9 +16,12 @@ export interface DatasourceIconProps {
 }
 
 export interface HeaderProps {
+  isHomePage: boolean;
   patientNames: string[];
   userName: string;
-  retrospectHorizon: RetrospectOptions 
+  retrospectHorizon: RetrospectOptions;
+  selectedPatient: string;
+  setSelectedPatient: (patient: string) => void;
 }
 
 
@@ -46,6 +49,7 @@ export interface InsightExpandViewItem {
   sources: { type: DatasourceIconType }[];
   highlightSpec: HighlightSpec;
   dataSourceType: DataSourceType;
+  insightType?: InsightType;
 }
 
 export interface InsightCardData {

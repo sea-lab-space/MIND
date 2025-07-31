@@ -2,8 +2,8 @@ import {useEffect, useState} from "react";
 import { FileText } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import type {InsightExpandView} from "@/types/dataTypes";
 import {formatDate} from "@/utils/helper";
+import type {InsightExpandViewItem} from "@/types/props";
 
 
 // Background color by relevance
@@ -14,7 +14,7 @@ const getColorByRelevance = (relevance: number) => {
 };
 
 interface clinicalTranscriptsFactsProps {
-    clinicalTranscriptsFacts: InsightExpandView[];
+    clinicalTranscriptsFacts: InsightExpandViewItem[];
 }
 
 const TranscriptCard = ({clinicalTranscriptsFacts} : clinicalTranscriptsFactsProps) => {

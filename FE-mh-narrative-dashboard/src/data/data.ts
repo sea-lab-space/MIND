@@ -3,8 +3,7 @@ import {DatasourceIconTypes, DataSourceType, InsightType, type RetrospectOptions
 import {type BasicInfoCard, type InsightCard, type OverviewInfoCard, type SuggestedActivity} from "../types/dataTypes"
 
 export const nameList = [
-    "John Doe", "Jane Smith", "Mike Johnson", "Sarah Wilson", "David Brown",
-    "Lisa Davis", "Tom Miller", "Emma Garcia", "Alex Martinez", "Olivia Taylor",
+     "Gabriella Lin", "Lucy Sutton", "Alison Daniels",
 ];
 
 export const retrospectHorizon: RetrospectOptions = {

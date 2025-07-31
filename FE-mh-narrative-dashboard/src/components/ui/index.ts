@@ -34,3 +34,8 @@ export {
     DialogTitle,
     DialogTrigger,
 } from './dialog'
+export { Tabs,
+    TabsList,
+    TabsTrigger,
+    TabsContent
+} from "./tabs"

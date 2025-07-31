@@ -9,7 +9,7 @@ import TranscriptCard from "./TranscriptCard";
 import MeasurementScalesCard from "./MeasurementScalesCard";
 import type {InsightCard} from "@/types/dataTypes";
 import {groupInsightsBySource} from "@/utils/helper";
-import type {InsightExpandView} from "@/types/dataTypes";
+import type {InsightExpandViewItem} from "@/types/props";
 
 interface DrilldownPanelProps {
   onClose: () => void;
@@ -17,7 +17,6 @@ interface DrilldownPanelProps {
 }
 
 const DrilldownPanel: React.FC<DrilldownPanelProps> = ({ onClose, insightData }) => {
-    console.log(insightData,"haha")
   const [linkViewsEnabled, setLinkViewsEnabled] = useState(true);
     const {
         passiveSensingFacts = [],
@@ -25,10 +24,10 @@ const DrilldownPanel: React.FC<DrilldownPanelProps> = ({ onClose, insightData })
         clinicalTranscriptsFacts = [],
         measurementScoreFacts = [],
     }: {
-        passiveSensingFacts?: InsightExpandView[];
-        clinicalNotesFacts?: InsightExpandView[];
-        clinicalTranscriptsFacts?: InsightExpandView[];
-        measurementScoreFacts?: InsightExpandView[];
+        passiveSensingFacts?: InsightExpandViewItem[];
+        clinicalNotesFacts?: InsightExpandViewItem[];
+        clinicalTranscriptsFacts?: InsightExpandViewItem[];
+        measurementScoreFacts?: InsightExpandViewItem[];
     } = groupInsightsBySource(insightData?.expandView);
 
   return (
