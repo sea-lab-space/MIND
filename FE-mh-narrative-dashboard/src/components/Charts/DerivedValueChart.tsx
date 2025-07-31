@@ -18,7 +18,7 @@ import type { DataPoint, ValueSpec } from "@/types/insightSpec";
 import { color, extent } from "d3";
 import { dateBetween } from "@/utils/dateHelper";
 import { getColors, HIGHLIGHT_FILL_OPACITY } from "@/utils/colorHelper";
-
+import { calcAverageBetweenDate } from "@/utils/dataHelper";
 
 interface DerivedValueChartProps {
   data: DataPoint[];
@@ -30,38 +30,32 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
 
   const metricKey = Object.keys(data[0] || {}).find((k) => k !== "date") ?? "";
 
-  const {baseColor, highlightColor} = getColors(themeColor)
+  const { baseColor, highlightColor } = getColors(themeColor);
 
   const yRange = extent(data, (d: any) => d[metricKey]) as [number, number];
 
-  const { sum, count } = data.reduce(
-    (acc, curr) => {
-      acc.sum += curr[metricKey] as number;
-      acc.count += 1;
-      return acc;
-    },
-    { sum: 0, count: 0 }
-  )
+  const averageBetweenDate = calcAverageBetweenDate(data, spec.time_1, spec.time_2, metricKey)
 
-  const showVal = spec.aggregation === 'stdev' ? sum / count : spec.value
+  const showVal = spec.aggregation === "stdev" ? averageBetweenDate : spec.value;
 
   const visData = data.map((d) => ({
     ...d,
   }));
 
   const isHighlightBar = (entry: DataPoint) =>
-    spec.aggregation === "max" || spec.aggregation === "min" ? entry[metricKey] === spec.value : false;
-
+    spec.aggregation === "max" || spec.aggregation === "min"
+      ? entry[metricKey] === spec.value
+      : false;
 
   const renderLabel = (props: any) => {
     // console.log(props.viewBox)
-    const { offset } = props
+    const { offset } = props;
     const { x, y, width } = props.viewBox;
     // place label in the middle horizontally
 
     return (
       <foreignObject
-        x={x + width / 2 - 80 }
+        x={x + width / 2 - 80}
         y={y + offset}
         width={160}
         height={30}
@@ -73,7 +67,6 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
       </foreignObject>
     );
   };
-
 
   return (
     <ResponsiveContainer width="100%" height="100%">

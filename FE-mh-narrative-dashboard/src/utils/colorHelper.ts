@@ -6,8 +6,8 @@ import {
 
 export const getColors = (themeColor: string) => {
   const d3ThemeColor = d3color(themeColor);
-  const baseColor = d3ThemeColor?.brighter(1).formatHex() ?? "#626681";
-  const highlightColor = getComplementaryColor(d3ThemeColor);
+  const baseColor = d3ThemeColor?.formatHex() ?? "#8c92b8";
+  const highlightColor = "#ba1e30ff";
   return { baseColor, highlightColor };
 };
 

@@ -69,35 +69,35 @@ export default function InsightGraph({
       <ExtremeChart
         data={normalized}
         spec={highlightSpec as ExtremeSpec}
-        themeColor={color ?? "#626681"}
+        themeColor={color ?? "#8c92b8"}
       />
     ),
     "derived value": (
       <DerivedValueChart
         data={normalized}
         spec={highlightSpec as ValueSpec}
-        themeColor={color ?? "#626681"}
+        themeColor={color ?? "#8c92b8"}
       />
     ),
     difference: (
       <DifferenceChart
         data={normalized}
         spec={highlightSpec as DifferenceSpec}
-        themeColor={color ?? "#626681"}
+        themeColor={color ?? "#8c92b8"}
       />
     ),
     comparison: (
       <ComparisonChart
         data={normalized}
         spec={highlightSpec as ComparisonSpec}
-        themeColor={color ?? "#626681"}
+        themeColor={color ?? "#8c92b8"}
       />
     ),
     trend: (
       <TrendChart
         data={normalized}
         spec={highlightSpec as TrendSpec}
-        themeColor={color ?? "#626681"}
+        themeColor={color ?? "#8c92b8"}
       />
     ),
     text: <></>,

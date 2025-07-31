@@ -45,6 +45,17 @@ export default function HomePage() {
     }));
   };
 
+  // TODO: retracts expaned card if drilldown is called
+  // useEffect(() => {
+  //   if (isDrillDown) {
+  //     setExpandedSections((prev) => ({
+  //       ...prev,
+  //       insights: false,
+  //     })
+  //     )
+  //   }
+  // }, [isDrillDown])
+
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const { width: windowWidth } = useWindowSize();
   const rightPanelWidth = isDrillDown ? Math.max((windowWidth * 2) / 3, 800) : 0;

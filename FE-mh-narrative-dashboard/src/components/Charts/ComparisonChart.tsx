@@ -9,12 +9,15 @@ import {
   Cell,
   ReferenceArea,
   Customized,
+  ReferenceLine,
 } from "recharts";
 import type { ComparisonSpec, DataPoint } from "@/types/insightSpec";
 import { color } from "d3";
 import { extent } from "d3-array";
 import { dateBetween } from "@/utils/dateHelper";
 import { getColors, HIGHLIGHT_FILL_OPACITY } from "@/utils/colorHelper";
+import { calcAverageBetweenDate } from "@/utils/dataHelper";
+import { useEffect, useState } from "react";
 
 interface ComparisonChartProps {
   data: DataPoint[];
@@ -27,14 +30,67 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
 
   const metricKey = Object.keys(data[0] || {}).find((k) => k !== "date") ?? "";
 
-  const {baseColor, highlightColor} = getColors(themeColor)
+  const { baseColor, highlightColor } = getColors(themeColor);
 
   const yRange = extent(data, (d: any) => d[metricKey]) as [number, number];
+
+
+
+  const isShowAvg = spec.aggregation === "stdev";
+
+  const avg_time_1 = 
+    calcAverageBetweenDate(
+      data,
+      spec.time_dur_1.time_start,
+      spec.time_dur_1.time_end,
+      metricKey
+    )
+
+  const avg_time_2 = calcAverageBetweenDate(
+    data,
+    spec.time_dur_2.time_start,
+    spec.time_dur_2.time_end,
+    metricKey
+  );
+
+  const showVal = isShowAvg
+    ? {
+        time_1: avg_time_1,
+        time_2: avg_time_2
+      }
+    : {
+        time_1: spec.value_dur_1,
+        time_2: spec.value_dur_2,
+      };
+
+  console.log(showVal)
+
 
 
   const visData = data.map((d) => ({
     ...d,
   }));
+
+  const renderLabel = (props: any) => {
+    // console.log(props.viewBox)
+    const { offset } = props;
+    const { x, y, width } = props.viewBox;
+    // place label in the middle horizontally
+
+    return (
+      <foreignObject
+        x={x + width / 2 - 80}
+        y={y + offset}
+        width={160}
+        height={30}
+        // style={{ overflow: "visible" }} is ${spec.value.toFixed(2)}
+      >
+        <div className="bg-white/70 text-gray-500 text-s flex items-center justify-center">
+          {`${spec.aggregation}`}
+        </div>
+      </foreignObject>
+    );
+  };
 
   return (
     <ResponsiveContainer width="100%" height="100%">
@@ -78,12 +134,27 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
           ))} */}
         </Line>
 
-        {/* <Customized component={
-          (props) => {
-            console.log(props);
-            return null
-          }
-        } /> */}
+        <ReferenceLine
+          label={renderLabel}
+          stroke="red"
+          strokeWidth={3}
+          strokeDasharray="3 3"
+          segment={[
+            { x: spec.time_dur_1.time_start, y: showVal?.time_1 },
+            { x: spec.time_dur_1.time_end, y: showVal?.time_1 },
+          ]}
+        />
+
+        <ReferenceLine
+          label={renderLabel}
+          stroke="red"
+          strokeWidth={3}
+          strokeDasharray="3 3"
+          segment={[
+            { x: spec.time_dur_2.time_start, y: showVal?.time_2 },
+            { x: spec.time_dur_2.time_end, y: showVal?.time_2 },
+          ]}
+        />
       </LineChart>
     </ResponsiveContainer>
   );

@@ -65,10 +65,11 @@ export interface ValueSpec {
 export interface ComparisonSpec {
   name: string;
   attribute: ComparisonDifferenceAttributes;
+  aggregation: SpecAggregation;
   time_dur_1: TimeDuration;
   time_dur_2: TimeDuration;
-  val_dur_1: number;
-  val_dur_2: number;
+  value_dur_1: number;
+  value_dur_2: number;
   fact_description: string;
   fact_type: Extract<DataSourceType, "comparison">;
 }

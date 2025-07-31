@@ -9,6 +9,7 @@ import {
   Cell,
   ReferenceArea,
   Customized,
+  ReferenceLine,
 } from "recharts";
 import type { DataPoint, TrendSpec } from "@/types/insightSpec";
 import { color } from "d3";
@@ -30,6 +31,34 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
   const {baseColor, highlightColor} = getColors(themeColor)
 
   const yRange = extent(data, (d: any) => d[metricKey]) as [number, number];
+
+  const getDataOnDate = (date: string): number => {
+    const response = data.find((d) => d.date === date);
+    if (!response || typeof response[metricKey] !== "number") {
+      return 0;
+    }
+    return response[metricKey];
+  };
+
+  const auxilaryLine = () => {
+    if (spec.attribute === "rise" || spec.attribute === "fall") {
+      return (
+        <ReferenceLine
+          stroke="red"
+          strokeWidth={1}
+          // strokeDasharray="3 3"
+          strokeOpacity={0.5}
+          segment={[
+            { x: spec.time_1, y: getDataOnDate(spec.time_1) },
+            { x: spec.time_2, y: getDataOnDate(spec.time_2) },
+          ]}
+        />
+      );
+    }
+
+    // Optional: return null if nothing should render
+    return null;
+  };
 
 
   const visData = data.map((d) => ({
@@ -69,6 +98,7 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
             />
           ))} */}
         </Line>
+        {auxilaryLine()}
 
         {/* <Customized component={
           (props) => {
