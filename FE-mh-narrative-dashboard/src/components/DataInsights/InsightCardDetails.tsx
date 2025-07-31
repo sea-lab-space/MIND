@@ -1,18 +1,18 @@
-import { type InsightCardData } from "@/types/props";
+import {type InsightExpandViewItem} from "@/types/props";
 import InsightGraph from "@/components/DataInsights/InsightGraph";
 import {shouldShowChart} from "@/utils/helper";
 
 export interface InsightCardDetailProps {
-    insightCardData: InsightCardData;
+    insightCardDataExpandView: InsightExpandViewItem[] | undefined;
 }
 
 export default function InsightCardDetail({
-                                              insightCardData,
+                                              insightCardDataExpandView,
                                           }: InsightCardDetailProps) {
     return (
         <div className="space-y-2 pt-3 pl-3 text-sm">
             <div className="space-y-4">
-                {insightCardData.expandView.map((detail) => {
+                {insightCardDataExpandView?.map((detail) => {
                     const showChart = shouldShowChart(detail.dataSourceType, detail.dataPoints);
 
                     return (

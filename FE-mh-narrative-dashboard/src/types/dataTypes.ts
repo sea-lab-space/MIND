@@ -1,6 +1,5 @@
 // Datasource types for icons
 import type {InsightType, InsightExpandViewItem } from "@/types/props";
-import type { HighlightSpec } from "./insightSpec";
 
 export enum DatasourceIconTypes {
     measurementScore = "measurementScore",

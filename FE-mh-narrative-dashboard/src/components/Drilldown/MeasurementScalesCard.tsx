@@ -64,23 +64,23 @@ return (
           ))}
         </div>
 
-        {/* Right Side: Chart */}
-        <div className="flex items-center justify-center flex-1">
-          <div className="w-full h-72">
-            {showChart && selectedInsight && (
-              <InsightGraph
-                dataSourceType={selectedInsight.dataSourceType}
-                highlightSpec={selectedInsight.highlightSpec}
-                data={selectedInsight.dataPoints}
-                color={"#fb923c"}
-                isSurvey={true}
-              />
-            )}
-          </div>
-        </div>
-      </div>
-    </CardContent>
-  </Card>
+                {/* Right Side: Chart */}
+                <div className="flex items-center justify-center flex-1 ">
+                    <div className="w-full h-72">
+                        {showChart && selectedInsight && (
+                            <InsightGraph
+                                dataSourceType={selectedInsight.dataSourceType}
+                                highlightSpec={selectedInsight.highlightSpec}
+                                data={selectedInsight.dataPoints}
+                                color={'#fb923c'}
+                                isSurvey={true}
+                            />
+                        )}
+                    </div>
+                </div>
+            </div>
+        </CardContent>
+    </Card>
 );
 };
 export default MeasurementScalesCard;

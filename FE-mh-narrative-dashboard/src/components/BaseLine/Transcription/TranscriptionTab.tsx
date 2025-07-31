@@ -1,21 +1,20 @@
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import OverviewSummary from "@/components/BaseLine/OverciewSummary";
 import type {InsightExpandViewItem} from "@/types/props";
-import ReactMarkdown from "react-markdown";
+import {useEffect, useState} from "react";
+import OverviewSummary from "@/components/BaseLine/OverciewSummary";
+import {Button} from "@/components/ui";
 
-interface ClinicalNotesTabProps {
+interface TranscriptionTabProps {
     overviewCardData: Record<string, string>;
-    clinicalNotesFacts: InsightExpandViewItem;
+    clinicalTranscriptsFacts: InsightExpandViewItem;
 }
 
-const ClinicalNotesTab: React.FC<ClinicalNotesTabProps> = ({
+const TranscriptionTab: React.FC<TranscriptionTabProps> = ({
                                                                overviewCardData,
-                                                               clinicalNotesFacts,
+                                                               clinicalTranscriptsFacts,
                                                            }) => {
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
 
-    const dates = clinicalNotesFacts?.dataPoints?.map((fact) => fact.date);
+    const dates = clinicalTranscriptsFacts?.dataPoints?.map((fact) => fact.date);
 
     useEffect(() => {
         if (dates && dates.length > 0 && !selectedDate) {
@@ -24,10 +23,9 @@ const ClinicalNotesTab: React.FC<ClinicalNotesTabProps> = ({
     }, [dates, selectedDate]);
 
     // Get the record for the selected date
-    const selectedFact = clinicalNotesFacts?.dataPoints?.find(
+    const selectedFact = clinicalTranscriptsFacts?.dataPoints?.find(
         (fact) => fact.date === selectedDate
     );
-
     return (
         <div className="flex gap-4">
             {/* Sidebar: Overview + Date Buttons */}
@@ -57,21 +55,29 @@ const ClinicalNotesTab: React.FC<ClinicalNotesTabProps> = ({
 
             {/* Main Content: Clinical Note Text */}
             <div className="flex-1 overflow-y-auto max-h-[750px] p-4 bg-gray-50 border rounded-xl shadow">
-                <h2 className="text-lg font-semibold">Clinical Note</h2>
+                <h2 className="text-lg font-semibold">Transcriptions</h2>
                 <p className="text-sm text-muted-foreground mb-4">
                     {selectedDate ? `Date: ${selectedDate}` : "No date selected"}
                 </p>
 
-                {selectedFact?.record ? (
-                    <ReactMarkdown>
-                        {selectedFact.record}
-                    </ReactMarkdown>
-                ) : (
-                    <p className="text-sm text-gray-500">No record available for this date.</p>
-                )}
+                <div className="prose prose-sm max-w-none text-[#2c2c2c]">
+                    {selectedFact?.record?.map((recordInfo, i) => (
+                        <div key={i} className="mb-4 space-y-1">
+                            {Object.keys(recordInfo).map((key) => {
+                                const value = recordInfo[key];
+                                return (
+                                    <div key={key} className="flex">
+                                        <strong className="capitalize mr-2">{key}:</strong>
+                                        <span className="whitespace-pre-wrap">{value}</span>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
 };
 
-export default ClinicalNotesTab;
+export default TranscriptionTab;

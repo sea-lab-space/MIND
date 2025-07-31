@@ -9,7 +9,8 @@ import * as React from "react";
 import ClinicalNotesTab from "@/components/BaseLine/ClinicalNotes/ClinicalNotesTab";
 import {flattenAllExpandViews, groupInsightsBySource} from "@/utils/helper";
 import type {InsightExpandViewItem} from "@/types/props";
-
+import TranscriptionTab from "@/components/BaseLine/Transcription/TranscriptionTab";
+import MeasurementScoreTab from "@/components/BaseLine/MeasurementScore/MeasurementScoreTab";
 
 export type TabKey =
     | "chart-review"
@@ -30,7 +31,6 @@ export default function BaselinePage() {
     const [selectedPatient, setSelectedPatient] = useState<string>("Gabriella Lin");
 
     const { overviewCardData, insightCardData } = getVisualizerDataForPerson(selectedPatient);
-    console.log(insightCardData, "printing")
     const allExpandViews = flattenAllExpandViews(insightCardData);
 
     const {
@@ -45,8 +45,6 @@ export default function BaselinePage() {
         measurementScoreFacts?: InsightExpandViewItem[];
     } = groupInsightsBySource(allExpandViews);
 
-    console.log(clinicalNotesFacts)
-
     const tabItems: TabItem[] = [
         {
             key: "chart-review",
@@ -58,12 +56,22 @@ export default function BaselinePage() {
         {
             key: "passive-sensing",
             label: "Passive Sensing Data",
-            component: <PassiveSensingTab overviewCardData={overviewCardData?.basicInfoCard} />,
+            component: <PassiveSensingTab overviewCardData={overviewCardData?.basicInfoCard} passiveSensingFacts={passiveSensingFacts}/>,
         },
         {
             key: "clinical-notes",
             label: "Clinical Notes",
-            component: <ClinicalNotesTab overviewCardData={overviewCardData?.basicInfoCard} />,
+            component: <ClinicalNotesTab overviewCardData={overviewCardData?.basicInfoCard} clinicalNotesFacts={clinicalNotesFacts[0]}/>,
+        },
+        {
+            key: "transcription",
+            label: "Transcription",
+            component: <TranscriptionTab overviewCardData={overviewCardData?.basicInfoCard} clinicalTranscriptsFacts={clinicalTranscriptsFacts[0]}/>,
+        },
+        {
+            key: "measurement-score",
+            label: "Measurement Score",
+            component: <MeasurementScoreTab overviewCardData={overviewCardData?.basicInfoCard} measurementScoreFacts={measurementScoreFacts}/>,
         },
     ];
 
@@ -82,8 +90,8 @@ export default function BaselinePage() {
             </div>
 
             {/* Page Content */}
-            <div className="h-[calc(100vh-64px)] w-screen p-2">
-                <div className="flex flex-col flex-1 overflow-hidden p-4 gap-4">
+            <div className="h-[calc(100vh-100px)] w-screen p-2">
+                <div className="flex flex-col h-full overflow-y-auto px-4 gap-4">
                     {/* Tabs */}
                     <Tabs value={activeTab} onValueChange={(val) => setActiveTab(val as TabKey)} className="w-full">
                         <TabsList className="grid w-full grid-cols-5 mb-4">

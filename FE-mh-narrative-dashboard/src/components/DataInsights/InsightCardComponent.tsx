@@ -68,7 +68,7 @@ export default function InsightCardComponent({
 
             {isExpanded && (
                 <div className="pt-0 space-y-2 text-left">
-                    <InsightCardDetail insightCardData={insightCardData}/>
+                    <InsightCardDetail insightCardDataExpandView={insightCardData?.expandView}/>
                 </div>
             )}
 
