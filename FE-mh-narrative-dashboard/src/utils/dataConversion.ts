@@ -52,7 +52,7 @@ export const getVisualizerDataForPerson = (personName: string) => {
 };
 
 
-
+// TODO: rename function --> normalize does not mean that typically
 export function normalizeDataPoints(
     rawData: Record<string, number | null> | any[]
 ){
