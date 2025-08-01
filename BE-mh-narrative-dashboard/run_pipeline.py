@@ -27,6 +27,7 @@ class MINDPipeline:
         self.visualization_spec = None
         self.overview = None
         self.suggest_activity = None
+        self.rewritten_data_facts = None
 
     def _log(self, msg):
         if self.save_to_cache:
@@ -141,11 +142,14 @@ class MINDPipeline:
                 "data_insights_narrative")
         else:
             self._log("[Narrator] Generating")
-            from visualizer.narrator import NarratorAgent
-            narrator = NarratorAgent(self.model_name)
+            from narrator.narrator import Narrator
+            narrator = Narrator(
+                data_fact_list=self.data_fact_list,
+                data_insights_full=self.data_insights,
+                model_name=self.model_name)
             # TODO: remove this asyncio
-            self.data_insights_narrative = asyncio.run(narrator.run(
-                self.data_insights, verbose=False))
+            self.data_insights_narrative, self.rewritten_data_facts = narrator.run(
+                self.data_insights, verbose=False)
             if self.save_to_cache:
                 self._save("data_insights_narrative",
                            self.data_insights_narrative)
@@ -156,7 +160,7 @@ class MINDPipeline:
         from visualizer import Visualizer
         visualizer = Visualizer(
             data_insights=self.data_insights_narrative,
-            data_fact_list=self.data_fact_list,
+            data_fact_list=self.rewritten_data_facts,
             raw_data=self.data
         )
         self.visualization_spec = visualizer.run()
@@ -232,7 +236,7 @@ if __name__ == "__main__":
             .load_data(load_from_cache=True)
             .run_discoverer(load_from_cache=True)
             .run_synthesizer(iters=2, load_from_cache=True)
-            .run_narrator(load_from_cache=True)
+            .run_narrator(load_from_cache=False)
             .run_overview(load_from_cache=True)
             .run_suggest_activity(load_from_cache=True)
             .run_visualizer()

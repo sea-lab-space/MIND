@@ -395,150 +395,6 @@
     },
     {
       "key": "insight-4",
-      "summaryTitle": "Patient’s negative thoughts and self-criticism persist even as PHQ-4 depression scores temporarily improve.",
-      "sources": [
-        "survey",
-        "clinical note"
-      ],
-      "insightType": [
-        "Emotional State"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "Gabriella experiences recurring negative automatic thoughts, particularly self-criticism and feelings of inadequacy.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "She has been able to track negative thoughts as previously discussed, noting recurring themes of self-criticism and feelings of inadequacy (“I’m useless,” “I’m letting everyone down”)."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text"
-        },
-        {
-          "summarySentence": "The PHQ-4 Depression Score showed a fall trend from 2021-05-09 to 2021-05-16.",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 Depression Score": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 Depression Score": 2.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 Depression Score": 2.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 Depression Score": 2.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 Depression Score": 4.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 Depression Score": 4.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 Depression Score": 2.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 Depression Score": 2.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 Depression Score": 0.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 Depression Score": 2.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 Depression Score",
-            "attribute": "fall",
-            "time_1": "2021-05-09",
-            "time_2": "2021-05-16",
-            "fact_description": "The PHQ-4 Depression Score showed a fall trend from 2021-05-09 to 2021-05-16.",
-            "fact_type": "trend"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "trend"
-        },
-        {
-          "summarySentence": "The PHQ-4 Depression Score was 4.0 on 2021-04-04 and became less at 0.0 on 2021-05-30.",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 Depression Score": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 Depression Score": 2.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 Depression Score": 2.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 Depression Score": 2.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 Depression Score": 4.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 Depression Score": 4.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 Depression Score": 2.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 Depression Score": 2.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 Depression Score": 0.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 Depression Score": 2.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 Depression Score",
-            "attribute": "less",
-            "time_1": "2021-04-04",
-            "time_2": "2021-05-30",
-            "value_1": 4.0,
-            "value_2": 0.0,
-            "fact_description": "The PHQ-4 Depression Score was 4.0 on 2021-04-04 and became less at 0.0 on 2021-05-30.",
-            "fact_type": "difference"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "difference"
-        }
-      ]
-    },
-    {
-      "key": "insight-5",
       "summaryTitle": "Patient avoids reaching out to friends due to anxiety and embarrassment about explaining her absence.",
       "sources": [
         "session transcript",
@@ -582,7 +438,7 @@
       ]
     },
     {
-      "key": "insight-6",
+      "key": "insight-5",
       "summaryTitle": "Ongoing social withdrawal and isolation, with minimal contact with friends and peers despite some work engagement.",
       "sources": [
         "session transcript",
@@ -646,12 +502,12 @@
       ]
     },
     {
-      "key": "insight-7",
+      "key": "insight-6",
       "summaryTitle": "Sleep is fragmented with frequent awakenings, variable onset, and increased late-night snacking reported.",
       "sources": [
-        "passive sensing",
         "session transcript",
-        "clinical note"
+        "clinical note",
+        "passive sensing"
       ],
       "insightType": [
         "Sleep Patterns"
@@ -1286,11 +1142,11 @@
       ]
     },
     {
-      "key": "insight-8",
+      "key": "insight-7",
       "summaryTitle": "Patient reports sleep worsens with increased phone use before bed, consistent with high late-night screen unlocks.",
       "sources": [
-        "passive sensing",
-        "session transcript"
+        "session transcript",
+        "passive sensing"
       ],
       "insightType": [
         "Sleep Patterns",
@@ -1911,7 +1767,7 @@
       ]
     },
     {
-      "key": "insight-9",
+      "key": "insight-8",
       "summaryTitle": "Physical activity is generally low, with high sedentary episodes and only occasional increases in steps.",
       "sources": [
         "passive sensing"
@@ -3130,7 +2986,7 @@
       ]
     },
     {
-      "key": "insight-10",
+      "key": "insight-9",
       "summaryTitle": "PHQ-4 depression scores decreased as physical activity and steps increased in late May.",
       "sources": [
         "survey",
@@ -3793,6 +3649,75 @@
             "passive sensing"
           ],
           "dataSourceType": "extreme"
+        }
+      ]
+    },
+    {
+      "key": "insight-10",
+      "summaryTitle": "Patient finds brief relief from depressive symptoms through music and walking, but effects are fleeting.",
+      "sources": [
+        "session transcript",
+        "clinical note"
+      ],
+      "insightType": [
+        "Emotional State",
+        "Physical Activity"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "The patient reports that listening to music and taking short walks provide brief, mild relief from depressive symptoms.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: Yeah, a little. I listened to some old playlists when I was walking. It was okay, like, it helped me not think so much for a bit."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: I went for a couple of walks around the block. Sometimes it’s hard to get going, but I did it, even if they were short."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: Maybe just a tiny bit lighter, but it doesn’t last very long. Mostly I’m still tired."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text"
+        },
+        {
+          "summarySentence": "The patient experienced a brief moment of hope during a walk with music, but the feeling was fleeting.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: Um… maybe during the walk with music, just for a few minutes I thought, maybe I won’t always feel this way. But the feeling went away."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text"
+        },
+        {
+          "summarySentence": "Gabriella engages in some pleasurable activities, such as listening to music and taking short walks, which provide minor, temporary relief.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Gabriella reports some engagement in pleasurable activities, such as listening to music and taking short walks, which provide minor, temporary relief."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text"
         }
       ]
     },

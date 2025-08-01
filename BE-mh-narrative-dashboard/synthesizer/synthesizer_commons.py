@@ -47,7 +47,8 @@ Consider the following rules:
 * Prioritize insights that can be used to help clinicians make better decisions.
 * Describe data insight that could be useful for mental health clinicians, but do not say the insight 'indicates' or 'suggests' anything. 
 * Be concrete, specific, but succinct. Do not use more than 15 words for each data insight.
-* Mimic the examples provided by the expert. There is no need to start sentences with 'The patient shows' or 'The patient has'.
+* Mimic the examples provided by the expert. Do not start sentences with 'The patient shows' or 'The patient has', 'she/he shows' or 'she/he has' or patient's name.
+* Ensure insights are strictly grounded in the data. Do not hallucinate or introduce unsupported claims. Avoid risky assumptions—only draw conclusions that are directly supported by the data's granularity and structure (e.g., if the data is daily, do not infer behaviors at an hourly or sub-daily level).
 """
 
 

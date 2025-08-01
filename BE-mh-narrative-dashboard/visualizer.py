@@ -1,10 +1,6 @@
-
-
-
-
-import asyncio
 import math
-from visualizer.narrator import NarratorAgent
+
+from utils.search import search_id_in_facts
 
 class Visualizer:
     def __init__(self, data_insights, data_fact_list, raw_data):
@@ -14,11 +10,6 @@ class Visualizer:
         self.data_fact_list = data_fact_list
         self.raw_data = raw_data
         self.insight_count = 0
-
-    def _search_id_in_facts(self, fact_id):
-        for fact in self.data_fact_list:
-            if fact['id'] == fact_id:
-                return fact
             
     def _search_raw_data(self, source, name):
         for data in self.raw_data['numerical_data']:
@@ -52,7 +43,7 @@ class Visualizer:
             inference_sources = []
             expand_view = []
             for fact in fact_ids:
-                fact = self._search_id_in_facts(fact)
+                fact = search_id_in_facts(self.data_fact_list, fact)
                 # ! occurance where it can not be backtraced
                 if fact is None:
                     print('error in id')

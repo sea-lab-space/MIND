@@ -1,21 +1,12 @@
-from pydantic import BaseModel, Field
+import asyncio
 from agents import Agent, ModelSettings, Runner
-from typing import List, Literal
-from datetime import datetime
-import sys
-from pathlib import Path
-from dotenv import load_dotenv
 from synthesizer import (
     CATEGORIES
 )
 from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE, OPENAI_AGENTIC_PLANNING, get_mh_data_expert_system_prompt
+from utils.search import search_id_in_facts
 from utils.tools import retrive_data_facts
-
-project_root = Path(__file__).parent.parent.parent
-print(project_root)
-sys.path.append(str(project_root))
-load_dotenv()
-
+from MIND_types import NarratorOutputModel
 
 NARRATOR_CATEGORY_THEMES = (
     "Insight themes:\n"
@@ -48,11 +39,9 @@ Let's think step by step:
 5. Return only the list of IDs, in final narrative order.
 """
 
-class InsightVisualierOutputModel(BaseModel):
-    insights: List[str]
 
-class NarratorAgent:
-    OUTPUT_MODEL = InsightVisualierOutputModel
+class ThreaderNarratorAgent:
+    OUTPUT_MODEL = NarratorOutputModel
 
     def __init__(self, model: str):
         self.agent = Agent(
@@ -68,12 +57,11 @@ class NarratorAgent:
             {get_mh_data_expert_system_prompt()}
             {NARRATOR_SYSTEM}
         """
-    
 
     def _glue_data_insights(self, data_insights):
         for i, insight in enumerate(data_insights):
             data_insights[i]["insight_id"] = f"ins-{i}"
-        
+
         prompt_str = "\n".join(
             f"<{insight['insight_id']}>: {insight['insight_description']} [{', '.join(insight['insight_category'])}]"
             for i, insight in enumerate(data_insights)
@@ -85,13 +73,14 @@ class NarratorAgent:
         self.agent.instructions = self._glue_instructions()
         if verbose:
             print(data_insights)
-        
-        prompt_input, data_insights_ided = self._glue_data_insights(data_insights)
+
+        prompt_input, data_insights_ided = self._glue_data_insights(
+            data_insights)
 
         res = await Runner.run(self.agent, prompt_input)
         res_dict = res.final_output.model_dump()
         data_insights_list = res_dict.get("insights")
-        
+
         # find the original insights based on the ids
         sequenced_data_insights = []
         for insight_id in data_insights_list:
@@ -102,3 +91,29 @@ class NarratorAgent:
         if verbose:
             print(sequenced_data_insights)
         return sequenced_data_insights
+
+
+
+
+class Narrator:
+    def __init__(self, data_insights_full, data_fact_list, model_name: str = "gpt-4.1"):
+        self.agent = ThreaderNarratorAgent(model=model_name)
+        self.data_insights_full = data_insights_full
+        self.data_fact_list = data_fact_list
+
+
+    def run(self, data_insights: dict, verbose: bool = False):
+        data_insights_narrative = asyncio.run(self.agent.run(data_insights, verbose))
+
+        full_facts = []
+        for insight in data_insights_narrative:
+            fact_ids = insight["insight_source"]
+            for fact_id in fact_ids:
+                source_fact = search_id_in_facts(self.data_fact_list, fact_id)
+                full_facts.append(source_fact)
+
+        # TODO [start]: create a rewriter agent; concurrently rewrite the facts
+        print(len(full_facts))
+        data_fact_list_rewritten = full_facts
+        # TODO [end]: collect all the response and put it back in data_fact_list_rewritten
+        return data_insights_narrative, data_fact_list_rewritten

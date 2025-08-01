@@ -34,10 +34,10 @@ class ActivityAgent:
             Clinical Notes
             {clinical_notes}
         """)
-        print(clinical_notes)
+        # print(clinical_notes)
         
         res_dict = res.final_output.model_dump()
-        print(res_dict)
+        # print(res_dict)
         return res_dict.get("response") or []
     
     def run(self, clinical_notes):
