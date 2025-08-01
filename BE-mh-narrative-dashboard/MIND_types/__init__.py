@@ -2,3 +2,4 @@ from .medication_type import MedicationResponse
 from .encounter_type import EncounterResponse
 from .transcript_type import TranscriptResponse
 from .discoverer_text_type import TextDataDiscoveryOutputModel
+from .activity_type import ActivityResponse

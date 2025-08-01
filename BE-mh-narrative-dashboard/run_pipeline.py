@@ -2,7 +2,8 @@ import asyncio
 import json
 import time
 from pathlib import Path
-
+from dotenv import load_dotenv
+load_dotenv()
 class MINDPipeline:
     def __init__(self, patient_id: str,
                  model_name: str = "gpt-4.1",
@@ -25,6 +26,7 @@ class MINDPipeline:
         self.data_insights_narrative = None
         self.visualization_spec = None
         self.overview = None
+        self.suggest_activity = None
 
     def _log(self, msg):
         if self.save_to_cache:
@@ -166,7 +168,7 @@ class MINDPipeline:
             self.overview = self._load("overview")
         else:
             self._log("[Overview] Generating")
-            from utils.overview_generation import SummarizationAgent
+            from helpers.overview_generation import SummarizationAgent
             summarizer = SummarizationAgent(
                 self.data,
                 retrospect_date=self.retrospect_date,
@@ -176,6 +178,21 @@ class MINDPipeline:
             self.overview = summarizer.run()
             if self.save_to_cache:
                 self._save("overview", self.overview)
+        return self
+    
+    def run_suggest_activity(self, load_from_cache=False):
+        if load_from_cache and (self.cache_dir / "suggest_activity.json").exists():
+            self._log("[Suggest Activity] Loading from cache")
+            self.suggest_activity = self._load("suggest_activity")
+        else:
+            self._log("[Suggest Activity] Generating")
+            from helpers import ActivityAgent
+            suggest_activity = ActivityAgent(model_name=self.model_name)
+            clinical_notes = "\n".join([datum['clinical_note']
+                                       for datum in self.data['this_series']])
+            self.suggest_activity = suggest_activity.run(clinical_notes=clinical_notes)
+            if self.save_to_cache:
+                self._save("suggest_activity", self.suggest_activity)
         return self
     
     def _get_all_passive_sensing_raw(self):
@@ -191,7 +208,8 @@ class MINDPipeline:
             "overview": self.overview,
             "insights": self.visualization_spec,
             "session_subjective_info": self.data['this_series'],
-            "passive_sensing_raw": self._get_all_passive_sensing_raw()
+            "passive_sensing_raw": self._get_all_passive_sensing_raw(),
+            "suggest_activity": self.suggest_activity
         }
         self._save(f"{self.patient_id}", final_spec, is_parent=True)
         return final_spec
@@ -216,6 +234,7 @@ if __name__ == "__main__":
             .run_synthesizer(iters=2, load_from_cache=True)
             .run_narrator(load_from_cache=True)
             .run_overview(load_from_cache=True)
+            .run_suggest_activity(load_from_cache=True)
             .run_visualizer()
             .run_assembly()
         )

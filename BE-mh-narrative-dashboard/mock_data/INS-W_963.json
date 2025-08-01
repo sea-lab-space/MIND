@@ -649,8 +649,8 @@
       "key": "insight-7",
       "summaryTitle": "Sleep is fragmented with frequent awakenings, variable onset, and increased late-night snacking reported.",
       "sources": [
-        "session transcript",
         "passive sensing",
+        "session transcript",
         "clinical note"
       ],
       "insightType": [
@@ -1289,8 +1289,8 @@
       "key": "insight-8",
       "summaryTitle": "Patient reports sleep worsens with increased phone use before bed, consistent with high late-night screen unlocks.",
       "sources": [
-        "session transcript",
-        "passive sensing"
+        "passive sensing",
+        "session transcript"
       ],
       "insightType": [
         "Sleep Patterns",
@@ -4690,6 +4690,32 @@
           "PSS-4 Score": 7.0
         }
       ]
+    }
+  ],
+  "suggest_activity": [
+    {
+      "name": "Mindful Walking",
+      "description": "Try taking a short walk outside, focusing on the sensations of your feet touching the ground, the sounds around you, and your breathing. This can help ground you in the present moment and provide a gentle boost to your mood, even if the effect feels small at first. Aim for 10-15 minutes, and remember that the goal is not to feel instantly better, but to gently re-engage with your surroundings."
+    },
+    {
+      "name": "Intentional Music Listening",
+      "description": "Set aside a few minutes each day to listen to music that you find soothing or uplifting. Try to focus on the lyrics, melody, or instruments, and notice any changes in your mood or energy. You can use this as a self-care ritual, especially during times when you feel low or need a gentle distraction."
+    },
+    {
+      "name": "Gratitude or Positive Experience Journal",
+      "description": "At the end of each day, jot down one or two small positive or neutral experiences, even if they seem minor (e.g., making dinner, a kind word from someone, a moment of calm). This practice can help shift attention away from negative thoughts and gradually build awareness of positive moments, however fleeting they may feel."
+    },
+    {
+      "name": "Gentle Stretching or Yoga",
+      "description": "Engage in a short session of gentle stretching or beginner yoga, focusing on your breath and how your body feels. This can help release physical tension, improve sleep, and provide a sense of accomplishment. There are many free online videos for beginners that you can follow at your own pace."
+    },
+    {
+      "name": "Low-Pressure Social Connection",
+      "description": "Consider sending a simple message to a friend or acquaintance, such as 'Hi, just thinking of you,' without any expectation of a long conversation. Even brief, low-pressure contact can help reduce feelings of isolation and remind you that you are not alone, while keeping the interaction manageable."
+    },
+    {
+      "name": "Digital Detox Before Bed",
+      "description": "Try to set a specific time each night to put your phone away (for example, 30 minutes before bed). Instead, engage in a calming activity like reading, listening to music, or gentle stretching. This can help improve your sleep quality and reduce the negative impact of social media on your mood."
     }
   ]
 }
