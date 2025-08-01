@@ -18,6 +18,7 @@ from visualizer import (
     Visualizer,
 )
 from utils.extract_single_feature import feature_transform
+from visualizer.narrator import NarratorAgent
 
 MODEL_NAME = 'gpt-4.1'
 
@@ -30,7 +31,7 @@ def run_data_prep(patient_id):
     data = {}
 
     # Step 1: Format personas & history
-    with open(f"./generate_mock_data/context/personas_full.json", "r") as f:
+    with open("./generate_mock_data/context/personas_full.json", "r", encoding="utf-8") as f:
         personas = json.load(f)
         personas_prelim = personas[patient_id]
         f.close()
@@ -49,7 +50,7 @@ def run_data_prep(patient_id):
     data["encounter_history_before"] = personas_prelim['encounters']
 
     # Step 2: Format mockup encounter histories w/ THIS clinician
-    with open(f"./generate_mock_data/context/{patient_id}_full.json", "r") as f:
+    with open(f"./generate_mock_data/context/{patient_id}_full.json", "r", encoding='utf-8') as f:
         this_encounter = json.load(f)
         f.close()
 
@@ -106,12 +107,17 @@ def run_synthesizer(data, iters):
     result = synthesizer.run(iters)
     return result, synthesizer.data_fact_list
 
+def run_narrator(data_insights):
+    narrator = NarratorAgent(MODEL_NAME)
+    data_insights_narrative = narrator.run(data_insights, verbose=False)
+    return data_insights_narrative
+
 def exec(patient_id, save_interm = False):
     print("-- Running data prep...")
     data = run_data_prep(patient_id)
     if save_interm:
-        with open(f"mock_data/data_input_{patient_id}.json", "w") as f:
-            json.dump(data, f, indent=2)
+        with open(f"mock_data/data_input_{patient_id}.json", "w", encoding='utf-8') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
             f.close()
         
     print("-- Running discoverer...")
@@ -134,11 +140,16 @@ def exec(patient_id, save_interm = False):
             json.dump(data_fact_list, f, indent=2)
             f.close()
 
+    print("-- Running narrator...")
+    data_insights_narrative = run_narrator(data_insights)
+    if save_interm:
+        with open(f"mock_data/data_insights_narrative_{patient_id}.json", "w") as f:
+            json.dump(data_insights_narrative, f, indent=2)
+
     visualizer = Visualizer(
-        data_insights=data_insights,
+        data_insights=data_insights_narrative,
         data_fact_list=data_fact_list,
         raw_data=data,
-        model_name=MODEL_NAME
     )
     visualization_spec = visualizer.run()
 
@@ -169,61 +180,65 @@ if __name__ == "__main__":
     # USER_ID = "INS-W_963"
     USER_ID = "INS-W_1044"
     # USER_ID = "INS-W_1077"
-    final_output = exec(patient_id=USER_ID, save_interm=True)
 
-    # read data_facts.json
-    # with open("mock_data/data_facts_INS-W_963.json", "r") as f:
-    #     data_facts = json.load(f)
-    #     f.close()
+    USERS = ["INS-W_963", "INS-W_1044", "INS-W_1077"]
 
-    # data_insights, data_fact_list = run_synthesizer(data_facts, iters=2)
-    # with open(f"mock_data/data_insights_INS-W_963.json", "w") as f:
-    #     json.dump(data_insights, f, indent=2)
-    #     f.close()
+    for USER_ID in USERS:
+        final_output = exec(patient_id=USER_ID, save_interm=True)
 
-    # with open(f"mock_data/data_facts_list_INS-W_963.json", "w") as f:
-    #     json.dump(data_fact_list, f, indent=2)
-    #     f.close()
+        # read data_facts.json
+        # with open("mock_data/data_facts_INS-W_963.json", "r") as f:
+        #     data_facts = json.load(f)
+        #     f.close()
+
+        # data_insights, data_fact_list = run_synthesizer(data_facts, iters=2)
+        # with open(f"mock_data/data_insights_INS-W_963.json", "w") as f:
+        #     json.dump(data_insights, f, indent=2)
+        #     f.close()
+
+        # with open(f"mock_data/data_facts_list_INS-W_963.json", "w") as f:
+        #     json.dump(data_fact_list, f, indent=2)
+        #     f.close()
 
 
-    # # read data_insights
-    # with open("mock_data/data_insights_INS-W_963.json", "r") as f:
-    #     data_insights = json.load(f)
-    #     f.close()
+        # # read data_insights
+        # with open("mock_data/data_insights_INS-W_963.json", "r") as f:
+        #     data_insights = json.load(f)
+        #     f.close()
 
-    # # read data_facts_list
-    # with open("mock_data/data_facts_list_INS-W_963.json", "r") as f:
-    #     data_facts_list = json.load(f)
-    #     f.close()
+        # # read data_facts_list
+        # with open("mock_data/data_facts_list_INS-W_963.json", "r") as f:
+        #     data_facts_list = json.load(f)
+        #     f.close()
 
-    # # read raw_data
-    # with open("mock_data/data_input_INS-W_963.json", "r") as f:
-    #     data = json.load(f)
-    #     f.close()
+        # # read raw_data
+        # with open("mock_data/data_input_INS-W_963.json", "r") as f:
+        #     data = json.load(f)
+        #     f.close()
 
-    # # read mock_data/overview_INS-W_963.json
-    # with open("mock_data/overview_INS-W_963.json", "r") as f:
-    #     overview_res = json.load(f)
-    #     f.close()
+        # # read mock_data/overview_INS-W_963.json
+        # with open("mock_data/overview_INS-W_963.json", "r") as f:
+        #     overview_res = json.load(f)
+        #     f.close()
 
-    # visualizer = Visualizer(
-    #     data_insights=data_insights,
-    #     data_fact_list=data_facts_list,
-    #     raw_data=data,
-    #     model_name=MODEL_NAME
-    # )
+        # visualizer = Visualizer(
+        #     data_insights=data_insights,
+        #     data_fact_list=data_facts_list,
+        #     raw_data=data,
+        #     model_name=MODEL_NAME
+        # )
 
-    # res = visualizer.run()
+        # res = visualizer.run()
 
-    # final_output = {
-    #     "overview": overview_res,
-    #     "insights": res
-    # }
+        # final_output = {
+        #     "overview": overview_res,
+        #     "insights": res
+        # }
 
-    # save res to file
-    with open(f"mock_data/Visualizer_{USER_ID}.json", "w") as f:
-        json.dump(final_output, f, indent=2)
-        f.close()
+        # save res to file
+        with open(f"mock_data/Visualizer_{USER_ID}.json", "w") as f:
+            json.dump(final_output, f, indent=2, ensure_ascii=False)
+            f.close()
 
     
 

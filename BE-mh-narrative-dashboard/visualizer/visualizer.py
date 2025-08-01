@@ -7,10 +7,10 @@ import math
 from visualizer.narrator import NarratorAgent
 
 class Visualizer:
-    def __init__(self, data_insights, data_fact_list, raw_data, model_name):
+    def __init__(self, data_insights, data_fact_list, raw_data):
         self.data_insights = data_insights
-        self.narrator_agent = NarratorAgent(model_name)
-        self.data_insights_narrative = None
+        # self.narrator_agent = NarratorAgent(model_name)
+        # self.data_insights_narrative = None
         self.data_fact_list = data_fact_list
         self.raw_data = raw_data
         self.insight_count = 0
@@ -45,9 +45,9 @@ class Visualizer:
         return data
 
     def run(self):
-        self.data_insights_narrative = asyncio.run(self.narrator_agent.run(self.data_insights))
+        # self.data_insights_narrative = asyncio.run(self.narrator_agent.run(self.data_insights))
         specification = []
-        for insight in self.data_insights_narrative:
+        for insight in self.data_insights:
             fact_ids = insight['insight_source']
             inference_sources = []
             expand_view = []
@@ -77,9 +77,7 @@ class Visualizer:
                     expand_view.append(
                         {
                             "summarySentence": fact['fact_text'],
-                            # ! Here dataPoints means source text + evidence
-                            # TODO: add source transcript & notes
-                            "dataPoints": self._search_raw_text_data(map_text_keys[fact['modality_source']]),
+                            "dataPoints": None, # self._search_raw_text_data(map_text_keys[fact['modality_source']]),
                             "spec": [
                                 {
                                     "fact_type": "text",

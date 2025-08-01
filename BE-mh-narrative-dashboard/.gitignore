@@ -5,3 +5,6 @@
 *.ipynb
 *.mp4
 *.webm
+
+mock_data/cache
+mock_data/old
