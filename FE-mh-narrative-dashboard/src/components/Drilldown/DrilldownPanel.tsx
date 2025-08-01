@@ -50,7 +50,7 @@ const DrilldownPanel: React.FC<DrilldownPanelProps> = ({ onClose, insightData })
                 setLinkViewsEnabled={setLinkViewsEnabled}
                 title={insightData.summaryTitle}
             />
-            <SourcesSection />
+            <SourcesSection sources={insightData?.sources}/>
               {passiveSensingFacts?.length > 0 && (
                   <PassiveSensingCard passiveSensingFacts={passiveSensingFacts} />
               )}

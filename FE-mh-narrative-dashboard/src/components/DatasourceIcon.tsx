@@ -1,29 +1,34 @@
 import { Watch, MessageSquare, StickyNote, ClipboardList } from "lucide-react";
 import type { DatasourceIconType, DatasourceIconProps } from "../types/props";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import {DatasourceIconTypes} from "../types/props";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { DatasourceIconTypes } from "../types/props";
 
-const iconMap: Record<DatasourceIconType, JSX.Element> = {
-  [DatasourceIconTypes.passiveSensing]: <Watch className="w-5 h-5" />,
-  [DatasourceIconTypes.clinicalTranscripts]: <MessageSquare className="w-5 h-5" />,
-  [DatasourceIconTypes.clinicalNotes]: <StickyNote className="w-5 h-5" />,
-  [DatasourceIconTypes.measurementScore]: <ClipboardList className="w-5 h-5" />
+const dataSourceIconConfig: Record<DatasourceIconType, { icon: JSX.Element; color: string }> = {
+  [DatasourceIconTypes.passiveSensing]: {
+    icon: <Watch className="w-5 h-5" />,
+    color: "text-slate-500"
+  },
+  [DatasourceIconTypes.clinicalTranscripts]: {
+    icon: <MessageSquare className="w-5 h-5" />,
+    color: "text-emerald-500"
+  },
+  [DatasourceIconTypes.clinicalNotes]: {
+    icon: <StickyNote className="w-5 h-5" />,
+    color: "text-orange-500"
+  },
+  [DatasourceIconTypes.measurementScore]: {
+    icon: <ClipboardList className="w-5 h-5" />,
+    color: "text-yellow-500"
+  }
 };
 
-const iconColorMap: Record<DatasourceIconType, string> = {
-  [DatasourceIconTypes.passiveSensing]: "text-slate-500",
-  [DatasourceIconTypes.clinicalTranscripts]: "text-emerald-500",
-  [DatasourceIconTypes.clinicalNotes]: "text-orange-500",
-  [DatasourceIconTypes.measurementScore]: "text-yellow-500"
+const fallback = {
+  icon: <StickyNote className="w-5 h-5" />,
+  color: "text-gray-400"
 };
 
 const DataSourceIcon: React.FC<DatasourceIconProps> = ({ iconType, showType = false }) => {
-  const icon = iconMap[iconType] ?? <StickyNote className="w-5 h-5" />;
-  const color = iconColorMap[iconType] ?? "text-gray-400";
+  const { icon, color } = dataSourceIconConfig[iconType] ?? fallback;
 
   return (
       <Tooltip>

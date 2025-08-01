@@ -52,7 +52,6 @@ const ClinicalNotesCard = ({ clinicalNotesFacts }: clinicalNotesFactsProps) => {
         return highlighted;
     }
 
-    console.log(selectedFact)
     return (
         <Card className="bg-white border-[#eaeaea]">
             <CardContent className="px-6">

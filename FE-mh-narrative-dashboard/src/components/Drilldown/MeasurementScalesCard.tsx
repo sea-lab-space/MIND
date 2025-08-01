@@ -13,8 +13,6 @@ const MeasurementScalesCard = ({measurementScoreFacts} :measurementScoreFactsPro
 const [selectedKey, setSelectedKey] = useState<string | null>(null);
 const selectedInsight = measurementScoreFacts.find((fact) => fact.key === selectedKey);
 
-console.log(selectedInsight)
-
 useEffect(() => {
     if (measurementScoreFacts.length > 0 && !selectedKey) {
         setSelectedKey(measurementScoreFacts[0].key);
