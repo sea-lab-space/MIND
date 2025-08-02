@@ -1,5 +1,5 @@
 import { Heart, Brain, Activity, Pill, History } from "lucide-react";
-import type { HighlightSpec } from "./insightSpec";
+import type { DataPoint, HighlightSpec } from "./insightSpec";
 
 export const DatasourceIconTypes = {
   passiveSensing: "passive sensing",
@@ -60,6 +60,9 @@ export interface InsightCardData {
   sources: { type: DatasourceIconType }[];
   insightType: { type: InsightType }[];
   expandView: InsightExpandViewItem[];
+  // ! use this to show relevance score if it has the modality
+  transcriptRelevance?: DataPoint[];
+  noteRelevance?: DataPoint[];
 }
 
 

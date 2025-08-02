@@ -49,9 +49,9 @@
       "key": "insight-0",
       "summaryTitle": "High negative affect and sedentary behavior present alongside family and academic stressors.",
       "sources": [
-        "passive sensing",
-        "clinical note",
         "survey",
+        "clinical note",
+        "passive sensing",
         "session transcript"
       ],
       "insightType": [
@@ -495,15 +495,43 @@
           "dataSourceType": "text",
           "isShowL2": false
         }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.30041747698005933
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.23344659059270353
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.24233032457772646
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.48412556369413084
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.42741110816892924
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.4612395480825534
+        }
       ]
     },
     {
       "key": "insight-1",
       "summaryTitle": "Sleep disturbances co-occur with high negative affect and increased digital engagement.",
       "sources": [
-        "passive sensing",
-        "clinical note",
         "survey",
+        "clinical note",
+        "passive sensing",
         "session transcript"
       ],
       "insightType": [
@@ -958,14 +986,42 @@
           "dataSourceType": "text",
           "isShowL2": false
         }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.27702262786300397
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.21817185187458873
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.21892547488941808
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.3657410385782895
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.392767610957316
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.4030102972430258
+        }
       ]
     },
     {
       "key": "insight-2",
       "summaryTitle": "Fragmented sleep and frequent awakenings coincide with high depression scores and reported fatigue.",
       "sources": [
-        "passive sensing",
         "survey",
+        "passive sensing",
         "session transcript"
       ],
       "insightType": [
@@ -1952,6 +2008,20 @@
           "dataSourceType": "extreme",
           "isShowL2": false
         }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.2988186230747185
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.24933424480592542
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.25101741767409996
+        }
       ]
     },
     {
@@ -2597,14 +2667,28 @@
           "dataSourceType": "text",
           "isShowL2": false
         }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.23475835335345666
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.18000446452747038
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.17532323989064982
+        }
       ]
     },
     {
       "key": "insight-4",
       "summaryTitle": "Elevated stress and negative affect with frequent nighttime awakenings.",
       "sources": [
-        "passive sensing",
-        "survey"
+        "survey",
+        "passive sensing"
       ],
       "insightType": [
         "Emotional State",
@@ -3173,8 +3257,8 @@
       "key": "insight-5",
       "summaryTitle": "Minor improvement in depression scores; negative affect and frequent night awakenings remain elevated.",
       "sources": [
-        "passive sensing",
-        "survey"
+        "survey",
+        "passive sensing"
       ],
       "insightType": [
         "Emotional State",
@@ -3719,8 +3803,8 @@
       "key": "insight-6",
       "summaryTitle": "Focuses on failures and minimizes achievements; struggles to internalize positive experiences.",
       "sources": [
-        "clinical note",
         "survey",
+        "clinical note",
         "session transcript"
       ],
       "insightType": [
@@ -3839,14 +3923,42 @@
           "dataSourceType": "text",
           "isShowL2": false
         }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.2772231323002255
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.19377211345436512
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.23655054674607195
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.3028106459299159
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.30302012185027105
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.3327013266934987
+        }
       ]
     },
     {
       "key": "insight-7",
       "summaryTitle": "Negative self-appraisal and emotional numbness persist, with slight increase in positive affect.",
       "sources": [
-        "clinical note",
         "survey",
+        "clinical note",
         "session transcript"
       ],
       "insightType": [
@@ -4027,15 +4139,43 @@
           "dataSourceType": "text",
           "isShowL2": false
         }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.3775385241585149
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.3176375916211542
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.3466305887235923
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.4517179390379253
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.4626300870664544
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.526707470504043
+        }
       ]
     },
     {
       "key": "insight-8",
       "summaryTitle": "Social withdrawal continues, with increased outgoing calls not linked to reconnecting with friends.",
       "sources": [
-        "passive sensing",
-        "clinical note",
         "survey",
+        "clinical note",
+        "passive sensing",
         "session transcript"
       ],
       "insightType": [
@@ -4736,14 +4876,42 @@
           "dataSourceType": "text",
           "isShowL2": false
         }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.2748064229294574
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.2304657411359272
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.2539064376148961
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.3482623588603237
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.30733058616056647
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.35827029206851313
+        }
       ]
     },
     {
       "key": "insight-9",
       "summaryTitle": "Work shifts and self-care maintained; social isolation and campus avoidance persist.",
       "sources": [
-        "passive sensing",
         "clinical note",
+        "passive sensing",
         "session transcript"
       ],
       "insightType": [
@@ -5110,6 +5278,34 @@
           ],
           "dataSourceType": "text",
           "isShowL2": false
+        }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.31352600206615405
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.29745456895049455
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.30950714079034014
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.47990973255520575
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.438715177116177
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.5003556459329045
         }
       ]
     },
@@ -6027,8 +6223,8 @@
       "key": "insight-11",
       "summaryTitle": "Consistent medication adherence, no ongoing side effects, and slight decrease in PHQ-4 scores.",
       "sources": [
-        "clinical note",
         "survey",
+        "clinical note",
         "session transcript"
       ],
       "insightType": [
@@ -6149,6 +6345,34 @@
           ],
           "dataSourceType": "text",
           "isShowL2": false
+        }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.2241778231596205
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.343035220792905
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.28937964368154934
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.4235734199261939
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.4793030688386399
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.5258601414650885
         }
       ]
     }

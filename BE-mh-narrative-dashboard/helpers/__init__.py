@@ -1,2 +1,3 @@
 from .overview_generation import SummarizationAgent
 from .activity_generation import ActivityAgent
+from .calc_relevance import EmbeddingRelevance

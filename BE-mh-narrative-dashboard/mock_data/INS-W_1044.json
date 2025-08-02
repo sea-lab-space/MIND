@@ -49,8 +49,8 @@
       "key": "insight-0",
       "summaryTitle": "Elevated PHQ-4 and PSS-4 scores align with reported overwhelm and anxiety.",
       "sources": [
-        "clinical note",
-        "survey"
+        "survey",
+        "clinical note"
       ],
       "insightType": [
         "Emotional State",
@@ -310,14 +310,28 @@
           "dataSourceType": "derived value",
           "isShowL2": false
         }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.40338483908287975
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.38902959716830043
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.3932188273673018
+        }
       ]
     },
     {
       "key": "insight-1",
       "summaryTitle": "Negative affect and anxiety remain elevated; mood briefly improves after activity, then declines.",
       "sources": [
-        "clinical note",
         "survey",
+        "clinical note",
         "session transcript"
       ],
       "insightType": [
@@ -748,14 +762,42 @@
           "dataSourceType": "text",
           "isShowL2": false
         }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.36449953131647683
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.2799924087309944
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.2701078384547265
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.41819342684302485
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.43210718950582927
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.45074207479469336
+        }
       ]
     },
     {
       "key": "insight-2",
       "summaryTitle": "Highly fragmented sleep with frequent awakenings and reports of daytime sleep.",
       "sources": [
-        "passive sensing",
         "clinical note",
+        "passive sensing",
         "session transcript"
       ],
       "insightType": [
@@ -2588,14 +2630,42 @@
           "dataSourceType": "text",
           "isShowL2": false
         }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.19241102453727155
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.15246313758429555
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.14963829028468748
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.3239083634943151
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.3176453156765732
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.3301967451603388
+        }
       ]
     },
     {
       "key": "insight-3",
       "summaryTitle": "Physical activity shows brief increases but overall decline and more sedentary episodes.",
       "sources": [
-        "passive sensing",
         "clinical note",
+        "passive sensing",
         "session transcript"
       ],
       "insightType": [
@@ -4740,14 +4810,42 @@
           "dataSourceType": "text",
           "isShowL2": false
         }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.25078130042748265
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.20944152966879553
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.2084140875049073
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.30738874163684893
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.3390936005807236
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.36260885096005335
+        }
       ]
     },
     {
       "key": "insight-4",
       "summaryTitle": "Social interaction is limited, with few calls and hesitancy to seek support due to guilt.",
       "sources": [
-        "passive sensing",
         "clinical note",
+        "passive sensing",
         "session transcript"
       ],
       "insightType": [
@@ -6006,6 +6104,34 @@
           "dataSourceType": "text",
           "isShowL2": false
         }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.28946579648244897
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.28738128789271056
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.2634847401586282
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.39236004132927954
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.3658952868754396
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.3687149453635354
+        }
       ]
     },
     {
@@ -6051,6 +6177,34 @@
           ],
           "dataSourceType": "text",
           "isShowL2": false
+        }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.31884794838955155
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.2759884778972307
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.2644824550749899
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.33173361886625663
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.3159974040213559
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.29170578676954656
         }
       ]
     },
@@ -6118,6 +6272,34 @@
           "dataSourceType": "text",
           "isShowL2": false
         }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.282457239971895
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.22457488815117663
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.20551146309343313
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.3748383158795201
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.33293681042343315
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.32826687203019744
+        }
       ]
     },
     {
@@ -6178,6 +6360,34 @@
           ],
           "dataSourceType": "text",
           "isShowL2": false
+        }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.374594180391262
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.3464691264937152
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.3343480435707046
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.46157833144805055
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.4917170729371747
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.48754704846388336
         }
       ]
     },
@@ -6273,6 +6483,34 @@
           "dataSourceType": "text",
           "isShowL2": false
         }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.3228861893381829
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.2880943593763609
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.2812994928722987
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.349568195899286
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.3698341654942598
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.40015415085716344
+        }
       ]
     },
     {
@@ -6317,6 +6555,34 @@
           ],
           "dataSourceType": "text",
           "isShowL2": false
+        }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.3305413600059706
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.38267092421536164
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.43278095364214736
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.35752498608113104
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.42260559072297116
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.4609372557688963
         }
       ]
     },
@@ -6417,6 +6683,34 @@
           "dataSourceType": "text",
           "isShowL2": false
         }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.3223842989365747
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.379724363188362
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.3842598632046279
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.39187740344507
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.44525420325996634
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.487582408723301
+        }
       ]
     },
     {
@@ -6493,6 +6787,34 @@
           ],
           "dataSourceType": "text",
           "isShowL2": false
+        }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.20336888897433525
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.27998577453819434
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.25938393489381006
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.4617429028968079
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.4893037024866485
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.47743082879903664
         }
       ]
     }

@@ -212,6 +212,69 @@ class MINDPipeline:
             if datum['modality_type'] == 'survey':
                 passive_sensing_raw.append(datum)
         return passive_sensing_raw
+    
+    def run_calc_relevance(self):
+        self._log("[Calc Relevance] Running")
+        from helpers import EmbeddingRelevance
+        calc_relevance = EmbeddingRelevance()
+        
+        transcript_data = [
+            {
+                "date": info['encounter_date'],
+                "text": "\n".join([turn['clinician'] + " " + turn['patient'] for turn in info['transcript']])
+            }
+            for info in self.data['this_series']
+        ]
+
+        clinical_notes_data = [
+            {
+                "date": info['encounter_date'],
+                "text": info['clinical_note']
+            }
+            for info in self.data['this_series']
+        ]
+
+        insights_w_transcript = [
+            {
+                "key": insight['key'],
+                "summaryTitle": insight['summaryTitle']
+            }
+            for insight in self.visualization_spec if "session transcript" in insight['sources']
+        ]
+        insights_w_clinical_notes = [
+            {
+                "key": insight['key'],
+                "summaryTitle": insight['summaryTitle']
+            }
+            for insight in self.visualization_spec if "clinical note" in insight['sources']
+        ]
+        
+        relevance_transcript = calc_relevance.run(
+            subjective_materials=transcript_data,
+            data_insights=insights_w_transcript
+        )
+
+        relevance_note = calc_relevance.run(
+            subjective_materials=clinical_notes_data,
+            data_insights=insights_w_clinical_notes
+        )
+
+        def retrive_relevance(key, relevance_data):
+            for insight in relevance_data:
+                if key == insight['key']:
+                    return insight['relevance']
+                else:
+                    # raise error
+                    ValueError("key not found in relevance_transcript")
+
+        # add back to visualization_spec
+        for insight in self.visualization_spec:
+            if "session transcript" in insight['sources']:
+                insight['transcriptRelevance'] = retrive_relevance(insight['key'], relevance_transcript)
+            if "clinical note" in insight['sources']:
+                insight['noteRelevance'] = retrive_relevance(insight['key'], relevance_note)
+
+        return self
 
     def run_assembly(self):
         self._log("[Run] Final assembly")
@@ -251,6 +314,6 @@ if __name__ == "__main__":
             .run_overview(load_from_cache=True)
             .run_suggest_activity(load_from_cache=True)
             .run_visualizer()
+            .run_calc_relevance()
             .run_assembly()
         )
-        # break
