@@ -1,24 +1,16 @@
-
-
-
-
-import asyncio
+from copy import deepcopy
 import math
-from visualizer.narrator import NarratorAgent
+
+from utils.search import search_id_in_facts
 
 class Visualizer:
-    def __init__(self, data_insights, data_fact_list, raw_data, model_name):
+    def __init__(self, data_insights, data_fact_list, raw_data):
         self.data_insights = data_insights
-        self.narrator_agent = NarratorAgent(model_name)
-        self.data_insights_narrative = None
+        # self.narrator_agent = NarratorAgent(model_name)
+        # self.data_insights_narrative = None
         self.data_fact_list = data_fact_list
         self.raw_data = raw_data
         self.insight_count = 0
-
-    def _search_id_in_facts(self, fact_id):
-        for fact in self.data_fact_list:
-            if fact['id'] == fact_id:
-                return fact
             
     def _search_raw_data(self, source, name):
         for data in self.raw_data['numerical_data']:
@@ -45,14 +37,19 @@ class Visualizer:
         return data
 
     def run(self):
-        self.data_insights_narrative = asyncio.run(self.narrator_agent.run(self.data_insights))
+        # self.data_insights_narrative = asyncio.run(self.narrator_agent.run(self.data_insights))
         specification = []
-        for insight in self.data_insights_narrative:
-            fact_ids = insight['insight_source']
+        for insight in self.data_insights:
+            L3_fact_ids = insight['insight_source']
+            L2_fact_ids = insight['l2_insight_source']
+            # use the L2 sequence, and append anything remaining in L3 to the end
+            fact_ids = deepcopy(L2_fact_ids)
+            fact_ids.extend([fact for fact in L3_fact_ids if fact not in L2_fact_ids])
+            # fact_ids = insight['insight_source']
             inference_sources = []
             expand_view = []
-            for fact in fact_ids:
-                fact = self._search_id_in_facts(fact)
+            for fact_id in fact_ids:
+                fact = search_id_in_facts(self.data_fact_list, fact_id)
                 # ! occurance where it can not be backtraced
                 if fact is None:
                     print('error in id')
@@ -65,7 +62,8 @@ class Visualizer:
                             "dataPoints": self._search_raw_data(fact['modality_source'], fact['spec']['name']),
                             "spec": fact['spec'],
                             "sources": [fact['modality_type']],
-                            "dataSourceType": fact['spec']['fact_type']
+                            "dataSourceType": fact['spec']['fact_type'],
+                            "isShowL2": fact_id in L2_fact_ids
                         }
                     )
                 elif fact['modality_type'] == 'text':
@@ -77,9 +75,7 @@ class Visualizer:
                     expand_view.append(
                         {
                             "summarySentence": fact['fact_text'],
-                            # ! Here dataPoints means source text + evidence
-                            # TODO: add source transcript & notes
-                            "dataPoints": self._search_raw_text_data(map_text_keys[fact['modality_source']]),
+                            "dataPoints": None, # self._search_raw_text_data(map_text_keys[fact['modality_source']]),
                             "spec": [
                                 {
                                     "fact_type": "text",
@@ -90,6 +86,7 @@ class Visualizer:
                             "sources": [fact['modality_source']],
                             # ! Here dataSourceType means "text" add in FE
                             "dataSourceType": fact['modality_type'],
+                            "isShowL2": fact_id in L2_fact_ids
                         }
                     )
             
