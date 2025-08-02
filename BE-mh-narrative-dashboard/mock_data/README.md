@@ -1,13 +1,13 @@
 # Log
 
 963: 
-- coverage: 0.1
-- entropy: 0.43
+- coverage: 0.13
+- entropy: 0.58
 
 1044
-- coverage: 0.11
-- entropy: 0.40
+- coverage: 0.13
+- entropy: 0.41
 
 1077
-- coverage: 0.15
-- entropy: 0.31
+- coverage: 0.2
+- entropy: 0.38

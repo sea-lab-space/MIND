@@ -50,6 +50,8 @@ export interface InsightExpandViewItem {
   highlightSpec: HighlightSpec;
   dataSourceType: DataSourceType;
   insightType?: InsightType;
+  // ! use this feature to determine if it should be shown on L2
+  isShowL2: boolean;
 }
 
 export interface InsightCardData {

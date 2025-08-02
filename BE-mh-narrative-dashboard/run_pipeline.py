@@ -47,6 +47,7 @@ class MINDPipeline:
             return json.load(f)
 
     def load_data(self, load_from_cache=False):
+        self._log(f"Processing {self.patient_id}")
         if load_from_cache and (self.cache_dir / "data_input.json").exists():
             self._log("[Data] Loading from cache")
             self.data = self._load("data_input")
@@ -112,6 +113,9 @@ class MINDPipeline:
 
             if self.save_to_cache:
                 self._save("data_facts", self.data_facts)
+
+            # sleep 10s (prevent connection issue)
+            time.sleep(10)
         return self
 
     def run_synthesizer(self, iters=2, load_from_cache=False):
@@ -129,6 +133,7 @@ class MINDPipeline:
                 model_name=self.model_name
             )
             self.data_insights = synthesizer.run(iters)
+            self.data_fact_list = synthesizer.data_fact_list
             time.sleep(5)
             if self.save_to_cache:
                 self._save("data_insights", self.data_insights)
@@ -140,6 +145,7 @@ class MINDPipeline:
             self._log("[Narrator] Loading from cache")
             self.data_insights_narrative = self._load(
                 "data_insights_narrative")
+            self.rewritten_data_facts = self._load("rewritten_data_facts")
         else:
             self._log("[Narrator] Generating")
             from narrator.narrator import Narrator
@@ -153,6 +159,7 @@ class MINDPipeline:
             if self.save_to_cache:
                 self._save("data_insights_narrative",
                            self.data_insights_narrative)
+                self._save("rewritten_data_facts", self.rewritten_data_facts)
         return self
 
     def run_visualizer(self):
@@ -216,10 +223,14 @@ class MINDPipeline:
             "suggest_activity": self.suggest_activity
         }
         self._save(f"{self.patient_id}", final_spec, is_parent=True)
+
+        self._log("Done 🎉🎉")
+        self._log("----------------------------------")
         return final_spec
 
 if __name__ == "__main__":
     MODEL_NAME = 'gpt-4.1'
+    # 
     USERS = ["INS-W_963", "INS-W_1044", "INS-W_1077"]
 
     for uid in USERS:
@@ -236,10 +247,10 @@ if __name__ == "__main__":
             .load_data(load_from_cache=True)
             .run_discoverer(load_from_cache=True)
             .run_synthesizer(iters=2, load_from_cache=True)
-            .run_narrator(load_from_cache=False)
+            .run_narrator(load_from_cache=True)
             .run_overview(load_from_cache=True)
             .run_suggest_activity(load_from_cache=True)
             .run_visualizer()
             .run_assembly()
         )
-        break
+        # break
