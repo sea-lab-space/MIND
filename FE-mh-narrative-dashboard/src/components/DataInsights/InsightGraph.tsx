@@ -43,9 +43,9 @@ export default function InsightGraph({
     const metricKey =
         Object.keys(normalized[0] || {}).find((k) => k !== "date") ?? "";
 
-    console.log(highlightSpec.fact_type);
-
-    console.log(dataSourceType);
+    // console.log(highlightSpec.fact_type);
+    //
+    // console.log(dataSourceType);
     // const isLineChart =
     //   (
     //     ["trend", "comparison"] as DataSourceType[]

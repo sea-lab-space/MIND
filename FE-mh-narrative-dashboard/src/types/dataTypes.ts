@@ -46,3 +46,23 @@ export interface SuggestedActivity {
     header: string;
     description: string;
 }
+
+export type TranscriptEntry = {
+    clinician: string;
+    patient: string;
+};
+
+export type MedicationEntry = {
+    date: string;
+    medication: string;
+    dosage: string;
+    frequency: string;
+};
+
+export type Encounter = {
+    encounter_id: number;
+    transcript: TranscriptEntry[];
+    medication: MedicationEntry[];
+    clinical_note: string;
+    encounter_date: string;
+};

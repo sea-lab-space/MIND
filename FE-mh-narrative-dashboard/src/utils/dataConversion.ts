@@ -5,6 +5,7 @@ import Lucy_Sutton_Data from "@/data/Visualizer_INS-W_1044.json"
 import Alison_Daniels_Data from "@/data/Visualizer_INS-W_1077.json"
 import type {InsightExpandViewItem, InsightType} from "@/types/props";
 import type { HighlightSpec } from "@/types/insightSpec";
+import type { Encounter } from "@/types/dataTypes";
 
 const personDataMap: Record<string, typeof visualizerData> = {
     "Gabriella Lin": Gabriella_Lin_Data,
@@ -25,7 +26,6 @@ export const getVisualizerDataForPerson = (personName: string) => {
     }
 
     const overviewCardData = personData.overview;
-
     const insightCardData: InsightCardData[] = personData.insights.map((group, index) => ({
         key: `insight-${index + 1}`,
         summaryTitle: group.summaryTitle,
@@ -44,10 +44,12 @@ export const getVisualizerDataForPerson = (personName: string) => {
             source: insight.sources[0] as keyof typeof DatasourceIconTypes,
         }) as InsightExpandViewItem)
     }));
+    const session_subjective_info = personData.session_subjective_info as Encounter[];
 
     return {
         overviewCardData,
         insightCardData,
+        session_subjective_info
     };
 };
 

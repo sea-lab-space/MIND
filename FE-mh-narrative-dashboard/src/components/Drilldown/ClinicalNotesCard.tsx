@@ -6,15 +6,18 @@ import ReactMarkdown from "react-markdown";
 import {formatDate} from "@/utils/helper";
 import rehypeRaw from "rehype-raw";
 import type {InsightExpandViewItem} from "@/types/props";
+import type {Encounter} from "@/types/dataTypes";
 
 
 interface clinicalNotesFactsProps {
     clinicalNotesFacts: InsightExpandViewItem[];
+    sessionInfo: Encounter[]
 }
 
-const ClinicalNotesCard = ({ clinicalNotesFacts }: clinicalNotesFactsProps) => {
+const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFactsProps) => {
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
     const [selectedFactKey, setSelectedFactKey] = useState<string | null>(null);
+    console.log(sessionInfo, "herere")
 
     useEffect(() => {
         if (clinicalNotesFacts.length > 0) {
@@ -27,7 +30,7 @@ const ClinicalNotesCard = ({ clinicalNotesFacts }: clinicalNotesFactsProps) => {
     // Find selected fact based on selectedFactKey
     const selectedFact = clinicalNotesFacts.find(fact => fact.key === selectedFactKey);
     const selectedFactSpec = selectedFact?.highlightSpec;
-    const dates = selectedFact?.dataPoints?.map(fact => fact.date);
+    const dates = sessionInfo?.map(item => item.encounter_date);
     const highlightDates = new Set(
         (Array.isArray(selectedFact?.highlightSpec) ? selectedFact?.highlightSpec : [])
             .map(spec => spec?.date)
@@ -109,8 +112,8 @@ const ClinicalNotesCard = ({ clinicalNotesFacts }: clinicalNotesFactsProps) => {
                         className="space-y-6 text-sm text-[#2c2c2c] overflow-y-auto"
                         style={{ flex: 1, maxHeight: "500px" /* match container height */, paddingRight: "1rem" }}
                     >
-                        {selectedFact?.dataPoints
-                            ?.filter(dp => dp.date === selectedDate)
+                        {sessionInfo
+                            ?.filter(dp => dp.encounter_date === selectedDate)
                             .map((dp, index) => (
                                 <div key={index} className="space-y-1">
                                     <div className="prose prose-sm max-w-none text-[#2c2c2c]">
@@ -131,8 +134,8 @@ const ClinicalNotesCard = ({ clinicalNotesFacts }: clinicalNotesFactsProps) => {
                                         >
                                             {
                                                 highlightTextInRecord(
-                                                    dp.record || '',
-                                                    (Array.isArray(selectedFactSpec) ? selectedFactSpec : []).filter(s => s.date === dp.date).map(s => s.text)
+                                                    dp.clinical_note || '',
+                                                    (Array.isArray(selectedFactSpec) ? selectedFactSpec : []).filter(s => s.date === dp.encounter_date).map(s => s.text)
                                                 )
                                             }
                                         </ReactMarkdown>

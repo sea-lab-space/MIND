@@ -35,8 +35,7 @@ export default function HomePage() {
   const [insightsDataTemp, setInsightsDataTemp] = useState([]);
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const { overviewCardData, insightCardData } = getVisualizerDataForPerson(selectedPatient);
-  const patientCommunicationData = data.patientCommunication;
+  const { overviewCardData, insightCardData, session_subjective_info } = getVisualizerDataForPerson(selectedPatient);
 
   const toggleSection = (section: string) => {
     setExpandedSections((prev) => ({
@@ -44,17 +43,6 @@ export default function HomePage() {
       [section]: !prev[section],
     }));
   };
-
-  // TODO: retracts expaned card if drilldown is called
-  // useEffect(() => {
-  //   if (isDrillDown) {
-  //     setExpandedSections((prev) => ({
-  //       ...prev,
-  //       insights: false,
-  //     })
-  //     )
-  //   }
-  // }, [isDrillDown])
 
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const { width: windowWidth } = useWindowSize();
@@ -270,6 +258,7 @@ export default function HomePage() {
               <DrilldownPanel
                   key={selectedInsightCard}
                   insightData={insightCardData.find((data) => data.key === selectedInsightCard) || defaultInsightCardData}
+                  sessionInfo={session_subjective_info}
                 onClose={() => {
                   setIsDrillDown(false);
                   setSelectedInsightCard(null);
