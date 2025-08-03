@@ -210,6 +210,17 @@ class MINDPipeline:
         passive_sensing_raw = []
         for datum in self.data['numerical_data']:
             if datum['modality_type'] == 'survey':
+                datum["isShowL2"] = False
+                datum['sources'] = [datum['modality_source']]
+                datum['dataSourceType'] = "raw"
+                datum['dataPoints'] = datum['data']
+                datum['summarySentence'] = f"Displaying {datum['feature_name_renamed'].lower()} survey scores."
+                # pop "feature_name_renamed", "feature_name", "modality_source", "modality_type"
+                datum.pop('feature_name_renamed')
+                datum.pop('feature_name')
+                datum.pop('modality_source')
+                datum.pop('modality_type')
+                datum.pop('data')
                 passive_sensing_raw.append(datum)
         return passive_sensing_raw
     

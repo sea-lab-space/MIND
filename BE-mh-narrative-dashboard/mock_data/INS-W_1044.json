@@ -47,7 +47,7 @@
   "insights": [
     {
       "key": "insight-0",
-      "summaryTitle": "Elevated PHQ-4 and PSS-4 scores align with reported overwhelm and anxiety.",
+      "summaryTitle": "PHQ-4 and PSS-4 scores increased over 1 month, aligning with reported overwhelm and anxiety.",
       "sources": [
         "clinical note",
         "survey"
@@ -58,7 +58,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "The PHQ-4 score was at its highest level for one day.",
+          "summarySentence": "The PHQ-4 score was at its highest, indicating significant distress, for one day.",
           "dataPoints": [
             {
               "date": "2021-04-04",
@@ -106,7 +106,7 @@
             "attribute": "max",
             "time": "2021-06-06",
             "value": 6.0,
-            "fact_description": "The PHQ-4 score was at its highest level for one day.",
+            "fact_description": "The PHQ-4 score was at its highest, indicating significant distress, for one day.",
             "fact_type": "extreme"
           },
           "sources": [
@@ -116,7 +116,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The PSS-4 score increased from moderate to high over one week.",
+          "summarySentence": "The PSS-4 score increased from low to high over one week.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -166,7 +166,7 @@
             "time_2": "2021-05-19",
             "value_1": 5.0,
             "value_2": 11.0,
-            "fact_description": "The PSS-4 score increased from moderate to high over one week.",
+            "fact_description": "The PSS-4 score increased from low to high over one week.",
             "fact_type": "difference"
           },
           "sources": [
@@ -252,7 +252,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "During this period, the typical PSS-4 score indicated moderate perceived stress.",
+          "summarySentence": "Over a two-month period, the typical PSS-4 score indicated moderate stress levels.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -301,7 +301,7 @@
             "time_1": "2021-03-31",
             "time_2": "2021-06-02",
             "value": 8.0,
-            "fact_description": "During this period, the typical PSS-4 score indicated moderate perceived stress.",
+            "fact_description": "Over a two-month period, the typical PSS-4 score indicated moderate stress levels.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -314,32 +314,32 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.408346908960894
+          "relevance": 0.4135849107101372
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3948967071437441
+          "relevance": 0.4054119519806889
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3999715980000501
+          "relevance": 0.4217774945331264
         }
       ]
     },
     {
       "key": "insight-1",
-      "summaryTitle": "Negative affect and anxiety remain elevated; mood briefly improves after activity, then declines.",
+      "summaryTitle": "Negative affect and anxiety remain elevated; mood improves briefly after activity, then declines.",
       "sources": [
         "clinical note",
-        "session transcript",
-        "survey"
+        "survey",
+        "session transcript"
       ],
       "insightType": [
         "Emotional State"
       ],
       "expandView": [
         {
-          "summarySentence": "The PHQ-4 score was at its highest level for one day.",
+          "summarySentence": "The PHQ-4 score was at its highest, indicating significant distress, for one day.",
           "dataPoints": [
             {
               "date": "2021-04-04",
@@ -387,7 +387,7 @@
             "attribute": "max",
             "time": "2021-06-06",
             "value": 6.0,
-            "fact_description": "The PHQ-4 score was at its highest level for one day.",
+            "fact_description": "The PHQ-4 score was at its highest, indicating significant distress, for one day.",
             "fact_type": "extreme"
           },
           "sources": [
@@ -397,7 +397,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The PSS-4 score increased from moderate to high over one week.",
+          "summarySentence": "The PSS-4 score increased from low to high over one week.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -447,7 +447,7 @@
             "time_2": "2021-05-19",
             "value_1": 5.0,
             "value_2": 11.0,
-            "fact_description": "The PSS-4 score increased from moderate to high over one week.",
+            "fact_description": "The PSS-4 score increased from low to high over one week.",
             "fact_type": "difference"
           },
           "sources": [
@@ -457,7 +457,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Lucy briefly feels better after activities, but soon feels discouraged and self-critical.",
+          "summarySentence": "Lucy briefly feels better after activities, but soon becomes discouraged and self-critical.",
           "dataPoints": null,
           "spec": [
             {
@@ -473,7 +473,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The average Negative Affect Score dropped slightly over a recent multi-week period.",
+          "summarySentence": "The average Negative Affect Score dropped slightly over two consecutive multi-week periods.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -570,7 +570,7 @@
             },
             "value_dur_1": 7.88,
             "value_dur_2": 7.4,
-            "fact_description": "The average Negative Affect Score dropped slightly over a recent multi-week period.",
+            "fact_description": "The average Negative Affect Score dropped slightly over two consecutive multi-week periods.",
             "fact_type": "comparison"
           },
           "sources": [
@@ -580,7 +580,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The typical negative affect score rose from moderate to higher over several weeks.",
+          "summarySentence": "The median Negative Affect Score rose from 6.5 to 8.0 over two recent periods.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -677,7 +677,7 @@
             },
             "value_dur_1": 6.5,
             "value_dur_2": 8.0,
-            "fact_description": "The typical negative affect score rose from moderate to higher over several weeks.",
+            "fact_description": "The median Negative Affect Score rose from 6.5 to 8.0 over two recent periods.",
             "fact_type": "comparison"
           },
           "sources": [
@@ -766,35 +766,218 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.36449953131647683
+          "relevance": 0.35917805414846643
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.2800195988069644
+          "relevance": 0.27962686839603923
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.2701078384547265
+          "relevance": 0.269447623280441
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.41809504894905447
+          "relevance": 0.41458265032584196
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.43200099286382204
+          "relevance": 0.4299152747234148
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.45064529889190996
+          "relevance": 0.44754871871593843
         }
       ]
     },
     {
       "key": "insight-2",
-      "summaryTitle": "Highly fragmented sleep with frequent awakenings and reports of daytime sleep.",
+      "summaryTitle": "Pervasive self-criticism and inadequacy across academics, friendships, and family roles for 1 day.",
+      "sources": [
+        "clinical note",
+        "session transcript"
+      ],
+      "insightType": [
+        "Emotional State"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "The patient often feels inadequate and is highly self-critical in many areas of life.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: The one that comes up the most is, ‘I’m not good enough.’ That’s what I wrote down."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: Usually it’s like, I’m not good enough at uni, not good enough as a friend, or even as a daughter. Like I keep messing everything up."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "Lucy often feels inadequate about her schoolwork, friendships, and family responsibilities.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Lucy continues to experience pervasive thoughts of inadequacy, particularly around her academic performance, friendships, and family roles."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "Lucy often thinks logically, though her thoughts are mostly negative and self-critical.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Thought process: Logical, though negative and self-critical content predominates."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.3336467805800791
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.30057289412204563
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.3011693671883853
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.3661320759571039
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.3548836266607829
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.34956182274978026
+        }
+      ]
+    },
+    {
+      "key": "insight-3",
+      "summaryTitle": "Emotional numbness and low motivation present for several days, no current suicidal ideation.",
+      "sources": [
+        "clinical note",
+        "session transcript"
+      ],
+      "insightType": [
+        "Emotional State"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "The patient experiences emotional numbness and low motivation, without current thoughts of self-harm.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: I have had a couple days where I just felt really numb again. Not really wanting to do anything. I didn’t really want to hurt myself, I just felt like I didn’t care much either way."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "Lucy experiences emotional numbness and apathy without any thoughts of self-harm.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Safety: No current suicidal ideation or intent; passive thoughts of numbness and apathy."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "Lucy reports feeling emotionally numb and unmotivated, without current suicidal thoughts or plans.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "She describes episodes of emotional numbness and low motivation but denies active suicidal ideation or intent."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.3774535113058792
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.36966520880140735
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.3625544357931715
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.46103529615617994
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.4882501259146744
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.4872503823527808
+        }
+      ]
+    },
+    {
+      "key": "insight-4",
+      "summaryTitle": "Sleep is fragmented with frequent awakenings and some daytime sleep over 1 month.",
       "sources": [
         "clinical note",
         "session transcript",
@@ -1104,7 +1287,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Over the course of a month, average sleep duration was just over half an hour.",
+          "summarySentence": "Over the course of a month, average sleep duration was extremely low at 32.7 minutes.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -1393,7 +1576,7 @@
             "time_1": "2021-05-01",
             "time_2": "2021-05-31",
             "value": 32.69751620535491,
-            "fact_description": "Over the course of a month, average sleep duration was just over half an hour.",
+            "fact_description": "Over the course of a month, average sleep duration was extremely low at 32.7 minutes.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -1403,7 +1586,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The patient has trouble falling asleep at night and often sleeps during daytime hours.",
+          "summarySentence": "The patient has trouble falling asleep and often sleeps during daytime hours.",
           "dataPoints": null,
           "spec": [
             {
@@ -1419,7 +1602,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Average sleep duration decreased from over eight hours to about five hours within a few days.",
+          "summarySentence": "Average sleep duration decreased from over 65 to about 39 within a few days.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -1709,7 +1892,7 @@
             "time_2": "2021-05-31",
             "value_1": 65.8322361111,
             "value_2": 39.0549037037,
-            "fact_description": "Average sleep duration decreased from over eight hours to about five hours within a few days.",
+            "fact_description": "Average sleep duration decreased from over 65 to about 39 within a few days.",
             "fact_type": "difference"
           },
           "sources": [
@@ -2615,7 +2798,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Lucy continues to experience trouble falling asleep and often sleeps during daytime hours.",
+          "summarySentence": "Lucy experiences persistent trouble falling asleep and often sleeps during daytime hours.",
           "dataPoints": null,
           "spec": [
             {
@@ -2634,35 +2817,35 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.19241102453727155
+          "relevance": 0.2273118428817018
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.1524707039593641
+          "relevance": 0.195518230578352
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.14963829028468748
+          "relevance": 0.19163700301380168
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3239598042036301
+          "relevance": 0.2955791204494615
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3176830721608228
+          "relevance": 0.3083876583378313
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.33023402295461246
+          "relevance": 0.33428599884664106
         }
       ]
     },
     {
-      "key": "insight-3",
-      "summaryTitle": "Physical activity shows brief increases but overall decline and more sedentary episodes.",
+      "key": "insight-5",
+      "summaryTitle": "Physical activity decreased over 2 weeks, with brief increases in steps and exercise time.",
       "sources": [
         "clinical note",
         "session transcript",
@@ -3287,304 +3470,6 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Total steps increased over a period of several days.",
-          "dataPoints": [
-            {
-              "date": "2021-03-29",
-              "Total Steps": null
-            },
-            {
-              "date": "2021-03-30",
-              "Total Steps": null
-            },
-            {
-              "date": "2021-03-31",
-              "Total Steps": 4161.0
-            },
-            {
-              "date": "2021-04-01",
-              "Total Steps": 13673.0
-            },
-            {
-              "date": "2021-04-02",
-              "Total Steps": 13557.0
-            },
-            {
-              "date": "2021-04-03",
-              "Total Steps": 19817.0
-            },
-            {
-              "date": "2021-04-04",
-              "Total Steps": 15032.0
-            },
-            {
-              "date": "2021-04-05",
-              "Total Steps": 13733.0
-            },
-            {
-              "date": "2021-04-06",
-              "Total Steps": 12587.0
-            },
-            {
-              "date": "2021-04-07",
-              "Total Steps": 14130.0
-            },
-            {
-              "date": "2021-04-08",
-              "Total Steps": 10413.0
-            },
-            {
-              "date": "2021-04-09",
-              "Total Steps": 13822.0
-            },
-            {
-              "date": "2021-04-10",
-              "Total Steps": 13608.0
-            },
-            {
-              "date": "2021-04-11",
-              "Total Steps": 13752.0
-            },
-            {
-              "date": "2021-04-12",
-              "Total Steps": 15202.0
-            },
-            {
-              "date": "2021-04-13",
-              "Total Steps": 15078.0
-            },
-            {
-              "date": "2021-04-14",
-              "Total Steps": 15852.0
-            },
-            {
-              "date": "2021-04-15",
-              "Total Steps": 13048.0
-            },
-            {
-              "date": "2021-04-16",
-              "Total Steps": 12032.0
-            },
-            {
-              "date": "2021-04-17",
-              "Total Steps": null
-            },
-            {
-              "date": "2021-04-18",
-              "Total Steps": null
-            },
-            {
-              "date": "2021-04-19",
-              "Total Steps": 10111.0
-            },
-            {
-              "date": "2021-04-20",
-              "Total Steps": 14702.0
-            },
-            {
-              "date": "2021-04-21",
-              "Total Steps": 11925.0
-            },
-            {
-              "date": "2021-04-22",
-              "Total Steps": 11294.0
-            },
-            {
-              "date": "2021-04-23",
-              "Total Steps": 13093.0
-            },
-            {
-              "date": "2021-04-24",
-              "Total Steps": 11245.0
-            },
-            {
-              "date": "2021-04-25",
-              "Total Steps": 29579.0
-            },
-            {
-              "date": "2021-04-26",
-              "Total Steps": 11669.0
-            },
-            {
-              "date": "2021-04-27",
-              "Total Steps": 12234.0
-            },
-            {
-              "date": "2021-04-28",
-              "Total Steps": 10586.0
-            },
-            {
-              "date": "2021-04-29",
-              "Total Steps": 10162.0
-            },
-            {
-              "date": "2021-04-30",
-              "Total Steps": 14106.0
-            },
-            {
-              "date": "2021-05-01",
-              "Total Steps": 10377.0
-            },
-            {
-              "date": "2021-05-02",
-              "Total Steps": 25279.0
-            },
-            {
-              "date": "2021-05-03",
-              "Total Steps": 9749.0
-            },
-            {
-              "date": "2021-05-04",
-              "Total Steps": 13620.0
-            },
-            {
-              "date": "2021-05-05",
-              "Total Steps": 12016.0
-            },
-            {
-              "date": "2021-05-06",
-              "Total Steps": 7447.0
-            },
-            {
-              "date": "2021-05-07",
-              "Total Steps": 6137.0
-            },
-            {
-              "date": "2021-05-08",
-              "Total Steps": 25121.0
-            },
-            {
-              "date": "2021-05-09",
-              "Total Steps": 8964.0
-            },
-            {
-              "date": "2021-05-10",
-              "Total Steps": 14711.0
-            },
-            {
-              "date": "2021-05-11",
-              "Total Steps": 10746.0
-            },
-            {
-              "date": "2021-05-12",
-              "Total Steps": 12597.0
-            },
-            {
-              "date": "2021-05-13",
-              "Total Steps": 9942.0
-            },
-            {
-              "date": "2021-05-14",
-              "Total Steps": 16680.0
-            },
-            {
-              "date": "2021-05-15",
-              "Total Steps": 5835.0
-            },
-            {
-              "date": "2021-05-16",
-              "Total Steps": 23149.0
-            },
-            {
-              "date": "2021-05-17",
-              "Total Steps": 9538.0
-            },
-            {
-              "date": "2021-05-18",
-              "Total Steps": 6653.0
-            },
-            {
-              "date": "2021-05-19",
-              "Total Steps": 6122.0
-            },
-            {
-              "date": "2021-05-20",
-              "Total Steps": 3850.0
-            },
-            {
-              "date": "2021-05-21",
-              "Total Steps": 13278.0
-            },
-            {
-              "date": "2021-05-22",
-              "Total Steps": 8258.0
-            },
-            {
-              "date": "2021-05-23",
-              "Total Steps": 26581.0
-            },
-            {
-              "date": "2021-05-24",
-              "Total Steps": 7871.0
-            },
-            {
-              "date": "2021-05-25",
-              "Total Steps": 10379.0
-            },
-            {
-              "date": "2021-05-26",
-              "Total Steps": 9051.0
-            },
-            {
-              "date": "2021-05-27",
-              "Total Steps": 10230.0
-            },
-            {
-              "date": "2021-05-28",
-              "Total Steps": 9564.0
-            },
-            {
-              "date": "2021-05-29",
-              "Total Steps": null
-            },
-            {
-              "date": "2021-05-30",
-              "Total Steps": 7497.0
-            },
-            {
-              "date": "2021-05-31",
-              "Total Steps": 15308.0
-            },
-            {
-              "date": "2021-06-01",
-              "Total Steps": 9459.0
-            },
-            {
-              "date": "2021-06-02",
-              "Total Steps": 21239.0
-            },
-            {
-              "date": "2021-06-03",
-              "Total Steps": 9994.0
-            },
-            {
-              "date": "2021-06-04",
-              "Total Steps": 13014.0
-            },
-            {
-              "date": "2021-06-05",
-              "Total Steps": 12088.0
-            },
-            {
-              "date": "2021-06-06",
-              "Total Steps": 10899.0
-            }
-          ],
-          "spec": {
-            "name": "Total Steps",
-            "attribute": "rise",
-            "time_1": "2021-05-20",
-            "time_2": "2021-05-23",
-            "fact_description": "Total steps increased over a period of several days.",
-            "fact_type": "trend"
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "trend",
-          "isShowL2": true
-        },
-        {
           "summarySentence": "Time spent in exercise spaces peaked at nearly 90 minutes during this period.",
           "dataPoints": [
             {
@@ -3883,7 +3768,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Lucy tried activities like walking to boost her mood but found it hard to keep up.",
+          "summarySentence": "Lucy tried activities like walking to boost mood but found it hard to keep up.",
           "dataPoints": null,
           "spec": [
             {
@@ -4194,6 +4079,304 @@
             "passive sensing"
           ],
           "dataSourceType": "extreme",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "Total steps increased over a period of several days.",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Total Steps": null
+            },
+            {
+              "date": "2021-03-30",
+              "Total Steps": null
+            },
+            {
+              "date": "2021-03-31",
+              "Total Steps": 4161.0
+            },
+            {
+              "date": "2021-04-01",
+              "Total Steps": 13673.0
+            },
+            {
+              "date": "2021-04-02",
+              "Total Steps": 13557.0
+            },
+            {
+              "date": "2021-04-03",
+              "Total Steps": 19817.0
+            },
+            {
+              "date": "2021-04-04",
+              "Total Steps": 15032.0
+            },
+            {
+              "date": "2021-04-05",
+              "Total Steps": 13733.0
+            },
+            {
+              "date": "2021-04-06",
+              "Total Steps": 12587.0
+            },
+            {
+              "date": "2021-04-07",
+              "Total Steps": 14130.0
+            },
+            {
+              "date": "2021-04-08",
+              "Total Steps": 10413.0
+            },
+            {
+              "date": "2021-04-09",
+              "Total Steps": 13822.0
+            },
+            {
+              "date": "2021-04-10",
+              "Total Steps": 13608.0
+            },
+            {
+              "date": "2021-04-11",
+              "Total Steps": 13752.0
+            },
+            {
+              "date": "2021-04-12",
+              "Total Steps": 15202.0
+            },
+            {
+              "date": "2021-04-13",
+              "Total Steps": 15078.0
+            },
+            {
+              "date": "2021-04-14",
+              "Total Steps": 15852.0
+            },
+            {
+              "date": "2021-04-15",
+              "Total Steps": 13048.0
+            },
+            {
+              "date": "2021-04-16",
+              "Total Steps": 12032.0
+            },
+            {
+              "date": "2021-04-17",
+              "Total Steps": null
+            },
+            {
+              "date": "2021-04-18",
+              "Total Steps": null
+            },
+            {
+              "date": "2021-04-19",
+              "Total Steps": 10111.0
+            },
+            {
+              "date": "2021-04-20",
+              "Total Steps": 14702.0
+            },
+            {
+              "date": "2021-04-21",
+              "Total Steps": 11925.0
+            },
+            {
+              "date": "2021-04-22",
+              "Total Steps": 11294.0
+            },
+            {
+              "date": "2021-04-23",
+              "Total Steps": 13093.0
+            },
+            {
+              "date": "2021-04-24",
+              "Total Steps": 11245.0
+            },
+            {
+              "date": "2021-04-25",
+              "Total Steps": 29579.0
+            },
+            {
+              "date": "2021-04-26",
+              "Total Steps": 11669.0
+            },
+            {
+              "date": "2021-04-27",
+              "Total Steps": 12234.0
+            },
+            {
+              "date": "2021-04-28",
+              "Total Steps": 10586.0
+            },
+            {
+              "date": "2021-04-29",
+              "Total Steps": 10162.0
+            },
+            {
+              "date": "2021-04-30",
+              "Total Steps": 14106.0
+            },
+            {
+              "date": "2021-05-01",
+              "Total Steps": 10377.0
+            },
+            {
+              "date": "2021-05-02",
+              "Total Steps": 25279.0
+            },
+            {
+              "date": "2021-05-03",
+              "Total Steps": 9749.0
+            },
+            {
+              "date": "2021-05-04",
+              "Total Steps": 13620.0
+            },
+            {
+              "date": "2021-05-05",
+              "Total Steps": 12016.0
+            },
+            {
+              "date": "2021-05-06",
+              "Total Steps": 7447.0
+            },
+            {
+              "date": "2021-05-07",
+              "Total Steps": 6137.0
+            },
+            {
+              "date": "2021-05-08",
+              "Total Steps": 25121.0
+            },
+            {
+              "date": "2021-05-09",
+              "Total Steps": 8964.0
+            },
+            {
+              "date": "2021-05-10",
+              "Total Steps": 14711.0
+            },
+            {
+              "date": "2021-05-11",
+              "Total Steps": 10746.0
+            },
+            {
+              "date": "2021-05-12",
+              "Total Steps": 12597.0
+            },
+            {
+              "date": "2021-05-13",
+              "Total Steps": 9942.0
+            },
+            {
+              "date": "2021-05-14",
+              "Total Steps": 16680.0
+            },
+            {
+              "date": "2021-05-15",
+              "Total Steps": 5835.0
+            },
+            {
+              "date": "2021-05-16",
+              "Total Steps": 23149.0
+            },
+            {
+              "date": "2021-05-17",
+              "Total Steps": 9538.0
+            },
+            {
+              "date": "2021-05-18",
+              "Total Steps": 6653.0
+            },
+            {
+              "date": "2021-05-19",
+              "Total Steps": 6122.0
+            },
+            {
+              "date": "2021-05-20",
+              "Total Steps": 3850.0
+            },
+            {
+              "date": "2021-05-21",
+              "Total Steps": 13278.0
+            },
+            {
+              "date": "2021-05-22",
+              "Total Steps": 8258.0
+            },
+            {
+              "date": "2021-05-23",
+              "Total Steps": 26581.0
+            },
+            {
+              "date": "2021-05-24",
+              "Total Steps": 7871.0
+            },
+            {
+              "date": "2021-05-25",
+              "Total Steps": 10379.0
+            },
+            {
+              "date": "2021-05-26",
+              "Total Steps": 9051.0
+            },
+            {
+              "date": "2021-05-27",
+              "Total Steps": 10230.0
+            },
+            {
+              "date": "2021-05-28",
+              "Total Steps": 9564.0
+            },
+            {
+              "date": "2021-05-29",
+              "Total Steps": null
+            },
+            {
+              "date": "2021-05-30",
+              "Total Steps": 7497.0
+            },
+            {
+              "date": "2021-05-31",
+              "Total Steps": 15308.0
+            },
+            {
+              "date": "2021-06-01",
+              "Total Steps": 9459.0
+            },
+            {
+              "date": "2021-06-02",
+              "Total Steps": 21239.0
+            },
+            {
+              "date": "2021-06-03",
+              "Total Steps": 9994.0
+            },
+            {
+              "date": "2021-06-04",
+              "Total Steps": 13014.0
+            },
+            {
+              "date": "2021-06-05",
+              "Total Steps": 12088.0
+            },
+            {
+              "date": "2021-06-06",
+              "Total Steps": 10899.0
+            }
+          ],
+          "spec": {
+            "name": "Total Steps",
+            "attribute": "rise",
+            "time_1": "2021-05-20",
+            "time_2": "2021-05-23",
+            "fact_description": "Total steps increased over a period of several days.",
+            "fact_type": "trend"
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "trend",
           "isShowL2": false
         },
         {
@@ -4814,35 +4997,35 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.25078130042748265
+          "relevance": 0.2224542880245677
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.20945554204528
+          "relevance": 0.2494019689672691
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.2084140875049073
+          "relevance": 0.27232027718474283
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3073597211376143
+          "relevance": 0.27827671450845026
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.33906603286384096
+          "relevance": 0.31280821470640263
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3626043236144394
+          "relevance": 0.3414933937925862
         }
       ]
     },
     {
-      "key": "insight-4",
-      "summaryTitle": "Social interaction is limited, with few calls and hesitancy to seek support due to guilt.",
+      "key": "insight-6",
+      "summaryTitle": "Few calls and hesitance to seek support, with guilt about burdening others for 10 weeks.",
       "sources": [
         "clinical note",
         "session transcript",
@@ -5152,7 +5335,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The patient hesitates to seek help, fearing they might trouble or inconvenience others.",
+          "summarySentence": "The patient hesitates to seek support, fearing they might trouble or inconvenience others.",
           "dataPoints": null,
           "spec": [
             {
@@ -5184,7 +5367,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The lowest number of incoming calls remained at zero over several weeks.",
+          "summarySentence": "The lowest number of incoming calls remained at zero over two observed periods.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -5481,7 +5664,7 @@
             },
             "value_dur_1": 0.0,
             "value_dur_2": 0.0,
-            "fact_description": "The lowest number of incoming calls remained at zero over several weeks.",
+            "fact_description": "The lowest number of incoming calls remained at zero over two observed periods.",
             "fact_type": "comparison"
           },
           "sources": [
@@ -5491,7 +5674,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Over a period of several weeks, the typical daily outgoing call count was one.",
+          "summarySentence": "Over a period of several weeks, most days had just one outgoing call.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -5780,7 +5963,7 @@
             "time_1": "2021-03-29",
             "time_2": "2021-06-06",
             "value": 1.0,
-            "fact_description": "Over a period of several weeks, the typical daily outgoing call count was one.",
+            "fact_description": "Over a period of several weeks, most days had just one outgoing call.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -5790,7 +5973,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "There were days with no outgoing calls during this multi-week period.",
+          "summarySentence": "There were days with no outgoing calls made during this period.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -6079,7 +6262,7 @@
             "time_1": "2021-03-29",
             "time_2": "2021-06-06",
             "value": 0.0,
-            "fact_description": "There were days with no outgoing calls during this multi-week period.",
+            "fact_description": "There were days with no outgoing calls made during this period.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -6108,35 +6291,35 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.28946579648244897
+          "relevance": 0.3290635464122928
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.28740595182921136
+          "relevance": 0.38691385116440524
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.2634847401586282
+          "relevance": 0.3867942126453427
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3923374986422638
+          "relevance": 0.3824215432701171
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3658932648998588
+          "relevance": 0.38193365382592953
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3687250615706524
+          "relevance": 0.39239338190245066
         }
       ]
     },
     {
-      "key": "insight-5",
-      "summaryTitle": "Guilt and concern about letting down friends and roommates.",
+      "key": "insight-7",
+      "summaryTitle": "Guilt and concern about letting down friends and roommates reported for at least 1 day.",
       "sources": [
         "clinical note",
         "session transcript"
@@ -6182,218 +6365,35 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.31884794838955155
+          "relevance": 0.2611460457975123
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.275983898606225
+          "relevance": 0.2736430252518975
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.2644824550749899
+          "relevance": 0.2649071294718606
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3320355786732673
+          "relevance": 0.3663861984922417
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3163202382979188
+          "relevance": 0.34587086202895995
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.2919951279565375
-        }
-      ]
-    },
-    {
-      "key": "insight-6",
-      "summaryTitle": "Pervasive self-criticism and inadequacy across academic, social, and family roles.",
-      "sources": [
-        "clinical note",
-        "session transcript"
-      ],
-      "insightType": [
-        "Emotional State"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "The patient often feels inadequate and is highly self-critical in many areas of life.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: The one that comes up the most is, ‘I’m not good enough.’ That’s what I wrote down."
-            },
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: Usually it’s like, I’m not good enough at uni, not good enough as a friend, or even as a daughter. Like I keep messing everything up."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Lucy often thinks logically, though her thoughts are mostly negative and self-critical.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Thought process: Logical, though negative and self-critical content predominates."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Lucy often feels inadequate about her schoolwork, friendships, and family responsibilities.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Lucy continues to experience pervasive thoughts of inadequacy, particularly around her academic performance, friendships, and family roles."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        }
-      ],
-      "transcriptRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.282457239971895
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.224560457210302
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.20551146309343313
-        }
-      ],
-      "noteRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.3748383158795201
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.33293681042343315
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.32826687203019744
-        }
-      ]
-    },
-    {
-      "key": "insight-7",
-      "summaryTitle": "Emotional numbness and low motivation present, without current suicidal ideation or intent.",
-      "sources": [
-        "clinical note",
-        "session transcript"
-      ],
-      "insightType": [
-        "Emotional State"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "Lucy reports feeling emotionally numb and unmotivated, without current suicidal thoughts or plans.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "She describes episodes of emotional numbness and low motivation but denies active suicidal ideation or intent."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Lucy experiences emotional numbness and apathy without any current suicidal thoughts or plans.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Safety: No current suicidal ideation or intent; passive thoughts of numbness and apathy."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "The patient experiences emotional numbness and low motivation, without current thoughts of self-harm.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: I have had a couple days where I just felt really numb again. Not really wanting to do anything. I didn’t really want to hurt myself, I just felt like I didn’t care much either way."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        }
-      ],
-      "transcriptRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.374594180391262
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.34650005321155747
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.3343480435707046
-        }
-      ],
-      "noteRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.46157833144805055
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.4917170729371747
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.48754704846388336
+          "relevance": 0.3327116079631431
         }
       ]
     },
     {
       "key": "insight-8",
-      "summaryTitle": "Maintains some responsibilities, minimizes achievements, and feels anxious about workload.",
+      "summaryTitle": "Maintains some work and academic tasks, minimizes achievements, reports anxiety with workload.",
       "sources": [
         "clinical note",
         "session transcript"
@@ -6404,7 +6404,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Lucy continues to work and attend therapy, though she downplays these accomplishments.",
+          "summarySentence": "Lucy continues to attend work and therapy, though she downplays these accomplishments.",
           "dataPoints": null,
           "spec": [
             {
@@ -6415,6 +6415,22 @@
           ],
           "sources": [
             "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "The patient is struggling with coursework but celebrated listening to a recorded lecture.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: Still behind. I missed another lecture, but I did manage to listen to a recording of one of the past ones. That actually felt like a little win, but I’m still scared about how much I missed."
+            }
+          ],
+          "sources": [
+            "session transcript"
           ],
           "dataSourceType": "text",
           "isShowL2": true
@@ -6452,7 +6468,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Lucy is working fewer hours, struggling academically, and has minimal social interaction.",
+          "summarySentence": "Lucy works fewer hours, struggles with schoolwork, and rarely socializes.",
           "dataPoints": null,
           "spec": [
             {
@@ -6466,56 +6482,40 @@
           ],
           "dataSourceType": "text",
           "isShowL2": false
-        },
-        {
-          "summarySentence": "The patient is struggling with coursework but celebrated listening to a recorded lecture.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: Still behind. I missed another lecture, but I did manage to listen to a recording of one of the past ones. That actually felt like a little win, but I’m still scared about how much I missed."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
         }
       ],
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3228861893381829
+          "relevance": 0.359498169650224
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.28808132805021197
+          "relevance": 0.33262705430778056
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.2812994928722987
+          "relevance": 0.3292809814020733
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.34957464018147827
+          "relevance": 0.4352758126842184
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.36982968319060133
+          "relevance": 0.4482033013551031
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.4001508591602031
+          "relevance": 0.4664620738644977
         }
       ]
     },
     {
       "key": "insight-9",
-      "summaryTitle": "Open to brief self-care activities, including music, tea, and possibly stretching.",
+      "summaryTitle": "Open to brief self-care activities, including music, tea, and possibly stretching, as of May 9.",
       "sources": [
         "clinical note",
         "session transcript"
@@ -6560,162 +6560,35 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3305413600059706
+          "relevance": 0.3107759255028252
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3826822213360329
+          "relevance": 0.3906628114364827
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.43278095364214736
+          "relevance": 0.4385277829554301
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.35752498608113104
+          "relevance": 0.35193124498091966
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.42260559072297116
+          "relevance": 0.41423952541588
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.4609372557688963
+          "relevance": 0.46008739718432645
         }
       ]
     },
     {
       "key": "insight-10",
-      "summaryTitle": "Open to self-care and therapeutic strategies, but struggles with consistency and self-compassion.",
-      "sources": [
-        "clinical note",
-        "session transcript"
-      ],
-      "insightType": [
-        "Emotional State",
-        "Medication & Treatment"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "Lucy occasionally uses coping strategies but finds it hard to maintain them and be self-kind.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "She demonstrates some engagement with behavioral activation and cognitive restructuring strategies but struggles with consistency and self-compassion."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "The patient expresses openness to simple self-care activities like music, tea, and stretching.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: Music and tea, for sure. Maybe stretching. I’m not sure about journaling, but I can try the others."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Lucy often shows more kindness to others than to herself, yet welcomes self-compassion.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "She recognizes a pattern of being more compassionate toward others than herself and is open to practicing self-compassion, though she is unsure if it will help."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "The patient expresses willingness to try self-compassion but struggles to use it personally.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: No, definitely not. I’d probably just tell them they’re doing the best they can. But I can never think of myself the same way."
-            },
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: Yeah… I can try. I don’t know if it will work but I can try to do that."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "Lucy is willing to add short self-care practices like music or tea to her day.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "She is open to incorporating brief self-care activities, such as listening to music or making tea, into her routine."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        }
-      ],
-      "transcriptRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.3223842989365747
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.37974885561279037
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.3842598632046279
-        }
-      ],
-      "noteRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.3918294652944069
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.4451985953021168
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.4875306086976114
-        }
-      ]
-    },
-    {
-      "key": "insight-11",
-      "summaryTitle": "Sertraline taken daily with no side effects; benefit remains uncertain.",
+      "summaryTitle": "Sertraline taken daily for 1 week with no side effects; benefit remains unclear to patient.",
       "sources": [
         "clinical note",
         "session transcript"
@@ -6725,13 +6598,13 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Lucy consistently takes sertraline each day and experiences no side effects.",
+          "summarySentence": "Lucy takes her morning sertraline as prescribed and experiences no additional side effects.",
           "dataPoints": null,
           "spec": [
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Medication adherence: Reports taking sertraline daily, no side effects."
+              "text": "Lucy is currently taking sertraline every morning as prescribed and reports no new side effects."
             }
           ],
           "sources": [
@@ -6757,13 +6630,13 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Lucy takes her morning sertraline as prescribed and experiences no additional side effects.",
+          "summarySentence": "Lucy consistently takes her prescribed sertraline and experiences no adverse effects.",
           "dataPoints": null,
           "spec": [
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Lucy is currently taking sertraline every morning as prescribed and reports no new side effects."
+              "text": "Medication adherence: Reports taking sertraline daily, no side effects."
             }
           ],
           "sources": [
@@ -6773,7 +6646,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The patient takes sertraline each morning and experiences no additional side effects.",
+          "summarySentence": "The patient takes sertraline each morning and has not experienced additional side effects.",
           "dataPoints": null,
           "spec": [
             {
@@ -6792,29 +6665,134 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.20336888897433525
+          "relevance": 0.20445001824036885
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.28005635647900506
+          "relevance": 0.2860104963662601
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.25938393489381006
+          "relevance": 0.27047106493380146
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.46177590164852295
+          "relevance": 0.4935409729529663
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.4893352662702603
+          "relevance": 0.5118208294507108
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.47744961198049607
+          "relevance": 0.49933556782340116
+        }
+      ]
+    },
+    {
+      "key": "insight-11",
+      "summaryTitle": "Aware of crisis resources, engaged in therapy, and adherent to sertraline for 1 week.",
+      "sources": [
+        "clinical note",
+        "session transcript"
+      ],
+      "insightType": [
+        "Medication & Treatment"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "Lucy knows how to access crisis support and will seek help if needed.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "She is aware of crisis resources and agrees to reach out if her symptoms worsen."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "Lucy benefits from therapy, medication, work, studies, and seeking help when needed.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Protective factors include ongoing engagement in therapy, adherence to medication, maintenance of some work and academic responsibilities, and willingness to reach out for help if needed."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "Lucy takes her morning sertraline as prescribed and experiences no additional side effects.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Lucy is currently taking sertraline every morning as prescribed and reports no new side effects."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "The patient takes sertraline each morning and has not experienced additional side effects.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: Yes, I’m still on it every morning. No new side effects. I still don’t know if it’s really making much difference though."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.22477695131782235
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.3919719435535557
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.380630409789228
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.5467125742423096
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.5863924010962059
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.5848603668057142
         }
       ]
     }
@@ -7288,11 +7266,12 @@
   ],
   "survey_raw": [
     {
-      "modality_type": "survey",
-      "modality_source": "survey",
-      "feature_name_renamed": "Negative Affect Score",
-      "feature_name": "negative_affect_EMA",
-      "data": [
+      "isShowL2": false,
+      "sources": [
+        "survey"
+      ],
+      "dataSourceType": "raw",
+      "dataPoints": [
         {
           "date": "2021-03-31",
           "Negative Affect Score": 2.0
@@ -7373,14 +7352,16 @@
           "date": "2021-06-06",
           "Negative Affect Score": 8.0
         }
-      ]
+      ],
+      "summarySentence": "Displaying negative affect score survey scores."
     },
     {
-      "modality_type": "survey",
-      "modality_source": "survey",
-      "feature_name_renamed": "Positive Affect Score",
-      "feature_name": "positive_affect_EMA",
-      "data": [
+      "isShowL2": false,
+      "sources": [
+        "survey"
+      ],
+      "dataSourceType": "raw",
+      "dataPoints": [
         {
           "date": "2021-03-31",
           "Positive Affect Score": 9.0
@@ -7461,14 +7442,16 @@
           "date": "2021-06-06",
           "Positive Affect Score": 10.0
         }
-      ]
+      ],
+      "summarySentence": "Displaying positive affect score survey scores."
     },
     {
-      "modality_type": "survey",
-      "modality_source": "survey",
-      "feature_name_renamed": "PHQ-4 Anxiety Score",
-      "feature_name": "phq4_anxiety_EMA",
-      "data": [
+      "isShowL2": false,
+      "sources": [
+        "survey"
+      ],
+      "dataSourceType": "raw",
+      "dataPoints": [
         {
           "date": "2021-04-04",
           "PHQ-4 Anxiety Score": 3.0
@@ -7509,14 +7492,16 @@
           "date": "2021-06-06",
           "PHQ-4 Anxiety Score": 3.0
         }
-      ]
+      ],
+      "summarySentence": "Displaying phq-4 anxiety score survey scores."
     },
     {
-      "modality_type": "survey",
-      "modality_source": "survey",
-      "feature_name_renamed": "PHQ-4 Score",
-      "feature_name": "phq4_EMA",
-      "data": [
+      "isShowL2": false,
+      "sources": [
+        "survey"
+      ],
+      "dataSourceType": "raw",
+      "dataPoints": [
         {
           "date": "2021-04-04",
           "PHQ-4 Score": 4.0
@@ -7557,14 +7542,16 @@
           "date": "2021-06-06",
           "PHQ-4 Score": 6.0
         }
-      ]
+      ],
+      "summarySentence": "Displaying phq-4 score survey scores."
     },
     {
-      "modality_type": "survey",
-      "modality_source": "survey",
-      "feature_name_renamed": "PHQ-4 Depression Score",
-      "feature_name": "phq4_depression_EMA",
-      "data": [
+      "isShowL2": false,
+      "sources": [
+        "survey"
+      ],
+      "dataSourceType": "raw",
+      "dataPoints": [
         {
           "date": "2021-04-04",
           "PHQ-4 Depression Score": 1.0
@@ -7605,14 +7592,16 @@
           "date": "2021-06-06",
           "PHQ-4 Depression Score": 3.0
         }
-      ]
+      ],
+      "summarySentence": "Displaying phq-4 depression score survey scores."
     },
     {
-      "modality_type": "survey",
-      "modality_source": "survey",
-      "feature_name_renamed": "PSS-4 Score",
-      "feature_name": "pss4_EMA",
-      "data": [
+      "isShowL2": false,
+      "sources": [
+        "survey"
+      ],
+      "dataSourceType": "raw",
+      "dataPoints": [
         {
           "date": "2021-03-31",
           "PSS-4 Score": 6.0
@@ -7653,7 +7642,8 @@
           "date": "2021-06-02",
           "PSS-4 Score": 8.0
         }
-      ]
+      ],
+      "summarySentence": "Displaying pss-4 score survey scores."
     }
   ],
   "suggest_activity": [

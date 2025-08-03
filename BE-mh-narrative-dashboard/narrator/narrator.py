@@ -145,7 +145,7 @@ Task:
 When rewriting the insights, follow the guidelines:
 * Use the original text if no hallucination is detected.
 * Be concrete, specific, but succinct. Do not use more than 15 words for each data insight.
-* Do not make references to specific date or times.
+* Contextualize dates and times, e.g., "for 1 week", "for 3 days". For insights on a specific date, do not mention the year.
 * Do not start with "Patient", "He/she" or patient name.
 * Reference the styles given below.
 
