@@ -206,7 +206,7 @@ class MINDPipeline:
                 self._save("suggest_activity", self.suggest_activity)
         return self
     
-    def _get_all_passive_sensing_raw(self):
+    def _get_all_survey_raw(self):
         passive_sensing_raw = []
         for datum in self.data['numerical_data']:
             if datum['modality_type'] == 'survey':
@@ -282,7 +282,7 @@ class MINDPipeline:
             "overview": self.overview,
             "insights": self.visualization_spec,
             "session_subjective_info": self.data['this_series'],
-            "passive_sensing_raw": self._get_all_passive_sensing_raw(),
+            "survey_raw": self._get_all_survey_raw(),
             "suggest_activity": self.suggest_activity
         }
         self._save(f"{self.patient_id}", final_spec, is_parent=True)

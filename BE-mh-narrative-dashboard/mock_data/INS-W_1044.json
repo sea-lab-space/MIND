@@ -49,8 +49,8 @@
       "key": "insight-0",
       "summaryTitle": "Elevated PHQ-4 and PSS-4 scores align with reported overwhelm and anxiety.",
       "sources": [
-        "survey",
-        "clinical note"
+        "clinical note",
+        "survey"
       ],
       "insightType": [
         "Emotional State",
@@ -314,15 +314,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.40338483908287975
+          "relevance": 0.408346908960894
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.38902959716830043
+          "relevance": 0.3948967071437441
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3932188273673018
+          "relevance": 0.3999715980000501
         }
       ]
     },
@@ -330,9 +330,9 @@
       "key": "insight-1",
       "summaryTitle": "Negative affect and anxiety remain elevated; mood briefly improves after activity, then declines.",
       "sources": [
-        "survey",
         "clinical note",
-        "session transcript"
+        "session transcript",
+        "survey"
       ],
       "insightType": [
         "Emotional State"
@@ -770,7 +770,7 @@
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.2799924087309944
+          "relevance": 0.2800195988069644
         },
         {
           "date": "2021-05-09",
@@ -780,15 +780,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.41819342684302485
+          "relevance": 0.41809504894905447
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.43210718950582927
+          "relevance": 0.43200099286382204
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.45074207479469336
+          "relevance": 0.45064529889190996
         }
       ]
     },
@@ -797,8 +797,8 @@
       "summaryTitle": "Highly fragmented sleep with frequent awakenings and reports of daytime sleep.",
       "sources": [
         "clinical note",
-        "passive sensing",
-        "session transcript"
+        "session transcript",
+        "passive sensing"
       ],
       "insightType": [
         "Sleep Patterns"
@@ -2638,7 +2638,7 @@
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.15246313758429555
+          "relevance": 0.1524707039593641
         },
         {
           "date": "2021-05-09",
@@ -2648,15 +2648,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3239083634943151
+          "relevance": 0.3239598042036301
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3176453156765732
+          "relevance": 0.3176830721608228
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3301967451603388
+          "relevance": 0.33023402295461246
         }
       ]
     },
@@ -2665,8 +2665,8 @@
       "summaryTitle": "Physical activity shows brief increases but overall decline and more sedentary episodes.",
       "sources": [
         "clinical note",
-        "passive sensing",
-        "session transcript"
+        "session transcript",
+        "passive sensing"
       ],
       "insightType": [
         "Physical Activity"
@@ -4818,7 +4818,7 @@
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.20944152966879553
+          "relevance": 0.20945554204528
         },
         {
           "date": "2021-05-09",
@@ -4828,15 +4828,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.30738874163684893
+          "relevance": 0.3073597211376143
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3390936005807236
+          "relevance": 0.33906603286384096
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.36260885096005335
+          "relevance": 0.3626043236144394
         }
       ]
     },
@@ -4845,8 +4845,8 @@
       "summaryTitle": "Social interaction is limited, with few calls and hesitancy to seek support due to guilt.",
       "sources": [
         "clinical note",
-        "passive sensing",
-        "session transcript"
+        "session transcript",
+        "passive sensing"
       ],
       "insightType": [
         "Social Interaction"
@@ -6112,7 +6112,7 @@
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.28738128789271056
+          "relevance": 0.28740595182921136
         },
         {
           "date": "2021-05-09",
@@ -6122,15 +6122,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.39236004132927954
+          "relevance": 0.3923374986422638
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3658952868754396
+          "relevance": 0.3658932648998588
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3687149453635354
+          "relevance": 0.3687250615706524
         }
       ]
     },
@@ -6186,7 +6186,7 @@
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.2759884778972307
+          "relevance": 0.275983898606225
         },
         {
           "date": "2021-05-09",
@@ -6196,15 +6196,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.33173361886625663
+          "relevance": 0.3320355786732673
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3159974040213559
+          "relevance": 0.3163202382979188
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.29170578676954656
+          "relevance": 0.2919951279565375
         }
       ]
     },
@@ -6280,7 +6280,7 @@
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.22457488815117663
+          "relevance": 0.224560457210302
         },
         {
           "date": "2021-05-09",
@@ -6369,7 +6369,7 @@
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3464691264937152
+          "relevance": 0.34650005321155747
         },
         {
           "date": "2021-05-09",
@@ -6491,7 +6491,7 @@
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.2880943593763609
+          "relevance": 0.28808132805021197
         },
         {
           "date": "2021-05-09",
@@ -6501,15 +6501,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.349568195899286
+          "relevance": 0.34957464018147827
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3698341654942598
+          "relevance": 0.36982968319060133
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.40015415085716344
+          "relevance": 0.4001508591602031
         }
       ]
     },
@@ -6564,7 +6564,7 @@
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.38267092421536164
+          "relevance": 0.3826822213360329
         },
         {
           "date": "2021-05-09",
@@ -6691,7 +6691,7 @@
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.379724363188362
+          "relevance": 0.37974885561279037
         },
         {
           "date": "2021-05-09",
@@ -6701,15 +6701,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.39187740344507
+          "relevance": 0.3918294652944069
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.44525420325996634
+          "relevance": 0.4451985953021168
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.487582408723301
+          "relevance": 0.4875306086976114
         }
       ]
     },
@@ -6796,7 +6796,7 @@
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.27998577453819434
+          "relevance": 0.28005635647900506
         },
         {
           "date": "2021-05-09",
@@ -6806,15 +6806,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.4617429028968079
+          "relevance": 0.46177590164852295
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.4893037024866485
+          "relevance": 0.4893352662702603
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.47743082879903664
+          "relevance": 0.47744961198049607
         }
       ]
     }
@@ -7286,7 +7286,7 @@
       "encounter_date": "2021-05-09"
     }
   ],
-  "passive_sensing_raw": [
+  "survey_raw": [
     {
       "modality_type": "survey",
       "modality_source": "survey",

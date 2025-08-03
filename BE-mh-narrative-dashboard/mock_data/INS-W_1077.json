@@ -49,10 +49,10 @@
       "key": "insight-0",
       "summaryTitle": "Low mood and energy persist despite increased activity; brief mood lifts from family interactions.",
       "sources": [
-        "survey",
         "clinical note",
-        "passive sensing",
-        "session transcript"
+        "session transcript",
+        "survey",
+        "passive sensing"
       ],
       "insightType": [
         "Emotional State",
@@ -930,7 +930,7 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.31740447882765
+          "relevance": 0.31744919114827813
         },
         {
           "date": "2021-04-11",
@@ -944,15 +944,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.4246635485907156
+          "relevance": 0.4249802114459406
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.48438873934621096
+          "relevance": 0.48458032303900755
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.5562480272605941
+          "relevance": 0.5562839126911721
         }
       ]
     },
@@ -961,8 +961,8 @@
       "summaryTitle": "Sleep is inconsistent and fragmented, with late bedtimes and frequent awakenings; phone use persists.",
       "sources": [
         "clinical note",
-        "passive sensing",
-        "session transcript"
+        "session transcript",
+        "passive sensing"
       ],
       "insightType": [
         "Sleep Patterns",
@@ -3126,7 +3126,7 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.2463639871718338
+          "relevance": 0.2463917874944031
         },
         {
           "date": "2021-04-11",
@@ -3140,15 +3140,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.32014716095638346
+          "relevance": 0.3201821009811389
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3823980447058362
+          "relevance": 0.3824375255022033
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.37336081629458545
+          "relevance": 0.3733662123108372
         }
       ]
     },
@@ -3157,8 +3157,8 @@
       "summaryTitle": "Prolonged screen time coincides with self-reported negative emotional impact during stress.",
       "sources": [
         "clinical note",
-        "passive sensing",
-        "session transcript"
+        "session transcript",
+        "passive sensing"
       ],
       "insightType": [
         "Digital Engagement",
@@ -5314,7 +5314,7 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.26141523075249307
+          "relevance": 0.2613974583156552
         },
         {
           "date": "2021-04-11",
@@ -5328,15 +5328,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.31154752388700224
+          "relevance": 0.3115509779164923
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.34686832022086356
+          "relevance": 0.34685496231286483
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.33498324951176145
+          "relevance": 0.3349610572474459
         }
       ]
     },
@@ -5344,9 +5344,9 @@
       "key": "insight-3",
       "summaryTitle": "Stress scores are elevated and variable, consistent with reported financial and relationship worries.",
       "sources": [
-        "survey",
         "clinical note",
-        "session transcript"
+        "session transcript",
+        "survey"
       ],
       "insightType": [
         "Emotional State"
@@ -5758,7 +5758,7 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.29813480686898797
+          "relevance": 0.29815939859048046
         },
         {
           "date": "2021-04-11",
@@ -5772,15 +5772,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.39002645307868095
+          "relevance": 0.38995307773682125
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.42542401427560256
+          "relevance": 0.4253440153289446
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.4287644547645383
+          "relevance": 0.428691350698463
         }
       ]
     },
@@ -5864,7 +5864,7 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.22959638867294263
+          "relevance": 0.22966703890521334
         },
         {
           "date": "2021-04-11",
@@ -5878,15 +5878,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.37315765851324917
+          "relevance": 0.3731964942836824
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3591913976093204
+          "relevance": 0.3592331474668936
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.37838452118003246
+          "relevance": 0.3784592805832615
         }
       ]
     },
@@ -5895,8 +5895,8 @@
       "summaryTitle": "Social contact centers on sister, with limited work and partner engagement.",
       "sources": [
         "clinical note",
-        "passive sensing",
-        "session transcript"
+        "session transcript",
+        "passive sensing"
       ],
       "insightType": [
         "Social Interaction",
@@ -6924,29 +6924,29 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.16255871469438804
+          "relevance": 0.16259064556473374
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.23824455591400442
+          "relevance": 0.23824937387947226
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.24431182549009642
+          "relevance": 0.24430956407035476
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.33612339105640404
+          "relevance": 0.3360989220012402
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3659051362009969
+          "relevance": 0.36588186991634275
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3859851765895847
+          "relevance": 0.3859654139312685
         }
       ]
     },
@@ -6955,8 +6955,8 @@
       "summaryTitle": "Behavioral activation strategies used; benefits are subtle and not yet sustained.",
       "sources": [
         "clinical note",
-        "passive sensing",
-        "session transcript"
+        "session transcript",
+        "passive sensing"
       ],
       "insightType": [
         "Physical Activity",
@@ -7652,29 +7652,29 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.21755824309756372
+          "relevance": 0.21753410629026348
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.26864646474835835
+          "relevance": 0.26863162325339474
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.24110362457931656
+          "relevance": 0.24110652663099755
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3731577359439069
+          "relevance": 0.3732223125451484
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.4049038094802304
+          "relevance": 0.4049849668434257
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.45252369324457703
+          "relevance": 0.45258722971415155
         }
       ]
     },
@@ -7682,8 +7682,8 @@
       "key": "insight-7",
       "summaryTitle": "Increased time in green and exercise spaces with slight, short-term improvement in reported mood.",
       "sources": [
-        "passive sensing",
-        "session transcript"
+        "session transcript",
+        "passive sensing"
       ],
       "insightType": [
         "Physical Activity",
@@ -9829,7 +9829,7 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3275216829143506
+          "relevance": 0.32752713030359815
         },
         {
           "date": "2021-04-11",
@@ -9845,8 +9845,8 @@
       "key": "insight-8",
       "summaryTitle": "Positive affect is low and variable, with brief improvements during family interactions.",
       "sources": [
-        "survey",
-        "session transcript"
+        "session transcript",
+        "survey"
       ],
       "insightType": [
         "Emotional State"
@@ -10480,15 +10480,15 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.26713277114105194
+          "relevance": 0.26711718608894414
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.2656140815617368
+          "relevance": 0.2655472419161141
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.26777221547442265
+          "relevance": 0.2677062527566079
         }
       ]
     },
@@ -10572,7 +10572,7 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.29087015226028223
+          "relevance": 0.29088286512802936
         },
         {
           "date": "2021-04-11",
@@ -10586,15 +10586,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.49222962044907265
+          "relevance": 0.4922020556890702
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.5027883958489426
+          "relevance": 0.5027419399009866
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.5335319244108088
+          "relevance": 0.5334670248691283
         }
       ]
     },
@@ -10646,29 +10646,29 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.29549414316589595
+          "relevance": 0.29547703456039737
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.33026776686838466
+          "relevance": 0.33024648472086354
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.31678144576665446
+          "relevance": 0.3167657260026029
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.4157998464593283
+          "relevance": 0.4158535158251894
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.4445931654070194
+          "relevance": 0.4446525135869824
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.43807917236491684
+          "relevance": 0.43814352219861924
         }
       ]
     },
@@ -10718,15 +10718,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.39738119530253835
+          "relevance": 0.39740800326221676
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.4431749482830789
+          "relevance": 0.4432126268515733
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.4993252256566249
+          "relevance": 0.49936781637405314
         }
       ]
     }
@@ -11259,7 +11259,7 @@
       "encounter_date": "2021-05-09"
     }
   ],
-  "passive_sensing_raw": [
+  "survey_raw": [
     {
       "modality_type": "survey",
       "modality_source": "survey",
