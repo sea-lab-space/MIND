@@ -51,7 +51,6 @@ export default function OverviewComponent({
                             );
                         })}
                     </div>
-
             </div>
       </div>
   );

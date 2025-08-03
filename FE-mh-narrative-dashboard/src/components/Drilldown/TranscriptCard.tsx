@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {formatDate} from "@/utils/helper";
 import type {InsightExpandViewItem} from "@/types/props";
+import type {Encounter} from "@/types/dataTypes";
 
 
 // Background color by relevance
@@ -15,9 +16,10 @@ const getColorByRelevance = (relevance: number) => {
 
 interface clinicalTranscriptsFactsProps {
     clinicalTranscriptsFacts: InsightExpandViewItem[];
+    sessionInfo: Encounter[];
 }
 
-const TranscriptCard = ({clinicalTranscriptsFacts} : clinicalTranscriptsFactsProps) => {
+const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTranscriptsFactsProps) => {
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
     const [selectedFactKey, setSelectedFactKey] = useState<string | null>(null);
     useEffect(() => {
@@ -30,7 +32,7 @@ const TranscriptCard = ({clinicalTranscriptsFacts} : clinicalTranscriptsFactsPro
 
     // Find selected fact based on selectedFactKey
     const selectedFact = clinicalTranscriptsFacts.find(fact => fact.key === selectedFactKey);
-    const dates = selectedFact?.dataPoints?.map(fact => fact.date);
+    const dates = sessionInfo?.map(item => item.encounter_date);
     const selectedFactSpec = selectedFact?.spec;
     const highlightDates = new Set(
         (Array.isArray(selectedFact?.spec) ? selectedFact?.spec : [])
@@ -121,12 +123,12 @@ const TranscriptCard = ({clinicalTranscriptsFacts} : clinicalTranscriptsFactsPro
                         className="space-y-6 text-sm text-[#2c2c2c] overflow-y-auto"
                         style={{ flex: 1, maxHeight: "500px" /* match container height */, paddingRight: "1rem" }}
                     >
-                        {selectedFact?.dataPoints
-                            ?.filter(dp => dp.date === selectedDate)
+                        {sessionInfo
+                            ?.filter(dp => dp.encounter_date === selectedDate)
                             .map((dp, index) => (
                                 <div key={index} className="space-y-1">
                                     <div className="prose prose-sm max-w-none text-[#2c2c2c]">
-                                        {dp.record?.map((recordInfo, i) => (
+                                        {dp?.transcript?.map((recordInfo, i) => (
                                             <div key={i} className="mb-4 space-y-2">
                                                 {Object.keys(recordInfo).map((key) => {
                                                     const value = recordInfo[key];
