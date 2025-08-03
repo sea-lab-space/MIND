@@ -17,7 +17,6 @@ interface clinicalNotesFactsProps {
 const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFactsProps) => {
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
     const [selectedFactKey, setSelectedFactKey] = useState<string | null>(null);
-    console.log(sessionInfo, "herere")
 
     useEffect(() => {
         if (clinicalNotesFacts.length > 0) {
