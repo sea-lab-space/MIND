@@ -47,7 +47,7 @@ export interface InsightExpandViewItem {
   summarySentence: string;
   dataPoints: Record<string, number>;
   sources: { type: DatasourceIconType }[];
-  highlightSpec: HighlightSpec;
+  highlightSpec?: HighlightSpec;
   dataSourceType: DataSourceType;
   insightType?: InsightType;
   // ! use this feature to determine if it should be shown on L2
@@ -66,7 +66,7 @@ export interface InsightCardData {
 }
 
 
-export const iconMap: Record<string, React.ElementType> = {
+export const overviewIconMap: Record<string, React.ElementType> = {
   heart: Heart,
   brain: Brain,
   activity: Activity,
@@ -93,7 +93,8 @@ export const DataSourceType = {
   DIFFERENCE: "difference",
   COMPARISON: "comparison",
   TEXT: "text",
-  DERIVED_VALUE: "derived value"
+  DERIVED_VALUE: "derived value",
+  RAW: "raw"
 } as const;
 
 export type DataSourceType = typeof DataSourceType[keyof typeof DataSourceType];

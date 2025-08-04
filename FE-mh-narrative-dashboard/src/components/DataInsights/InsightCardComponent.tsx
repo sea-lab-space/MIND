@@ -1,10 +1,11 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import InsightCardDetail from "@/components/DataInsights/InsightCardDetails";
-import type { DatasourceIconType } from "../../types/props";
+import type {DatasourceIconType, InsightType} from "../../types/props";
 import DataSourceIcon from "../DatasourceIcon";
 import { Button } from "../ui/button";
 import { Search } from "lucide-react";
 import { type InsightCardData } from "../../types/props";
+import {InsightTypeIconMap} from "@/types/dataTypes";
 
 interface InsightCardProps {
     isExpanded?: boolean;
@@ -16,6 +17,7 @@ interface InsightCardProps {
     isInsightCardSelected?: boolean;
     handleCardSelect?: () => void;
     handleCardHeaderClick?: () => void;
+    isDrillDown?: boolean
 }
 
 export default function InsightCardComponent({
@@ -25,6 +27,7 @@ export default function InsightCardComponent({
                                                  isInsightCardSelected = false,
                                                  handleCardSelect,
                                                  handleCardHeaderClick,
+                                                 isDrillDown=false
                                              }: InsightCardProps) {
     return (
         <div
@@ -72,15 +75,40 @@ export default function InsightCardComponent({
                 </div>
             )}
 
-            <div className="flex items-center gap-1 pt-2 pl-5 text-left justify-start">
-                <span className="text-xs font-medium italic">Sources:</span>
-                <div className="flex items-center gap-2 ml-3">
-                    {insightCardData.sources?.map((source, index) => (
-                        <div key={index} className="flex items-center">
-                            <DataSourceIcon iconType={source.type} />
-                        </div>
-                    ))}
+            <div
+                className={`flex ${
+                    isDrillDown ? "flex-col" : "flex-row justify-between"
+                } gap-y-2 pt-2 pl-5 pr-3 w-full`}
+            >
+                {/* Left: Sources */}
+                <div className="flex items-center gap-1">
+                    <span className="text-xs font-medium italic">Sources:</span>
+                    <div className="flex items-center gap-2 ml-3">
+                        {insightCardData.sources?.map((source, index) => (
+                            <div key={index} className="flex items-center">
+                                <DataSourceIcon iconType={source.type} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
+
+                {/* Right: Insight Types */}
+                {insightCardData?.insightType?.length > 0 && (
+                    <div className="flex items-center gap-2">
+                        <span className="text-xs font-medium italic">Insight Type:</span>
+                        {insightCardData.insightType.map((item, idx) => {
+                            const Icon = InsightTypeIconMap[item?.type as InsightType];
+                            if (!Icon) return null;
+
+                            return (
+                                <div key={idx}>
+                                    <Icon className="w-4 h-4" />
+                                </div>
+                            );
+                        })}
+                    </div>
+                )}
+
             </div>
         </div>
     );

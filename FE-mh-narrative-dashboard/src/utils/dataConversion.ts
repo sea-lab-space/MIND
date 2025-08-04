@@ -1,11 +1,11 @@
 import type {DatasourceIconType, DatasourceIconTypes, DataSourceType, InsightCardData} from "@/types/props";
-import visualizerData from "@/data/Visualizer_INS-W_963.json";
-import Gabriella_Lin_Data from "@/data/Visualizer_INS-W_963.json"
-import Lucy_Sutton_Data from "@/data/Visualizer_INS-W_1044.json"
-import Alison_Daniels_Data from "@/data/Visualizer_INS-W_1077.json"
+import visualizerData from "@/data/INS-W_963.json";
+import Gabriella_Lin_Data from "@/data/INS-W_963.json"
+import Lucy_Sutton_Data from "@/data/INS-W_1044.json"
+import Alison_Daniels_Data from "@/data/INS-W_1077.json"
 import type {InsightExpandViewItem, InsightType} from "@/types/props";
 import type { HighlightSpec } from "@/types/insightSpec";
-import type { Encounter } from "@/types/dataTypes";
+import type { Encounter, SurveyRaw } from "@/types/dataTypes";
 
 const personDataMap: Record<string, typeof visualizerData> = {
     "Gabriella Lin": Gabriella_Lin_Data,
@@ -45,11 +45,16 @@ export const getVisualizerDataForPerson = (personName: string) => {
         }) as InsightExpandViewItem)
     }));
     const session_subjective_info = personData.session_subjective_info as Encounter[];
+    const survey_data = (personData.survey_raw as InsightExpandViewItem[]).map((item, index) => ({
+        ...item,
+        key: `survey-${index}`,
+    }));
 
     return {
         overviewCardData,
         insightCardData,
-        session_subjective_info
+        session_subjective_info,
+        survey_data
     };
 };
 

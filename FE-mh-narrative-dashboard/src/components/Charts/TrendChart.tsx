@@ -19,7 +19,7 @@ import { getColors, HIGHLIGHT_COLOR, HIGHLIGHT_FILL_OPACITY } from "@/utils/colo
 
 interface TrendChartProps {
   data: DataPoint[];
-  spec: TrendSpec;
+  spec?: TrendSpec;
   themeColor: string;
 }
 
@@ -39,8 +39,9 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
     }
     return response[metricKey];
   };
-
   const auxilaryLine = () => {
+    if (!spec) return null;
+
     if (spec.attribute === "rise" || spec.attribute === "fall") {
       return (
         <ReferenceLine
@@ -56,9 +57,9 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
       );
     }
 
-    // Optional: return null if nothing should render
     return null;
   };
+
 
 
   const visData = data.map((d) => ({
@@ -69,13 +70,15 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
     <ResponsiveContainer width="100%" height="100%">
       <LineChart width={500} height={300} data={visData}>
         <CartesianGrid strokeDasharray="3 3" />
-        <ReferenceArea
+        {spec && (
+            <ReferenceArea
           x1={spec.time_1}
           x2={spec.time_2}
           y1={0}
           y2={Math.ceil(yRange[1])}
           fillOpacity={HIGHLIGHT_FILL_OPACITY}
         />
+        )}
         <XAxis dataKey="date" tick={{ fontSize: 10 }} />
         <YAxis domain={[0, Math.ceil(yRange[1])]} />
         <Tooltip />

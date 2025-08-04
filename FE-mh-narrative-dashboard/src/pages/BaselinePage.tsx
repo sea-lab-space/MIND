@@ -30,20 +30,15 @@ export default function BaselinePage() {
     const [activeTab, setActiveTab] = useState<TabKey>("chart-review");
     const [selectedPatient, setSelectedPatient] = useState<string>("Gabriella Lin");
 
-    const { overviewCardData, insightCardData } = getVisualizerDataForPerson(selectedPatient);
+    const { overviewCardData, insightCardData, session_subjective_info, survey_data } = getVisualizerDataForPerson(selectedPatient);
     const allExpandViews = flattenAllExpandViews(insightCardData);
 
     const {
         passiveSensingFacts = [],
-        clinicalNotesFacts = [],
-        clinicalTranscriptsFacts = [],
-        measurementScoreFacts = [],
     }: {
         passiveSensingFacts?: InsightExpandViewItem[];
-        clinicalNotesFacts?: InsightExpandViewItem[];
-        clinicalTranscriptsFacts?: InsightExpandViewItem[];
-        measurementScoreFacts?: InsightExpandViewItem[];
     } = groupInsightsBySource(allExpandViews);
+
 
     const tabItems: TabItem[] = [
         {
@@ -61,17 +56,17 @@ export default function BaselinePage() {
         {
             key: "clinical-notes",
             label: "Clinical Notes",
-            component: <ClinicalNotesTab overviewCardData={overviewCardData?.basicInfoCard} clinicalNotesFacts={clinicalNotesFacts[0]}/>,
+            component: <ClinicalNotesTab overviewCardData={overviewCardData?.basicInfoCard} clinicalNotesFacts={session_subjective_info}/>,
         },
         {
             key: "transcription",
             label: "Transcription",
-            component: <TranscriptionTab overviewCardData={overviewCardData?.basicInfoCard} clinicalTranscriptsFacts={clinicalTranscriptsFacts[0]}/>,
+            component: <TranscriptionTab overviewCardData={overviewCardData?.basicInfoCard} clinicalTranscriptsFacts={session_subjective_info}/>,
         },
         {
             key: "measurement-score",
             label: "Measurement Score",
-            component: <MeasurementScoreTab overviewCardData={overviewCardData?.basicInfoCard} measurementScoreFacts={measurementScoreFacts}/>,
+            component: <MeasurementScoreTab overviewCardData={overviewCardData?.basicInfoCard} measurementScoreFacts={survey_data}/>,
         },
     ];
 

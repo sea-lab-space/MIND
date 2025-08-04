@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import InsightGraph from "@/components/DataInsights/InsightGraph";
 import { shouldShowChart } from "@/utils/helper";
 import type {InsightExpandViewItem} from "@/types/props";
+import {Watch} from "lucide-react";
 
 interface PassiveSensingCardProps {
     passiveSensingFacts: InsightExpandViewItem[];
@@ -35,9 +36,9 @@ const PassiveSensingCard = ({ passiveSensingFacts }: PassiveSensingCardProps) =>
     const showChart = shouldShowChart(selectedInsight.dataSourceType, selectedInsight.dataPoints);
     return (
         <Card className="bg-white border-[#eaeaea]">
-            <CardHeader className="pb-4">
+            <CardHeader>
                 <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 rounded-full bg-[#626681]" />
+                    <Watch className="w-4 h-4 text-[#626681]" />
                     <span className="text-[#757575] font-medium">Passive Sensing Data</span>
                 </div>
             </CardHeader>

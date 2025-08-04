@@ -1,20 +1,22 @@
-import type {InsightExpandViewItem} from "@/types/props";
 import {useEffect, useState} from "react";
 import OverviewSummary from "@/components/BaseLine/OverciewSummary";
 import {Button} from "@/components/ui";
+import type {Encounter} from "@/types/dataTypes";
 
 interface TranscriptionTabProps {
+    showOverviewCardData?: boolean,
     overviewCardData: Record<string, string>;
-    clinicalTranscriptsFacts: InsightExpandViewItem;
+    clinicalTranscriptsFacts: Encounter[];
 }
 
 const TranscriptionTab: React.FC<TranscriptionTabProps> = ({
+                                                               showOverviewCardData=true,
                                                                overviewCardData,
                                                                clinicalTranscriptsFacts,
                                                            }) => {
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
 
-    const dates = clinicalTranscriptsFacts?.dataPoints?.map((fact) => fact.date);
+    const dates = clinicalTranscriptsFacts?.map((fact) => fact.encounter_date);
 
     useEffect(() => {
         if (dates && dates.length > 0 && !selectedDate) {
@@ -23,14 +25,15 @@ const TranscriptionTab: React.FC<TranscriptionTabProps> = ({
     }, [dates, selectedDate]);
 
     // Get the record for the selected date
-    const selectedFact = clinicalTranscriptsFacts?.dataPoints?.find(
-        (fact) => fact.date === selectedDate
+    const selectedFact = clinicalTranscriptsFacts?.find(
+        (fact) => fact.encounter_date === selectedDate
     );
+
     return (
         <div className="flex gap-4">
             {/* Sidebar: Overview + Date Buttons */}
             <div className="w-[260px] shrink-0 overflow-y-auto">
-                <OverviewSummary basicInfoCardData={overviewCardData} />
+                {showOverviewCardData && <OverviewSummary basicInfoCardData={overviewCardData}/>}
 
                 {/* Date selection buttons */}
                 <div className="flex flex-col gap-2 mt-8">
@@ -61,7 +64,7 @@ const TranscriptionTab: React.FC<TranscriptionTabProps> = ({
                 </p>
 
                 <div className="prose prose-sm max-w-none text-[#2c2c2c]">
-                    {selectedFact?.record?.map((recordInfo, i) => (
+                    {selectedFact?.transcript?.map((recordInfo, i) => (
                         <div key={i} className="mb-4 space-y-1">
                             {Object.keys(recordInfo).map((key) => {
                                 const value = recordInfo[key];

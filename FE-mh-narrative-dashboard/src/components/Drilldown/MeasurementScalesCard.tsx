@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {shouldShowChart} from "@/utils/helper";
 import InsightGraph from "@/components/DataInsights/InsightGraph";
 import type {InsightExpandViewItem} from "@/types/props";
+import { MessageSquare } from "lucide-react";
 import { SURVEY_COLOR } from "@/utils/colorHelper";
 
 interface measurementScoreFactsProps {
@@ -36,10 +37,10 @@ if (!selectedInsight) {
 const showChart = shouldShowChart(selectedInsight.dataSourceType, selectedInsight.dataPoints);
 return (
   <Card className="bg-white border-[#eaeaea]">
-    <CardHeader className="pb-4">
+    <CardHeader>
       <div className="flex items-center gap-2">
-        <div className="w-4 h-4 rounded-full bg-[#fb923c]" />
-        <span className="text-[#fb923c] font-medium">Measurement Scales</span>
+          <MessageSquare className="w-4 h-4 text-[#fb923c]" />
+          <span className="text-[#fb923c] font-medium">Measurement Scales</span>
       </div>
     </CardHeader>
     <CardContent>

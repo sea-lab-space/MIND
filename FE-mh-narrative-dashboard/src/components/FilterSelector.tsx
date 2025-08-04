@@ -7,13 +7,12 @@ import {
     Pill,
     Filter
 } from "lucide-react"
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { InsightType } from "@/types/props";
+import DataSourceIconModalButtons from "@/components/ExpertView/DataSourceIconModalButtons";
 
-
-const InsightTypeMeta: Record<InsightType, {
+export const InsightTypeMeta: Record<InsightType, {
     label: string;
     icon: React.ElementType;         // component reference
     iconNode?: React.ReactNode;      // pre-rendered JSX if needed
@@ -61,11 +60,14 @@ const FILTER_OPTIONS = Object.entries(InsightTypeMeta).map(([type, meta]) => ({
 type FilterSelectorProps = {
     selected: InsightType[];
     onToggle: (type: InsightType) => void;
+    selectedPatient: string;
 };
 
-export function FilterSelector({ selected, onToggle }: FilterSelectorProps) {
+export function FilterSelector({ selected, onToggle, selectedPatient }: FilterSelectorProps) {
     return (
-        <div className="flex items-center gap-4 flex-wrap mx-6 mt-2">
+        <div className="flex justify-between items-center gap-4 flex-wrap mx-6 mt-2">
+            <div className="flex items-center gap-2 flex-wrap">
+
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Filter className="w-4 h-4" />
                 <span>Filter By:</span>
@@ -88,6 +90,10 @@ export function FilterSelector({ selected, onToggle }: FilterSelectorProps) {
                     {label}
                 </Button>
             ))}
+            </div>
+            <div>
+                <DataSourceIconModalButtons selectedPatient={selectedPatient}/>
+            </div>
         </div>
     );
 }

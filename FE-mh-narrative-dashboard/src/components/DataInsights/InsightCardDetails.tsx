@@ -14,7 +14,6 @@ export default function InsightCardDetail({
             <div className="space-y-4">
                 {insightCardDataExpandView?.map((detail) => {
                     const showChart = shouldShowChart(detail.dataSourceType, detail.dataPoints);
-
                     return (
                         <div key={detail.key}>
                             <div className="flex items-start gap-3">

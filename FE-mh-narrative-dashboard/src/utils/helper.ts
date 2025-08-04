@@ -7,7 +7,8 @@ const validChartTypes: DataSourceType[] = [
     DataSourceType.COMPARISON,
     DataSourceType.EXTREME,
     DataSourceType.DIFFERENCE,
-    DataSourceType.DERIVED_VALUE
+    DataSourceType.DERIVED_VALUE,
+    DataSourceType.RAW
 ];
 
 export function shouldShowChart(
@@ -21,7 +22,6 @@ export function shouldShowChart(
 
     return isValidType && hasValidKeys;
 }
-
 
 const reverseMap = Object.entries(DatasourceIconTypes).reduce((acc, [key, value]) => {
     acc[value] = key;
@@ -45,7 +45,6 @@ export function groupInsightsBySource(insights: InsightExpandViewItem[] | undefi
         }
         grouped[groupKey].push(insight);
     }
-
     return grouped;
 }
 

@@ -1,5 +1,15 @@
 // Datasource types for icons
 import type {InsightType, InsightExpandViewItem } from "@/types/props";
+import {
+    BedDouble,
+    Activity,
+    PhoneCall,
+    Brain,
+    Users2,
+    Pill,
+    Filter
+} from "lucide-react"
+
 
 export enum DatasourceIconTypes {
     measurementScore = "measurementScore",
@@ -7,7 +17,6 @@ export enum DatasourceIconTypes {
     clinicalTranscripts = "clinicalTranscripts",
     passiveSensing = "passiveSensing"
 }
-
 
 export type RetrospectOptions = {
     [label: string]: number; // e.g., "Last 3 months": 90
@@ -65,4 +74,13 @@ export type Encounter = {
     medication: MedicationEntry[];
     clinical_note: string;
     encounter_date: string;
+};
+
+export const InsightTypeIconMap: Record<InsightType, React.ElementType> = {
+    "Sleep Patterns": BedDouble,
+    "Physical Activity": Activity,
+    "Digital Engagement": PhoneCall,
+    "Emotional State": Brain,
+    "Social Interaction": Users2,
+    "Medication & Treatment": Pill,
 };

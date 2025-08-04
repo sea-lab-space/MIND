@@ -33,12 +33,11 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
     // Find selected fact based on selectedFactKey
     const selectedFact = clinicalTranscriptsFacts.find(fact => fact.key === selectedFactKey);
     const dates = sessionInfo?.map(item => item.encounter_date);
-    const selectedFactSpec = selectedFact?.spec;
+    const selectedFactSpec = selectedFact?.highlightSpec;
     const highlightDates = new Set(
-        (Array.isArray(selectedFact?.spec) ? selectedFact?.spec : [])
+        (Array.isArray(selectedFact?.highlightSpec) ? selectedFact?.highlightSpec : [])
             .map(spec => spec?.date)
     );
-
 
     useEffect(() => {
         if (dates && dates.length > 0 && !selectedDate) {
@@ -48,7 +47,7 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
 
     const specTexts = (Array.isArray(selectedFactSpec) ? selectedFactSpec : [])
         .filter((s) => s?.date === selectedDate)
-        .map((s) => s?.text);
+        .map((s) => s?.text?.split(":")[1]?.trim() ?? "");
 
     function highlightMatches(text: string, highlights: string[]): string {
         if (!text || !highlights?.length) return text;

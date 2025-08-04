@@ -17,7 +17,7 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({
                 {title}
             </h1>
         </div>
-        {/* <div className="flex items-center">
+        <div className="flex items-center">
             <div className="text-right">
                 <div className="text-sm text-[#757575]">Link Views</div>
                 <div className="text-sm text-[#757575]">Selected: June 10, 2025</div>
@@ -40,7 +40,7 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({
                     />
                 </div>
             </Button>
-        </div> */}
+        </div>
     </div>
 );
 

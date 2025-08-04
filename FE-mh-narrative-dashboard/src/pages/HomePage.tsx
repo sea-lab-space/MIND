@@ -32,8 +32,6 @@ export default function HomePage() {
     communication: false,
   });
 
-  const [insightsDataTemp, setInsightsDataTemp] = useState([]);
-
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const { overviewCardData, insightCardData, session_subjective_info } = getVisualizerDataForPerson(selectedPatient);
 
@@ -108,6 +106,7 @@ export default function HomePage() {
           />
         </div>
         <FilterSelector
+            selectedPatient={selectedPatient}
           selected={selectedInsightTypes}
           onToggle={(type) => {
             setSelectedInsightTypes((prev) =>
@@ -171,6 +170,7 @@ export default function HomePage() {
                         >
                           <InsightCardComponent
                             insightCardData={card}
+                            isDrillDown={isDrillDown}
                             title={card.summaryTitle}
                             sources={card.sources}
                             isExpanded={expandedSections.insights}
@@ -200,7 +200,8 @@ export default function HomePage() {
                           className="w-full"
                         >
                           <InsightCardComponent
-                            insightCardData={card}
+                              isDrillDown={isDrillDown}
+                              insightCardData={card}
                             title={card.summaryTitle}
                             sources={card.sources}
                             isExpanded={expandedSections.insights}

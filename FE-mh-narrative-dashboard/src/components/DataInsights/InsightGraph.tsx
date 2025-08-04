@@ -1,10 +1,4 @@
 import {
-    LineChart,
-    Line,
-    CartesianGrid,
-    XAxis,
-    YAxis,
-    Tooltip,
     ResponsiveContainer,
 } from "recharts";
 import type { DataSourceType } from "@/types/props";
@@ -27,7 +21,7 @@ import { PASSIVE_SENSING_COLOR } from "@/utils/colorHelper";
 
 interface InsightGraphProps {
     dataSourceType: DataSourceType;
-    highlightSpec: HighlightSpec;
+    highlightSpec?: HighlightSpec;
     data: Record<string, number>;
     color?: string;
     isSurvey?: boolean;
@@ -38,29 +32,12 @@ export default function InsightGraph({
                                          highlightSpec,
                                          data,
                                          color,
-                                         isSurvey = false,
                                      }: InsightGraphProps) {
     const normalized = normalizeDataPoints(data);
     const metricKey =
         Object.keys(normalized[0] || {}).find((k) => k !== "date") ?? "";
 
-    // console.log(highlightSpec.fact_type);
-    //
-    // console.log(dataSourceType);
-    // const isLineChart =
-    //   (
-    //     ["trend", "comparison"] as DataSourceType[]
-    //   ).includes(dataSourceType) || isSurvey;
-    // const isBarChart = (
-    //   [
-    //     "extreme",
-    //     DataSourceType.DIFFERENCE,
-    //     DataSourceType.DERIVED_VALUE,
-    //   ] as DataSourceType[]
-    // ).includes(dataSourceType);
-
     const shouldShowChart = metricKey // && (isLineChart || isBarChart);
-
     if (!shouldShowChart) {
         return null;
     }
@@ -94,6 +71,12 @@ export default function InsightGraph({
           themeColor={color ?? PASSIVE_SENSING_COLOR}
         />
       ),
+        raw: (
+            <TrendChart
+                data={normalized}
+                themeColor={color ?? "#8c92b8"}
+            />
+        ),
       trend: (
         <TrendChart
           data={normalized}
@@ -110,42 +93,3 @@ export default function InsightGraph({
         </ResponsiveContainer>
     );
 }
-
-/* {isLineChart ? (
-  <LineChart data={normalized}>
-    <CartesianGrid strokeDasharray="3 3" />
-    <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-    <YAxis />
-    <Tooltip />
-    <Line
-      type="monotone"
-      dataKey={metricKey}
-      stroke={color ?? "#626681"}
-      dot={{ r: 2 }}
-      strokeWidth={2}
-      isAnimationActive={false}
-      // connectNulls={true} // Uncomment if you'd like to visually connect missing data
-    />
-  </LineChart>
-) : visMap[dataSourceType as DataSourceType] */
-
-// dataSourceType === DataSourceType.EXTREME ? (
-//   <ExtremeChart
-//     data={normalized}
-//     spec={highlightSpec as ExtremeSpec}
-//     themeColor={"#626681"}
-//   />
-// ) : (
-//   <BarChart data={normalized}>
-//     <CartesianGrid strokeDasharray="3 3" />
-//     <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-//     <YAxis />
-//     <Tooltip />
-//     <Bar
-//       dataKey={metricKey}
-//       fill={color ?? "#626681"}
-//       isAnimationActive={false}
-//     />
-//   </BarChart>
-// )
-// }

@@ -1,21 +1,23 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import OverviewSummary from "@/components/BaseLine/OverciewSummary";
-import type {InsightExpandViewItem} from "@/types/props";
 import ReactMarkdown from "react-markdown";
+import type {Encounter} from "@/types/dataTypes";
 
 interface ClinicalNotesTabProps {
+    showOverviewCardData?: boolean,
     overviewCardData: Record<string, string>;
-    clinicalNotesFacts: InsightExpandViewItem;
+    clinicalNotesFacts: Encounter[];
 }
 
 const ClinicalNotesTab: React.FC<ClinicalNotesTabProps> = ({
+                                                               showOverviewCardData=true,
                                                                overviewCardData,
                                                                clinicalNotesFacts,
                                                            }) => {
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
 
-    const dates = clinicalNotesFacts?.dataPoints?.map((fact) => fact.date);
+    const dates = clinicalNotesFacts?.map((fact) => fact.encounter_date);
 
     useEffect(() => {
         if (dates && dates.length > 0 && !selectedDate) {
@@ -24,15 +26,16 @@ const ClinicalNotesTab: React.FC<ClinicalNotesTabProps> = ({
     }, [dates, selectedDate]);
 
     // Get the record for the selected date
-    const selectedFact = clinicalNotesFacts?.dataPoints?.find(
-        (fact) => fact.date === selectedDate
+    const selectedFact = clinicalNotesFacts?.find(
+        (fact) => fact.encounter_date === selectedDate
     );
 
     return (
         <div className="flex gap-4">
             {/* Sidebar: Overview + Date Buttons */}
             <div className="w-[260px] shrink-0 overflow-y-auto">
-                <OverviewSummary basicInfoCardData={overviewCardData} />
+                {showOverviewCardData && <OverviewSummary basicInfoCardData={overviewCardData} />}
+
 
                 {/* Date selection buttons */}
                 <div className="flex flex-col gap-2 mt-8">
@@ -62,9 +65,9 @@ const ClinicalNotesTab: React.FC<ClinicalNotesTabProps> = ({
                     {selectedDate ? `Date: ${selectedDate}` : "No date selected"}
                 </p>
 
-                {selectedFact?.record ? (
+                {selectedFact?.clinical_note ? (
                     <ReactMarkdown>
-                        {selectedFact.record}
+                        {selectedFact.clinical_note}
                     </ReactMarkdown>
                 ) : (
                     <p className="text-sm text-gray-500">No record available for this date.</p>

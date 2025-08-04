@@ -1,5 +1,5 @@
 import OverviewCardComponent from "@/components/Overview/OverviewCardComponent";
-import {iconMap} from "@/types/props";
+import {overviewIconMap} from "@/types/props";
 import { capitalizeFirst } from "@/utils/helper";
 
 interface OverviewComponentProps {
@@ -47,7 +47,7 @@ export default function OverviewComponent({
             }`}
           >
             {infoData.map((card, index) => {
-              const Icon = iconMap[card.icon]; // dynamically resolve icon component
+                const Icon = overviewIconMap[card.icon];
               return (
                 <OverviewCardComponent
                   key={index}

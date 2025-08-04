@@ -3,20 +3,25 @@ import type {InsightExpandViewItem} from "@/types/props";
 import InsightCardDetail from "@/components/DataInsights/InsightCardDetails";
 
 interface PassiveSensingTabProps {
+    showOverviewCardData?: boolean,
     overviewCardData: Record<string, string>;
     passiveSensingFacts: InsightExpandViewItem[];
 }
 
 const PassiveSensingTab: React.FC<PassiveSensingTabProps> = ({
+                                                                 showOverviewCardData=true,
                                                                    overviewCardData,
                                                                  passiveSensingFacts,
                                                                }) => {
     return (
         <div className="flex gap-4 h-full">
             {/* Left column: scrollable independently */}
-            <div className="w-[260px] shrink-0 h-full overflow-y-auto">
-                <OverviewSummary basicInfoCardData={overviewCardData} />
-            </div>
+            {
+                showOverviewCardData &&
+                <div className="w-[260px] shrink-0 h-full overflow-y-auto">
+                    <OverviewSummary basicInfoCardData={overviewCardData} />
+                </div>
+            }
 
             {/* Right column: scrollable content */}
             <div className="flex-1 h-full flex flex-col overflow-y-auto bg-gray-50 border rounded-xl shadow">

@@ -6,14 +6,11 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  Cell,
   ReferenceArea,
-  Customized,
   ReferenceLine,
   ReferenceDot,
 } from "recharts";
 import type { ComparisonSpec, DataPoint } from "@/types/insightSpec";
-import { color } from "d3";
 import { extent } from "d3-array";
 import { dateBetween } from "@/utils/dateHelper";
 import {
