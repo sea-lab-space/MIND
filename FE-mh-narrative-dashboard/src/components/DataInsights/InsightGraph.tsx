@@ -23,6 +23,7 @@ import type { ReactHTMLElement } from "react";
 import DifferenceChart from "../Charts/DifferenceChart";
 import TrendChart from "../Charts/TrendChart";
 import ComparisonChart from "../Charts/ComparisonChart";
+import { PASSIVE_SENSING_COLOR } from "@/utils/colorHelper";
 
 interface InsightGraphProps {
     dataSourceType: DataSourceType;
@@ -65,42 +66,42 @@ export default function InsightGraph({
     }
 
     const visMap: Record<DataSourceType, React.ReactElement> = {
-        extreme: (
-            <ExtremeChart
-                data={normalized}
-                spec={highlightSpec as ExtremeSpec}
-                themeColor={color ?? "#8c92b8"}
-            />
-        ),
-        "derived value": (
-            <DerivedValueChart
-                data={normalized}
-                spec={highlightSpec as ValueSpec}
-                themeColor={color ?? "#8c92b8"}
-            />
-        ),
-        difference: (
-            <DifferenceChart
-                data={normalized}
-                spec={highlightSpec as DifferenceSpec}
-                themeColor={color ?? "#8c92b8"}
-            />
-        ),
-        comparison: (
-            <ComparisonChart
-                data={normalized}
-                spec={highlightSpec as ComparisonSpec}
-                themeColor={color ?? "#8c92b8"}
-            />
-        ),
-        trend: (
-            <TrendChart
-                data={normalized}
-                spec={highlightSpec as TrendSpec}
-                themeColor={color ?? "#8c92b8"}
-            />
-        ),
-        text: <></>,
+      extreme: (
+        <ExtremeChart
+          data={normalized}
+          spec={highlightSpec as ExtremeSpec}
+          themeColor={color ?? PASSIVE_SENSING_COLOR}
+        />
+      ),
+      "derived value": (
+        <DerivedValueChart
+          data={normalized}
+          spec={highlightSpec as ValueSpec}
+          themeColor={color ?? PASSIVE_SENSING_COLOR}
+        />
+      ),
+      difference: (
+        <DifferenceChart
+          data={normalized}
+          spec={highlightSpec as DifferenceSpec}
+          themeColor={color ?? PASSIVE_SENSING_COLOR}
+        />
+      ),
+      comparison: (
+        <ComparisonChart
+          data={normalized}
+          spec={highlightSpec as ComparisonSpec}
+          themeColor={color ?? PASSIVE_SENSING_COLOR}
+        />
+      ),
+      trend: (
+        <TrendChart
+          data={normalized}
+          spec={highlightSpec as TrendSpec}
+          themeColor={color ?? PASSIVE_SENSING_COLOR}
+        />
+      ),
+      text: <></>,
     };
 
     return (

@@ -58,3 +58,6 @@ export function formatDate(dateStr: string) {
         year: "numeric",
     });
 }
+
+export const capitalizeFirst = (str: string) =>
+  str.charAt(0).toUpperCase() + str.slice(1);

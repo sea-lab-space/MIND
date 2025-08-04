@@ -33,7 +33,7 @@ const Section: React.FC<SectionProps> = (props) => {
 
           <h2 className="text-lg font-semibold text-[#000000]">
             {title}
-            <span className="text-lg text-[#000000] font-normal"> - {subtitle}</span>
+            {subtitle && <span className="text-lg text-[#000000] font-normal"> - {subtitle}</span>}
           </h2>
 
           {/* ✅ This is now right after the title */}

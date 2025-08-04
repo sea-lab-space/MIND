@@ -15,7 +15,7 @@ import type { DataPoint, TrendSpec } from "@/types/insightSpec";
 import { color } from "d3";
 import { extent } from "d3-array";
 import { dateBetween } from "@/utils/dateHelper";
-import { getColors, HIGHLIGHT_FILL_OPACITY } from "@/utils/colorHelper";
+import { getColors, HIGHLIGHT_COLOR, HIGHLIGHT_FILL_OPACITY } from "@/utils/colorHelper";
 
 interface TrendChartProps {
   data: DataPoint[];
@@ -44,10 +44,10 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
     if (spec.attribute === "rise" || spec.attribute === "fall") {
       return (
         <ReferenceLine
-          stroke="red"
-          strokeWidth={1}
-          // strokeDasharray="3 3"
-          strokeOpacity={0.5}
+          stroke={HIGHLIGHT_COLOR}
+          strokeWidth={3}
+          strokeDasharray="3 3"
+          strokeOpacity={1}
           segment={[
             { x: spec.time_1, y: getDataOnDate(spec.time_1) },
             { x: spec.time_2, y: getDataOnDate(spec.time_2) },
@@ -73,12 +73,11 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
           x1={spec.time_1}
           x2={spec.time_2}
           y1={0}
-          y2={yRange[1]}
-          // stroke="red"
+          y2={Math.ceil(yRange[1])}
           fillOpacity={HIGHLIGHT_FILL_OPACITY}
         />
         <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-        <YAxis domain={[0, yRange[1]]} />
+        <YAxis domain={[0, Math.ceil(yRange[1])]} />
         <Tooltip />
         <Line
           dataKey={metricKey}

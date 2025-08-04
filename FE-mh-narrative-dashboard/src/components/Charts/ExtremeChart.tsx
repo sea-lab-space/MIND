@@ -14,7 +14,7 @@ import type {
   DataPoint,
   ExtremeSpec,
 } from "@/types/insightSpec";
-import { getColors } from "@/utils/colorHelper";
+import { getColors, MAX_BAR_SIZE } from "@/utils/colorHelper";
 
 interface ExtremeChartProps {
   data: DataPoint[];
@@ -31,7 +31,8 @@ const ExtremeChart: React.FC<ExtremeChartProps> = (props) => {
 
   const visData = data.map((d) => ({
     ...d,
-    highlightVal: d.date === spec.time ? spec.value : null,
+    [metricKey]: Number(Number(d[metricKey]).toFixed(2)),
+    highlightVal: d.date === spec.time ? spec.value.toFixed(2) : null,
   }));
 
   const highlightDate = spec.time;
@@ -42,8 +43,12 @@ const ExtremeChart: React.FC<ExtremeChartProps> = (props) => {
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" tick={{ fontSize: 10 }} />
         <YAxis />
-        <Tooltip />
-        <Bar dataKey={metricKey} isAnimationActive={false} maxBarSize={12}>
+        <Tooltip formatter={(value: number) => value.toFixed(2)} />
+        <Bar
+          dataKey={metricKey}
+          isAnimationActive={false}
+          maxBarSize={MAX_BAR_SIZE}
+        >
           {visData.map((entry, index) => (
             <Cell
               key={`cell-${index}`}
@@ -52,12 +57,6 @@ const ExtremeChart: React.FC<ExtremeChartProps> = (props) => {
           ))}
           <LabelList dataKey="highlightVal" position="top" />
         </Bar>
-        {/* <ReferenceLine
-          y={spec.value}
-          // label="Max"
-          stroke="red"
-          strokeDasharray="3 3"
-        /> */}
       </BarChart>
     </ResponsiveContainer>
   );

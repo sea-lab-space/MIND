@@ -11,7 +11,7 @@ import {
 import type { DataPoint, DifferenceSpec, ValueSpec } from "@/types/insightSpec";
 import { color } from "d3";
 import { dateBetween } from "@/utils/dateHelper";
-import { getColors } from "@/utils/colorHelper";
+import { getColors, MAX_BAR_SIZE } from "@/utils/colorHelper";
 
 interface DifferenceChartProps {
   data: DataPoint[];
@@ -36,12 +36,16 @@ const DifferenceChart: React.FC<DifferenceChartProps> = (props) => {
         <XAxis dataKey="date" tick={{ fontSize: 10 }} />
         <YAxis />
         <Tooltip />
-        <Bar dataKey={metricKey} isAnimationActive={false} maxBarSize={12}>
+        <Bar
+          dataKey={metricKey}
+          isAnimationActive={false}
+          maxBarSize={MAX_BAR_SIZE}
+        >
           {visData.map((entry, index) => (
             <Cell
               key={`cell-${index}`}
               fill={
-                (entry.date === spec.time_1 || entry.date === spec.time_2)
+                entry.date === spec.time_1 || entry.date === spec.time_2
                   ? highlightColor
                   : baseColor
               }

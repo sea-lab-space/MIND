@@ -17,7 +17,7 @@ import {
 import type { DataPoint, ValueSpec } from "@/types/insightSpec";
 import { color, extent } from "d3";
 import { dateBetween } from "@/utils/dateHelper";
-import { getColors, HIGHLIGHT_FILL_OPACITY } from "@/utils/colorHelper";
+import { getColors, HIGHLIGHT_COLOR, HIGHLIGHT_FILL_OPACITY, MAX_BAR_SIZE } from "@/utils/colorHelper";
 import { calcAverageBetweenDate } from "@/utils/dataHelper";
 
 interface DerivedValueChartProps {
@@ -40,6 +40,8 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
 
   const visData = data.map((d) => ({
     ...d,
+    // date: `2025-${d.date.split("-").slice(1).join("-")}`,
+    [metricKey]: Number(Number(d[metricKey]).toFixed(2)),
   }));
 
   const isHighlightBar = (entry: DataPoint) =>
@@ -76,14 +78,17 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
           x1={spec.time_1}
           x2={spec.time_2}
           y1={0}
-          y2={yRange[1]}
-          // stroke="red"
+          y2={Math.ceil(yRange[1])}
           fillOpacity={HIGHLIGHT_FILL_OPACITY}
         />
         <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-        <YAxis domain={[0, yRange[1]]} />
+        <YAxis domain={[0, Math.ceil(yRange[1])]} />
         <Tooltip />
-        <Bar dataKey={metricKey} isAnimationActive={false} maxBarSize={12}>
+        <Bar
+          dataKey={metricKey}
+          isAnimationActive={false}
+          maxBarSize={MAX_BAR_SIZE}
+        >
           {visData.map((entry, index) => (
             <Cell
               key={`cell-${index}`}
@@ -97,7 +102,7 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
           ))}
           <ReferenceLine
             label={renderLabel}
-            stroke="red"
+            stroke={HIGHLIGHT_COLOR}
             strokeWidth={3}
             strokeDasharray="3 3"
             segment={[

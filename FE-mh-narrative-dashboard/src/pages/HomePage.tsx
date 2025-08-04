@@ -134,7 +134,7 @@ export default function HomePage() {
               <div className="rounded p-4 relative z-10">
                 <SectionTitle
                   title="Overview"
-                  subtitle="test"
+                  // subtitle="test"
                   isExpanded={expandedSections.overview}
                   onClick={() => toggleSection("overview")}
                 >
@@ -150,7 +150,7 @@ export default function HomePage() {
               <div className="rounded p-4 mb-2 relative z-10">
                 <SectionTitle
                   title="Data-driven Insights"
-                  subtitle="test"
+                  // subtitle="test"
                   isExpanded={expandedSections.insights}
                   onClick={() => toggleSection("insights")}
                 >
