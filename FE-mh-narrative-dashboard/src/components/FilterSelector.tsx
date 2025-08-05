@@ -65,7 +65,7 @@ type FilterSelectorProps = {
 
 export function FilterSelector({ selected, onToggle, selectedPatient }: FilterSelectorProps) {
     return (
-        <div className="flex justify-between items-center gap-4 flex-wrap mx-6 mt-2">
+        <div className="flex justify-between items-center gap-1 mx-6 mt-2">
             <div className="flex items-center gap-2 flex-wrap">
 
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
