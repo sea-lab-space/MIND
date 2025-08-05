@@ -10,14 +10,17 @@ import { useWindowSize } from "usehooks-ts";
 import { Button } from "@/components/ui";
 import { Pencil } from "lucide-react";
 import {FilterSelector} from "@/components/FilterSelector";
-import { defaultInsightCardData, nameList, retrospectHorizon} from "@/data/data";
-import { InsightType } from "@/types/props";
+import { nameList, retrospectHorizon} from "@/data/data";
+import { InsightType, type InsightCardData } from "@/types/props";
 import {
    getVisualizerDataForPerson,
 } from "@/utils/dataConversion";
+import { getUserFromHashUrl } from "@/utils/helper";
 
 
-const userName = "Ryan";
+
+
+// const userName = "Ryan";
 
 export default function HomePage() {
   const [selectedInsightHeader, setSelectedInsightHeader] = useState<string[]>([]);
@@ -31,15 +34,28 @@ export default function HomePage() {
     communication: false,
   });
 
+  const userName = getUserFromHashUrl()
+
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const { overviewCardData, insightCardData, session_subjective_info, suggested_activity_data } = getVisualizerDataForPerson(selectedPatient);
 
-  const toggleSection = (section: string) => {
+  const toggleSection = (section: "overview" | "insights" | "communication") => {
     setExpandedSections((prev) => ({
       ...prev,
       [section]: !prev[section],
     }));
   };
+
+  useEffect(() => {
+    setExpandedSections({
+      overview: false,
+      insights: false,
+      communication: false,
+    })
+    setSelectedInsightCard(null);
+    setIsDrillDown(false);
+    setSelectedInsightHeader([]);
+  }, [selectedPatient]);
 
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const { width: windowWidth } = useWindowSize();
@@ -65,7 +81,7 @@ export default function HomePage() {
   insightCardData.filter(card => {
     const matchedTypes = card.insightType.filter(type =>
     {
-      selectedInsightTypes.includes(type)
+      selectedInsightTypes.includes(type.type)
     }
     );
     if (matchedTypes.length > 0) {
@@ -102,6 +118,7 @@ export default function HomePage() {
             retrospectHorizon={retrospectHorizon}
             selectedPatient={selectedPatient}
             setSelectedPatient={setSelectedPatient}
+            isHomePage={true}
           />
         </div>
         <FilterSelector
@@ -164,7 +181,9 @@ export default function HomePage() {
                       {leftColumnCards.map((card, index) => (
                         <div
                           key={card.key}
-                          ref={(el) => (cardRefs.current[index * 2] = el)}
+                          ref={(el) => {
+                            cardRefs.current[index * 2] = el
+                          }}
                           className="w-full"
                         >
                           <InsightCardComponent
@@ -195,7 +214,9 @@ export default function HomePage() {
                       {rightColumnCards.map((card, index) => (
                         <div
                           key={card.key}
-                          ref={(el) => (cardRefs.current[index * 2 + 1] = el)}
+                          ref={(el) => {
+                            cardRefs.current[index * 2 + 1] = el
+                          }}
                           className="w-full"
                         >
                           <InsightCardComponent
@@ -228,7 +249,7 @@ export default function HomePage() {
               <div className="rounded p-4 relative z-10">
                 <SectionTitle
                   title="Patient Communication"
-                  subtitle="test"
+                  // subtitle="test"
                   isExpanded={expandedSections.communication}
                   onClick={() => toggleSection("communication")}
                   action={
@@ -239,6 +260,7 @@ export default function HomePage() {
                       <Pencil className="w-4 h-4 mr-2" /> Draft Patient Message
                     </Button>
                   }
+                  shouldExpand={false}
                 >
                   <PatientCommunicationComponent
                     isDrillDown={isDrillDown}
@@ -258,7 +280,7 @@ export default function HomePage() {
             >
               <DrilldownPanel
                   key={selectedInsightCard}
-                  insightData={insightCardData.find((data) => data.key === selectedInsightCard) || defaultInsightCardData}
+                  insightData={insightCardData.find((data) => data.key === selectedInsightCard) || {} as InsightCardData}
                   sessionInfo={session_subjective_info}
                 onClose={() => {
                   setIsDrillDown(false);

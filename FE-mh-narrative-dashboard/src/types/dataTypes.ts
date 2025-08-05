@@ -7,29 +7,31 @@ import {
     Brain,
     Users2,
     Pill,
-    Filter
 } from "lucide-react"
 
 
-export enum DatasourceIconTypes {
-    surveyScore = "surveyScore",
-    clinicalNotes = "clinicalNotes",
-    clinicalTranscripts = "clinicalTranscripts",
-    passiveSensing = "passiveSensing"
-}
+export const DatasourceIconTypes = {
+  surveyScore: "surveyScore",
+  clinicalNotes: "clinicalNotes",
+  clinicalTranscripts: "clinicalTranscripts",
+  passiveSensing: "passiveSensing",
+} as const;
+
+export type DatasourceIconTypes =
+  (typeof DatasourceIconTypes)[keyof typeof DatasourceIconTypes];
 
 export type RetrospectOptions = {
     [label: string]: number; // e.g., "Last 3 months": 90
 };
 
 // High-level insight card
-export interface InsightCard {
-    key: string;
-    summaryTitle: string;
-    sources: { type: DatasourceIconTypes }[];
-    insightType?: InsightType[]; // optional: to show combined insights
-    expandView: InsightExpandViewItem[];
-}
+// export interface InsightCard {
+//     key: string;
+//     summaryTitle: string;
+//     sources: { type: DatasourceIconTypes }[];
+//     insightType?: InsightType[]; // optional: to show combined insights
+//     expandView: InsightExpandViewItem[];
+// }
 
 // ChartReview info
 export interface BasicInfoCard {
@@ -57,8 +59,8 @@ export interface SuggestedActivity {
 }
 
 export type TranscriptEntry = {
-    clinician: string;
-    patient: string;
+  clinician: string;
+  patient: string;
 };
 
 export type MedicationEntry = {

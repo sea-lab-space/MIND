@@ -1,8 +1,9 @@
-import { Watch, MessageSquare, StickyNote, ClipboardList } from "lucide-react";
+import { Watch, MessageSquare, StickyNote, ClipboardList, FileWarningIcon } from "lucide-react";
 import type { DatasourceIconType, DatasourceIconProps } from "../types/props";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { DatasourceIconTypes } from "../types/props";
 import { capitalizeFirst } from "@/utils/helper";
+import type { JSX } from "react";
 
 const dataSourceIconConfig: Record<DatasourceIconType, { icon: JSX.Element; color: string }> = {
   [DatasourceIconTypes.passiveSensing]: {
@@ -24,7 +25,7 @@ const dataSourceIconConfig: Record<DatasourceIconType, { icon: JSX.Element; colo
 };
 
 const fallback = {
-  icon: <StickyNote className="w-5 h-5" />,
+  icon: <FileWarningIcon className="w-5 h-5" />,
   color: "text-gray-400"
 };
 
@@ -33,8 +34,8 @@ const DataSourceIcon: React.FC<DatasourceIconProps> = ({ iconType, showType = fa
 
   return (
     <Tooltip>
-      <TooltipTrigger>
-        <div className={`inline-flex items-center gap-2 ${color}`}>
+      <TooltipTrigger asChild>
+        <div className={`flex items-center justify-center gap-2 ${color}`}>
           {icon}
           {showType && capitalizeFirst(iconType)}
         </div>

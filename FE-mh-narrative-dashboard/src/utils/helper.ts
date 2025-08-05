@@ -32,11 +32,12 @@ export function flattenAllExpandViews(insightCards: InsightCardData[]): InsightE
     return insightCards.flatMap(card => card.expandView ?? []);
 }
 
-export function groupInsightsBySource(insights: InsightExpandViewItem[] | undefined) {
+export function groupInsightsBySource(insights: InsightExpandViewItem[]) {
     const grouped: Record<string, InsightExpandViewItem[]> = {};
 
     for (const insight of insights) {
         const rawSource = insight.source;
+        // console.log(insight, rawSource)
         const baseKey = reverseMap[rawSource];
         const groupKey = `${baseKey}Facts`;
 
@@ -60,3 +61,21 @@ export function formatDate(dateStr: string) {
 
 export const capitalizeFirst = (str: string) =>
   str.charAt(0).toUpperCase() + str.slice(1);
+
+
+export function getUserFromHashUrl(): string {
+  if (typeof window === "undefined") return "-";
+
+  try {
+    const hash = window.location.hash; // e.g. "#/baseline?user=Orson"
+    const queryIndex = hash.indexOf("?");
+    if (queryIndex === -1) return "-";
+
+    const queryString = hash.slice(queryIndex + 1);
+    const params = new URLSearchParams(queryString);
+    return params.get("user") ?? "-";
+  } catch (error) {
+    console.error("Error parsing user from hash:", error);
+    return "-";
+  }
+}

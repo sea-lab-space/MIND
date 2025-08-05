@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./src/pages/HomePage";
 import BaselinePage from "./src/pages/BaselinePage";
 
@@ -8,7 +8,7 @@ export default function App() {
             <Routes>
                 {/* Default to home */}
                 <Route path="/" element={<HomePage />} />
-                <Route path="/baseline" element={<BaselinePage />} />
+                <Route path="/fact" element={<BaselinePage />} />
                 {/* Redirect unknown paths to home */}
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>

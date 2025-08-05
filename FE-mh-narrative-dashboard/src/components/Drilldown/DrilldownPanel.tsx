@@ -7,13 +7,13 @@ import PassiveSensingCard from "./PassiveSensingCard";
 import ClinicalNotesCard from "./ClinicalNotesCard";
 import TranscriptCard from "./TranscriptCard";
 import MeasurementScalesCard from "./MeasurementScalesCard";
-import type {Encounter, InsightCard} from "@/types/dataTypes";
+import type {Encounter} from "@/types/dataTypes";
 import {groupInsightsBySource} from "@/utils/helper";
-import type {InsightExpandViewItem} from "@/types/props";
+import type {InsightCardData, InsightExpandViewItem} from "@/types/props";
 
 interface DrilldownPanelProps {
   onClose: () => void;
-  insightData: InsightCard;
+  insightData: InsightCardData;
   sessionInfo: Encounter[]
 }
 
@@ -50,8 +50,9 @@ const DrilldownPanel: React.FC<DrilldownPanelProps> = ({ onClose, insightData, s
                 linkViewsEnabled={linkViewsEnabled}
                 setLinkViewsEnabled={setLinkViewsEnabled}
                 title={insightData.summaryTitle}
+                onClick={onClose}
             />
-            <SourcesSection sources={insightData?.sources}/>
+            <SourcesSection sources={insightData?.sources.map((source) => source.type)} />
               {passiveSensingFacts?.length > 0 && (
                   <PassiveSensingCard passiveSensingFacts={passiveSensingFacts} />
               )}

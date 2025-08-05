@@ -49,10 +49,10 @@
       "key": "insight-0",
       "summaryTitle": "Low mood and energy persist for 3 weeks, with brief mood lifts from family interactions.",
       "sources": [
-        "clinical note",
         "survey",
-        "session transcript",
-        "passive sensing"
+        "passive sensing",
+        "clinical note",
+        "session transcript"
       ],
       "insightType": [
         "Emotional State",
@@ -61,7 +61,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Over a month, the median PHQ-4 score increased from moderate to high levels.",
+          "summarySentence": "Over the past month, the median PHQ-4 score increased from 6.0 to 10.0, indicating higher distress.",
           "dataPoints": [
             {
               "date": "2021-04-04",
@@ -118,7 +118,7 @@
             },
             "value_dur_1": 6.0,
             "value_dur_2": 10.0,
-            "fact_description": "Over a month, the median PHQ-4 score increased from moderate to high levels.",
+            "fact_description": "Over the past month, the median PHQ-4 score increased from 6.0 to 10.0, indicating higher distress.",
             "fact_type": "comparison"
           },
           "sources": [
@@ -128,7 +128,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Average daily steps increased from about 2,000 to nearly 6,000 over two weeks.",
+          "summarySentence": "Over the last two weeks of May, average daily steps increased to nearly 6,000.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -425,7 +425,7 @@
             },
             "value_dur_1": 2005.38,
             "value_dur_2": 5936.87,
-            "fact_description": "Average daily steps increased from about 2,000 to nearly 6,000 over two weeks.",
+            "fact_description": "Over the last two weeks of May, average daily steps increased to nearly 6,000.",
             "fact_type": "comparison"
           },
           "sources": [
@@ -435,7 +435,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Small acts from her children brought her moments of emotional relief.",
+          "summarySentence": "Small acts from her children brought her moments of improved mood recently.",
           "dataPoints": null,
           "spec": [
             {
@@ -451,7 +451,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Alison continues to experience a consistently low mood with minimal improvement recently.",
+          "summarySentence": "Alison continues to experience ongoing low mood, unchanged since her last session four weeks ago.",
           "dataPoints": null,
           "spec": [
             {
@@ -467,7 +467,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "She continues to feel low energy, persistent fatigue, and struggles with motivation.",
+          "summarySentence": "She continues to feel tired, low on energy, and struggles to stay motivated.",
           "dataPoints": null,
           "spec": [
             {
@@ -483,7 +483,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The patient experiences days blending together and notes her mood remains unchanged recently.",
+          "summarySentence": "Over the past month, the patient feels days blend together and mood is unchanged.",
           "dataPoints": null,
           "spec": [
             {
@@ -499,7 +499,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The patient often feels tired, with brief moments of increased energy quickly fading.",
+          "summarySentence": "Over the past weeks, the patient has felt mostly tired, with brief moments of energy.",
           "dataPoints": null,
           "spec": [
             {
@@ -515,7 +515,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Total steps increased over a two-week period.",
+          "summarySentence": "Over the two weeks from May 15 to May 31, total steps increased.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -803,7 +803,7 @@
             "attribute": "rise",
             "time_1": "2021-05-15",
             "time_2": "2021-05-31",
-            "fact_description": "Total steps increased over a two-week period.",
+            "fact_description": "Over the two weeks from May 15 to May 31, total steps increased.",
             "fact_type": "trend"
           },
           "sources": [
@@ -813,7 +813,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The Negative Affect Score peaked at a high level for one day.",
+          "summarySentence": "On May 9, 2021, the Negative Affect Score peaked at a high value of 15.0.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -901,7 +901,7 @@
             "attribute": "max",
             "time": "2021-05-09",
             "value": 15.0,
-            "fact_description": "The Negative Affect Score peaked at a high level for one day.",
+            "fact_description": "On May 9, 2021, the Negative Affect Score peaked at a high value of 15.0.",
             "fact_type": "extreme"
           },
           "sources": [
@@ -911,7 +911,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Being with her sister often lifts her mood, but she sometimes feels tearful afterward.",
+          "summarySentence": "Being with her sister often lifts her mood, but she sometimes feels sad afterward.",
           "dataPoints": null,
           "spec": [
             {
@@ -930,39 +930,39 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3564197527287431
+          "relevance": 0.3563368854727314
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3471966477970049
+          "relevance": 0.3472190499477553
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3788667561291963
+          "relevance": 0.3788264693683564
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.45458053373183094
+          "relevance": 0.4542646844361645
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.48779227347824383
+          "relevance": 0.4876728637424357
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.5412507541916006
+          "relevance": 0.5411928440042414
         }
       ]
     },
     {
       "key": "insight-1",
-      "summaryTitle": "Sleep is inconsistent and fragmented, with late bedtimes and frequent awakenings over 2 months.",
+      "summaryTitle": "Sleep is inconsistent, with late bedtimes, frequent awakenings, and phone use some nights.",
       "sources": [
-        "clinical note",
+        "passive sensing",
         "session transcript",
-        "passive sensing"
+        "clinical note"
       ],
       "insightType": [
         "Sleep Patterns",
@@ -970,7 +970,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Over a two-month period, the typical number of sleep episodes was 15.",
+          "summarySentence": "Between April 1 and June 6, the median number of sleep episodes was 15.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -1259,7 +1259,7 @@
             "time_1": "2021-04-01",
             "time_2": "2021-06-06",
             "value": 15.0,
-            "fact_description": "Over a two-month period, the typical number of sleep episodes was 15.",
+            "fact_description": "Between April 1 and June 6, the median number of sleep episodes was 15.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -1269,7 +1269,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Over a two-month period, the number of awake episodes varied considerably.",
+          "summarySentence": "Between April 1 and June 6, the number of awake episodes varied widely (SD=7.49).",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -1558,7 +1558,7 @@
             "time_1": "2021-04-01",
             "time_2": "2021-06-06",
             "value": 7.49,
-            "fact_description": "Over a two-month period, the number of awake episodes varied considerably.",
+            "fact_description": "Between April 1 and June 6, the number of awake episodes varied widely (SD=7.49).",
             "fact_type": "derived value"
           },
           "sources": [
@@ -1568,7 +1568,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Alison struggles with sleep, but reading magazines at night helps her rest better.",
+          "summarySentence": "Alison often struggles with sleep, but reading magazines at night helps her rest better.",
           "dataPoints": null,
           "spec": [
             {
@@ -1589,7 +1589,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The latest bedtime recorded was just before 9:40 a.m. after midnight.",
+          "summarySentence": "On May 24, the latest bedtime recorded was about 9:39 AM, the latest so far.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -1877,7 +1877,7 @@
             "attribute": "min",
             "time": "2021-05-24",
             "value": 1299.0,
-            "fact_description": "The latest bedtime recorded was just before 9:40 a.m. after midnight.",
+            "fact_description": "On May 24, the latest bedtime recorded was about 9:39 AM, the latest so far.",
             "fact_type": "extreme"
           },
           "sources": [
@@ -1887,7 +1887,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Bedtime shifted later, moving from early afternoon to late afternoon over two days.",
+          "summarySentence": "On May 24, bedtime was at 9:39 PM, then at 12:20 AM on May 25.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -2177,7 +2177,7 @@
             "time_2": "2021-05-25",
             "value_1": 1299.0,
             "value_2": 1460.5,
-            "fact_description": "Bedtime shifted later, moving from early afternoon to late afternoon over two days.",
+            "fact_description": "On May 24, bedtime was at 9:39 PM, then at 12:20 AM on May 25.",
             "fact_type": "difference"
           },
           "sources": [
@@ -2187,7 +2187,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Bedtime became progressively earlier over a period of several days.",
+          "summarySentence": "Between May 11 and May 15, bedtime became progressively earlier each night.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -2475,7 +2475,7 @@
             "attribute": "fall",
             "time_1": "2021-05-11",
             "time_2": "2021-05-15",
-            "fact_description": "Bedtime became progressively earlier over a period of several days.",
+            "fact_description": "Between May 11 and May 15, bedtime became progressively earlier each night.",
             "fact_type": "trend"
           },
           "sources": [
@@ -2485,7 +2485,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The typical sleep duration decreased over the following week compared to the previous month.",
+          "summarySentence": "Over the past week, average sleep duration dropped from 30.92 to 22.23 hours.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -2782,7 +2782,7 @@
             },
             "value_dur_1": 30.9217068518519,
             "value_dur_2": 22.22879618055555,
-            "fact_description": "The typical sleep duration decreased over the following week compared to the previous month.",
+            "fact_description": "Over the past week, average sleep duration dropped from 30.92 to 22.23 hours.",
             "fact_type": "comparison"
           },
           "sources": [
@@ -2792,7 +2792,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "During a recent week, most people slept for only about 22 minutes each night.",
+          "summarySentence": "Between June 1 and June 6, typical nightly sleep lasted only about 22 minutes.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -3081,7 +3081,7 @@
             "time_1": "2021-06-01",
             "time_2": "2021-06-06",
             "value": 22.22879618055555,
-            "fact_description": "During a recent week, most people slept for only about 22 minutes each night.",
+            "fact_description": "Between June 1 and June 6, typical nightly sleep lasted only about 22 minutes.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -3091,7 +3091,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The patient often experiences restless nights, frequently using her phone before sleep.",
+          "summarySentence": "Over the past month, the patient often has restless nights and rarely sleeps uninterrupted.",
           "dataPoints": null,
           "spec": [
             {
@@ -3107,7 +3107,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Reading a magazine before bed reduced distractions, yet falling asleep remained challenging for her.",
+          "summarySentence": "She found reading a magazine before bed reduced distractions, yet falling asleep remained difficult.",
           "dataPoints": null,
           "spec": [
             {
@@ -3126,29 +3126,29 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.2608566488352208
+          "relevance": 0.2556940211234074
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.229130118178065
+          "relevance": 0.2737484499936747
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.23045401470381038
+          "relevance": 0.25685413747269525
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3438578932623965
+          "relevance": 0.30254026202678436
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3945395261589479
+          "relevance": 0.3680313135806873
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.38585285355517496
+          "relevance": 0.35719316959953434
         }
       ]
     },
@@ -3156,9 +3156,9 @@
       "key": "insight-2",
       "summaryTitle": "Screen time increased for 3 weeks, with self-reported negative emotional impact during use.",
       "sources": [
+        "passive sensing",
         "clinical note",
-        "session transcript",
-        "passive sensing"
+        "session transcript"
       ],
       "insightType": [
         "Digital Engagement",
@@ -3166,7 +3166,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "The average daily screen unlock time increased over a three-week period.",
+          "summarySentence": "Over three weeks, daily screen unlock time increased from about 8.4 to 10.6 hours.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -3463,7 +3463,7 @@
             },
             "value_dur_1": 506.616688888889,
             "value_dur_2": 634.8581666666668,
-            "fact_description": "The average daily screen unlock time increased over a three-week period.",
+            "fact_description": "Over three weeks, daily screen unlock time increased from about 8.4 to 10.6 hours.",
             "fact_type": "comparison"
           },
           "sources": [
@@ -3473,7 +3473,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "During periods of stress or low mood, she increases phone and social media use.",
+          "summarySentence": "When feeling down, she increases phone use, especially browsing photos and social media.",
           "dataPoints": null,
           "spec": [
             {
@@ -3489,7 +3489,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The median daily screen unlock time increased from about 8 to over 10 hours.",
+          "summarySentence": "Between May 10 and May 30, daily screen unlock time increased to 625 minutes.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -3786,7 +3786,7 @@
             },
             "value_dur_1": 506.412216666667,
             "value_dur_2": 625.1378,
-            "fact_description": "The median daily screen unlock time increased from about 8 to over 10 hours.",
+            "fact_description": "Between May 10 and May 30, daily screen unlock time increased to 625 minutes.",
             "fact_type": "comparison"
           },
           "sources": [
@@ -3796,7 +3796,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Over a period of several weeks, daily screen unlock time averaged over nine hours.",
+          "summarySentence": "Over the past 10 weeks, daily screen unlock time averaged about 9 hours.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -4085,7 +4085,7 @@
             "time_1": "2021-03-29",
             "time_2": "2021-06-06",
             "value": 551.5513738095239,
-            "fact_description": "Over a period of several weeks, daily screen unlock time averaged over nine hours.",
+            "fact_description": "Over the past 10 weeks, daily screen unlock time averaged about 9 hours.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -4095,7 +4095,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Over several weeks, people spent about 9 hours daily unlocking their screens.",
+          "summarySentence": "Over the past 10 weeks, daily screen unlock time averaged about 9 hours.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -4384,7 +4384,7 @@
             "time_1": "2021-03-29",
             "time_2": "2021-06-06",
             "value": 551.9403,
-            "fact_description": "Over several weeks, people spent about 9 hours daily unlocking their screens.",
+            "fact_description": "Over the past 10 weeks, daily screen unlock time averaged about 9 hours.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -4394,7 +4394,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The total screen unlock duration increased by over four hours in one day.",
+          "summarySentence": "On May 27, screen unlock time rose from 10 to nearly 15 hours in one day.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -4684,7 +4684,7 @@
             "time_2": "2021-05-27",
             "value_1": 622.831566666667,
             "value_2": 875.34055,
-            "fact_description": "The total screen unlock duration increased by over four hours in one day.",
+            "fact_description": "On May 27, screen unlock time rose from 10 to nearly 15 hours in one day.",
             "fact_type": "difference"
           },
           "sources": [
@@ -4694,7 +4694,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Screen unlock time peaked at over 14 hours in a single day.",
+          "summarySentence": "On May 27, 2021, screen unlock time peaked at 875.34 minutes, the highest recorded.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -4982,7 +4982,7 @@
             "attribute": "max",
             "time": "2021-05-27",
             "value": 875.34055,
-            "fact_description": "Screen unlock time peaked at over 14 hours in a single day.",
+            "fact_description": "On May 27, 2021, screen unlock time peaked at 875.34 minutes, the highest recorded.",
             "fact_type": "extreme"
           },
           "sources": [
@@ -4992,7 +4992,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Screen unlock duration peaked at over 213 minutes during a single day.",
+          "summarySentence": "On May 23, the longest phone screen unlock lasted nearly 214 minutes.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -5280,7 +5280,7 @@
             "attribute": "max",
             "time": "2021-05-23",
             "value": 213.996433333334,
-            "fact_description": "Screen unlock duration peaked at over 213 minutes during a single day.",
+            "fact_description": "On May 23, the longest phone screen unlock lasted nearly 214 minutes.",
             "fact_type": "extreme"
           },
           "sources": [
@@ -5290,7 +5290,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Alison struggles with sleep, but reading magazines at night helps her rest better.",
+          "summarySentence": "Alison often struggles with sleep, but reading magazines at night helps her rest better.",
           "dataPoints": null,
           "spec": [
             {
@@ -5314,29 +5314,29 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.2907484222185539
+          "relevance": 0.29066879357739067
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.31108051993932817
+          "relevance": 0.3110811353083342
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.2850673596792282
+          "relevance": 0.28497855006161965
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.35615214349849433
+          "relevance": 0.35609253367564003
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3763539653013447
+          "relevance": 0.3764638454879301
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3779954634338997
+          "relevance": 0.37805362069114556
         }
       ]
     },
@@ -5344,8 +5344,8 @@
       "key": "insight-3",
       "summaryTitle": "Stress scores are elevated and variable for 2 months; financial and relationship worries reported.",
       "sources": [
-        "clinical note",
         "survey",
+        "clinical note",
         "session transcript"
       ],
       "insightType": [
@@ -5353,66 +5353,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Over a two-month period, the average PSS-4 score indicated elevated stress levels.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "PSS-4 Score": 10.0
-            },
-            {
-              "date": "2021-04-07",
-              "PSS-4 Score": 10.0
-            },
-            {
-              "date": "2021-04-14",
-              "PSS-4 Score": 11.0
-            },
-            {
-              "date": "2021-04-21",
-              "PSS-4 Score": 13.0
-            },
-            {
-              "date": "2021-04-28",
-              "PSS-4 Score": 13.0
-            },
-            {
-              "date": "2021-05-05",
-              "PSS-4 Score": 12.0
-            },
-            {
-              "date": "2021-05-12",
-              "PSS-4 Score": 15.0
-            },
-            {
-              "date": "2021-05-19",
-              "PSS-4 Score": 14.0
-            },
-            {
-              "date": "2021-05-26",
-              "PSS-4 Score": 14.0
-            },
-            {
-              "date": "2021-06-02",
-              "PSS-4 Score": 13.0
-            }
-          ],
-          "spec": {
-            "name": "PSS-4 Score",
-            "aggregation": "average",
-            "time_1": "2021-03-31",
-            "time_2": "2021-06-02",
-            "value": 12.5,
-            "fact_description": "Over a two-month period, the average PSS-4 score indicated elevated stress levels.",
-            "fact_type": "derived value"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "derived value",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "During this period, PSS-4 scores showed moderate variability among participants.",
+          "summarySentence": "Over about two months, PSS-4 scores varied moderately with a standard deviation of 1.63.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -5461,7 +5402,7 @@
             "time_1": "2021-03-31",
             "time_2": "2021-06-02",
             "value": 1.63,
-            "fact_description": "During this period, PSS-4 scores showed moderate variability among participants.",
+            "fact_description": "Over about two months, PSS-4 scores varied moderately with a standard deviation of 1.63.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -5471,7 +5412,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Alison is experiencing financial insecurity, fewer work hours, and challenges in her relationship.",
+          "summarySentence": "Alison is currently facing financial insecurity, fewer work hours, and partner relationship challenges.",
           "dataPoints": null,
           "spec": [
             {
@@ -5487,7 +5428,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The pss-4 score increased over a two-week period.",
+          "summarySentence": "Between April 28 and May 12, the pss-4 score increased.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -5535,7 +5476,7 @@
             "attribute": "rise",
             "time_1": "2021-04-28",
             "time_2": "2021-05-12",
-            "fact_description": "The pss-4 score increased over a two-week period.",
+            "fact_description": "Between April 28 and May 12, the pss-4 score increased.",
             "fact_type": "trend"
           },
           "sources": [
@@ -5545,7 +5486,66 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "During this period, the typical PSS-4 score indicated elevated stress levels.",
+          "summarySentence": "Over about two months, the average PSS-4 score was 12.5, indicating high stress.",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "PSS-4 Score": 10.0
+            },
+            {
+              "date": "2021-04-07",
+              "PSS-4 Score": 10.0
+            },
+            {
+              "date": "2021-04-14",
+              "PSS-4 Score": 11.0
+            },
+            {
+              "date": "2021-04-21",
+              "PSS-4 Score": 13.0
+            },
+            {
+              "date": "2021-04-28",
+              "PSS-4 Score": 13.0
+            },
+            {
+              "date": "2021-05-05",
+              "PSS-4 Score": 12.0
+            },
+            {
+              "date": "2021-05-12",
+              "PSS-4 Score": 15.0
+            },
+            {
+              "date": "2021-05-19",
+              "PSS-4 Score": 14.0
+            },
+            {
+              "date": "2021-05-26",
+              "PSS-4 Score": 14.0
+            },
+            {
+              "date": "2021-06-02",
+              "PSS-4 Score": 13.0
+            }
+          ],
+          "spec": {
+            "name": "PSS-4 Score",
+            "aggregation": "average",
+            "time_1": "2021-03-31",
+            "time_2": "2021-06-02",
+            "value": 12.5,
+            "fact_description": "Over about two months, the average PSS-4 score was 12.5, indicating high stress.",
+            "fact_type": "derived value"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "derived value",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "Over the past two months, the typical PSS-4 score was 13, indicating elevated stress.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -5594,7 +5594,7 @@
             "time_1": "2021-03-31",
             "time_2": "2021-06-02",
             "value": 13.0,
-            "fact_description": "During this period, the typical PSS-4 score indicated elevated stress levels.",
+            "fact_description": "Over the past two months, the typical PSS-4 score was 13, indicating elevated stress.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -5604,7 +5604,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "During this period, the highest PSS-4 score reached a very elevated level.",
+          "summarySentence": "Over the past two months, the highest PSS-4 score reached a very high 15.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -5653,7 +5653,7 @@
             "time_1": "2021-03-31",
             "time_2": "2021-06-02",
             "value": 15.0,
-            "fact_description": "During this period, the highest PSS-4 score reached a very elevated level.",
+            "fact_description": "Over the past two months, the highest PSS-4 score reached a very high 15.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -5663,7 +5663,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The PSS-4 score increased from moderately high to higher over several weeks.",
+          "summarySentence": "Over three weeks, the PSS-4 score increased from 13.0 to 15.0, indicating higher stress.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -5713,7 +5713,7 @@
             "time_2": "2021-05-12",
             "value_1": 13.0,
             "value_2": 15.0,
-            "fact_description": "The PSS-4 score increased from moderately high to higher over several weeks.",
+            "fact_description": "Over three weeks, the PSS-4 score increased from 13.0 to 15.0, indicating higher stress.",
             "fact_type": "difference"
           },
           "sources": [
@@ -5723,7 +5723,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Alison continues to feel anxious about her finances and uncertain about future improvement.",
+          "summarySentence": "For several weeks, Alison has voiced persistent financial worries and doubts about improvement.",
           "dataPoints": null,
           "spec": [
             {
@@ -5758,35 +5758,35 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3071439110364889
+          "relevance": 0.30709643616259047
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3135254712851749
+          "relevance": 0.3135912407365713
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.320309875637684
+          "relevance": 0.32029910346676466
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.41947840580441775
+          "relevance": 0.4194695432952009
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.4533864557892145
+          "relevance": 0.45349889273012584
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.4589611962547396
+          "relevance": 0.4588896715406352
         }
       ]
     },
     {
       "key": "insight-4",
-      "summaryTitle": "Guilt and low motivation after missing a work shift; hesitant to discuss struggles at work.",
+      "summaryTitle": "Guilt and low motivation after missing a work shift; hesitant to disclose struggles at work.",
       "sources": [
         "clinical note",
         "session transcript"
@@ -5797,7 +5797,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Alison experiences guilt over limited involvement with her children and work, missing a shift from low motivation.",
+          "summarySentence": "Alison reports guilt over low engagement with family and work, missing a shift from low motivation.",
           "dataPoints": null,
           "spec": [
             {
@@ -5813,23 +5813,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The patient feels reluctant to share work challenges due to concerns about being judged.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: Maybe. I don’t want anyone thinking I can’t do my job, though. But I might say I’m having a hard time at home."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "The patient stayed home from work due to low energy, later feeling guilty about it.",
+          "summarySentence": "Recently, she missed work due to low energy, resulting in guilt.",
           "dataPoints": null,
           "spec": [
             {
@@ -5845,7 +5829,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "A few coworkers reached out about her absence, but her manager showed no concern.",
+          "summarySentence": "A few coworkers reached out about her absence, but her manager did not check on her.",
           "dataPoints": null,
           "spec": [
             {
@@ -5859,44 +5843,60 @@
           ],
           "dataSourceType": "text",
           "isShowL2": false
+        },
+        {
+          "summarySentence": "The patient feels reluctant to share work difficulties, worried about being seen as incompetent.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: Maybe. I don’t want anyone thinking I can’t do my job, though. But I might say I’m having a hard time at home."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
         }
       ],
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.2599382156006678
+          "relevance": 0.24310349499216435
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3019960375893554
+          "relevance": 0.29567392691804034
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.2826222911421516
+          "relevance": 0.27819977152321596
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.39340097048453476
+          "relevance": 0.38445895189993173
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.38555646788247605
+          "relevance": 0.377578128934174
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3977710515307706
+          "relevance": 0.3815257019767913
         }
       ]
     },
     {
       "key": "insight-5",
-      "summaryTitle": "Social contact centers on sister, with limited work and partner engagement for 1 week.",
+      "summaryTitle": "Contact with sister is frequent; work and partner engagement remain limited for 3 weeks.",
       "sources": [
-        "clinical note",
+        "passive sensing",
         "session transcript",
-        "passive sensing"
+        "clinical note"
       ],
       "insightType": [
         "Social Interaction",
@@ -5904,7 +5904,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "The average number of incoming calls increased over a recent two-week period.",
+          "summarySentence": "Over three weeks, average daily incoming calls increased from 0.94 to 1.65.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -6201,7 +6201,7 @@
             },
             "value_dur_1": 0.9444444444444444,
             "value_dur_2": 1.65,
-            "fact_description": "The average number of incoming calls increased over a recent two-week period.",
+            "fact_description": "Over three weeks, average daily incoming calls increased from 0.94 to 1.65.",
             "fact_type": "comparison"
           },
           "sources": [
@@ -6227,7 +6227,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "She keeps in touch with loved ones but participates minimally in her workplace.",
+          "summarySentence": "She stays in touch with loved ones but participates little in work activities.",
           "dataPoints": null,
           "spec": [
             {
@@ -6243,7 +6243,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "She feels lonely yet somewhat relieved when her partner is not around.",
+          "summarySentence": "She reports feeling lonely yet somewhat relieved when her partner is not present.",
           "dataPoints": null,
           "spec": [
             {
@@ -6259,7 +6259,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The patient's sister offers strong support through frequent visits, shared meals, and nightly calls.",
+          "summarySentence": "Over the past month, the patient's sister visited twice, brought food, and called most nights.",
           "dataPoints": null,
           "spec": [
             {
@@ -6275,7 +6275,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The patient experiences loneliness but also relief from not having to hide her feelings.",
+          "summarySentence": "The patient experiences loneliness but also some relief from not having to hide her feelings.",
           "dataPoints": null,
           "spec": [
             {
@@ -6291,7 +6291,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The patient notes Dave has been distant, with communication limited to text messages.",
+          "summarySentence": "For nearly a month, the patient and Dave have only exchanged brief text messages.",
           "dataPoints": null,
           "spec": [
             {
@@ -6307,7 +6307,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "During the session, the patient expressed feeling distant from Dave and felt some relief.",
+          "summarySentence": "During the session, she shared feelings about distancing from Dave, which brought some relief.",
           "dataPoints": null,
           "spec": [
             {
@@ -6323,7 +6323,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Over a period of several weeks, the average outgoing call count was low at 2.5.",
+          "summarySentence": "Over the past 10 weeks, the average daily outgoing call count was 2.5.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -6612,7 +6612,7 @@
             "time_1": "2021-03-29",
             "time_2": "2021-06-06",
             "value": 2.52,
-            "fact_description": "Over a period of several weeks, the average outgoing call count was low at 2.5.",
+            "fact_description": "Over the past 10 weeks, the average daily outgoing call count was 2.5.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -6622,7 +6622,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Over a three-week period, the average number of incoming calls was low at 1.65.",
+          "summarySentence": "Over the past three weeks, the average number of incoming calls was 1.65 per day.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -6911,7 +6911,7 @@
             "time_1": "2021-05-10",
             "time_2": "2021-05-30",
             "value": 1.65,
-            "fact_description": "Over a three-week period, the average number of incoming calls was low at 1.65.",
+            "fact_description": "Over the past three weeks, the average number of incoming calls was 1.65 per day.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -6924,39 +6924,39 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.17930919510331775
+          "relevance": 0.19006823949686646
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.2905252500084003
+          "relevance": 0.28310595216891554
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.29612659257448054
+          "relevance": 0.31400594032511336
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3443712350956102
+          "relevance": 0.35818862797986467
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3624759804531336
+          "relevance": 0.40539195823218754
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.37822683402542845
+          "relevance": 0.4399547468547676
         }
       ]
     },
     {
       "key": "insight-6",
-      "summaryTitle": "Incremental progress with journaling, walking, and messaging; benefits remain subtle and not sustained.",
+      "summaryTitle": "Incremental progress with journaling, walking, and messaging; benefits subtle and not yet sustained.",
       "sources": [
-        "clinical note",
+        "passive sensing",
         "session transcript",
-        "passive sensing"
+        "clinical note"
       ],
       "insightType": [
         "Physical Activity",
@@ -6964,7 +6964,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Average daily steps increased from about 2,000 to nearly 6,000 over two weeks.",
+          "summarySentence": "Over the last two weeks of May, average daily steps increased to nearly 6,000.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -7261,7 +7261,7 @@
             },
             "value_dur_1": 2005.38,
             "value_dur_2": 5936.87,
-            "fact_description": "Average daily steps increased from about 2,000 to nearly 6,000 over two weeks.",
+            "fact_description": "Over the last two weeks of May, average daily steps increased to nearly 6,000.",
             "fact_type": "comparison"
           },
           "sources": [
@@ -7271,7 +7271,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "She is experiencing mild, short-term benefits from journaling, walking, and social connection.",
+          "summarySentence": "Over the past weeks, she has begun journaling, walking, and connecting with others, with mild benefits.",
           "dataPoints": null,
           "spec": [
             {
@@ -7287,7 +7287,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The patient often notes positives and has walked outside twice over the past week.",
+          "summarySentence": "Over the past week, the patient noted positives daily and walked outside twice.",
           "dataPoints": null,
           "spec": [
             {
@@ -7303,7 +7303,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The patient reached out to a former colleague and journaled during sleepless nights.",
+          "summarySentence": "Over the past month, she reached out to a former colleague and journaled during sleepless nights.",
           "dataPoints": null,
           "spec": [
             {
@@ -7319,7 +7319,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "After writing or messaging, the patient felt some relief but also experienced anxiety about it.",
+          "summarySentence": "After writing or messaging, the patient felt some relief but also experienced messaging-related anxiety.",
           "dataPoints": null,
           "spec": [
             {
@@ -7335,7 +7335,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The patient plans to use daily gratitude, walking, social contact, and evening music for one week.",
+          "summarySentence": "Over the next week, the patient plans daily gratitude journaling and evening music or podcasts.",
           "dataPoints": null,
           "spec": [
             {
@@ -7351,7 +7351,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Total steps increased over a two-week period.",
+          "summarySentence": "Over the two weeks from May 15 to May 31, total steps increased.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -7639,7 +7639,7 @@
             "attribute": "rise",
             "time_1": "2021-05-15",
             "time_2": "2021-05-31",
-            "fact_description": "Total steps increased over a two-week period.",
+            "fact_description": "Over the two weeks from May 15 to May 31, total steps increased.",
             "fact_type": "trend"
           },
           "sources": [
@@ -7652,29 +7652,29 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.21109634921668827
+          "relevance": 0.22382378705824835
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.29870624374906873
+          "relevance": 0.31642148951972965
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.2934523641553137
+          "relevance": 0.31103239511573405
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.29167025155780685
+          "relevance": 0.3025604511793977
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3655586985859103
+          "relevance": 0.36726970474553877
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.43323210728396305
+          "relevance": 0.43313215977301256
         }
       ]
     },
@@ -7682,8 +7682,8 @@
       "key": "insight-7",
       "summaryTitle": "Increased time in green and exercise spaces, with slight mood improvement after walking outside.",
       "sources": [
-        "session transcript",
-        "passive sensing"
+        "passive sensing",
+        "session transcript"
       ],
       "insightType": [
         "Physical Activity",
@@ -7691,7 +7691,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Time spent in green spaces increased from none to about 70 minutes over several weeks.",
+          "summarySentence": "Over the past two weeks, time spent in green spaces increased to nearly 70 minutes.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -7988,7 +7988,7 @@
             },
             "value_dur_1": 0.0,
             "value_dur_2": 69.99,
-            "fact_description": "Time spent in green spaces increased from none to about 70 minutes over several weeks.",
+            "fact_description": "Over the past two weeks, time spent in green spaces increased to nearly 70 minutes.",
             "fact_type": "comparison"
           },
           "sources": [
@@ -7998,7 +7998,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The total steps increased from 9,090 to 17,570 over one day.",
+          "summarySentence": "On May 28, 9090 steps were taken; this increased to 17,570 steps on May 29.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -8288,7 +8288,7 @@
             "time_2": "2021-05-29",
             "value_1": 9090.0,
             "value_2": 17570.0,
-            "fact_description": "The total steps increased from 9,090 to 17,570 over one day.",
+            "fact_description": "On May 28, 9090 steps were taken; this increased to 17,570 steps on May 29.",
             "fact_type": "difference"
           },
           "sources": [
@@ -8298,7 +8298,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "After spending time outdoors, the patient experienced a mild improvement in well-being.",
+          "summarySentence": "After walking outside, the patient felt a little better but mood remained mostly unchanged.",
           "dataPoints": null,
           "spec": [
             {
@@ -8314,7 +8314,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Time spent in exercise spaces peaked at nearly 71 minutes during a recent period.",
+          "summarySentence": "On May 29, 2021, time spent exercising peaked at nearly 71 minutes.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -8602,7 +8602,7 @@
             "attribute": "max",
             "time": "2021-05-29",
             "value": 70.9979833333333,
-            "fact_description": "Time spent in exercise spaces peaked at nearly 71 minutes during a recent period.",
+            "fact_description": "On May 29, 2021, time spent exercising peaked at nearly 71 minutes.",
             "fact_type": "extreme"
           },
           "sources": [
@@ -8612,7 +8612,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Time spent in exercise spaces dropped from over an hour to none within one day.",
+          "summarySentence": "On May 29, the client spent about 71 minutes exercising, but none on May 30.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -8902,7 +8902,7 @@
             "time_2": "2021-05-30",
             "value_1": 70.9979833333333,
             "value_2": 0.0,
-            "fact_description": "Time spent in exercise spaces dropped from over an hour to none within one day.",
+            "fact_description": "On May 29, the client spent about 71 minutes exercising, but none on May 30.",
             "fact_type": "difference"
           },
           "sources": [
@@ -8912,7 +8912,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Time spent in exercise spaces rose from none to nearly half an hour in one day.",
+          "summarySentence": "On May 31, time spent exercising rose from zero to 27 minutes in one day.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -9202,7 +9202,7 @@
             "time_2": "2021-05-31",
             "value_1": 0.0,
             "value_2": 26.9985166666667,
-            "fact_description": "Time spent in exercise spaces rose from none to nearly half an hour in one day.",
+            "fact_description": "On May 31, time spent exercising rose from zero to 27 minutes in one day.",
             "fact_type": "difference"
           },
           "sources": [
@@ -9212,7 +9212,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Time spent in green spaces peaked at 62 minutes during this period.",
+          "summarySentence": "On June 4, 2021, time spent in green spaces peaked at 62 minutes.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -9500,7 +9500,7 @@
             "attribute": "max",
             "time": "2021-06-04",
             "value": 61.9994833333333,
-            "fact_description": "Time spent in green spaces peaked at 62 minutes during this period.",
+            "fact_description": "On June 4, 2021, time spent in green spaces peaked at 62 minutes.",
             "fact_type": "extreme"
           },
           "sources": [
@@ -9510,7 +9510,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Time spent in green spaces dropped from about 70 minutes to just 8 minutes over a few days.",
+          "summarySentence": "On May 31, time spent in green spaces was about 70 minutes, dropping to 8 minutes by June 2.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -9800,7 +9800,7 @@
             "time_2": "2021-06-02",
             "value_1": 69.9904833333333,
             "value_2": 8.0005,
-            "fact_description": "Time spent in green spaces dropped from about 70 minutes to just 8 minutes over a few days.",
+            "fact_description": "On May 31, time spent in green spaces was about 70 minutes, dropping to 8 minutes by June 2.",
             "fact_type": "difference"
           },
           "sources": [
@@ -9810,7 +9810,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The patient often notes positives and has walked outside twice over the past week.",
+          "summarySentence": "Over the past week, the patient noted positives daily and walked outside twice.",
           "dataPoints": null,
           "spec": [
             {
@@ -9829,15 +9829,15 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.2962161552018008
+          "relevance": 0.2961764896525925
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3525973668801996
+          "relevance": 0.35265174228405
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.31587434094301187
+          "relevance": 0.3157767562848516
         }
       ]
     },
@@ -9853,7 +9853,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Over a period of several weeks, the average Positive Affect Score was moderately high at 5.2.",
+          "summarySentence": "Over the past 2 months, the average Positive Affect Score was 5.2.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -9942,7 +9942,7 @@
             "time_1": "2021-03-31",
             "time_2": "2021-06-06",
             "value": 5.2,
-            "fact_description": "Over a period of several weeks, the average Positive Affect Score was moderately high at 5.2.",
+            "fact_description": "Over the past 2 months, the average Positive Affect Score was 5.2.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -9952,7 +9952,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "During this period, Positive Affect Scores showed moderate variability.",
+          "summarySentence": "Over about two months, Positive Affect Scores varied moderately, with a standard deviation of 2.75.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -10041,7 +10041,7 @@
             "time_1": "2021-03-31",
             "time_2": "2021-06-06",
             "value": 2.749545416973504,
-            "fact_description": "During this period, Positive Affect Scores showed moderate variability.",
+            "fact_description": "Over about two months, Positive Affect Scores varied moderately, with a standard deviation of 2.75.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -10051,7 +10051,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Small acts from her children brought her moments of emotional relief.",
+          "summarySentence": "Small acts from her children brought her moments of improved mood recently.",
           "dataPoints": null,
           "spec": [
             {
@@ -10067,7 +10067,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Being with her sister often lifts her mood, but she sometimes feels tearful afterward.",
+          "summarySentence": "Being with her sister often lifts her mood, but she sometimes feels sad afterward.",
           "dataPoints": null,
           "spec": [
             {
@@ -10083,7 +10083,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "During this period, the highest Positive Affect Score reached a notably elevated level of 12.0.",
+          "summarySentence": "Over the past 2 months, the highest Positive Affect Score recorded was 12.0.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -10172,7 +10172,7 @@
             "time_1": "2021-03-31",
             "time_2": "2021-06-06",
             "value": 12.0,
-            "fact_description": "During this period, the highest Positive Affect Score reached a notably elevated level of 12.0.",
+            "fact_description": "Over the past 2 months, the highest Positive Affect Score recorded was 12.0.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -10182,7 +10182,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The Positive Affect Score dropped to its lowest point of 2.0 during this period.",
+          "summarySentence": "On May 12, the Positive Affect Score dropped to its lowest point of 2.0.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -10270,7 +10270,7 @@
             "attribute": "min",
             "time": "2021-05-12",
             "value": 2.0,
-            "fact_description": "The Positive Affect Score dropped to its lowest point of 2.0 during this period.",
+            "fact_description": "On May 12, the Positive Affect Score dropped to its lowest point of 2.0.",
             "fact_type": "extreme"
           },
           "sources": [
@@ -10280,7 +10280,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The Positive Affect Score dropped to its lowest point of 2.0 during this period.",
+          "summarySentence": "On May 19, 2021, the Positive Affect Score dropped to its lowest point of 2.0.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -10368,7 +10368,7 @@
             "attribute": "min",
             "time": "2021-05-19",
             "value": 2.0,
-            "fact_description": "The Positive Affect Score dropped to its lowest point of 2.0 during this period.",
+            "fact_description": "On May 19, 2021, the Positive Affect Score dropped to its lowest point of 2.0.",
             "fact_type": "extreme"
           },
           "sources": [
@@ -10378,7 +10378,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Over several weeks, the typical positive affect score was moderately high at 4.5.",
+          "summarySentence": "Over the past two months, the typical Positive Affect Score was 4.5.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -10467,7 +10467,7 @@
             "time_1": "2021-03-31",
             "time_2": "2021-06-06",
             "value": 4.5,
-            "fact_description": "Over several weeks, the typical positive affect score was moderately high at 4.5.",
+            "fact_description": "Over the past two months, the typical Positive Affect Score was 4.5.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -10480,15 +10480,15 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.26711718608894414
+          "relevance": 0.2671564299723343
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.2655272336812734
+          "relevance": 0.26561813266595247
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.2676561980544222
+          "relevance": 0.2677040153395393
         }
       ]
     },
@@ -10505,7 +10505,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "The individual shows no signs of psychosis, mania, or current suicidal thoughts.",
+          "summarySentence": "The client currently shows no signs of psychosis, mania, or suicidal thoughts.",
           "dataPoints": null,
           "spec": [
             {
@@ -10537,7 +10537,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Since the last session, the patient has not reported self-harm thoughts but feels overwhelmed at times.",
+          "summarySentence": "Since her last visit, she has not had self-harm thoughts but sometimes feels overwhelmed.",
           "dataPoints": null,
           "spec": [
             {
@@ -10553,7 +10553,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The patient relies on her sister and clinician for support during difficult moments.",
+          "summarySentence": "The patient agreed to reach out to her sister or clinician during emotional distress.",
           "dataPoints": null,
           "spec": [
             {
@@ -10572,29 +10572,29 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.29088286512802936
+          "relevance": 0.29085863269252804
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3186858364408198
+          "relevance": 0.31872981929565436
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.34233151239308796
+          "relevance": 0.3424811884976298
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.4922008569448418
+          "relevance": 0.49224666654653515
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.502734887825403
+          "relevance": 0.5029208816233689
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.5334328334546767
+          "relevance": 0.5335113357250234
         }
       ]
     },
@@ -10627,7 +10627,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The patient relies on her sister and clinician for support during difficult moments.",
+          "summarySentence": "The patient agreed to reach out to her sister or clinician during emotional distress.",
           "dataPoints": null,
           "spec": [
             {
@@ -10646,29 +10646,29 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.29547703456039737
+          "relevance": 0.2954587342367094
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3302401879365569
+          "relevance": 0.330303086205013
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3167397497336627
+          "relevance": 0.3168104612705199
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.41583011638899786
+          "relevance": 0.41592341765139856
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.44464909634634386
+          "relevance": 0.44501232421911135
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.43817372831312634
+          "relevance": 0.43816903161887305
         }
       ]
     },
@@ -10683,7 +10683,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Alison does not have any active medication prescriptions at this time.",
+          "summarySentence": "As of today, Alison is not taking any prescribed medications.",
           "dataPoints": null,
           "spec": [
             {
@@ -10699,7 +10699,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "She is experiencing mild, short-term benefits from journaling, walking, and social connection.",
+          "summarySentence": "Over the past weeks, she has begun journaling, walking, and connecting with others, with mild benefits.",
           "dataPoints": null,
           "spec": [
             {
@@ -10718,15 +10718,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.47534955521738653
+          "relevance": 0.4752968111381112
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.5076235613317356
+          "relevance": 0.5076112255794253
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.5622374335740299
+          "relevance": 0.5620803895239279
         }
       ]
     }

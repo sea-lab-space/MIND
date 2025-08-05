@@ -70,7 +70,7 @@ export function FilterSelector({ selected, onToggle, selectedPatient }: FilterSe
 
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Filter className="w-4 h-4" />
-                <span>Filter By:</span>
+                <span>Filter Topics:</span>
             </div>
 
             {FILTER_OPTIONS.map(({ type, label, icon }) => (

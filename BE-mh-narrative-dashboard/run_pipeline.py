@@ -321,7 +321,7 @@ if __name__ == "__main__":
             .load_data(load_from_cache=True)
             .run_discoverer(load_from_cache=True)
             .run_synthesizer(iters=2, load_from_cache=True)
-            .run_narrator(load_from_cache=True)
+            .run_narrator(load_from_cache=False)
             .run_overview(load_from_cache=True)
             .run_suggest_activity(load_from_cache=True)
             .run_visualizer()

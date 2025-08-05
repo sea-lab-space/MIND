@@ -1,13 +1,14 @@
 import type {DatasourceIconType, DatasourceIconTypes, DataSourceType, InsightCardData} from "@/types/props";
-import visualizerData from "@/data/INS-W_963.json";
 import Gabriella_Lin_Data from "@/data/INS-W_963.json"
 import Lucy_Sutton_Data from "@/data/INS-W_1044.json"
 import Alison_Daniels_Data from "@/data/INS-W_1077.json"
 import type {InsightExpandViewItem, InsightType} from "@/types/props";
-import type { HighlightSpec } from "@/types/insightSpec";
+import type { HighlightSpec, OverviewSpec, InputSpecStructure } from "@/types/insightSpec";
 import type { Encounter, SuggestedActivity } from "@/types/dataTypes";
 
-const personDataMap: Record<string, typeof visualizerData> = {
+
+
+const personDataMap: Record<string, InputSpecStructure> = {
     "Gabriella Lin": Gabriella_Lin_Data,
     "Lucy Sutton": Lucy_Sutton_Data,
     "Alison Daniels": Alison_Daniels_Data,
@@ -20,12 +21,15 @@ export const getVisualizerDataForPerson = (personName: string) => {
     if (!personData) {
         console.warn(`No data found for ${personName}`);
         return {
-            overviewCardData: [],
-            insightCardData: [],
+          overviewCardData: {} as OverviewSpec,
+          insightCardData: [],
+          session_subjective_info: [],
+          survey_data: [],
+          suggested_activity_data: [],
         };
     }
 
-    const overviewCardData = personData.overview;
+    const overviewCardData = personData.overview as OverviewSpec;
     const insightCardData: InsightCardData[] = personData.insights.map((group, index) => ({
         key: `insight-${index + 1}`,
         summaryTitle: group.summaryTitle,
@@ -36,12 +40,14 @@ export const getVisualizerDataForPerson = (personName: string) => {
             type: type as InsightType
         })),
         expandView: group.expandView.map((insight: any, idx: number) => ({
+            ...insight,
             key: `insight-${index + 1}-detail-${idx+1}`,
             summarySentence: insight.summarySentence,
             dataPoints: insight.dataPoints,
             dataSourceType: insight.dataSourceType as DataSourceType,
             highlightSpec: insight.spec as HighlightSpec,
             source: insight.sources[0] as keyof typeof DatasourceIconTypes,
+            isShowL2: insight.isShowL2 as boolean,
         }) as InsightExpandViewItem)
     }));
     const session_subjective_info = personData.session_subjective_info as Encounter[];
@@ -49,7 +55,7 @@ export const getVisualizerDataForPerson = (personName: string) => {
         ...item,
         key: `survey-${index}`,
     }));
-    const suggested_activity_data = personData?.suggest_activity as SuggestedActivity[];
+    const suggested_activity_data = personData.suggest_activity as SuggestedActivity[];
 
     return {
         overviewCardData,

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, type JSX } from "react";
 import { Watch, MessageSquare, StickyNote, ClipboardList } from "lucide-react";
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import {DatasourceIconTypes, type DatasourceIconType, type InsightExpandViewItem} from "@/types/props";
 import {getVisualizerDataForPerson} from "@/utils/dataConversion";
@@ -31,7 +31,7 @@ const dataSourceIconConfig: Record<DatasourceIconType, { icon: JSX.Element; colo
 };
 
 
-export default function DataSourceIconModalButtons({selectedPatient}) {
+export default function DataSourceIconModalButtons({selectedPatient}: {selectedPatient: string}) {
     const [openType, setOpenType] = useState<DatasourceIconType | null>(null);
 
     const { overviewCardData, insightCardData, session_subjective_info, survey_data } = getVisualizerDataForPerson(selectedPatient);

@@ -173,19 +173,28 @@ class GuardrailNarratorAgent:
             print(f"Original: {data_insight_descriptions}\nRevised: {res_text}\n---")
         return res_text
 
+# ! Case-specific prompt, remove in the future
+DATE_INSTRUCTION = """
+The date today is 2021-06-07.
+The last encounter was 2021-05-09.
+"""
 
 NARRATOR_REWRITER_SYSTEM = f"""
 You are an expert in clinical mental health narrative generation.
 Given a |data fact|, rewrite it to be more descriptive and less technical.
 
+{DATE_INSTRUCTION}
+
 Requirements:
-* Remove any mention of a concrete year (e.g., 2021).
-* Remove any mention of a specific date (e.g., 2021-05-09). Instead, contextualize the date (e.g., for 1 week, for 3 days).
+* Contextualize the date (e.g., for 1 week, for 3 days).
 * For values, contextualize the data (e.g., for phq-4 score, indicate if the score is high or normal).
 * Write the data facts like you are writing a data story/data-rich document.
 * For each data fact, controll the length to be less than 15 words.
 * Do not add any new information. Do not infer the speed of the data change (i.e., don't use words like steadily, sharply etc.).
 """
+# * Remove any mention of a concrete year(e.g., 2021).
+
+
 
 
 class RewriterNarratorAgent:

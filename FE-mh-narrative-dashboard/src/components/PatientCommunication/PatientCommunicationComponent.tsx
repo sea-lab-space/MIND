@@ -9,19 +9,20 @@ import type {SuggestedActivity} from "@/types/dataTypes";
 //     "Shift to Passive Consumption (App Usage Categories)",
 // ];
 
-const activities = [
-    { label: "Just Five Minutes Rule", checked: true },
-    { label: "Energy Audit", checked: false },
-    { label: '"Tiny Wins" Journal', checked: false },
-    { label: "Purposeful Pauses", checked: true },
-];
+// const activities = [
+//     { label: "Just Five Minutes Rule", checked: true },
+//     { label: "Energy Audit", checked: false },
+//     { label: '"Tiny Wins" Journal', checked: false },
+//     { label: "Purposeful Pauses", checked: true },
+// ];
+
 interface PatientCommunicationComponentProps {
     isDrillDown?: boolean;
     selectedInsightCardTitles: string[];
     suggested_activity_data: SuggestedActivity[]
 }
 
-function PatientCommunicationComponent({ isDrillDown, selectedInsightCardTitles, suggested_activity_data }: PatientCommunicationComponentProps) {
+function PatientCommunicationComponent({ isDrillDown, selectedInsightCardTitles, suggested_activity_data }: PatientCommunicationComponentProps) {    
     return (
         <div
             className={`flex gap-4 w-full ${

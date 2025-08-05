@@ -4,7 +4,7 @@ import type { DatasourceIconType } from "@/types/props";
 
 
 interface SourcesSectionProps {
-    sources: DatasourceIconTypes[] | undefined;
+    sources: DatasourceIconType[] | undefined;
 }
 
 const SourcesSection: React.FC<SourcesSectionProps> = ({ sources }) => {
@@ -12,7 +12,7 @@ const SourcesSection: React.FC<SourcesSectionProps> = ({ sources }) => {
         <div className="flex items-center gap-4 text-sm text-[#757575]">
             <span>Sources:</span>
             {sources?.map((ds) => (
-                <DataSourceIcon key={ds.type} showType iconType={ds.type as DatasourceIconType} />
+                <DataSourceIcon key={ds} showType iconType={ds as DatasourceIconType} />
             ))}
         </div>
     );

@@ -45,7 +45,9 @@ const Header: React.FC<HeaderProps> = (props) => {
       <div className="flex items-center justify-between px-6 py-2">
         {/* Left - Brand */}
         <div className="flex items-center w-1/3">
-          <h1 className="text-2xl font-bold text-black tracking-tight">{isHomePage? 'MIND': ''}</h1>
+          <h1 className="text-2xl font-bold text-black tracking-tight">
+            {isHomePage ? "MIND" : "FACT"}
+          </h1>
         </div>
 
         {/* Center - Person Selector */}
@@ -83,7 +85,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                         <Check
                           className={cn(
                             "mr-2 h-4 w-4",
-                              setSelectedPatient === person.label
+                            selectedPatient === person.label
                               ? "opacity-100"
                               : "opacity-0"
                           )}
@@ -100,7 +102,9 @@ const Header: React.FC<HeaderProps> = (props) => {
 
         {/* Right - Retrospect Navigation and Avatar */}
         <div className="flex items-center gap-4 w-1/3 justify-end">
-          <p className="text-sm">Retrospect: From May 10th, 2021 to June 7th, 2021</p>
+          <p className="text-sm">
+            <b>Last Encounter</b>: May 8, 2021 | <b>Today</b>: June 7, 2021
+          </p>
           {/*<DropdownMenu>*/}
           {/*  <DropdownMenuTrigger className="flex hover:bg-gray-50 text-black text-sm font-normal h-[2.5em] items-center">*/}
           {/*    {selectedRetrospect}*/}
@@ -117,7 +121,8 @@ const Header: React.FC<HeaderProps> = (props) => {
           {/*    ))}*/}
           {/*  </DropdownMenuContent>*/}
           {/*</DropdownMenu>*/}
-
+          
+          {/* TODO: we can customize it to individual participants if we want */}
           <Avatar className="w-10 h-10 bg-[#b3adad] border border-[#d9d9d9]">
             <AvatarFallback className="bg-[#b3adad] text-black font-semibold">
               {userName.charAt(0).toUpperCase()}

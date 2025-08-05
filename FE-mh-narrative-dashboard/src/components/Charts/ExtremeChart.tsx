@@ -8,7 +8,6 @@ import {
   ResponsiveContainer,
   Cell,
   LabelList,
-  ReferenceLine,
 } from "recharts";
 import type {
   DataPoint,

@@ -22,7 +22,7 @@ export default function OverviewComponent({
             isDrillDown ? "flex-col" : "flex-col sm:flex-row"
           }`}
         >
-          <div className={isDrillDown ? "w-full" : "sm:w-1/5"}>
+          <div className={isDrillDown ? "w-full" : "w-[260px] shrink-0 "}>
             <div className="h-full bg-white shadow-sm rounded-xl px-3 py-2 border border-gray-200 flex flex-col">
               <h3 className="text-base font-semibold mb-2">Patient Summary</h3>
               <div className="space-y-1">
@@ -34,7 +34,7 @@ export default function OverviewComponent({
                     <span className="font-semibold text-gray-900 mr-1">
                       {capitalizeFirst(key)}:
                     </span>
-                    <span>{value}</span>
+                    <span>{value as string}</span>
                   </div>
                 ))}
               </div>
@@ -43,11 +43,11 @@ export default function OverviewComponent({
 
           <div
             className={`flex flex-col gap-2 ${
-              isDrillDown ? "w-full" : "sm:w-4/5"
+              isDrillDown ? "w-full" : "w-full"
             }`}
           >
             {infoData.map((card, index) => {
-                const Icon = overviewIconMap[card.icon];
+              const Icon = overviewIconMap[card.icon];
               return (
                 <OverviewCardComponent
                   key={index}

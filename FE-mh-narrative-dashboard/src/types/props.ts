@@ -41,12 +41,14 @@ export interface SectionProps {
   children?: React.ReactNode;
   className?: string;
   action?: React.ReactNode;
+  shouldExpand?: boolean;
 }
 
 export interface InsightExpandViewItem {
+  key: string;
   summarySentence: string;
   dataPoints: Record<string, number>;
-  sources: { type: DatasourceIconType }[];
+  source: string;
   highlightSpec?: HighlightSpec;
   dataSourceType: DataSourceType;
   insightType?: InsightType;

@@ -1,4 +1,27 @@
-import type { DataSourceType } from "./props";
+import type { Encounter } from "./dataTypes";
+import type { DataSourceType, InsightExpandViewItem } from "./props";
+
+export interface InfoCardSpec {
+  icon: string;
+  overviewHeadTitle: string;
+  cardContent: {
+    folded: string;
+    expanded: string;
+  }
+}
+
+export interface OverviewSpec {
+  basicInfoCard: {
+    name: string;
+    ethnicity: string;
+    gender: string;
+    age: number;
+    income: string;
+    occupation: string;
+    generation: string;
+  };
+  infoCards: InfoCardSpec[]
+}
 
 export interface InsightSpec {
   isSelectable: boolean;
@@ -121,3 +144,13 @@ export type HighlightSpec = ValueSpec | ComparisonSpec | DifferenceSpec | Extrem
 //   else if (spec.fact_type === "text") return spec as TextSourceSpec;
 //   else throw new Error("Invalid spec type");
 // };
+
+export interface InputSpecStructure {
+  overview: OverviewSpec;
+  // ! for simplicity
+  insights: any[];
+  session_subjective_info: Encounter[];
+  // ! for simplicity
+  survey_raw: any[];
+  suggest_activity: any[];
+}

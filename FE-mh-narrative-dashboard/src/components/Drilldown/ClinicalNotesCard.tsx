@@ -38,7 +38,7 @@ const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFac
 
     useEffect(() => {
         if (dates && dates.length > 0 && !selectedDate) {
-            setSelectedDate(dates[0]);
+            setSelectedDate(dates[dates.length - 1]);
         }
     }, [dates, selectedDate]);
 
