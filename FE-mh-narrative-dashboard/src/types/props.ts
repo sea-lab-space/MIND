@@ -5,7 +5,7 @@ export const DatasourceIconTypes = {
   passiveSensing: "passive sensing",
   clinicalNotes: "clinical note",
   clinicalTranscripts: "session transcript",
-  measurementScore: "survey"
+  surveyScore: "survey"
 } as const;
 
 export type DatasourceIconType = typeof DatasourceIconTypes[keyof typeof DatasourceIconTypes];

@@ -10,11 +10,11 @@ import ClinicalNotesTab from "@/components/BaseLine/ClinicalNotes/ClinicalNotesT
 import {flattenAllExpandViews, groupInsightsBySource} from "@/utils/helper";
 import type {InsightExpandViewItem} from "@/types/props";
 import TranscriptionTab from "@/components/BaseLine/Transcription/TranscriptionTab";
-import MeasurementScoreTab from "@/components/BaseLine/MeasurementScore/MeasurementScoreTab";
+import SurveyScoreTab from "@/components/BaseLine/SurveyScore/SurveyScoreTab";
 
 export type TabKey =
     | "chart-review"
-    | "measurement-score"
+    | "survey-score"
     | "passive-sensing"
     | "transcription"
     | "clinical-notes";
@@ -64,11 +64,12 @@ export default function BaselinePage() {
             component: <TranscriptionTab overviewCardData={overviewCardData?.basicInfoCard} clinicalTranscriptsFacts={session_subjective_info}/>,
         },
         {
-            key: "measurement-score",
-            label: "Measurement Score",
-            component: <MeasurementScoreTab overviewCardData={overviewCardData?.basicInfoCard} measurementScoreFacts={survey_data}/>,
+            key: "survey-score",
+            label: "Survey Score",
+            component: <SurveyScoreTab overviewCardData={overviewCardData?.basicInfoCard} surveyScoreFacts={survey_data}/>,
         },
     ];
+
 
     return (
         <div className="h-screen w-screen bg-white">

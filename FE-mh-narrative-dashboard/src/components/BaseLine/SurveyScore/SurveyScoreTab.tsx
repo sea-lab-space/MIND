@@ -2,16 +2,16 @@ import OverviewSummary from "@/components/BaseLine/OverciewSummary";
 import type {InsightExpandViewItem} from "@/types/props";
 import InsightCardDetail from "@/components/DataInsights/InsightCardDetails";
 
-interface MeasurementScoreTabProps {
+interface SurveyScoreTabProps {
     showOverviewCardData?: boolean,
     overviewCardData: Record<string, string>;
-    measurementScoreFacts: InsightExpandViewItem[];
+    surveyScoreFacts: InsightExpandViewItem[];
 }
 
-const MeasurementScoreTab: React.FC<MeasurementScoreTabProps> = ({
+const SurveyScoreTab: React.FC<SurveyScoreTabProps> = ({
                                                                      showOverviewCardData=true,
                                                                      overviewCardData,
-                                                                     measurementScoreFacts,
+                                                           surveyScoreFacts,
                                                              }) => {
     return (
         <div className="flex gap-4 h-full">
@@ -25,16 +25,17 @@ const MeasurementScoreTab: React.FC<MeasurementScoreTabProps> = ({
             {/* Right column: scrollable content */}
             <div className="flex-1 h-full flex flex-col overflow-y-auto bg-gray-50 border rounded-xl shadow">
                 {/* Static (non-scrolling) header */}
-                <div className="p-4 border-b">
-                    <h2 className="text-lg font-semibold">Measurement Scores</h2>
-                    {/*<p className="mt-2 text-sm text-muted-foreground">*/}
-                    {/*    Visualization of passive data goes here.*/}
-                    {/*</p>*/}
-                </div>
+                {
+                    showOverviewCardData &&
+                    <div className="p-4 border-b">
+                        <h2 className="text-lg font-semibold">Survey Scores</h2>
+                    </div>
+                }
+
 
                 {/* Scrollable content */}
                 <div className="flex-1 overflow-y-auto p-4 space-y-4">
-                    <InsightCardDetail insightCardDataExpandView={measurementScoreFacts}/>
+                    <InsightCardDetail insightCardDataExpandView={surveyScoreFacts}/>
                 </div>
             </div>
         </div>
@@ -42,4 +43,4 @@ const MeasurementScoreTab: React.FC<MeasurementScoreTabProps> = ({
 };
 
 
-export default MeasurementScoreTab;
+export default SurveyScoreTab;

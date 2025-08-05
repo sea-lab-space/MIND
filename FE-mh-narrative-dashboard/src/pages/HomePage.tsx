@@ -10,7 +10,7 @@ import { useWindowSize } from "usehooks-ts";
 import { Button } from "@/components/ui";
 import { Pencil } from "lucide-react";
 import {FilterSelector} from "@/components/FilterSelector";
-import {data, defaultInsightCardData, nameList, retrospectHorizon} from "@/data/data";
+import { defaultInsightCardData, nameList, retrospectHorizon} from "@/data/data";
 import { InsightType } from "@/types/props";
 import {
    getVisualizerDataForPerson,
@@ -18,7 +18,6 @@ import {
 
 
 const userName = "Ryan";
-
 
 export default function HomePage() {
   const [selectedInsightHeader, setSelectedInsightHeader] = useState<string[]>([]);
@@ -33,7 +32,7 @@ export default function HomePage() {
   });
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const { overviewCardData, insightCardData, session_subjective_info } = getVisualizerDataForPerson(selectedPatient);
+  const { overviewCardData, insightCardData, session_subjective_info, suggested_activity_data } = getVisualizerDataForPerson(selectedPatient);
 
   const toggleSection = (section: string) => {
     setExpandedSections((prev) => ({
@@ -244,6 +243,7 @@ export default function HomePage() {
                   <PatientCommunicationComponent
                     isDrillDown={isDrillDown}
                     selectedInsightCardTitles={selectedInsightCardTitles}
+                    suggested_activity_data={suggested_activity_data}
                   />
                 </SectionTitle>
               </div>

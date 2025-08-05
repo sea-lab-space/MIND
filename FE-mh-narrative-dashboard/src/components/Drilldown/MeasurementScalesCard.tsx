@@ -4,22 +4,22 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {shouldShowChart} from "@/utils/helper";
 import InsightGraph from "@/components/DataInsights/InsightGraph";
 import type {InsightExpandViewItem} from "@/types/props";
-import { MessageSquare } from "lucide-react";
 import { SURVEY_COLOR } from "@/utils/colorHelper";
+import {ClipboardList} from "lucide-react";
 
 interface measurementScoreFactsProps {
-    measurementScoreFacts: InsightExpandViewItem[];
+    surveyScoreFacts: InsightExpandViewItem[];
 }
 
-const MeasurementScalesCard = ({measurementScoreFacts} :measurementScoreFactsProps) => {
+const MeasurementScalesCard = ({surveyScoreFacts} :measurementScoreFactsProps) => {
 const [selectedKey, setSelectedKey] = useState<string | null>(null);
-const selectedInsight = measurementScoreFacts.find((fact) => fact.key === selectedKey);
+const selectedInsight = surveyScoreFacts.find((fact) => fact.key === selectedKey);
 
 useEffect(() => {
-    if (measurementScoreFacts.length > 0 && !selectedKey) {
-        setSelectedKey(measurementScoreFacts[0].key);
+    if (surveyScoreFacts.length > 0 && !selectedKey) {
+        setSelectedKey(surveyScoreFacts[0].key);
     }
-}, [measurementScoreFacts]);
+}, [surveyScoreFacts]);
 
 if (!selectedInsight) {
     return (
@@ -39,15 +39,15 @@ return (
   <Card className="bg-white border-[#eaeaea]">
     <CardHeader>
       <div className="flex items-center gap-2">
-          <MessageSquare className="w-4 h-4 text-[#fb923c]" />
-          <span className="text-[#fb923c] font-medium">Measurement Scales</span>
+          <ClipboardList className="w-4 h-4 text-[#fb923c]" />
+          <span className="text-[#fb923c] font-medium">Survey Scores</span>
       </div>
     </CardHeader>
     <CardContent>
       <div className="flex gap-6 min-h-[400px]">
         {/* Left Side: Button List */}
         <div className="flex-shrink-0 space-y-4 w-80">
-          {measurementScoreFacts.map((insight) => (
+          {surveyScoreFacts.map((insight) => (
             <Button
               key={insight.key}
               variant="outline"

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ClipboardList } from "lucide-react";
+import {StickyNote} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import ReactMarkdown from "react-markdown";
@@ -59,7 +59,7 @@ const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFac
             <CardContent className="px-6">
                 {/* Header */}
                 <div className="flex items-center gap-2 mb-4">
-                    <ClipboardList className="w-4 h-4 text-[#ffc100]" />
+                    <StickyNote className="w-4 h-4 text-[#ffc100]" />
                     <span className="text-[#ffc100] font-medium">Clinical Notes</span>
                 </div>
 
@@ -92,6 +92,7 @@ const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFac
                         {clinicalNotesFacts.map((fact) => (
                             <Button
                                 key={fact.key}
+                                disabled={!highlightDates.has(selectedDate ?? "")}
                                 variant="outline"
                                 onClick={() => setSelectedFactKey(fact.key)}
                                 className={`w-full justify-start h-auto text-left whitespace-normal p-4 text-sm border-[#d9d9d9] ${

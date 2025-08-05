@@ -15,11 +15,11 @@ const dataSourceIconConfig: Record<DatasourceIconType, { icon: JSX.Element; colo
   },
   [DatasourceIconTypes.clinicalNotes]: {
     icon: <StickyNote className="w-5 h-5" />,
-    color: "text-orange-500"
-  },
-  [DatasourceIconTypes.measurementScore]: {
-    icon: <ClipboardList className="w-5 h-5" />,
     color: "text-yellow-500"
+  },
+  [DatasourceIconTypes.surveyScore]: {
+    icon: <ClipboardList className="w-5 h-5" />,
+    color:  "text-orange-500"
   }
 };
 

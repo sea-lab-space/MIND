@@ -5,7 +5,7 @@ import Lucy_Sutton_Data from "@/data/INS-W_1044.json"
 import Alison_Daniels_Data from "@/data/INS-W_1077.json"
 import type {InsightExpandViewItem, InsightType} from "@/types/props";
 import type { HighlightSpec } from "@/types/insightSpec";
-import type { Encounter, SurveyRaw } from "@/types/dataTypes";
+import type { Encounter, SuggestedActivity } from "@/types/dataTypes";
 
 const personDataMap: Record<string, typeof visualizerData> = {
     "Gabriella Lin": Gabriella_Lin_Data,
@@ -49,12 +49,14 @@ export const getVisualizerDataForPerson = (personName: string) => {
         ...item,
         key: `survey-${index}`,
     }));
+    const suggested_activity_data = personData?.suggest_activity as SuggestedActivity[];
 
     return {
         overviewCardData,
         insightCardData,
         session_subjective_info,
-        survey_data
+        survey_data,
+        suggested_activity_data
     };
 };
 

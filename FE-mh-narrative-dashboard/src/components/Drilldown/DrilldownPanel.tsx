@@ -23,12 +23,12 @@ const DrilldownPanel: React.FC<DrilldownPanelProps> = ({ onClose, insightData, s
         passiveSensingFacts = [],
         clinicalNotesFacts = [],
         clinicalTranscriptsFacts = [],
-        measurementScoreFacts = [],
+        surveyScoreFacts = [],
     }: {
         passiveSensingFacts?: InsightExpandViewItem[];
         clinicalNotesFacts?: InsightExpandViewItem[];
         clinicalTranscriptsFacts?: InsightExpandViewItem[];
-        measurementScoreFacts?: InsightExpandViewItem[];
+        surveyScoreFacts?: InsightExpandViewItem[];
     } = groupInsightsBySource(insightData?.expandView);
 
   return (
@@ -61,8 +61,8 @@ const DrilldownPanel: React.FC<DrilldownPanelProps> = ({ onClose, insightData, s
               {clinicalTranscriptsFacts?.length > 0 && (
                   <TranscriptCard clinicalTranscriptsFacts={clinicalTranscriptsFacts} sessionInfo={sessionInfo}/>
               )}
-              {measurementScoreFacts?.length > 0 && (
-                  <MeasurementScalesCard measurementScoreFacts={measurementScoreFacts} />
+              {surveyScoreFacts?.length > 0 && (
+                  <MeasurementScalesCard surveyScoreFacts={surveyScoreFacts} />
               )}
           </div>
         </div>

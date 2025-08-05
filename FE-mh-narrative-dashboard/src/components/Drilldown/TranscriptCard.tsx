@@ -1,18 +1,10 @@
 import {useEffect, useState} from "react";
-import { FileText } from "lucide-react";
+import { MessageSquare} from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {formatDate} from "@/utils/helper";
 import type {InsightExpandViewItem} from "@/types/props";
 import type {Encounter} from "@/types/dataTypes";
-
-
-// Background color by relevance
-const getColorByRelevance = (relevance: number) => {
-    if (relevance > 0.8) return "bg-[#4d7c0f]"; // dark green
-    if (relevance > 0.5) return "bg-[#9fb40f]"; // medium green
-    return "bg-[#d9b238]"; // yellow-green
-};
 
 interface clinicalTranscriptsFactsProps {
     clinicalTranscriptsFacts: InsightExpandViewItem[];
@@ -70,7 +62,7 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
             <CardContent className="px-6">
                 {/* Header */}
                 <div className="flex items-center gap-2 mb-4">
-                    <FileText className="w-4 h-4 text-[#9FB40F]" />
+                    <MessageSquare className="w-4 h-4 text-[#9FB40F]" />
                     <span className="text-[#9FB40F] font-medium">Transcript</span>
                 </div>
 
@@ -103,6 +95,7 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
                         {clinicalTranscriptsFacts.map((fact) => (
                             <Button
                                 key={fact.key}
+                                disabled={!highlightDates.has(selectedDate ?? "")}
                                 variant="outline"
                                 onClick={() => setSelectedFactKey(fact.key)}
                                 className={`w-full justify-start h-auto text-left whitespace-normal p-4 text-sm border-[#d9d9d9] ${

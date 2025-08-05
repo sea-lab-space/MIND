@@ -3,12 +3,11 @@ import { Watch, MessageSquare, StickyNote, ClipboardList } from "lucide-react";
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import {DatasourceIconTypes, type DatasourceIconType, type InsightExpandViewItem} from "@/types/props";
-import PassiveSensingModalContent from "@/components/ExpertView/PassiveSensingModalContent";
 import {getVisualizerDataForPerson} from "@/utils/dataConversion";
 import {flattenAllExpandViews, groupInsightsBySource} from "@/utils/helper";
 import PassiveSensingTab from "@/components/BaseLine/PassiveSensing/PassiveSensingTab";
 import ClinicalNotesTab from "@/components/BaseLine/ClinicalNotes/ClinicalNotesTab";
-import MeasurementScoreTab from "@/components/BaseLine/MeasurementScore/MeasurementScoreTab";
+import SurveyScoreTab from "@/components/BaseLine/SurveyScore/SurveyScoreTab";
 import TranscriptionTab from "@/components/BaseLine/Transcription/TranscriptionTab";
 
 // Icon + color config
@@ -25,7 +24,7 @@ const dataSourceIconConfig: Record<DatasourceIconType, { icon: JSX.Element; colo
         icon: <StickyNote className="w-5 h-5" />,
         color: "text-orange-500"
     },
-    [DatasourceIconTypes.measurementScore]: {
+    [DatasourceIconTypes.surveyScore]: {
         icon: <ClipboardList className="w-5 h-5" />,
         color: "text-yellow-500"
     }
@@ -57,9 +56,9 @@ export default function DataSourceIconModalButtons({selectedPatient}) {
             title: "Clinical Notes",
             ContentComponent: () => <ClinicalNotesTab clinicalNotesFacts={session_subjective_info} showOverviewCardData={false} />,
         },
-        [DatasourceIconTypes.measurementScore]: {
-            title: "Measurement Scores",
-            ContentComponent: () => <MeasurementScoreTab showOverviewCardData={false} measurementScoreFacts={survey_data}/>,
+        [DatasourceIconTypes.surveyScore]: {
+            title: "Survey Scores",
+            ContentComponent: () => <SurveyScoreTab showOverviewCardData={false} surveyScoreFacts={survey_data}/>,
         },
         [DatasourceIconTypes.clinicalTranscripts]: {
             title: "Clinical Transcripts",

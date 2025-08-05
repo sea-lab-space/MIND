@@ -75,7 +75,7 @@ export const data = {
             key: "insight-1",
             summaryTitle: "Increased social activity, yet remains in a closed circle",
             sources: [
-                { type: DatasourceIconTypes.measurementScore },
+                { type: DatasourceIconTypes.surveyScore },
                 { type: DatasourceIconTypes.clinicalNotes },
                 { type: DatasourceIconTypes.clinicalTranscripts }
             ],
@@ -86,7 +86,7 @@ export const data = {
                     summarySentence: "Social App Usage: Daily active time increased by 30%.",
                     dataPoints: { week1: 10, week2: 12, week3: 14, week4: 18 },
                     sources: [
-                        { type: DatasourceIconTypes.measurementScore },
+                        { type: DatasourceIconTypes.surveyScore },
                         { type: DatasourceIconTypes.clinicalNotes },
                         { type: DatasourceIconTypes.clinicalTranscripts }
                     ],
@@ -97,7 +97,7 @@ export const data = {
                     summarySentence: "GPS Data (New Locations Visited per Week): Average 1 new non-routine location/week",
                     dataPoints: { morning: 3, afternoon: 5, evening: 15, night: 2 },
                     sources: [
-                        { type: DatasourceIconTypes.measurementScore },
+                        { type: DatasourceIconTypes.surveyScore },
                         { type: DatasourceIconTypes.clinicalNotes },
                         { type: DatasourceIconTypes.clinicalTranscripts }
                     ],
@@ -108,7 +108,7 @@ export const data = {
                     summarySentence: "Patient Report: Increased effort in communication, primarily with their sister.",
                     dataPoints: { morning: 3, afternoon: 5, evening: 15, night: 2 },
                     sources: [
-                        { type: DatasourceIconTypes.measurementScore },
+                        { type: DatasourceIconTypes.surveyScore },
                         { type: DatasourceIconTypes.clinicalNotes },
                         { type: DatasourceIconTypes.clinicalTranscripts }
                     ],
@@ -120,7 +120,7 @@ export const data = {
             key: "insight-2",
             summaryTitle: "Growing Activity Level Despite Persistent Fatigue",
             sources: [
-                { type: DatasourceIconTypes.measurementScore },
+                { type: DatasourceIconTypes.surveyScore },
                 { type: DatasourceIconTypes.clinicalNotes },
                 { type: DatasourceIconTypes.clinicalTranscripts }
             ],
@@ -131,7 +131,7 @@ export const data = {
                     summarySentence: "Social interactions increased by 20% over the last month.",
                     dataPoints: { week1: 10, week2: 12, week3: 14, week4: 18 },
                     sources: [
-                        { type: DatasourceIconTypes.measurementScore },
+                        { type: DatasourceIconTypes.surveyScore },
                         { type: DatasourceIconTypes.clinicalNotes },
                         { type: DatasourceIconTypes.clinicalTranscripts }
                     ]
@@ -141,7 +141,7 @@ export const data = {
                     summarySentence: "Peak social activity occurs in evenings.",
                     dataPoints: { morning: 3, afternoon: 5, evening: 15, night: 2 },
                     sources: [
-                        { type: DatasourceIconTypes.measurementScore },
+                        { type: DatasourceIconTypes.surveyScore },
                         { type: DatasourceIconTypes.clinicalNotes },
                         { type: DatasourceIconTypes.clinicalTranscripts }
                     ]
@@ -152,7 +152,7 @@ export const data = {
             key: "insight-3",
             summaryTitle: "Loss of Specific Activities Coinciding with Worsening Well-being",
             sources: [
-                { type: DatasourceIconTypes.measurementScore },
+                { type: DatasourceIconTypes.surveyScore },
                 { type: DatasourceIconTypes.clinicalNotes },
                 { type: DatasourceIconTypes.clinicalTranscripts },
             ],
@@ -168,7 +168,7 @@ export const data = {
                         week4: 18
                     },
                     sources: [
-                        { type: DatasourceIconTypes.measurementScore },
+                        { type: DatasourceIconTypes.surveyScore },
                         { type: DatasourceIconTypes.clinicalNotes },
                         { type: DatasourceIconTypes.clinicalTranscripts },
                     ]
@@ -183,7 +183,7 @@ export const data = {
                         night: 2
                     },
                     sources: [
-                        { type: DatasourceIconTypes.measurementScore },
+                        { type: DatasourceIconTypes.surveyScore },
                         { type: DatasourceIconTypes.clinicalNotes },
                         { type: DatasourceIconTypes.clinicalTranscripts },
                     ]
@@ -194,7 +194,7 @@ export const data = {
             key: "insight-4",
             summaryTitle: "Shift to Passive Consumption (App Usage Categories)",
             sources: [
-                { type: DatasourceIconTypes.measurementScore },
+                { type: DatasourceIconTypes.surveyScore },
                 { type: DatasourceIconTypes.clinicalNotes },
                 { type: DatasourceIconTypes.clinicalTranscripts },
             ],
@@ -210,7 +210,7 @@ export const data = {
                         week4: 18
                     },
                     sources: [
-                        { type: DatasourceIconTypes.measurementScore },
+                        { type: DatasourceIconTypes.surveyScore },
                         { type: DatasourceIconTypes.clinicalNotes },
                         { type: DatasourceIconTypes.clinicalTranscripts },
                     ]
@@ -225,7 +225,7 @@ export const data = {
                         night: 2
                     },
                     sources: [
-                        { type: DatasourceIconTypes.measurementScore },
+                        { type: DatasourceIconTypes.surveyScore },
                         { type: DatasourceIconTypes.clinicalNotes },
                         { type: DatasourceIconTypes.clinicalTranscripts },
                     ]
@@ -236,7 +236,7 @@ export const data = {
             key: "insight-5",
             summaryTitle: "Social Contraction Amidst High Loneliness and Anxiety",
             sources: [
-                { type: DatasourceIconTypes.measurementScore },
+                { type: DatasourceIconTypes.surveyScore },
                 { type: DatasourceIconTypes.clinicalNotes },
                 { type: DatasourceIconTypes.clinicalTranscripts },
             ],
@@ -252,7 +252,7 @@ export const data = {
                         week4: 18
                     },
                     sources: [
-                        { type: DatasourceIconTypes.measurementScore },
+                        { type: DatasourceIconTypes.surveyScore },
                         { type: DatasourceIconTypes.clinicalNotes },
                         { type: DatasourceIconTypes.clinicalTranscripts },
                     ]
@@ -267,7 +267,7 @@ export const data = {
                         night: 2
                     },
                     sources: [
-                        { type: DatasourceIconTypes.measurementScore },
+                        { type: DatasourceIconTypes.surveyScore },
                         { type: DatasourceIconTypes.clinicalNotes },
                         { type: DatasourceIconTypes.clinicalTranscripts },
                     ]

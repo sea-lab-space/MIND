@@ -1,20 +1,29 @@
 import { useState } from "react";
 import { Lightbulb } from "lucide-react";
 import { Checkbox, Label, Card, CardContent } from "@/components/ui"
+import type {SuggestedActivity} from "@/types/dataTypes";
 
 
+interface ActivityOptionExtended {
+    label: string;
+    description: string;
+    checked: boolean;
+}
 
 interface SuggestedActivitiesCardProps {
-    initialActivities: {
-        label: string;
-        checked: boolean;
-    }[];
+    suggested_activity_data: SuggestedActivity[]
 }
 
 function SuggestedActivitiesCard({
-                                                    initialActivities,
+                                     suggested_activity_data,
                                                 }: SuggestedActivitiesCardProps) {
-    const [activities, setActivities] = useState(initialActivities);
+    const detailedActivities: ActivityOptionExtended[] = suggested_activity_data.map(a => ({
+        label: a.name,
+        description: a.description,
+        checked: false,
+    }));
+
+    const [activities, setActivities] = useState(detailedActivities);
 
     const toggleActivity = (index: number) => {
         const updated = [...activities];

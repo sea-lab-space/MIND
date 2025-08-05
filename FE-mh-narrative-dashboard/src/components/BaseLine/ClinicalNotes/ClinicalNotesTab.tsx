@@ -38,7 +38,7 @@ const ClinicalNotesTab: React.FC<ClinicalNotesTabProps> = ({
 
 
                 {/* Date selection buttons */}
-                <div className="flex flex-col gap-2 mt-8">
+                <div className={`flex flex-col gap-2 ${showOverviewCardData ? 'mt-8' : ''}`}>
                     {dates?.map((date) => {
                         const isSelected = selectedDate === date;
                         const baseClasses = "px-4 py-2 text-sm border-[#d9d9d9] text-left";

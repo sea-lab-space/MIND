@@ -1,5 +1,6 @@
 import PatientInsightHeaderCard from "./PatientInsightHeaderCard";
 import SuggestedActivitiesCard from "./SuggestedActivitiesCard";
+import type {SuggestedActivity} from "@/types/dataTypes";
 
 
 // const insights = [
@@ -17,9 +18,10 @@ const activities = [
 interface PatientCommunicationComponentProps {
     isDrillDown?: boolean;
     selectedInsightCardTitles: string[];
+    suggested_activity_data: SuggestedActivity[]
 }
 
-function PatientCommunicationComponent({ isDrillDown, selectedInsightCardTitles }: PatientCommunicationComponentProps) {
+function PatientCommunicationComponent({ isDrillDown, selectedInsightCardTitles, suggested_activity_data }: PatientCommunicationComponentProps) {
     return (
         <div
             className={`flex gap-4 w-full ${
@@ -30,7 +32,7 @@ function PatientCommunicationComponent({ isDrillDown, selectedInsightCardTitles 
                 <PatientInsightHeaderCard insights={selectedInsightCardTitles} />
             </div>
             <div className="flex-1 flex">
-                <SuggestedActivitiesCard initialActivities={activities} />
+                <SuggestedActivitiesCard suggested_activity_data={suggested_activity_data} />
             </div>
         </div>
     );

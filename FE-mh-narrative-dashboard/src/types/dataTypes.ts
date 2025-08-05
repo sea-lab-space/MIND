@@ -12,7 +12,7 @@ import {
 
 
 export enum DatasourceIconTypes {
-    measurementScore = "measurementScore",
+    surveyScore = "surveyScore",
     clinicalNotes = "clinicalNotes",
     clinicalTranscripts = "clinicalTranscripts",
     passiveSensing = "passiveSensing"
@@ -84,3 +84,8 @@ export const InsightTypeIconMap: Record<InsightType, React.ElementType> = {
     "Social Interaction": Users2,
     "Medication & Treatment": Pill,
 };
+
+export interface SuggestedActivity {
+    name: string;
+    description: string;
+}

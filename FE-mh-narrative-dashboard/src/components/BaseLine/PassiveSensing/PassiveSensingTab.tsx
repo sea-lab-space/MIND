@@ -27,7 +27,10 @@ const PassiveSensingTab: React.FC<PassiveSensingTabProps> = ({
             <div className="flex-1 h-full flex flex-col overflow-y-auto bg-gray-50 border rounded-xl shadow">
                 {/* Static (non-scrolling) header */}
                 <div className="p-4 border-b">
-                    <h2 className="text-lg font-semibold">Passive Sensing Data</h2>
+                    {
+                        showOverviewCardData &&
+                        <h2 className="text-lg font-semibold">Passive Sensing Data</h2>
+                    }
                     <p className="mt-2 text-sm text-muted-foreground">
                         Visualization of passive data goes here.
                     </p>

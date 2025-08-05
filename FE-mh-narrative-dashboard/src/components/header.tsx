@@ -100,23 +100,23 @@ const Header: React.FC<HeaderProps> = (props) => {
 
         {/* Right - Retrospect Navigation and Avatar */}
         <div className="flex items-center gap-4 w-1/3 justify-end">
-          <p className="text-sm">Retrospect:</p>
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex hover:bg-gray-50 text-black text-sm font-normal h-[2.5em] items-center">
-              {selectedRetrospect}
-              <ChevronDown />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              {Object.entries(retrospectHorizon).map(([key, _]) => (
-                <DropdownMenuItem
-                  key={key}
-                  onClick={() => setSelectedRetrospect(key)}
-                >
-                  {key}
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <p className="text-sm">Retrospect: From May 10th, 2021 to June 7th, 2021</p>
+          {/*<DropdownMenu>*/}
+          {/*  <DropdownMenuTrigger className="flex hover:bg-gray-50 text-black text-sm font-normal h-[2.5em] items-center">*/}
+          {/*    {selectedRetrospect}*/}
+          {/*    <ChevronDown />*/}
+          {/*  </DropdownMenuTrigger>*/}
+          {/*  <DropdownMenuContent>*/}
+          {/*    {Object.entries(retrospectHorizon).map(([key, _]) => (*/}
+          {/*      <DropdownMenuItem*/}
+          {/*        key={key}*/}
+          {/*        onClick={() => setSelectedRetrospect(key)}*/}
+          {/*      >*/}
+          {/*        {key}*/}
+          {/*      </DropdownMenuItem>*/}
+          {/*    ))}*/}
+          {/*  </DropdownMenuContent>*/}
+          {/*</DropdownMenu>*/}
 
           <Avatar className="w-10 h-10 bg-[#b3adad] border border-[#d9d9d9]">
             <AvatarFallback className="bg-[#b3adad] text-black font-semibold">
