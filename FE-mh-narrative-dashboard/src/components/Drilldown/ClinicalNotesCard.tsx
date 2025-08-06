@@ -35,7 +35,6 @@ const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFac
             .map(spec => spec?.date)
     );
 
-
     useEffect(() => {
         if (dates && dates.length > 0 && !selectedDate) {
             setSelectedDate(dates[dates.length - 1]);
@@ -80,7 +79,8 @@ const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFac
                                 onClick={() => setSelectedDate(date)}
                                 className={`${baseClasses} ${isHighlighted ? highlightBg : "bg-white"} ${isSelected ? selectedBorder : ""}`}
                             >
-                                {formatDate(date)}
+                                {/* {formatDate(date)} */}
+                                {date}
                             </Button>
                         );
                     })}

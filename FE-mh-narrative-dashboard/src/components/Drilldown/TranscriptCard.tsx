@@ -83,7 +83,8 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
                                 onClick={() => setSelectedDate(date)}
                                 className={`${baseClasses} ${isHighlighted ? highlightBg : "bg-white"} ${isSelected ? selectedBorder : ""}`}
                             >
-                                {formatDate(date)}
+                                {/* {formatDate(date)} */}
+                                {date}
                             </Button>
                         );
                     })}

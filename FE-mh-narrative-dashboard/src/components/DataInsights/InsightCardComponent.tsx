@@ -31,7 +31,9 @@ export default function InsightCardComponent({
   isDrillDown = false,
 }: InsightCardProps) {
   const [hoveringButton, setHoveringButton] = useState(false);
-  const [isHeaderSelected, setIsHeaderSelected] = useState(isInsightHeaderSelected);
+  const [isHeaderSelected, setIsHeaderSelected] = useState(
+    isInsightHeaderSelected
+  );
 
   useEffect(() => {
     setIsHeaderSelected(isInsightHeaderSelected);
@@ -139,26 +141,26 @@ export default function InsightCardComponent({
                 onClick={handleCardSelect}
                 variant="outline"
                 size="default"
-                className="flex items-center gap-1 self-start sm:self-auto w-20 h-14 justify-between"
+                className="flex items-center gap-1 self-start sm:self-auto w-8 h-14" // justify-between
               >
-                <div
+                {/* <div
                   className={
                     insightCardData.sources?.length > 2
-                      ? "grid grid-cols-2 gap-1 h-10" // add your desired height class here
+                      ? "grid grid-cols-2 gap-1 h-10"
                       : "flex items-center gap-2"
                   }
                 >
                   {insightCardData.sources?.map((source, index) => (
                     <DataSourceIcon key={index} iconType={source.type} />
                   ))}
-                </div>
+                </div> */}
                 <ArrowRightIcon />
               </Button>
             </div>
           </div>
           {isExpanded && (
             <div
-              className="pt-0 space-y-2 text-left"
+              className="pt-0 space-y-1.5 text-left"
               onClick={(e) => e.stopPropagation()}
             >
               <InsightCardDetail
@@ -166,6 +168,15 @@ export default function InsightCardComponent({
               />
             </div>
           )}
+
+          <div className="flex items-center gap-1 mt-2">
+            <span className="text-xs font-small italic text-gray-600">Sources:</span>
+            <div className="flex items-center gap-2 ml-3">
+              {insightCardData.sources?.map((source, index) => (
+                <DataSourceIcon key={index} iconType={source.type} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

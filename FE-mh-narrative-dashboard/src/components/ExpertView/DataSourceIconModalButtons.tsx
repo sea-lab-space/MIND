@@ -83,7 +83,7 @@ export default function DataSourceIconModalButtons({selectedPatient}: {selectedP
                             onOpenChange={(open) => setOpenType(open ? type : null)}
                         >
                             <DialogTrigger asChild>
-                                <Button variant="ghost" className={`h-auto w-auto ${color}`}>
+                                <Button variant="ghost" className={`h-6 w-6 ${color}`}>
                                     {icon}
                                 </Button>
                             </DialogTrigger>

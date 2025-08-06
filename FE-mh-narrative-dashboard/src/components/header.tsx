@@ -103,7 +103,7 @@ const Header: React.FC<HeaderProps> = (props) => {
         {/* Right - Retrospect Navigation and Avatar */}
         <div className="flex items-center gap-4 w-1/3 justify-end">
           <p className="text-sm">
-            <b>Last Encounter</b>: May 8, 2021 | <b>Today</b>: June 7, 2021
+            <b>Last Encounter</b>: 2021-05-08 | <b>Today</b>: 2021-06-07
           </p>
           {/*<DropdownMenu>*/}
           {/*  <DropdownMenuTrigger className="flex hover:bg-gray-50 text-black text-sm font-normal h-[2.5em] items-center">*/}
