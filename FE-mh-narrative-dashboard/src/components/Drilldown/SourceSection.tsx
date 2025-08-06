@@ -1,4 +1,3 @@
-import { DatasourceIconTypes } from "@/types/props";
 import DataSourceIcon from "../DatasourceIcon";
 import type { DatasourceIconType } from "@/types/props";
 

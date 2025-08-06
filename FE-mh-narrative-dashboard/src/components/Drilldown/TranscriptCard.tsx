@@ -1,8 +1,7 @@
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import { MessageSquare} from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import {formatDate} from "@/utils/helper";
 import type {InsightExpandViewItem} from "@/types/props";
 import type {Encounter} from "@/types/dataTypes";
 
@@ -14,6 +13,8 @@ interface clinicalTranscriptsFactsProps {
 const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTranscriptsFactsProps) => {
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
     const [selectedFactKey, setSelectedFactKey] = useState<string | null>(null);
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
         if (clinicalTranscriptsFacts.length > 0) {
             setSelectedFactKey(clinicalTranscriptsFacts[0].key);
@@ -21,6 +22,19 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
             setSelectedFactKey(null);
         }
     }, [clinicalTranscriptsFacts]);
+
+    useEffect(() => {
+        const container = scrollContainerRef.current;
+        if (!container) return;
+
+        const highlightEl = container.querySelector(".highlight-target") as HTMLElement;
+        if (highlightEl) {
+            container.scrollTo({
+                top: highlightEl.offsetTop - container.offsetTop,
+                behavior: "smooth",
+            });
+        }
+    }, [selectedDate, selectedFactKey]);
 
     // Find selected fact based on selectedFactKey
     const selectedFact = clinicalTranscriptsFacts.find(fact => fact.key === selectedFactKey);
@@ -113,6 +127,7 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
 
                     {/* Right side: selected fact details */}
                     <div
+                        ref={scrollContainerRef}
                         className="space-y-6 text-sm text-[#2c2c2c] overflow-y-auto"
                         style={{ flex: 1, maxHeight: "500px" /* match container height */, paddingRight: "1rem" }}
                     >
@@ -131,7 +146,9 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
                                                         <div key={key}>
                                                             <strong className="block capitalize">{key}:</strong>
                                                             <p
-                                                                className="whitespace-pre-wrap"
+                                                                className={`whitespace-pre-wrap ${
+                                                                    specTexts.some(text => value.includes(text)) ? "highlight-target" : ""
+                                                                }`}
                                                                 dangerouslySetInnerHTML={{ __html: highlightedValue }}
                                                             />
                                                         </div>

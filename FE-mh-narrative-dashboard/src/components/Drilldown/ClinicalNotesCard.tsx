@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import {useEffect, useRef, useState} from "react";
 import {StickyNote} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import ReactMarkdown from "react-markdown";
-import {formatDate} from "@/utils/helper";
 import rehypeRaw from "rehype-raw";
 import type {InsightExpandViewItem} from "@/types/props";
 import type {Encounter} from "@/types/dataTypes";
@@ -17,6 +16,8 @@ interface clinicalNotesFactsProps {
 const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFactsProps) => {
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
     const [selectedFactKey, setSelectedFactKey] = useState<string | null>(null);
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+
 
     useEffect(() => {
         if (clinicalNotesFacts.length > 0) {
@@ -40,6 +41,19 @@ const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFac
             setSelectedDate(dates[dates.length - 1]);
         }
     }, [dates, selectedDate]);
+
+    useEffect(() => {
+        const container = scrollContainerRef.current;
+        if (!container) return;
+
+        const highlightEl = container.querySelector(".highlight-target") as HTMLElement;
+        if (highlightEl) {
+            container.scrollTo({
+                top: highlightEl.offsetTop - container.offsetTop,
+                behavior: "smooth",
+            });
+        }
+    }, [selectedDate, selectedFactKey]);
 
     function highlightTextInRecord(record: string, highlights: string[]): string {
         let highlighted = record;
@@ -109,8 +123,9 @@ const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFac
 
                     {/* Right side: selected fact details */}
                     <div
+                        ref={scrollContainerRef}
                         className="space-y-6 text-sm text-[#2c2c2c] overflow-y-auto"
-                        style={{ flex: 1, maxHeight: "500px" /* match container height */, paddingRight: "1rem" }}
+                        style={{ flex: 1, maxHeight: "500px", paddingRight: "1rem" }}
                     >
                         {sessionInfo
                             ?.filter(dp => dp.encounter_date === selectedDate)
@@ -122,11 +137,8 @@ const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFac
                                             components={{
                                                 mark: ({ node, ...props }) => (
                                                     <mark
-                                                        style={{
-                                                            backgroundColor: "#FFC100",
-                                                            padding: "0.1rem 0.25rem",
-                                                            borderRadius: "0.25rem",
-                                                        }}
+                                                        className="highlight-target"
+                                                        style={{ backgroundColor: "#FFC100", padding: "0.1rem 0.25rem", borderRadius: "0.25rem" }}
                                                         {...props}
                                                     />
                                                 ),

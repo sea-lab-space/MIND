@@ -14,6 +14,10 @@ const PassiveSensingTab: React.FC<PassiveSensingTabProps> = ({
                                                                    overviewCardData,
                                                                  passiveSensingFacts,
                                                                }) => {
+    const deduplicatedFacts = Array.from(
+        new Map(passiveSensingFacts.map(fact => [fact.summarySentence, fact])).values()
+    );
+
     return (
       <div className="flex gap-4 h-full">
         {/* Left column: scrollable independently */}
@@ -38,7 +42,7 @@ const PassiveSensingTab: React.FC<PassiveSensingTabProps> = ({
           {/* Scrollable content */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             <InsightCardDetail
-              insightCardDataExpandView={passiveSensingFacts}
+              insightCardDataExpandView={deduplicatedFacts}
               isBaseline={true}
             />
           </div>
