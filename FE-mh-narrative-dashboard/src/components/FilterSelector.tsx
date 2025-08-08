@@ -82,7 +82,7 @@ export function FilterSelector({ selected, onToggle, selectedPatient }: FilterSe
                     className={cn(
                         "flex items-center rounded-2 transition-colors",
                         selected.includes(type)
-                            ? "bg-gray-200 text-black hover:bg-gray-200"
+                            ? "bg-gray-700 text-white hover:bg-gray-200"
                             : "bg-white text-gray-700 hover:bg-gray-100"
                     )}
                 >

@@ -18,10 +18,6 @@ import {
 import { getUserFromHashUrl } from "@/utils/helper";
 
 
-
-
-// const userName = "Ryan";
-
 export default function HomePage() {
   const [selectedInsightHeader, setSelectedInsightHeader] = useState<string[]>([]);
   const [selectedInsightCard, setSelectedInsightCard] = useState<string | null>(null);
