@@ -7,22 +7,45 @@ import OverviewComponent from "@/components/Overview/OverviewComponent";
 import PatientCommunicationComponent from "@/components/PatientCommunication/PatientCommunicationComponent";
 import PatientMessageDialog from "@/components/PatientCommunication/PatientMessageDialog";
 import { useWindowSize } from "usehooks-ts";
-import { Button } from "@/components/ui";
+import { Button, Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui";
 import { Pencil } from "lucide-react";
 import {FilterSelector} from "@/components/FilterSelector";
-import { nameList, retrospectHorizon} from "@/data/data";
-import { InsightType, type InsightCardData } from "@/types/props";
+import { nameList, nameListMap, retrospectHorizon} from "@/data/data";
+import { InsightType, type InsightCardData, type InsightExpandViewItem } from "@/types/props";
 import {
    getVisualizerDataForPerson,
 } from "@/utils/dataConversion";
-import { getUserFromHashUrl } from "@/utils/helper";
+import { flattenAllExpandViews, getUserFromHashUrl, groupInsightsBySource } from "@/utils/helper";
+import { useParams } from "react-router-dom";
+import ChartReviewTab from "@/components/BaseLine/ChartReview/ChartReviewTab";
+import type { TabItem, TabKey } from "@/types/dataTypes";
+import PassiveSensingTab from "@/components/BaseLine/PassiveSensing/PassiveSensingTab";
+import ClinicalNotesTab from "@/components/BaseLine/ClinicalNotes/ClinicalNotesTab";
+import TranscriptionTab from "@/components/BaseLine/Transcription/TranscriptionTab";
+import SurveyScoreTab from "@/components/BaseLine/SurveyScore/SurveyScoreTab";
 
 
 export default function HomePage() {
+  const { patientId } = useParams<{
+    patientId: string;
+  }>();
+  const [selectedPatient, setSelectedPatient] =
+    useState<string>("Gabriella Lin");
+
+  useEffect(() => {
+    if (patientId) {
+      if (Object.keys(nameListMap).includes(patientId)) {
+        setSelectedPatient(nameListMap[patientId]);
+      } else {
+        alert("Invalid patient ID");
+      }
+    }
+  }, [patientId]);
+
   const [selectedInsightHeader, setSelectedInsightHeader] = useState<string[]>([]);
   const [selectedInsightCard, setSelectedInsightCard] = useState<string | null>(null);
   const [selectedInsightTypes, setSelectedInsightTypes] = useState<InsightType[]>([]);
-  const [selectedPatient, setSelectedPatient] = useState<string>("Gabriella Lin");
+
   const [isDrillDown, setIsDrillDown] = useState(false);
   const [expandedSections, setExpandedSections] = useState({
     overview: false,
@@ -33,7 +56,7 @@ export default function HomePage() {
   const userName = getUserFromHashUrl()
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const { overviewCardData, insightCardData, session_subjective_info, suggested_activity_data } = getVisualizerDataForPerson(selectedPatient);
+  const { overviewCardData, insightCardData, session_subjective_info, suggested_activity_data, survey_data } = getVisualizerDataForPerson(selectedPatient);
 
   const toggleSection = (section: "overview" | "insights" | "communication") => {
     setExpandedSections((prev) => ({
@@ -103,6 +126,60 @@ export default function HomePage() {
   const selectedInsightCardTitles = insightCardData
       .filter((card) => selectedInsightHeader.includes(card.key))
       .map((card) => card.summaryTitle);
+// const [activeTab, setActiveTab] = useState<TabKey>("chart-review");
+//     const allExpandViews = flattenAllExpandViews(insightCardData);
+//     const {
+//         passiveSensingFacts = [],
+//     }: {
+//         passiveSensingFacts?: InsightExpandViewItem[];
+//     } = groupInsightsBySource(allExpandViews);
+//       const tabItems: TabItem[] = [
+//         {
+//           key: "chart-review",
+//           label: "Chart Review",
+//           component: <></>,
+//         },
+//         {
+//           key: "passive-sensing",
+//           label: "Passive Sensing Data",
+//           component: (
+//             <PassiveSensingTab
+//               overviewCardData={overviewCardData}
+//               passiveSensingFacts={passiveSensingFacts}
+//             />
+//           ),
+//         },
+//         {
+//           key: "clinical-notes",
+//           label: "Clinical Notes",
+//           component: (
+//             <ClinicalNotesTab
+//               overviewCardData={overviewCardData}
+//               clinicalNotesFacts={session_subjective_info}
+//             />
+//           ),
+//         },
+//         {
+//           key: "transcription",
+//           label: "Transcription",
+//           component: (
+//             <TranscriptionTab
+//               overviewCardData={overviewCardData}
+//               clinicalTranscriptsFacts={session_subjective_info}
+//             />
+//           ),
+//         },
+//         {
+//           key: "survey-score",
+//           label: "Survey Score",
+//           component: (
+//             <SurveyScoreTab
+//               overviewCardData={overviewCardData}
+//               surveyScoreFacts={survey_data}
+//             />
+//           ),
+//         },
+//       ];
 
   return (
     <>
@@ -115,25 +192,38 @@ export default function HomePage() {
             selectedPatient={selectedPatient}
             setSelectedPatient={setSelectedPatient}
             isHomePage={true}
+            disabled={patientId ? true : false}
           />
         </div>
-        <FilterSelector
-            selectedPatient={selectedPatient}
-          selected={selectedInsightTypes}
-          onToggle={(type) => {
-            setSelectedInsightTypes((prev) =>
-              prev.includes(type)
-                ? prev.filter((t) => t !== type)
-                : [...prev, type]
-            );
-          }}
-        />
 
         <div
-          className={`flex flex-grow py-2 px-4 gap-4 overflow-y-auto ${
+          className={`flex flex-grow py-0 px-4 gap-4 overflow-y-auto ${
             !isDrillDown ? "flex-col w-full mx-auto" : ""
           }`}
         >
+        {/*
+          <Tabs
+            value={activeTab}
+            onValueChange={(val) => setActiveTab(val as TabKey)}
+            className="w-full"
+          >
+            <TabsList className="grid w-full grid-cols-5 mb-4 sticky top-0 z-10">
+              {tabItems.map((tab) => (
+                <TabsTrigger key={tab.key} value={tab.key}>
+                  {tab.label}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+
+            <div className="overflow-y-auto">
+              { Tab Contents without overview or layout }
+              {tabItems.map((tab) => (
+                <TabsContent key={tab.key} value={tab.key}>
+                  {tab.component}
+                </TabsContent>
+              ))}
+            </div>
+          </Tabs> */}
           <div
             className={`flex flex-col ${
               isDrillDown ? "w-1/3 overflow-y-auto" : "w-full mx-auto"
@@ -160,11 +250,22 @@ export default function HomePage() {
               {/* Data-driven Insights bg-green-200/50 */}
               <div className="rounded p-4 mb-2 relative z-10">
                 <SectionTitle
-                  title="Data-driven Insights"
+                  title="Clinical Insights"
                   // subtitle="test"
                   isExpanded={expandedSections.insights}
                   onClick={() => toggleSection("insights")}
                 >
+                  <FilterSelector
+                    selectedPatient={selectedPatient}
+                    selected={selectedInsightTypes}
+                    onToggle={(type) => {
+                      setSelectedInsightTypes((prev) =>
+                        prev.includes(type)
+                          ? prev.filter((t) => t !== type)
+                          : [...prev, type]
+                      );
+                    }}
+                  />
                   <div
                     className={`${
                       isDrillDown
@@ -178,7 +279,7 @@ export default function HomePage() {
                         <div
                           key={card.key}
                           ref={(el) => {
-                            cardRefs.current[index * 2] = el
+                            cardRefs.current[index * 2] = el;
                           }}
                           className="w-full"
                         >
@@ -211,13 +312,13 @@ export default function HomePage() {
                         <div
                           key={card.key}
                           ref={(el) => {
-                            cardRefs.current[index * 2 + 1] = el
+                            cardRefs.current[index * 2 + 1] = el;
                           }}
                           className="w-full"
                         >
                           <InsightCardComponent
-                              isDrillDown={isDrillDown}
-                              insightCardData={card}
+                            isDrillDown={isDrillDown}
+                            insightCardData={card}
                             title={card.summaryTitle}
                             sources={card.sources}
                             isExpanded={expandedSections.insights}
@@ -275,9 +376,13 @@ export default function HomePage() {
               style={{ width: rightPanelWidth }}
             >
               <DrilldownPanel
-                  key={selectedInsightCard}
-                  insightData={insightCardData.find((data) => data.key === selectedInsightCard) || {} as InsightCardData}
-                  sessionInfo={session_subjective_info}
+                key={selectedInsightCard}
+                insightData={
+                  insightCardData.find(
+                    (data) => data.key === selectedInsightCard
+                  ) || ({} as InsightCardData)
+                }
+                sessionInfo={session_subjective_info}
                 onClose={() => {
                   setIsDrillDown(false);
                   setSelectedInsightCard(null);

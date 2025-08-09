@@ -23,17 +23,17 @@ const Section: React.FC<SectionProps> = (props) => {
 
   return (
     <div className="flex flex-col gap-1 w-full">
-      <div className="flex items-center gap-3">
+      <div className="sticky top-0 bg-gray-50 z-10 flex items-center gap-3">
         <Button
-            size="icon"
-            className={cn(
-                "relative rounded-full bg-white shadow-md transition-all cursor-pointer",
-                {
-                  "hover:bg-gray-100 hover:shadow-lg": shouldExpand,
-                  "hover:bg-white": !shouldExpand,
-                }
-            )}
-            onClick={onClick}
+          size="icon"
+          className={cn(
+            "relative rounded-full bg-white shadow-md transition-all cursor-pointer",
+            {
+              "hover:bg-gray-100 hover:shadow-lg": shouldExpand,
+              "hover:bg-white": !shouldExpand,
+            }
+          )}
+          onClick={onClick}
         >
           {shouldExpand ? (
             <Tooltip>

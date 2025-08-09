@@ -17,7 +17,7 @@ function PatientInsightHeaderCard({ insights=[] }: PatientInsightHeaderCardProps
                 Selected Patient-facing Data Insights
               </h3>
               <p className="text-sm text-gray-500 italic mb-3">
-                * Toggle selection from <b>Data-driven Insights</b> Section to
+                * Toggle selection from <b>Clinical Insights</b> Section to
                 add/remove insights
               </p>
               <ul className="list-disc pl-5 text-sm text-black space-y-1">

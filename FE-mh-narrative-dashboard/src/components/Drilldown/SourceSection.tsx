@@ -9,7 +9,7 @@ interface SourcesSectionProps {
 const SourcesSection: React.FC<SourcesSectionProps> = ({ sources }) => {
     return (
         <div className="flex items-center gap-4 text-sm text-[#757575]">
-            <span>Sources:</span>
+            <span>Cited sources:</span>
             {sources?.map((ds) => (
                 <DataSourceIcon key={ds} showType iconType={ds as DatasourceIconType} />
             ))}

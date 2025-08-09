@@ -6,6 +6,12 @@ export const nameList = [
      "Gabriella Lin", "Lucy Sutton", "Alison Daniels",
 ];
 
+export const nameListMap = {
+    "Gabriella": "Gabriella Lin",
+    "Lucy": "Lucy Sutton",
+    "Alison": "Alison Daniels",
+}
+
 export const retrospectHorizon: RetrospectOptions = {
     "Since last encounter": 14,
     "Last month": 30,

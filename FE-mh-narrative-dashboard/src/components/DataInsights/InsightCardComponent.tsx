@@ -22,14 +22,15 @@ interface InsightCardProps {
 }
 
 export default function InsightCardComponent({
-  isExpanded,
-  insightCardData,
-  isInsightHeaderSelected = false,
-  isInsightCardSelected = false,
-  handleCardSelect,
-  handleCardHeaderClick,
-  isDrillDown = false,
-}: InsightCardProps) {
+                                               isExpanded,
+                                               insightCardData,
+                                               isInsightHeaderSelected = false,
+                                               isInsightCardSelected = false,
+                                               handleCardSelect,
+                                               handleCardHeaderClick,
+                                               isDrillDown = false,
+                                             }: InsightCardProps) {
+  const isDrillDownTemp = isDrillDown;
   const [hoveringButton, setHoveringButton] = useState(false);
   const [isHeaderSelected, setIsHeaderSelected] = useState(
     isInsightHeaderSelected
@@ -136,7 +137,7 @@ export default function InsightCardComponent({
 
               {/* Right: Drilldown Button */}
 
-                {/* <div
+              {/* <div
                   className={
                     insightCardData.sources?.length > 2
                       ? "grid grid-cols-2 gap-1 h-10"
@@ -148,12 +149,12 @@ export default function InsightCardComponent({
                   ))}
                 </div> */}
               <Button
-                  onMouseEnter={() => setHoveringButton(true)}
-                  onMouseLeave={() => setHoveringButton(false)}
-                  onClick={handleCardSelect}
-                  variant="outline"
-                  size="default"
-                  // className="flex items-center gap-1 self-start sm:self-auto w-8 h-14" // justify-between
+                onMouseEnter={() => setHoveringButton(true)}
+                onMouseLeave={() => setHoveringButton(false)}
+                onClick={handleCardSelect}
+                variant="outline"
+                size="default"
+                // className="flex items-center gap-1 self-start sm:self-auto w-8 h-14" // justify-between
               >
                 <ArrowRightIcon />
               </Button>
@@ -171,7 +172,9 @@ export default function InsightCardComponent({
           )}
 
           <div className="flex items-center gap-1 mt-2">
-            <span className="text-xs font-small italic text-gray-600">Sources:</span>
+            <span className="text-xs font-small italic text-gray-600">
+              Cited sources:
+            </span>
             <div className="flex items-center gap-2 ml-3">
               {insightCardData.sources?.map((source, index) => (
                 <DataSourceIcon key={index} iconType={source.type} />

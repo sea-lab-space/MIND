@@ -145,12 +145,21 @@ Task:
 When rewriting the insights, follow the guidelines:
 * Use the original text if no hallucination is detected.
 * Be concrete, specific, but succinct. Do not use more than 15 words for each data insight.
-* Contextualize dates and times, e.g., "for 1 week", "for 3 days". For insights on a specific date, do not mention the year.
+* Do not explicity mention any date related in the insights.
 * Do not start with "Patient", "He/she" or patient name.
-* Reference the styles given below.
+* Aviod contrasting information. If detected, leave the most significant information. For example, don't say "Physical activity decreased, with brief increases in steps and exercise time", leave one, either "physical activity decreased during <dates>" or "brief increases in steps and excercise time during <dates>".
+* Reference the styles given below. The general style should follow: <observation> + <contrast/effect>
 
-{SYNT_EXAMPLES}
+Below are some good examples provided by a mental health expert. Mimic the succinct insight description style and learn from the examples.
+* Growing activity despite fatigue
+* Fragmented digital engagement
+* Increased social activity, in a closed circle
+* Transient mood lift after activity; discouragement and self-criticism returning within an hour.
+* Maintains work and therapy attendance; finds routine helpful but exhausting.
+* Sertraline taken daily for 1 week with no side effects; benefit remains unclear.
 """
+
+# * Contextualize dates and times, e.g., "for 1 week", "for 3 days". For insights on a specific date, do not mention the year.
 
 class GuardrailNarratorAgent:
     OUTPUT_MODEL = InsightGuardrailOutputModel
@@ -176,7 +185,7 @@ class GuardrailNarratorAgent:
 # ! Case-specific prompt, remove in the future
 DATE_INSTRUCTION = """
 The date today is 2021-06-07.
-The last encounter was 2021-05-09.
+The last encounter was 2021-05-08.
 """
 
 NARRATOR_REWRITER_SYSTEM = f"""
@@ -186,11 +195,20 @@ Given a |data fact|, rewrite it to be more descriptive and less technical.
 {DATE_INSTRUCTION}
 
 Requirements:
-* Contextualize the date (e.g., for 1 week, for 3 days).
-* For values, contextualize the data (e.g., for phq-4 score, indicate if the score is high or normal).
-* Write the data facts like you are writing a data story/data-rich document.
-* For each data fact, controll the length to be less than 15 words.
-* Do not add any new information. Do not infer the speed of the data change (i.e., don't use words like steadily, sharply etc.).
+* Format the dates in your output:
+  * For single dates, use the dates verbatim (e.g., 2021-05-12, 2021-06-04).
+  * For date ranges, use the format "from <start_date> to <end_date> (<x> days/weeks)" (e.g., from 2021-05-12 to 2021-05-16 (4 days)).
+* For values, contextualize the data:
+  * Some values (phq-4, phq-4 subscales, pss-4) have clear ranges, indicate that information
+    * PHQ-4 Score (0-16): 0-2 indicates little or no distress, 3-5 signifies mild distress, 6-8 reflects moderate distress, and 9-12 indicates severe distress).
+    * PHQ-4 Anxiety Score (0-4): 0 indicates not at all anxious, 1 indicates anxious for several days, 2 indicates anxious more than half the days, 3 indicates anxious nearly every day.
+    * PHQ-4 Depression Score (0-4): 0 indicates not at all depressed, 1 indicates depressed for several days, 2 indicates depressed more than half the days, 3 indicates depressed nearly every day.
+    * PSS-4 Score (0-24): 0-6 indicates low perceived stress, 6-24 indicates high perceived stress.
+  * Other values (e.g., sleep duration, steps) are more open-ended, describe the raw value, and provide a general interpretation (low, high).
+* For values, if it's clear what units it is using, add the unit to the description.
+* Write the data facts with the style of writing a data story/data-rich document.
+* For each data fact, control the length to be less than 15 words.
+* Do not add any new information. Do not infer the speed of the data change (i.e., don't use words like steadily, sharply, etc.).
 """
 # * Remove any mention of a concrete year(e.g., 2021).
 

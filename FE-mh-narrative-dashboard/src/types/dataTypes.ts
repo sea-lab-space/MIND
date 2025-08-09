@@ -91,3 +91,16 @@ export interface SuggestedActivity {
     name: string;
     description: string;
 }
+
+export type TabKey =
+  | "chart-review"
+  | "survey-score"
+  | "passive-sensing"
+  | "transcription"
+  | "clinical-notes";
+
+export type TabItem = {
+  key: TabKey;
+  label: string;
+  component: React.ReactNode;
+};

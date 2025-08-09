@@ -24,9 +24,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from 'lucide-react';
 import type { HeaderProps } from "@/types/props";
+import DataSourceIconModalButtons from "./ExpertView/DataSourceIconModalButtons";
 
 const Header: React.FC<HeaderProps> = (props) => {
-  const { patientNames, userName, retrospectHorizon, isHomePage=true, selectedPatient, setSelectedPatient } = props;
+  const { patientNames, userName, retrospectHorizon, isHomePage=true, selectedPatient, setSelectedPatient, disabled } = props;
   const [open, setOpen] = useState(false);
 
   // TODO: take person/retrospect selection global if needed
@@ -59,6 +60,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                 role="combobox"
                 aria-expanded={open}
                 className="w-[200px] justify-between hover:bg-gray-50 text-black font-normal"
+                disabled={disabled}
               >
                 {selectedPatient}
                 <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -102,6 +104,7 @@ const Header: React.FC<HeaderProps> = (props) => {
 
         {/* Right - Retrospect Navigation and Avatar */}
         <div className="flex items-center gap-4 w-1/3 justify-end">
+          <DataSourceIconModalButtons selectedPatient={selectedPatient} />
           <p className="text-sm">
             <b>Last Encounter</b>: 2021-05-08 | <b>Today</b>: 2021-06-07
           </p>
@@ -121,7 +124,7 @@ const Header: React.FC<HeaderProps> = (props) => {
           {/*    ))}*/}
           {/*  </DropdownMenuContent>*/}
           {/*</DropdownMenu>*/}
-          
+
           {/* TODO: we can customize it to individual participants if we want */}
           <Avatar className="w-10 h-10 bg-[#b3adad] border border-[#d9d9d9]">
             <AvatarFallback className="bg-[#b3adad] text-black font-semibold">

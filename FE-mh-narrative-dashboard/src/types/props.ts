@@ -22,6 +22,7 @@ export interface HeaderProps {
   retrospectHorizon: RetrospectOptions;
   selectedPatient: string;
   setSelectedPatient: (patient: string) => void;
+  disabled: boolean;
 }
 
 

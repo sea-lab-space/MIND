@@ -153,7 +153,6 @@ class MINDPipeline:
                 data_fact_list=self.data_fact_list,
                 data_insights_full=self.data_insights,
                 model_name=self.model_name)
-            # TODO: remove this asyncio
             self.data_insights_narrative, self.rewritten_data_facts = narrator.run(
                 self.data_insights, verbose=False)
             if self.save_to_cache:
