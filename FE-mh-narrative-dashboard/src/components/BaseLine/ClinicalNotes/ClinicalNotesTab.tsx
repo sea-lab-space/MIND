@@ -69,7 +69,7 @@ const ClinicalNotesTab: React.FC<ClinicalNotesTabProps> = ({
 
         {/* Main Content: Clinical Note Text */}
         <div className="flex-1 overflow-y-auto h-full p-4 bg-gray-50 border rounded-xl shadow">
-          <h2 className="text-lg font-semibold">Clinical Note</h2>
+          <h2 className="text-lg font-semibold">Clinical Notes</h2>
           <p className="text-sm text-muted-foreground mb-4">
             {selectedDate ? `Date: ${selectedDate}` : "No date selected"}
           </p>
