@@ -8,10 +8,11 @@ import ClinicalNotesTab from "@/components/BaseLine/ClinicalNotes/ClinicalNotesT
 import TranscriptionTab from "@/components/BaseLine/Transcription/TranscriptionTab";
 import SurveyScoreTab from "@/components/BaseLine/SurveyScore/SurveyScoreTab";
 import MINDTab from "@/pages/MINDTab";
-import { Watch, MessageSquare, StickyNote, ClipboardList } from "lucide-react";
-import type { TabItem, HomePageTabKey } from "@/types/dataTypes";
+import { Watch, MessageSquare, StickyNote, ClipboardList, WandSparkles } from "lucide-react";
+import type { TabItem, HomePageTabKey, TabKey } from "@/types/dataTypes";
 import {nameListMap, retrospectHorizon} from "@/data/data";
 import TabsView from "@/components/TabsView/TabsView";
+import DataSourceIcon from "@/components/DatasourceIcon";
 
 export default function HomePage() {
     const { patientId } = useParams<{ patientId: string }>();
@@ -44,11 +45,29 @@ export default function HomePage() {
         );
     }
 
-    const tabIconConfig: Partial<Record<HomePageTabKey, { icon: JSX.Element; color: string }>> = {
-        "passive-sensing": { icon: <Watch className="w-5 h-5" />, color: "text-slate-500" },
-        "clinical-notes": { icon: <StickyNote className="w-5 h-5" />, color: "text-yellow-500" },
-        "transcripts": { icon: <MessageSquare className="w-5 h-5" />, color: "text-emerald-500" },
-        "survey-scores": { icon: <ClipboardList className="w-5 h-5" />, color: "text-orange-500" },
+    const tabIconConfig: Partial<
+      Record<HomePageTabKey, { icon: JSX.Element; color: string }>
+    > = {
+      mind: {
+        icon: <WandSparkles className="w-5 h-5" />,
+        color: "grey-500",
+      },
+      "survey-scores": {
+        icon: <DataSourceIcon iconType="survey" showType />,
+        color: "text-orange-500",
+      },
+      "clinical-notes": {
+        icon: <DataSourceIcon iconType="clinical note" showType />,
+        color: "text-yellow-500",
+      },
+      transcripts: {
+        icon: <DataSourceIcon iconType="session transcript" showType />,
+        color: "text-emerald-500",
+      },
+      "passive-sensing": {
+        icon: <DataSourceIcon iconType="passive sensing" showType />,
+        color: "text-slate-500",
+      },
     };
 
     const makeTab = (
@@ -59,14 +78,18 @@ export default function HomePage() {
     ): TabItem => {
         const iconConfig = tabIconConfig[key];
         return {
-            key,
-            label: (
-                <div className="flex items-center gap-2">
-                    {iconConfig && <span className={iconConfig.color}>{iconConfig.icon}</span>}
-                    <span>{label}</span>
-                </div>
-            ),
-            component: <Component overviewCardData={overviewCardData} {...extraProps} />,
+          key,
+          label: (
+            <div className="flex items-center gap-2">
+              {iconConfig && (
+                <span className={`${iconConfig.color} font-bold`}>{iconConfig.icon}</span>
+              )}
+              {label === "MIND" && <span className="font-bold">{label}</span>}
+            </div>
+          ),
+          component: (
+            <Component overviewCardData={overviewCardData} {...extraProps} />
+          ),
         };
     };
 

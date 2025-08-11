@@ -6,6 +6,7 @@ import InsightGraph from "@/components/DataInsights/InsightGraph";
 import type {InsightExpandViewItem} from "@/types/props";
 import { SURVEY_COLOR } from "@/utils/colorHelper";
 import {ClipboardList} from "lucide-react";
+import DataSourceIcon from "../DatasourceIcon";
 
 interface measurementScoreFactsProps {
     surveyScoreFacts: InsightExpandViewItem[];
@@ -25,7 +26,7 @@ if (!selectedInsight) {
     return (
         <Card className="bg-white border-[#eaeaea]">
             <CardHeader className="pb-4">
-                <span className="text-[#757575] font-medium">Passive Sensing Data</span>
+                <span className="text-[#757575] font-medium">Loading</span>
             </CardHeader>
             <CardContent>
                 <div className="text-gray-500 text-sm">Loading insight data...</div>
@@ -38,9 +39,10 @@ const showChart = shouldShowChart(selectedInsight.dataSourceType, selectedInsigh
 return (
   <Card className="bg-white border-[#eaeaea]">
     <CardHeader>
-      <div className="flex items-center gap-2">
-          <ClipboardList className="w-4 h-4 text-[#fb923c]" />
-          <span className="text-[#fb923c] font-medium">Survey Scores</span>
+      <div className="flex items-center gap-2 font-medium">
+        {/* <ClipboardList className="w-4 h-4 text-[#fb923c]" />
+          <span className="text-[#fb923c] font-medium">Survey Scores</span> */}
+        <DataSourceIcon iconType="survey" showType />
       </div>
     </CardHeader>
     <CardContent>

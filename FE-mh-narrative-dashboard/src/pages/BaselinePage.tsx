@@ -10,8 +10,9 @@ import SurveyScoreTab from "@/components/BaseLine/SurveyScore/SurveyScoreTab";
 import { Watch, MessageSquare, StickyNote, ClipboardList, History } from "lucide-react";
 import type { TabItem, TabKey } from "@/types/dataTypes";
 import {nameListMap, retrospectHorizon} from "@/data/data";
-import {useEffect, useState} from "react";
+import {useEffect, useState, type JSX} from "react";
 import TabsView from "@/components/TabsView/TabsView";
+import DataSourceIcon from "@/components/DatasourceIcon";
 
 export default function BaselinePage() {
     const { patientId } = useParams<{ patientId: string }>();
@@ -44,12 +45,39 @@ export default function BaselinePage() {
         );
     }
 
-    const tabIconConfig: Partial<Record<TabKey, { icon: JSX.Element; color: string }>> = {
-        "chart-review": { icon: <History className="w-5 h-5" />, color: "grey-500" },
-        "survey-scores": { icon: <ClipboardList className="w-5 h-5" />, color: "text-orange-500" },
-        "clinical-notes": { icon: <StickyNote className="w-5 h-5" />, color: "text-yellow-500" },
-        "transcripts": { icon: <MessageSquare className="w-5 h-5" />, color: "text-emerald-500" },
-        "passive-sensing": { icon: <Watch className="w-5 h-5" />, color: "text-slate-500" },
+    const tabIconConfig: Partial<
+      Record<TabKey, { icon: JSX.Element; color: string }>
+    > = {
+      "chart-review": {
+        icon: <History className="w-5 h-5" />,
+        color: "grey-500",
+      },
+      "survey-scores": {
+        icon: <DataSourceIcon iconType="survey" showType forcePlainColor />,
+        color: "text-orange-500",
+      },
+      "clinical-notes": {
+        icon: (
+          <DataSourceIcon iconType="clinical note" showType forcePlainColor />
+        ),
+        color: "text-yellow-500",
+      },
+      transcripts: {
+        icon: (
+          <DataSourceIcon
+            iconType="session transcript"
+            showType
+            forcePlainColor
+          />
+        ),
+        color: "text-emerald-500",
+      },
+      "passive-sensing": {
+        icon: (
+          <DataSourceIcon iconType="passive sensing" showType forcePlainColor />
+        ),
+        color: "text-slate-500",
+      },
     };
 
     const makeTab = (
@@ -60,14 +88,18 @@ export default function BaselinePage() {
     ): TabItem => {
         const iconConfig = tabIconConfig[key];
         return {
-            key,
-            label: (
-                <div className="flex items-center gap-2">
-                    {iconConfig && <span className={iconConfig.color}>{iconConfig.icon}</span>}
-                    <span>{label}</span>
-                </div>
-            ),
-            component: <Component overviewCardData={overviewCardData} {...extraProps} />,
+          key,
+          label: (
+            <div className="flex items-center gap-2">
+              {iconConfig && (
+                <span className="font-bold">{iconConfig.icon}</span>
+              )}
+              {label === "Chart Review" && <span className="font-bold">{label}</span>}
+            </div>
+          ),
+          component: (
+            <Component overviewCardData={overviewCardData} {...extraProps} />
+          ),
         };
     };
 

@@ -13,6 +13,7 @@ export type DatasourceIconType = typeof DatasourceIconTypes[keyof typeof Datasou
 export interface DatasourceIconProps {
   iconType: DatasourceIconType;
   showType?: boolean;
+  forcePlainColor?: boolean;
 }
 
 export interface HeaderProps {

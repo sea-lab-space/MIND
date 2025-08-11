@@ -10,22 +10,25 @@ type TabsViewProps = {
 
 export default function TabsView({ tabItems, defaultTab, isMIND = true }: TabsViewProps) {
     const [activeTab, setActiveTab] = useState<TabKey | HomePageTabKey>(defaultTab);
-    const scrollPositions = useRef<Record<TabKey, number>>({});
+    const scrollPositions = useRef<
+      Partial<Record<TabKey | HomePageTabKey, number>>
+    >({});
     const contentRef = useRef<HTMLDivElement>(null);
 
     const handleTabChange = useCallback(
-        (val: TabKey) => {
-            if (contentRef.current) {
-                scrollPositions.current[activeTab] = contentRef.current.scrollTop;
-            }
-            setActiveTab(val);
-            setTimeout(() => {
-                if (contentRef.current) {
-                    contentRef.current.scrollTop = scrollPositions.current[val] || 0;
-                }
-            }, 0);
-        },
-        [activeTab]
+      (val: string) => {
+        const tabKey = val as TabKey;
+        if (contentRef.current) {
+          scrollPositions.current[activeTab] = contentRef.current.scrollTop;
+        }
+        setActiveTab(tabKey);
+        setTimeout(() => {
+          if (contentRef.current) {
+            contentRef.current.scrollTop = scrollPositions.current[val] || 0;
+          }
+        }, 0);
+      },
+      [activeTab]
     );
 
     return (

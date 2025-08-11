@@ -26,16 +26,16 @@ const dataSourceIconConfig: Record<DatasourceIconType, { icon: JSX.Element; colo
 
 const fallback = {
   icon: <FileWarningIcon className="w-5 h-5" />,
-  color: "text-gray-400"
+  color: "text-black-400"
 };
 
-const DataSourceIcon: React.FC<DatasourceIconProps> = ({ iconType, showType = false }) => {
+const DataSourceIcon: React.FC<DatasourceIconProps> = ({ iconType, showType = false, forcePlainColor = false }) => {
   const { icon, color } = dataSourceIconConfig[iconType] ?? fallback;
-
+  const colorDisplay = forcePlainColor ? fallback.color : color;
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <div className={`flex items-center justify-center gap-2 ${color}`}>
+        <div className={`flex items-center justify-center gap-2 ${colorDisplay}`}>
           {icon}
           {showType && capitalizeFirst(iconType)}
         </div>
