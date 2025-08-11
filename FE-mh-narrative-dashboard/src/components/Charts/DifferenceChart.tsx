@@ -10,7 +10,6 @@ import {
 } from "recharts";
 import type { DataPoint, DifferenceSpec, ValueSpec } from "@/types/insightSpec";
 import { color, extent } from "d3";
-import { dateBetween } from "@/utils/dateHelper";
 import { getColors, MAX_BAR_SIZE } from "@/utils/colorHelper";
 import { getUpperLimitScale } from "@/utils/dataHelper";
 
@@ -23,8 +22,10 @@ const DifferenceChart: React.FC<DifferenceChartProps> = (props) => {
   const { data, spec, themeColor } = props;
 
   const metricKey = Object.keys(data[0] || {}).find((k) => k !== "date") ?? "";
+  
   const yRange = extent(data, (d: any) => d[metricKey]) as [number, number];
   const { yRangeUse, tickBreakUnit } = getUpperLimitScale(yRange[1]);
+  
   const {baseColor, highlightColor} = getColors(themeColor)
 
   const visData = data.map((d) => ({
@@ -38,9 +39,10 @@ const DifferenceChart: React.FC<DifferenceChartProps> = (props) => {
         <XAxis dataKey="date" tick={{ fontSize: 10 }} />
         <YAxis
           domain={[0, yRangeUse]}
-          minTickGap={tickBreakUnit}
+          minTickGap={0}
           scale="linear"
           tickCount={yRangeUse / tickBreakUnit}
+          type="number"
         />
         <Tooltip />
         <Bar

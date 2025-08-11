@@ -14,32 +14,32 @@
         "icon": "history",
         "overviewHeadTitle": "Medical History",
         "cardContent": {
-          "folded": "Hypertension, obesity, iron deficiency anemia, depression, anxiety, insomnia, relationship distress, viral infections, allergic rhinitis.",
-          "expanded": "38-year-old woman with hypertension, obesity, iron deficiency anemia, recurrent depression (including suicide attempt), anxiety, insomnia, allergic rhinitis, and chronic psychosocial stressors; on sertraline, lisinopril, fluticasone, and iron."
+          "folded": "Medical Concerns: Hypertension, obesity, iron deficiency anemia, allergic rhinitis, insomnia, acute pharyngitis, low back pain, acute URI; Psychiatric Concerns: Major depressive disorder, generalized anxiety disorder, adjustment disorder, relationship distress, suicide attempt.",
+          "expanded": "Medical Concerns: Hypertension, obesity, iron deficiency anemia, allergic rhinitis, acute upper respiratory infection, acute pharyngitis, low back pain, insomnia;  \nPsychiatric Concerns: Generalized anxiety disorder, major depressive disorder (single and recurrent episodes), adjustment disorder with depressed mood, suicide attempt (paracetamol overdose), relationship distress."
         }
       },
       {
         "icon": "history",
         "overviewHeadTitle": "Sessions Recap",
         "cardContent": {
-          "folded": "Persistent low mood, anhedonia, fatigue, insomnia, poor appetite, guilt, strained relationships, financial stress.",
-          "expanded": "Alison has persistent low mood, fatigue, anhedonia, poor sleep and appetite, guilt, and functional impairment. She is making small behavioral changes, supported by her sister, with no current suicidal ideation."
+          "folded": "Persistent low mood, anhedonia, fatigue, poor sleep, appetite loss, guilt, strained relationships, financial stress.",
+          "expanded": "Alison has persistent moderate depression with low mood, anhedonia, fatigue, poor sleep and appetite, guilt, and functional impairment. She’s tried behavioral strategies with subtle benefit, maintains some support from her sister and children, and has no current suicidal ideation."
         }
       },
       {
         "icon": "brain",
         "overviewHeadTitle": "Current Concerns",
         "cardContent": {
-          "folded": "Mood unchanged, low motivation, fragmented sleep, poor appetite, guilt, financial worries, subtle behavioral progress.",
-          "expanded": "Ongoing depression, low motivation, financial and relationship stress, poor sleep and appetite, guilt about parenting and work, and worries about lack of improvement."
+          "folded": "Mood unchanged, low energy, poor motivation, guilt, financial worries, subtle benefit from behavioral strategies.",
+          "expanded": "Ongoing low mood, fatigue, poor motivation, insomnia, reduced appetite, guilt about parenting and work, financial stress, and strained relationship with her partner. She worries about her state not improving but remains engaged in therapy and support."
         }
       },
       {
         "icon": "medication",
         "overviewHeadTitle": "Medication and Treatment",
         "cardContent": {
-          "folded": "No medication history with current sessions.",
-          "expanded": "No medication history with current sessions."
+          "folded": "Sertraline",
+          "expanded": "Sertraline"
         }
       }
     ]
@@ -47,12 +47,12 @@
   "insights": [
     {
       "key": "insight-0",
-      "summaryTitle": "Low mood and energy persist; brief mood lifts from family interactions.",
+      "summaryTitle": "Low mood and energy persist, with brief mood lifts from family.",
       "sources": [
         "session transcript",
+        "clinical note",
         "passive sensing",
-        "survey",
-        "clinical note"
+        "survey"
       ],
       "insightType": [
         "Emotional State",
@@ -61,7 +61,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "The median PHQ-4 Score increased from 6.0 to 10.0 from 2021-04-04 to 2021-06-06 (63 days), indicating a shift from moderate to severe psychological distress (PHQ-4 range: 0-16).",
+          "summarySentence": "The median PHQ-4 Score increased from 6.0 (moderate distress) to 10.0 (severe distress) from 2021-04-04 to 2021-06-06 (63 days).",
           "dataPoints": [
             {
               "date": "2021-04-04",
@@ -118,7 +118,7 @@
             },
             "value_dur_1": 6.0,
             "value_dur_2": 10.0,
-            "fact_description": "The median PHQ-4 Score increased from 6.0 to 10.0 from 2021-04-04 to 2021-06-06 (63 days), indicating a shift from moderate to severe psychological distress (PHQ-4 range: 0-16).",
+            "fact_description": "The median PHQ-4 Score increased from 6.0 (moderate distress) to 10.0 (severe distress) from 2021-04-04 to 2021-06-06 (63 days).",
             "fact_type": "comparison"
           },
           "sources": [
@@ -128,7 +128,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Average daily steps increased from 2,005.38 to 5,936.87 from 2021-05-01 to 2021-05-31.",
+          "summarySentence": "Average daily steps increased from 2,005.38 to 5,936.87 from 2021-05-01 to 2021-05-31 (30 days).",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -425,7 +425,7 @@
             },
             "value_dur_1": 2005.38,
             "value_dur_2": 5936.87,
-            "fact_description": "Average daily steps increased from 2,005.38 to 5,936.87 from 2021-05-01 to 2021-05-31.",
+            "fact_description": "Average daily steps increased from 2,005.38 to 5,936.87 from 2021-05-01 to 2021-05-31 (30 days).",
             "fact_type": "comparison"
           },
           "sources": [
@@ -451,7 +451,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Alison continues to experience a persistent low mood, unchanged since 2021-05-08.",
+          "summarySentence": "Since the last session on 2021-05-08, Alison continues to experience persistent low mood.",
           "dataPoints": null,
           "spec": [
             {
@@ -467,7 +467,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "She reports ongoing low energy, frequent fatigue, and struggles to find motivation.",
+          "summarySentence": "She reports ongoing low energy, persistent fatigue, and struggles with motivation.",
           "dataPoints": null,
           "spec": [
             {
@@ -499,7 +499,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The patient often feels low energy, with brief activity followed by quick fatigue.",
+          "summarySentence": "The patient often feels low energy, with brief activity followed by quick onset of fatigue.",
           "dataPoints": null,
           "spec": [
             {
@@ -515,7 +515,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Total steps increased from 2021-05-15 to 2021-05-31 (16 days).",
+          "summarySentence": "From 2021-05-15 to 2021-05-31 (16 days), total daily steps increased.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -803,7 +803,7 @@
             "attribute": "rise",
             "time_1": "2021-05-15",
             "time_2": "2021-05-31",
-            "fact_description": "Total steps increased from 2021-05-15 to 2021-05-31 (16 days).",
+            "fact_description": "From 2021-05-15 to 2021-05-31 (16 days), total daily steps increased.",
             "fact_type": "trend"
           },
           "sources": [
@@ -930,2913 +930,39 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.32650383795435495
+          "relevance": 0.35266886623995397
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3264343582984536
+          "relevance": 0.3314923900440771
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.35035729034077917
+          "relevance": 0.3616518238229372
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.4313477579196562
+          "relevance": 0.45765664524271144
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.48118644407419137
+          "relevance": 0.5044834010037383
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.5480515529531876
+          "relevance": 0.5606277668241584
         }
       ]
     },
     {
       "key": "insight-1",
-      "summaryTitle": "Positive affect is low and variable, with brief lifts during family interactions.",
+      "summaryTitle": "Sleep is fragmented and inconsistent, with late bedtimes and frequent awakenings.",
       "sources": [
         "session transcript",
-        "survey"
-      ],
-      "insightType": [
-        "Emotional State"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "From 2021-03-31 to 2021-06-06 (67 days), average Positive Affect Score was 5.2, indicating moderate positive mood.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-04",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-07",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-14",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-04-18",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-21",
-              "Positive Affect Score": 6.0
-            },
-            {
-              "date": "2021-04-25",
-              "Positive Affect Score": 10.0
-            },
-            {
-              "date": "2021-04-28",
-              "Positive Affect Score": 7.0
-            },
-            {
-              "date": "2021-05-02",
-              "Positive Affect Score": 12.0
-            },
-            {
-              "date": "2021-05-05",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-09",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-12",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-05-16",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-19",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-05-24",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-05-26",
-              "Positive Affect Score": 10.0
-            },
-            {
-              "date": "2021-05-30",
-              "Positive Affect Score": 7.0
-            },
-            {
-              "date": "2021-06-02",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-06-06",
-              "Positive Affect Score": 6.0
-            }
-          ],
-          "spec": {
-            "name": "Positive Affect Score",
-            "aggregation": "average",
-            "time_1": "2021-03-31",
-            "time_2": "2021-06-06",
-            "value": 5.2,
-            "fact_description": "From 2021-03-31 to 2021-06-06 (67 days), average Positive Affect Score was 5.2, indicating moderate positive mood.",
-            "fact_type": "derived value"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "derived value",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "From 2021-03-31 to 2021-06-06 (67 days), Positive Affect Score varied by 2.75 points.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-04",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-07",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-14",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-04-18",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-21",
-              "Positive Affect Score": 6.0
-            },
-            {
-              "date": "2021-04-25",
-              "Positive Affect Score": 10.0
-            },
-            {
-              "date": "2021-04-28",
-              "Positive Affect Score": 7.0
-            },
-            {
-              "date": "2021-05-02",
-              "Positive Affect Score": 12.0
-            },
-            {
-              "date": "2021-05-05",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-09",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-12",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-05-16",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-19",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-05-24",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-05-26",
-              "Positive Affect Score": 10.0
-            },
-            {
-              "date": "2021-05-30",
-              "Positive Affect Score": 7.0
-            },
-            {
-              "date": "2021-06-02",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-06-06",
-              "Positive Affect Score": 6.0
-            }
-          ],
-          "spec": {
-            "name": "Positive Affect Score",
-            "aggregation": "stdev",
-            "time_1": "2021-03-31",
-            "time_2": "2021-06-06",
-            "value": 2.749545416973504,
-            "fact_description": "From 2021-03-31 to 2021-06-06 (67 days), Positive Affect Score varied by 2.75 points.",
-            "fact_type": "derived value"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "derived value",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Small acts of kindness from her children temporarily improved her mood.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: Yes. It feels like I’m not totally failing—even if it only helps for a minute."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Spending time with her sister often lifts her mood, but she sometimes cries afterward.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: Usually a little lighter. She jokes around a lot, tries to make me laugh. Sometimes I cry after she leaves, but it’s not a bad cry."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "The highest Positive Affect Score was 12.0 from 2021-03-31 to 2021-06-06 (67 days).",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-04",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-07",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-14",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-04-18",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-21",
-              "Positive Affect Score": 6.0
-            },
-            {
-              "date": "2021-04-25",
-              "Positive Affect Score": 10.0
-            },
-            {
-              "date": "2021-04-28",
-              "Positive Affect Score": 7.0
-            },
-            {
-              "date": "2021-05-02",
-              "Positive Affect Score": 12.0
-            },
-            {
-              "date": "2021-05-05",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-09",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-12",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-05-16",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-19",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-05-24",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-05-26",
-              "Positive Affect Score": 10.0
-            },
-            {
-              "date": "2021-05-30",
-              "Positive Affect Score": 7.0
-            },
-            {
-              "date": "2021-06-02",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-06-06",
-              "Positive Affect Score": 6.0
-            }
-          ],
-          "spec": {
-            "name": "Positive Affect Score",
-            "aggregation": "max",
-            "time_1": "2021-03-31",
-            "time_2": "2021-06-06",
-            "value": 12.0,
-            "fact_description": "The highest Positive Affect Score was 12.0 from 2021-03-31 to 2021-06-06 (67 days).",
-            "fact_type": "derived value"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "derived value",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "On 2021-05-12, the Positive Affect Score was at its lowest, measuring 2.0.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-04",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-07",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-14",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-04-18",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-21",
-              "Positive Affect Score": 6.0
-            },
-            {
-              "date": "2021-04-25",
-              "Positive Affect Score": 10.0
-            },
-            {
-              "date": "2021-04-28",
-              "Positive Affect Score": 7.0
-            },
-            {
-              "date": "2021-05-02",
-              "Positive Affect Score": 12.0
-            },
-            {
-              "date": "2021-05-05",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-09",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-12",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-05-16",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-19",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-05-24",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-05-26",
-              "Positive Affect Score": 10.0
-            },
-            {
-              "date": "2021-05-30",
-              "Positive Affect Score": 7.0
-            },
-            {
-              "date": "2021-06-02",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-06-06",
-              "Positive Affect Score": 6.0
-            }
-          ],
-          "spec": {
-            "name": "Positive Affect Score",
-            "attribute": "min",
-            "time": "2021-05-12",
-            "value": 2.0,
-            "fact_description": "On 2021-05-12, the Positive Affect Score was at its lowest, measuring 2.0.",
-            "fact_type": "extreme"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "extreme",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "On 2021-05-19, the Positive Affect Score was at its lowest recorded value of 2.0.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-04",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-07",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-14",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-04-18",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-21",
-              "Positive Affect Score": 6.0
-            },
-            {
-              "date": "2021-04-25",
-              "Positive Affect Score": 10.0
-            },
-            {
-              "date": "2021-04-28",
-              "Positive Affect Score": 7.0
-            },
-            {
-              "date": "2021-05-02",
-              "Positive Affect Score": 12.0
-            },
-            {
-              "date": "2021-05-05",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-09",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-12",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-05-16",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-19",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-05-24",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-05-26",
-              "Positive Affect Score": 10.0
-            },
-            {
-              "date": "2021-05-30",
-              "Positive Affect Score": 7.0
-            },
-            {
-              "date": "2021-06-02",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-06-06",
-              "Positive Affect Score": 6.0
-            }
-          ],
-          "spec": {
-            "name": "Positive Affect Score",
-            "attribute": "min",
-            "time": "2021-05-19",
-            "value": 2.0,
-            "fact_description": "On 2021-05-19, the Positive Affect Score was at its lowest recorded value of 2.0.",
-            "fact_type": "extreme"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "extreme",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "From 2021-03-31 to 2021-06-06 (67 days), the median Positive Affect Score was 4.5.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-04",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-07",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-14",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-04-18",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-21",
-              "Positive Affect Score": 6.0
-            },
-            {
-              "date": "2021-04-25",
-              "Positive Affect Score": 10.0
-            },
-            {
-              "date": "2021-04-28",
-              "Positive Affect Score": 7.0
-            },
-            {
-              "date": "2021-05-02",
-              "Positive Affect Score": 12.0
-            },
-            {
-              "date": "2021-05-05",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-09",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-12",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-05-16",
-              "Positive Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-19",
-              "Positive Affect Score": 2.0
-            },
-            {
-              "date": "2021-05-24",
-              "Positive Affect Score": 5.0
-            },
-            {
-              "date": "2021-05-26",
-              "Positive Affect Score": 10.0
-            },
-            {
-              "date": "2021-05-30",
-              "Positive Affect Score": 7.0
-            },
-            {
-              "date": "2021-06-02",
-              "Positive Affect Score": 4.0
-            },
-            {
-              "date": "2021-06-06",
-              "Positive Affect Score": 6.0
-            }
-          ],
-          "spec": {
-            "name": "Positive Affect Score",
-            "aggregation": "median",
-            "time_1": "2021-03-31",
-            "time_2": "2021-06-06",
-            "value": 4.5,
-            "fact_description": "From 2021-03-31 to 2021-06-06 (67 days), the median Positive Affect Score was 4.5.",
-            "fact_type": "derived value"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "derived value",
-          "isShowL2": false
-        }
-      ],
-      "transcriptRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.2619244094116583
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.2640399092770282
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.26834012393453743
-        }
-      ]
-    },
-    {
-      "key": "insight-2",
-      "summaryTitle": "Stress scores elevated and variable; ongoing worries about finances and relationships reported.",
-      "sources": [
-        "clinical note",
-        "session transcript",
-        "survey"
-      ],
-      "insightType": [
-        "Emotional State"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "From 2021-03-31 to 2021-06-02 (63 days), the average PSS-4 score was 12.5, indicating high perceived stress.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "PSS-4 Score": 10.0
-            },
-            {
-              "date": "2021-04-07",
-              "PSS-4 Score": 10.0
-            },
-            {
-              "date": "2021-04-14",
-              "PSS-4 Score": 11.0
-            },
-            {
-              "date": "2021-04-21",
-              "PSS-4 Score": 13.0
-            },
-            {
-              "date": "2021-04-28",
-              "PSS-4 Score": 13.0
-            },
-            {
-              "date": "2021-05-05",
-              "PSS-4 Score": 12.0
-            },
-            {
-              "date": "2021-05-12",
-              "PSS-4 Score": 15.0
-            },
-            {
-              "date": "2021-05-19",
-              "PSS-4 Score": 14.0
-            },
-            {
-              "date": "2021-05-26",
-              "PSS-4 Score": 14.0
-            },
-            {
-              "date": "2021-06-02",
-              "PSS-4 Score": 13.0
-            }
-          ],
-          "spec": {
-            "name": "PSS-4 Score",
-            "aggregation": "average",
-            "time_1": "2021-03-31",
-            "time_2": "2021-06-02",
-            "value": 12.5,
-            "fact_description": "From 2021-03-31 to 2021-06-02 (63 days), the average PSS-4 score was 12.5, indicating high perceived stress.",
-            "fact_type": "derived value"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "derived value",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "From 2021-03-31 to 2021-06-02 (63 days), PSS-4 Score variability was 1.63 points.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "PSS-4 Score": 10.0
-            },
-            {
-              "date": "2021-04-07",
-              "PSS-4 Score": 10.0
-            },
-            {
-              "date": "2021-04-14",
-              "PSS-4 Score": 11.0
-            },
-            {
-              "date": "2021-04-21",
-              "PSS-4 Score": 13.0
-            },
-            {
-              "date": "2021-04-28",
-              "PSS-4 Score": 13.0
-            },
-            {
-              "date": "2021-05-05",
-              "PSS-4 Score": 12.0
-            },
-            {
-              "date": "2021-05-12",
-              "PSS-4 Score": 15.0
-            },
-            {
-              "date": "2021-05-19",
-              "PSS-4 Score": 14.0
-            },
-            {
-              "date": "2021-05-26",
-              "PSS-4 Score": 14.0
-            },
-            {
-              "date": "2021-06-02",
-              "PSS-4 Score": 13.0
-            }
-          ],
-          "spec": {
-            "name": "PSS-4 Score",
-            "aggregation": "stdev",
-            "time_1": "2021-03-31",
-            "time_2": "2021-06-02",
-            "value": 1.63,
-            "fact_description": "From 2021-03-31 to 2021-06-02 (63 days), PSS-4 Score variability was 1.63 points.",
-            "fact_type": "derived value"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "derived value",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Alison is currently experiencing financial insecurity, fewer work hours, and relationship challenges with her partner.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Stressors include financial insecurity, reduced work hours, and relationship difficulties with her partner."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "The PSS-4 score increased from 2021-04-28 to 2021-05-12 (14 days), indicating rising stress.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "PSS-4 Score": 10.0
-            },
-            {
-              "date": "2021-04-07",
-              "PSS-4 Score": 10.0
-            },
-            {
-              "date": "2021-04-14",
-              "PSS-4 Score": 11.0
-            },
-            {
-              "date": "2021-04-21",
-              "PSS-4 Score": 13.0
-            },
-            {
-              "date": "2021-04-28",
-              "PSS-4 Score": 13.0
-            },
-            {
-              "date": "2021-05-05",
-              "PSS-4 Score": 12.0
-            },
-            {
-              "date": "2021-05-12",
-              "PSS-4 Score": 15.0
-            },
-            {
-              "date": "2021-05-19",
-              "PSS-4 Score": 14.0
-            },
-            {
-              "date": "2021-05-26",
-              "PSS-4 Score": 14.0
-            },
-            {
-              "date": "2021-06-02",
-              "PSS-4 Score": 13.0
-            }
-          ],
-          "spec": {
-            "name": "PSS-4 Score",
-            "attribute": "rise",
-            "time_1": "2021-04-28",
-            "time_2": "2021-05-12",
-            "fact_description": "The PSS-4 score increased from 2021-04-28 to 2021-05-12 (14 days), indicating rising stress.",
-            "fact_type": "trend"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "trend",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "From 2021-03-31 to 2021-06-02 (63 days), the median PSS-4 Score was 13.0, indicating high perceived stress.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "PSS-4 Score": 10.0
-            },
-            {
-              "date": "2021-04-07",
-              "PSS-4 Score": 10.0
-            },
-            {
-              "date": "2021-04-14",
-              "PSS-4 Score": 11.0
-            },
-            {
-              "date": "2021-04-21",
-              "PSS-4 Score": 13.0
-            },
-            {
-              "date": "2021-04-28",
-              "PSS-4 Score": 13.0
-            },
-            {
-              "date": "2021-05-05",
-              "PSS-4 Score": 12.0
-            },
-            {
-              "date": "2021-05-12",
-              "PSS-4 Score": 15.0
-            },
-            {
-              "date": "2021-05-19",
-              "PSS-4 Score": 14.0
-            },
-            {
-              "date": "2021-05-26",
-              "PSS-4 Score": 14.0
-            },
-            {
-              "date": "2021-06-02",
-              "PSS-4 Score": 13.0
-            }
-          ],
-          "spec": {
-            "name": "PSS-4 Score",
-            "aggregation": "median",
-            "time_1": "2021-03-31",
-            "time_2": "2021-06-02",
-            "value": 13.0,
-            "fact_description": "From 2021-03-31 to 2021-06-02 (63 days), the median PSS-4 Score was 13.0, indicating high perceived stress.",
-            "fact_type": "derived value"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "derived value",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "The highest PSS-4 score was 15.0 from 2021-03-31 to 2021-06-02 (63 days), indicating high perceived stress (PSS-4 range: 0-24; 6-24 = high stress).",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "PSS-4 Score": 10.0
-            },
-            {
-              "date": "2021-04-07",
-              "PSS-4 Score": 10.0
-            },
-            {
-              "date": "2021-04-14",
-              "PSS-4 Score": 11.0
-            },
-            {
-              "date": "2021-04-21",
-              "PSS-4 Score": 13.0
-            },
-            {
-              "date": "2021-04-28",
-              "PSS-4 Score": 13.0
-            },
-            {
-              "date": "2021-05-05",
-              "PSS-4 Score": 12.0
-            },
-            {
-              "date": "2021-05-12",
-              "PSS-4 Score": 15.0
-            },
-            {
-              "date": "2021-05-19",
-              "PSS-4 Score": 14.0
-            },
-            {
-              "date": "2021-05-26",
-              "PSS-4 Score": 14.0
-            },
-            {
-              "date": "2021-06-02",
-              "PSS-4 Score": 13.0
-            }
-          ],
-          "spec": {
-            "name": "PSS-4 Score",
-            "aggregation": "max",
-            "time_1": "2021-03-31",
-            "time_2": "2021-06-02",
-            "value": 15.0,
-            "fact_description": "The highest PSS-4 score was 15.0 from 2021-03-31 to 2021-06-02 (63 days), indicating high perceived stress (PSS-4 range: 0-24; 6-24 = high stress).",
-            "fact_type": "derived value"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "derived value",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "The PSS-4 Score increased from 13.0 to 15.0 from 2021-04-21 to 2021-05-12 (21 days), indicating high perceived stress throughout this period.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "PSS-4 Score": 10.0
-            },
-            {
-              "date": "2021-04-07",
-              "PSS-4 Score": 10.0
-            },
-            {
-              "date": "2021-04-14",
-              "PSS-4 Score": 11.0
-            },
-            {
-              "date": "2021-04-21",
-              "PSS-4 Score": 13.0
-            },
-            {
-              "date": "2021-04-28",
-              "PSS-4 Score": 13.0
-            },
-            {
-              "date": "2021-05-05",
-              "PSS-4 Score": 12.0
-            },
-            {
-              "date": "2021-05-12",
-              "PSS-4 Score": 15.0
-            },
-            {
-              "date": "2021-05-19",
-              "PSS-4 Score": 14.0
-            },
-            {
-              "date": "2021-05-26",
-              "PSS-4 Score": 14.0
-            },
-            {
-              "date": "2021-06-02",
-              "PSS-4 Score": 13.0
-            }
-          ],
-          "spec": {
-            "name": "PSS-4 Score",
-            "attribute": "more",
-            "time_1": "2021-04-21",
-            "time_2": "2021-05-12",
-            "value_1": 13.0,
-            "value_2": 15.0,
-            "fact_description": "The PSS-4 Score increased from 13.0 to 15.0 from 2021-04-21 to 2021-05-12 (21 days), indicating high perceived stress throughout this period.",
-            "fact_type": "difference"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "difference",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "Alison continues to feel anxious about her finances and doubts improvement in her situation.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "She expresses ongoing worries about finances and the possibility that her current state may not improve."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "The patient continues to feel concerned about finances and uncertain about future improvement.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: Just worried about money, if the hours get cut again. And what if this is as good as it gets?"
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        }
-      ],
-      "transcriptRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.34812932830339355
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.3652038972455441
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.3611410098853132
-        }
-      ],
-      "noteRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.43938421895737295
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.478855960122808
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.4927626638891246
-        }
-      ]
-    },
-    {
-      "key": "insight-3",
-      "summaryTitle": "Mood and anxiety scores elevated and variable; ongoing worries about finances and improvement persist.",
-      "sources": [
-        "clinical note",
-        "session transcript",
-        "survey"
-      ],
-      "insightType": [
-        "Emotional State"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "On 2021-05-16, the PHQ-4 Score was 11.0, indicating severe psychological distress (range: 0-12).",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 Score": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 Score": 3.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 Score": 6.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 Score": 8.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 Score": 7.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 Score": 8.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 Score": 11.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 Score": 10.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 Score": 9.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 Score": 11.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 Score",
-            "attribute": "max",
-            "time": "2021-05-16",
-            "value": 11.0,
-            "fact_description": "On 2021-05-16, the PHQ-4 Score was 11.0, indicating severe psychological distress (range: 0-12).",
-            "fact_type": "extreme"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "extreme",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "The median PHQ-4 Score increased from 6.0 to 10.0 from 2021-04-04 to 2021-06-06 (63 days), indicating a shift from moderate to severe psychological distress (PHQ-4 range: 0-16).",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 Score": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 Score": 3.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 Score": 6.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 Score": 8.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 Score": 7.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 Score": 8.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 Score": 11.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 Score": 10.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 Score": 9.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 Score": 11.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 Score",
-            "attribute": "more",
-            "aggregation": "median",
-            "time_dur_1": {
-              "time_start": "2021-04-04",
-              "time_end": "2021-05-02"
-            },
-            "time_dur_2": {
-              "time_start": "2021-05-09",
-              "time_end": "2021-06-06"
-            },
-            "value_dur_1": 6.0,
-            "value_dur_2": 10.0,
-            "fact_description": "The median PHQ-4 Score increased from 6.0 to 10.0 from 2021-04-04 to 2021-06-06 (63 days), indicating a shift from moderate to severe psychological distress (PHQ-4 range: 0-16).",
-            "fact_type": "comparison"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "comparison",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "On 2021-05-19, the Negative Affect Score peaked at 17.0, indicating significant negative emotions.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-04-04",
-              "Negative Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-07",
-              "Negative Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-11",
-              "Negative Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-14",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-04-18",
-              "Negative Affect Score": 12.0
-            },
-            {
-              "date": "2021-04-21",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-04-25",
-              "Negative Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-28",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-05-02",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-05-05",
-              "Negative Affect Score": 14.0
-            },
-            {
-              "date": "2021-05-09",
-              "Negative Affect Score": 15.0
-            },
-            {
-              "date": "2021-05-12",
-              "Negative Affect Score": 15.0
-            },
-            {
-              "date": "2021-05-16",
-              "Negative Affect Score": 7.0
-            },
-            {
-              "date": "2021-05-19",
-              "Negative Affect Score": 17.0
-            },
-            {
-              "date": "2021-05-24",
-              "Negative Affect Score": 6.0
-            },
-            {
-              "date": "2021-05-26",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-05-30",
-              "Negative Affect Score": 5.0
-            },
-            {
-              "date": "2021-06-02",
-              "Negative Affect Score": 13.0
-            },
-            {
-              "date": "2021-06-06",
-              "Negative Affect Score": 10.0
-            }
-          ],
-          "spec": {
-            "name": "Negative Affect Score",
-            "attribute": "max",
-            "time": "2021-05-19",
-            "value": 17.0,
-            "fact_description": "On 2021-05-19, the Negative Affect Score peaked at 17.0, indicating significant negative emotions.",
-            "fact_type": "extreme"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "extreme",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Negative Affect Score decreased from 17.0 on 2021-05-19 to 6.0 on 2021-05-24 (5 days).",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-04-04",
-              "Negative Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-07",
-              "Negative Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-11",
-              "Negative Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-14",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-04-18",
-              "Negative Affect Score": 12.0
-            },
-            {
-              "date": "2021-04-21",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-04-25",
-              "Negative Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-28",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-05-02",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-05-05",
-              "Negative Affect Score": 14.0
-            },
-            {
-              "date": "2021-05-09",
-              "Negative Affect Score": 15.0
-            },
-            {
-              "date": "2021-05-12",
-              "Negative Affect Score": 15.0
-            },
-            {
-              "date": "2021-05-16",
-              "Negative Affect Score": 7.0
-            },
-            {
-              "date": "2021-05-19",
-              "Negative Affect Score": 17.0
-            },
-            {
-              "date": "2021-05-24",
-              "Negative Affect Score": 6.0
-            },
-            {
-              "date": "2021-05-26",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-05-30",
-              "Negative Affect Score": 5.0
-            },
-            {
-              "date": "2021-06-02",
-              "Negative Affect Score": 13.0
-            },
-            {
-              "date": "2021-06-06",
-              "Negative Affect Score": 10.0
-            }
-          ],
-          "spec": {
-            "name": "Negative Affect Score",
-            "attribute": "less",
-            "time_1": "2021-05-19",
-            "time_2": "2021-05-24",
-            "value_1": 17.0,
-            "value_2": 6.0,
-            "fact_description": "Negative Affect Score decreased from 17.0 on 2021-05-19 to 6.0 on 2021-05-24 (5 days).",
-            "fact_type": "difference"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "difference",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Alison continues to feel anxious about her finances and doubts improvement in her situation.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "She expresses ongoing worries about finances and the possibility that her current state may not improve."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "From 2021-04-04 to 2021-06-06 (63 days), the average PHQ-4 score was 7.7, reflecting moderate distress.",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 Score": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 Score": 3.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 Score": 6.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 Score": 8.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 Score": 7.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 Score": 8.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 Score": 11.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 Score": 10.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 Score": 9.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 Score": 11.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 Score",
-            "aggregation": "average",
-            "time_1": "2021-04-04",
-            "time_2": "2021-06-06",
-            "value": 7.7,
-            "fact_description": "From 2021-04-04 to 2021-06-06 (63 days), the average PHQ-4 score was 7.7, reflecting moderate distress.",
-            "fact_type": "derived value"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "derived value",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "From 2021-04-04 to 2021-06-06 (63 days), the median PHQ-4 score was 8.0, reflecting moderate distress.",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 Score": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 Score": 3.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 Score": 6.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 Score": 8.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 Score": 7.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 Score": 8.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 Score": 11.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 Score": 10.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 Score": 9.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 Score": 11.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 Score",
-            "aggregation": "median",
-            "time_1": "2021-04-04",
-            "time_2": "2021-06-06",
-            "value": 8.0,
-            "fact_description": "From 2021-04-04 to 2021-06-06 (63 days), the median PHQ-4 score was 8.0, reflecting moderate distress.",
-            "fact_type": "derived value"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "derived value",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "On 2021-05-09, the Negative Affect Score peaked at 15.0, indicating elevated negative emotions.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-04-04",
-              "Negative Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-07",
-              "Negative Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-11",
-              "Negative Affect Score": 5.0
-            },
-            {
-              "date": "2021-04-14",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-04-18",
-              "Negative Affect Score": 12.0
-            },
-            {
-              "date": "2021-04-21",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-04-25",
-              "Negative Affect Score": 4.0
-            },
-            {
-              "date": "2021-04-28",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-05-02",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-05-05",
-              "Negative Affect Score": 14.0
-            },
-            {
-              "date": "2021-05-09",
-              "Negative Affect Score": 15.0
-            },
-            {
-              "date": "2021-05-12",
-              "Negative Affect Score": 15.0
-            },
-            {
-              "date": "2021-05-16",
-              "Negative Affect Score": 7.0
-            },
-            {
-              "date": "2021-05-19",
-              "Negative Affect Score": 17.0
-            },
-            {
-              "date": "2021-05-24",
-              "Negative Affect Score": 6.0
-            },
-            {
-              "date": "2021-05-26",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-05-30",
-              "Negative Affect Score": 5.0
-            },
-            {
-              "date": "2021-06-02",
-              "Negative Affect Score": 13.0
-            },
-            {
-              "date": "2021-06-06",
-              "Negative Affect Score": 10.0
-            }
-          ],
-          "spec": {
-            "name": "Negative Affect Score",
-            "attribute": "max",
-            "time": "2021-05-09",
-            "value": 15.0,
-            "fact_description": "On 2021-05-09, the Negative Affect Score peaked at 15.0, indicating elevated negative emotions.",
-            "fact_type": "extreme"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "extreme",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "The patient continues to feel concerned about finances and uncertain about future improvement.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: Just worried about money, if the hours get cut again. And what if this is as good as it gets?"
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        }
-      ],
-      "transcriptRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.3734301008578482
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.3545506107592229
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.3482561235027223
-        }
-      ],
-      "noteRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.4496520853933293
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.4981373058390829
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.5245956487481092
-        }
-      ]
-    },
-    {
-      "key": "insight-4",
-      "summaryTitle": "Guilt and low motivation after missing a work shift; feels disengaged from work and children.",
-      "sources": [
-        "clinical note",
-        "session transcript"
-      ],
-      "insightType": [
-        "Emotional State",
-        "Social Interaction"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "Alison reports feeling guilty about not engaging with her children and work, and recently missed a work shift because of low motivation.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Alison continues to feel guilty about her perceived lack of engagement with her children and work, having missed a shift due to low motivation."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "The patient feels reluctant to share work challenges, worried colleagues may doubt her abilities.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: Maybe. I don’t want anyone thinking I can’t do my job, though. But I might say I’m having a hard time at home."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "On one occasion, the patient missed work due to being unable to get out of bed, resulting in guilt.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: The supermarket is still chaos. More people had their hours cut. I ended up missing a shift because I just couldn’t get out of bed. I called in sick, but now I feel guilty."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "A few coworkers reached out about the missed shift, but the manager offered no support.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: A couple of the ladies texted, just to say sorry about the shifts. The manager just noted it down, didn’t really ask."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        }
-      ],
-      "transcriptRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.2550697634506016
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.25564107683445986
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.25336580292035227
-        }
-      ],
-      "noteRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.40872663176844076
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.3974685590603892
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.42788774482456315
-        }
-      ]
-    },
-    {
-      "key": "insight-5",
-      "summaryTitle": "Sister provides regular support; partner relationship remains distant with limited contact.",
-      "sources": [
-        "clinical note",
         "passive sensing",
-        "session transcript"
-      ],
-      "insightType": [
-        "Social Interaction",
-        "Emotional State"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "The average daily incoming calls increased from 0.94 to 1.65 between 2021-04-19 and 2021-05-30.",
-          "dataPoints": [
-            {
-              "date": "2021-03-29",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-03-30",
-              "Incoming Call Count": 4.0
-            },
-            {
-              "date": "2021-03-31",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-01",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-02",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-03",
-              "Incoming Call Count": null
-            },
-            {
-              "date": "2021-04-04",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-05",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-06",
-              "Incoming Call Count": 2.0
-            },
-            {
-              "date": "2021-04-07",
-              "Incoming Call Count": null
-            },
-            {
-              "date": "2021-04-08",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-09",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-10",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-11",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-12",
-              "Incoming Call Count": 5.0
-            },
-            {
-              "date": "2021-04-13",
-              "Incoming Call Count": 2.0
-            },
-            {
-              "date": "2021-04-14",
-              "Incoming Call Count": 3.0
-            },
-            {
-              "date": "2021-04-15",
-              "Incoming Call Count": null
-            },
-            {
-              "date": "2021-04-16",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-17",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-18",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-19",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-20",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-21",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-22",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-23",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-24",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-25",
-              "Incoming Call Count": null
-            },
-            {
-              "date": "2021-04-26",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-27",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-28",
-              "Incoming Call Count": 4.0
-            },
-            {
-              "date": "2021-04-29",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-30",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-05-01",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-02",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-03",
-              "Incoming Call Count": 5.0
-            },
-            {
-              "date": "2021-05-04",
-              "Incoming Call Count": null
-            },
-            {
-              "date": "2021-05-05",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-06",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-07",
-              "Incoming Call Count": null
-            },
-            {
-              "date": "2021-05-08",
-              "Incoming Call Count": 2.0
-            },
-            {
-              "date": "2021-05-09",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-05-10",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-11",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-05-12",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-13",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-05-14",
-              "Incoming Call Count": null
-            },
-            {
-              "date": "2021-05-15",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-16",
-              "Incoming Call Count": 2.0
-            },
-            {
-              "date": "2021-05-17",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-05-18",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-05-19",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-20",
-              "Incoming Call Count": 2.0
-            },
-            {
-              "date": "2021-05-21",
-              "Incoming Call Count": 2.0
-            },
-            {
-              "date": "2021-05-22",
-              "Incoming Call Count": 4.0
-            },
-            {
-              "date": "2021-05-23",
-              "Incoming Call Count": 3.0
-            },
-            {
-              "date": "2021-05-24",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-25",
-              "Incoming Call Count": 5.0
-            },
-            {
-              "date": "2021-05-26",
-              "Incoming Call Count": 4.0
-            },
-            {
-              "date": "2021-05-27",
-              "Incoming Call Count": 2.0
-            },
-            {
-              "date": "2021-05-28",
-              "Incoming Call Count": 3.0
-            },
-            {
-              "date": "2021-05-29",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-05-30",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-05-31",
-              "Incoming Call Count": 3.0
-            },
-            {
-              "date": "2021-06-01",
-              "Incoming Call Count": 3.0
-            },
-            {
-              "date": "2021-06-02",
-              "Incoming Call Count": 4.0
-            },
-            {
-              "date": "2021-06-03",
-              "Incoming Call Count": 6.0
-            },
-            {
-              "date": "2021-06-04",
-              "Incoming Call Count": 2.0
-            },
-            {
-              "date": "2021-06-05",
-              "Incoming Call Count": 3.0
-            },
-            {
-              "date": "2021-06-06",
-              "Incoming Call Count": 2.0
-            }
-          ],
-          "spec": {
-            "name": "Incoming Call Count",
-            "attribute": "more",
-            "aggregation": "average",
-            "time_dur_1": {
-              "time_start": "2021-04-19",
-              "time_end": "2021-05-09"
-            },
-            "time_dur_2": {
-              "time_start": "2021-05-10",
-              "time_end": "2021-05-30"
-            },
-            "value_dur_1": 0.9444444444444444,
-            "value_dur_2": 1.65,
-            "fact_description": "The average daily incoming calls increased from 0.94 to 1.65 between 2021-04-19 and 2021-05-30.",
-            "fact_type": "comparison"
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "comparison",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "She finds comfort in frequent visits and phone calls with her supportive sister.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Alison identifies her sister as a key support, with regular visits and phone calls providing some comfort."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "She stays in touch with family and friends but participates little in work activities.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Social: Maintains some contact with family and friends; limited engagement at work."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "She reports feeling lonely yet somewhat relieved due to her partner's distant presence.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "She describes her relationship with her partner, Dave, as distant, and feels both lonely and somewhat relieved by his absence."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "The patient's sister visited twice, brought food, watched TV, and called most nights for support.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: She came round twice, brought some stew over. We watched some TV together. We talk on the phone most nights, even if just for a few minutes."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "The patient experiences loneliness but also some relief from Dave’s absence, easing emotional pretense.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: A bit of both. I miss when things felt easy between us. But sometimes it’s easier not to have to pretend I’m okay."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "The patient has not discussed her feelings further with Dave, who remains distant and communicates mainly by text.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: Not really. I thought about what we talked about last time, but I sort of chickened out. He’s been quiet too. Sent a few texts but doesn’t come by much lately."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "During the session, the patient shared feelings about being distant from Dave, which brought some relief.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: Okay. Um… 'Sorry I’ve been distant. It’s nothing you’ve done, I just feel really low and it’s hard to talk about it. I don’t want to make you worry or feel like I’m pushing you away.'\nClinician: That’s very heartfelt and honest, Alison. How did it feel saying those words out loud?\nPatient: Weird, but kind of a relief, even if it’s just to you."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "From 2021-03-29 to 2021-06-06 (69 days), the average daily outgoing calls was 2.52.",
-          "dataPoints": [
-            {
-              "date": "2021-03-29",
-              "Outgoing Call Count": 2.0
-            },
-            {
-              "date": "2021-03-30",
-              "Outgoing Call Count": 4.0
-            },
-            {
-              "date": "2021-03-31",
-              "Outgoing Call Count": 3.0
-            },
-            {
-              "date": "2021-04-01",
-              "Outgoing Call Count": 2.0
-            },
-            {
-              "date": "2021-04-02",
-              "Outgoing Call Count": 0.0
-            },
-            {
-              "date": "2021-04-03",
-              "Outgoing Call Count": null
-            },
-            {
-              "date": "2021-04-04",
-              "Outgoing Call Count": 2.0
-            },
-            {
-              "date": "2021-04-05",
-              "Outgoing Call Count": 4.0
-            },
-            {
-              "date": "2021-04-06",
-              "Outgoing Call Count": 5.0
-            },
-            {
-              "date": "2021-04-07",
-              "Outgoing Call Count": null
-            },
-            {
-              "date": "2021-04-08",
-              "Outgoing Call Count": 1.0
-            },
-            {
-              "date": "2021-04-09",
-              "Outgoing Call Count": 4.0
-            },
-            {
-              "date": "2021-04-10",
-              "Outgoing Call Count": 1.0
-            },
-            {
-              "date": "2021-04-11",
-              "Outgoing Call Count": 5.0
-            },
-            {
-              "date": "2021-04-12",
-              "Outgoing Call Count": 6.0
-            },
-            {
-              "date": "2021-04-13",
-              "Outgoing Call Count": 0.0
-            },
-            {
-              "date": "2021-04-14",
-              "Outgoing Call Count": 4.0
-            },
-            {
-              "date": "2021-04-15",
-              "Outgoing Call Count": null
-            },
-            {
-              "date": "2021-04-16",
-              "Outgoing Call Count": 2.0
-            },
-            {
-              "date": "2021-04-17",
-              "Outgoing Call Count": 3.0
-            },
-            {
-              "date": "2021-04-18",
-              "Outgoing Call Count": 7.0
-            },
-            {
-              "date": "2021-04-19",
-              "Outgoing Call Count": 6.0
-            },
-            {
-              "date": "2021-04-20",
-              "Outgoing Call Count": 1.0
-            },
-            {
-              "date": "2021-04-21",
-              "Outgoing Call Count": 1.0
-            },
-            {
-              "date": "2021-04-22",
-              "Outgoing Call Count": 2.0
-            },
-            {
-              "date": "2021-04-23",
-              "Outgoing Call Count": 2.0
-            },
-            {
-              "date": "2021-04-24",
-              "Outgoing Call Count": 1.0
-            },
-            {
-              "date": "2021-04-25",
-              "Outgoing Call Count": null
-            },
-            {
-              "date": "2021-04-26",
-              "Outgoing Call Count": 0.0
-            },
-            {
-              "date": "2021-04-27",
-              "Outgoing Call Count": 2.0
-            },
-            {
-              "date": "2021-04-28",
-              "Outgoing Call Count": 3.0
-            },
-            {
-              "date": "2021-04-29",
-              "Outgoing Call Count": 1.0
-            },
-            {
-              "date": "2021-04-30",
-              "Outgoing Call Count": 1.0
-            },
-            {
-              "date": "2021-05-01",
-              "Outgoing Call Count": 1.0
-            },
-            {
-              "date": "2021-05-02",
-              "Outgoing Call Count": 1.0
-            },
-            {
-              "date": "2021-05-03",
-              "Outgoing Call Count": 4.0
-            },
-            {
-              "date": "2021-05-04",
-              "Outgoing Call Count": null
-            },
-            {
-              "date": "2021-05-05",
-              "Outgoing Call Count": 2.0
-            },
-            {
-              "date": "2021-05-06",
-              "Outgoing Call Count": 1.0
-            },
-            {
-              "date": "2021-05-07",
-              "Outgoing Call Count": null
-            },
-            {
-              "date": "2021-05-08",
-              "Outgoing Call Count": 0.0
-            },
-            {
-              "date": "2021-05-09",
-              "Outgoing Call Count": 1.0
-            },
-            {
-              "date": "2021-05-10",
-              "Outgoing Call Count": 1.0
-            },
-            {
-              "date": "2021-05-11",
-              "Outgoing Call Count": 0.0
-            },
-            {
-              "date": "2021-05-12",
-              "Outgoing Call Count": 2.0
-            },
-            {
-              "date": "2021-05-13",
-              "Outgoing Call Count": 1.0
-            },
-            {
-              "date": "2021-05-14",
-              "Outgoing Call Count": null
-            },
-            {
-              "date": "2021-05-15",
-              "Outgoing Call Count": 0.0
-            },
-            {
-              "date": "2021-05-16",
-              "Outgoing Call Count": 1.0
-            },
-            {
-              "date": "2021-05-17",
-              "Outgoing Call Count": 0.0
-            },
-            {
-              "date": "2021-05-18",
-              "Outgoing Call Count": 2.0
-            },
-            {
-              "date": "2021-05-19",
-              "Outgoing Call Count": 3.0
-            },
-            {
-              "date": "2021-05-20",
-              "Outgoing Call Count": 0.0
-            },
-            {
-              "date": "2021-05-21",
-              "Outgoing Call Count": 2.0
-            },
-            {
-              "date": "2021-05-22",
-              "Outgoing Call Count": 2.0
-            },
-            {
-              "date": "2021-05-23",
-              "Outgoing Call Count": 2.0
-            },
-            {
-              "date": "2021-05-24",
-              "Outgoing Call Count": 1.0
-            },
-            {
-              "date": "2021-05-25",
-              "Outgoing Call Count": 8.0
-            },
-            {
-              "date": "2021-05-26",
-              "Outgoing Call Count": 2.0
-            },
-            {
-              "date": "2021-05-27",
-              "Outgoing Call Count": 5.0
-            },
-            {
-              "date": "2021-05-28",
-              "Outgoing Call Count": 4.0
-            },
-            {
-              "date": "2021-05-29",
-              "Outgoing Call Count": 4.0
-            },
-            {
-              "date": "2021-05-30",
-              "Outgoing Call Count": 2.0
-            },
-            {
-              "date": "2021-05-31",
-              "Outgoing Call Count": 2.0
-            },
-            {
-              "date": "2021-06-01",
-              "Outgoing Call Count": 6.0
-            },
-            {
-              "date": "2021-06-02",
-              "Outgoing Call Count": 6.0
-            },
-            {
-              "date": "2021-06-03",
-              "Outgoing Call Count": 10.0
-            },
-            {
-              "date": "2021-06-04",
-              "Outgoing Call Count": 3.0
-            },
-            {
-              "date": "2021-06-05",
-              "Outgoing Call Count": 1.0
-            },
-            {
-              "date": "2021-06-06",
-              "Outgoing Call Count": 4.0
-            }
-          ],
-          "spec": {
-            "name": "Outgoing Call Count",
-            "aggregation": "average",
-            "time_1": "2021-03-29",
-            "time_2": "2021-06-06",
-            "value": 2.52,
-            "fact_description": "From 2021-03-29 to 2021-06-06 (69 days), the average daily outgoing calls was 2.52.",
-            "fact_type": "derived value"
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "derived value",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "Between 2021-05-10 and 2021-05-30 (20 days), the average daily incoming calls was 1.65.",
-          "dataPoints": [
-            {
-              "date": "2021-03-29",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-03-30",
-              "Incoming Call Count": 4.0
-            },
-            {
-              "date": "2021-03-31",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-01",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-02",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-03",
-              "Incoming Call Count": null
-            },
-            {
-              "date": "2021-04-04",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-05",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-06",
-              "Incoming Call Count": 2.0
-            },
-            {
-              "date": "2021-04-07",
-              "Incoming Call Count": null
-            },
-            {
-              "date": "2021-04-08",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-09",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-10",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-11",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-12",
-              "Incoming Call Count": 5.0
-            },
-            {
-              "date": "2021-04-13",
-              "Incoming Call Count": 2.0
-            },
-            {
-              "date": "2021-04-14",
-              "Incoming Call Count": 3.0
-            },
-            {
-              "date": "2021-04-15",
-              "Incoming Call Count": null
-            },
-            {
-              "date": "2021-04-16",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-17",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-18",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-19",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-20",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-21",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-22",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-23",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-24",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-25",
-              "Incoming Call Count": null
-            },
-            {
-              "date": "2021-04-26",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-27",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-04-28",
-              "Incoming Call Count": 4.0
-            },
-            {
-              "date": "2021-04-29",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-04-30",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-05-01",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-02",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-03",
-              "Incoming Call Count": 5.0
-            },
-            {
-              "date": "2021-05-04",
-              "Incoming Call Count": null
-            },
-            {
-              "date": "2021-05-05",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-06",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-07",
-              "Incoming Call Count": null
-            },
-            {
-              "date": "2021-05-08",
-              "Incoming Call Count": 2.0
-            },
-            {
-              "date": "2021-05-09",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-05-10",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-11",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-05-12",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-13",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-05-14",
-              "Incoming Call Count": null
-            },
-            {
-              "date": "2021-05-15",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-16",
-              "Incoming Call Count": 2.0
-            },
-            {
-              "date": "2021-05-17",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-05-18",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-05-19",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-20",
-              "Incoming Call Count": 2.0
-            },
-            {
-              "date": "2021-05-21",
-              "Incoming Call Count": 2.0
-            },
-            {
-              "date": "2021-05-22",
-              "Incoming Call Count": 4.0
-            },
-            {
-              "date": "2021-05-23",
-              "Incoming Call Count": 3.0
-            },
-            {
-              "date": "2021-05-24",
-              "Incoming Call Count": 0.0
-            },
-            {
-              "date": "2021-05-25",
-              "Incoming Call Count": 5.0
-            },
-            {
-              "date": "2021-05-26",
-              "Incoming Call Count": 4.0
-            },
-            {
-              "date": "2021-05-27",
-              "Incoming Call Count": 2.0
-            },
-            {
-              "date": "2021-05-28",
-              "Incoming Call Count": 3.0
-            },
-            {
-              "date": "2021-05-29",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-05-30",
-              "Incoming Call Count": 1.0
-            },
-            {
-              "date": "2021-05-31",
-              "Incoming Call Count": 3.0
-            },
-            {
-              "date": "2021-06-01",
-              "Incoming Call Count": 3.0
-            },
-            {
-              "date": "2021-06-02",
-              "Incoming Call Count": 4.0
-            },
-            {
-              "date": "2021-06-03",
-              "Incoming Call Count": 6.0
-            },
-            {
-              "date": "2021-06-04",
-              "Incoming Call Count": 2.0
-            },
-            {
-              "date": "2021-06-05",
-              "Incoming Call Count": 3.0
-            },
-            {
-              "date": "2021-06-06",
-              "Incoming Call Count": 2.0
-            }
-          ],
-          "spec": {
-            "name": "Incoming Call Count",
-            "aggregation": "average",
-            "time_1": "2021-05-10",
-            "time_2": "2021-05-30",
-            "value": 1.65,
-            "fact_description": "Between 2021-05-10 and 2021-05-30 (20 days), the average daily incoming calls was 1.65.",
-            "fact_type": "derived value"
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "derived value",
-          "isShowL2": false
-        }
-      ],
-      "transcriptRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.16403855593960176
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.26572500207074895
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.31322063362070024
-        }
-      ],
-      "noteRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.3518442129066069
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.41197724711418704
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.4672996169761371
-        }
-      ]
-    },
-    {
-      "key": "insight-6",
-      "summaryTitle": "Sleep is inconsistent and fragmented, with late bedtimes and frequent awakenings.",
-      "sources": [
-        "clinical note",
-        "passive sensing",
-        "session transcript"
+        "clinical note"
       ],
       "insightType": [
         "Sleep Patterns",
@@ -3844,7 +970,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "From 2021-04-01 to 2021-06-06 (66 days), the median number of sleep episodes was 15.0, indicating frequent awakenings.",
+          "summarySentence": "From 2021-04-01 to 2021-06-06 (66 days), the median number of sleep episodes was 15.0.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -4133,7 +1259,7 @@
             "time_1": "2021-04-01",
             "time_2": "2021-06-06",
             "value": 15.0,
-            "fact_description": "From 2021-04-01 to 2021-06-06 (66 days), the median number of sleep episodes was 15.0, indicating frequent awakenings.",
+            "fact_description": "From 2021-04-01 to 2021-06-06 (66 days), the median number of sleep episodes was 15.0.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -4143,7 +1269,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "From 2021-04-01 to 2021-06-06 (66 days), awake episodes varied by 7.49 episodes.",
+          "summarySentence": "From 2021-04-01 to 2021-06-06 (66 days), awake episodes varied by 7.49 episodes nightly.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -4432,7 +1558,7 @@
             "time_1": "2021-04-01",
             "time_2": "2021-06-06",
             "value": 7.49,
-            "fact_description": "From 2021-04-01 to 2021-06-06 (66 days), awake episodes varied by 7.49 episodes.",
+            "fact_description": "From 2021-04-01 to 2021-06-06 (66 days), awake episodes varied by 7.49 episodes nightly.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -4442,7 +1568,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Alison's sleep is often disrupted, but reading magazines at night helps her rest better.",
+          "summarySentence": "Alison experiences irregular sleep, with late-night phone use disrupting rest, but reading magazines helps.",
           "dataPoints": null,
           "spec": [
             {
@@ -4463,7 +1589,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "On 2021-05-24, bedtime was latest at 1299.0 minutes after midnight (about 9:39 AM).",
+          "summarySentence": "On 2021-05-24, the latest bedtime was recorded at 1299.0 minutes after midnight.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -4751,7 +1877,7 @@
             "attribute": "min",
             "time": "2021-05-24",
             "value": 1299.0,
-            "fact_description": "On 2021-05-24, bedtime was latest at 1299.0 minutes after midnight (about 9:39 AM).",
+            "fact_description": "On 2021-05-24, the latest bedtime was recorded at 1299.0 minutes after midnight.",
             "fact_type": "extreme"
           },
           "sources": [
@@ -5061,7 +2187,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "First bedtime became earlier from 2021-05-11 to 2021-05-15 (4 days).",
+          "summarySentence": "Bedtime became progressively earlier from 2021-05-11 to 2021-05-15 (4 days).",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -5349,7 +2475,7 @@
             "attribute": "fall",
             "time_1": "2021-05-11",
             "time_2": "2021-05-15",
-            "fact_description": "First bedtime became earlier from 2021-05-11 to 2021-05-15 (4 days).",
+            "fact_description": "Bedtime became progressively earlier from 2021-05-11 to 2021-05-15 (4 days).",
             "fact_type": "trend"
           },
           "sources": [
@@ -5666,7 +2792,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "From 2021-06-01 to 2021-06-06 (5 days), median sleep duration was 22.23 minutes, extremely low.",
+          "summarySentence": "From 2021-06-01 to 2021-06-06 (5 days), median sleep duration was only 22.23 minutes nightly.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -5955,7 +3081,7 @@
             "time_1": "2021-06-01",
             "time_2": "2021-06-06",
             "value": 22.22879618055555,
-            "fact_description": "From 2021-06-01 to 2021-06-06 (5 days), median sleep duration was 22.23 minutes, extremely low.",
+            "fact_description": "From 2021-06-01 to 2021-06-06 (5 days), median sleep duration was only 22.23 minutes nightly.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -5965,7 +3091,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The patient often experiences disrupted sleep, with few nights of uninterrupted rest.",
+          "summarySentence": "The patient often experiences disrupted sleep, with frequent phone use at night and rare restful nights.",
           "dataPoints": null,
           "spec": [
             {
@@ -6000,35 +3126,35 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.22909580289055545
+          "relevance": 0.22331306647084265
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.20666115505947255
+          "relevance": 0.19358301209691597
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.19914320287231413
+          "relevance": 0.18453244776756275
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.30071648902745296
+          "relevance": 0.29691879821689177
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.354924690694975
+          "relevance": 0.3448571288892142
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.34342943971927775
+          "relevance": 0.33336562127788777
         }
       ]
     },
     {
-      "key": "insight-7",
-      "summaryTitle": "Screen time increased, with self-reported negative emotional impact during use.",
+      "key": "insight-2",
+      "summaryTitle": "Prolonged screen time, sometimes linked to negative emotional impact.",
       "sources": [
         "session transcript",
         "passive sensing",
@@ -6040,7 +3166,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Average daily screen unlock time increased from 506.62 to 634.86 minutes between 2021-04-19 and 2021-05-30 (41 days).",
+          "summarySentence": "Average daily screen unlock time increased from 506.62 to 634.86 minutes between 2021-04-19 and 2021-05-30.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -6337,7 +3463,7 @@
             },
             "value_dur_1": 506.616688888889,
             "value_dur_2": 634.8581666666668,
-            "fact_description": "Average daily screen unlock time increased from 506.62 to 634.86 minutes between 2021-04-19 and 2021-05-30 (41 days).",
+            "fact_description": "Average daily screen unlock time increased from 506.62 to 634.86 minutes between 2021-04-19 and 2021-05-30.",
             "fact_type": "comparison"
           },
           "sources": [
@@ -6347,7 +3473,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "When feeling stressed or down, she increases phone use, especially browsing photos and social media.",
+          "summarySentence": "When feeling stressed or low, she increases phone use, especially browsing photos and social media.",
           "dataPoints": null,
           "spec": [
             {
@@ -6969,7 +4095,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "From 2021-03-29 to 2021-06-06 (69 days), daily screen use averaged 551.94 minutes.",
+          "summarySentence": "From 2021-03-29 to 2021-06-06 (69 days), daily screen unlock time averaged 551.94 minutes.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -7258,7 +4384,7 @@
             "time_1": "2021-03-29",
             "time_2": "2021-06-06",
             "value": 551.9403,
-            "fact_description": "From 2021-03-29 to 2021-06-06 (69 days), daily screen use averaged 551.94 minutes.",
+            "fact_description": "From 2021-03-29 to 2021-06-06 (69 days), daily screen unlock time averaged 551.94 minutes.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -7268,7 +4394,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "On 2021-05-26, screen unlock time was 622.83 minutes, rising to 875.34 minutes on 2021-05-27.",
+          "summarySentence": "Screen unlock time rose from 622.83 to 875.34 minutes between 2021-05-26 and 2021-05-27.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -7558,7 +4684,7 @@
             "time_2": "2021-05-27",
             "value_1": 622.831566666667,
             "value_2": 875.34055,
-            "fact_description": "On 2021-05-26, screen unlock time was 622.83 minutes, rising to 875.34 minutes on 2021-05-27.",
+            "fact_description": "Screen unlock time rose from 622.83 to 875.34 minutes between 2021-05-26 and 2021-05-27.",
             "fact_type": "difference"
           },
           "sources": [
@@ -8164,7 +5290,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Alison's sleep is often disrupted, but reading magazines at night helps her rest better.",
+          "summarySentence": "Alison experiences irregular sleep, with late-night phone use disrupting rest, but reading magazines helps.",
           "dataPoints": null,
           "spec": [
             {
@@ -8188,39 +5314,1649 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.2869594662184951
+          "relevance": 0.2980990506279096
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.2933627874759641
+          "relevance": 0.2602331002846705
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.26146253250715906
+          "relevance": 0.23203777727848823
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3438267947264798
+          "relevance": 0.32148516714209696
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.36947515073221193
+          "relevance": 0.3453984534850467
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.367630546263999
+          "relevance": 0.339441042863359
         }
       ]
     },
     {
-      "key": "insight-8",
-      "summaryTitle": "Incremental progress with journaling, walking, and messaging; benefits subtle and not yet sustained.",
+      "key": "insight-3",
+      "summaryTitle": "Elevated and variable stress scores with ongoing financial and relationship worries.",
       "sources": [
+        "session transcript",
         "clinical note",
+        "survey"
+      ],
+      "insightType": [
+        "Emotional State"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "The PSS-4 Score varied moderately (SD = 1.63) from 2021-03-31 to 2021-06-02 (63 days).",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "PSS-4 Score": 10.0
+            },
+            {
+              "date": "2021-04-07",
+              "PSS-4 Score": 10.0
+            },
+            {
+              "date": "2021-04-14",
+              "PSS-4 Score": 11.0
+            },
+            {
+              "date": "2021-04-21",
+              "PSS-4 Score": 13.0
+            },
+            {
+              "date": "2021-04-28",
+              "PSS-4 Score": 13.0
+            },
+            {
+              "date": "2021-05-05",
+              "PSS-4 Score": 12.0
+            },
+            {
+              "date": "2021-05-12",
+              "PSS-4 Score": 15.0
+            },
+            {
+              "date": "2021-05-19",
+              "PSS-4 Score": 14.0
+            },
+            {
+              "date": "2021-05-26",
+              "PSS-4 Score": 14.0
+            },
+            {
+              "date": "2021-06-02",
+              "PSS-4 Score": 13.0
+            }
+          ],
+          "spec": {
+            "name": "PSS-4 Score",
+            "aggregation": "stdev",
+            "time_1": "2021-03-31",
+            "time_2": "2021-06-02",
+            "value": 1.63,
+            "fact_description": "The PSS-4 Score varied moderately (SD = 1.63) from 2021-03-31 to 2021-06-02 (63 days).",
+            "fact_type": "derived value"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "derived value",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "Alison is currently experiencing financial insecurity, fewer work hours, and challenges in her relationship.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Stressors include financial insecurity, reduced work hours, and relationship difficulties with her partner."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "The PSS-4 score increased from 2021-04-28 to 2021-05-12 (14 days), indicating rising stress.",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "PSS-4 Score": 10.0
+            },
+            {
+              "date": "2021-04-07",
+              "PSS-4 Score": 10.0
+            },
+            {
+              "date": "2021-04-14",
+              "PSS-4 Score": 11.0
+            },
+            {
+              "date": "2021-04-21",
+              "PSS-4 Score": 13.0
+            },
+            {
+              "date": "2021-04-28",
+              "PSS-4 Score": 13.0
+            },
+            {
+              "date": "2021-05-05",
+              "PSS-4 Score": 12.0
+            },
+            {
+              "date": "2021-05-12",
+              "PSS-4 Score": 15.0
+            },
+            {
+              "date": "2021-05-19",
+              "PSS-4 Score": 14.0
+            },
+            {
+              "date": "2021-05-26",
+              "PSS-4 Score": 14.0
+            },
+            {
+              "date": "2021-06-02",
+              "PSS-4 Score": 13.0
+            }
+          ],
+          "spec": {
+            "name": "PSS-4 Score",
+            "attribute": "rise",
+            "time_1": "2021-04-28",
+            "time_2": "2021-05-12",
+            "fact_description": "The PSS-4 score increased from 2021-04-28 to 2021-05-12 (14 days), indicating rising stress.",
+            "fact_type": "trend"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "trend",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "From 2021-03-31 to 2021-06-02 (63 days), average PSS-4 Score was 12.5, indicating high perceived stress.",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "PSS-4 Score": 10.0
+            },
+            {
+              "date": "2021-04-07",
+              "PSS-4 Score": 10.0
+            },
+            {
+              "date": "2021-04-14",
+              "PSS-4 Score": 11.0
+            },
+            {
+              "date": "2021-04-21",
+              "PSS-4 Score": 13.0
+            },
+            {
+              "date": "2021-04-28",
+              "PSS-4 Score": 13.0
+            },
+            {
+              "date": "2021-05-05",
+              "PSS-4 Score": 12.0
+            },
+            {
+              "date": "2021-05-12",
+              "PSS-4 Score": 15.0
+            },
+            {
+              "date": "2021-05-19",
+              "PSS-4 Score": 14.0
+            },
+            {
+              "date": "2021-05-26",
+              "PSS-4 Score": 14.0
+            },
+            {
+              "date": "2021-06-02",
+              "PSS-4 Score": 13.0
+            }
+          ],
+          "spec": {
+            "name": "PSS-4 Score",
+            "aggregation": "average",
+            "time_1": "2021-03-31",
+            "time_2": "2021-06-02",
+            "value": 12.5,
+            "fact_description": "From 2021-03-31 to 2021-06-02 (63 days), average PSS-4 Score was 12.5, indicating high perceived stress.",
+            "fact_type": "derived value"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "derived value",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "From 2021-03-31 to 2021-06-02 (63 days), the median PSS-4 score was 13.0, indicating high perceived stress.",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "PSS-4 Score": 10.0
+            },
+            {
+              "date": "2021-04-07",
+              "PSS-4 Score": 10.0
+            },
+            {
+              "date": "2021-04-14",
+              "PSS-4 Score": 11.0
+            },
+            {
+              "date": "2021-04-21",
+              "PSS-4 Score": 13.0
+            },
+            {
+              "date": "2021-04-28",
+              "PSS-4 Score": 13.0
+            },
+            {
+              "date": "2021-05-05",
+              "PSS-4 Score": 12.0
+            },
+            {
+              "date": "2021-05-12",
+              "PSS-4 Score": 15.0
+            },
+            {
+              "date": "2021-05-19",
+              "PSS-4 Score": 14.0
+            },
+            {
+              "date": "2021-05-26",
+              "PSS-4 Score": 14.0
+            },
+            {
+              "date": "2021-06-02",
+              "PSS-4 Score": 13.0
+            }
+          ],
+          "spec": {
+            "name": "PSS-4 Score",
+            "aggregation": "median",
+            "time_1": "2021-03-31",
+            "time_2": "2021-06-02",
+            "value": 13.0,
+            "fact_description": "From 2021-03-31 to 2021-06-02 (63 days), the median PSS-4 score was 13.0, indicating high perceived stress.",
+            "fact_type": "derived value"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "derived value",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "From 2021-03-31 to 2021-06-02 (63 days), the highest PSS-4 score was 15.0, indicating high perceived stress (scale: 0-24, 6-24 = high stress).",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "PSS-4 Score": 10.0
+            },
+            {
+              "date": "2021-04-07",
+              "PSS-4 Score": 10.0
+            },
+            {
+              "date": "2021-04-14",
+              "PSS-4 Score": 11.0
+            },
+            {
+              "date": "2021-04-21",
+              "PSS-4 Score": 13.0
+            },
+            {
+              "date": "2021-04-28",
+              "PSS-4 Score": 13.0
+            },
+            {
+              "date": "2021-05-05",
+              "PSS-4 Score": 12.0
+            },
+            {
+              "date": "2021-05-12",
+              "PSS-4 Score": 15.0
+            },
+            {
+              "date": "2021-05-19",
+              "PSS-4 Score": 14.0
+            },
+            {
+              "date": "2021-05-26",
+              "PSS-4 Score": 14.0
+            },
+            {
+              "date": "2021-06-02",
+              "PSS-4 Score": 13.0
+            }
+          ],
+          "spec": {
+            "name": "PSS-4 Score",
+            "aggregation": "max",
+            "time_1": "2021-03-31",
+            "time_2": "2021-06-02",
+            "value": 15.0,
+            "fact_description": "From 2021-03-31 to 2021-06-02 (63 days), the highest PSS-4 score was 15.0, indicating high perceived stress (scale: 0-24, 6-24 = high stress).",
+            "fact_type": "derived value"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "derived value",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "The PSS-4 Score increased from 13.0 to 15.0 from 2021-04-21 to 2021-05-12 (21 days), indicating high perceived stress throughout this period.",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "PSS-4 Score": 10.0
+            },
+            {
+              "date": "2021-04-07",
+              "PSS-4 Score": 10.0
+            },
+            {
+              "date": "2021-04-14",
+              "PSS-4 Score": 11.0
+            },
+            {
+              "date": "2021-04-21",
+              "PSS-4 Score": 13.0
+            },
+            {
+              "date": "2021-04-28",
+              "PSS-4 Score": 13.0
+            },
+            {
+              "date": "2021-05-05",
+              "PSS-4 Score": 12.0
+            },
+            {
+              "date": "2021-05-12",
+              "PSS-4 Score": 15.0
+            },
+            {
+              "date": "2021-05-19",
+              "PSS-4 Score": 14.0
+            },
+            {
+              "date": "2021-05-26",
+              "PSS-4 Score": 14.0
+            },
+            {
+              "date": "2021-06-02",
+              "PSS-4 Score": 13.0
+            }
+          ],
+          "spec": {
+            "name": "PSS-4 Score",
+            "attribute": "more",
+            "time_1": "2021-04-21",
+            "time_2": "2021-05-12",
+            "value_1": 13.0,
+            "value_2": 15.0,
+            "fact_description": "The PSS-4 Score increased from 13.0 to 15.0 from 2021-04-21 to 2021-05-12 (21 days), indicating high perceived stress throughout this period.",
+            "fact_type": "difference"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "difference",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "Alison continues to feel anxious about her finances and doubts improvement in her situation.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "She expresses ongoing worries about finances and the possibility that her current state may not improve."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "The patient continues to feel concerned about finances and uncertain about future improvement.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: Just worried about money, if the hours get cut again. And what if this is as good as it gets?"
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.3171492976995301
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.3166775086155244
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.31704144240717974
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.4332152865208496
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.4710601033594362
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.476628941694472
+        }
+      ]
+    },
+    {
+      "key": "insight-4",
+      "summaryTitle": "Guilt and low motivation after missing a work shift.",
+      "sources": [
+        "session transcript",
+        "clinical note"
+      ],
+      "insightType": [
+        "Emotional State",
+        "Social Interaction"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "Alison reports feeling guilty about not engaging with her children and work, and recently missed a work shift because of low motivation.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Alison continues to feel guilty about her perceived lack of engagement with her children and work, having missed a shift due to low motivation."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "The patient feels reluctant to share work difficulties, worried colleagues may doubt her abilities.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: Maybe. I don’t want anyone thinking I can’t do my job, though. But I might say I’m having a hard time at home."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "On one occasion, the patient called in sick to work due to difficulty getting out of bed, resulting in feelings of guilt.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: The supermarket is still chaos. More people had their hours cut. I ended up missing a shift because I just couldn’t get out of bed. I called in sick, but now I feel guilty."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "A few coworkers reached out about her missed shift, but her manager did not check in.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: A couple of the ladies texted, just to say sorry about the shifts. The manager just noted it down, didn’t really ask."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.2192550988875896
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.24904042382104688
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.23135055027816892
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.3471971867660285
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.3239780622134226
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.3414414692998577
+        }
+      ]
+    },
+    {
+      "key": "insight-5",
+      "summaryTitle": "Sister provides regular support; partner engagement remains distant.",
+      "sources": [
+        "session transcript",
         "passive sensing",
-        "session transcript"
+        "clinical note"
+      ],
+      "insightType": [
+        "Social Interaction",
+        "Emotional State"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "The average number of incoming calls increased from 0.94 to 1.65 per day from 2021-04-19 to 2021-05-30 (41 days).",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-03-30",
+              "Incoming Call Count": 4.0
+            },
+            {
+              "date": "2021-03-31",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-01",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-02",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-03",
+              "Incoming Call Count": null
+            },
+            {
+              "date": "2021-04-04",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-05",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-06",
+              "Incoming Call Count": 2.0
+            },
+            {
+              "date": "2021-04-07",
+              "Incoming Call Count": null
+            },
+            {
+              "date": "2021-04-08",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-09",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-10",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-11",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-12",
+              "Incoming Call Count": 5.0
+            },
+            {
+              "date": "2021-04-13",
+              "Incoming Call Count": 2.0
+            },
+            {
+              "date": "2021-04-14",
+              "Incoming Call Count": 3.0
+            },
+            {
+              "date": "2021-04-15",
+              "Incoming Call Count": null
+            },
+            {
+              "date": "2021-04-16",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-17",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-18",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-19",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-20",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-21",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-22",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-23",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-24",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-25",
+              "Incoming Call Count": null
+            },
+            {
+              "date": "2021-04-26",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-27",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-28",
+              "Incoming Call Count": 4.0
+            },
+            {
+              "date": "2021-04-29",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-30",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-05-01",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-02",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-03",
+              "Incoming Call Count": 5.0
+            },
+            {
+              "date": "2021-05-04",
+              "Incoming Call Count": null
+            },
+            {
+              "date": "2021-05-05",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-06",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-07",
+              "Incoming Call Count": null
+            },
+            {
+              "date": "2021-05-08",
+              "Incoming Call Count": 2.0
+            },
+            {
+              "date": "2021-05-09",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-05-10",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-11",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-05-12",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-13",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-05-14",
+              "Incoming Call Count": null
+            },
+            {
+              "date": "2021-05-15",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-16",
+              "Incoming Call Count": 2.0
+            },
+            {
+              "date": "2021-05-17",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-05-18",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-05-19",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-20",
+              "Incoming Call Count": 2.0
+            },
+            {
+              "date": "2021-05-21",
+              "Incoming Call Count": 2.0
+            },
+            {
+              "date": "2021-05-22",
+              "Incoming Call Count": 4.0
+            },
+            {
+              "date": "2021-05-23",
+              "Incoming Call Count": 3.0
+            },
+            {
+              "date": "2021-05-24",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-25",
+              "Incoming Call Count": 5.0
+            },
+            {
+              "date": "2021-05-26",
+              "Incoming Call Count": 4.0
+            },
+            {
+              "date": "2021-05-27",
+              "Incoming Call Count": 2.0
+            },
+            {
+              "date": "2021-05-28",
+              "Incoming Call Count": 3.0
+            },
+            {
+              "date": "2021-05-29",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-05-30",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-05-31",
+              "Incoming Call Count": 3.0
+            },
+            {
+              "date": "2021-06-01",
+              "Incoming Call Count": 3.0
+            },
+            {
+              "date": "2021-06-02",
+              "Incoming Call Count": 4.0
+            },
+            {
+              "date": "2021-06-03",
+              "Incoming Call Count": 6.0
+            },
+            {
+              "date": "2021-06-04",
+              "Incoming Call Count": 2.0
+            },
+            {
+              "date": "2021-06-05",
+              "Incoming Call Count": 3.0
+            },
+            {
+              "date": "2021-06-06",
+              "Incoming Call Count": 2.0
+            }
+          ],
+          "spec": {
+            "name": "Incoming Call Count",
+            "attribute": "more",
+            "aggregation": "average",
+            "time_dur_1": {
+              "time_start": "2021-04-19",
+              "time_end": "2021-05-09"
+            },
+            "time_dur_2": {
+              "time_start": "2021-05-10",
+              "time_end": "2021-05-30"
+            },
+            "value_dur_1": 0.9444444444444444,
+            "value_dur_2": 1.65,
+            "fact_description": "The average number of incoming calls increased from 0.94 to 1.65 per day from 2021-04-19 to 2021-05-30 (41 days).",
+            "fact_type": "comparison"
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "comparison",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "She finds comfort in frequent visits and phone calls with her supportive sister.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Alison identifies her sister as a key support, with regular visits and phone calls providing some comfort."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "She stays in touch with family and friends, but her work involvement remains minimal.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Social: Maintains some contact with family and friends; limited engagement at work."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "She reports feeling lonely yet somewhat relieved due to her partner's distant presence.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "She describes her relationship with her partner, Dave, as distant, and feels both lonely and somewhat relieved by his absence."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "The patient's sister visited twice, brought food, watched TV, and called most nights.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: She came round twice, brought some stew over. We watched some TV together. We talk on the phone most nights, even if just for a few minutes."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "The patient experiences loneliness but also some relief from not having to hide her feelings from Dave.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: A bit of both. I miss when things felt easy between us. But sometimes it’s easier not to have to pretend I’m okay."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "The patient has not discussed her feelings further with Dave, who remains distant and communicates mainly by text.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: Not really. I thought about what we talked about last time, but I sort of chickened out. He’s been quiet too. Sent a few texts but doesn’t come by much lately."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "During the session, the patient shared feelings about being distant from Dave, which brought some relief.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: Okay. Um… 'Sorry I’ve been distant. It’s nothing you’ve done, I just feel really low and it’s hard to talk about it. I don’t want to make you worry or feel like I’m pushing you away.'\nClinician: That’s very heartfelt and honest, Alison. How did it feel saying those words out loud?\nPatient: Weird, but kind of a relief, even if it’s just to you."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "From 2021-03-29 to 2021-06-06 (69 days), the average daily outgoing call count was 2.52.",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Outgoing Call Count": 2.0
+            },
+            {
+              "date": "2021-03-30",
+              "Outgoing Call Count": 4.0
+            },
+            {
+              "date": "2021-03-31",
+              "Outgoing Call Count": 3.0
+            },
+            {
+              "date": "2021-04-01",
+              "Outgoing Call Count": 2.0
+            },
+            {
+              "date": "2021-04-02",
+              "Outgoing Call Count": 0.0
+            },
+            {
+              "date": "2021-04-03",
+              "Outgoing Call Count": null
+            },
+            {
+              "date": "2021-04-04",
+              "Outgoing Call Count": 2.0
+            },
+            {
+              "date": "2021-04-05",
+              "Outgoing Call Count": 4.0
+            },
+            {
+              "date": "2021-04-06",
+              "Outgoing Call Count": 5.0
+            },
+            {
+              "date": "2021-04-07",
+              "Outgoing Call Count": null
+            },
+            {
+              "date": "2021-04-08",
+              "Outgoing Call Count": 1.0
+            },
+            {
+              "date": "2021-04-09",
+              "Outgoing Call Count": 4.0
+            },
+            {
+              "date": "2021-04-10",
+              "Outgoing Call Count": 1.0
+            },
+            {
+              "date": "2021-04-11",
+              "Outgoing Call Count": 5.0
+            },
+            {
+              "date": "2021-04-12",
+              "Outgoing Call Count": 6.0
+            },
+            {
+              "date": "2021-04-13",
+              "Outgoing Call Count": 0.0
+            },
+            {
+              "date": "2021-04-14",
+              "Outgoing Call Count": 4.0
+            },
+            {
+              "date": "2021-04-15",
+              "Outgoing Call Count": null
+            },
+            {
+              "date": "2021-04-16",
+              "Outgoing Call Count": 2.0
+            },
+            {
+              "date": "2021-04-17",
+              "Outgoing Call Count": 3.0
+            },
+            {
+              "date": "2021-04-18",
+              "Outgoing Call Count": 7.0
+            },
+            {
+              "date": "2021-04-19",
+              "Outgoing Call Count": 6.0
+            },
+            {
+              "date": "2021-04-20",
+              "Outgoing Call Count": 1.0
+            },
+            {
+              "date": "2021-04-21",
+              "Outgoing Call Count": 1.0
+            },
+            {
+              "date": "2021-04-22",
+              "Outgoing Call Count": 2.0
+            },
+            {
+              "date": "2021-04-23",
+              "Outgoing Call Count": 2.0
+            },
+            {
+              "date": "2021-04-24",
+              "Outgoing Call Count": 1.0
+            },
+            {
+              "date": "2021-04-25",
+              "Outgoing Call Count": null
+            },
+            {
+              "date": "2021-04-26",
+              "Outgoing Call Count": 0.0
+            },
+            {
+              "date": "2021-04-27",
+              "Outgoing Call Count": 2.0
+            },
+            {
+              "date": "2021-04-28",
+              "Outgoing Call Count": 3.0
+            },
+            {
+              "date": "2021-04-29",
+              "Outgoing Call Count": 1.0
+            },
+            {
+              "date": "2021-04-30",
+              "Outgoing Call Count": 1.0
+            },
+            {
+              "date": "2021-05-01",
+              "Outgoing Call Count": 1.0
+            },
+            {
+              "date": "2021-05-02",
+              "Outgoing Call Count": 1.0
+            },
+            {
+              "date": "2021-05-03",
+              "Outgoing Call Count": 4.0
+            },
+            {
+              "date": "2021-05-04",
+              "Outgoing Call Count": null
+            },
+            {
+              "date": "2021-05-05",
+              "Outgoing Call Count": 2.0
+            },
+            {
+              "date": "2021-05-06",
+              "Outgoing Call Count": 1.0
+            },
+            {
+              "date": "2021-05-07",
+              "Outgoing Call Count": null
+            },
+            {
+              "date": "2021-05-08",
+              "Outgoing Call Count": 0.0
+            },
+            {
+              "date": "2021-05-09",
+              "Outgoing Call Count": 1.0
+            },
+            {
+              "date": "2021-05-10",
+              "Outgoing Call Count": 1.0
+            },
+            {
+              "date": "2021-05-11",
+              "Outgoing Call Count": 0.0
+            },
+            {
+              "date": "2021-05-12",
+              "Outgoing Call Count": 2.0
+            },
+            {
+              "date": "2021-05-13",
+              "Outgoing Call Count": 1.0
+            },
+            {
+              "date": "2021-05-14",
+              "Outgoing Call Count": null
+            },
+            {
+              "date": "2021-05-15",
+              "Outgoing Call Count": 0.0
+            },
+            {
+              "date": "2021-05-16",
+              "Outgoing Call Count": 1.0
+            },
+            {
+              "date": "2021-05-17",
+              "Outgoing Call Count": 0.0
+            },
+            {
+              "date": "2021-05-18",
+              "Outgoing Call Count": 2.0
+            },
+            {
+              "date": "2021-05-19",
+              "Outgoing Call Count": 3.0
+            },
+            {
+              "date": "2021-05-20",
+              "Outgoing Call Count": 0.0
+            },
+            {
+              "date": "2021-05-21",
+              "Outgoing Call Count": 2.0
+            },
+            {
+              "date": "2021-05-22",
+              "Outgoing Call Count": 2.0
+            },
+            {
+              "date": "2021-05-23",
+              "Outgoing Call Count": 2.0
+            },
+            {
+              "date": "2021-05-24",
+              "Outgoing Call Count": 1.0
+            },
+            {
+              "date": "2021-05-25",
+              "Outgoing Call Count": 8.0
+            },
+            {
+              "date": "2021-05-26",
+              "Outgoing Call Count": 2.0
+            },
+            {
+              "date": "2021-05-27",
+              "Outgoing Call Count": 5.0
+            },
+            {
+              "date": "2021-05-28",
+              "Outgoing Call Count": 4.0
+            },
+            {
+              "date": "2021-05-29",
+              "Outgoing Call Count": 4.0
+            },
+            {
+              "date": "2021-05-30",
+              "Outgoing Call Count": 2.0
+            },
+            {
+              "date": "2021-05-31",
+              "Outgoing Call Count": 2.0
+            },
+            {
+              "date": "2021-06-01",
+              "Outgoing Call Count": 6.0
+            },
+            {
+              "date": "2021-06-02",
+              "Outgoing Call Count": 6.0
+            },
+            {
+              "date": "2021-06-03",
+              "Outgoing Call Count": 10.0
+            },
+            {
+              "date": "2021-06-04",
+              "Outgoing Call Count": 3.0
+            },
+            {
+              "date": "2021-06-05",
+              "Outgoing Call Count": 1.0
+            },
+            {
+              "date": "2021-06-06",
+              "Outgoing Call Count": 4.0
+            }
+          ],
+          "spec": {
+            "name": "Outgoing Call Count",
+            "aggregation": "average",
+            "time_1": "2021-03-29",
+            "time_2": "2021-06-06",
+            "value": 2.52,
+            "fact_description": "From 2021-03-29 to 2021-06-06 (69 days), the average daily outgoing call count was 2.52.",
+            "fact_type": "derived value"
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "derived value",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "From 2021-05-10 to 2021-05-30 (20 days), the average daily incoming calls was 1.65.",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-03-30",
+              "Incoming Call Count": 4.0
+            },
+            {
+              "date": "2021-03-31",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-01",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-02",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-03",
+              "Incoming Call Count": null
+            },
+            {
+              "date": "2021-04-04",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-05",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-06",
+              "Incoming Call Count": 2.0
+            },
+            {
+              "date": "2021-04-07",
+              "Incoming Call Count": null
+            },
+            {
+              "date": "2021-04-08",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-09",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-10",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-11",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-12",
+              "Incoming Call Count": 5.0
+            },
+            {
+              "date": "2021-04-13",
+              "Incoming Call Count": 2.0
+            },
+            {
+              "date": "2021-04-14",
+              "Incoming Call Count": 3.0
+            },
+            {
+              "date": "2021-04-15",
+              "Incoming Call Count": null
+            },
+            {
+              "date": "2021-04-16",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-17",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-18",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-19",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-20",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-21",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-22",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-23",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-24",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-25",
+              "Incoming Call Count": null
+            },
+            {
+              "date": "2021-04-26",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-27",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-04-28",
+              "Incoming Call Count": 4.0
+            },
+            {
+              "date": "2021-04-29",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-04-30",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-05-01",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-02",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-03",
+              "Incoming Call Count": 5.0
+            },
+            {
+              "date": "2021-05-04",
+              "Incoming Call Count": null
+            },
+            {
+              "date": "2021-05-05",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-06",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-07",
+              "Incoming Call Count": null
+            },
+            {
+              "date": "2021-05-08",
+              "Incoming Call Count": 2.0
+            },
+            {
+              "date": "2021-05-09",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-05-10",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-11",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-05-12",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-13",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-05-14",
+              "Incoming Call Count": null
+            },
+            {
+              "date": "2021-05-15",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-16",
+              "Incoming Call Count": 2.0
+            },
+            {
+              "date": "2021-05-17",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-05-18",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-05-19",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-20",
+              "Incoming Call Count": 2.0
+            },
+            {
+              "date": "2021-05-21",
+              "Incoming Call Count": 2.0
+            },
+            {
+              "date": "2021-05-22",
+              "Incoming Call Count": 4.0
+            },
+            {
+              "date": "2021-05-23",
+              "Incoming Call Count": 3.0
+            },
+            {
+              "date": "2021-05-24",
+              "Incoming Call Count": 0.0
+            },
+            {
+              "date": "2021-05-25",
+              "Incoming Call Count": 5.0
+            },
+            {
+              "date": "2021-05-26",
+              "Incoming Call Count": 4.0
+            },
+            {
+              "date": "2021-05-27",
+              "Incoming Call Count": 2.0
+            },
+            {
+              "date": "2021-05-28",
+              "Incoming Call Count": 3.0
+            },
+            {
+              "date": "2021-05-29",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-05-30",
+              "Incoming Call Count": 1.0
+            },
+            {
+              "date": "2021-05-31",
+              "Incoming Call Count": 3.0
+            },
+            {
+              "date": "2021-06-01",
+              "Incoming Call Count": 3.0
+            },
+            {
+              "date": "2021-06-02",
+              "Incoming Call Count": 4.0
+            },
+            {
+              "date": "2021-06-03",
+              "Incoming Call Count": 6.0
+            },
+            {
+              "date": "2021-06-04",
+              "Incoming Call Count": 2.0
+            },
+            {
+              "date": "2021-06-05",
+              "Incoming Call Count": 3.0
+            },
+            {
+              "date": "2021-06-06",
+              "Incoming Call Count": 2.0
+            }
+          ],
+          "spec": {
+            "name": "Incoming Call Count",
+            "aggregation": "average",
+            "time_1": "2021-05-10",
+            "time_2": "2021-05-30",
+            "value": 1.65,
+            "fact_description": "From 2021-05-10 to 2021-05-30 (20 days), the average daily incoming calls was 1.65.",
+            "fact_type": "derived value"
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "derived value",
+          "isShowL2": false
+        }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.16831298119274812
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.27125666565131606
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.3136758654956805
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.3609967762730997
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.42120599553026217
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.4814737052256784
+        }
+      ]
+    },
+    {
+      "key": "insight-6",
+      "summaryTitle": "Incremental progress with journaling, walking, and social outreach.",
+      "sources": [
+        "session transcript",
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "Physical Activity",
@@ -8228,7 +6964,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Average daily steps increased from 2,005.38 to 5,936.87 from 2021-05-01 to 2021-05-31.",
+          "summarySentence": "Average daily steps increased from 2,005.38 to 5,936.87 from 2021-05-01 to 2021-05-31 (30 days).",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -8525,7 +7261,7 @@
             },
             "value_dur_1": 2005.38,
             "value_dur_2": 5936.87,
-            "fact_description": "Average daily steps increased from 2,005.38 to 5,936.87 from 2021-05-01 to 2021-05-31.",
+            "fact_description": "Average daily steps increased from 2,005.38 to 5,936.87 from 2021-05-01 to 2021-05-31 (30 days).",
             "fact_type": "comparison"
           },
           "sources": [
@@ -8551,7 +7287,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The patient noted one positive thing most days and walked outside twice last week.",
+          "summarySentence": "The patient noted one positive thing most days and walked outside twice in the past week.",
           "dataPoints": null,
           "spec": [
             {
@@ -8615,7 +7351,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Total steps increased from 2021-05-15 to 2021-05-31 (16 days).",
+          "summarySentence": "From 2021-05-15 to 2021-05-31 (16 days), total daily steps increased.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -8903,7 +7639,7 @@
             "attribute": "rise",
             "time_1": "2021-05-15",
             "time_2": "2021-05-31",
-            "fact_description": "Total steps increased from 2021-05-15 to 2021-05-31 (16 days).",
+            "fact_description": "From 2021-05-15 to 2021-05-31 (16 days), total daily steps increased.",
             "fact_type": "trend"
           },
           "sources": [
@@ -8916,35 +7652,35 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.2238748578643991
+          "relevance": 0.19280502882426634
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.316365085927893
+          "relevance": 0.3332564846328464
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3111359785621474
+          "relevance": 0.31117309457720155
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.30250940732201126
+          "relevance": 0.301898231748093
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3672224751587708
+          "relevance": 0.3821460514875701
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.433068055586265
+          "relevance": 0.43578772270629335
         }
       ]
     },
     {
-      "key": "insight-9",
-      "summaryTitle": "Increased time in green and exercise spaces; slight improvement in mood reported after walking.",
+      "key": "insight-7",
+      "summaryTitle": "Increased time in green and exercise spaces observed.",
       "sources": [
         "session transcript",
         "passive sensing"
@@ -8955,7 +7691,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Maximum time spent in green spaces increased from 0 minutes to 69.99 minutes from 2021-03-29 to 2021-06-06 (69 days).",
+          "summarySentence": "Maximum time spent in green spaces increased from 0 minutes to 69.99 minutes from 2021-03-29 to 2021-06-06.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -9252,7 +7988,7 @@
             },
             "value_dur_1": 0.0,
             "value_dur_2": 69.99,
-            "fact_description": "Maximum time spent in green spaces increased from 0 minutes to 69.99 minutes from 2021-03-29 to 2021-06-06 (69 days).",
+            "fact_description": "Maximum time spent in green spaces increased from 0 minutes to 69.99 minutes from 2021-03-29 to 2021-06-06.",
             "fact_type": "comparison"
           },
           "sources": [
@@ -9262,7 +7998,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "On 2021-05-28, total steps were 9,090, increasing to 17,570 steps on 2021-05-29.",
+          "summarySentence": "On 2021-05-28, total steps were 9,090, increasing to 17,570 on 2021-05-29.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -9552,7 +8288,7 @@
             "time_2": "2021-05-29",
             "value_1": 9090.0,
             "value_2": 17570.0,
-            "fact_description": "On 2021-05-28, total steps were 9,090, increasing to 17,570 steps on 2021-05-29.",
+            "fact_description": "On 2021-05-28, total steps were 9,090, increasing to 17,570 on 2021-05-29.",
             "fact_type": "difference"
           },
           "sources": [
@@ -9578,7 +8314,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "On 2021-05-29, time spent in exercise spaces peaked at 70.998 minutes, a high value.",
+          "summarySentence": "On 2021-05-29, time spent in exercise spaces peaked at 70.998 minutes, a notably high duration.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -9866,7 +8602,7 @@
             "attribute": "max",
             "time": "2021-05-29",
             "value": 70.9979833333333,
-            "fact_description": "On 2021-05-29, time spent in exercise spaces peaked at 70.998 minutes, a high value.",
+            "fact_description": "On 2021-05-29, time spent in exercise spaces peaked at 70.998 minutes, a notably high duration.",
             "fact_type": "extreme"
           },
           "sources": [
@@ -9876,7 +8612,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Time spent in exercise spaces dropped from 70.998 minutes on 2021-05-29 to none on 2021-05-30.",
+          "summarySentence": "On 2021-05-29, spent about 71 minutes exercising; on 2021-05-30, no exercise time recorded.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -10166,7 +8902,7 @@
             "time_2": "2021-05-30",
             "value_1": 70.9979833333333,
             "value_2": 0.0,
-            "fact_description": "Time spent in exercise spaces dropped from 70.998 minutes on 2021-05-29 to none on 2021-05-30.",
+            "fact_description": "On 2021-05-29, spent about 71 minutes exercising; on 2021-05-30, no exercise time recorded.",
             "fact_type": "difference"
           },
           "sources": [
@@ -10176,7 +8912,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Time spent in exercise spaces rose from 0.0 minutes on 2021-05-30 to 27.0 minutes on 2021-05-31.",
+          "summarySentence": "Time spent in exercise spaces rose from 0.0 minutes to 27.0 minutes between 2021-05-30 and 2021-05-31.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -10466,7 +9202,7 @@
             "time_2": "2021-05-31",
             "value_1": 0.0,
             "value_2": 26.9985166666667,
-            "fact_description": "Time spent in exercise spaces rose from 0.0 minutes on 2021-05-30 to 27.0 minutes on 2021-05-31.",
+            "fact_description": "Time spent in exercise spaces rose from 0.0 minutes to 27.0 minutes between 2021-05-30 and 2021-05-31.",
             "fact_type": "difference"
           },
           "sources": [
@@ -10476,7 +9212,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "On 2021-06-04, time spent in green spaces peaked at 62.00 minutes.",
+          "summarySentence": "On 2021-06-04, time spent in green spaces peaked at 62.00 minutes, a recent high.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -10764,7 +9500,7 @@
             "attribute": "max",
             "time": "2021-06-04",
             "value": 61.9994833333333,
-            "fact_description": "On 2021-06-04, time spent in green spaces peaked at 62.00 minutes.",
+            "fact_description": "On 2021-06-04, time spent in green spaces peaked at 62.00 minutes, a recent high.",
             "fact_type": "extreme"
           },
           "sources": [
@@ -11074,7 +9810,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The patient noted one positive thing most days and walked outside twice last week.",
+          "summarySentence": "The patient noted one positive thing most days and walked outside twice in the past week.",
           "dataPoints": null,
           "spec": [
             {
@@ -11093,24 +9829,781 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.2889361530707205
+          "relevance": 0.18766564885779555
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3484861100678357
+          "relevance": 0.22828273758209178
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3142801602642351
+          "relevance": 0.18792371055252974
+        }
+      ]
+    },
+    {
+      "key": "insight-8",
+      "summaryTitle": "Positive affect is low and fluctuates, with brief improvements during family interactions.",
+      "sources": [
+        "session transcript",
+        "survey"
+      ],
+      "insightType": [
+        "Emotional State"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "From 2021-03-31 to 2021-06-06 (67 days), average Positive Affect Score was 5.2.",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-04",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-04-07",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-11",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-04-14",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-04-18",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-21",
+              "Positive Affect Score": 6.0
+            },
+            {
+              "date": "2021-04-25",
+              "Positive Affect Score": 10.0
+            },
+            {
+              "date": "2021-04-28",
+              "Positive Affect Score": 7.0
+            },
+            {
+              "date": "2021-05-02",
+              "Positive Affect Score": 12.0
+            },
+            {
+              "date": "2021-05-05",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-09",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-12",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-05-16",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-19",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-05-24",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-05-26",
+              "Positive Affect Score": 10.0
+            },
+            {
+              "date": "2021-05-30",
+              "Positive Affect Score": 7.0
+            },
+            {
+              "date": "2021-06-02",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-06-06",
+              "Positive Affect Score": 6.0
+            }
+          ],
+          "spec": {
+            "name": "Positive Affect Score",
+            "aggregation": "average",
+            "time_1": "2021-03-31",
+            "time_2": "2021-06-06",
+            "value": 5.2,
+            "fact_description": "From 2021-03-31 to 2021-06-06 (67 days), average Positive Affect Score was 5.2.",
+            "fact_type": "derived value"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "derived value",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "From 2021-03-31 to 2021-06-06 (67 days), Positive Affect Score varied by 2.75 points.",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-04",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-04-07",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-11",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-04-14",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-04-18",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-21",
+              "Positive Affect Score": 6.0
+            },
+            {
+              "date": "2021-04-25",
+              "Positive Affect Score": 10.0
+            },
+            {
+              "date": "2021-04-28",
+              "Positive Affect Score": 7.0
+            },
+            {
+              "date": "2021-05-02",
+              "Positive Affect Score": 12.0
+            },
+            {
+              "date": "2021-05-05",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-09",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-12",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-05-16",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-19",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-05-24",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-05-26",
+              "Positive Affect Score": 10.0
+            },
+            {
+              "date": "2021-05-30",
+              "Positive Affect Score": 7.0
+            },
+            {
+              "date": "2021-06-02",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-06-06",
+              "Positive Affect Score": 6.0
+            }
+          ],
+          "spec": {
+            "name": "Positive Affect Score",
+            "aggregation": "stdev",
+            "time_1": "2021-03-31",
+            "time_2": "2021-06-06",
+            "value": 2.749545416973504,
+            "fact_description": "From 2021-03-31 to 2021-06-06 (67 days), Positive Affect Score varied by 2.75 points.",
+            "fact_type": "derived value"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "derived value",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "Small acts of kindness from her children temporarily improved her mood.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: Yes. It feels like I’m not totally failing—even if it only helps for a minute."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "Spending time with her sister often lifts her mood, but she sometimes cries afterward.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: Usually a little lighter. She jokes around a lot, tries to make me laugh. Sometimes I cry after she leaves, but it’s not a bad cry."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "The highest Positive Affect Score was 12.0 from 2021-03-31 to 2021-06-06 (67 days).",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-04",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-04-07",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-11",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-04-14",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-04-18",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-21",
+              "Positive Affect Score": 6.0
+            },
+            {
+              "date": "2021-04-25",
+              "Positive Affect Score": 10.0
+            },
+            {
+              "date": "2021-04-28",
+              "Positive Affect Score": 7.0
+            },
+            {
+              "date": "2021-05-02",
+              "Positive Affect Score": 12.0
+            },
+            {
+              "date": "2021-05-05",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-09",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-12",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-05-16",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-19",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-05-24",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-05-26",
+              "Positive Affect Score": 10.0
+            },
+            {
+              "date": "2021-05-30",
+              "Positive Affect Score": 7.0
+            },
+            {
+              "date": "2021-06-02",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-06-06",
+              "Positive Affect Score": 6.0
+            }
+          ],
+          "spec": {
+            "name": "Positive Affect Score",
+            "aggregation": "max",
+            "time_1": "2021-03-31",
+            "time_2": "2021-06-06",
+            "value": 12.0,
+            "fact_description": "The highest Positive Affect Score was 12.0 from 2021-03-31 to 2021-06-06 (67 days).",
+            "fact_type": "derived value"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "derived value",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "On 2021-05-12, the Positive Affect Score was at its lowest, measuring 2.0.",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-04",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-04-07",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-11",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-04-14",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-04-18",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-21",
+              "Positive Affect Score": 6.0
+            },
+            {
+              "date": "2021-04-25",
+              "Positive Affect Score": 10.0
+            },
+            {
+              "date": "2021-04-28",
+              "Positive Affect Score": 7.0
+            },
+            {
+              "date": "2021-05-02",
+              "Positive Affect Score": 12.0
+            },
+            {
+              "date": "2021-05-05",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-09",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-12",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-05-16",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-19",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-05-24",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-05-26",
+              "Positive Affect Score": 10.0
+            },
+            {
+              "date": "2021-05-30",
+              "Positive Affect Score": 7.0
+            },
+            {
+              "date": "2021-06-02",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-06-06",
+              "Positive Affect Score": 6.0
+            }
+          ],
+          "spec": {
+            "name": "Positive Affect Score",
+            "attribute": "min",
+            "time": "2021-05-12",
+            "value": 2.0,
+            "fact_description": "On 2021-05-12, the Positive Affect Score was at its lowest, measuring 2.0.",
+            "fact_type": "extreme"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "extreme",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "On 2021-05-19, the Positive Affect Score was at its lowest recorded value of 2.0.",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-04",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-04-07",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-11",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-04-14",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-04-18",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-21",
+              "Positive Affect Score": 6.0
+            },
+            {
+              "date": "2021-04-25",
+              "Positive Affect Score": 10.0
+            },
+            {
+              "date": "2021-04-28",
+              "Positive Affect Score": 7.0
+            },
+            {
+              "date": "2021-05-02",
+              "Positive Affect Score": 12.0
+            },
+            {
+              "date": "2021-05-05",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-09",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-12",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-05-16",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-19",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-05-24",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-05-26",
+              "Positive Affect Score": 10.0
+            },
+            {
+              "date": "2021-05-30",
+              "Positive Affect Score": 7.0
+            },
+            {
+              "date": "2021-06-02",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-06-06",
+              "Positive Affect Score": 6.0
+            }
+          ],
+          "spec": {
+            "name": "Positive Affect Score",
+            "attribute": "min",
+            "time": "2021-05-19",
+            "value": 2.0,
+            "fact_description": "On 2021-05-19, the Positive Affect Score was at its lowest recorded value of 2.0.",
+            "fact_type": "extreme"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "extreme",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "From 2021-03-31 to 2021-06-06 (67 days), the median Positive Affect Score was 4.5.",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-04",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-04-07",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-11",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-04-14",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-04-18",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-04-21",
+              "Positive Affect Score": 6.0
+            },
+            {
+              "date": "2021-04-25",
+              "Positive Affect Score": 10.0
+            },
+            {
+              "date": "2021-04-28",
+              "Positive Affect Score": 7.0
+            },
+            {
+              "date": "2021-05-02",
+              "Positive Affect Score": 12.0
+            },
+            {
+              "date": "2021-05-05",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-09",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-12",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-05-16",
+              "Positive Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-19",
+              "Positive Affect Score": 2.0
+            },
+            {
+              "date": "2021-05-24",
+              "Positive Affect Score": 5.0
+            },
+            {
+              "date": "2021-05-26",
+              "Positive Affect Score": 10.0
+            },
+            {
+              "date": "2021-05-30",
+              "Positive Affect Score": 7.0
+            },
+            {
+              "date": "2021-06-02",
+              "Positive Affect Score": 4.0
+            },
+            {
+              "date": "2021-06-06",
+              "Positive Affect Score": 6.0
+            }
+          ],
+          "spec": {
+            "name": "Positive Affect Score",
+            "aggregation": "median",
+            "time_1": "2021-03-31",
+            "time_2": "2021-06-06",
+            "value": 4.5,
+            "fact_description": "From 2021-03-31 to 2021-06-06 (67 days), the median Positive Affect Score was 4.5.",
+            "fact_type": "derived value"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "derived value",
+          "isShowL2": false
+        }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.27096405982714983
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.26977731752790235
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.2768950369198109
+        }
+      ]
+    },
+    {
+      "key": "insight-9",
+      "summaryTitle": "No evidence of psychosis or suicidal ideation; strong family support present.",
+      "sources": [
+        "session transcript",
+        "clinical note"
+      ],
+      "insightType": [
+        "Emotional State",
+        "Social Interaction"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "Alison benefits from family support, therapy engagement, and no current suicidal thoughts.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Protective factors include strong support from her sister and children, willingness to engage in therapy, and absence of suicidal ideation."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "The patient has agreed to reach out to her sister or clinician if distress returns.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: I think so. My sister keeps saying I should call if I ever feel really bad again, day or night. I promised her I would."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "There are no signs of psychosis, mania, or current suicidal thoughts.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "No evidence of psychosis, mania, or active suicidal ideation."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "Since 2021-05-08, the patient has not reported self-harm thoughts but feels overwhelmed at times.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: No, not really. I get overwhelmed and wish everything would stop spinning for a while, but haven’t wanted to hurt myself."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.272003333800185
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.30532793091402755
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.33473172269480367
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.47056874115844144
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.4739477771849217
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.502113350973317
         }
       ]
     },
     {
       "key": "insight-10",
-      "summaryTitle": "Willingness to engage in therapy and safety planning identified as protective factors.",
+      "summaryTitle": "Willingness to engage in therapy and safety planning present.",
       "sources": [
-        "clinical note",
-        "session transcript"
+        "session transcript",
+        "clinical note"
       ],
       "insightType": [
         "Medication & Treatment",
@@ -11153,52 +10646,50 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.29549139392947416
+          "relevance": 0.3449272998539938
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3302614568734607
+          "relevance": 0.3571407837892681
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3167443493068575
+          "relevance": 0.33597097367533696
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.4158191303872138
+          "relevance": 0.4564030182578384
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.4449247871133431
+          "relevance": 0.4675493390896522
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.43812691175988466
+          "relevance": 0.4683915394078002
         }
       ]
     },
     {
       "key": "insight-11",
-      "summaryTitle": "No evidence of suicidal ideation or psychosis; strong family support and therapy engagement present.",
+      "summaryTitle": "No medication prescribed; subtle progress with behavioral strategies.",
       "sources": [
-        "clinical note",
-        "session transcript"
+        "clinical note"
       ],
       "insightType": [
-        "Emotional State",
-        "Social Interaction"
+        "Medication & Treatment"
       ],
       "expandView": [
         {
-          "summarySentence": "There are no signs of psychosis, mania, or current suicidal thoughts observed.",
+          "summarySentence": "Alison is not taking any prescribed medications at this time.",
           "dataPoints": null,
           "spec": [
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "No evidence of psychosis, mania, or active suicidal ideation."
+              "text": "No medication currently prescribed."
             }
           ],
           "sources": [
@@ -11208,13 +10699,13 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Alison benefits from family support, therapy engagement, and no current suicidal thoughts.",
+          "summarySentence": "She is gradually engaging in journaling, walking, and social outreach, with subtle, short-lived benefits.",
           "dataPoints": null,
           "spec": [
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Protective factors include strong support from her sister and children, willingness to engage in therapy, and absence of suicidal ideation."
+              "text": "She is making incremental progress with behavioral activation strategies, such as journaling, walking, and reaching out to others, though the benefits are subtle and not yet sustained."
             }
           ],
           "sources": [
@@ -11222,66 +10713,20 @@
           ],
           "dataSourceType": "text",
           "isShowL2": true
-        },
-        {
-          "summarySentence": "The patient has agreed to reach out to her sister or clinician if distress returns.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: I think so. My sister keeps saying I should call if I ever feel really bad again, day or night. I promised her I would."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Since 2021-05-08, the patient has not reported self-harm thoughts but feels overwhelmed at times.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: No, not really. I get overwhelmed and wish everything would stop spinning for a while, but haven’t wanted to hurt myself."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        }
-      ],
-      "transcriptRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.29088286512802936
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.3186858364408198
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.3423079821500957
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.49224215706618996
+          "relevance": 0.47747355899857086
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.5029195989204893
+          "relevance": 0.5114317187333709
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.5335223377434478
+          "relevance": 0.5607899464713197
         }
       ]
     }

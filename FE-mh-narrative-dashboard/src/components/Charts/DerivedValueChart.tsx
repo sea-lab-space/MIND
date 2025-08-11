@@ -85,9 +85,10 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
         <XAxis dataKey="date" tick={{ fontSize: 10 }} />
         <YAxis
           domain={[0, yRangeUse]}
-          minTickGap={tickBreakUnit}
+          minTickGap={0}
           tickCount={yRangeUse / tickBreakUnit}
           scale="linear"
+          type="number"
         />
         <Tooltip />
         <Bar

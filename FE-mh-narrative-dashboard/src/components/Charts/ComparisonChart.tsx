@@ -143,7 +143,13 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
             fillOpacity={HIGHLIGHT_FILL_OPACITY}
           />
           <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-          <YAxis domain={[0, yRangeUse]} minTickGap={tickBreakUnit} tickCount={yRangeUse / tickBreakUnit} scale="linear" />
+          <YAxis
+            domain={[0, yRangeUse]}
+            minTickGap={0}
+            tickCount={yRangeUse / tickBreakUnit}
+            scale="linear"
+            type="number"
+          />
           <Tooltip />
           <Line
             dataKey={metricKey}

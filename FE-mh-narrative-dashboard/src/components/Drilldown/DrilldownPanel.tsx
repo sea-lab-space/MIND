@@ -25,6 +25,10 @@ const DrilldownPanel: React.FC<DrilldownPanelProps> = ({
 }) => {
   const [linkViewsEnabled, setLinkViewsEnabled] = useState(true);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   // const {
   //   passiveSensingFacts = [],
   //   clinicalNotesFacts = [],
@@ -96,7 +100,6 @@ const DrilldownPanel: React.FC<DrilldownPanelProps> = ({
             sources={insightData?.sources.map((source) => source.type)}
           />
           {insightData?.sources.map((source, _) => {
-            console.log(source.type);
             return cardMap[source.type as DatasourceIconType];
           })}
         </div>

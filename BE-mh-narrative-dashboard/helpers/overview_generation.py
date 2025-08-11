@@ -15,10 +15,14 @@ def get_health_system_prompt(length: Literal['minimal', 'short']):
     if length == 'minimal':
         return f"""
         {GENERAL_SUMMARIZATION_SYSTEM} Summarize the patient's medical history into a minimal, comma-connected narrative within 15 words.
+        Separate common medical concern with psychiatric concerns. Your output should look like this:
+        "Medical Concerns: [medical_concerns]; Psychiatric Concerns: [psychiatric_concerns]"
         """
     elif length == 'short':
         return f"""
-        {GENERAL_SUMMARIZATION_SYSTEM} Summarize the patient's medical history into a short, less than 30-word description.
+        {GENERAL_SUMMARIZATION_SYSTEM} Summarize the patient's medical history into a short, less than 45-word description.
+        Separate common medical concern with psychiatric concerns. Your output should look like this:
+        "Medical Concerns: [medical_concerns]; Psychiatric Concerns: [psychiatric_concerns]"
         """
     else:
         raise ValueError("Invalid length")
@@ -34,7 +38,7 @@ def get_mh_system_prompt(length: Literal['minimal', 'short']):
         """
     elif length == 'short':
         return f"""
-        {MENTAL_HEALTH_SYSTEM} Summarize the patient's previous session highlights and major concerns into a short, less than 30-word description.
+        {MENTAL_HEALTH_SYSTEM} Summarize the patient's previous session highlights and major concerns into a short, less than 45-word description.
     """
     else:
         raise ValueError("Invalid length")
@@ -127,7 +131,7 @@ class SummarizationAgent:
         for med in self.data['this_series']:
             if date_before(med['encounter_date'], self.before_date):
                 med_info = med.get('medication', {})
-                for med in medication_history:
+                for med in med_info:
                     medication_history.add(med.get('medication', ''))
         medication_history = list(medication_history)
 

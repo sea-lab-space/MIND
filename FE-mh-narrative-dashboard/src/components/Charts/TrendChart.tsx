@@ -84,9 +84,10 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
         <XAxis dataKey="date" tick={{ fontSize: 10 }} />
         <YAxis
           domain={[0, yRangeUse]}
-          minTickGap={tickBreakUnit}
+          minTickGap={0}
           scale="linear"
           tickCount={yRangeUse / tickBreakUnit}
+          type="number"
         />
         <Tooltip />
         <Line

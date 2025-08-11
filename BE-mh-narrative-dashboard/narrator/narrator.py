@@ -144,22 +144,26 @@ Task:
 
 When rewriting the insights, follow the guidelines:
 * Use the original text if no hallucination is detected.
-* Be concrete, specific, but succinct. Do not use more than 15 words for each data insight.
+* Be concrete, specific, but succinct. Do not use more than 12 words for each data insight.
+* When hard to describe in less than 12 words, pick the most important insight, that is, the one that is most likely to be the most relevant to the patient's condition and/or backed by data facts.
 * Do not explicity mention any date related in the insights.
 * Do not start with "Patient", "He/she" or patient name.
 * Aviod contrasting information. If detected, leave the most significant information. For example, don't say "Physical activity decreased, with brief increases in steps and exercise time", leave one, either "physical activity decreased during <dates>" or "brief increases in steps and excercise time during <dates>".
-* Reference the styles given below. The general style should follow: <observation> + <contrast/effect>
+* Keep only one sentence, and end that sentence with a period.
+* Avoid using semicolons to connect sentences.
+* Reference the styles given below.
 
 Below are some good examples provided by a mental health expert. Mimic the succinct insight description style and learn from the examples.
-* Growing activity despite fatigue
-* Fragmented digital engagement
-* Increased social activity, in a closed circle
-* Transient mood lift after activity; discouragement and self-criticism returning within an hour.
-* Maintains work and therapy attendance; finds routine helpful but exhausting.
-* Sertraline taken daily for 1 week with no side effects; benefit remains unclear.
+* Growing activity despite fatigue.
+* Fragmented digital engagement.
+* Increased social activity, in a closed circle.
 """
 
 # * Contextualize dates and times, e.g., "for 1 week", "for 3 days". For insights on a specific date, do not mention the year.
+# * The general style should follow: <observation> + <contrast/effect>
+# * Transient mood lift after activity; discouragement and self-criticism returning within an hour.
+# * Maintains work and therapy attendance; finds routine helpful but exhausting.
+# * Sertraline taken daily for 1 week with no side effects; benefit remains unclear.
 
 class GuardrailNarratorAgent:
     OUTPUT_MODEL = InsightGuardrailOutputModel
@@ -204,7 +208,7 @@ Requirements:
     * PHQ-4 Anxiety Score (0-4): 0 indicates not at all anxious, 1 indicates anxious for several days, 2 indicates anxious more than half the days, 3 indicates anxious nearly every day.
     * PHQ-4 Depression Score (0-4): 0 indicates not at all depressed, 1 indicates depressed for several days, 2 indicates depressed more than half the days, 3 indicates depressed nearly every day.
     * PSS-4 Score (0-24): 0-6 indicates low perceived stress, 6-24 indicates high perceived stress.
-  * Other values (e.g., sleep duration, steps) are more open-ended, describe the raw value, and provide a general interpretation (low, high).
+  * Other values (e.g., sleep duration, steps) are more open-ended, describe the raw value, and provide a general interpretation (e.g., low, high).
 * For values, if it's clear what units it is using, add the unit to the description.
 * Write the data facts with the style of writing a data story/data-rich document.
 * For each data fact, control the length to be less than 15 words.

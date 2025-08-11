@@ -63,6 +63,6 @@ export const getUpperLimitScale = (yRangeMax: number) => {
 
   return {
     yRangeUse: adjustedMax,
-    tickBreakUnit,
+    tickBreakUnit: tickBreakUnit,
   };
 };

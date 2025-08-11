@@ -23,12 +23,12 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({
         <h1 className="text-xl font-semibold text-[#1e1e1e]">{title}</h1>
       </div>
       <div>
-        <Button variant="outline" size="icon" onClick={onClick}>
-          <X />
+        <Button variant="outline" onClick={onClick}>
+          <X /> Close Tab
         </Button>
       </div>
       {/*<div className="flex items-center">*/}
-      {/*    <div className="text-right">*/}
+      {/*    <div className="text-right"> size="icon" */}
       {/*        <div className="text-sm text-[#757575]">Link Views</div>*/}
       {/*        <div className="text-sm text-[#757575]">Selected: June 10, 2025</div>*/}
       {/*    </div>*/}

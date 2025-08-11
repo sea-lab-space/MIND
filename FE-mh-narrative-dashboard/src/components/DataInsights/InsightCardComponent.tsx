@@ -46,7 +46,7 @@ export default function InsightCardComponent({
 
   return (
     <div
-      className={`w-full min-w-[200px] transition-all duration-200 rounded-xl px-3 py-2 text-left flex flex-col
+      className={`w-full min-w-[200px] transition-all duration-200 rounded-xl px-3 py-2 text-left flex flex-col shrink-0
       ${
         isInsightCardSelected
           ? "bg-gray-100 border-gray-300 ring-2 ring-blue-500"
