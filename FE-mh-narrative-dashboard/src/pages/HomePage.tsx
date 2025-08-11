@@ -53,12 +53,12 @@ export default function HomePage() {
         color: "bg-gray-50", // corrected from 'grey-500'
       },
       "survey-scores": {
-        icon: <DataSourceIcon iconType="survey" showType forcePlainColor />,
+        icon: <DataSourceIcon iconType="survey"  textPlainColor />,
         color: "bg-orange-50", // removed 'color-' prefix for Tailwind
       },
       "clinical-notes": {
         icon: (
-          <DataSourceIcon iconType="clinical note" showType forcePlainColor />
+          <DataSourceIcon iconType="clinical note"  textPlainColor />
         ),
         color: "bg-yellow-50",
       },
@@ -66,15 +66,14 @@ export default function HomePage() {
         icon: (
           <DataSourceIcon
             iconType="session transcript"
-            showType
-            forcePlainColor
+            textPlainColor
           />
         ),
         color: "bg-emerald-50",
       },
       "passive-sensing": {
         icon: (
-          <DataSourceIcon iconType="passive sensing" showType forcePlainColor />
+          <DataSourceIcon iconType="passive sensing"  textPlainColor />
         ),
         color: "bg-slate-50",
       },

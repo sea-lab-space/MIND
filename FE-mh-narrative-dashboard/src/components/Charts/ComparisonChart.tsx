@@ -9,6 +9,7 @@ import {
   ReferenceArea,
   ReferenceLine,
   ReferenceDot,
+  Label,
 } from "recharts";
 import type { ComparisonSpec, DataPoint } from "@/types/insightSpec";
 import { extent } from "d3-array";
@@ -20,6 +21,7 @@ import {
 } from "@/utils/colorHelper";
 import { calcAverageBetweenDate, getUpperLimitScale } from "@/utils/dataHelper";
 import { useEffect, useRef, useState } from "react";
+import { useWindowSize } from "react-use";
 
 interface ComparisonChartProps {
   data: DataPoint[];
@@ -71,13 +73,13 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
 
   const chartRef = useRef<HTMLDivElement>(null);
   const [chartSize, setChartSize] = useState({ width: 500, height: 300 });
-
+  const { width, height } = useWindowSize();
   useEffect(() => {
     if (chartRef.current) {
       const { width, height } = chartRef.current.getBoundingClientRect();
       setChartSize({ width, height });
     }
-  }, []);
+  }, [width, height]);
 
   const renderLabel = (props: any, value: number) => {
     const { offset } = props;
@@ -124,7 +126,10 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
   return (
     <div ref={chartRef} style={{ width: "100%", height: "100%" }}>
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart width={500} height={300} data={visData}>
+        <LineChart
+          data={visData}
+          // margin={{ top: 20, left: 0, right: 10, bottom: 0 }}
+        >
           <CartesianGrid strokeDasharray="3 3" />
           <ReferenceArea
             x1={spec.time_dur_1.time_start}
@@ -149,7 +154,14 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
             tickCount={yRangeUse / tickBreakUnit}
             scale="linear"
             type="number"
-          />
+          >
+            {/* <Label
+              value={spec.name}
+              position='insideTopRight'
+              angle={-90}
+              offset={60}
+            /> */}
+          </YAxis>
           <Tooltip />
           <Line
             dataKey={metricKey}

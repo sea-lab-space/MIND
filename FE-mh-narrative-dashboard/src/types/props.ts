@@ -14,6 +14,7 @@ export interface DatasourceIconProps {
   iconType: DatasourceIconType;
   showType?: boolean;
   forcePlainColor?: boolean;
+  textPlainColor?: boolean;
 }
 
 export interface HeaderProps {

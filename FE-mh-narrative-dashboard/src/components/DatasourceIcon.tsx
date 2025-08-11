@@ -34,14 +34,19 @@ const fallback = {
   displayName: "Unknown"
 };
 
-const DataSourceIcon: React.FC<DatasourceIconProps> = ({ iconType, showType = false, forcePlainColor = false }) => {
+const DataSourceIcon: React.FC<DatasourceIconProps> = ({ iconType, showType = false, forcePlainColor = false, textPlainColor = false }) => {
   const { icon, color, displayName } = dataSourceIconConfig[iconType] ?? fallback;
   const colorDisplay = forcePlainColor ? fallback.color : color;
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <div className={`flex items-center justify-center gap-2 ${colorDisplay}`}>
+        <div
+          className={`flex items-center justify-center gap-2 ${colorDisplay}`}
+        >
           {icon}
+          {textPlainColor && (
+            <span className="text-black">{capitalizeFirst(displayName)}</span>
+          )}
           {showType && capitalizeFirst(displayName)}
         </div>
       </TooltipTrigger>
