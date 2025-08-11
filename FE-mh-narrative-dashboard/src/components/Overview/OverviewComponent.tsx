@@ -47,11 +47,11 @@ export default function OverviewComponent({
             }`}
           >
             {infoData.map((card, index) => {
-              const Icon = overviewIconMap[card.icon];
+              // const Icon = overviewIconMap[card.icon];
               return (
                 <OverviewCardComponent
                   key={index}
-                  icon={Icon}
+                  // icon={Icon}
                   title={card.overviewHeadTitle}
                 >
                   {isExpanded

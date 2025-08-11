@@ -1,123 +1,101 @@
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import  { useState, useEffect } from "react";
-import { nameList, nameListMap, retrospectHorizon } from "@/data/data";
+import { useParams } from "react-router-dom";
 import Header from "@/components/header";
 import { getVisualizerDataForPerson } from "@/utils/dataConversion";
+import { flattenAllExpandViews, getUserFromHashUrl, groupInsightsBySource } from "@/utils/helper";
 import PassiveSensingTab from "@/components/BaseLine/PassiveSensing/PassiveSensingTab";
 import ChartReviewTab from "@/components/BaseLine/ChartReview/ChartReviewTab";
-import * as React from "react";
 import ClinicalNotesTab from "@/components/BaseLine/ClinicalNotes/ClinicalNotesTab";
-import {flattenAllExpandViews, getUserFromHashUrl, groupInsightsBySource} from "@/utils/helper";
-import type {InsightExpandViewItem} from "@/types/props";
 import TranscriptionTab from "@/components/BaseLine/Transcription/TranscriptionTab";
 import SurveyScoreTab from "@/components/BaseLine/SurveyScore/SurveyScoreTab";
-import { useParams } from "react-router-dom";
+import { Watch, MessageSquare, StickyNote, ClipboardList, History } from "lucide-react";
 import type { TabItem, TabKey } from "@/types/dataTypes";
-
-
-
+import {nameListMap, retrospectHorizon} from "@/data/data";
+import {useEffect, useState} from "react";
+import TabsView from "@/components/TabsView/TabsView";
 
 export default function BaselinePage() {
-  const { patientId } = useParams<{
-    patientId: string;
-  }>();
-  const [selectedPatient, setSelectedPatient] =
-    useState<string>("Gabriella Lin");
-
-  useEffect(() => {
-    if (patientId) {
-      if (Object.keys(nameListMap).includes(patientId)) {
-        setSelectedPatient(nameListMap[patientId]);
-      } else {
-        alert("Invalid patient ID");
-      }
-    }
-  }, [patientId]);
-
-    const [activeTab, setActiveTab] = useState<TabKey>("chart-review");
+    const { patientId } = useParams<{ patientId: string }>();
+    const [selectedPatient, setSelectedPatient] = useState("Gabriella Lin");
+    const [invalidPatient, setInvalidPatient] = useState(false);
+    const userName = getUserFromHashUrl();
 
     const { overviewCardData, insightCardData, session_subjective_info, survey_data } = getVisualizerDataForPerson(selectedPatient);
     const allExpandViews = flattenAllExpandViews(insightCardData);
+    const { passiveSensingFacts = [] }: { passiveSensingFacts?: any[] } = groupInsightsBySource(allExpandViews);
 
-    const {
-        passiveSensingFacts = [],
-    }: {
-        passiveSensingFacts?: InsightExpandViewItem[];
-    } = groupInsightsBySource(allExpandViews);
+    useEffect(() => {
+        if (patientId) {
+            if (Object.keys(nameListMap).includes(patientId)) {
+                setSelectedPatient(nameListMap[patientId]);
+                setInvalidPatient(false);
+            } else {
+                setInvalidPatient(true);
+            }
+        }
+    }, [patientId]);
 
+    if (invalidPatient) {
+        return (
+            <div>
+                <h1>Patient Not Found</h1>
+                <p>The patient ID you entered is invalid. Please select a valid patient.</p>
+                <button onClick={() => setInvalidPatient(false)}>Go Back</button>
+            </div>
+        );
+    }
+
+    const tabIconConfig: Partial<Record<TabKey, { icon: JSX.Element; color: string }>> = {
+        "chart-review": { icon: <History className="w-5 h-5" />, color: "grey-500" },
+        "passive-sensing": { icon: <Watch className="w-5 h-5" />, color: "text-slate-500" },
+        "clinical-notes": { icon: <StickyNote className="w-5 h-5" />, color: "text-yellow-500" },
+        "transcription": { icon: <MessageSquare className="w-5 h-5" />, color: "text-emerald-500" },
+        "survey-score": { icon: <ClipboardList className="w-5 h-5" />, color: "text-orange-500" },
+    };
+
+    const makeTab = (
+        key: TabKey,
+        label: string,
+        Component: React.ElementType,
+        extraProps: Record<string, unknown> = {}
+    ): TabItem => {
+        const iconConfig = tabIconConfig[key];
+        return {
+            key,
+            label: (
+                <div className="flex items-center gap-2">
+                    {iconConfig && <span className={iconConfig.color}>{iconConfig.icon}</span>}
+                    <span>{label}</span>
+                </div>
+            ),
+            component: <Component overviewCardData={overviewCardData} {...extraProps} />,
+        };
+    };
 
     const tabItems: TabItem[] = [
-        {
-            key: "chart-review",
-            label: "Chart Review",
-            component: (
-                <ChartReviewTab overviewCardData={overviewCardData} />
-            ),
-        },
-        {
-            key: "passive-sensing",
-            label: "Passive Sensing Data",
-            component: <PassiveSensingTab overviewCardData={overviewCardData} passiveSensingFacts={passiveSensingFacts}/>,
-        },
-        {
-            key: "clinical-notes",
-            label: "Clinical Notes",
-            component: <ClinicalNotesTab overviewCardData={overviewCardData} clinicalNotesFacts={session_subjective_info}/>,
-        },
-        {
-            key: "transcription",
-            label: "Transcription",
-            component: <TranscriptionTab overviewCardData={overviewCardData} clinicalTranscriptsFacts={session_subjective_info}/>,
-        },
-        {
-            key: "survey-score",
-            label: "Survey Score",
-            component: <SurveyScoreTab overviewCardData={overviewCardData} surveyScoreFacts={survey_data}/>,
-        },
+        makeTab("chart-review", "Chart Review", ChartReviewTab),
+        makeTab("passive-sensing", "Passive Sensing Data", PassiveSensingTab, { passiveSensingFacts }),
+        makeTab("clinical-notes", "Clinical Notes", ClinicalNotesTab, { clinicalNotesFacts: session_subjective_info }),
+        makeTab("transcription", "Transcription", TranscriptionTab, { clinicalTranscriptsFacts: session_subjective_info }),
+        makeTab("survey-score", "Survey Score", SurveyScoreTab, { surveyScoreFacts: survey_data }),
     ];
 
-    const userName = getUserFromHashUrl()
     return (
-      <div className="flex flex-col h-screen">
-        {/* Sticky Header */}
-        <div className="sticky top-0 z-50 bg-gray-50 shadow-md mb-2">
-          <Header
-            isHomePage={false}
-            patientNames={nameList}
-            userName={userName}
-            retrospectHorizon={retrospectHorizon}
-            selectedPatient={selectedPatient}
-            setSelectedPatient={setSelectedPatient}
-            disabled={patientId ? true : false}
-          />
-        </div>
-
-        {/* Page Content */}
-        <div className="h-[calc(100vh-100px)] w-screen p-2 flex flex-grow px-4 gap-4">
-          {/* Tabs */}
-          <Tabs
-            value={activeTab}
-            onValueChange={(val) => setActiveTab(val as TabKey)}
-            className="w-full"
-          >
-            <TabsList className="grid w-full grid-cols-5 mb-4 sticky top-0 z-10">
-              {tabItems.map((tab) => (
-                <TabsTrigger key={tab.key} value={tab.key}>
-                  {tab.label}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-
-            <div className="overflow-y-auto">
-              {/* Tab Contents without overview or layout */}
-              {tabItems.map((tab) => (
-                <TabsContent key={tab.key} value={tab.key}>
-                  {tab.component}
-                </TabsContent>
-              ))}
+        <div className="flex flex-col h-screen">
+            <div className="sticky top-0 z-50 shadow-md mb-2">
+                <Header
+                    isHomePage={false}
+                    patientNames={Object.values(nameListMap)}
+                    userName={userName}
+                    retrospectHorizon={retrospectHorizon}
+                    selectedPatient={selectedPatient}
+                    setSelectedPatient={setSelectedPatient}
+                    disabled={!!patientId}
+                />
             </div>
-          </Tabs>
+
+            <div className="h-[calc(100vh-80px)] w-screen flex">
+                <TabsView tabItems={tabItems} defaultTab="chart-review" isMIND={false}/>
+            </div>
         </div>
-      </div>
     );
 }

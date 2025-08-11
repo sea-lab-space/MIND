@@ -8,6 +8,7 @@ import {
     Users2,
     Pill,
 } from "lucide-react"
+import {ReactNode} from "react";
 
 
 export const DatasourceIconTypes = {
@@ -23,15 +24,6 @@ export type DatasourceIconTypes =
 export type RetrospectOptions = {
     [label: string]: number; // e.g., "Last 3 months": 90
 };
-
-// High-level insight card
-// export interface InsightCard {
-//     key: string;
-//     summaryTitle: string;
-//     sources: { type: DatasourceIconTypes }[];
-//     insightType?: InsightType[]; // optional: to show combined insights
-//     expandView: InsightExpandViewItem[];
-// }
 
 // ChartReview info
 export interface BasicInfoCard {
@@ -99,8 +91,15 @@ export type TabKey =
   | "transcription"
   | "clinical-notes";
 
+export type HomePageTabKey =
+    | "mind"
+    | "survey-score"
+    | "passive-sensing"
+    | "transcription"
+    | "clinical-notes";
+
 export type TabItem = {
-  key: TabKey;
-  label: string;
+  key: TabKey | HomePageTabKey;
+  label: ReactNode;
   component: React.ReactNode;
 };

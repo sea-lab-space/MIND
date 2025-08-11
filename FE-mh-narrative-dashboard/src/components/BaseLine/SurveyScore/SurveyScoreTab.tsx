@@ -15,7 +15,7 @@ const SurveyScoreTab: React.FC<SurveyScoreTabProps> = ({
                                                            surveyScoreFacts,
                                                              }) => {
     return (
-      <div className="flex gap-4 h-full">
+      <div className="flex gap-4 h-full py-2 px-4">
         {/* Left column: scrollable independently */}
         {showOverviewCardData &&
           overviewCardData && (

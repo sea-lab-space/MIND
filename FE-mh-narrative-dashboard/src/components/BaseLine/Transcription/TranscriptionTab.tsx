@@ -31,7 +31,7 @@ const TranscriptionTab: React.FC<TranscriptionTabProps> = ({
     );
 
     return (
-      <div className="flex gap-4 h-full">
+      <div className="flex gap-4 h-full py-2 px-4">
         {/* Sidebar: Overview + Date Buttons */}
         <div className="w-[260px] shrink-0 h-full sticky top-0 z-10">
           {showOverviewCardData && overviewCardData && (

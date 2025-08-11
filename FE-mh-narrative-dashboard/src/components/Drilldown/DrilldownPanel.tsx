@@ -19,6 +19,7 @@ interface DrilldownPanelProps {
 
 const DrilldownPanel: React.FC<DrilldownPanelProps> = ({ onClose, insightData, sessionInfo }) => {
   const [linkViewsEnabled, setLinkViewsEnabled] = useState(true);
+
     const {
         passiveSensingFacts = [],
         clinicalNotesFacts = [],

@@ -16,13 +16,6 @@ import {
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { ChevronDown } from 'lucide-react';
 import type { HeaderProps } from "@/types/props";
 import DataSourceIconModalButtons from "./ExpertView/DataSourceIconModalButtons";
 
@@ -104,26 +97,9 @@ const Header: React.FC<HeaderProps> = (props) => {
 
         {/* Right - Retrospect Navigation and Avatar */}
         <div className="flex items-center gap-4 w-1/3 justify-end">
-          <DataSourceIconModalButtons selectedPatient={selectedPatient} />
           <p className="text-sm">
             <b>Last Encounter</b>: 2021-05-08 | <b>Today</b>: 2021-06-07
           </p>
-          {/*<DropdownMenu>*/}
-          {/*  <DropdownMenuTrigger className="flex hover:bg-gray-50 text-black text-sm font-normal h-[2.5em] items-center">*/}
-          {/*    {selectedRetrospect}*/}
-          {/*    <ChevronDown />*/}
-          {/*  </DropdownMenuTrigger>*/}
-          {/*  <DropdownMenuContent>*/}
-          {/*    {Object.entries(retrospectHorizon).map(([key, _]) => (*/}
-          {/*      <DropdownMenuItem*/}
-          {/*        key={key}*/}
-          {/*        onClick={() => setSelectedRetrospect(key)}*/}
-          {/*      >*/}
-          {/*        {key}*/}
-          {/*      </DropdownMenuItem>*/}
-          {/*    ))}*/}
-          {/*  </DropdownMenuContent>*/}
-          {/*</DropdownMenu>*/}
 
           {/* TODO: we can customize it to individual participants if we want */}
           <Avatar className="w-10 h-10 bg-[#b3adad] border border-[#d9d9d9]">

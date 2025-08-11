@@ -66,12 +66,12 @@ type FilterSelectorProps = {
 export function FilterSelector({ selected, onToggle, selectedPatient }: FilterSelectorProps) {
     const patientName = selectedPatient
     return (
-      <div className="flex justify-between items-center gap-1 sticky top-8 z-10 bg-gray-50 mb-2">
+      <div className="flex justify-between items-center gap-1 sticky top-8 z-10 bg-white mb-2">
         {/**mx-6 mt-2  */}
         <div className="flex items-center gap-2 flex-wrap">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Filter className="w-4 h-4" />
-            <span>Insight category:</span>
+            <span>{selected?.length? 'Insight category:' : 'All category:' }</span>
           </div>
 
           {FILTER_OPTIONS.map(({ type, label, icon }) => (
@@ -81,10 +81,10 @@ export function FilterSelector({ selected, onToggle, selectedPatient }: FilterSe
               size="sm"
               onClick={() => onToggle(type)}
               className={cn(
-                "flex items-center rounded-2 transition-colors",
-                selected.includes(type)
-                  ? "bg-gray-700 text-white hover:bg-gray-200"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
+                  "flex items-center rounded-2 transition-colors",
+                  selected.includes(type)
+                      ? "bg-gray-700 text-white hover:bg-gray-500 hover:text-white"
+                      : "bg-white text-gray-700 hover:bg-gray-500 hover:text-white"
               )}
             >
               {icon}
