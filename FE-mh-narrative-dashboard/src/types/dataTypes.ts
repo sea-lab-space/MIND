@@ -86,16 +86,16 @@ export interface SuggestedActivity {
 
 export type TabKey =
   | "chart-review"
-  | "survey-score"
+  | "survey-scores"
   | "passive-sensing"
-  | "transcription"
+  | "transcripts"
   | "clinical-notes";
 
 export type HomePageTabKey =
     | "mind"
-    | "survey-score"
+    | "survey-scores"
     | "passive-sensing"
-    | "transcription"
+    | "transcripts"
     | "clinical-notes";
 
 export type TabItem = {

@@ -7,7 +7,7 @@ const ChartReviewTab = ({
   overviewCardData: OverviewSpec;
 }) => {
   return (
-    <div className="flex-1 gap-4 h-full w-full">
+    <div className="flex-1 gap-4 h-full w-full  py-2 px-4">
       {/* Left Overview */}
       {/*<div className="w-[260px] shrink-0 h-full overflow-y-auto">*/}
       {/*    <OverviewSummary basicInfoCardData={overviewCardData} />*/}

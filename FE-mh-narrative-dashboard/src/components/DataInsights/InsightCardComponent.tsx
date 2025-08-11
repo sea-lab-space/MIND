@@ -2,18 +2,20 @@ import InsightCardDetail from "@/components/DataInsights/InsightCardDetails";
 import type { DatasourceIconType, InsightType } from "../../types/props";
 import DataSourceIcon from "../DatasourceIcon";
 import { Button } from "../ui/button";
-import { ArrowRightIcon } from "lucide-react";
+import { Search } from "lucide-react";
 import { type InsightCardData } from "../../types/props";
 import { InsightTypeIconMap } from "@/types/dataTypes";
 import { useEffect, useState } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { ChevronDown, ChevronUp } from "lucide-react";
+
 
 interface InsightCardProps {
   isExpanded?: boolean;
   title?: string;
   insightCardData: InsightCardData;
   sources: Array<{ type: DatasourceIconType }>;
-  onToggle?: (expanded: boolean) => void;
+  onToggle?: (cardKey: string, expanded: boolean) => void;
   isInsightHeaderSelected?: boolean;
   isInsightCardSelected?: boolean;
   handleCardSelect?: () => void;
@@ -29,16 +31,18 @@ export default function InsightCardComponent({
                                                handleCardSelect,
                                                handleCardHeaderClick,
                                                isDrillDown = false,
+                                               onToggle
                                              }: InsightCardProps) {
   const isDrillDownTemp = isDrillDown;
   const [hoveringButton, setHoveringButton] = useState(false);
   const [isHeaderSelected, setIsHeaderSelected] = useState(
-    isInsightHeaderSelected
+      isInsightHeaderSelected
   );
 
   useEffect(() => {
     setIsHeaderSelected(isInsightHeaderSelected);
   }, [isInsightHeaderSelected]);
+
 
   return (
     <div
@@ -129,25 +133,7 @@ export default function InsightCardComponent({
             </div>
 
             {/* Right: Sources */}
-            <div className="flex items-center gap-1">
-              {/* <span className="text-xs font-medium italic">Sources:</span>
-                  <div className="flex items-center gap-2 ml-3">
-
-                  </div>
-
-              {/* Right: Drilldown Button */}
-
-              {/* <div
-                  className={
-                    insightCardData.sources?.length > 2
-                      ? "grid grid-cols-2 gap-1 h-10"
-                      : "flex items-center gap-2"
-                  }
-                >
-                  {insightCardData.sources?.map((source, index) => (
-                    <DataSourceIcon key={index} iconType={source.type} />
-                  ))}
-                </div> */}
+            <div className="flex items-start gap-1">
               <Button
                 onMouseEnter={() => setHoveringButton(true)}
                 onMouseLeave={() => setHoveringButton(false)}
@@ -156,8 +142,9 @@ export default function InsightCardComponent({
                 size="default"
                 // className="flex items-center gap-1 self-start sm:self-auto w-8 h-14" // justify-between
               >
-                <ArrowRightIcon />
+                <Search />
               </Button>
+
             </div>
           </div>
           {isExpanded && (
@@ -171,16 +158,30 @@ export default function InsightCardComponent({
             </div>
           )}
 
+
           <div className="flex items-center gap-1 mt-2">
             <span className="text-xs font-small italic text-gray-600">
               Cited sources:
             </span>
             <div className="flex items-center gap-2 ml-3">
               {insightCardData.sources?.map((source, index) => (
-                <DataSourceIcon key={index} iconType={source.type} />
+                  <DataSourceIcon key={index} iconType={source.type} />
               ))}
             </div>
+            <div className="ml-auto">
+              <button
+                  onClick={() => onToggle?.(insightCardData.key, !isExpanded)}
+                  className="p-1 rounded-full hover:bg-gray-100 transition"
+              >
+                {isExpanded ? (
+                    <ChevronUp className="w-5 h-5" />
+                ) : (
+                    <ChevronDown className="w-5 h-5" />
+                )}
+              </button>
+            </div>
           </div>
+
         </div>
       </div>
     </div>

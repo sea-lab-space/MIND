@@ -47,8 +47,8 @@ export default function HomePage() {
     const tabIconConfig: Partial<Record<HomePageTabKey, { icon: JSX.Element; color: string }>> = {
         "passive-sensing": { icon: <Watch className="w-5 h-5" />, color: "text-slate-500" },
         "clinical-notes": { icon: <StickyNote className="w-5 h-5" />, color: "text-yellow-500" },
-        "transcription": { icon: <MessageSquare className="w-5 h-5" />, color: "text-emerald-500" },
-        "survey-score": { icon: <ClipboardList className="w-5 h-5" />, color: "text-orange-500" },
+        "transcripts": { icon: <MessageSquare className="w-5 h-5" />, color: "text-emerald-500" },
+        "survey-scores": { icon: <ClipboardList className="w-5 h-5" />, color: "text-orange-500" },
     };
 
     const makeTab = (
@@ -72,10 +72,11 @@ export default function HomePage() {
 
     const tabItems: TabItem[] = [
         makeTab("mind", "MIND", MINDTab, {selectedPatient}),
-        makeTab("passive-sensing", "Passive Sensing Data", PassiveSensingTab, { passiveSensingFacts }),
+        makeTab("survey-scores", "Survey Scores", SurveyScoreTab, { surveyScoreFacts: survey_data }),
         makeTab("clinical-notes", "Clinical Notes", ClinicalNotesTab, { clinicalNotesFacts: session_subjective_info }),
-        makeTab("transcription", "Transcription", TranscriptionTab, { clinicalTranscriptsFacts: session_subjective_info }),
-        makeTab("survey-score", "Survey Score", SurveyScoreTab, { surveyScoreFacts: survey_data }),
+        makeTab("transcripts", "Transcripts", TranscriptionTab, { clinicalTranscriptsFacts: session_subjective_info }),
+        makeTab("passive-sensing", "Passive Sensing Data", PassiveSensingTab, { passiveSensingFacts }),
+
     ];
 
     return (

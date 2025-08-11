@@ -36,12 +36,26 @@ const MINDTab: React.FC<MINDTabProps> = ({ selectedPatient }) => {
 
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const { overviewCardData, insightCardData, session_subjective_info, suggested_activity_data, survey_data } = getVisualizerDataForPerson(selectedPatient);
+    const [globalExpand, setGlobalExpand] = useState(false);
+    const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
 
     const toggleSection = (section: "overview" | "insights" | "communication") => {
         setExpandedSections((prev) => ({
             ...prev,
             [section]: !prev[section],
         }));
+    };
+
+    const handleToggleCard = (cardKey: string, expand: boolean) => {
+        setExpandedCards(prev => {
+            const next = new Set(prev);
+            if (expand) {
+                next.add(cardKey);
+            } else {
+                next.delete(cardKey);
+            }
+            return next;
+        });
     };
 
     useEffect(() => {
@@ -132,19 +146,25 @@ const MINDTab: React.FC<MINDTabProps> = ({ selectedPatient }) => {
                                     title="Clinical Insights"
                                     // subtitle="test"
                                     isExpanded={expandedSections.insights}
-                                    onClick={() => toggleSection("insights")}
+                                    onClick={() => {
+                                        setGlobalExpand(prev => !prev);
+                                        if (!globalExpand) {
+                                            setExpandedCards(new Set()); // Clear overrides when expanding all
+                                        }
+                                    }}
                                 >
-                                    <FilterSelector
-                                        selectedPatient={selectedPatient}
-                                        selected={selectedInsightTypes}
-                                        onToggle={(type) => {
-                                            setSelectedInsightTypes((prev) =>
-                                                prev.includes(type)
-                                                    ? prev.filter((t) => t !== type)
-                                                    : [...prev, type]
-                                            );
-                                        }}
-                                    />
+                                    {
+                                        !isDrillDown && <FilterSelector
+                                            selectedPatient={selectedPatient}
+                                            selected={selectedInsightTypes}
+                                            onToggle={(type) => {
+                                                setSelectedInsightTypes((prev) =>
+                                                    prev.includes(type) ? [] : [type]
+                                                );
+                                            }}
+                                        />
+                                    }
+
                                     <div
                                         className={`${
                                             isDrillDown
@@ -163,11 +183,13 @@ const MINDTab: React.FC<MINDTabProps> = ({ selectedPatient }) => {
                                                     className="w-full"
                                                 >
                                                     <InsightCardComponent
+                                                        key={card.key}
                                                         insightCardData={card}
+                                                        isExpanded={globalExpand || expandedCards.has(card.key)}
+                                                        onToggle={handleToggleCard}
                                                         isDrillDown={isDrillDown}
                                                         title={card.summaryTitle}
                                                         sources={card.sources}
-                                                        isExpanded={expandedSections.insights}
                                                         isInsightHeaderSelected={selectedInsightHeader.includes(
                                                             card.key
                                                         )}
@@ -175,7 +197,7 @@ const MINDTab: React.FC<MINDTabProps> = ({ selectedPatient }) => {
                                                             selectedInsightCard === card.key
                                                         }
                                                         handleCardSelect={() =>
-                                                            handleCardSelection(card.key, index * 2)
+                                                            handleCardSelection(card.key, index * 2 + 1)
                                                         }
                                                         handleCardHeaderClick={() =>
                                                             handleInsightCardHeaderSelect(card.key)
@@ -196,11 +218,13 @@ const MINDTab: React.FC<MINDTabProps> = ({ selectedPatient }) => {
                                                     className="w-full"
                                                 >
                                                     <InsightCardComponent
-                                                        isDrillDown={isDrillDown}
+                                                        key={card.key}
                                                         insightCardData={card}
+                                                        isExpanded={globalExpand || expandedCards.has(card.key)}
+                                                        onToggle={handleToggleCard}
+                                                        isDrillDown={isDrillDown}
                                                         title={card.summaryTitle}
                                                         sources={card.sources}
-                                                        isExpanded={expandedSections.insights}
                                                         isInsightHeaderSelected={selectedInsightHeader.includes(
                                                             card.key
                                                         )}
