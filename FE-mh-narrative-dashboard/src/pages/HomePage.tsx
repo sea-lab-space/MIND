@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect, useState, type JSX} from "react";
 import { useParams } from "react-router-dom";
 import Header from "@/components/header";
 import { getVisualizerDataForPerson } from "@/utils/dataConversion";
@@ -38,8 +38,8 @@ export default function HomePage() {
         return (
             <div>
                 <h1>Patient Not Found</h1>
-                <p>The patient ID you entered is invalid. Please select a valid patient.</p>
-                <button onClick={() => setInvalidPatient(false)}>Go Back</button>
+                <p>The patient ID you entered is invalid. Please type in a url with valid patient name.</p>
+                {/* <button onClick={() => setInvalidPatient(false)}>Go Back</button> */}
             </div>
         );
     }

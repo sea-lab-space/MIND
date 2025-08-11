@@ -85,7 +85,7 @@ const MINDTab: React.FC<MINDTabProps> = ({ selectedPatient }) => {
         setTimeout(() => {
             const cardEl = cardRefs.current[index];
             if (cardEl) {
-                cardEl.scrollIntoView({ behavior: "smooth", block: "start" });
+              cardEl.scrollIntoView({ behavior: "smooth", block: "center" });
             }
         }, 100);
     };
@@ -177,9 +177,7 @@ const MINDTab: React.FC<MINDTabProps> = ({ selectedPatient }) => {
                                             {leftColumnCards.map((card, index) => (
                                                 <div
                                                     key={card.key}
-                                                    ref={(el) => {
-                                                        cardRefs.current[index * 2] = el;
-                                                    }}
+                                                    ref={(el) => { cardRefs.current[index * 2] = el; }}
                                                     className="w-full"
                                                 >
                                                     <InsightCardComponent
@@ -197,7 +195,7 @@ const MINDTab: React.FC<MINDTabProps> = ({ selectedPatient }) => {
                                                             selectedInsightCard === card.key
                                                         }
                                                         handleCardSelect={() =>
-                                                            handleCardSelection(card.key, index * 2 + 1)
+                                                            handleCardSelection(card.key, index * 2)
                                                         }
                                                         handleCardHeaderClick={() =>
                                                             handleInsightCardHeaderSelect(card.key)
