@@ -18,7 +18,7 @@ import {
   HIGHLIGHT_COLOR,
   HIGHLIGHT_FILL_OPACITY,
 } from "@/utils/colorHelper";
-import { calcAverageBetweenDate } from "@/utils/dataHelper";
+import { calcAverageBetweenDate, getUpperLimitScale } from "@/utils/dataHelper";
 import { useEffect, useRef, useState } from "react";
 
 interface ComparisonChartProps {
@@ -35,6 +35,7 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
   const { baseColor, highlightColor } = getColors(themeColor);
 
   const yRange = extent(data, (d: any) => d[metricKey]) as [number, number];
+  const { yRangeUse, tickBreakUnit } = getUpperLimitScale(yRange[1]);
 
   const isShowAvg = spec.aggregation === "stdev";
 
@@ -129,7 +130,7 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
             x1={spec.time_dur_1.time_start}
             x2={spec.time_dur_1.time_end}
             y1={0}
-            y2={Math.ceil(yRange[1])}
+            y2={yRangeUse}
             // stroke=HIGHLIGHT_COLOR
             fillOpacity={HIGHLIGHT_FILL_OPACITY}
           />
@@ -137,12 +138,12 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
             x1={spec.time_dur_2.time_start}
             x2={spec.time_dur_2.time_end}
             y1={0}
-            y2={Math.ceil(yRange[1])}
+            y2={yRangeUse}
             // stroke=HIGHLIGHT_COLOR
             fillOpacity={HIGHLIGHT_FILL_OPACITY}
           />
           <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-          <YAxis domain={[0, Math.ceil(yRange[1])]} />
+          <YAxis domain={[0, yRangeUse]} minTickGap={tickBreakUnit} tickCount={yRangeUse / tickBreakUnit} scale="linear" />
           <Tooltip />
           <Line
             dataKey={metricKey}

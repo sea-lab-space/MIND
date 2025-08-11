@@ -16,6 +16,7 @@ import { color } from "d3";
 import { extent } from "d3-array";
 import { dateBetween } from "@/utils/dateHelper";
 import { getColors, HIGHLIGHT_COLOR, HIGHLIGHT_FILL_OPACITY } from "@/utils/colorHelper";
+import { getUpperLimitScale } from "@/utils/dataHelper";
 
 interface TrendChartProps {
   data: DataPoint[];
@@ -31,6 +32,7 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
   const {baseColor, highlightColor} = getColors(themeColor)
 
   const yRange = extent(data, (d: any) => d[metricKey]) as [number, number];
+  const { yRangeUse, tickBreakUnit } = getUpperLimitScale(yRange[1]);
 
   const getDataOnDate = (date: string): number => {
     const response = data.find((d) => d.date === date);
@@ -71,16 +73,21 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
       <LineChart width={500} height={300} data={visData}>
         <CartesianGrid strokeDasharray="3 3" />
         {spec && (
-            <ReferenceArea
-          x1={spec.time_1}
-          x2={spec.time_2}
-          y1={0}
-          y2={Math.ceil(yRange[1])}
-          fillOpacity={HIGHLIGHT_FILL_OPACITY}
-        />
+          <ReferenceArea
+            x1={spec.time_1}
+            x2={spec.time_2}
+            y1={0}
+            y2={yRangeUse}
+            fillOpacity={HIGHLIGHT_FILL_OPACITY}
+          />
         )}
         <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-        <YAxis domain={[0, Math.ceil(yRange[1])]} />
+        <YAxis
+          domain={[0, yRangeUse]}
+          minTickGap={tickBreakUnit}
+          scale="linear"
+          tickCount={yRangeUse / tickBreakUnit}
+        />
         <Tooltip />
         <Line
           dataKey={metricKey}

@@ -48,7 +48,7 @@ return (
     <CardContent>
       <div className="flex gap-6 min-h-[400px]">
         {/* Left Side: Button List */}
-        <div className="flex-shrink-0 space-y-4 w-80">
+        <div className="flex-shrink-0 space-y-4 w-[30%]">
           {surveyScoreFacts.map((insight) => (
             <Button
               key={insight.key}

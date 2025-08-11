@@ -14,6 +14,8 @@ import type {
   ExtremeSpec,
 } from "@/types/insightSpec";
 import { getColors, MAX_BAR_SIZE } from "@/utils/colorHelper";
+import { extent } from "d3";
+import { getUpperLimitScale } from "@/utils/dataHelper";
 
 interface ExtremeChartProps {
   data: DataPoint[];
@@ -25,6 +27,9 @@ const ExtremeChart: React.FC<ExtremeChartProps> = (props) => {
   const { data, spec, themeColor } = props;
 
   const metricKey = Object.keys(data[0] || {}).find((k) => k !== "date") ?? "";
+
+  const yRange = extent(data, (d: any) => d[metricKey]) as [number, number];
+  const { yRangeUse, tickBreakUnit } = getUpperLimitScale(yRange[1]);
 
   const {baseColor, highlightColor} = getColors(themeColor)
 
@@ -41,7 +46,12 @@ const ExtremeChart: React.FC<ExtremeChartProps> = (props) => {
       <BarChart width={500} height={300} data={visData}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-        <YAxis />
+        <YAxis
+          domain={[0, yRangeUse]}
+          minTickGap={tickBreakUnit}
+          scale="linear"
+          tickCount={yRangeUse / tickBreakUnit}
+        />
         <Tooltip formatter={(value: number) => value.toFixed(2)} />
         <Bar
           dataKey={metricKey}

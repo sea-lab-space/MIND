@@ -18,7 +18,7 @@ import type { DataPoint, ValueSpec } from "@/types/insightSpec";
 import { color, extent } from "d3";
 import { dateBetween } from "@/utils/dateHelper";
 import { getColors, HIGHLIGHT_COLOR, HIGHLIGHT_FILL_OPACITY, MAX_BAR_SIZE } from "@/utils/colorHelper";
-import { calcAverageBetweenDate } from "@/utils/dataHelper";
+import { calcAverageBetweenDate, getUpperLimitScale } from "@/utils/dataHelper";
 
 interface DerivedValueChartProps {
   data: DataPoint[];
@@ -33,6 +33,7 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
   const { baseColor, highlightColor } = getColors(themeColor);
 
   const yRange = extent(data, (d: any) => d[metricKey]) as [number, number];
+  const { yRangeUse, tickBreakUnit } = getUpperLimitScale(yRange[1]);
 
   const averageBetweenDate = calcAverageBetweenDate(data, spec.time_1, spec.time_2, metricKey)
 
@@ -78,11 +79,16 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
           x1={spec.time_1}
           x2={spec.time_2}
           y1={0}
-          y2={Math.ceil(yRange[1])}
+          y2={yRangeUse}
           fillOpacity={HIGHLIGHT_FILL_OPACITY}
         />
         <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-        <YAxis domain={[0, Math.ceil(yRange[1])]} />
+        <YAxis
+          domain={[0, yRangeUse]}
+          minTickGap={tickBreakUnit}
+          tickCount={yRangeUse / tickBreakUnit}
+          scale="linear"
+        />
         <Tooltip />
         <Bar
           dataKey={metricKey}

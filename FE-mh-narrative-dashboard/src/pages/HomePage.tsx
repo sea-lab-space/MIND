@@ -50,23 +50,33 @@ export default function HomePage() {
     > = {
       mind: {
         icon: <WandSparkles className="w-5 h-5" />,
-        color: "grey-500",
+        color: "bg-gray-50", // corrected from 'grey-500'
       },
       "survey-scores": {
-        icon: <DataSourceIcon iconType="survey" showType />,
-        color: "text-orange-500",
+        icon: <DataSourceIcon iconType="survey" showType forcePlainColor />,
+        color: "bg-orange-50", // removed 'color-' prefix for Tailwind
       },
       "clinical-notes": {
-        icon: <DataSourceIcon iconType="clinical note" showType />,
-        color: "text-yellow-500",
+        icon: (
+          <DataSourceIcon iconType="clinical note" showType forcePlainColor />
+        ),
+        color: "bg-yellow-50",
       },
       transcripts: {
-        icon: <DataSourceIcon iconType="session transcript" showType />,
-        color: "text-emerald-500",
+        icon: (
+          <DataSourceIcon
+            iconType="session transcript"
+            showType
+            forcePlainColor
+          />
+        ),
+        color: "bg-emerald-50",
       },
       "passive-sensing": {
-        icon: <DataSourceIcon iconType="passive sensing" showType />,
-        color: "text-slate-500",
+        icon: (
+          <DataSourceIcon iconType="passive sensing" showType forcePlainColor />
+        ),
+        color: "bg-slate-50",
       },
     };
 
@@ -80,10 +90,13 @@ export default function HomePage() {
         return {
           key,
           label: (
-            <div className="flex items-center gap-2">
-              {iconConfig && (
-                <span className={`${iconConfig.color} font-bold`}>{iconConfig.icon}</span>
-              )}
+            <div className={`flex items-center gap-2 `}>
+              {
+                //flex-grow ${iconConfig?.color}
+                iconConfig && (
+                  <span className="font-bold">{iconConfig.icon}</span>
+                )
+              }
               {label === "MIND" && <span className="font-bold">{label}</span>}
             </div>
           ),

@@ -8,7 +8,7 @@ import {
     Users2,
     Pill,
 } from "lucide-react"
-import {ReactNode} from "react";
+import {type ReactNode} from "react";
 
 
 export const DatasourceIconTypes = {

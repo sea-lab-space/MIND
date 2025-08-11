@@ -41,7 +41,7 @@ export default function TabsView({ tabItems, defaultTab, isMIND = true }: TabsVi
             <div className="sticky top-0 z-10 px-4 bg-white">
                 <TabsList
                     className={`grid gap-2 w-full ${
-                        isMIND ? "[grid-template-columns:40%_repeat(4,1fr)]" : "grid-cols-5"
+                        isMIND ? "[grid-template-columns:35%_repeat(4,1fr)]" : "[grid-template-columns:35%_repeat(4,1fr)]" // "grid-cols-5"
                     }`}
                 >
                     {tabItems.map((tab) => (

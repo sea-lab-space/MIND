@@ -94,7 +94,7 @@ export default function BaselinePage() {
               {iconConfig && (
                 <span className="font-bold">{iconConfig.icon}</span>
               )}
-              {label === "Chart Review" && <span className="font-bold">{label}</span>}
+              {label === "Patient Summary" && <span className="font-bold">{label}</span>}
             </div>
           ),
           component: (
@@ -104,7 +104,7 @@ export default function BaselinePage() {
     };
 
     const tabItems: TabItem[] = [
-        makeTab("chart-review", "Chart Review", ChartReviewTab),
+        makeTab("chart-review", "Patient Summary", ChartReviewTab),
         makeTab("survey-scores", "Survey Scores", SurveyScoreTab, { surveyScoreFacts: survey_data }),
         makeTab("clinical-notes", "Clinical Notes", ClinicalNotesTab, { clinicalNotesFacts: session_subjective_info }),
         makeTab("transcripts", "Transcripts", TranscriptionTab, { clinicalTranscriptsFacts: session_subjective_info }),
@@ -125,7 +125,7 @@ export default function BaselinePage() {
                 />
             </div>
 
-            <div className="h-[calc(100vh-80px)] w-screen flex">
+            <div className="h-[calc(100vh-85px)] w-screen flex">
                 <TabsView tabItems={tabItems} defaultTab="chart-review" isMIND={false}/>
             </div>
         </div>

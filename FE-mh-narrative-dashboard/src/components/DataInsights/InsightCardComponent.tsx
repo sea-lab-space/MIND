@@ -159,7 +159,7 @@ export default function InsightCardComponent({
           )}
 
 
-          <div className="flex items-center gap-1 mt-2">
+          <div className="flex items-center gap-1 mt-2 flex-wrap">
             <span className="text-xs font-small italic text-gray-600">
               Cited sources:
             </span>

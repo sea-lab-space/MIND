@@ -110,7 +110,7 @@ const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFac
 
           <div className="flex gap-8">
             {/* Left vertical buttons (summary sentences for selected date) */}
-            <div className="flex-shrink-0 space-y-4 w-80">
+            <div className="flex-shrink-0 space-y-4 w-[30%]">
               {clinicalNotesFacts.map((fact) => (
                 <Button
                   key={fact.key}
