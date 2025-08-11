@@ -14,16 +14,20 @@ import {
     getVisualizerDataForPerson,
 } from "@/utils/dataConversion";
 import { flattenAllExpandViews, groupInsightsBySource } from "@/utils/helper";
+import { type SuggestedActivity } from "@/types/dataTypes";
 
 
 interface MINDTabProps {
     selectedPatient: string;
+    clinicianName: string;
 }
 
-const MINDTab: React.FC<MINDTabProps> = ({ selectedPatient }) => {
+const MINDTab: React.FC<MINDTabProps> = ({ selectedPatient, clinicianName }) => {
     const [selectedInsightHeader, setSelectedInsightHeader] = useState<string[]>([]);
     const [selectedInsightCard, setSelectedInsightCard] = useState<string | null>(null);
     const [selectedInsightTypes, setSelectedInsightTypes] = useState<InsightType[]>([]);
+
+    const [selectedActivities, setSelectedActivities] = useState<SuggestedActivity[]>([]);
 
     const [isDrillDown, setIsDrillDown] = useState(false);
     const [expandedSections, setExpandedSections] = useState({
@@ -106,6 +110,8 @@ const MINDTab: React.FC<MINDTabProps> = ({ selectedPatient }) => {
     const selectedInsightCardTitles = insightCardData
         .filter((card) => selectedInsightHeader.includes(card.key))
         .map((card) => card.summaryTitle);
+
+    console.log(selectedActivities)
 
     return (
       <>
@@ -269,6 +275,7 @@ const MINDTab: React.FC<MINDTabProps> = ({ selectedPatient }) => {
                       isDrillDown={isDrillDown}
                       selectedInsightCardTitles={selectedInsightCardTitles}
                       suggested_activity_data={suggested_activity_data}
+                      updateActivities={setSelectedActivities}
                     />
                   </SectionTitle>
                 </div>
@@ -303,6 +310,10 @@ const MINDTab: React.FC<MINDTabProps> = ({ selectedPatient }) => {
         <PatientMessageDialog
           open={isDialogOpen}
           onOpenChange={setIsDialogOpen}
+          selectedInsights={selectedInsightCardTitles}
+          selectedActivities={selectedActivities}
+          patientName={selectedPatient}
+          clinicianName={clinicianName ?? "[Your care team]"}
         />
         {/*<div className="flex flex-col bg-gray-50">*/}
         {/*</div>*/}

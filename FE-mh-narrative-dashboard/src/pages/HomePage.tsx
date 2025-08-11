@@ -107,12 +107,19 @@ export default function HomePage() {
     };
 
     const tabItems: TabItem[] = [
-        makeTab("mind", "MIND", MINDTab, {selectedPatient}),
-        makeTab("survey-scores", "Survey Scores", SurveyScoreTab, { surveyScoreFacts: survey_data }),
-        makeTab("clinical-notes", "Clinical Notes", ClinicalNotesTab, { clinicalNotesFacts: session_subjective_info }),
-        makeTab("transcripts", "Transcripts", TranscriptionTab, { clinicalTranscriptsFacts: session_subjective_info }),
-        makeTab("passive-sensing", "Passive Sensing Data", PassiveSensingTab, { passiveSensingFacts }),
-
+      makeTab("mind", "MIND", MINDTab, { selectedPatient, clinicianName: userName }),
+      makeTab("survey-scores", "Survey Scores", SurveyScoreTab, {
+        surveyScoreFacts: survey_data,
+      }),
+      makeTab("clinical-notes", "Clinical Notes", ClinicalNotesTab, {
+        clinicalNotesFacts: session_subjective_info,
+      }),
+      makeTab("transcripts", "Transcripts", TranscriptionTab, {
+        clinicalTranscriptsFacts: session_subjective_info,
+      }),
+      makeTab("passive-sensing", "Passive Sensing Data", PassiveSensingTab, {
+        passiveSensingFacts,
+      }),
     ];
 
     return (
