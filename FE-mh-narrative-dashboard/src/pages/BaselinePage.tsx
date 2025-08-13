@@ -162,7 +162,7 @@ export default function BaselinePage() {
       </div>
 
 
-        {/* User study specific */}
+        {/* User study specific
         {selectedPatient && timeLimit && (
           <TranscriptModal
             selectedPatient={selectedPatient}
@@ -182,7 +182,7 @@ export default function BaselinePage() {
         )}
         {studyEndState && (
           <StudyEndModal open={studyEndState} onOpenChange={setStudyEndState} />
-        )}
+        )} */}
     </div>
   );
 }

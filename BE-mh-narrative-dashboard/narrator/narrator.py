@@ -137,6 +137,8 @@ You are an expert in clinical mental health narrative generation.
 Given a |data insight| and its associated |data facts|, identify and correct any hallucinations in the insight.
 
 A hallucination refers to any statement, interpretation, or conclusion that goes beyond what is directly supported by the provided data facts. This includes overgeneralization, causal inference, or assumptions not explicitly evidenced in the facts.
+One concrete example include:
+* If the |data insight| suggests some behaviour persists, it should only refer to |data facts| that explicitly uses numbers.
 
 Task:
 * Review the data insight in light of the data facts.
@@ -148,7 +150,7 @@ When rewriting the insights, follow the guidelines:
 * When hard to describe in less than 12 words, pick the most important insight, that is, the one that is most likely to be the most relevant to the patient's condition and/or backed by data facts.
 * Do not explicity mention any date related in the insights.
 * Do not start with "Patient", "He/she" or patient name.
-* Aviod contrasting information. If detected, leave the most significant information. For example, don't say "Physical activity decreased, with brief increases in steps and exercise time", leave one, either "physical activity decreased during <dates>" or "brief increases in steps and excercise time during <dates>".
+* Aviod confusing information. For example, don't say "Physical activity decreased, with brief increases in steps and exercise time", leave one, either "physical activity decreased during <dates>" or "brief increases in steps and excercise time during <dates>".
 * Keep only one sentence, and end that sentence with a period.
 * Avoid using semicolons to connect sentences.
 * Reference the styles given below.
@@ -204,10 +206,27 @@ Requirements:
   * For date ranges, use the format "from <start_date> to <end_date> (<x> days/weeks)" (e.g., from 2021-05-12 to 2021-05-16 (4 days)).
 * For values, contextualize the data:
   * Some values (phq-4, phq-4 subscales, pss-4) have clear ranges, indicate that information
-    * PHQ-4 Score (0-16): 0-2 indicates little or no distress, 3-5 signifies mild distress, 6-8 reflects moderate distress, and 9-12 indicates severe distress).
-    * PHQ-4 Anxiety Score (0-4): 0 indicates not at all anxious, 1 indicates anxious for several days, 2 indicates anxious more than half the days, 3 indicates anxious nearly every day.
-    * PHQ-4 Depression Score (0-4): 0 indicates not at all depressed, 1 indicates depressed for several days, 2 indicates depressed more than half the days, 3 indicates depressed nearly every day.
-    * PSS-4 Score (0-24): 0-6 indicates low perceived stress, 6-24 indicates high perceived stress.
+        PHQ-4 Score (0–16):
+        - 0–2 → Little or no distress
+        - 3–5 → Mild distress
+        - 6–8 → Moderate distress
+        - 9–12 → Severe distress
+
+        PHQ-4 Anxiety Score (0–4):
+        - 0 → Not at all anxious
+        - 1 → Anxious several days
+        - 2 → Anxious more than half the days
+        - 3 → Anxious nearly every day
+
+        PHQ-4 Depression Score (0–4):
+        - 0 → Not at all depressed
+        - 1 → Depressed several days
+        - 2 → Depressed more than half the days
+        - 3 → Depressed nearly every day
+
+        PSS-4 Score (0–24):
+        - 0–6 → Low perceived stress
+        - 7–24 → High perceived stress
   * Other values (e.g., sleep duration, steps) are more open-ended, describe the raw value, and provide a general interpretation (e.g., low, high).
 * For values, if it's clear what units it is using, add the unit to the description.
 * Write the data facts with the style of writing a data story/data-rich document.

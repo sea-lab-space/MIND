@@ -303,8 +303,8 @@ class MINDPipeline:
 
 if __name__ == "__main__":
     MODEL_NAME = 'gpt-4.1'
-    # 
-    USERS = ["INS-W_963", "INS-W_1044", "INS-W_1077"]
+    # USERS = ["INS-W_963", "INS-W_1044", "INS-W_1077"]
+    USERS = ["INS-W_1044"]
 
     for uid in USERS:
         pipeline = MINDPipeline(
@@ -320,8 +320,8 @@ if __name__ == "__main__":
             .load_data(load_from_cache=True)
             .run_discoverer(load_from_cache=True)
             .run_synthesizer(iters=2, load_from_cache=True)
-            .run_narrator(load_from_cache=True)
-            .run_overview(load_from_cache=False)
+            .run_narrator(load_from_cache=False)
+            .run_overview(load_from_cache=True)
             .run_suggest_activity(load_from_cache=True)
             .run_visualizer()
             .run_calc_relevance()

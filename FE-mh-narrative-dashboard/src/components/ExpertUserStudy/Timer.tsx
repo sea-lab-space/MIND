@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
 interface TimerProps {
-  totalLength: number; // total seconds to count up to
+  totalLength: number; // total seconds to count down from
   terminate: boolean; // if true, timer should stop/reset
-  onTerminate: () => void; // callback when timer reaches totalLength
+  onTerminate: () => void; // callback when timer reaches 0
 }
 
 export default function Timer({
@@ -11,28 +11,29 @@ export default function Timer({
   terminate,
   onTerminate,
 }: TimerProps) {
-  const [secondsElapsed, setSecondsElapsed] = useState(0);
+  const [secondsLeft, setSecondsLeft] = useState(totalLength);
 
   useEffect(() => {
+    // Reset if terminate is triggered
     if (terminate) {
-      setSecondsElapsed(0); // reset if terminate is true
+      setSecondsLeft(totalLength);
       return;
     }
 
-    if (secondsElapsed >= totalLength) {
-      onTerminate(); // notify parent timer finished
+    if (secondsLeft <= 0) {
+      onTerminate();
       return;
     }
 
     const intervalId = setInterval(() => {
-      setSecondsElapsed((prev) => prev + 1);
+      setSecondsLeft((prev) => prev - 1);
     }, 1000);
 
     return () => clearInterval(intervalId);
-  }, [secondsElapsed, terminate, totalLength, onTerminate]);
+  }, [secondsLeft, terminate, totalLength, onTerminate]);
 
-  const minutes = Math.floor(secondsElapsed / 60);
-  const seconds = secondsElapsed % 60;
+  const minutes = Math.floor(secondsLeft / 60);
+  const seconds = secondsLeft % 60;
 
   return (
     <div
@@ -59,7 +60,7 @@ export default function Timer({
         (e.currentTarget as HTMLElement).style.backgroundColor =
           "rgba(0,0,0,0.6)";
       }}
-      title="Timer"
+      title="Countdown Timer"
     >
       {minutes.toString().padStart(2, "0")}:
       {seconds.toString().padStart(2, "0")}

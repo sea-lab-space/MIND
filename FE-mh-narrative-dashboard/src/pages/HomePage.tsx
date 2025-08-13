@@ -149,7 +149,7 @@ export default function HomePage() {
           <TabsView tabItems={tabItems} defaultTab="mind" isMIND={true} />
         </div>
         {/* User study specific */}
-        {selectedPatient && timeLimit && (
+        {/* {selectedPatient && timeLimit && (
           <TranscriptModal
             selectedPatient={selectedPatient}
             open={modalState}
@@ -168,7 +168,7 @@ export default function HomePage() {
         )}
         {studyEndState && (
           <StudyEndModal open={studyEndState} onOpenChange={setStudyEndState} />
-        )}
+        )} */}
       </div>
     );
 }

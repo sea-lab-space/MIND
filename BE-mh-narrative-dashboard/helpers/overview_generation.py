@@ -20,7 +20,7 @@ def get_health_system_prompt(length: Literal['minimal', 'short']):
         """
     elif length == 'short':
         return f"""
-        {GENERAL_SUMMARIZATION_SYSTEM} Summarize the patient's medical history into a short, less than 45-word description.
+        {GENERAL_SUMMARIZATION_SYSTEM} Summarize the patient's medical history into a short, less than 50-word description.
         Separate common medical concern with psychiatric concerns. Your output should look like this:
         "Medical Concerns: [medical_concerns]; Psychiatric Concerns: [psychiatric_concerns]"
         """
@@ -38,7 +38,7 @@ def get_mh_system_prompt(length: Literal['minimal', 'short']):
         """
     elif length == 'short':
         return f"""
-        {MENTAL_HEALTH_SYSTEM} Summarize the patient's previous session highlights and major concerns into a short, less than 45-word description.
+        {MENTAL_HEALTH_SYSTEM} Summarize the patient's previous session highlights and major concerns into a short, less than 50-word description.
     """
     else:
         raise ValueError("Invalid length")
@@ -126,14 +126,22 @@ class SummarizationAgent:
             if date_before(encounter['encounter_date'], self.before_date)
         ])
 
+
         medication_history = set()
 
         for med in self.data['this_series']:
             if date_before(med['encounter_date'], self.before_date):
-                med_info = med.get('medication', {})
-                for med in med_info:
-                    medication_history.add(med.get('medication', ''))
-        medication_history = list(medication_history)
+                med_info = med.get('medication', [])
+                for m in med_info:
+                    medication_history.add((
+                        m.get('date', ''),
+                        m.get('medication', '')
+                    ))
+
+        medication_history = [
+            {"date": date, "medication": medication}
+            for date, medication in medication_history
+        ]
 
 
         mh_results = self._run_mental_health(encounter_history)
@@ -157,7 +165,10 @@ class SummarizationAgent:
                 concerns_dict['expanded'] = mh['result'].current_concerns
 
         if len(medication_history) > 0:
-            medication_note = ", ".join(medication_history)
+            medication_note = "; ".join(
+                f"{med['date']}: {med['medication']}"
+                for med in medication_history
+            )
         else:
             medication_note = "No medication history with current sessions."
                 
