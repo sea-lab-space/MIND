@@ -79,3 +79,24 @@ export function getUserFromHashUrl(): string {
     return "-";
   }
 }
+
+export function getTimerSettingFromHashUrl(): number {
+  if (typeof window === "undefined") return 0;
+
+  try {
+    const hash = window.location.hash; // e.g. "#/baseline?user=Orson&timer=5"
+    const queryIndex = hash.indexOf("?");
+    if (queryIndex === -1) return 0;
+
+    const queryString = hash.slice(queryIndex + 1);
+    const params = new URLSearchParams(queryString);
+    const timerParam = params.get("timer");
+
+    const timer = timerParam ? Number(timerParam) : 0;
+    return isNaN(timer) ? 0 : timer;
+  } catch (error) {
+    console.error("Error parsing timer from hash:", error);
+    return 0;
+  }
+}
+

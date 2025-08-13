@@ -44,10 +44,11 @@ const DataSourceIcon: React.FC<DatasourceIconProps> = ({ iconType, showType = fa
           className={`flex items-center justify-center gap-2 ${colorDisplay}`}
         >
           {icon}
-          {textPlainColor && (
+          {textPlainColor ? (
             <span className="text-black">{capitalizeFirst(displayName)}</span>
+          ) : (
+            showType && capitalizeFirst(displayName)
           )}
-          {showType && capitalizeFirst(displayName)}
         </div>
       </TooltipTrigger>
       {!showType && (

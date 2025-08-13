@@ -24,7 +24,7 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({
       </div>
       <div>
         <Button variant="outline" onClick={onClick}>
-          <X /> Close Tab
+          <X />
         </Button>
       </div>
       {/*<div className="flex items-center">*/}

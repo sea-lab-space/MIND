@@ -2,7 +2,7 @@ import {useEffect, useState, type JSX} from "react";
 import { useParams } from "react-router-dom";
 import Header from "@/components/header";
 import { getVisualizerDataForPerson } from "@/utils/dataConversion";
-import { flattenAllExpandViews, getUserFromHashUrl, groupInsightsBySource } from "@/utils/helper";
+import { flattenAllExpandViews, getTimerSettingFromHashUrl, getUserFromHashUrl, groupInsightsBySource } from "@/utils/helper";
 import PassiveSensingTab from "@/components/BaseLine/PassiveSensing/PassiveSensingTab";
 import ClinicalNotesTab from "@/components/BaseLine/ClinicalNotes/ClinicalNotesTab";
 import TranscriptionTab from "@/components/BaseLine/Transcription/TranscriptionTab";
@@ -13,12 +13,16 @@ import type { TabItem, HomePageTabKey, TabKey } from "@/types/dataTypes";
 import {nameListMap, retrospectHorizon} from "@/data/data";
 import TabsView from "@/components/TabsView/TabsView";
 import DataSourceIcon from "@/components/DatasourceIcon";
+import TranscriptModal from "@/components/ExpertUserStudy/TranscriptModal";
+import Timer from "@/components/ExpertUserStudy/Timer";
+import { StudyEndModal } from "@/components/ExpertUserStudy/EndModal";
 
 export default function HomePage() {
     const { patientId } = useParams<{ patientId: string }>();
     const [selectedPatient, setSelectedPatient] = useState("Gabriella Lin");
     const [invalidPatient, setInvalidPatient] = useState(false);
     const userName = getUserFromHashUrl();
+    const timeLimit = getTimerSettingFromHashUrl()
 
     const { overviewCardData, insightCardData, session_subjective_info, survey_data, suggested_activity_data} = getVisualizerDataForPerson(selectedPatient);
     const allExpandViews = flattenAllExpandViews(insightCardData);
@@ -50,15 +54,15 @@ export default function HomePage() {
     > = {
       mind: {
         icon: <WandSparkles className="w-5 h-5" />,
-        color: "bg-gray-50", // corrected from 'grey-500'
+        color: "bg-gray-50",
       },
       "survey-scores": {
-        icon: <DataSourceIcon iconType="survey"  textPlainColor />,
-        color: "bg-orange-50", // removed 'color-' prefix for Tailwind
+        icon: <DataSourceIcon iconType="survey" textPlainColor showType />,
+        color: "bg-orange-50",
       },
       "clinical-notes": {
         icon: (
-          <DataSourceIcon iconType="clinical note"  textPlainColor />
+          <DataSourceIcon iconType="clinical note" textPlainColor showType />
         ),
         color: "bg-yellow-50",
       },
@@ -67,13 +71,14 @@ export default function HomePage() {
           <DataSourceIcon
             iconType="session transcript"
             textPlainColor
+            showType
           />
         ),
         color: "bg-emerald-50",
       },
       "passive-sensing": {
         icon: (
-          <DataSourceIcon iconType="passive sensing"  textPlainColor />
+          <DataSourceIcon iconType="passive sensing" textPlainColor showType />
         ),
         color: "bg-slate-50",
       },
@@ -121,29 +126,49 @@ export default function HomePage() {
       }),
     ];
 
-    return (
-        <div className="flex flex-col h-screen">
-            {/* Sticky Header */}
-            <div className="sticky top-0 z-50 shadow-md mb-2">
-                <Header
-                    isHomePage
-                    patientNames={Object.values(nameListMap)}
-                    userName={userName}
-                    retrospectHorizon={retrospectHorizon}
-                    selectedPatient={selectedPatient}
-                    setSelectedPatient={setSelectedPatient}
-                    disabled={!!patientId}
-                />
-            </div>
+    const [modalState, setModalState] = useState(true);
+    const [studyEndState, setStudyEndState] = useState(false);
+    const [isTerminated, setIsTerminated] = useState(false);
 
-            {/* Tab View fills the rest */}
-            <div className="flex-1 min-h-0 flex">
-                <TabsView
-                    tabItems={tabItems}
-                    defaultTab="mind"
-                    isMIND={true}
-                />
-            </div>
+    return (
+      <div className="flex flex-col h-screen">
+        {/* Sticky Header */}
+        <div className="sticky top-0 z-50 shadow-md mb-2">
+          <Header
+            isHomePage
+            patientNames={Object.values(nameListMap)}
+            userName={userName}
+            retrospectHorizon={retrospectHorizon}
+            selectedPatient={selectedPatient}
+            setSelectedPatient={setSelectedPatient}
+            disabled={!!patientId}
+          />
         </div>
+        {/* Tab View fills the rest */}
+        <div className="flex-1 min-h-0 flex">
+          <TabsView tabItems={tabItems} defaultTab="mind" isMIND={true} />
+        </div>
+        {/* User study specific */}
+        {selectedPatient && timeLimit && (
+          <TranscriptModal
+            selectedPatient={selectedPatient}
+            open={modalState}
+            onOpenChange={setModalState}
+          />
+        )}
+        {modalState === false && selectedPatient && timeLimit && (
+          <Timer
+            totalLength={timeLimit}
+            terminate={isTerminated}
+            onTerminate={() => {
+              setIsTerminated(true);
+              setStudyEndState(true);
+            }}
+          />
+        )}
+        {studyEndState && (
+          <StudyEndModal open={studyEndState} onOpenChange={setStudyEndState} />
+        )}
+      </div>
     );
 }
