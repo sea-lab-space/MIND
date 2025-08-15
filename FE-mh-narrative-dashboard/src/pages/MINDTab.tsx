@@ -8,317 +8,415 @@ import PatientMessageDialog from "@/components/PatientCommunication/PatientMessa
 import { useWindowSize } from "usehooks-ts";
 import { Button } from "@/components/ui";
 import { Pencil } from "lucide-react";
-import {FilterSelector} from "@/components/FilterSelector";
-import { InsightType, type InsightCardData, type InsightExpandViewItem } from "@/types/props";
+import { FilterSelector } from "@/components/FilterSelector";
 import {
-    getVisualizerDataForPerson,
-} from "@/utils/dataConversion";
+  InsightType,
+  type InsightCardData,
+  type InsightExpandViewItem,
+} from "@/types/props";
+import { getVisualizerDataForPerson } from "@/utils/dataConversion";
 import { flattenAllExpandViews, groupInsightsBySource } from "@/utils/helper";
 import { type SuggestedActivity } from "@/types/dataTypes";
-
+import OverviewSummary from "@/components/BaseLine/OverciewSummary";
+import VerticalTimeline from "@/components/Timeline/TimelineVis";
+import * as d3 from "d3";
 
 interface MINDTabProps {
-    selectedPatient: string;
-    clinicianName: string;
+  selectedPatient: string;
+  clinicianName: string;
 }
 
-const MINDTab: React.FC<MINDTabProps> = ({ selectedPatient, clinicianName }) => {
-    const [selectedInsightHeader, setSelectedInsightHeader] = useState<string[]>([]);
-    const [selectedInsightCard, setSelectedInsightCard] = useState<string | null>(null);
-    const [selectedInsightTypes, setSelectedInsightTypes] = useState<InsightType[]>([]);
+const MINDTab: React.FC<MINDTabProps> = ({
+  selectedPatient,
+  clinicianName,
+}) => {
+  const [selectedInsightHeader, setSelectedInsightHeader] = useState<string[]>(
+    []
+  );
+  const [selectedInsightCard, setSelectedInsightCard] = useState<string | null>(
+    null
+  );
+  const [selectedInsightTypes, setSelectedInsightTypes] = useState<
+    InsightType[]
+  >([]);
 
-    const [selectedActivities, setSelectedActivities] = useState<SuggestedActivity[]>([]);
+  const [selectedActivities, setSelectedActivities] = useState<
+    SuggestedActivity[]
+  >([]);
 
-    const [isDrillDown, setIsDrillDown] = useState(false);
-    const [expandedSections, setExpandedSections] = useState({
-        overview: false,
-        insights: false,
-        communication: false,
+  const [isDrillDown, setIsDrillDown] = useState(false);
+  const [expandedSections, setExpandedSections] = useState({
+    overview: false,
+    insights: false,
+    communication: false,
+  });
+
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const {
+    overviewCardData,
+    insightCardData,
+    session_subjective_info,
+    suggested_activity_data,
+    survey_data,
+  } = getVisualizerDataForPerson(selectedPatient);
+  const [globalExpand, setGlobalExpand] = useState(false);
+  const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
+
+  const toggleSection = (
+    section: "overview" | "insights" | "communication"
+  ) => {
+    setExpandedSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
+
+  const handleToggleCard = (cardKey: string, expand: boolean) => {
+    setExpandedCards((prev) => {
+      const next = new Set(prev);
+      if (expand) {
+        next.add(cardKey);
+      } else {
+        next.delete(cardKey);
+      }
+      return next;
     });
+  };
 
-    const [isDialogOpen, setIsDialogOpen] = useState(false);
-    const { overviewCardData, insightCardData, session_subjective_info, suggested_activity_data, survey_data } = getVisualizerDataForPerson(selectedPatient);
-    const [globalExpand, setGlobalExpand] = useState(false);
-    const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
+  useEffect(() => {
+    setExpandedSections({
+      overview: false,
+      insights: false,
+      communication: false,
+    });
+    setSelectedInsightCard(null);
+    setIsDrillDown(false);
+    setSelectedInsightHeader([]);
+  }, [selectedPatient]);
 
-    const toggleSection = (section: "overview" | "insights" | "communication") => {
-        setExpandedSections((prev) => ({
-            ...prev,
-            [section]: !prev[section],
-        }));
-    };
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const { width: windowWidth } = useWindowSize();
+  const rightPanelWidth = isDrillDown
+    ? Math.max((windowWidth * 2) / 3, 800)
+    : 0;
 
-    const handleToggleCard = (cardKey: string, expand: boolean) => {
-        setExpandedCards(prev => {
-            const next = new Set(prev);
-            if (expand) {
-                next.add(cardKey);
-            } else {
-                next.delete(cardKey);
-            }
-            return next;
-        });
-    };
+  const handleInsightCardHeaderSelect = (key: string) => {
+    setSelectedInsightHeader((prev) =>
+      prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]
+    );
+  };
 
-    useEffect(() => {
-        setExpandedSections({
-            overview: false,
-            insights: false,
-            communication: false,
-        });
-        setSelectedInsightCard(null);
-        setIsDrillDown(false);
-        setSelectedInsightHeader([]);
-    }, [selectedPatient]);
+  const handleCardSelection = (key: string, index: number) => {
+    setSelectedInsightCard(key);
+    setIsDrillDown(true);
+    setTimeout(() => {
+      const cardEl = cardRefs.current[index];
+      if (cardEl) {
+        cardEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 100);
+  };
 
-    const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-    const { width: windowWidth } = useWindowSize();
-    const rightPanelWidth = isDrillDown ? Math.max((windowWidth * 2) / 3, 800) : 0;
-
-    const handleInsightCardHeaderSelect = (key: string) => {
-        setSelectedInsightHeader((prev) =>
-            prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]
+  const filteredInsightCards =
+    selectedInsightTypes.length === 0
+      ? insightCardData
+      : insightCardData.filter(
+          (card) =>
+            Array.isArray(card.insightType) &&
+            card.insightType.some((insight) =>
+              selectedInsightTypes.includes(insight.type)
+            )
         );
-    };
 
-    const handleCardSelection = (key: string, index: number) => {
-        setSelectedInsightCard(key);
-        setIsDrillDown(true);
-        setTimeout(() => {
-            const cardEl = cardRefs.current[index];
-            if (cardEl) {
-              cardEl.scrollIntoView({ behavior: "smooth", block: "center" });
-            }
-        }, 100);
-    };
+  const leftColumnCards = filteredInsightCards.filter((_, i) => i % 2 === 0);
+  const rightColumnCards = filteredInsightCards.filter((_, i) => i % 2 !== 0);
+  const allExpandViews = flattenAllExpandViews(insightCardData);
 
-    const filteredInsightCards =
-        selectedInsightTypes.length === 0
-            ? insightCardData
-            : insightCardData.filter(card =>
-                Array.isArray(card.insightType) &&
-                card.insightType.some(insight =>
-                    selectedInsightTypes.includes(insight.type)
-                )
-            );
+  const {
+    passiveSensingFacts = [],
+  }: { passiveSensingFacts?: InsightExpandViewItem[] } =
+    groupInsightsBySource(allExpandViews);
+  const selectedInsightCardTitles = insightCardData
+    .filter((card) => selectedInsightHeader.includes(card.key))
+    .map((card) => card.summaryTitle);
 
-    const leftColumnCards = filteredInsightCards.filter((_, i) => i % 2 === 0);
-    const rightColumnCards = filteredInsightCards.filter((_, i) => i % 2 !== 0);
-    const allExpandViews = flattenAllExpandViews(insightCardData);
+  console.log(selectedActivities);
+  const timelineRef = useRef(null);
 
-    const { passiveSensingFacts = [] }: { passiveSensingFacts?: InsightExpandViewItem[] } = groupInsightsBySource(allExpandViews);
-    const selectedInsightCardTitles = insightCardData
-        .filter((card) => selectedInsightHeader.includes(card.key))
-        .map((card) => card.summaryTitle);
+  const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({
+    overview: null,
+    insights: null,
+    communication: null,
+  });
 
-    console.log(selectedActivities)
+  const [section, setSection] = useState<string>("overview");
 
-    return (
-      <>
-        <div className="flex flex-col h-full">
+  const handleTimelineStateChange = (state: [Date, Date] | null) => {
+    if (!state) return;
+
+    const [startDate, endDate] = state;
+    const parseDate = d3.timeParse("%Y-%m-%d");
+
+    const targetStart = parseDate("2021-05-09");
+    const targetEnd = parseDate("2021-06-07");
+
+    if (targetStart && targetEnd) {
+      if (
+        startDate.getTime() === targetStart.getTime() &&
+        endDate.getTime() === targetEnd.getTime()
+      ) {
+        setSection("insights");
+
+        const target = sectionRefs.current.insights;
+        target?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+
+        console.log("Scrolled to insights section");
+      }
+    }
+  };
+
+  return (
+    <>
+      {/* <div className="flex flex-col h-full"> */}
+      <div className="flex gap-4 h-full py-2 px-4">
+        {/* Left column: scrollable independently */}
+        {overviewCardData && !isDrillDown && (
           <div
-            className={`flex flex-grow py-0 px-4 gap-4 overflow-y-auto ${
-              !isDrillDown ? "flex-col w-full mx-auto" : ""
+            className="flex flex-col w-[260px] shrink-0 sticky top-0 z-10 gap-2"
+            ref={(el) => {
+              sectionRefs.current.overview = el;
+            }}
+          >
+            <OverviewSummary overviewCardData={overviewCardData} />
+            <h3 className="text-base font-semibold">Navigation</h3>
+            <VerticalTimeline
+              ref={timelineRef}
+              dates={[
+                { date: "2021-03-28", label: "First session" },
+                { date: "2021-04-11", label: "Second session" },
+                { date: "2021-05-09", label: "Last session" },
+                { date: "2021-06-07", label: "Today" },
+              ]}
+              onStateChange={handleTimelineStateChange}
+            />
+          </div>
+        )}
+        <div
+          className={`flex flex-grow py-0 px-4 gap-4 overflow-y-auto ${
+            !isDrillDown ? "flex-col w-full mx-auto" : ""
+          }`}
+        >
+          <div
+            className={`flex flex-col ${
+              isDrillDown ? "w-1/3 overflow-y-auto" : "w-full mx-auto"
             }`}
           >
-            <div
-              className={`flex flex-col ${
-                isDrillDown ? "w-1/3 overflow-y-auto" : "w-full mx-auto"
-              }`}
-            >
-              <div className="relative">
-                <div className="absolute left-8.5 top-4 bottom-0 w-0.5 bg-[#d9d9d9] z-0" />
-                {/* ChartReview bg-red-200/50 */}
-                <div className="rounded p-4 relative z-10">
-                  <SectionTitle
-                    title="Overview"
-                    // subtitle="test"
+            <div className="relative">
+              <div className="absolute left-8.5 top-4 bottom-0 w-0.5 bg-[#d9d9d9] z-0" />
+              {/* ChartReview bg-red-200/50 */}
+              <div className="rounded p-4 relative z-10">
+                <SectionTitle
+                  title="Overview"
+                  // subtitle="test"
+                  isExpanded={expandedSections.overview}
+                  onClick={() => toggleSection("overview")}
+                >
+                  <OverviewComponent
+                    overviewData={overviewCardData}
                     isExpanded={expandedSections.overview}
-                    onClick={() => toggleSection("overview")}
-                  >
-                    <OverviewComponent
-                      overviewData={overviewCardData}
-                      isExpanded={expandedSections.overview}
-                      isDrillDown={isDrillDown}
-                    />
-                  </SectionTitle>
-                </div>
+                    isDrillDown={isDrillDown}
+                  />
+                </SectionTitle>
+              </div>
 
-                {/* Data-driven Insights bg-green-200/50 */}
-                <div className="rounded p-4 mb-2 relative z-10">
-                  <SectionTitle
-                    title="Clinical Insights"
-                    // subtitle="test"
-                    isExpanded={expandedSections.insights || globalExpand}
-                    onClick={() => {
-                      setGlobalExpand((prev) => !prev);
-                      if (!globalExpand) {
-                        setExpandedCards(new Set()); // Clear overrides when expanding all
-                      }
-                    }}
-                  >
-                    {!isDrillDown && (
-                      <FilterSelector
-                        selectedPatient={selectedPatient}
-                        selected={selectedInsightTypes}
-                        onToggle={(type) => {
-                          setSelectedInsightTypes((prev) =>
-                            prev.includes(type) ? [] : [type]
-                          );
-                        }}
-                      />
-                    )}
-
-                    <div
-                      className={`${
-                        isDrillDown
-                          ? "flex flex-col gap-4"
-                          : "grid grid-cols-1 sm:grid-cols-2 gap-4"
-                      }`}
-                    >
-                      {/* Left column */}
-                      <div className="flex flex-col gap-4">
-                        {leftColumnCards.map((card, index) => (
-                          <div
-                            key={card.key}
-                            ref={(el) => {
-                              cardRefs.current[index * 2] = el;
-                            }}
-                            className="w-full"
-                          >
-                            <InsightCardComponent
-                              key={card.key}
-                              insightCardData={card}
-                              isExpanded={
-                                globalExpand || expandedCards.has(card.key)
-                              }
-                              onToggle={handleToggleCard}
-                              isDrillDown={isDrillDown}
-                              title={card.summaryTitle}
-                              sources={card.sources}
-                              isInsightHeaderSelected={selectedInsightHeader.includes(
-                                card.key
-                              )}
-                              isInsightCardSelected={
-                                selectedInsightCard === card.key
-                              }
-                              handleCardSelect={() =>
-                                handleCardSelection(card.key, index * 2)
-                              }
-                              handleCardHeaderClick={() =>
-                                handleInsightCardHeaderSelect(card.key)
-                              }
-                            />
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Right column */}
-                      <div className="flex flex-col gap-4">
-                        {rightColumnCards.map((card, index) => (
-                          <div
-                            key={card.key}
-                            ref={(el) => {
-                              cardRefs.current[index * 2 + 1] = el;
-                            }}
-                            className="w-full"
-                          >
-                            <InsightCardComponent
-                              key={card.key}
-                              insightCardData={card}
-                              isExpanded={
-                                globalExpand || expandedCards.has(card.key)
-                              }
-                              onToggle={handleToggleCard}
-                              isDrillDown={isDrillDown}
-                              title={card.summaryTitle}
-                              sources={card.sources}
-                              isInsightHeaderSelected={selectedInsightHeader.includes(
-                                card.key
-                              )}
-                              isInsightCardSelected={
-                                selectedInsightCard === card.key
-                              }
-                              handleCardSelect={() =>
-                                handleCardSelection(card.key, index * 2 + 1)
-                              }
-                              handleCardHeaderClick={() =>
-                                handleInsightCardHeaderSelect(card.key)
-                              }
-                            />
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </SectionTitle>
-                </div>
-
-                {/* Patient Communication bg-yellow-200/50  */}
-                <div className="rounded p-4 relative z-10">
-                  <SectionTitle
-                    title="Patient Communication"
-                    // subtitle="test"
-                    isExpanded={expandedSections.communication}
-                    onClick={() => toggleSection("communication")}
-                    action={
-                      <Button
-                        variant="outline"
-                        onClick={() => setIsDialogOpen(true)}
-                      >
-                        <Pencil className="w-4 h-4 mr-1" />
-                        Draft Patient Message
-                      </Button>
+              {/* Data-driven Insights bg-green-200/50 */}
+              <div
+                className="rounded p-4 mb-2 relative z-10"
+                ref={(el) => {
+                  sectionRefs.current.insights = el;
+                }}
+              >
+                <SectionTitle
+                  title="Clinical Insights"
+                  // subtitle="test"
+                  isExpanded={expandedSections.insights || globalExpand}
+                  onClick={() => {
+                    setGlobalExpand((prev) => !prev);
+                    if (!globalExpand) {
+                      setExpandedCards(new Set()); // Clear overrides when expanding all
                     }
-                    shouldExpand={false}
-                  >
-                    <PatientCommunicationComponent
-                      isDrillDown={isDrillDown}
-                      selectedInsightCardTitles={selectedInsightCardTitles}
-                      suggested_activity_data={suggested_activity_data}
-                      updateActivities={setSelectedActivities}
+                  }}
+                >
+                  {!isDrillDown && (
+                    <FilterSelector
+                      selectedPatient={selectedPatient}
+                      selected={selectedInsightTypes}
+                      onToggle={(type) => {
+                        setSelectedInsightTypes((prev) =>
+                          prev.includes(type) ? [] : [type]
+                        );
+                      }}
                     />
-                  </SectionTitle>
-                </div>
+                  )}
+
+                  <div
+                    className={`${
+                      isDrillDown
+                        ? "flex flex-col gap-4"
+                        : "grid grid-cols-1 sm:grid-cols-2 gap-4"
+                    }`}
+                  >
+                    {/* Left column */}
+                    <div className="flex flex-col gap-4">
+                      {leftColumnCards.map((card, index) => (
+                        <div
+                          key={card.key}
+                          ref={(el) => {
+                            cardRefs.current[index * 2] = el;
+                          }}
+                          className="w-full"
+                        >
+                          <InsightCardComponent
+                            key={card.key}
+                            insightCardData={card}
+                            isExpanded={
+                              globalExpand || expandedCards.has(card.key)
+                            }
+                            onToggle={handleToggleCard}
+                            isDrillDown={isDrillDown}
+                            title={card.summaryTitle}
+                            sources={card.sources}
+                            isInsightHeaderSelected={selectedInsightHeader.includes(
+                              card.key
+                            )}
+                            isInsightCardSelected={
+                              selectedInsightCard === card.key
+                            }
+                            handleCardSelect={() =>
+                              handleCardSelection(card.key, index * 2)
+                            }
+                            handleCardHeaderClick={() =>
+                              handleInsightCardHeaderSelect(card.key)
+                            }
+                          />
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Right column */}
+                    <div className="flex flex-col gap-4">
+                      {rightColumnCards.map((card, index) => (
+                        <div
+                          key={card.key}
+                          ref={(el) => {
+                            cardRefs.current[index * 2 + 1] = el;
+                          }}
+                          className="w-full"
+                        >
+                          <InsightCardComponent
+                            key={card.key}
+                            insightCardData={card}
+                            isExpanded={
+                              globalExpand || expandedCards.has(card.key)
+                            }
+                            onToggle={handleToggleCard}
+                            isDrillDown={isDrillDown}
+                            title={card.summaryTitle}
+                            sources={card.sources}
+                            isInsightHeaderSelected={selectedInsightHeader.includes(
+                              card.key
+                            )}
+                            isInsightCardSelected={
+                              selectedInsightCard === card.key
+                            }
+                            handleCardSelect={() =>
+                              handleCardSelection(card.key, index * 2 + 1)
+                            }
+                            handleCardHeaderClick={() =>
+                              handleInsightCardHeaderSelect(card.key)
+                            }
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </SectionTitle>
+              </div>
+
+              {/* Patient Communication bg-yellow-200/50  */}
+              <div
+                className="rounded p-4 relative z-10"
+                ref={(el) => {
+                  sectionRefs.current.communication = el;
+                }}
+              >
+                <SectionTitle
+                  title="Patient Communication"
+                  // subtitle="test"
+                  isExpanded={expandedSections.communication}
+                  onClick={() => toggleSection("communication")}
+                  action={
+                    <Button
+                      variant="outline"
+                      onClick={() => setIsDialogOpen(true)}
+                    >
+                      <Pencil className="w-4 h-4 mr-1" />
+                      Draft Patient Message
+                    </Button>
+                  }
+                  shouldExpand={false}
+                >
+                  <PatientCommunicationComponent
+                    isDrillDown={isDrillDown}
+                    selectedInsightCardTitles={selectedInsightCardTitles}
+                    suggested_activity_data={suggested_activity_data}
+                    updateActivities={setSelectedActivities}
+                  />
+                </SectionTitle>
               </div>
             </div>
-
-            {/* Right drilldown panel */}
-            {isDrillDown && (
-              <div
-                className="bg-gray-100 rounded overflow-y-auto overflow-x-hidden h-full"
-                style={{ width: rightPanelWidth }}
-              >
-                <DrilldownPanel
-                  key={selectedInsightCard}
-                  insightData={
-                    insightCardData.find(
-                      (data) => data.key === selectedInsightCard
-                    ) || ({} as InsightCardData)
-                  }
-                  sessionInfo={session_subjective_info}
-                  onClose={() => {
-                    setIsDrillDown(false);
-                    setSelectedInsightCard(null);
-                  }}
-                />
-              </div>
-            )}
           </div>
-        </div>
 
-        {/* Dialog mounted outside main layout */}
-        <PatientMessageDialog
-          open={isDialogOpen}
-          onOpenChange={setIsDialogOpen}
-          selectedInsights={selectedInsightCardTitles}
-          selectedActivities={selectedActivities}
-          patientName={selectedPatient}
-          clinicianName={clinicianName ?? "[Your care team]"}
-        />
-        {/*<div className="flex flex-col bg-gray-50">*/}
-        {/*</div>*/}
-      </>
-    );
-}
+          {/* Right drilldown panel */}
+          {isDrillDown && (
+            <div
+              className="bg-gray-100 rounded overflow-y-auto overflow-x-hidden h-full"
+              style={{ width: rightPanelWidth }}
+            >
+              <DrilldownPanel
+                key={selectedInsightCard}
+                insightData={
+                  insightCardData.find(
+                    (data) => data.key === selectedInsightCard
+                  ) || ({} as InsightCardData)
+                }
+                sessionInfo={session_subjective_info}
+                onClose={() => {
+                  setIsDrillDown(false);
+                  setSelectedInsightCard(null);
+                }}
+              />
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Dialog mounted outside main layout */}
+      <PatientMessageDialog
+        open={isDialogOpen}
+        onOpenChange={setIsDialogOpen}
+        selectedInsights={selectedInsightCardTitles}
+        selectedActivities={selectedActivities}
+        patientName={selectedPatient}
+        clinicianName={clinicianName ?? "[Your care team]"}
+      />
+      {/*<div className="flex flex-col bg-gray-50">*/}
+      {/*</div>*/}
+    </>
+  );
+};
 
 export default MINDTab;
