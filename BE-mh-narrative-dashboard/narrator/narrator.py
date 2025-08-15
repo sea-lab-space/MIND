@@ -104,6 +104,7 @@ Given a |data insight| and its associated |data facts|, identify and deduplicate
 Redundancy may occur:
 * Across modalities (e.g., transcripts and clinical notes);
 * Within a single modality (e.g., multiple facts of the same type that equally support the insight).
+* Within the same category (e.g., similar insights about sleep, emotional state).
 
 Task: Return the IDs of the unique, non-redundant data facts that best support the insight. 
 Requirement:

@@ -49,8 +49,8 @@
       "key": "insight-0",
       "summaryTitle": "Rising anxiety and stress scores, matching reports of overwhelm.",
       "sources": [
-        "survey",
-        "clinical note"
+        "clinical note",
+        "survey"
       ],
       "insightType": [
         "Emotional State",
@@ -116,7 +116,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Perceived stress increased from low (5.0) to high (11.0) between 2021-05-12 and 2021-05-19.",
+          "summarySentence": "Perceived stress increased from low (5.0) to high (11.0) from 2021-05-12 to 2021-05-19 (7 days).",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -166,7 +166,7 @@
             "time_2": "2021-05-19",
             "value_1": 5.0,
             "value_2": 11.0,
-            "fact_description": "Perceived stress increased from low (5.0) to high (11.0) between 2021-05-12 and 2021-05-19.",
+            "fact_description": "Perceived stress increased from low (5.0) to high (11.0) from 2021-05-12 to 2021-05-19 (7 days).",
             "fact_type": "difference"
           },
           "sources": [
@@ -192,7 +192,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The PHQ-4 Depression Score increased from 2.0 on 2021-05-30 to 3.0 on 2021-06-06, indicating a shift from feeling depressed more than half the days to nearly every day.",
+          "summarySentence": "The PHQ-4 Depression Score increased from 2.0 on 2021-05-30 to 3.0 on 2021-06-06, indicating a shift from 'depressed more than half the days' to 'depressed nearly every day.'",
           "dataPoints": [
             {
               "date": "2021-04-04",
@@ -242,7 +242,7 @@
             "time_2": "2021-06-06",
             "value_1": 2.0,
             "value_2": 3.0,
-            "fact_description": "The PHQ-4 Depression Score increased from 2.0 on 2021-05-30 to 3.0 on 2021-06-06, indicating a shift from feeling depressed more than half the days to nearly every day.",
+            "fact_description": "The PHQ-4 Depression Score increased from 2.0 on 2021-05-30 to 3.0 on 2021-06-06, indicating a shift from 'depressed more than half the days' to 'depressed nearly every day.'",
             "fact_type": "difference"
           },
           "sources": [
@@ -252,7 +252,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "From 2021-03-31 to 2021-06-02 (63 days), the median PSS-4 score was 8.0, indicating high perceived stress.",
+          "summarySentence": "Between 2021-03-31 and 2021-06-02 (63 days), median PSS-4 was 8.0, indicating high perceived stress.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -301,7 +301,7 @@
             "time_1": "2021-03-31",
             "time_2": "2021-06-02",
             "value": 8.0,
-            "fact_description": "From 2021-03-31 to 2021-06-02 (63 days), the median PSS-4 score was 8.0, indicating high perceived stress.",
+            "fact_description": "Between 2021-03-31 and 2021-06-02 (63 days), median PSS-4 was 8.0, indicating high perceived stress.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -314,15 +314,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.39436254274463856
+          "relevance": 0.394592832457523
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.38053405411651864
+          "relevance": 0.3805601480543769
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3924565086486777
+          "relevance": 0.3924715357334849
         }
       ]
     },
@@ -330,257 +330,16 @@
       "key": "insight-1",
       "summaryTitle": "Transient mood improvement after activity, with persistent negative affect and anxiety.",
       "sources": [
-        "session transcript",
+        "clinical note",
         "survey",
-        "clinical note"
+        "session transcript"
       ],
       "insightType": [
         "Emotional State"
       ],
       "expandView": [
         {
-          "summarySentence": "On 2021-06-06, the PHQ-4 Score was 6.0, indicating moderate psychological distress.",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 Score": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 Score": 3.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 Score": 4.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 Score": 6.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 Score": 4.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 Score": 4.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 Score": 5.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 Score": 5.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 Score": 4.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 Score": 6.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 Score",
-            "attribute": "max",
-            "time": "2021-06-06",
-            "value": 6.0,
-            "fact_description": "On 2021-06-06, the PHQ-4 Score was 6.0, indicating moderate psychological distress.",
-            "fact_type": "extreme"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "extreme",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Perceived stress increased from low (5.0) to high (11.0) between 2021-05-12 and 2021-05-19.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "PSS-4 Score": 6.0
-            },
-            {
-              "date": "2021-04-07",
-              "PSS-4 Score": 8.0
-            },
-            {
-              "date": "2021-04-14",
-              "PSS-4 Score": 8.0
-            },
-            {
-              "date": "2021-04-21",
-              "PSS-4 Score": 9.0
-            },
-            {
-              "date": "2021-04-28",
-              "PSS-4 Score": 8.0
-            },
-            {
-              "date": "2021-05-05",
-              "PSS-4 Score": 6.0
-            },
-            {
-              "date": "2021-05-12",
-              "PSS-4 Score": 5.0
-            },
-            {
-              "date": "2021-05-19",
-              "PSS-4 Score": 11.0
-            },
-            {
-              "date": "2021-05-26",
-              "PSS-4 Score": 8.0
-            },
-            {
-              "date": "2021-06-02",
-              "PSS-4 Score": 8.0
-            }
-          ],
-          "spec": {
-            "name": "PSS-4 Score",
-            "attribute": "more",
-            "time_1": "2021-05-12",
-            "time_2": "2021-05-19",
-            "value_1": 5.0,
-            "value_2": 11.0,
-            "fact_description": "Perceived stress increased from low (5.0) to high (11.0) between 2021-05-12 and 2021-05-19.",
-            "fact_type": "difference"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "difference",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Lucy briefly feels better after activities, but soon feels discouraged and self-critical again.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "She describes feeling a transient improvement in mood after walking, but this was short-lived, and she subsequently felt discouraged and self-critical for not continuing."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Average Negative Affect Score dropped from 7.88 to 7.4 between 2021-04-25 and 2021-06-06.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "Negative Affect Score": 2.0
-            },
-            {
-              "date": "2021-04-04",
-              "Negative Affect Score": 0.0
-            },
-            {
-              "date": "2021-04-07",
-              "Negative Affect Score": 1.0
-            },
-            {
-              "date": "2021-04-11",
-              "Negative Affect Score": 3.0
-            },
-            {
-              "date": "2021-04-14",
-              "Negative Affect Score": 7.0
-            },
-            {
-              "date": "2021-04-18",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-04-21",
-              "Negative Affect Score": 6.0
-            },
-            {
-              "date": "2021-04-25",
-              "Negative Affect Score": 13.0
-            },
-            {
-              "date": "2021-04-28",
-              "Negative Affect Score": 10.0
-            },
-            {
-              "date": "2021-05-02",
-              "Negative Affect Score": 5.0
-            },
-            {
-              "date": "2021-05-05",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-05-09",
-              "Negative Affect Score": 5.0
-            },
-            {
-              "date": "2021-05-12",
-              "Negative Affect Score": 3.0
-            },
-            {
-              "date": "2021-05-16",
-              "Negative Affect Score": 5.0
-            },
-            {
-              "date": "2021-05-19",
-              "Negative Affect Score": 14.0
-            },
-            {
-              "date": "2021-05-24",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-05-26",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-05-30",
-              "Negative Affect Score": 8.0
-            },
-            {
-              "date": "2021-06-02",
-              "Negative Affect Score": 5.0
-            },
-            {
-              "date": "2021-06-06",
-              "Negative Affect Score": 8.0
-            }
-          ],
-          "spec": {
-            "name": "Negative Affect Score",
-            "attribute": "less",
-            "aggregation": "average",
-            "time_dur_1": {
-              "time_start": "2021-04-25",
-              "time_end": "2021-05-19"
-            },
-            "time_dur_2": {
-              "time_start": "2021-05-24",
-              "time_end": "2021-06-06"
-            },
-            "value_dur_1": 7.88,
-            "value_dur_2": 7.4,
-            "fact_description": "Average Negative Affect Score dropped from 7.88 to 7.4 between 2021-04-25 and 2021-06-06.",
-            "fact_type": "comparison"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "comparison",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "The median Negative Affect Score rose from 6.5 to 8.0 over two recent periods.",
+          "summarySentence": "The median Negative Affect Score rose from 6.5 to 8.0 between 2021-04-25 and 2021-06-06.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -677,7 +436,190 @@
             },
             "value_dur_1": 6.5,
             "value_dur_2": 8.0,
-            "fact_description": "The median Negative Affect Score rose from 6.5 to 8.0 over two recent periods.",
+            "fact_description": "The median Negative Affect Score rose from 6.5 to 8.0 between 2021-04-25 and 2021-06-06.",
+            "fact_type": "comparison"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "comparison",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "Perceived stress increased from low (5.0) to high (11.0) from 2021-05-12 to 2021-05-19 (7 days).",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "PSS-4 Score": 6.0
+            },
+            {
+              "date": "2021-04-07",
+              "PSS-4 Score": 8.0
+            },
+            {
+              "date": "2021-04-14",
+              "PSS-4 Score": 8.0
+            },
+            {
+              "date": "2021-04-21",
+              "PSS-4 Score": 9.0
+            },
+            {
+              "date": "2021-04-28",
+              "PSS-4 Score": 8.0
+            },
+            {
+              "date": "2021-05-05",
+              "PSS-4 Score": 6.0
+            },
+            {
+              "date": "2021-05-12",
+              "PSS-4 Score": 5.0
+            },
+            {
+              "date": "2021-05-19",
+              "PSS-4 Score": 11.0
+            },
+            {
+              "date": "2021-05-26",
+              "PSS-4 Score": 8.0
+            },
+            {
+              "date": "2021-06-02",
+              "PSS-4 Score": 8.0
+            }
+          ],
+          "spec": {
+            "name": "PSS-4 Score",
+            "attribute": "more",
+            "time_1": "2021-05-12",
+            "time_2": "2021-05-19",
+            "value_1": 5.0,
+            "value_2": 11.0,
+            "fact_description": "Perceived stress increased from low (5.0) to high (11.0) from 2021-05-12 to 2021-05-19 (7 days).",
+            "fact_type": "difference"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "difference",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "Lucy briefly feels better after activities, but soon feels discouraged and self-critical again.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "She describes feeling a transient improvement in mood after walking, but this was short-lived, and she subsequently felt discouraged and self-critical for not continuing."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "The average Negative Affect Score dropped from 7.88 to 7.4 between the two periods.",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "Negative Affect Score": 2.0
+            },
+            {
+              "date": "2021-04-04",
+              "Negative Affect Score": 0.0
+            },
+            {
+              "date": "2021-04-07",
+              "Negative Affect Score": 1.0
+            },
+            {
+              "date": "2021-04-11",
+              "Negative Affect Score": 3.0
+            },
+            {
+              "date": "2021-04-14",
+              "Negative Affect Score": 7.0
+            },
+            {
+              "date": "2021-04-18",
+              "Negative Affect Score": 8.0
+            },
+            {
+              "date": "2021-04-21",
+              "Negative Affect Score": 6.0
+            },
+            {
+              "date": "2021-04-25",
+              "Negative Affect Score": 13.0
+            },
+            {
+              "date": "2021-04-28",
+              "Negative Affect Score": 10.0
+            },
+            {
+              "date": "2021-05-02",
+              "Negative Affect Score": 5.0
+            },
+            {
+              "date": "2021-05-05",
+              "Negative Affect Score": 8.0
+            },
+            {
+              "date": "2021-05-09",
+              "Negative Affect Score": 5.0
+            },
+            {
+              "date": "2021-05-12",
+              "Negative Affect Score": 3.0
+            },
+            {
+              "date": "2021-05-16",
+              "Negative Affect Score": 5.0
+            },
+            {
+              "date": "2021-05-19",
+              "Negative Affect Score": 14.0
+            },
+            {
+              "date": "2021-05-24",
+              "Negative Affect Score": 8.0
+            },
+            {
+              "date": "2021-05-26",
+              "Negative Affect Score": 8.0
+            },
+            {
+              "date": "2021-05-30",
+              "Negative Affect Score": 8.0
+            },
+            {
+              "date": "2021-06-02",
+              "Negative Affect Score": 5.0
+            },
+            {
+              "date": "2021-06-06",
+              "Negative Affect Score": 8.0
+            }
+          ],
+          "spec": {
+            "name": "Negative Affect Score",
+            "attribute": "less",
+            "aggregation": "average",
+            "time_dur_1": {
+              "time_start": "2021-04-25",
+              "time_end": "2021-05-19"
+            },
+            "time_dur_2": {
+              "time_start": "2021-05-24",
+              "time_end": "2021-06-06"
+            },
+            "value_dur_1": 7.88,
+            "value_dur_2": 7.4,
+            "fact_description": "The average Negative Affect Score dropped from 7.88 to 7.4 between the two periods.",
             "fact_type": "comparison"
           },
           "sources": [
@@ -687,7 +629,65 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The PHQ-4 Depression Score increased from 2.0 on 2021-05-30 to 3.0 on 2021-06-06, indicating a shift from feeling depressed more than half the days to nearly every day.",
+          "summarySentence": "On 2021-06-06, the PHQ-4 Score was 6.0, indicating moderate psychological distress.",
+          "dataPoints": [
+            {
+              "date": "2021-04-04",
+              "PHQ-4 Score": 4.0
+            },
+            {
+              "date": "2021-04-11",
+              "PHQ-4 Score": 3.0
+            },
+            {
+              "date": "2021-04-18",
+              "PHQ-4 Score": 4.0
+            },
+            {
+              "date": "2021-04-25",
+              "PHQ-4 Score": 6.0
+            },
+            {
+              "date": "2021-05-02",
+              "PHQ-4 Score": 4.0
+            },
+            {
+              "date": "2021-05-09",
+              "PHQ-4 Score": 4.0
+            },
+            {
+              "date": "2021-05-16",
+              "PHQ-4 Score": 5.0
+            },
+            {
+              "date": "2021-05-24",
+              "PHQ-4 Score": 5.0
+            },
+            {
+              "date": "2021-05-30",
+              "PHQ-4 Score": 4.0
+            },
+            {
+              "date": "2021-06-06",
+              "PHQ-4 Score": 6.0
+            }
+          ],
+          "spec": {
+            "name": "PHQ-4 Score",
+            "attribute": "max",
+            "time": "2021-06-06",
+            "value": 6.0,
+            "fact_description": "On 2021-06-06, the PHQ-4 Score was 6.0, indicating moderate psychological distress.",
+            "fact_type": "extreme"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "extreme",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "The PHQ-4 Depression Score increased from 2.0 on 2021-05-30 to 3.0 on 2021-06-06, indicating a shift from 'depressed more than half the days' to 'depressed nearly every day.'",
           "dataPoints": [
             {
               "date": "2021-04-04",
@@ -737,7 +737,7 @@
             "time_2": "2021-06-06",
             "value_1": 2.0,
             "value_2": 3.0,
-            "fact_description": "The PHQ-4 Depression Score increased from 2.0 on 2021-05-30 to 3.0 on 2021-06-06, indicating a shift from feeling depressed more than half the days to nearly every day.",
+            "fact_description": "The PHQ-4 Depression Score increased from 2.0 on 2021-05-30 to 3.0 on 2021-06-06, indicating a shift from 'depressed more than half the days' to 'depressed nearly every day.'",
             "fact_type": "difference"
           },
           "sources": [
@@ -766,44 +766,343 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3903671631344884
+          "relevance": 0.39036660587712674
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.28106867078938735
+          "relevance": 0.2810598470621084
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.27360716489556985
+          "relevance": 0.2736011809735947
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.44604722658850177
+          "relevance": 0.44602657879161856
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.4535944090787173
+          "relevance": 0.453583967532063
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.4566263089817554
+          "relevance": 0.4565734446995706
         }
       ]
     },
     {
       "key": "insight-2",
-      "summaryTitle": "Frequent awakenings and short sleep episodes indicate fragmented sleep.",
+      "summaryTitle": "Frequent awakenings and daytime sleep reported, with fragmented sleep duration.",
       "sources": [
         "passive sensing",
-        "session transcript",
-        "clinical note"
+        "clinical note",
+        "session transcript"
       ],
       "insightType": [
         "Sleep Patterns"
       ],
       "expandView": [
+        {
+          "summarySentence": "Between 2021-04-01 and 2021-06-06 (66 days), the highest number of awake episodes was 24.",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Number of Awake Episodes": null
+            },
+            {
+              "date": "2021-03-30",
+              "Number of Awake Episodes": null
+            },
+            {
+              "date": "2021-03-31",
+              "Number of Awake Episodes": null
+            },
+            {
+              "date": "2021-04-01",
+              "Number of Awake Episodes": 15.0
+            },
+            {
+              "date": "2021-04-02",
+              "Number of Awake Episodes": 14.0
+            },
+            {
+              "date": "2021-04-03",
+              "Number of Awake Episodes": 17.0
+            },
+            {
+              "date": "2021-04-04",
+              "Number of Awake Episodes": 14.0
+            },
+            {
+              "date": "2021-04-05",
+              "Number of Awake Episodes": 15.0
+            },
+            {
+              "date": "2021-04-06",
+              "Number of Awake Episodes": 7.0
+            },
+            {
+              "date": "2021-04-07",
+              "Number of Awake Episodes": 12.0
+            },
+            {
+              "date": "2021-04-08",
+              "Number of Awake Episodes": 7.0
+            },
+            {
+              "date": "2021-04-09",
+              "Number of Awake Episodes": null
+            },
+            {
+              "date": "2021-04-10",
+              "Number of Awake Episodes": 8.0
+            },
+            {
+              "date": "2021-04-11",
+              "Number of Awake Episodes": 11.0
+            },
+            {
+              "date": "2021-04-12",
+              "Number of Awake Episodes": 14.0
+            },
+            {
+              "date": "2021-04-13",
+              "Number of Awake Episodes": 16.0
+            },
+            {
+              "date": "2021-04-14",
+              "Number of Awake Episodes": 10.0
+            },
+            {
+              "date": "2021-04-15",
+              "Number of Awake Episodes": 18.0
+            },
+            {
+              "date": "2021-04-16",
+              "Number of Awake Episodes": 17.0
+            },
+            {
+              "date": "2021-04-17",
+              "Number of Awake Episodes": 7.0
+            },
+            {
+              "date": "2021-04-18",
+              "Number of Awake Episodes": null
+            },
+            {
+              "date": "2021-04-19",
+              "Number of Awake Episodes": null
+            },
+            {
+              "date": "2021-04-20",
+              "Number of Awake Episodes": 20.0
+            },
+            {
+              "date": "2021-04-21",
+              "Number of Awake Episodes": 20.0
+            },
+            {
+              "date": "2021-04-22",
+              "Number of Awake Episodes": 7.0
+            },
+            {
+              "date": "2021-04-23",
+              "Number of Awake Episodes": 8.0
+            },
+            {
+              "date": "2021-04-24",
+              "Number of Awake Episodes": 11.0
+            },
+            {
+              "date": "2021-04-25",
+              "Number of Awake Episodes": 15.0
+            },
+            {
+              "date": "2021-04-26",
+              "Number of Awake Episodes": 16.0
+            },
+            {
+              "date": "2021-04-27",
+              "Number of Awake Episodes": 11.0
+            },
+            {
+              "date": "2021-04-28",
+              "Number of Awake Episodes": null
+            },
+            {
+              "date": "2021-04-29",
+              "Number of Awake Episodes": 20.0
+            },
+            {
+              "date": "2021-04-30",
+              "Number of Awake Episodes": 17.0
+            },
+            {
+              "date": "2021-05-01",
+              "Number of Awake Episodes": 16.0
+            },
+            {
+              "date": "2021-05-02",
+              "Number of Awake Episodes": 16.0
+            },
+            {
+              "date": "2021-05-03",
+              "Number of Awake Episodes": 16.0
+            },
+            {
+              "date": "2021-05-04",
+              "Number of Awake Episodes": 14.0
+            },
+            {
+              "date": "2021-05-05",
+              "Number of Awake Episodes": 17.0
+            },
+            {
+              "date": "2021-05-06",
+              "Number of Awake Episodes": 18.0
+            },
+            {
+              "date": "2021-05-07",
+              "Number of Awake Episodes": null
+            },
+            {
+              "date": "2021-05-08",
+              "Number of Awake Episodes": 11.0
+            },
+            {
+              "date": "2021-05-09",
+              "Number of Awake Episodes": 16.0
+            },
+            {
+              "date": "2021-05-10",
+              "Number of Awake Episodes": 13.0
+            },
+            {
+              "date": "2021-05-11",
+              "Number of Awake Episodes": 24.0
+            },
+            {
+              "date": "2021-05-12",
+              "Number of Awake Episodes": 13.0
+            },
+            {
+              "date": "2021-05-13",
+              "Number of Awake Episodes": 11.0
+            },
+            {
+              "date": "2021-05-14",
+              "Number of Awake Episodes": 18.0
+            },
+            {
+              "date": "2021-05-15",
+              "Number of Awake Episodes": 18.0
+            },
+            {
+              "date": "2021-05-16",
+              "Number of Awake Episodes": 10.0
+            },
+            {
+              "date": "2021-05-17",
+              "Number of Awake Episodes": 12.0
+            },
+            {
+              "date": "2021-05-18",
+              "Number of Awake Episodes": 14.0
+            },
+            {
+              "date": "2021-05-19",
+              "Number of Awake Episodes": 10.0
+            },
+            {
+              "date": "2021-05-20",
+              "Number of Awake Episodes": 16.0
+            },
+            {
+              "date": "2021-05-21",
+              "Number of Awake Episodes": 15.0
+            },
+            {
+              "date": "2021-05-22",
+              "Number of Awake Episodes": 13.0
+            },
+            {
+              "date": "2021-05-23",
+              "Number of Awake Episodes": 3.0
+            },
+            {
+              "date": "2021-05-24",
+              "Number of Awake Episodes": 14.0
+            },
+            {
+              "date": "2021-05-25",
+              "Number of Awake Episodes": 10.0
+            },
+            {
+              "date": "2021-05-26",
+              "Number of Awake Episodes": 10.0
+            },
+            {
+              "date": "2021-05-27",
+              "Number of Awake Episodes": 5.0
+            },
+            {
+              "date": "2021-05-28",
+              "Number of Awake Episodes": 11.0
+            },
+            {
+              "date": "2021-05-29",
+              "Number of Awake Episodes": null
+            },
+            {
+              "date": "2021-05-30",
+              "Number of Awake Episodes": null
+            },
+            {
+              "date": "2021-05-31",
+              "Number of Awake Episodes": 7.0
+            },
+            {
+              "date": "2021-06-01",
+              "Number of Awake Episodes": 15.0
+            },
+            {
+              "date": "2021-06-02",
+              "Number of Awake Episodes": 20.0
+            },
+            {
+              "date": "2021-06-03",
+              "Number of Awake Episodes": 16.0
+            },
+            {
+              "date": "2021-06-04",
+              "Number of Awake Episodes": 14.0
+            },
+            {
+              "date": "2021-06-05",
+              "Number of Awake Episodes": 15.0
+            },
+            {
+              "date": "2021-06-06",
+              "Number of Awake Episodes": 15.0
+            }
+          ],
+          "spec": {
+            "name": "Number of Awake Episodes",
+            "aggregation": "max",
+            "time_1": "2021-04-01",
+            "time_2": "2021-06-06",
+            "value": 24.0,
+            "fact_description": "Between 2021-04-01 and 2021-06-06 (66 days), the highest number of awake episodes was 24.",
+            "fact_type": "derived value"
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "derived value",
+          "isShowL2": true
+        },
         {
           "summarySentence": "From 2021-05-01 to 2021-05-31 (30 days), average sleep duration was 32.70 minutes, which is very low.",
           "dataPoints": [
@@ -1104,305 +1403,6 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The highest number of awake episodes was 24.0 from 2021-04-01 to 2021-06-06 (66 days).",
-          "dataPoints": [
-            {
-              "date": "2021-03-29",
-              "Number of Awake Episodes": null
-            },
-            {
-              "date": "2021-03-30",
-              "Number of Awake Episodes": null
-            },
-            {
-              "date": "2021-03-31",
-              "Number of Awake Episodes": null
-            },
-            {
-              "date": "2021-04-01",
-              "Number of Awake Episodes": 15.0
-            },
-            {
-              "date": "2021-04-02",
-              "Number of Awake Episodes": 14.0
-            },
-            {
-              "date": "2021-04-03",
-              "Number of Awake Episodes": 17.0
-            },
-            {
-              "date": "2021-04-04",
-              "Number of Awake Episodes": 14.0
-            },
-            {
-              "date": "2021-04-05",
-              "Number of Awake Episodes": 15.0
-            },
-            {
-              "date": "2021-04-06",
-              "Number of Awake Episodes": 7.0
-            },
-            {
-              "date": "2021-04-07",
-              "Number of Awake Episodes": 12.0
-            },
-            {
-              "date": "2021-04-08",
-              "Number of Awake Episodes": 7.0
-            },
-            {
-              "date": "2021-04-09",
-              "Number of Awake Episodes": null
-            },
-            {
-              "date": "2021-04-10",
-              "Number of Awake Episodes": 8.0
-            },
-            {
-              "date": "2021-04-11",
-              "Number of Awake Episodes": 11.0
-            },
-            {
-              "date": "2021-04-12",
-              "Number of Awake Episodes": 14.0
-            },
-            {
-              "date": "2021-04-13",
-              "Number of Awake Episodes": 16.0
-            },
-            {
-              "date": "2021-04-14",
-              "Number of Awake Episodes": 10.0
-            },
-            {
-              "date": "2021-04-15",
-              "Number of Awake Episodes": 18.0
-            },
-            {
-              "date": "2021-04-16",
-              "Number of Awake Episodes": 17.0
-            },
-            {
-              "date": "2021-04-17",
-              "Number of Awake Episodes": 7.0
-            },
-            {
-              "date": "2021-04-18",
-              "Number of Awake Episodes": null
-            },
-            {
-              "date": "2021-04-19",
-              "Number of Awake Episodes": null
-            },
-            {
-              "date": "2021-04-20",
-              "Number of Awake Episodes": 20.0
-            },
-            {
-              "date": "2021-04-21",
-              "Number of Awake Episodes": 20.0
-            },
-            {
-              "date": "2021-04-22",
-              "Number of Awake Episodes": 7.0
-            },
-            {
-              "date": "2021-04-23",
-              "Number of Awake Episodes": 8.0
-            },
-            {
-              "date": "2021-04-24",
-              "Number of Awake Episodes": 11.0
-            },
-            {
-              "date": "2021-04-25",
-              "Number of Awake Episodes": 15.0
-            },
-            {
-              "date": "2021-04-26",
-              "Number of Awake Episodes": 16.0
-            },
-            {
-              "date": "2021-04-27",
-              "Number of Awake Episodes": 11.0
-            },
-            {
-              "date": "2021-04-28",
-              "Number of Awake Episodes": null
-            },
-            {
-              "date": "2021-04-29",
-              "Number of Awake Episodes": 20.0
-            },
-            {
-              "date": "2021-04-30",
-              "Number of Awake Episodes": 17.0
-            },
-            {
-              "date": "2021-05-01",
-              "Number of Awake Episodes": 16.0
-            },
-            {
-              "date": "2021-05-02",
-              "Number of Awake Episodes": 16.0
-            },
-            {
-              "date": "2021-05-03",
-              "Number of Awake Episodes": 16.0
-            },
-            {
-              "date": "2021-05-04",
-              "Number of Awake Episodes": 14.0
-            },
-            {
-              "date": "2021-05-05",
-              "Number of Awake Episodes": 17.0
-            },
-            {
-              "date": "2021-05-06",
-              "Number of Awake Episodes": 18.0
-            },
-            {
-              "date": "2021-05-07",
-              "Number of Awake Episodes": null
-            },
-            {
-              "date": "2021-05-08",
-              "Number of Awake Episodes": 11.0
-            },
-            {
-              "date": "2021-05-09",
-              "Number of Awake Episodes": 16.0
-            },
-            {
-              "date": "2021-05-10",
-              "Number of Awake Episodes": 13.0
-            },
-            {
-              "date": "2021-05-11",
-              "Number of Awake Episodes": 24.0
-            },
-            {
-              "date": "2021-05-12",
-              "Number of Awake Episodes": 13.0
-            },
-            {
-              "date": "2021-05-13",
-              "Number of Awake Episodes": 11.0
-            },
-            {
-              "date": "2021-05-14",
-              "Number of Awake Episodes": 18.0
-            },
-            {
-              "date": "2021-05-15",
-              "Number of Awake Episodes": 18.0
-            },
-            {
-              "date": "2021-05-16",
-              "Number of Awake Episodes": 10.0
-            },
-            {
-              "date": "2021-05-17",
-              "Number of Awake Episodes": 12.0
-            },
-            {
-              "date": "2021-05-18",
-              "Number of Awake Episodes": 14.0
-            },
-            {
-              "date": "2021-05-19",
-              "Number of Awake Episodes": 10.0
-            },
-            {
-              "date": "2021-05-20",
-              "Number of Awake Episodes": 16.0
-            },
-            {
-              "date": "2021-05-21",
-              "Number of Awake Episodes": 15.0
-            },
-            {
-              "date": "2021-05-22",
-              "Number of Awake Episodes": 13.0
-            },
-            {
-              "date": "2021-05-23",
-              "Number of Awake Episodes": 3.0
-            },
-            {
-              "date": "2021-05-24",
-              "Number of Awake Episodes": 14.0
-            },
-            {
-              "date": "2021-05-25",
-              "Number of Awake Episodes": 10.0
-            },
-            {
-              "date": "2021-05-26",
-              "Number of Awake Episodes": 10.0
-            },
-            {
-              "date": "2021-05-27",
-              "Number of Awake Episodes": 5.0
-            },
-            {
-              "date": "2021-05-28",
-              "Number of Awake Episodes": 11.0
-            },
-            {
-              "date": "2021-05-29",
-              "Number of Awake Episodes": null
-            },
-            {
-              "date": "2021-05-30",
-              "Number of Awake Episodes": null
-            },
-            {
-              "date": "2021-05-31",
-              "Number of Awake Episodes": 7.0
-            },
-            {
-              "date": "2021-06-01",
-              "Number of Awake Episodes": 15.0
-            },
-            {
-              "date": "2021-06-02",
-              "Number of Awake Episodes": 20.0
-            },
-            {
-              "date": "2021-06-03",
-              "Number of Awake Episodes": 16.0
-            },
-            {
-              "date": "2021-06-04",
-              "Number of Awake Episodes": 14.0
-            },
-            {
-              "date": "2021-06-05",
-              "Number of Awake Episodes": 15.0
-            },
-            {
-              "date": "2021-06-06",
-              "Number of Awake Episodes": 15.0
-            }
-          ],
-          "spec": {
-            "name": "Number of Awake Episodes",
-            "aggregation": "max",
-            "time_1": "2021-04-01",
-            "time_2": "2021-06-06",
-            "value": 24.0,
-            "fact_description": "The highest number of awake episodes was 24.0 from 2021-04-01 to 2021-06-06 (66 days).",
-            "fact_type": "derived value"
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "derived value",
-          "isShowL2": true
-        },
-        {
           "summarySentence": "The patient reports trouble falling asleep at night and tends to sleep during daytime hours.",
           "dataPoints": null,
           "spec": [
@@ -1419,7 +1419,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Average sleep duration decreased from 65.83 minutes on 2021-05-27 to 39.05 minutes on 2021-05-31.",
+          "summarySentence": "Average sleep duration decreased from 65.83 units on 2021-05-27 to 39.05 units on 2021-05-31.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -1709,7 +1709,7 @@
             "time_2": "2021-05-31",
             "value_1": 65.8322361111,
             "value_2": 39.0549037037,
-            "fact_description": "Average sleep duration decreased from 65.83 minutes on 2021-05-27 to 39.05 minutes on 2021-05-31.",
+            "fact_description": "Average sleep duration decreased from 65.83 units on 2021-05-27 to 39.05 units on 2021-05-31.",
             "fact_type": "difference"
           },
           "sources": [
@@ -2316,7 +2316,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The fewest awake episodes during sleep was 3.0 from 2021-04-01 to 2021-06-06.",
+          "summarySentence": "The fewest awake episodes during sleep was 3.0 from 2021-04-01 to 2021-06-06 (66 days).",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -2605,7 +2605,7 @@
             "time_1": "2021-04-01",
             "time_2": "2021-06-06",
             "value": 3.0,
-            "fact_description": "The fewest awake episodes during sleep was 3.0 from 2021-04-01 to 2021-06-06.",
+            "fact_description": "The fewest awake episodes during sleep was 3.0 from 2021-04-01 to 2021-06-06 (66 days).",
             "fact_type": "derived value"
           },
           "sources": [
@@ -2634,29 +2634,29 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.16592210673594304
+          "relevance": 0.19620898231063505
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.15145413667091512
+          "relevance": 0.2137073955504346
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.16929982125567197
+          "relevance": 0.20854597063880304
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.23335115864281628
+          "relevance": 0.3308386786315547
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.2490165571266624
+          "relevance": 0.344278048424513
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.26776877300412816
+          "relevance": 0.3764910843095814
         }
       ]
     },
@@ -2665,15 +2665,15 @@
       "summaryTitle": "Physical activity decreased, with brief increases in steps and exercise.",
       "sources": [
         "passive sensing",
-        "session transcript",
-        "clinical note"
+        "clinical note",
+        "session transcript"
       ],
       "insightType": [
         "Physical Activity"
       ],
       "expandView": [
         {
-          "summarySentence": "Average daily steps decreased from 13,273.1 to 10,298.6 from 2021-05-01 to 2021-05-31.",
+          "summarySentence": "Average daily steps decreased from 13,273.1 to 10,298.6 between 2021-05-01 and 2021-05-31.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -2970,7 +2970,7 @@
             },
             "value_dur_1": 13273.125,
             "value_dur_2": 10298.57142857143,
-            "fact_description": "Average daily steps decreased from 13,273.1 to 10,298.6 from 2021-05-01 to 2021-05-31.",
+            "fact_description": "Average daily steps decreased from 13,273.1 to 10,298.6 between 2021-05-01 and 2021-05-31.",
             "fact_type": "comparison"
           },
           "sources": [
@@ -2980,7 +2980,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The average number of sedentary episodes increased from 71.4 to 84.7 from 2021-05-01 to 2021-06-06.",
+          "summarySentence": "The average number of sedentary episodes increased from 71.4 to 84.7 between 2021-05-01 and 2021-06-06.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -3277,625 +3277,13 @@
             },
             "value_dur_1": 71.4375,
             "value_dur_2": 84.65,
-            "fact_description": "The average number of sedentary episodes increased from 71.4 to 84.7 from 2021-05-01 to 2021-06-06.",
+            "fact_description": "The average number of sedentary episodes increased from 71.4 to 84.7 between 2021-05-01 and 2021-06-06.",
             "fact_type": "comparison"
           },
           "sources": [
             "passive sensing"
           ],
           "dataSourceType": "comparison",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Total steps increased from 2021-05-20 to 2021-05-23 (3 days).",
-          "dataPoints": [
-            {
-              "date": "2021-03-29",
-              "Total Steps": null
-            },
-            {
-              "date": "2021-03-30",
-              "Total Steps": null
-            },
-            {
-              "date": "2021-03-31",
-              "Total Steps": 4161.0
-            },
-            {
-              "date": "2021-04-01",
-              "Total Steps": 13673.0
-            },
-            {
-              "date": "2021-04-02",
-              "Total Steps": 13557.0
-            },
-            {
-              "date": "2021-04-03",
-              "Total Steps": 19817.0
-            },
-            {
-              "date": "2021-04-04",
-              "Total Steps": 15032.0
-            },
-            {
-              "date": "2021-04-05",
-              "Total Steps": 13733.0
-            },
-            {
-              "date": "2021-04-06",
-              "Total Steps": 12587.0
-            },
-            {
-              "date": "2021-04-07",
-              "Total Steps": 14130.0
-            },
-            {
-              "date": "2021-04-08",
-              "Total Steps": 10413.0
-            },
-            {
-              "date": "2021-04-09",
-              "Total Steps": 13822.0
-            },
-            {
-              "date": "2021-04-10",
-              "Total Steps": 13608.0
-            },
-            {
-              "date": "2021-04-11",
-              "Total Steps": 13752.0
-            },
-            {
-              "date": "2021-04-12",
-              "Total Steps": 15202.0
-            },
-            {
-              "date": "2021-04-13",
-              "Total Steps": 15078.0
-            },
-            {
-              "date": "2021-04-14",
-              "Total Steps": 15852.0
-            },
-            {
-              "date": "2021-04-15",
-              "Total Steps": 13048.0
-            },
-            {
-              "date": "2021-04-16",
-              "Total Steps": 12032.0
-            },
-            {
-              "date": "2021-04-17",
-              "Total Steps": null
-            },
-            {
-              "date": "2021-04-18",
-              "Total Steps": null
-            },
-            {
-              "date": "2021-04-19",
-              "Total Steps": 10111.0
-            },
-            {
-              "date": "2021-04-20",
-              "Total Steps": 14702.0
-            },
-            {
-              "date": "2021-04-21",
-              "Total Steps": 11925.0
-            },
-            {
-              "date": "2021-04-22",
-              "Total Steps": 11294.0
-            },
-            {
-              "date": "2021-04-23",
-              "Total Steps": 13093.0
-            },
-            {
-              "date": "2021-04-24",
-              "Total Steps": 11245.0
-            },
-            {
-              "date": "2021-04-25",
-              "Total Steps": 29579.0
-            },
-            {
-              "date": "2021-04-26",
-              "Total Steps": 11669.0
-            },
-            {
-              "date": "2021-04-27",
-              "Total Steps": 12234.0
-            },
-            {
-              "date": "2021-04-28",
-              "Total Steps": 10586.0
-            },
-            {
-              "date": "2021-04-29",
-              "Total Steps": 10162.0
-            },
-            {
-              "date": "2021-04-30",
-              "Total Steps": 14106.0
-            },
-            {
-              "date": "2021-05-01",
-              "Total Steps": 10377.0
-            },
-            {
-              "date": "2021-05-02",
-              "Total Steps": 25279.0
-            },
-            {
-              "date": "2021-05-03",
-              "Total Steps": 9749.0
-            },
-            {
-              "date": "2021-05-04",
-              "Total Steps": 13620.0
-            },
-            {
-              "date": "2021-05-05",
-              "Total Steps": 12016.0
-            },
-            {
-              "date": "2021-05-06",
-              "Total Steps": 7447.0
-            },
-            {
-              "date": "2021-05-07",
-              "Total Steps": 6137.0
-            },
-            {
-              "date": "2021-05-08",
-              "Total Steps": 25121.0
-            },
-            {
-              "date": "2021-05-09",
-              "Total Steps": 8964.0
-            },
-            {
-              "date": "2021-05-10",
-              "Total Steps": 14711.0
-            },
-            {
-              "date": "2021-05-11",
-              "Total Steps": 10746.0
-            },
-            {
-              "date": "2021-05-12",
-              "Total Steps": 12597.0
-            },
-            {
-              "date": "2021-05-13",
-              "Total Steps": 9942.0
-            },
-            {
-              "date": "2021-05-14",
-              "Total Steps": 16680.0
-            },
-            {
-              "date": "2021-05-15",
-              "Total Steps": 5835.0
-            },
-            {
-              "date": "2021-05-16",
-              "Total Steps": 23149.0
-            },
-            {
-              "date": "2021-05-17",
-              "Total Steps": 9538.0
-            },
-            {
-              "date": "2021-05-18",
-              "Total Steps": 6653.0
-            },
-            {
-              "date": "2021-05-19",
-              "Total Steps": 6122.0
-            },
-            {
-              "date": "2021-05-20",
-              "Total Steps": 3850.0
-            },
-            {
-              "date": "2021-05-21",
-              "Total Steps": 13278.0
-            },
-            {
-              "date": "2021-05-22",
-              "Total Steps": 8258.0
-            },
-            {
-              "date": "2021-05-23",
-              "Total Steps": 26581.0
-            },
-            {
-              "date": "2021-05-24",
-              "Total Steps": 7871.0
-            },
-            {
-              "date": "2021-05-25",
-              "Total Steps": 10379.0
-            },
-            {
-              "date": "2021-05-26",
-              "Total Steps": 9051.0
-            },
-            {
-              "date": "2021-05-27",
-              "Total Steps": 10230.0
-            },
-            {
-              "date": "2021-05-28",
-              "Total Steps": 9564.0
-            },
-            {
-              "date": "2021-05-29",
-              "Total Steps": null
-            },
-            {
-              "date": "2021-05-30",
-              "Total Steps": 7497.0
-            },
-            {
-              "date": "2021-05-31",
-              "Total Steps": 15308.0
-            },
-            {
-              "date": "2021-06-01",
-              "Total Steps": 9459.0
-            },
-            {
-              "date": "2021-06-02",
-              "Total Steps": 21239.0
-            },
-            {
-              "date": "2021-06-03",
-              "Total Steps": 9994.0
-            },
-            {
-              "date": "2021-06-04",
-              "Total Steps": 13014.0
-            },
-            {
-              "date": "2021-06-05",
-              "Total Steps": 12088.0
-            },
-            {
-              "date": "2021-06-06",
-              "Total Steps": 10899.0
-            }
-          ],
-          "spec": {
-            "name": "Total Steps",
-            "attribute": "rise",
-            "time_1": "2021-05-20",
-            "time_2": "2021-05-23",
-            "fact_description": "Total steps increased from 2021-05-20 to 2021-05-23 (3 days).",
-            "fact_type": "trend"
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "trend",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "On 2021-05-10, time spent in exercise spaces peaked at 89.615 minutes, a high value.",
-          "dataPoints": [
-            {
-              "date": "2021-03-29",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-03-30",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-03-31",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-01",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-02",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-03",
-              "Time in Exercise Spaces": 1.0001
-            },
-            {
-              "date": "2021-04-04",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-05",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-06",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-07",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-08",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-09",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-10",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-11",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-12",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-13",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-14",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-15",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-16",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-17",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-18",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-19",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-20",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-21",
-              "Time in Exercise Spaces": 80.9980333333333
-            },
-            {
-              "date": "2021-04-22",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-23",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-24",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-25",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-26",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-27",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-28",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-29",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-04-30",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-01",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-02",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-03",
-              "Time in Exercise Spaces": 3.0006
-            },
-            {
-              "date": "2021-05-04",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-05",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-06",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-07",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-08",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-09",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-10",
-              "Time in Exercise Spaces": 89.6147833333333
-            },
-            {
-              "date": "2021-05-11",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-12",
-              "Time in Exercise Spaces": 105.998883333333
-            },
-            {
-              "date": "2021-05-13",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-14",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-15",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-16",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-17",
-              "Time in Exercise Spaces": 43.999
-            },
-            {
-              "date": "2021-05-18",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-19",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-20",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-21",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-22",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-23",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-24",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-25",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-26",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-27",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-28",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-29",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-30",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-05-31",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-06-01",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-06-02",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-06-03",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-06-04",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-06-05",
-              "Time in Exercise Spaces": 0.0
-            },
-            {
-              "date": "2021-06-06",
-              "Time in Exercise Spaces": 0.0
-            }
-          ],
-          "spec": {
-            "name": "Time in Exercise Spaces",
-            "attribute": "max",
-            "time": "2021-05-10",
-            "value": 89.6147833333333,
-            "fact_description": "On 2021-05-10, time spent in exercise spaces peaked at 89.615 minutes, a high value.",
-            "fact_type": "extreme"
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "extreme",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Lucy tried behavioral activation, like walking, but found it difficult to keep up regularly.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "She attempted to implement some behavioral activation strategies discussed previously, such as going for a short walk, but found it difficult to maintain consistency."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
           "isShowL2": true
         },
         {
@@ -4194,10 +3582,622 @@
             "passive sensing"
           ],
           "dataSourceType": "extreme",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "On 2021-05-10, time spent in exercise spaces peaked at 89.6 minutes, a high value.",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-03-30",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-03-31",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-01",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-02",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-03",
+              "Time in Exercise Spaces": 1.0001
+            },
+            {
+              "date": "2021-04-04",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-05",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-06",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-07",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-08",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-09",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-10",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-11",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-12",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-13",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-14",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-15",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-16",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-17",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-18",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-19",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-20",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-21",
+              "Time in Exercise Spaces": 80.9980333333333
+            },
+            {
+              "date": "2021-04-22",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-23",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-24",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-25",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-26",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-27",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-28",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-29",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-04-30",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-01",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-02",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-03",
+              "Time in Exercise Spaces": 3.0006
+            },
+            {
+              "date": "2021-05-04",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-05",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-06",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-07",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-08",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-09",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-10",
+              "Time in Exercise Spaces": 89.6147833333333
+            },
+            {
+              "date": "2021-05-11",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-12",
+              "Time in Exercise Spaces": 105.998883333333
+            },
+            {
+              "date": "2021-05-13",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-14",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-15",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-16",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-17",
+              "Time in Exercise Spaces": 43.999
+            },
+            {
+              "date": "2021-05-18",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-19",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-20",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-21",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-22",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-23",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-24",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-25",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-26",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-27",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-28",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-29",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-30",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-05-31",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-06-01",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-06-02",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-06-03",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-06-04",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-06-05",
+              "Time in Exercise Spaces": 0.0
+            },
+            {
+              "date": "2021-06-06",
+              "Time in Exercise Spaces": 0.0
+            }
+          ],
+          "spec": {
+            "name": "Time in Exercise Spaces",
+            "attribute": "max",
+            "time": "2021-05-10",
+            "value": 89.6147833333333,
+            "fact_description": "On 2021-05-10, time spent in exercise spaces peaked at 89.6 minutes, a high value.",
+            "fact_type": "extreme"
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "extreme",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "Lucy tried behavioral activation, like walking, but found it difficult to keep up regularly.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "She attempted to implement some behavioral activation strategies discussed previously, such as going for a short walk, but found it difficult to maintain consistency."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "Total steps increased from 2021-05-20 to 2021-05-23 (3 days).",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Total Steps": null
+            },
+            {
+              "date": "2021-03-30",
+              "Total Steps": null
+            },
+            {
+              "date": "2021-03-31",
+              "Total Steps": 4161.0
+            },
+            {
+              "date": "2021-04-01",
+              "Total Steps": 13673.0
+            },
+            {
+              "date": "2021-04-02",
+              "Total Steps": 13557.0
+            },
+            {
+              "date": "2021-04-03",
+              "Total Steps": 19817.0
+            },
+            {
+              "date": "2021-04-04",
+              "Total Steps": 15032.0
+            },
+            {
+              "date": "2021-04-05",
+              "Total Steps": 13733.0
+            },
+            {
+              "date": "2021-04-06",
+              "Total Steps": 12587.0
+            },
+            {
+              "date": "2021-04-07",
+              "Total Steps": 14130.0
+            },
+            {
+              "date": "2021-04-08",
+              "Total Steps": 10413.0
+            },
+            {
+              "date": "2021-04-09",
+              "Total Steps": 13822.0
+            },
+            {
+              "date": "2021-04-10",
+              "Total Steps": 13608.0
+            },
+            {
+              "date": "2021-04-11",
+              "Total Steps": 13752.0
+            },
+            {
+              "date": "2021-04-12",
+              "Total Steps": 15202.0
+            },
+            {
+              "date": "2021-04-13",
+              "Total Steps": 15078.0
+            },
+            {
+              "date": "2021-04-14",
+              "Total Steps": 15852.0
+            },
+            {
+              "date": "2021-04-15",
+              "Total Steps": 13048.0
+            },
+            {
+              "date": "2021-04-16",
+              "Total Steps": 12032.0
+            },
+            {
+              "date": "2021-04-17",
+              "Total Steps": null
+            },
+            {
+              "date": "2021-04-18",
+              "Total Steps": null
+            },
+            {
+              "date": "2021-04-19",
+              "Total Steps": 10111.0
+            },
+            {
+              "date": "2021-04-20",
+              "Total Steps": 14702.0
+            },
+            {
+              "date": "2021-04-21",
+              "Total Steps": 11925.0
+            },
+            {
+              "date": "2021-04-22",
+              "Total Steps": 11294.0
+            },
+            {
+              "date": "2021-04-23",
+              "Total Steps": 13093.0
+            },
+            {
+              "date": "2021-04-24",
+              "Total Steps": 11245.0
+            },
+            {
+              "date": "2021-04-25",
+              "Total Steps": 29579.0
+            },
+            {
+              "date": "2021-04-26",
+              "Total Steps": 11669.0
+            },
+            {
+              "date": "2021-04-27",
+              "Total Steps": 12234.0
+            },
+            {
+              "date": "2021-04-28",
+              "Total Steps": 10586.0
+            },
+            {
+              "date": "2021-04-29",
+              "Total Steps": 10162.0
+            },
+            {
+              "date": "2021-04-30",
+              "Total Steps": 14106.0
+            },
+            {
+              "date": "2021-05-01",
+              "Total Steps": 10377.0
+            },
+            {
+              "date": "2021-05-02",
+              "Total Steps": 25279.0
+            },
+            {
+              "date": "2021-05-03",
+              "Total Steps": 9749.0
+            },
+            {
+              "date": "2021-05-04",
+              "Total Steps": 13620.0
+            },
+            {
+              "date": "2021-05-05",
+              "Total Steps": 12016.0
+            },
+            {
+              "date": "2021-05-06",
+              "Total Steps": 7447.0
+            },
+            {
+              "date": "2021-05-07",
+              "Total Steps": 6137.0
+            },
+            {
+              "date": "2021-05-08",
+              "Total Steps": 25121.0
+            },
+            {
+              "date": "2021-05-09",
+              "Total Steps": 8964.0
+            },
+            {
+              "date": "2021-05-10",
+              "Total Steps": 14711.0
+            },
+            {
+              "date": "2021-05-11",
+              "Total Steps": 10746.0
+            },
+            {
+              "date": "2021-05-12",
+              "Total Steps": 12597.0
+            },
+            {
+              "date": "2021-05-13",
+              "Total Steps": 9942.0
+            },
+            {
+              "date": "2021-05-14",
+              "Total Steps": 16680.0
+            },
+            {
+              "date": "2021-05-15",
+              "Total Steps": 5835.0
+            },
+            {
+              "date": "2021-05-16",
+              "Total Steps": 23149.0
+            },
+            {
+              "date": "2021-05-17",
+              "Total Steps": 9538.0
+            },
+            {
+              "date": "2021-05-18",
+              "Total Steps": 6653.0
+            },
+            {
+              "date": "2021-05-19",
+              "Total Steps": 6122.0
+            },
+            {
+              "date": "2021-05-20",
+              "Total Steps": 3850.0
+            },
+            {
+              "date": "2021-05-21",
+              "Total Steps": 13278.0
+            },
+            {
+              "date": "2021-05-22",
+              "Total Steps": 8258.0
+            },
+            {
+              "date": "2021-05-23",
+              "Total Steps": 26581.0
+            },
+            {
+              "date": "2021-05-24",
+              "Total Steps": 7871.0
+            },
+            {
+              "date": "2021-05-25",
+              "Total Steps": 10379.0
+            },
+            {
+              "date": "2021-05-26",
+              "Total Steps": 9051.0
+            },
+            {
+              "date": "2021-05-27",
+              "Total Steps": 10230.0
+            },
+            {
+              "date": "2021-05-28",
+              "Total Steps": 9564.0
+            },
+            {
+              "date": "2021-05-29",
+              "Total Steps": null
+            },
+            {
+              "date": "2021-05-30",
+              "Total Steps": 7497.0
+            },
+            {
+              "date": "2021-05-31",
+              "Total Steps": 15308.0
+            },
+            {
+              "date": "2021-06-01",
+              "Total Steps": 9459.0
+            },
+            {
+              "date": "2021-06-02",
+              "Total Steps": 21239.0
+            },
+            {
+              "date": "2021-06-03",
+              "Total Steps": 9994.0
+            },
+            {
+              "date": "2021-06-04",
+              "Total Steps": 13014.0
+            },
+            {
+              "date": "2021-06-05",
+              "Total Steps": 12088.0
+            },
+            {
+              "date": "2021-06-06",
+              "Total Steps": 10899.0
+            }
+          ],
+          "spec": {
+            "name": "Total Steps",
+            "attribute": "rise",
+            "time_1": "2021-05-20",
+            "time_2": "2021-05-23",
+            "fact_description": "Total steps increased from 2021-05-20 to 2021-05-23 (3 days).",
+            "fact_type": "trend"
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "trend",
           "isShowL2": false
         },
         {
-          "summarySentence": "On 2021-05-31, the number of sedentary episodes peaked at 125.0 episodes.",
+          "summarySentence": "On 2021-05-31, the number of sedentary episodes peaked at 125, indicating high inactivity.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -4485,7 +4485,7 @@
             "attribute": "max",
             "time": "2021-05-31",
             "value": 125.0,
-            "fact_description": "On 2021-05-31, the number of sedentary episodes peaked at 125.0 episodes.",
+            "fact_description": "On 2021-05-31, the number of sedentary episodes peaked at 125, indicating high inactivity.",
             "fact_type": "extreme"
           },
           "sources": [
@@ -4814,29 +4814,29 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.20843814391923418
+          "relevance": 0.20837625965190792
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.19973767135293713
+          "relevance": 0.199675659341207
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.21742926486075517
+          "relevance": 0.21738945384566316
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.26241853963742623
+          "relevance": 0.26222832823290293
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3008047540717514
+          "relevance": 0.30075190321678796
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3264630890962988
+          "relevance": 0.3264048523066551
         }
       ]
     },
@@ -4845,8 +4845,8 @@
       "summaryTitle": "Limited calls and reluctance to seek support due to guilt.",
       "sources": [
         "passive sensing",
-        "session transcript",
-        "clinical note"
+        "clinical note",
+        "session transcript"
       ],
       "insightType": [
         "Social Interaction"
@@ -5152,7 +5152,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The patient hesitates to seek help, fearing they might burden or inconvenience others.",
+          "summarySentence": "The patient hesitates to seek support, fearing they might burden or trouble others.",
           "dataPoints": null,
           "spec": [
             {
@@ -5163,22 +5163,6 @@
           ],
           "sources": [
             "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Lucy experiences guilt when roommates ask about her well-being and hesitates to open up.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "She feels some guilt when roommates inquire about her well-being but is hesitant to share her struggles for fear of burdening others."
-            }
-          ],
-          "sources": [
-            "clinical note"
           ],
           "dataSourceType": "text",
           "isShowL2": true
@@ -5491,7 +5475,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "From 2021-03-29 to 2021-06-06 (69 days), the median daily outgoing calls was 1.",
+          "summarySentence": "From 2021-03-29 to 2021-06-06 (69 days), the median daily outgoing calls was 1.0.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -5780,7 +5764,7 @@
             "time_1": "2021-03-29",
             "time_2": "2021-06-06",
             "value": 1.0,
-            "fact_description": "From 2021-03-29 to 2021-06-06 (69 days), the median daily outgoing calls was 1.",
+            "fact_description": "From 2021-03-29 to 2021-06-06 (69 days), the median daily outgoing calls was 1.0.",
             "fact_type": "derived value"
           },
           "sources": [
@@ -5790,7 +5774,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "There were days with no outgoing calls from 2021-03-29 to 2021-06-06 (69 days).",
+          "summarySentence": "From 2021-03-29 to 2021-06-06 (69 days), there were days with zero outgoing calls.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -6079,13 +6063,29 @@
             "time_1": "2021-03-29",
             "time_2": "2021-06-06",
             "value": 0.0,
-            "fact_description": "There were days with no outgoing calls from 2021-03-29 to 2021-06-06 (69 days).",
+            "fact_description": "From 2021-03-29 to 2021-06-06 (69 days), there were days with zero outgoing calls.",
             "fact_type": "derived value"
           },
           "sources": [
             "passive sensing"
           ],
           "dataSourceType": "derived value",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "Lucy experiences guilt when roommates ask about her well-being and hesitates to open up.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "She feels some guilt when roommates inquire about her well-being but is hesitant to share her struggles for fear of burdening others."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
           "isShowL2": false
         },
         {
@@ -6122,15 +6122,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3717703966575866
+          "relevance": 0.3736168119302305
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.34316291985028835
+          "relevance": 0.34543247678420463
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3448722131057354
+          "relevance": 0.34649613302910715
         }
       ]
     },
@@ -6138,8 +6138,8 @@
       "key": "insight-5",
       "summaryTitle": "Guilt and concern about letting down friends and roommates.",
       "sources": [
-        "session transcript",
-        "clinical note"
+        "clinical note",
+        "session transcript"
       ],
       "insightType": [
         "Emotional State",
@@ -6182,29 +6182,29 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.31880697891550464
+          "relevance": 0.31884794838955155
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.27597487862142217
+          "relevance": 0.2759884778972307
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.26445796836832974
+          "relevance": 0.2644824550749899
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3313551494382881
+          "relevance": 0.3317047759461343
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.316028398245872
+          "relevance": 0.3159670237550735
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.2917189765878197
+          "relevance": 0.29168624964721085
         }
       ]
     },
@@ -6212,45 +6212,13 @@
       "key": "insight-6",
       "summaryTitle": "Pervasive self-criticism and inadequacy across academic, social, and family roles.",
       "sources": [
-        "session transcript",
-        "clinical note"
+        "clinical note",
+        "session transcript"
       ],
       "insightType": [
         "Emotional State"
       ],
       "expandView": [
-        {
-          "summarySentence": "Lucy often feels inadequate about her schoolwork, friendships, and family responsibilities.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Lucy continues to experience pervasive thoughts of inadequacy, particularly around her academic performance, friendships, and family roles."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Lucy expresses her thoughts logically, though most are negative and self-critical in nature.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Thought process: Logical, though negative and self-critical content predominates."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
         {
           "summarySentence": "The patient often feels inadequate and is highly self-critical in various areas of life.",
           "dataPoints": null,
@@ -6270,89 +6238,32 @@
             "session transcript"
           ],
           "dataSourceType": "text",
-          "isShowL2": false
-        }
-      ],
-      "transcriptRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.282457239971895
+          "isShowL2": true
         },
         {
-          "date": "2021-04-11",
-          "relevance": 0.22457488815117663
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.20551146309343313
-        }
-      ],
-      "noteRelevance": [
-        {
-          "date": "2021-03-28",
-          "relevance": 0.3745672948577976
-        },
-        {
-          "date": "2021-04-11",
-          "relevance": 0.33297383919737655
-        },
-        {
-          "date": "2021-05-09",
-          "relevance": 0.3282906165695133
-        }
-      ]
-    },
-    {
-      "key": "insight-7",
-      "summaryTitle": "Emotional numbness and low motivation without suicidal ideation.",
-      "sources": [
-        "session transcript",
-        "clinical note"
-      ],
-      "insightType": [
-        "Emotional State"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "The patient experiences emotional numbness and low motivation, without current suicidal thoughts or self-harm intentions.",
+          "summarySentence": "Lucy frequently feels inadequate about her schoolwork, friendships, and family responsibilities.",
           "dataPoints": null,
           "spec": [
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Patient: I have had a couple days where I just felt really numb again. Not really wanting to do anything. I didn’t really want to hurt myself, I just felt like I didn’t care much either way."
+              "text": "Lucy continues to experience pervasive thoughts of inadequacy, particularly around her academic performance, friendships, and family roles."
             }
           ],
           "sources": [
-            "session transcript"
+            "clinical note"
           ],
           "dataSourceType": "text",
           "isShowL2": true
         },
         {
-          "summarySentence": "Lucy reports feeling numb and apathetic, without any current thoughts or plans of self-harm.",
+          "summarySentence": "Lucy expresses her thoughts in a logical way, though negativity and self-criticism are prominent.",
           "dataPoints": null,
           "spec": [
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Safety: No current suicidal ideation or intent; passive thoughts of numbness and apathy."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "Lucy reports feeling emotionally numb and unmotivated, without current suicidal thoughts or plans.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "She describes episodes of emotional numbness and low motivation but denies active suicidal ideation or intent."
+              "text": "Thought process: Logical, though negative and self-critical content predominates."
             }
           ],
           "sources": [
@@ -6365,38 +6276,38 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.38933273923558775
+          "relevance": 0.2824506581073412
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.3471530726274351
+          "relevance": 0.22454809398911138
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.3427349043789466
+          "relevance": 0.20546744017501986
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.43062224229865664
+          "relevance": 0.3748383158795201
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.46045168985942625
+          "relevance": 0.33293681042343315
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.45946739123441294
+          "relevance": 0.32826687203019744
         }
       ]
     },
     {
-      "key": "insight-8",
-      "summaryTitle": "Minimizes achievements despite maintaining some work and academic responsibilities.",
+      "key": "insight-7",
+      "summaryTitle": "Transient mood improvement after activity, followed by discouragement and self-criticism.",
       "sources": [
-        "session transcript",
-        "clinical note"
+        "clinical note",
+        "session transcript"
       ],
       "insightType": [
         "Emotional State",
@@ -6404,7 +6315,81 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Lucy continues to attend work and therapy, though she downplays these accomplishments.",
+          "summarySentence": "Lucy briefly feels better after activities, but soon feels discouraged and self-critical again.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "She describes feeling a transient improvement in mood after walking, but this was short-lived, and she subsequently felt discouraged and self-critical for not continuing."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "The patient experiences brief mood improvement following physical activity, but it does not last long.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: Honestly? I felt a little less heavy for a bit. I mean, I still went back to bed after, but for like, half an hour it just felt slightly less bad."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        }
+      ],
+      "transcriptRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.4118862675497241
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.3121272204291055
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.32808303527146004
+        }
+      ],
+      "noteRelevance": [
+        {
+          "date": "2021-03-28",
+          "relevance": 0.42123985357404053
+        },
+        {
+          "date": "2021-04-11",
+          "relevance": 0.4275551044465004
+        },
+        {
+          "date": "2021-05-09",
+          "relevance": 0.43297345972422707
+        }
+      ]
+    },
+    {
+      "key": "insight-8",
+      "summaryTitle": "Minimizes achievements despite maintaining some work and academic responsibilities.",
+      "sources": [
+        "clinical note",
+        "session transcript"
+      ],
+      "insightType": [
+        "Emotional State",
+        "Physical Activity"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "Lucy continues to attend work and therapy but tends to downplay her accomplishments.",
           "dataPoints": null,
           "spec": [
             {
@@ -6420,7 +6405,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The patient is delayed with university work but recently completed listening to a recorded lecture.",
+          "summarySentence": "The patient is delayed with university work but recently completed a recorded lecture as progress.",
           "dataPoints": null,
           "spec": [
             {
@@ -6436,7 +6421,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The patient feels anxious and overwhelmed by long to-do lists or several tasks at once.",
+          "summarySentence": "The patient feels anxious and overwhelmed by long to-do lists or several tasks.",
           "dataPoints": null,
           "spec": [
             {
@@ -6452,7 +6437,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Lucy is struggling with coursework but celebrated listening to a recorded lecture as progress.",
+          "summarySentence": "Lucy has fallen behind academically but considers listening to a recorded lecture a small achievement.",
           "dataPoints": null,
           "spec": [
             {
@@ -6487,29 +6472,29 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3091746048972467
+          "relevance": 0.3091873590836121
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.24416681911000346
+          "relevance": 0.2441666418253316
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.2582300727380416
+          "relevance": 0.2582365495593259
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.34930686091353785
+          "relevance": 0.349515216369578
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.37553736986238023
+          "relevance": 0.3754621446871132
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.39409289557332283
+          "relevance": 0.3940724795668789
         }
       ]
     },
@@ -6517,8 +6502,8 @@
       "key": "insight-9",
       "summaryTitle": "Minimizes achievements despite maintaining work and therapy attendance.",
       "sources": [
-        "session transcript",
-        "clinical note"
+        "clinical note",
+        "session transcript"
       ],
       "insightType": [
         "Physical Activity",
@@ -6526,29 +6511,13 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Lucy continues to attend work and therapy, though she downplays these accomplishments.",
+          "summarySentence": "Lucy continues to attend work and therapy but tends to downplay her accomplishments.",
           "dataPoints": null,
           "spec": [
             {
               "fact_type": "text",
               "date": "2021-05-09",
               "text": "Lucy acknowledges that she is able to maintain some responsibilities, such as attending work and therapy, but minimizes these achievements, viewing them as the 'bare minimum.'"
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Lucy works two weekly shifts at the university IT desk, which she finds both supportive and tiring.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Lucy continues to work two shifts per week at the university IT desk. She finds the structure helpful at times but also exhausting."
             }
           ],
           "sources": [
@@ -6576,6 +6545,22 @@
             "session transcript"
           ],
           "dataSourceType": "text",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "Lucy works two weekly shifts at the university IT desk, which she finds both supportive and tiring.",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Lucy continues to work two shifts per week at the university IT desk. She finds the structure helpful at times but also exhausting."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
           "isShowL2": false
         }
       ],
@@ -6596,15 +6581,15 @@
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.4128310484990401
+          "relevance": 0.4128603558613948
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.4491429185642348
+          "relevance": 0.44910424397783666
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.4799165867484434
+          "relevance": 0.47993616886037177
         }
       ]
     },
@@ -6612,8 +6597,8 @@
       "key": "insight-10",
       "summaryTitle": "Sertraline taken daily with no reported side effects.",
       "sources": [
-        "session transcript",
-        "clinical note"
+        "clinical note",
+        "session transcript"
       ],
       "insightType": [
         "Medication & Treatment"
@@ -6652,7 +6637,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "Lucy takes sertraline every day and has not experienced any side effects.",
+          "summarySentence": "Lucy has been taking sertraline every day and has not experienced any side effects.",
           "dataPoints": null,
           "spec": [
             {
@@ -6687,52 +6672,51 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.1694998814848345
+          "relevance": 0.1694988475947326
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.2734105807329407
+          "relevance": 0.2737081280502345
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.25601712288774076
+          "relevance": 0.25617661545776427
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.4650319752884772
+          "relevance": 0.46499290625907075
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.4706341427975879
+          "relevance": 0.4705994972328786
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.4583639515974853
+          "relevance": 0.458266005365657
         }
       ]
     },
     {
       "key": "insight-11",
-      "summaryTitle": "Open to self-care, but struggles with consistency and self-compassion.",
+      "summaryTitle": "Engaged in therapy and medication, aware of crisis resources.",
       "sources": [
-        "session transcript",
-        "clinical note"
+        "clinical note",
+        "session transcript"
       ],
       "insightType": [
-        "Emotional State",
         "Medication & Treatment"
       ],
       "expandView": [
         {
-          "summarySentence": "Lucy is using behavioral activation and cognitive restructuring, but finds it hard to stay consistent and be kind to herself.",
+          "summarySentence": "Lucy knows about crisis resources and will contact them if her symptoms get worse.",
           "dataPoints": null,
           "spec": [
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "She demonstrates some engagement with behavioral activation and cognitive restructuring strategies but struggles with consistency and self-compassion."
+              "text": "She is aware of crisis resources and agrees to reach out if her symptoms worsen."
             }
           ],
           "sources": [
@@ -6742,70 +6726,49 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The patient expresses openness to self-care, including music, tea, and stretching.",
+          "summarySentence": "Lucy benefits from therapy, medication, work, academics, and seeking help when needed.",
           "dataPoints": null,
           "spec": [
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Patient: Music and tea, for sure. Maybe stretching. I’m not sure about journaling, but I can try the others."
+              "text": "Protective factors include ongoing engagement in therapy, adherence to medication, maintenance of some work and academic responsibilities, and willingness to reach out for help if needed."
             }
           ],
           "sources": [
-            "session transcript"
+            "clinical note"
           ],
           "dataSourceType": "text",
           "isShowL2": true
         },
         {
-          "summarySentence": "Lucy tends to show more kindness to others than to herself, but is willing to try self-compassion.",
+          "summarySentence": "Lucy continues her daily morning sertraline as prescribed, with no new side effects reported.",
           "dataPoints": null,
           "spec": [
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "She recognizes a pattern of being more compassionate toward others than herself and is open to practicing self-compassion, though she is unsure if it will help."
+              "text": "Lucy is currently taking sertraline every morning as prescribed and reports no new side effects."
             }
           ],
           "sources": [
             "clinical note"
           ],
           "dataSourceType": "text",
-          "isShowL2": false
+          "isShowL2": true
         },
         {
-          "summarySentence": "The patient expresses willingness to try self-compassion but struggles to direct it inward.",
+          "summarySentence": "The patient takes sertraline each morning and has not experienced any new side effects.",
           "dataPoints": null,
           "spec": [
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Patient: No, definitely not. I’d probably just tell them they’re doing the best they can. But I can never think of myself the same way."
-            },
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: Yeah… I can try. I don’t know if it will work but I can try to do that."
+              "text": "Patient: Yes, I’m still on it every morning. No new side effects. I still don’t know if it’s really making much difference though."
             }
           ],
           "sources": [
             "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "Lucy is willing to add short self-care practices like music or tea to her daily routine.",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "She is open to incorporating brief self-care activities, such as listening to music or making tea, into her routine."
-            }
-          ],
-          "sources": [
-            "clinical note"
           ],
           "dataSourceType": "text",
           "isShowL2": false
@@ -6814,29 +6777,29 @@
       "transcriptRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.30589413460855286
+          "relevance": 0.23056125827791868
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.36608526944470543
+          "relevance": 0.39379150481584224
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.37387247141609786
+          "relevance": 0.3711781419242648
         }
       ],
       "noteRelevance": [
         {
           "date": "2021-03-28",
-          "relevance": 0.3497895453622443
+          "relevance": 0.40678097062942625
         },
         {
           "date": "2021-04-11",
-          "relevance": 0.39368338383911033
+          "relevance": 0.4771871602594372
         },
         {
           "date": "2021-05-09",
-          "relevance": 0.43581797269105704
+          "relevance": 0.5087803556656953
         }
       ]
     }
