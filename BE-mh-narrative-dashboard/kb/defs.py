@@ -1,42 +1,42 @@
-from kb.bluetooth import BLUETOOTH_UNIQUE_DEVICES
-from kb.wifi import WIFI_UNIQUE_DEVICES
-from kb.call import (
-    CALL_INCOMING_COUNT,
-    CALL_MISSED_COUNT,
-    CALL_OUTGOING_COUNT,
-)
+# from kb.bluetooth import BLUETOOTH_UNIQUE_DEVICES
+# from kb.wifi import WIFI_UNIQUE_DEVICES
+# from kb.call import (
+#     CALL_INCOMING_COUNT,
+#     CALL_MISSED_COUNT,
+#     CALL_OUTGOING_COUNT,
+# )
 from kb.location import (
-    LOCATION_NUMBER_OF_SIGNIFICANT_PLACES,
-    LOCATION_RADIUS_GYRATION,
+    # LOCATION_NUMBER_OF_SIGNIFICANT_PLACES,
+    # LOCATION_RADIUS_GYRATION,
     LOCATION_TIME_AT_HOME,
     LOCATION_TOTAL_DISTANCE,
-    LOCATION_DURATION_IN_EXERCISE,
-    LOCATION_DURATION_IN_GREEN,
-    LOCATION_DURATION_IN_STUDY,
+    # LOCATION_DURATION_IN_EXERCISE,
+    # LOCATION_DURATION_IN_GREEN,
+    # LOCATION_DURATION_IN_STUDY,
     LOCATION_CIRCADIAN
 )
 from kb.screen import (
-    SCREEN_AVERAGE_DURATION_UNLOCK,
+    # SCREEN_AVERAGE_DURATION_UNLOCK,
     SCREEN_COUNT_EPISODE_UNLOCK,
-    SCREEN_MAX_DURATION_UNLOCK,
+    # SCREEN_MAX_DURATION_UNLOCK,
     SCREEN_SUM_DURATION_UNLOCK,
-    SCREEN_AVERAGE_DURATION_UNLOCK_HOME,
-    SCREEN_COUNT_EPISODE_UNLOCK_HOME,
-    SCREEN_MAX_DURATION_UNLOCK_HOME,
-    SCREEN_SUM_DURATION_UNLOCK_HOME,
+    # SCREEN_AVERAGE_DURATION_UNLOCK_HOME,
+    # SCREEN_COUNT_EPISODE_UNLOCK_HOME,
+    # SCREEN_MAX_DURATION_UNLOCK_HOME,
+    # SCREEN_SUM_DURATION_UNLOCK_HOME,
 )
 from kb.sleep import (
-    SLEEP_AVERAGE_DURATION,
-    SLEEP_AVERAGE_AWAKE_DURATION,
-    SLEEP_COUNT_EPISODE_ASLEEP,
+    # SLEEP_AVERAGE_DURATION,
+    # SLEEP_AVERAGE_AWAKE_DURATION,
+    # SLEEP_COUNT_EPISODE_ASLEEP,
     SLEEP_COUNT_EPISODE_AWAKE,
-    SLEEP_MAX_DURATION_ASLEEP,
-    SLEEP_MAX_DURATION_AWAKE,
+    # SLEEP_MAX_DURATION_ASLEEP,
+    # SLEEP_MAX_DURATION_AWAKE,
     SLEEP_SUM_DURATION,
-    SLEEP_SUM_DURATION_AWAKE,
+    # SLEEP_SUM_DURATION_AWAKE,
     SLEEP_FIRST_BEDTIME,
-    SLEEP_FIRST_AWAKE_TIME,
-    SLEEP_LAST_BED_TIME,
+    # SLEEP_FIRST_AWAKE_TIME,
+    # SLEEP_LAST_BED_TIME,
     SLEEP_LAST_AWAKE_TIME,
 )
 from kb.steps import (
@@ -48,7 +48,6 @@ from kb.survey_score import (
     PHQ4_ANXIETY,
     PHQ4_DEPRESSION,
     PSS4,
-    PANAS,
     PANAS_POS,
     PANAS_NEG,
 )
@@ -97,39 +96,39 @@ NUMERICAL_FEATURE_KB = {
         #     "description": LOCATION_RADIUS_GYRATION
         # },
         "totaldistance": {
-            "rename": "Distance Traveled",
+            "rename": "Distance Traveled (Miles)",
             "unit": "meters",
-            "translate_unit": "miles",
+            "target_unit": "miles",
             "description": LOCATION_TOTAL_DISTANCE
         },
         "timeathome": {
-            "rename": "Time Spent at Home",
+            "rename": "Time Spent at Home (Hours)",
             "unit": "minutes",
-            "translate_unit": "minutes",
+            "target_unit": "hours",
             "description": LOCATION_TIME_AT_HOME
         },
-        "duration_in_locmap_exercise": {
-            "rename": "Excercise Time",
-            "unit": "minutes",
-            "translate_unit": "minutes",
-            "description": LOCATION_DURATION_IN_EXERCISE
-        },
-        "duration_in_locmap_greens": {
-            "rename": "Time in Nature",
-            "unit": "minutes",
-            "translate_unit": "minutes",
-            "description": LOCATION_DURATION_IN_GREEN
-        },
-        "duration_in_locmap_study": {
-            "rename": "Study Time",
-            "unit": "minutes",
-            "translate_unit": "minutes",
-            "description": LOCATION_DURATION_IN_STUDY
-        },
+        # "duration_in_locmap_exercise": {
+        #     "rename": "Excercise Time (Minutes)",
+        #     "unit": "minutes",
+        #     "target_unit": "minutes",
+        #     "description": LOCATION_DURATION_IN_EXERCISE
+        # },
+        # "duration_in_locmap_greens": {
+        #     "rename": "Time in Nature (Minutes)",
+        #     "unit": "minutes",
+        #     "target_unit": "minutes",
+        #     "description": LOCATION_DURATION_IN_GREEN
+        # },
+        # "duration_in_locmap_study": {
+        #     "rename": "Study Time (Minutes)",
+        #     "unit": "minutes",
+        #     "target_unit": "minutes",
+        #     "description": LOCATION_DURATION_IN_STUDY
+        # },
         "circdnrtn": {
-            "rename": "Routine Consistency",
+            "rename": "Routine Consistency (0 irregular, 100 regular)",
             "unit": None,
-            "translate_unit": None,
+            "target_unit": None,
             "description": LOCATION_CIRCADIAN
         },
     },
@@ -145,9 +144,9 @@ NUMERICAL_FEATURE_KB = {
         #     "description": SCREEN_AVERAGE_DURATION_UNLOCK_HOME
         # },
         "countepisodeunlock": {
-            "rename": "Phone Unlocks",
+            "rename": "Phone Unlocks (Times)",
             "unit": "count",
-            "translate_unit": "times",
+            "target_unit": "times",
             "description": SCREEN_COUNT_EPISODE_UNLOCK
         },
         # "countepisodeunlock_locmap_home": {
@@ -166,9 +165,9 @@ NUMERICAL_FEATURE_KB = {
         #     "description": SCREEN_MAX_DURATION_UNLOCK_HOME
         # },
         "sumdurationunlock": {
-            "rename": "Total Screen Time",
+            "rename": "Total Screen Time (Hours)",
             "unit": "minutes",
-            "translate_unit": "hours",
+            "target_unit": "hours",
             "description": SCREEN_SUM_DURATION_UNLOCK
         },
         # "sumdurationunlock_locmap_home": {
@@ -194,9 +193,9 @@ NUMERICAL_FEATURE_KB = {
         #     "description": SLEEP_COUNT_EPISODE_ASLEEP,
         # },
         "countepisodeawakeunifiedmain": {
-            "rename": "Awake Episodes in Bed",
+            "rename": "Awakening Episodes (Times)",
             "unit": "count",
-            "translate_unit": "times",
+            "target_unit": "times",
             "description": SLEEP_COUNT_EPISODE_AWAKE,
         },
         # "maxdurationasleepunifiedmain": {
@@ -210,9 +209,9 @@ NUMERICAL_FEATURE_KB = {
         #     "description": SLEEP_MAX_DURATION_AWAKE,
         # },
         "sumdurationasleepunifiedmain": {
-            "rename": "Total Sleep",
+            "rename": "Total Sleep (hours)",
             "unit": "minutes",
-            "translate_unit": "hours",
+            "target_unit": "hours",
             "description": SLEEP_SUM_DURATION,
         },
         # "sumdurationawakeunifiedmain": {
@@ -221,9 +220,9 @@ NUMERICAL_FEATURE_KB = {
         #     "description": SLEEP_SUM_DURATION_AWAKE,
         # },
         "firstbedtimemain": {
-            "rename": "Bedtime",
+            "rename": "Bedtime (Hours in relation to midnight)",
             "unit": "minutes",
-            "translate_unit": "hours",
+            "target_unit": "hours",
             "description": SLEEP_FIRST_BEDTIME
         },
         # "firstwaketimemain": {
@@ -237,62 +236,62 @@ NUMERICAL_FEATURE_KB = {
         #     "description": SLEEP_LAST_BED_TIME
         # },
         "lastwaketimemain": {
-            "rename": "Wake Time",
+            "rename": "Wake Time (Hours in relation to midnight)",
             "unit": "minutes",
-            "translate_unit": "hours",
+            "target_unit": "hours",
             "description": SLEEP_LAST_AWAKE_TIME
         }
     },
     "steps": {
         "countepisodesedentarybout": {
-            "rename": "Inactive Periods",
+            "rename": "Inactive Periods (Times)",
             "unit": "count",
-            "translate_unit": "times",
+            "target_unit": "times",
             "description": STEPS_COUNT_BOUT
         },
         "sumsteps": {
-            "rename": "Total Steps",
+            "rename": "Total Steps (Steps)",
             "unit": "count",
-            "translate_unit": "steps",
+            "target_unit": "steps",
             "description": STEPS_SUM_STEPS
         }
     },
     "survey": {
         "phq4_EMA": {
-            "rename": "PHQ-4 Score",
+            "rename": "PHQ-4 (0-12)",
             "unit": None,
-            "translate_unit": None,
+            "target_unit": None,
             "description": PHQ4
         },
         "phq4_anxiety_EMA": {
-            "rename": "PHQ-4 Anxiety Score",
+            "rename": "PHQ-4 Anxiety Subscale (0-6)",
             "unit": None,
-            "translate_unit": None,
-            "description": PHQ4 + PHQ4_ANXIETY,
+            "target_unit": None,
+            "description": PHQ4_ANXIETY,
         },
         "phq4_depression_EMA": {
-            "rename": "PHQ-4 Depression Score",
+            "rename": "PHQ-4 Depression Subscale (0-6)",
             "unit": None,
-            "translate_unit": None,
-            "description": PHQ4 + PHQ4_DEPRESSION,
+            "target_unit": None,
+            "description": PHQ4_DEPRESSION,
         },
         "pss4_EMA": {
-            "rename": "PSS-4 Score",
+            "rename": "PSS-4 Score (0-16)",
             "unit": None,
-            "translate_unit": None,
+            "target_unit": None,
             "description": PSS4,
         },
         "positive_affect_EMA": {
-            "rename": "Positive Affect Score",
+            "rename": "Positive Affect Subscale (5-25, PANAS-SF)",
             "unit": None,
-            "translate_unit": None,
-            "description": PANAS + PANAS_POS,
+            "target_unit": None,
+            "description": PANAS_POS,
         },
         "negative_affect_EMA": {
-            "rename": "Negative Affect Score",
+            "rename": "Negative Affect Subscale (5-25, PANAS-SF)",
             "unit": None,
-            "translate_unit": None,
-            "description": PANAS + PANAS_NEG,
+            "target_unit": None,
+            "description": PANAS_NEG,
         }
     }
 }
