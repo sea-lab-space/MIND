@@ -5,7 +5,7 @@ from typing import List
 from abc import ABC, abstractmethod
 from datetime import datetime
 
-from discoverer.numeric_tab_data.descriptions.defs import NUMERICAL_FEATURE_DEFS, NUMERICAL_FEATURE_KB
+from kb.defs import NUMERICAL_FEATURE_KB
 
 # TODO: Didn't consider - 1) tool use (but left API), 2) time retrospect (debatable: should we consider?)
 class BaseDiscovererAgent(ABC):
