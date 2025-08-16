@@ -1,4 +1,5 @@
 import asyncio
+from copy import deepcopy
 import json
 import time
 from pathlib import Path
@@ -206,22 +207,23 @@ class MINDPipeline:
         return self
     
     def _get_all_survey_raw(self):
-        passive_sensing_raw = []
+        survey_raw = []
         for datum in self.data['numerical_data']:
             if datum['modality_type'] == 'survey':
-                datum["isShowL2"] = False
-                datum['sources'] = [datum['modality_source']]
-                datum['dataSourceType'] = "raw"
-                datum['dataPoints'] = datum['data']
-                datum['summarySentence'] = f"Displaying {datum['feature_name_renamed'].lower()} survey scores."
+                new_datum = deepcopy(datum)
+                new_datum["isShowL2"] = False
+                new_datum['sources'] = [new_datum['modality_source']]
+                new_datum['dataSourceType'] = "raw"
+                new_datum['dataPoints'] = new_datum['data']
+                new_datum['summarySentence'] = f"Displaying {new_datum['feature_name_renamed'].lower()} survey scores."
                 # pop "feature_name_renamed", "feature_name", "modality_source", "modality_type"
-                datum.pop('feature_name_renamed')
-                datum.pop('feature_name')
-                datum.pop('modality_source')
-                datum.pop('modality_type')
-                datum.pop('data')
-                passive_sensing_raw.append(datum)
-        return passive_sensing_raw
+                new_datum.pop('feature_name_renamed')
+                new_datum.pop('feature_name')
+                new_datum.pop('modality_source')
+                new_datum.pop('modality_type')
+                new_datum.pop('data')
+                survey_raw.append(new_datum)
+        return survey_raw
     
     def run_calc_relevance(self):
         self._log("[Calc Relevance] Running")
@@ -293,7 +295,8 @@ class MINDPipeline:
             "insights": self.visualization_spec,
             "session_subjective_info": self.data['this_series'],
             "survey_raw": self._get_all_survey_raw(),
-            "suggest_activity": self.suggest_activity
+            "suggest_activity": self.suggest_activity,
+            "passive_data_raw": self.data['numerical_data'],
         }
         self._save(f"{self.patient_id}", final_spec, is_parent=True)
 
@@ -304,7 +307,7 @@ class MINDPipeline:
 if __name__ == "__main__":
     MODEL_NAME = 'gpt-4.1'
     # USERS = ["INS-W_963", "INS-W_1044", "INS-W_1077"]
-    USERS = ["INS-W_1044"]
+    USERS = ["INS-W_963"]
 
     for uid in USERS:
         pipeline = MINDPipeline(
@@ -317,13 +320,13 @@ if __name__ == "__main__":
 
         final_output = (
             pipeline
-            .load_data(load_from_cache=True)
-            .run_discoverer(load_from_cache=True)
-            .run_synthesizer(iters=2, load_from_cache=True)
+            .load_data(load_from_cache=False)
+            .run_discoverer(load_from_cache=False)
+            .run_synthesizer(iters=2, load_from_cache=False)
             .run_narrator(load_from_cache=False)
-            .run_overview(load_from_cache=True)
-            .run_suggest_activity(load_from_cache=True)
+            .run_overview(load_from_cache=False)
+            .run_suggest_activity(load_from_cache=False)
             .run_visualizer()
-            .run_calc_relevance()
+            # .run_calc_relevance()
             .run_assembly()
         )
