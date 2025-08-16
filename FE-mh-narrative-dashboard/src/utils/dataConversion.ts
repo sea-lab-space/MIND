@@ -26,6 +26,7 @@ export const getVisualizerDataForPerson = (personName: string) => {
           session_subjective_info: [],
           survey_data: [],
           suggested_activity_data: [],
+          passive_data_raw: []
         };
     }
 
@@ -56,13 +57,15 @@ export const getVisualizerDataForPerson = (personName: string) => {
         key: `survey-${index}`,
     }));
     const suggested_activity_data = personData.suggest_activity as SuggestedActivity[];
+    const passive_data_raw = personData.passive_data_raw as any[];
 
     return {
         overviewCardData,
         insightCardData,
         session_subjective_info,
         survey_data,
-        suggested_activity_data
+        suggested_activity_data,
+        passive_data_raw
     };
 };
 
