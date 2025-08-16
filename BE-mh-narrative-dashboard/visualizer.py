@@ -1,7 +1,7 @@
 from copy import deepcopy
 import math
 
-from utils.search import search_id_in_facts
+from utils.search import replace_NaNs_to_null, search_id_in_facts
 
 class Visualizer:
     def __init__(self, data_insights, data_fact_list, raw_data):
@@ -15,7 +15,7 @@ class Visualizer:
     def _search_raw_data(self, source, name):
         for data in self.raw_data['numerical_data']:
             if data['modality_source'] == source and data['feature_name_renamed'] == name:
-                return self._replace_NaNs_to_null(data['data'])
+                return replace_NaNs_to_null(data['data'])
     
     def _search_raw_text_data(self, source):
         text_list = []
@@ -28,13 +28,6 @@ class Visualizer:
             )
         return text_list
     
-
-    def _replace_NaNs_to_null(self, data):
-        for datum in data:
-            for key, value in datum.items():
-                if isinstance(value, float) and math.isnan(value):
-                    datum[key] = None
-        return data
 
     def run(self):
         # self.data_insights_narrative = asyncio.run(self.narrator_agent.run(self.data_insights))

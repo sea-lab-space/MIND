@@ -1,3 +1,3 @@
-BLUETOOTH_UNIQUE_DEVICES = """
-Number of unique Bluetooth devices sensed.
-"""
+# BLUETOOTH_UNIQUE_DEVICES = """
+# Number of unique Bluetooth devices sensed.
+# """
