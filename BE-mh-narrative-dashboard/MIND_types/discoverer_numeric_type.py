@@ -1,128 +1,138 @@
-from typing import List, Literal
-from pydantic import BaseModel, Field
+from typing import List, Literal, TypeVar, Generic
+from pydantic import BaseModel, Field, model_validator
 
-LiteralChangeDirection = Literal['more', 'less']
-LiteralAggregation = Literal['average', 'stdev', 'median', 'max', 'min']
+# --- 1. Generalized Literal Types ---
+# All literal types are defined upfront for clarity and reusability.
 
+AttributeChangeDirection = Literal['more', 'less']
+AttributeAggregation = Literal['average', 'stdev', 'median', 'max', 'min']
+AttributeExtreme = Literal['min', 'max']
+AttributeTrend = Literal['rise', 'fall', 'stable', 'cyclic']
+
+
+# --- Helper Models ---
 class TimeDuration(BaseModel):
+    """Represents a duration with a start and end time."""
     time_start: str = Field(...,
                             description="The start time of the period, in YYYY-MM-DD format.")
     time_end: str = Field(...,
                           description="The end time of the period, in YYYY-MM-DD format.")
 
 
-# -- Comparison --
-# Rationale: This is a compount fact (a generalized case for difference): there is no meaning comparing two individual values in mh.
-class FactComparisonConfig(BaseModel):
-    name: str = Field(...,
-                      description="Name of the feature being analyzed or transformed.")
-    attribute: LiteralChangeDirection = Field(
-        ..., description="The attribute of the feature, more or less."
-    )
-    aggregation: LiteralAggregation = Field(
-        ..., description="The aggregation method of the feature, one of average, stdev, median, max, and min."
-    )
-    time_dur_1: TimeDuration = Field(
-        ..., description="The base time period of comparison, in YYYY-MM-DD format."
-    )
-    time_dur_2: TimeDuration = Field(
-        ..., description="The second time period of comparison, in YYYY-MM-DD format."
-    )
-    value_dur_1: float = Field(...,
-                               description="The [attribute] of the feature in time_dur_1.")
-    value_dur_2: float = Field(...,
-                               description="The [attribute] of the feature in time_dur_2.")
+# --- 2. Base Class for All Facts ---
+class BaseFactConfig(BaseModel):
+    """A base model for any data fact, containing common fields."""
+    name: str = Field(..., description="Name of the feature being analyzed.")
+    fact_type: str = Field(..., description="The type of the discovered fact.")
     fact_description: str = Field(
-        ..., description="The [aggregation] [name] became [attribute] from [value_dur_1] in [time_dur_1] to [value_dur_2] in [time_dur_2]."
+        "",  # This will be generated automatically by child models.
+        description="A natural language description of the data fact."
     )
-    fact_type: Literal['comparison']
 
 
-class ComparisonDiscovererOutput(BaseModel):
-    facts: List[FactComparisonConfig]
+# --- 3. Templatized Fact Configurations ---
+# Each fact model inherits from the base class and uses a validator
+# to automatically generate its description.
 
-# -- Difference --
-class FactDifferenceConfig(BaseModel):
-    name: str = Field(...,
-                      description="Name of the feature being analyzed or transformed.")
-    attribute: LiteralChangeDirection = Field(
-        ..., description="The attribute of the feature, more or less."
-    )
-    time_1: str = Field(...,
-                        description="The first timepoint, in YYYY-MM-DD format.")
-    time_2: str = Field(...,
-                        description="The second timepoint, in YYYY-MM-DD format.")
-    value_1: float = Field(...,
-                           description="The value of the feature at time_1.")
-    value_2: float = Field(...,
-                           description="The value of the feature at time_2.")
-    fact_description: str = Field(
-        ..., description="The [name] was [value_1] on [time_1] and became [attribute] at [value_2] on [time_2]."
-    )
-    fact_type: Literal['difference']
+class FactComparisonConfig(BaseFactConfig):
+    """A fact comparing an aggregated value between two time periods."""
+    fact_type: Literal['comparison'] = 'comparison'
+    attribute: AttributeChangeDirection
+    aggregation: AttributeAggregation
+    time_dur_1: TimeDuration
+    time_dur_2: TimeDuration
+    value_dur_1: float
+    value_dur_2: float
 
-
-class DifferenceDiscovererOutput(BaseModel):
-    facts: List[FactDifferenceConfig]
+    @model_validator(mode='after')
+    def generate_description(self) -> 'FactComparisonConfig':
+        """Generates a templated description after model validation."""
+        self.fact_description = (
+            f"The {self.aggregation} {self.name} became {self.attribute} from {self.value_dur_1} "
+            f"(period: {self.time_dur_1.time_start} to {self.time_dur_1.time_end}) to {self.value_dur_2} "
+            f"(period: {self.time_dur_2.time_start} to {self.time_dur_2.time_end})."
+        )
+        return self
 
 
-# -- Extreme --
-class FactExtremeConfig(BaseModel):
-    # fact_description: The natural language description of the data fact
-    # The [attribute] of [name] is [value] at [time].
-    name: str = Field(...,
-                      description="Name of the feature being analyzed or transformed.")
-    attribute: Literal['min', 'max'] = Field(
-        ..., description="The attribute of the feature, max or min.")
-    time: str = Field(...,
-                      description="The time of the feature, in YYYY-MM-DD format.")
-    value: float = Field(..., description="The numeric value of the feature.")
-    fact_description: str = Field(
-        ..., description="The [name] reached its [attribute] value of [value] on [time].")
-    fact_type: Literal['extreme']
+class FactDifferenceConfig(BaseFactConfig):
+    """A fact describing the difference in value between two points in time."""
+    fact_type: Literal['difference'] = 'difference'
+    attribute: AttributeChangeDirection
+    time_1: str
+    time_2: str
+    value_1: float
+    value_2: float
+
+    @model_validator(mode='after')
+    def generate_description(self) -> 'FactDifferenceConfig':
+        """Generates a templated description after model validation."""
+        self.fact_description = (
+            f"The {self.name} was {self.value_1} on {self.time_1} and "
+            f"became {self.attribute} at {self.value_2} on {self.time_2}."
+        )
+        return self
 
 
-class ExtremeDiscovererOutput(BaseModel):
-    facts: List[FactExtremeConfig]
+class FactExtremeConfig(BaseFactConfig):
+    """A fact describing a maximum or minimum value."""
+    fact_type: Literal['extreme'] = 'extreme'
+    attribute: AttributeExtreme
+    time: str
+    value: float
 
-# -- Trend --
-class FactTrendConfig(BaseModel):
-    # fact_description: The natural language description of the data fact
-    # The [attribute] of [name] is [value] at [time].
-    name: str = Field(...,
-                      description="Name of the feature being analyzed or transformed.")
-    attribute: Literal['rise', 'fall', 'stable', 'cyclic'] = Field(
-        ..., description="The attribute of the feature, one of rise, fall, stable, and cyclic.")
-    time_1: str = Field(...,
-                        description="The start time of trend, in YYYY-MM-DD format.")
-    time_2: str = Field(...,
-                        description="The end time of trend, in YYYY-MM-DD format.")
-    fact_description: str = Field(
-        ..., description="[The] [name] showed a [attribute] trend from [time_1] to [time_2].")
-    fact_type: Literal['trend']
+    @model_validator(mode='after')
+    def generate_description(self) -> 'FactExtremeConfig':
+        """Generates a templated description after model validation."""
+        self.fact_description = (
+            f"The {self.name} reached its {self.attribute} value of "
+            f"{self.value} on {self.time}."
+        )
+        return self
 
 
-class TrendDiscovererOutput(BaseModel):
-    facts: List[FactTrendConfig]
+class FactTrendConfig(BaseFactConfig):
+    """A fact describing a trend over a period of time."""
+    fact_type: Literal['trend'] = 'trend'
+    attribute: AttributeTrend
+    time_1: str
+    time_2: str
+
+    @model_validator(mode='after')
+    def generate_description(self) -> 'FactTrendConfig':
+        """Generates a templated description after model validation."""
+        self.fact_description = (
+            f"The {self.name} showed a {self.attribute} trend from "
+            f"{self.time_1} to {self.time_2}."
+        )
+        return self
 
 
-# -- Derived Value --
-class FactDerivedValueConfig(BaseModel):
-    name: str = Field(...,
-                      description="Name of the feature being analyzed or transformed.")
-    aggregation: Literal['average', 'stdev', 'median', 'max', 'min'] = Field(
-        ..., description="The aggregation method of the feature, one of average, stdev, median, max, and min."
-    )
-    time_1: str = Field(...,
-                        description="The first timepoint, in YYYY-MM-DD format.")
-    time_2: str = Field(...,
-                        description="The second timepoint, in YYYY-MM-DD format.")
-    value: float = Field(..., description="The numeric value of the feature.")
-    fact_description: str = Field(
-        ..., description="The [aggregation] [name] became [attribute] from [value_dur_1] in [time_dur_1] to [value_dur_2] in [time_dur_2]."
-    )
-    fact_type: Literal['derived value']
+class FactDerivedValueConfig(BaseFactConfig):
+    """A fact describing a single aggregated value over a time period."""
+    fact_type: Literal['derived_value'] = 'derived_value'
+    aggregation: AttributeAggregation
+    time_1: str
+    time_2: str
+    value: float
+
+    @model_validator(mode='after')
+    def generate_description(self) -> 'FactDerivedValueConfig':
+        """Generates a templated description after model validation."""
+        # The original description seemed incorrect; this is a more logical template.
+        self.fact_description = (
+            f"The {self.aggregation} of {self.name} from {self.time_1} to "
+            f"{self.time_2} was {self.value}."
+        )
+        return self
 
 
-class DerivedValueDiscovererOutput(BaseModel):
-    facts: List[FactDerivedValueConfig]
+# --- 4. Generic Output Model ---
+# A single, reusable output model using Python's generics.
+
+FactType = TypeVar('FactType', bound=BaseFactConfig)
+
+
+class DiscovererOutput(BaseModel, Generic[FactType]):
+    """A generic container for a list of discovered facts."""
+    facts: List[FactType]

@@ -1,17 +1,16 @@
-from pydantic import BaseModel, Field
-from typing import List, Literal
-from MIND_types import TrendDiscovererOutput
 from discoverer.numeric_tab_data.base_agent import BaseDiscovererAgent
 from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE
-
-
+from MIND_types import (
+    DiscovererOutput,
+    FactTrendConfig
+)
 
 class TrendDiscovererAgent(BaseDiscovererAgent):
     DEFINITION = r"""
         Trend describes the general tendency of a feature over a specified time period, characterized as one of the following: rise, fall, stable, or cyclic. 
         Focus on longer term trends, specifically trend patterns that persist at least 3 days.
     """
-    OUTPUT_MODEL = TrendDiscovererOutput
+    OUTPUT_MODEL = DiscovererOutput[FactTrendConfig]
 
     def _glue_instructions(self, modality_source, feature_name, feature_definition):
         from discoverer.numeric_tab_data.system_prompt import (

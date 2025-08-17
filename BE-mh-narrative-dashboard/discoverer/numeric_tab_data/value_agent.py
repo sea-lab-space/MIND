@@ -9,15 +9,17 @@ from utils.tools import (
     agent_tool_calculate_stdev,
 )
 from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE, OPENAI_AGENTIC_PLANNING
-from MIND_types import DerivedValueDiscovererOutput
-
+from MIND_types import (
+    DiscovererOutput,
+    FactDerivedValueConfig
+)
 
 
 class DerivedValueDiscovererAgent(BaseDiscovererAgent):
     DEFINITION = r"""
         Derived value is a value calculated from a set of data points based on a specific aggregation.
     """
-    OUTPUT_MODEL = DerivedValueDiscovererOutput
+    OUTPUT_MODEL = DiscovererOutput[FactDerivedValueConfig]
     TOOLS = [
         agent_tool_calculate_average,
         agent_tool_calculate_max,
