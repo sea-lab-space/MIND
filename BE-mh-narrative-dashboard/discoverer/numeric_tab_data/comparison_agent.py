@@ -1,5 +1,3 @@
-from pydantic import BaseModel, Field
-from typing import List, Literal
 from discoverer.numeric_tab_data.base_agent import BaseDiscovererAgent
 from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE, OPENAI_AGENTIC_PLANNING
 from utils.tools import (
@@ -10,7 +8,8 @@ from utils.tools import (
     agent_tool_calculate_stdev,
 )
 from MIND_types import (
-    ComparisonDiscovererOutput
+    DiscovererOutput,
+    FactComparisonConfig
 )
 
 
@@ -18,7 +17,7 @@ class ComparisonDiscovererAgent(BaseDiscovererAgent):
     DEFINITION = r"""
         Comparison describes how an aggregated value of a feature changes between two time periods (time_dur_1 and time_dur_2). Supported aggregation methods include average, standard deviation (stdev), median, maximum (max), and minimum (min). The fact indicates whether the feature became more or less prominent over time based on the selected aggregation.
     """
-    OUTPUT_MODEL = ComparisonDiscovererOutput
+    OUTPUT_MODEL = DiscovererOutput[FactComparisonConfig]
     TOOLS = [
         agent_tool_calculate_average,
         agent_tool_calculate_max,

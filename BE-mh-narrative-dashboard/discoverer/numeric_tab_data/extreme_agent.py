@@ -1,16 +1,17 @@
-from pydantic import BaseModel, Field
-from typing import List, Literal
 from discoverer.numeric_tab_data.base_agent import BaseDiscovererAgent
 from utils.tools import agent_tool_validate_fact_value
 from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE, OPENAI_AGENTIC_PLANNING
-from MIND_types import ExtremeDiscovererOutput
+from MIND_types import (
+    DiscovererOutput,
+    FactExtremeConfig
+)
 
 
 class ExtremeDiscovererAgent(BaseDiscovererAgent):
     DEFINITION = r"""
         Extreme captures local minima and maxima (i.e., valleys and peaks) in the data.
     """
-    OUTPUT_MODEL = ExtremeDiscovererOutput
+    OUTPUT_MODEL = DiscovererOutput[FactExtremeConfig]
     TOOLS = [agent_tool_validate_fact_value]
     
     def _glue_instructions(self, modality_source, feature_name, feature_definition):
