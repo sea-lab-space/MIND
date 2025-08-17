@@ -1,13 +1,11 @@
 import pandas as pd
-from typing import List, Optional, Type
+from typing import Type
 from pydantic import BaseModel
-from typing import List
 from abc import ABC, abstractmethod
 from datetime import datetime
 
 from kb.defs import NUMERICAL_FEATURE_KB
 
-# TODO: Didn't consider - 1) tool use (but left API), 2) time retrospect (debatable: should we consider?)
 class BaseDiscovererAgent(ABC):
     """
     BaseDiscoverer: A generic base class for data-driven discoverer agents.
@@ -25,7 +23,7 @@ class BaseDiscovererAgent(ABC):
         self,
         retrospect_date: str,
         before_date: str,
-        model: str = "gpt-4.1-nano",
+        model: str,
         tools = None
     ):
         assert datetime.strptime(
@@ -55,7 +53,9 @@ class BaseDiscovererAgent(ABC):
         df = pd.DataFrame(feature_data)
         df["datetime"] = pd.to_datetime(df["date"])
         before_dt = datetime.strptime(self.before_date, "%Y-%m-%d")
-        df = df[df["datetime"] <= before_dt]
+        retrospect_dt = datetime.strptime(self.retrospect_date, "%Y-%m-%d")
+        df = df[(df["datetime"] <= before_dt) &
+                (df["datetime"] >= retrospect_dt)]
         # delete this excess column
         df = df.drop(columns=["datetime"])
         # print(df.to_csv(index=False))
