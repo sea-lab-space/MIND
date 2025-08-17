@@ -31,9 +31,14 @@ def get_mh_data_expert_requirements_prompt():
         Leave the description focused on this type of data fact type. 
         
         You are expected to return at least 3 data facts per fact type. 
-        Specifically: 1) you are encouraged to discover more: you will be awared if you can find the complete set of data facts; 2) you are penalized if you hallucinate: if you cannot find 3 data facts, you should return what you have found, even if less than 3.
+        Specifically: 1) you are encouraged to discover more: you will be awarded if you can find the complete set of data facts; 2) you are penalized if you hallucinate: if you cannot find 3 data facts, you should return what you have found, even if less than 3.
 
         Let’s think step by step.
+    """
+
+def get_mh_eveness_prompt():
+    return f"""
+        Ensure your fact discovery accounts for all provided time points in the dataset.
     """
 
 # ! scrapped this (causes unecessary wrong outputs)
@@ -48,8 +53,3 @@ def get_mh_data_date_prompt(retrospect_date_str: str, before_date_str: str, is_c
         return f"""
             {common}
         """
-    
-def get_mh_eveness_prompt():
-    return f"""
-        Ensure your fact discovery accounts for all provided time points in the dataset.
-    """
