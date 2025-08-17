@@ -102,10 +102,11 @@ class MINDPipeline:
                     DifferenceDiscovererAgent, 
                     DerivedValueDiscovererAgent
                     ],
-                text_agents=[
-                    NotesDiscovererAgent, 
-                    TranscriptsDiscovererAgent
-                    ],
+                text_agents=[],
+                # text_agents=[
+                #     NotesDiscovererAgent, 
+                #     TranscriptsDiscovererAgent
+                #     ],
                 retrospect_date=self.retrospect_date,
                 before_date=self.before_date,
                 model_name=self.model_name

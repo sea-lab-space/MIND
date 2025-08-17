@@ -6,3 +6,4 @@ from .transcript_type import TranscriptResponse
 from .activity_type import ActivityResponse
 from .discoverer_text_type import TextDataDiscoveryOutputModel
 from .narrator_type import NarratorOutputModel, InsightGuardrailOutputModel, RewriterOutputModel
+from .discoverer_numeric_type import ComparisonDiscovererOutput, DifferenceDiscovererOutput, ExtremeDiscovererOutput, TrendDiscovererOutput, DerivedValueDiscovererOutput
