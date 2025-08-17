@@ -1,15 +1,17 @@
-from pydantic import BaseModel, Field
-from typing import List, Literal
 from discoverer.numeric_tab_data.base_agent import BaseDiscovererAgent
 from utils.tools import agent_tool_validate_fact_value
 from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE, OPENAI_AGENTIC_PLANNING
-from MIND_types import DifferenceDiscovererOutput
+from MIND_types import (
+    DiscovererOutput,
+    FactDifferenceConfig
+)
+
 
 class DifferenceDiscovererAgent(BaseDiscovererAgent):
     DEFINITION = r"""
         Difference captures how the value of a feature between two time points change in the data.
     """
-    OUTPUT_MODEL = DifferenceDiscovererOutput
+    OUTPUT_MODEL = DiscovererOutput[FactDifferenceConfig]
     TOOLS = [agent_tool_validate_fact_value]
 
     def _glue_instructions(self, modality_source, feature_name, feature_definition):
