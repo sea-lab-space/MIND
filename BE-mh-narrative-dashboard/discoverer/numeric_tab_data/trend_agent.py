@@ -1,25 +1,9 @@
 from pydantic import BaseModel, Field
 from typing import List, Literal
-from discoverer.numeric_tab_data.discoverer_agents.base_agent import BaseDiscovererAgent
+from MIND_types import TrendDiscovererOutput
+from discoverer.numeric_tab_data.base_agent import BaseDiscovererAgent
 from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE
 
-class FactTrendConfig(BaseModel):
-    # fact_description: The natural language description of the data fact
-    # The [attribute] of [name] is [value] at [time].
-    name: str = Field(...,
-                      description="Name of the feature being analyzed or transformed.")
-    attribute: Literal['rise', 'fall', 'stable', 'cyclic'] = Field(
-        ..., description="The attribute of the feature, one of rise, fall, stable, and cyclic.")
-    time_1: str = Field(...,
-                      description="The start time of trend, in YYYY-MM-DD format.")
-    time_2: str = Field(...,
-                      description="The end time of trend, in YYYY-MM-DD format.")
-    fact_description: str = Field(
-        ..., description="[The] [name] showed a [attribute] trend from [time_1] to [time_2].")
-    fact_type: Literal['trend']
-    
-class TrendDiscovererOutput(BaseModel):
-    facts: List[FactTrendConfig]
 
 
 class TrendDiscovererAgent(BaseDiscovererAgent):
@@ -36,8 +20,7 @@ class TrendDiscovererAgent(BaseDiscovererAgent):
             get_mh_data_expert_system_prompt,
             get_mh_data_expert_task_prompt,
             get_mh_data_expert_requirements_prompt,
-            get_mh_eveness_prompt,
-            get_mh_data_date_prompt
+            get_mh_eveness_prompt
         )
         # {get_mh_data_date_prompt(retrospect_date_str=self.retrospect_date, before_date_str=self.before_date)}
 
