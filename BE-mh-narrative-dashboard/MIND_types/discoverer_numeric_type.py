@@ -1,4 +1,4 @@
-from typing import List, Literal, TypeVar, Generic
+from typing import List, Literal, TypeVar, Generic, Union
 from pydantic import BaseModel, Field, model_validator
 
 # --- 1. Generalized Literal Types ---
@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field, model_validator
 AttributeChangeDirection = Literal['more', 'less']
 AttributeAggregation = Literal['average', 'stdev', 'median', 'max', 'min']
 AttributeExtreme = Literal['min', 'max']
-AttributeTrend = Literal['rise', 'fall', 'stable', 'cyclic']
+AttributeTrend = Literal['rise', 'fall', 'stable', 'cyclic', 'no trend']
 
 
 # --- Helper Models ---
@@ -37,12 +37,22 @@ class BaseFactConfig(BaseModel):
 class FactComparisonConfig(BaseFactConfig):
     """A fact comparing an aggregated value between two time periods."""
     fact_type: Literal['comparison'] = 'comparison'
-    attribute: AttributeChangeDirection
-    aggregation: AttributeAggregation
-    time_dur_1: TimeDuration
-    time_dur_2: TimeDuration
-    value_dur_1: float
-    value_dur_2: float
+    attribute: AttributeChangeDirection = Field(
+        ..., description="The aggregation method of the feature, one of average, stdev, median, max, and min."
+    )
+    aggregation: AttributeAggregation = Field(
+        ..., description="The aggregation method of the feature, one of average, stdev, median, max, and min."
+    )
+    time_dur_1: TimeDuration = Field(
+        ..., description="The first time period of comparison, in YYYY-MM-DD format."
+    )
+    time_dur_2: TimeDuration = Field(
+        ..., description="The second time period of comparison, in YYYY-MM-DD format."
+    )
+    value_dur_1: float = Field(...,
+                               description="The [attribute] of the feature in time_dur_1.")
+    value_dur_2: float = Field(...,
+                               description="The [attribute] of the feature in time_dur_2.")
 
     @model_validator(mode='after')
     def generate_description(self) -> 'FactComparisonConfig':
@@ -58,11 +68,17 @@ class FactComparisonConfig(BaseFactConfig):
 class FactDifferenceConfig(BaseFactConfig):
     """A fact describing the difference in value between two points in time."""
     fact_type: Literal['difference'] = 'difference'
-    attribute: AttributeChangeDirection
-    time_1: str
-    time_2: str
-    value_1: float
-    value_2: float
+    attribute: AttributeChangeDirection = Field(
+        ..., description="The attribute of the feature, more or less."
+    )
+    time_1: str = Field(...,
+                        description="The first timepoint, in YYYY-MM-DD format.")
+    time_2: str = Field(...,
+                        description="The second timepoint, in YYYY-MM-DD format.")
+    value_1: float = Field(...,
+                           description="The value of the feature at time_1.")
+    value_2: float = Field(...,
+                           description="The value of the feature at time_2.")
 
     @model_validator(mode='after')
     def generate_description(self) -> 'FactDifferenceConfig':
@@ -77,9 +93,11 @@ class FactDifferenceConfig(BaseFactConfig):
 class FactExtremeConfig(BaseFactConfig):
     """A fact describing a maximum or minimum value."""
     fact_type: Literal['extreme'] = 'extreme'
-    attribute: AttributeExtreme
-    time: str
-    value: float
+    attribute: AttributeExtreme = Field(
+        ..., description="The attribute of the feature, max or min.")
+    time: str = Field(...,
+                      description="The time of the feature, in YYYY-MM-DD format.")
+    value: float = Field(..., description="The numeric value of the feature.")
 
     @model_validator(mode='after')
     def generate_description(self) -> 'FactExtremeConfig':
@@ -94,9 +112,12 @@ class FactExtremeConfig(BaseFactConfig):
 class FactTrendConfig(BaseFactConfig):
     """A fact describing a trend over a period of time."""
     fact_type: Literal['trend'] = 'trend'
-    attribute: AttributeTrend
-    time_1: str
-    time_2: str
+    attribute: AttributeTrend = Field(
+        ..., description="The attribute of the feature, one of rise, fall, stable, and cyclic.")
+    time_1: str = Field(...,
+                        description="The start time of trend, in YYYY-MM-DD format.")
+    time_2: str = Field(...,
+                        description="The end time of trend, in YYYY-MM-DD format.")
 
     @model_validator(mode='after')
     def generate_description(self) -> 'FactTrendConfig':
@@ -111,10 +132,14 @@ class FactTrendConfig(BaseFactConfig):
 class FactDerivedValueConfig(BaseFactConfig):
     """A fact describing a single aggregated value over a time period."""
     fact_type: Literal['derived_value'] = 'derived_value'
-    aggregation: AttributeAggregation
-    time_1: str
-    time_2: str
-    value: float
+    aggregation: AttributeAggregation = Field(
+        ..., description="The aggregation method of the feature, one of average, stdev, median, max, and min."
+    )
+    time_1: str = Field(...,
+                        description="The first timepoint, in YYYY-MM-DD format.")
+    time_2: str = Field(...,
+                        description="The second timepoint, in YYYY-MM-DD format.")
+    value: float = Field(..., description="The numeric value of the feature.")
 
     @model_validator(mode='after')
     def generate_description(self) -> 'FactDerivedValueConfig':
@@ -136,3 +161,15 @@ FactType = TypeVar('FactType', bound=BaseFactConfig)
 class DiscovererOutput(BaseModel, Generic[FactType]):
     """A generic container for a list of discovered facts."""
     facts: List[FactType]
+
+
+AllFactConfigs = Union[
+    FactComparisonConfig,
+    FactDifferenceConfig,
+    FactExtremeConfig,
+    FactTrendConfig,
+    FactDerivedValueConfig,
+]
+
+class DiscovererQAOutput(BaseModel):
+    facts: List[AllFactConfigs]

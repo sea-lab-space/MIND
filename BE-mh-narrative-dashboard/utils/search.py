@@ -13,3 +13,9 @@ def replace_NaNs_to_null(data):
             if isinstance(value, float) and math.isnan(value):
                 datum[key] = None
     return data
+
+def search_feature_in_feature_list(features, feature_name):
+    for feature in features:
+        if feature['feature_name_renamed'] == feature_name:
+            return feature
+    
