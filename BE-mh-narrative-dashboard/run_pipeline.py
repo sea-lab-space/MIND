@@ -308,7 +308,8 @@ class MINDPipeline:
 if __name__ == "__main__":
     MODEL_NAME = 'gpt-4.1'
     # USERS = ["INS-W_963", "INS-W_1044", "INS-W_1077"]
-    USERS = ["INS-W_963"]
+    # USERS = ["INS-W_963"]
+    USERS = ["INS-W_1044"]
 
     for uid in USERS:
         pipeline = MINDPipeline(
