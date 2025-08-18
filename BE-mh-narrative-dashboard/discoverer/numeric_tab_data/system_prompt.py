@@ -29,12 +29,11 @@ def get_mh_data_expert_requirements_prompt():
         Describe the data fact in a way that is easy to understand for a mental health expert. 
         Ensure this description is useful for mental health inference, but just describe the data fact. For example, do not say the data 'indicates' or 'suggests' anything.
         Leave the description focused on this type of data fact type. 
-        
-        You are expected to return at least 3 data facts per fact type. 
-        Specifically: 1) you are encouraged to discover more: you will be awarded if you can find the complete set of data facts; 2) you are penalized if you hallucinate: if you cannot find 3 data facts, you should return what you have found, even if less than 3.
 
         Let’s think step by step.
     """
+# You are expected to return at least 3 data facts per fact type.
+# Specifically: 1) you are encouraged to discover more: you will be awarded if you can find the complete set of data facts; 2) you are penalized if you hallucinate: if you cannot find 3 data facts, you should return what you have found, even if less than 3.
 
 def get_mh_eveness_prompt():
     return f"""

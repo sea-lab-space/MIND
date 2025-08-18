@@ -1,0 +1,167 @@
+[
+  {
+    "question": "Has Lucy continued to take sertraline daily as prescribed, and has she experienced any new side effects?",
+    "evidence": [
+      {
+        "source": "clinical note",
+        "text": "Continue sertraline as prescribed (commonly 50 mg once daily in the morning; confirm dosage in chart). Monitor for efficacy and side effects. Reassess in a few weeks; consider medication review with GP/psychiatrist if limited improvement persists."
+      },
+      {
+        "source": "session transcript",
+        "text": "Patient: Yes, I’m still on it every morning. No new side effects. I still don’t know if it’s really making much difference though."
+      }
+    ]
+  },
+  {
+    "question": "Has there been any improvement in mood or functioning since the last session, particularly in response to sertraline?",
+    "evidence": [
+      {
+        "source": "clinical note",
+        "text": "Monitor for efficacy and side effects. Reassess in a few weeks; consider medication review with GP/psychiatrist if limited improvement persists."
+      }
+    ]
+  },
+  {
+    "question": "Has Lucy engaged in behavioral activation activities such as listening to music, making tea, brief walks, or stretching since the last session?",
+    "evidence": [
+      {
+        "source": "clinical note",
+        "text": "Support Lucy in identifying and implementing small, manageable daily activities (e.g., listening to music, making tea, brief walks, stretching). Emphasize the value of small steps and celebrate incremental progress."
+      },
+      {
+        "source": "session transcript",
+        "text": "Patient: Music and tea, for sure. Maybe stretching. I’m not sure about journaling, but I can try the others."
+      }
+    ]
+  },
+  {
+    "question": "Has Lucy been able to break academic tasks into smaller steps and focus on one task at a time?",
+    "evidence": [
+      {
+        "source": "clinical note",
+        "text": "Encourage breaking academic tasks into smaller steps and focusing on one task at a time. Reinforce any progress, however minor."
+      },
+      {
+        "source": "session transcript",
+        "text": "Clinician: What if we started with picking just one small task for each day, even if it’s as simple as opening your class platform or reading a single email from your tutor? Patient: I could do that. That doesn’t seem as scary as trying to finish everything all at once."
+      }
+    ]
+  },
+  {
+    "question": "Has Lucy made any progress in reaching out to a friend via text, and what was the impact of this connection?",
+    "evidence": [
+      {
+        "source": "clinical note",
+        "text": "Support Lucy in reaching out to a friend via text, using the drafted message. Encourage her to notice the impact of this connection."
+      },
+      {
+        "source": "session transcript",
+        "text": "Patient: I’ll aim for tomorrow. I think that’s doable."
+      }
+    ]
+  },
+  {
+    "question": "Has Lucy practiced self-compassion exercises, such as noticing and challenging negative self-talk or responding to herself as she would to a friend?",
+    "evidence": [
+      {
+        "source": "clinical note",
+        "text": "Encourage Lucy to notice and challenge negative self-talk and to practice responding to herself as she would to a friend."
+      },
+      {
+        "source": "session transcript",
+        "text": "Clinician: Would you be open to practicing self-compassion—maybe just noticing when you’re being hard on yourself, and imagining what you’d say to a friend in the same situation? Patient: Yeah… I can try. I don’t know if it will work but I can try to do that."
+      }
+    ]
+  },
+  {
+    "question": "Has Lucy brainstormed and implemented brief self-care activities throughout the day?",
+    "evidence": [
+      {
+        "source": "clinical note",
+        "text": "Brainstorm and implement brief self-care activities throughout the day."
+      },
+      {
+        "source": "session transcript",
+        "text": "Clinician: Listening to music is a great example. Even brief moments—stretching, a cup of tea, a short phone call with someone you trust—can help reset your mood. Would it be helpful to brainstorm a short list of things you might do? Patient: Sure. Could you help me come up with some ideas? Sometimes I can’t think of anything when I’m actually in the moment."
+      }
+    ]
+  },
+  {
+    "question": "Has Lucy experienced any changes in sleep patterns, such as improvement or worsening of insomnia or hypersomnia?",
+    "evidence": [
+      {
+        "source": "clinical note",
+        "text": "Sleep: Poor, with insomnia and hypersomnia."
+      },
+      {
+        "source": "session transcript",
+        "text": "Patient: Sleep is still not great. I have nights where I just lie awake for hours, then I’ll sleep half the next day."
+      }
+    ]
+  },
+  {
+    "question": "Has Lucy’s appetite or eating habits changed, such as improvement in regular meals or continued irregular eating?",
+    "evidence": [
+      {
+        "source": "clinical note",
+        "text": "Appetite: Decreased, irregular meals."
+      },
+      {
+        "source": "session transcript",
+        "text": "Patient: Meals—I forget a lot, or I eat snacks instead of real food."
+      }
+    ]
+  },
+  {
+    "question": "Has Lucy maintained her work schedule at the university IT desk, and does she continue to find the structure helpful or exhausting?",
+    "evidence": [
+      {
+        "source": "clinical note",
+        "text": "Lucy continues to work two shifts per week at the university IT desk. She finds the structure helpful at times but also exhausting."
+      },
+      {
+        "source": "session transcript",
+        "text": "Patient: Yeah, I cut back a bit, but I’m still doing two shifts a week. My manager’s been understanding about me being quieter."
+      }
+    ]
+  },
+  {
+    "question": "Has Lucy needed to use crisis resources or support contacts since the last session?",
+    "evidence": [
+      {
+        "source": "clinical note",
+        "text": "Provide crisis line and support contact information. Reinforce plan for reaching out if symptoms worsen or if suicidal ideation emerges."
+      },
+      {
+        "source": "session transcript",
+        "text": "Patient: Yeah, I think so. I haven’t needed to yet, but I’d probably text a support line or call my GP if it got that bad."
+      }
+    ]
+  },
+  {
+    "question": "Has Lucy experienced any episodes of suicidal ideation, intent, or worsening of emotional numbness or apathy?",
+    "evidence": [
+      {
+        "source": "clinical note",
+        "text": "She describes episodes of emotional numbness and low motivation but denies active suicidal ideation or intent. She is aware of crisis resources and agrees to reach out if her symptoms worsen."
+      },
+      {
+        "source": "session transcript",
+        "text": "Patient: I have had a couple days where I just felt really numb again. Not really wanting to do anything. I didn’t really want to hurt myself, I just felt like I didn’t care much either way."
+      }
+    ]
+  },
+  {
+    "question": "Has Lucy attended the scheduled follow-up session and received the support contacts as discussed?",
+    "evidence": [
+      {
+        "source": "clinical note",
+        "text": "Schedule next session for one week. Email support contacts as discussed. Continue to monitor mood, functioning, and safety."
+      },
+      {
+        "source": "session transcript",
+        "text": "Clinician: I’ll email you those support contacts after our session. Let’s keep working together on these small steps, and remember you can always reach out if things feel overwhelming between our meetings."
+      }
+    ]
+  }
+]
