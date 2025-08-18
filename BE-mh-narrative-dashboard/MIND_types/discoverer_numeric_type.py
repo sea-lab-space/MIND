@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, model_validator
 # --- 1. Generalized Literal Types ---
 # All literal types are defined upfront for clarity and reusability.
 
-AttributeChangeDirection = Literal['more', 'less']
+AttributeChangeDirection = Literal['more', 'less', 'even']
 AttributeAggregation = Literal['average', 'stdev', 'median', 'max', 'min']
 AttributeExtreme = Literal['min', 'max']
 AttributeTrend = Literal['rise', 'fall', 'stable', 'cyclic', 'no trend']
@@ -53,16 +53,39 @@ class FactComparisonConfig(BaseFactConfig):
                                description="The [attribute] of the feature in time_dur_1.")
     value_dur_2: float = Field(...,
                                description="The [attribute] of the feature in time_dur_2.")
+    significance: Literal['insignificant', 'indicative']
+
 
     @model_validator(mode='after')
     def generate_description(self) -> 'FactComparisonConfig':
-        """Generates a templated description after model validation."""
-        self.fact_description = (
-            f"The {self.aggregation} {self.name} became {self.attribute} from {self.value_dur_1} "
-            f"(period: {self.time_dur_1.time_start} to {self.time_dur_1.time_end}) to {self.value_dur_2} "
-            f"(period: {self.time_dur_2.time_start} to {self.time_dur_2.time_end})."
-        )
+        """Generates a human-readable description after model validation."""
+
+        # Determine direction
+        direction_word = {
+            'more': 'increase',
+            'less': 'decrease',
+            'even': 'remained stable'
+        }.get(self.attribute, 'changed')
+
+        # Determine magnitude only if the change is not 'even'
+        if self.attribute in ['more', 'less']:
+            magnitude_word = "modest" if self.significance == 'indicative' else "slight"
+            self.fact_description = (
+                f"The {self.aggregation} {self.name} showed a {magnitude_word} {direction_word} "
+                f"from {self.value_dur_1} (period: {self.time_dur_1.time_start} to {self.time_dur_1.time_end}) "
+                f"to {self.value_dur_2} (period: {self.time_dur_2.time_start} to {self.time_dur_2.time_end})."
+            )
+        else:
+            # For 'even', no magnitude word needed
+            self.fact_description = (
+                f"The {self.aggregation} {self.name} {direction_word} "
+                f"from {self.value_dur_1} (period: {self.time_dur_1.time_start} to {self.time_dur_1.time_end}) "
+                f"to {self.value_dur_2} (period: {self.time_dur_2.time_start} to {self.time_dur_2.time_end})."
+            )
+
         return self
+
+
 
 
 class FactDifferenceConfig(BaseFactConfig):
@@ -173,3 +196,17 @@ AllFactConfigs = Union[
 
 class DiscovererQAOutput(BaseModel):
     facts: List[AllFactConfigs]
+
+PlannerFactTypes = Literal['comparison', 'trend']
+
+class PlannerSpec(BaseModel):
+    fact_type: PlannerFactTypes = Field(..., description="The type of data fact to explore.")
+    feature_name: str = Field(..., description="The name of the feature to explore.")
+
+class DiscovererPlannerSpec(BaseModel):
+    is_computable: bool
+    question_text: str
+    planner_spec: List[PlannerSpec] = Field(..., description="The list feature-fact type pairs pending compute.")
+
+class DiscovererPlannerOutput(BaseModel):
+    hooks: DiscovererPlannerSpec

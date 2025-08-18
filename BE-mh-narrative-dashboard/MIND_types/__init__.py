@@ -16,5 +16,6 @@ from .discoverer_numeric_type import (
     FactExtremeConfig,
     FactDerivedValueConfig,
     FactTrendConfig,
-    DiscovererQAOutput
+    DiscovererQAOutput,
+    DiscovererPlannerOutput
 )

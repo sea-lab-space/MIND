@@ -18,4 +18,9 @@ def search_feature_in_feature_list(features, feature_name):
     for feature in features:
         if feature['feature_name_renamed'] == feature_name:
             return feature
+        
+def search_question_in_question_list(questions, question):
+    for q in questions:
+        if q['question'] == question:
+            return q
     
