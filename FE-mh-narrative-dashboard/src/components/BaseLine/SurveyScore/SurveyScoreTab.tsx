@@ -2,6 +2,7 @@ import OverviewSummary from "@/components/BaseLine/OverciewSummary";
 import type {InsightExpandViewItem} from "@/types/props";
 import InsightCardDetail from "@/components/DataInsights/InsightCardDetails";
 import type { OverviewSpec } from "@/types/insightSpec";
+import SurveyScoreDetail from "@/components/BaseLine/SurveyScore/SurveyScoreDetail";
 
 interface SurveyScoreTabProps {
   showOverviewCardData?: boolean;
@@ -35,9 +36,8 @@ const SurveyScoreTab: React.FC<SurveyScoreTabProps> = ({
 
           {/* Scrollable content */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
-            <InsightCardDetail
-              insightCardDataExpandView={surveyScoreFacts}
-              isBaseline={true}
+            <SurveyScoreDetail
+                surveyScoreFacts={surveyScoreFacts}
             />
           </div>
         </div>
