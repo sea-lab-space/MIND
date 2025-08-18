@@ -4,11 +4,14 @@ import json
 from typing import Literal
 from tqdm import tqdm
 
+from discoverer.rule_base_agents.rule_base_comparison_agent import RuleBaseComparisonAgent
+from discoverer.rule_base_agents.rule_base_trend_agent import RuleBaseTrendAgent
 from discoverer.planner import PlannerAgent
 from discoverer.text_data.hypothesis_agent import DiscovererHypothesisAgent
+from utils.search import search_feature_in_feature_list, search_question_in_question_list
 
 class Discoverer:
-    def __init__(self, numeric_agents, text_agents, retrospect_date, before_date, model_name):
+    def __init__(self, numeric_agents, text_agents, two_session_aback_date, retrospect_date, before_date, model_name):
         # all agents have the same base class
         self.numeric_agents = [
             agent(
@@ -32,6 +35,7 @@ class Discoverer:
         )
         self.before_date = before_date
         self.retrospect_date = retrospect_date
+        self.two_session_aback_date = two_session_aback_date
 
     async def _async_run_numeric_discovery(self, feature_list, is_testing):
         if is_testing:
@@ -132,7 +136,51 @@ class Discoverer:
         # load questions.json
         with open("questions.json", "r", encoding='utf-8') as f:
             questions = json.load(f)
-        self.planning_agent.run(questions, numeric_input, verbose=True)
+        # execution_plan = self.planning_agent.run(questions, numeric_input, verbose=False)
+        # # save plan to file
+        # with open("execution_plan.json", "w", encoding='utf-8') as f:
+        #     json.dump(execution_plan, f, ensure_ascii=False, indent=2)
+
+        # read plan from file
+        with open("execution_plan.json", "r", encoding='utf-8') as f:
+            execution_plan = json.load(f)
+
+        trend_rule_base_agent = RuleBaseTrendAgent(
+            start_date=self.retrospect_date,
+            end_date=self.before_date,
+        )
+        comparison_rule_base_agent = RuleBaseComparisonAgent(
+            start_date=self.two_session_aback_date,
+            retrospect_date=self.retrospect_date,
+            end_date=self.before_date,
+        )
+        discovererMap = {
+            "comparison": comparison_rule_base_agent,
+            "trend": trend_rule_base_agent
+        }
+
+        key_concern_facts = []
+        for plan in execution_plan:
+            question_text = plan['question_text']
+            data_facts = []
+            for spec in plan['planner_spec']:
+                feature_name = spec['feature_name']
+                data = search_feature_in_feature_list(
+                  numeric_input, feature_name)
+                running_agent = discovererMap[spec['fact_type']]
+                res = running_agent.run(data['data'], verbose=False)
+                data_facts.append(res)
+            key_concern_facts.append({
+                "question_text": question_text,
+                "question_source": search_question_in_question_list(
+                    questions, question_text
+                ),
+                "evidences": data_facts
+            })
+        print(key_concern_facts)
+
+                
+
 
 
         exit()
@@ -149,6 +197,8 @@ class Discoverer:
         return {
             "numeric_facts": numeric_facts,
             "note_facts": note_facts,
-            "transcript_facts": transcript_facts,
+            "key_concern_facts": key_concern_facts
+            
+            # "transcript_facts": transcript_facts,
             # "medication_facts": medication_facts
         }
