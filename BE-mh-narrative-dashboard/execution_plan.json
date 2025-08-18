@@ -1,0 +1,240 @@
+[
+  {
+    "is_computable": true,
+    "question_text": "Has there been any improvement in Lucy's mood or daily functioning since the last session?",
+    "planner_spec": [
+      {
+        "fact_type": "comparison",
+        "feature_name": "PHQ-4 (0-12)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "PHQ-4 (0-12)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "PHQ-4 Depression Subscale (0-6)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "PHQ-4 Depression Subscale (0-6)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "PHQ-4 Anxiety Subscale (0-6)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "PHQ-4 Anxiety Subscale (0-6)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "PSS-4 Score (0-16)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "PSS-4 Score (0-16)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "Positive Affect Subscale (5-25, PANAS-SF)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Positive Affect Subscale (5-25, PANAS-SF)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "Negative Affect Subscale (5-25, PANAS-SF)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Negative Affect Subscale (5-25, PANAS-SF)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "Total Sleep (hours)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Total Sleep (hours)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "Routine Consistency (0 irregular, 100 regular)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Routine Consistency (0 irregular, 100 regular)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "Total Steps (Steps)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Total Steps (Steps)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "Inactive Periods (Times)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Inactive Periods (Times)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "Total Screen Time (Hours)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Total Screen Time (Hours)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "Distance Traveled (Miles)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Distance Traveled (Miles)"
+      }
+    ]
+  },
+  {
+    "is_computable": true,
+    "question_text": "Has Lucy been able to implement small, manageable daily activities such as listening to music, making tea, brief walks, or stretching?",
+    "planner_spec": [
+      {
+        "fact_type": "trend",
+        "feature_name": "Total Steps (Steps)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Inactive Periods (Times)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Routine Consistency (0 irregular, 100 regular)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Distance Traveled (Miles)"
+      }
+    ]
+  },
+  {
+    "is_computable": true,
+    "question_text": "Has Lucy noticed any changes in her sleep patterns, such as improvement in falling asleep or reduced daytime sleeping?",
+    "planner_spec": [
+      {
+        "fact_type": "comparison",
+        "feature_name": "Bedtime (Hours in relation to midnight)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Bedtime (Hours in relation to midnight)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "Total Sleep (hours)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Total Sleep (hours)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "Awakening Episodes (Times)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Awakening Episodes (Times)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "Wake Time (Hours in relation to midnight)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Wake Time (Hours in relation to midnight)"
+      }
+    ]
+  },
+  {
+    "is_computable": true,
+    "question_text": "Has Lucy experienced any worsening of symptoms, such as increased emotional numbness, low motivation, or emergence of suicidal ideation?",
+    "planner_spec": [
+      {
+        "fact_type": "comparison",
+        "feature_name": "PHQ-4 (0-12)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "PHQ-4 (0-12)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "PHQ-4 Depression Subscale (0-6)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "PHQ-4 Depression Subscale (0-6)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "Negative Affect Subscale (5-25, PANAS-SF)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Negative Affect Subscale (5-25, PANAS-SF)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "Positive Affect Subscale (5-25, PANAS-SF)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Positive Affect Subscale (5-25, PANAS-SF)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "PSS-4 Score (0-16)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "PSS-4 Score (0-16)"
+      }
+    ]
+  },
+  {
+    "is_computable": true,
+    "question_text": "Has Lucy continued to attend work and maintain her current level of functioning in her job?",
+    "planner_spec": [
+      {
+        "fact_type": "comparison",
+        "feature_name": "Distance Traveled (Miles)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "Routine Consistency (0 irregular, 100 regular)"
+      },
+      {
+        "fact_type": "comparison",
+        "feature_name": "Time Spent at Home (Hours)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Distance Traveled (Miles)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Routine Consistency (0 irregular, 100 regular)"
+      },
+      {
+        "fact_type": "trend",
+        "feature_name": "Time Spent at Home (Hours)"
+      }
+    ]
+  }
+]

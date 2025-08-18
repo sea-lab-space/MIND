@@ -1,5 +1,7 @@
 # Discoverer Agents
 
+! This document is out of date
+
 ## Primatives
 
 * **Trend** (rise, fall, stable, cyclic)

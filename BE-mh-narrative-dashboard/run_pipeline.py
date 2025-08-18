@@ -8,11 +8,13 @@ load_dotenv()
 class MINDPipeline:
     def __init__(self, patient_id: str,
                  model_name: str = "gpt-4.1",
+                 two_session_aback_date: str = "2021-04-11",
                  retrospect_date: str = "2021-05-09",
                  before_date: str = "2021-06-06",
                  save_to_cache: bool = True):
         self.patient_id = patient_id
         self.model_name = model_name
+        self.two_session_aback_date = two_session_aback_date
         self.retrospect_date = retrospect_date
         self.before_date = before_date
         self.save_to_cache = save_to_cache
@@ -107,6 +109,7 @@ class MINDPipeline:
                 #     NotesDiscovererAgent, 
                 #     TranscriptsDiscovererAgent
                 #     ],
+                two_session_aback_date=self.two_session_aback_date,
                 retrospect_date=self.retrospect_date,
                 before_date=self.before_date,
                 model_name=self.model_name
@@ -315,6 +318,7 @@ if __name__ == "__main__":
         pipeline = MINDPipeline(
             patient_id=uid,
             model_name=MODEL_NAME,
+            two_session_aback_date="2021-04-11",
             retrospect_date='2021-05-09',
             before_date='2021-06-06',
             save_to_cache=True
