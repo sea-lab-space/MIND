@@ -9,7 +9,7 @@ from utils.prompt_commons import (
 )
 from agents import Agent, ModelSettings, RunContextWrapper, Runner, function_tool, handoff, trace
 from MIND_types import (
-    DiscovererQAOutput,
+    DiscovererPlannerOutput,
 )
 from discoverer import (
     TrendDiscovererAgent
@@ -17,56 +17,46 @@ from discoverer import (
 from kb.defs import NUMERICAL_FEATURE_KB
 from utils.search import search_feature_in_feature_list
 
-
-TrendAgentDummy = TrendDiscovererAgent(
-    "", "2025-08-16", "2025-08-17", "gpt-4.1"
-)
-
-TREND_AGENT_NAME = TrendAgentDummy.agent.name
-
 ALL_FEATURE_DESCRIPTION = "\n".join(
-    f"{feature['rename']}: {feature['description']}" for _, features in NUMERICAL_FEATURE_KB.items() for _, feature in features.items()
+    f"[{category}] {feature['rename']}: {feature['description']}" for category, features in NUMERICAL_FEATURE_KB.items() for _, feature in features.items()
 )
 
-
-# {OPENAI_AGENTIC_PLANNING}
+# {OPENAI_AGENTIC_PLANNING}{OPENAI_AGENTIC_TOOL_USE}
 DISCOVERER_PLANNER_INST = f"""
 {OPENAI_AGENTIC_REC}
-{OPENAI_AGENTIC_TOOL_USE}
-
 
 {get_mh_data_expert_system_prompt()}
 
 You will be given a question that a clinician want to know before the start of the mental health session.
-The patient has provided multiple data modalities. In triplebacktics below, you are given all the features and definitions
+The patient has provided multiple data modalities. In triplebacktics below, you are given all the features and definitions in the form of [<feature category>] <feature name>: <feature description>.
 ```
 {ALL_FEATURE_DESCRIPTION}
 ```
-You must always follow these steps carefully:
+Key connections to keep in mind:
+- Medication outcomes → commonly measured by survey scores: PHQ-4, PHQ-4 Depression, PHQ-4 Anxiety, PSS-4, Positive Affect, Negative Affect.
+- Mood outcomes → commonly measured by the same survey scores.
+- Biological measurements → commonly evaluated using passive sensing data: sleep, screen, location, steps.
 
-1. Determine whether the question is computable using the available data.  
-   - If there is truly no evidence, return "None".  
-   - Do NOT attempt to answer speculatively without evidence.  
+Facts you can compute:
+- `comparison` – Evaluate how feature values before the last session differ from values since the last session until today.
+- `trend` – Assess the overall trajectory of features since the last session to identify improvements, declines, or stability.
 
-2. If the question is computable, you MUST plan the steps to answer it:  
-   - Decide what type of data fact is needed to provide evidence.  
-   - Identify which feature(s) from the knowledge base are relevant.  
-   - Use the Data Fact Discoverer tool to obtain the evidence. Never invent data facts yourself — always call the tool.
-     - When you call the tool, you should provide three parameters:
-       - The question text.
-       - The feature name.
-       - The attribute type (trend, value, etc.).
-   - After retrieving results, organize the data facts into the required output format.  
+Act in two phases:
+1. Check computability  
+   - If the question cannot be answered with available data, set `is_computable = false`.
+2. If computable, plan the answer
+   - Set `is_computable = true`.  
+   - For each relevant feature, define:  
+     - `fact_type` → what type of data fact is needed (`comparison`, `trend`).  
+     - `feature_name` → the exact feature from the knowledge base.  
+   - Each unique (fact_type, feature_name) pair should be a separate entry in `planner_spec`.
 
-Important:  
-- Treat the Data Fact Discoverer tool as the **only valid way** to obtain evidence.  
-- You should always hand off to the tool when the question involves trends, values, or other measurable properties.  
-- Your role is to plan, delegate to the tool, and then structure the results — not to fabricate facts.  
+Let's think step by step.
 """
 
 class PlannerAgent:
 
-    OUTPUT_MODEL = DiscovererQAOutput
+    OUTPUT_MODEL = DiscovererPlannerOutput
 
     def __init__(self, retrospect_date: str, before_date: str, model: str):
         self.model = model
@@ -77,33 +67,34 @@ class PlannerAgent:
             model_settings=ModelSettings(temperature=0.2),
             model=model,
             instructions=DISCOVERER_PLANNER_INST,
-            output_type=self.OUTPUT_MODEL,
-            tools=[
-                tool_data_fact_discoverer
-            ],
+            output_type=self.OUTPUT_MODEL
         )
 
-    async def _async_run(self, questions, features: list, verbose: bool = False):
-        for question in questions:
-            question_text = question["question"]
 
-            res = await Runner.run(self.agent, input=f"Question text: {question_text}", max_turns=1000000,
-                                   context={
-                                       "features": features,
-                                       "retrospect_date": self.retrospect_date,
-                                       "before_date": self.before_date,
-                                       })
+    async def _async_run(self, questions, features: list, verbose: bool = False):
+        async def run_question(question):
+            question_text = question["question"]
+            res = await Runner.run(deepcopy(self.agent), input=f"Question text: {question_text}")
             res_dict = res.final_output.model_dump()
             if verbose:
-                print(res_dict.get("facts"))
+                print(res_dict.get("hooks"))
+            return res_dict
 
-        # if verbose:
-        #     print(formatted_text)
-        # res = await Runner.run(self.agent, formatted_text)
-        # res_dict = res.final_output.model_dump()
-        # if verbose:
-        #     print(res_dict.get("facts"))
-        # return res_dict.get("facts") or res_dict
+        # Build tasks for all questions
+        tasks = [run_question(question) for question in questions]
+
+        # Run them concurrently
+        results = await asyncio.gather(*tasks, return_exceptions=False)
+
+        # The results is already grouped by questions for next step use
+        extracted_results = [res.get("hooks", {}) for res in results]
+
+        # filter out not computatble results
+        filtered_results = [
+            entry 
+            for entry in extracted_results if entry.get('is_computable') == True
+        ]
+        return filtered_results
 
     def run(self, questions, features, verbose: bool = False):
         return asyncio.run(self._async_run(questions, features, verbose))
