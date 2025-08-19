@@ -8,10 +8,6 @@ from MIND_types import (
 class TrendDiscovererAgent(BaseDiscovererAgent):
     DEFINITION = r"""
         Trend describes the general tendency of a feature over a specified time period, characterized as one of the following: rise, fall, stable, cyclic or no trend. 
-        
-        Specifically, the insights you generated should cover all the given time span, and should include:
-        - The overall trend for the full time span (return the specific date of the time span).
-        - Trends for consecutive sub-periods ("chunks") of at least 3 days, specifying the trend in each chunk.
     """
     OUTPUT_MODEL = DiscovererOutput[FactTrendConfig]
 

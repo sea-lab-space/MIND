@@ -99,39 +99,3 @@ class PlannerAgent:
     def run(self, questions, features, verbose: bool = False):
         return asyncio.run(self._async_run(questions, features, verbose))
 
-
-# TODO Aug 18: don't set this up as a function call, but as a subsequent step (its the same and more robust)
-
-@function_tool
-def tool_data_fact_discoverer(wrapper: RunContextWrapper[List], question_text: str, feature_name: str, attribute_type: str) -> str:
-    """
-    Data Fact Discoverer Tool
-
-    This tool is the primary way to obtain evidence (data facts) from patient data. 
-    It should be called whenever the Planner determines that a question is computable 
-    and requires factual evidence. In particular, this tool can discover how a specific 
-    feature changes over time (trend analysis).
-
-    Args:
-        question_text (str): The clinician's question to be answered.
-        feature_name (str): The feature to analyze in order to discover data facts.
-        attribute_type (str): The type of attribute to analyze (e.g., trend, value).
-
-    Returns:
-        FactTrendConfig: Structured data facts discovered about the specified feature.
-    """
-    context = wrapper.context
-    feature_input_raw_data = search_feature_in_feature_list(
-        context["features"], feature_name
-    )
-    print(feature_input_raw_data)
-
-    print(attribute_type)
-    trend_agent = TrendDiscovererAgent(
-        question_text,
-        context['retrospect_date'],
-        context['before_date'],
-        "gpt-4.1"
-    )
-    result = asyncio.run(trend_agent.run(feature_input_raw_data["data"]))
-    return result
