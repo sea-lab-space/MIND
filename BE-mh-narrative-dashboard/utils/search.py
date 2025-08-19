@@ -22,5 +22,5 @@ def search_feature_in_feature_list(features, feature_name):
 def search_question_in_question_list(questions, question):
     for q in questions:
         if q['question'] == question:
-            return q
+            return q['evidence']
     
