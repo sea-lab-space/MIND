@@ -22,7 +22,7 @@ class TextEvidence(BaseModel):
 
 class TextFact(BaseModel):
     fact_text: str
-    evidence: List[TextEvidence]
+    evidence: List[TextEvidence] 
 
 class TextDataDiscoveryOutputModel(BaseModel):
     facts: List[TextFact]

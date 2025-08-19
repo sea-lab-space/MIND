@@ -98,13 +98,13 @@ class MINDPipeline:
             from discoverer import Discoverer, TrendDiscovererAgent, ExtremeDiscovererAgent, ComparisonDiscovererAgent, DifferenceDiscovererAgent, DerivedValueDiscovererAgent, NotesDiscovererAgent, TranscriptsDiscovererAgent
             discoverer = Discoverer(
                 numeric_agents=[
-                    TrendDiscovererAgent, 
+                    # TrendDiscovererAgent, 
                     ExtremeDiscovererAgent, 
-                    ComparisonDiscovererAgent,
+                    # ComparisonDiscovererAgent,
                     DifferenceDiscovererAgent, 
-                    DerivedValueDiscovererAgent
+                    # DerivedValueDiscovererAgent
                     ],
-                text_agents=[],
+                # text_agents=[],
                 # text_agents=[
                 #     NotesDiscovererAgent, 
                 #     TranscriptsDiscovererAgent
@@ -313,6 +313,8 @@ if __name__ == "__main__":
     # USERS = ["INS-W_963", "INS-W_1044", "INS-W_1077"]
     # USERS = ["INS-W_963"]
     USERS = ["INS-W_1044"]
+    # USERS = ["INS-W_1077"]
+
 
     for uid in USERS:
         pipeline = MINDPipeline(
@@ -326,8 +328,8 @@ if __name__ == "__main__":
 
         final_output = (
             pipeline
-            .load_data(load_from_cache=False)
-            .run_discoverer(load_from_cache=False)
+            .load_data(load_from_cache=True)
+            .run_discoverer(load_from_cache=True)
             .run_synthesizer(iters=2, load_from_cache=False)
             .run_narrator(load_from_cache=False)
             .run_overview(load_from_cache=False)
