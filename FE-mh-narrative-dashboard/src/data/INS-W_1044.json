@@ -47,16 +47,358 @@
   "insights": [
     {
       "key": "insight-0",
-      "summaryTitle": "Routine consistency dropped from 70.22 to 15.35.",
+      "summaryTitle": "Physical activity and routine consistency were highly variable.",
       "sources": [
+        "session transcript",
+        "clinical note",
         "passive sensing"
       ],
       "insightType": [
-        "social"
+        "biological"
       ],
       "expandView": [
         {
-          "summarySentence": "Routine consistency dropped from 40.02 to 15.35 between 2021-05-21 and 2021-05-22, indicating increased irregularity.",
+          "summarySentence": "[TODO?]",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "She attempted to implement some behavioral activation strategies discussed previously, such as going for a short walk, but found it difficult to maintain consistency."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "[TODO?]",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Patient: Yeah, so I tried to go for a short walk like you suggested. The first day, I did manage about ten minutes, but then I skipped the next couple days. It just felt… sort of pointless."
+            }
+          ],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "Average daily steps decreased from 13,496 to 11,553 from 2021-04-11 to 2021-06-06 (28 days).",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Total Steps (Steps)": null
+            },
+            {
+              "date": "2021-03-30",
+              "Total Steps (Steps)": null
+            },
+            {
+              "date": "2021-03-31",
+              "Total Steps (Steps)": 4161.0
+            },
+            {
+              "date": "2021-04-01",
+              "Total Steps (Steps)": 13673.0
+            },
+            {
+              "date": "2021-04-02",
+              "Total Steps (Steps)": 13557.0
+            },
+            {
+              "date": "2021-04-03",
+              "Total Steps (Steps)": 19817.0
+            },
+            {
+              "date": "2021-04-04",
+              "Total Steps (Steps)": 15032.0
+            },
+            {
+              "date": "2021-04-05",
+              "Total Steps (Steps)": 13733.0
+            },
+            {
+              "date": "2021-04-06",
+              "Total Steps (Steps)": 12587.0
+            },
+            {
+              "date": "2021-04-07",
+              "Total Steps (Steps)": 14130.0
+            },
+            {
+              "date": "2021-04-08",
+              "Total Steps (Steps)": 10413.0
+            },
+            {
+              "date": "2021-04-09",
+              "Total Steps (Steps)": 13822.0
+            },
+            {
+              "date": "2021-04-10",
+              "Total Steps (Steps)": 13608.0
+            },
+            {
+              "date": "2021-04-11",
+              "Total Steps (Steps)": 13752.0
+            },
+            {
+              "date": "2021-04-12",
+              "Total Steps (Steps)": 15202.0
+            },
+            {
+              "date": "2021-04-13",
+              "Total Steps (Steps)": 15078.0
+            },
+            {
+              "date": "2021-04-14",
+              "Total Steps (Steps)": 15852.0
+            },
+            {
+              "date": "2021-04-15",
+              "Total Steps (Steps)": 13048.0
+            },
+            {
+              "date": "2021-04-16",
+              "Total Steps (Steps)": 12032.0
+            },
+            {
+              "date": "2021-04-17",
+              "Total Steps (Steps)": null
+            },
+            {
+              "date": "2021-04-18",
+              "Total Steps (Steps)": null
+            },
+            {
+              "date": "2021-04-19",
+              "Total Steps (Steps)": 10111.0
+            },
+            {
+              "date": "2021-04-20",
+              "Total Steps (Steps)": 14702.0
+            },
+            {
+              "date": "2021-04-21",
+              "Total Steps (Steps)": 11925.0
+            },
+            {
+              "date": "2021-04-22",
+              "Total Steps (Steps)": 11294.0
+            },
+            {
+              "date": "2021-04-23",
+              "Total Steps (Steps)": 13093.0
+            },
+            {
+              "date": "2021-04-24",
+              "Total Steps (Steps)": 11245.0
+            },
+            {
+              "date": "2021-04-25",
+              "Total Steps (Steps)": 29579.0
+            },
+            {
+              "date": "2021-04-26",
+              "Total Steps (Steps)": 11669.0
+            },
+            {
+              "date": "2021-04-27",
+              "Total Steps (Steps)": 12234.0
+            },
+            {
+              "date": "2021-04-28",
+              "Total Steps (Steps)": 10586.0
+            },
+            {
+              "date": "2021-04-29",
+              "Total Steps (Steps)": 10162.0
+            },
+            {
+              "date": "2021-04-30",
+              "Total Steps (Steps)": 14106.0
+            },
+            {
+              "date": "2021-05-01",
+              "Total Steps (Steps)": 10377.0
+            },
+            {
+              "date": "2021-05-02",
+              "Total Steps (Steps)": 25279.0
+            },
+            {
+              "date": "2021-05-03",
+              "Total Steps (Steps)": 9749.0
+            },
+            {
+              "date": "2021-05-04",
+              "Total Steps (Steps)": 13620.0
+            },
+            {
+              "date": "2021-05-05",
+              "Total Steps (Steps)": 12016.0
+            },
+            {
+              "date": "2021-05-06",
+              "Total Steps (Steps)": 7447.0
+            },
+            {
+              "date": "2021-05-07",
+              "Total Steps (Steps)": 6137.0
+            },
+            {
+              "date": "2021-05-08",
+              "Total Steps (Steps)": 25121.0
+            },
+            {
+              "date": "2021-05-09",
+              "Total Steps (Steps)": 8964.0
+            },
+            {
+              "date": "2021-05-10",
+              "Total Steps (Steps)": 14711.0
+            },
+            {
+              "date": "2021-05-11",
+              "Total Steps (Steps)": 10746.0
+            },
+            {
+              "date": "2021-05-12",
+              "Total Steps (Steps)": 12597.0
+            },
+            {
+              "date": "2021-05-13",
+              "Total Steps (Steps)": 9942.0
+            },
+            {
+              "date": "2021-05-14",
+              "Total Steps (Steps)": 16680.0
+            },
+            {
+              "date": "2021-05-15",
+              "Total Steps (Steps)": 5835.0
+            },
+            {
+              "date": "2021-05-16",
+              "Total Steps (Steps)": 23149.0
+            },
+            {
+              "date": "2021-05-17",
+              "Total Steps (Steps)": 9538.0
+            },
+            {
+              "date": "2021-05-18",
+              "Total Steps (Steps)": 6653.0
+            },
+            {
+              "date": "2021-05-19",
+              "Total Steps (Steps)": 6122.0
+            },
+            {
+              "date": "2021-05-20",
+              "Total Steps (Steps)": 3850.0
+            },
+            {
+              "date": "2021-05-21",
+              "Total Steps (Steps)": 13278.0
+            },
+            {
+              "date": "2021-05-22",
+              "Total Steps (Steps)": 8258.0
+            },
+            {
+              "date": "2021-05-23",
+              "Total Steps (Steps)": 26581.0
+            },
+            {
+              "date": "2021-05-24",
+              "Total Steps (Steps)": 7871.0
+            },
+            {
+              "date": "2021-05-25",
+              "Total Steps (Steps)": 10379.0
+            },
+            {
+              "date": "2021-05-26",
+              "Total Steps (Steps)": 9051.0
+            },
+            {
+              "date": "2021-05-27",
+              "Total Steps (Steps)": 10230.0
+            },
+            {
+              "date": "2021-05-28",
+              "Total Steps (Steps)": 9564.0
+            },
+            {
+              "date": "2021-05-29",
+              "Total Steps (Steps)": null
+            },
+            {
+              "date": "2021-05-30",
+              "Total Steps (Steps)": 7497.0
+            },
+            {
+              "date": "2021-05-31",
+              "Total Steps (Steps)": 15308.0
+            },
+            {
+              "date": "2021-06-01",
+              "Total Steps (Steps)": 9459.0
+            },
+            {
+              "date": "2021-06-02",
+              "Total Steps (Steps)": 21239.0
+            },
+            {
+              "date": "2021-06-03",
+              "Total Steps (Steps)": 9994.0
+            },
+            {
+              "date": "2021-06-04",
+              "Total Steps (Steps)": 13014.0
+            },
+            {
+              "date": "2021-06-05",
+              "Total Steps (Steps)": 12088.0
+            },
+            {
+              "date": "2021-06-06",
+              "Total Steps (Steps)": 10899.0
+            }
+          ],
+          "spec": {
+            "name": "Total Steps (Steps)",
+            "fact_type": "comparison",
+            "fact_description": "Average daily steps decreased from 13,496 to 11,553 from 2021-04-11 to 2021-06-06 (28 days).",
+            "attribute": "less",
+            "aggregation": "average",
+            "time_dur_1": {
+              "time_start": "2021-04-11",
+              "time_end": "2021-05-09"
+            },
+            "time_dur_2": {
+              "time_start": "2021-05-09",
+              "time_end": "2021-06-06"
+            },
+            "value_dur_1": 13495.555555555555,
+            "value_dur_2": 11553.464285714286,
+            "significance": "indicative"
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "comparison",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "Routine Consistency scores fluctuated notably from 2021-05-09 to 2021-06-06 (28 days).",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -341,20 +683,3483 @@
           ],
           "spec": {
             "name": "Routine Consistency (0 irregular, 100 regular)",
+            "fact_type": "trend",
+            "fact_description": "Routine Consistency scores fluctuated notably from 2021-05-09 to 2021-06-06 (28 days).",
+            "attribute": "variable",
+            "time_1": "2021-05-09",
+            "time_2": "2021-06-06"
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "trend",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "From 2021-05-09 to 2021-06-06 (28 days), daily step counts varied widely.",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Total Steps (Steps)": null
+            },
+            {
+              "date": "2021-03-30",
+              "Total Steps (Steps)": null
+            },
+            {
+              "date": "2021-03-31",
+              "Total Steps (Steps)": 4161.0
+            },
+            {
+              "date": "2021-04-01",
+              "Total Steps (Steps)": 13673.0
+            },
+            {
+              "date": "2021-04-02",
+              "Total Steps (Steps)": 13557.0
+            },
+            {
+              "date": "2021-04-03",
+              "Total Steps (Steps)": 19817.0
+            },
+            {
+              "date": "2021-04-04",
+              "Total Steps (Steps)": 15032.0
+            },
+            {
+              "date": "2021-04-05",
+              "Total Steps (Steps)": 13733.0
+            },
+            {
+              "date": "2021-04-06",
+              "Total Steps (Steps)": 12587.0
+            },
+            {
+              "date": "2021-04-07",
+              "Total Steps (Steps)": 14130.0
+            },
+            {
+              "date": "2021-04-08",
+              "Total Steps (Steps)": 10413.0
+            },
+            {
+              "date": "2021-04-09",
+              "Total Steps (Steps)": 13822.0
+            },
+            {
+              "date": "2021-04-10",
+              "Total Steps (Steps)": 13608.0
+            },
+            {
+              "date": "2021-04-11",
+              "Total Steps (Steps)": 13752.0
+            },
+            {
+              "date": "2021-04-12",
+              "Total Steps (Steps)": 15202.0
+            },
+            {
+              "date": "2021-04-13",
+              "Total Steps (Steps)": 15078.0
+            },
+            {
+              "date": "2021-04-14",
+              "Total Steps (Steps)": 15852.0
+            },
+            {
+              "date": "2021-04-15",
+              "Total Steps (Steps)": 13048.0
+            },
+            {
+              "date": "2021-04-16",
+              "Total Steps (Steps)": 12032.0
+            },
+            {
+              "date": "2021-04-17",
+              "Total Steps (Steps)": null
+            },
+            {
+              "date": "2021-04-18",
+              "Total Steps (Steps)": null
+            },
+            {
+              "date": "2021-04-19",
+              "Total Steps (Steps)": 10111.0
+            },
+            {
+              "date": "2021-04-20",
+              "Total Steps (Steps)": 14702.0
+            },
+            {
+              "date": "2021-04-21",
+              "Total Steps (Steps)": 11925.0
+            },
+            {
+              "date": "2021-04-22",
+              "Total Steps (Steps)": 11294.0
+            },
+            {
+              "date": "2021-04-23",
+              "Total Steps (Steps)": 13093.0
+            },
+            {
+              "date": "2021-04-24",
+              "Total Steps (Steps)": 11245.0
+            },
+            {
+              "date": "2021-04-25",
+              "Total Steps (Steps)": 29579.0
+            },
+            {
+              "date": "2021-04-26",
+              "Total Steps (Steps)": 11669.0
+            },
+            {
+              "date": "2021-04-27",
+              "Total Steps (Steps)": 12234.0
+            },
+            {
+              "date": "2021-04-28",
+              "Total Steps (Steps)": 10586.0
+            },
+            {
+              "date": "2021-04-29",
+              "Total Steps (Steps)": 10162.0
+            },
+            {
+              "date": "2021-04-30",
+              "Total Steps (Steps)": 14106.0
+            },
+            {
+              "date": "2021-05-01",
+              "Total Steps (Steps)": 10377.0
+            },
+            {
+              "date": "2021-05-02",
+              "Total Steps (Steps)": 25279.0
+            },
+            {
+              "date": "2021-05-03",
+              "Total Steps (Steps)": 9749.0
+            },
+            {
+              "date": "2021-05-04",
+              "Total Steps (Steps)": 13620.0
+            },
+            {
+              "date": "2021-05-05",
+              "Total Steps (Steps)": 12016.0
+            },
+            {
+              "date": "2021-05-06",
+              "Total Steps (Steps)": 7447.0
+            },
+            {
+              "date": "2021-05-07",
+              "Total Steps (Steps)": 6137.0
+            },
+            {
+              "date": "2021-05-08",
+              "Total Steps (Steps)": 25121.0
+            },
+            {
+              "date": "2021-05-09",
+              "Total Steps (Steps)": 8964.0
+            },
+            {
+              "date": "2021-05-10",
+              "Total Steps (Steps)": 14711.0
+            },
+            {
+              "date": "2021-05-11",
+              "Total Steps (Steps)": 10746.0
+            },
+            {
+              "date": "2021-05-12",
+              "Total Steps (Steps)": 12597.0
+            },
+            {
+              "date": "2021-05-13",
+              "Total Steps (Steps)": 9942.0
+            },
+            {
+              "date": "2021-05-14",
+              "Total Steps (Steps)": 16680.0
+            },
+            {
+              "date": "2021-05-15",
+              "Total Steps (Steps)": 5835.0
+            },
+            {
+              "date": "2021-05-16",
+              "Total Steps (Steps)": 23149.0
+            },
+            {
+              "date": "2021-05-17",
+              "Total Steps (Steps)": 9538.0
+            },
+            {
+              "date": "2021-05-18",
+              "Total Steps (Steps)": 6653.0
+            },
+            {
+              "date": "2021-05-19",
+              "Total Steps (Steps)": 6122.0
+            },
+            {
+              "date": "2021-05-20",
+              "Total Steps (Steps)": 3850.0
+            },
+            {
+              "date": "2021-05-21",
+              "Total Steps (Steps)": 13278.0
+            },
+            {
+              "date": "2021-05-22",
+              "Total Steps (Steps)": 8258.0
+            },
+            {
+              "date": "2021-05-23",
+              "Total Steps (Steps)": 26581.0
+            },
+            {
+              "date": "2021-05-24",
+              "Total Steps (Steps)": 7871.0
+            },
+            {
+              "date": "2021-05-25",
+              "Total Steps (Steps)": 10379.0
+            },
+            {
+              "date": "2021-05-26",
+              "Total Steps (Steps)": 9051.0
+            },
+            {
+              "date": "2021-05-27",
+              "Total Steps (Steps)": 10230.0
+            },
+            {
+              "date": "2021-05-28",
+              "Total Steps (Steps)": 9564.0
+            },
+            {
+              "date": "2021-05-29",
+              "Total Steps (Steps)": null
+            },
+            {
+              "date": "2021-05-30",
+              "Total Steps (Steps)": 7497.0
+            },
+            {
+              "date": "2021-05-31",
+              "Total Steps (Steps)": 15308.0
+            },
+            {
+              "date": "2021-06-01",
+              "Total Steps (Steps)": 9459.0
+            },
+            {
+              "date": "2021-06-02",
+              "Total Steps (Steps)": 21239.0
+            },
+            {
+              "date": "2021-06-03",
+              "Total Steps (Steps)": 9994.0
+            },
+            {
+              "date": "2021-06-04",
+              "Total Steps (Steps)": 13014.0
+            },
+            {
+              "date": "2021-06-05",
+              "Total Steps (Steps)": 12088.0
+            },
+            {
+              "date": "2021-06-06",
+              "Total Steps (Steps)": 10899.0
+            }
+          ],
+          "spec": {
+            "name": "Total Steps (Steps)",
+            "fact_type": "trend",
+            "fact_description": "From 2021-05-09 to 2021-06-06 (28 days), daily step counts varied widely.",
+            "attribute": "variable",
+            "time_1": "2021-05-09",
+            "time_2": "2021-06-06"
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "trend",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "Distance traveled (miles) varied greatly from 2021-05-09 to 2021-06-06 (28 days).",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Distance Traveled (Miles)": 11.22
+            },
+            {
+              "date": "2021-03-30",
+              "Distance Traveled (Miles)": 13.21
+            },
+            {
+              "date": "2021-03-31",
+              "Distance Traveled (Miles)": 91.15
+            },
+            {
+              "date": "2021-04-01",
+              "Distance Traveled (Miles)": 17.89
+            },
+            {
+              "date": "2021-04-02",
+              "Distance Traveled (Miles)": 69.99
+            },
+            {
+              "date": "2021-04-03",
+              "Distance Traveled (Miles)": 242.02
+            },
+            {
+              "date": "2021-04-04",
+              "Distance Traveled (Miles)": 36.73
+            },
+            {
+              "date": "2021-04-05",
+              "Distance Traveled (Miles)": 31.04
+            },
+            {
+              "date": "2021-04-06",
+              "Distance Traveled (Miles)": 27.84
+            },
+            {
+              "date": "2021-04-07",
+              "Distance Traveled (Miles)": 22.48
+            },
+            {
+              "date": "2021-04-08",
+              "Distance Traveled (Miles)": 21.55
+            },
+            {
+              "date": "2021-04-09",
+              "Distance Traveled (Miles)": 38.12
+            },
+            {
+              "date": "2021-04-10",
+              "Distance Traveled (Miles)": 24.31
+            },
+            {
+              "date": "2021-04-11",
+              "Distance Traveled (Miles)": 45.28
+            },
+            {
+              "date": "2021-04-12",
+              "Distance Traveled (Miles)": 15.65
+            },
+            {
+              "date": "2021-04-13",
+              "Distance Traveled (Miles)": 37.97
+            },
+            {
+              "date": "2021-04-14",
+              "Distance Traveled (Miles)": 28.29
+            },
+            {
+              "date": "2021-04-15",
+              "Distance Traveled (Miles)": 8.38
+            },
+            {
+              "date": "2021-04-16",
+              "Distance Traveled (Miles)": 18.98
+            },
+            {
+              "date": "2021-04-17",
+              "Distance Traveled (Miles)": 144.66
+            },
+            {
+              "date": "2021-04-18",
+              "Distance Traveled (Miles)": 153.75
+            },
+            {
+              "date": "2021-04-19",
+              "Distance Traveled (Miles)": 7.83
+            },
+            {
+              "date": "2021-04-20",
+              "Distance Traveled (Miles)": 8.96
+            },
+            {
+              "date": "2021-04-21",
+              "Distance Traveled (Miles)": 93.12
+            },
+            {
+              "date": "2021-04-22",
+              "Distance Traveled (Miles)": 29.76
+            },
+            {
+              "date": "2021-04-23",
+              "Distance Traveled (Miles)": 26.23
+            },
+            {
+              "date": "2021-04-24",
+              "Distance Traveled (Miles)": 35.92
+            },
+            {
+              "date": "2021-04-25",
+              "Distance Traveled (Miles)": 22.16
+            },
+            {
+              "date": "2021-04-26",
+              "Distance Traveled (Miles)": 42.88
+            },
+            {
+              "date": "2021-04-27",
+              "Distance Traveled (Miles)": 23.33
+            },
+            {
+              "date": "2021-04-28",
+              "Distance Traveled (Miles)": 59.91
+            },
+            {
+              "date": "2021-04-29",
+              "Distance Traveled (Miles)": 5.97
+            },
+            {
+              "date": "2021-04-30",
+              "Distance Traveled (Miles)": 31.81
+            },
+            {
+              "date": "2021-05-01",
+              "Distance Traveled (Miles)": 39.93
+            },
+            {
+              "date": "2021-05-02",
+              "Distance Traveled (Miles)": 70.82
+            },
+            {
+              "date": "2021-05-03",
+              "Distance Traveled (Miles)": 89.14
+            },
+            {
+              "date": "2021-05-04",
+              "Distance Traveled (Miles)": 28.44
+            },
+            {
+              "date": "2021-05-05",
+              "Distance Traveled (Miles)": 11.86
+            },
+            {
+              "date": "2021-05-06",
+              "Distance Traveled (Miles)": 58.16
+            },
+            {
+              "date": "2021-05-07",
+              "Distance Traveled (Miles)": 37.58
+            },
+            {
+              "date": "2021-05-08",
+              "Distance Traveled (Miles)": 58.7
+            },
+            {
+              "date": "2021-05-09",
+              "Distance Traveled (Miles)": 12.16
+            },
+            {
+              "date": "2021-05-10",
+              "Distance Traveled (Miles)": 115.93
+            },
+            {
+              "date": "2021-05-11",
+              "Distance Traveled (Miles)": 100.37
+            },
+            {
+              "date": "2021-05-12",
+              "Distance Traveled (Miles)": 91.39
+            },
+            {
+              "date": "2021-05-13",
+              "Distance Traveled (Miles)": 9.99
+            },
+            {
+              "date": "2021-05-14",
+              "Distance Traveled (Miles)": 33.22
+            },
+            {
+              "date": "2021-05-15",
+              "Distance Traveled (Miles)": 2.17
+            },
+            {
+              "date": "2021-05-16",
+              "Distance Traveled (Miles)": 13.69
+            },
+            {
+              "date": "2021-05-17",
+              "Distance Traveled (Miles)": 90.9
+            },
+            {
+              "date": "2021-05-18",
+              "Distance Traveled (Miles)": 21.21
+            },
+            {
+              "date": "2021-05-19",
+              "Distance Traveled (Miles)": 59.42
+            },
+            {
+              "date": "2021-05-20",
+              "Distance Traveled (Miles)": 13.12
+            },
+            {
+              "date": "2021-05-21",
+              "Distance Traveled (Miles)": 84.65
+            },
+            {
+              "date": "2021-05-22",
+              "Distance Traveled (Miles)": 65.64
+            },
+            {
+              "date": "2021-05-23",
+              "Distance Traveled (Miles)": 62.28
+            },
+            {
+              "date": "2021-05-24",
+              "Distance Traveled (Miles)": 41.27
+            },
+            {
+              "date": "2021-05-25",
+              "Distance Traveled (Miles)": 21.3
+            },
+            {
+              "date": "2021-05-26",
+              "Distance Traveled (Miles)": 20.91
+            },
+            {
+              "date": "2021-05-27",
+              "Distance Traveled (Miles)": 36.56
+            },
+            {
+              "date": "2021-05-28",
+              "Distance Traveled (Miles)": 37.92
+            },
+            {
+              "date": "2021-05-29",
+              "Distance Traveled (Miles)": 407.14
+            },
+            {
+              "date": "2021-05-30",
+              "Distance Traveled (Miles)": 75.88
+            },
+            {
+              "date": "2021-05-31",
+              "Distance Traveled (Miles)": 46.62
+            },
+            {
+              "date": "2021-06-01",
+              "Distance Traveled (Miles)": 102.35
+            },
+            {
+              "date": "2021-06-02",
+              "Distance Traveled (Miles)": 33.44
+            },
+            {
+              "date": "2021-06-03",
+              "Distance Traveled (Miles)": 14.03
+            },
+            {
+              "date": "2021-06-04",
+              "Distance Traveled (Miles)": 26.99
+            },
+            {
+              "date": "2021-06-05",
+              "Distance Traveled (Miles)": 21.71
+            },
+            {
+              "date": "2021-06-06",
+              "Distance Traveled (Miles)": 7.58
+            }
+          ],
+          "spec": {
+            "name": "Distance Traveled (Miles)",
+            "fact_type": "trend",
+            "fact_description": "Distance traveled (miles) varied greatly from 2021-05-09 to 2021-06-06 (28 days).",
+            "attribute": "variable",
+            "time_1": "2021-05-09",
+            "time_2": "2021-06-06"
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "trend",
+          "isShowL2": false
+        }
+      ]
+    },
+    {
+      "key": "insight-1",
+      "summaryTitle": "Routine consistency and step counts showed high variability.",
+      "sources": [
+        "clinical note",
+        "passive sensing"
+      ],
+      "insightType": [
+        "psychological"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "[TODO?]",
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Lucy reports that her mood and daily functioning have not changed significantly since the last session."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "[TODO?]",
+          "dataPoints": null,
+          "spec": [],
+          "sources": [
+            "session transcript"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "Routine Consistency scores fluctuated notably from 2021-05-09 to 2021-06-06 (28 days).",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Routine Consistency (0 irregular, 100 regular)": 70.06
+            },
+            {
+              "date": "2021-03-30",
+              "Routine Consistency (0 irregular, 100 regular)": 41.95
+            },
+            {
+              "date": "2021-03-31",
+              "Routine Consistency (0 irregular, 100 regular)": 8.46
+            },
+            {
+              "date": "2021-04-01",
+              "Routine Consistency (0 irregular, 100 regular)": 40.74
+            },
+            {
+              "date": "2021-04-02",
+              "Routine Consistency (0 irregular, 100 regular)": 45.45
+            },
+            {
+              "date": "2021-04-03",
+              "Routine Consistency (0 irregular, 100 regular)": 4.12
+            },
+            {
+              "date": "2021-04-04",
+              "Routine Consistency (0 irregular, 100 regular)": 27.44
+            },
+            {
+              "date": "2021-04-05",
+              "Routine Consistency (0 irregular, 100 regular)": 13.09
+            },
+            {
+              "date": "2021-04-06",
+              "Routine Consistency (0 irregular, 100 regular)": 8.59
+            },
+            {
+              "date": "2021-04-07",
+              "Routine Consistency (0 irregular, 100 regular)": 7.2
+            },
+            {
+              "date": "2021-04-08",
+              "Routine Consistency (0 irregular, 100 regular)": 12.17
+            },
+            {
+              "date": "2021-04-09",
+              "Routine Consistency (0 irregular, 100 regular)": 9.77
+            },
+            {
+              "date": "2021-04-10",
+              "Routine Consistency (0 irregular, 100 regular)": 20.7
+            },
+            {
+              "date": "2021-04-11",
+              "Routine Consistency (0 irregular, 100 regular)": 63.99
+            },
+            {
+              "date": "2021-04-12",
+              "Routine Consistency (0 irregular, 100 regular)": 63.25
+            },
+            {
+              "date": "2021-04-13",
+              "Routine Consistency (0 irregular, 100 regular)": 61.93
+            },
+            {
+              "date": "2021-04-14",
+              "Routine Consistency (0 irregular, 100 regular)": 56.84
+            },
+            {
+              "date": "2021-04-15",
+              "Routine Consistency (0 irregular, 100 regular)": 67.44
+            },
+            {
+              "date": "2021-04-16",
+              "Routine Consistency (0 irregular, 100 regular)": 59.08
+            },
+            {
+              "date": "2021-04-17",
+              "Routine Consistency (0 irregular, 100 regular)": 44.88
+            },
+            {
+              "date": "2021-04-18",
+              "Routine Consistency (0 irregular, 100 regular)": 53.16
+            },
+            {
+              "date": "2021-04-19",
+              "Routine Consistency (0 irregular, 100 regular)": 70.22
+            },
+            {
+              "date": "2021-04-20",
+              "Routine Consistency (0 irregular, 100 regular)": 67.03
+            },
+            {
+              "date": "2021-04-21",
+              "Routine Consistency (0 irregular, 100 regular)": 56.69
+            },
+            {
+              "date": "2021-04-22",
+              "Routine Consistency (0 irregular, 100 regular)": 48.15
+            },
+            {
+              "date": "2021-04-23",
+              "Routine Consistency (0 irregular, 100 regular)": 17.16
+            },
+            {
+              "date": "2021-04-24",
+              "Routine Consistency (0 irregular, 100 regular)": 29.35
+            },
+            {
+              "date": "2021-04-25",
+              "Routine Consistency (0 irregular, 100 regular)": 58.64
+            },
+            {
+              "date": "2021-04-26",
+              "Routine Consistency (0 irregular, 100 regular)": 65.64
+            },
+            {
+              "date": "2021-04-27",
+              "Routine Consistency (0 irregular, 100 regular)": 66.72
+            },
+            {
+              "date": "2021-04-28",
+              "Routine Consistency (0 irregular, 100 regular)": 67.7
+            },
+            {
+              "date": "2021-04-29",
+              "Routine Consistency (0 irregular, 100 regular)": 67.44
+            },
+            {
+              "date": "2021-04-30",
+              "Routine Consistency (0 irregular, 100 regular)": 59.23
+            },
+            {
+              "date": "2021-05-01",
+              "Routine Consistency (0 irregular, 100 regular)": 60.24
+            },
+            {
+              "date": "2021-05-02",
+              "Routine Consistency (0 irregular, 100 regular)": 32.38
+            },
+            {
+              "date": "2021-05-03",
+              "Routine Consistency (0 irregular, 100 regular)": 12.55
+            },
+            {
+              "date": "2021-05-04",
+              "Routine Consistency (0 irregular, 100 regular)": 35.98
+            },
+            {
+              "date": "2021-05-05",
+              "Routine Consistency (0 irregular, 100 regular)": 66.1
+            },
+            {
+              "date": "2021-05-06",
+              "Routine Consistency (0 irregular, 100 regular)": 53.7
+            },
+            {
+              "date": "2021-05-07",
+              "Routine Consistency (0 irregular, 100 regular)": 61.57
+            },
+            {
+              "date": "2021-05-08",
+              "Routine Consistency (0 irregular, 100 regular)": 54.24
+            },
+            {
+              "date": "2021-05-09",
+              "Routine Consistency (0 irregular, 100 regular)": 67.8
+            },
+            {
+              "date": "2021-05-10",
+              "Routine Consistency (0 irregular, 100 regular)": 49.0
+            },
+            {
+              "date": "2021-05-11",
+              "Routine Consistency (0 irregular, 100 regular)": 59.31
+            },
+            {
+              "date": "2021-05-12",
+              "Routine Consistency (0 irregular, 100 regular)": 27.47
+            },
+            {
+              "date": "2021-05-13",
+              "Routine Consistency (0 irregular, 100 regular)": 67.44
+            },
+            {
+              "date": "2021-05-14",
+              "Routine Consistency (0 irregular, 100 regular)": 62.19
+            },
+            {
+              "date": "2021-05-15",
+              "Routine Consistency (0 irregular, 100 regular)": 70.22
+            },
+            {
+              "date": "2021-05-16",
+              "Routine Consistency (0 irregular, 100 regular)": 61.78
+            },
+            {
+              "date": "2021-05-17",
+              "Routine Consistency (0 irregular, 100 regular)": 55.68
+            },
+            {
+              "date": "2021-05-18",
+              "Routine Consistency (0 irregular, 100 regular)": 52.44
+            },
+            {
+              "date": "2021-05-19",
+              "Routine Consistency (0 irregular, 100 regular)": 31.56
+            },
+            {
+              "date": "2021-05-20",
+              "Routine Consistency (0 irregular, 100 regular)": 70.22
+            },
+            {
+              "date": "2021-05-21",
+              "Routine Consistency (0 irregular, 100 regular)": 40.02
+            },
+            {
+              "date": "2021-05-22",
+              "Routine Consistency (0 irregular, 100 regular)": 15.35
+            },
+            {
+              "date": "2021-05-23",
+              "Routine Consistency (0 irregular, 100 regular)": 11.21
+            },
+            {
+              "date": "2021-05-24",
+              "Routine Consistency (0 irregular, 100 regular)": 13.07
+            },
+            {
+              "date": "2021-05-25",
+              "Routine Consistency (0 irregular, 100 regular)": 14.66
+            },
+            {
+              "date": "2021-05-26",
+              "Routine Consistency (0 irregular, 100 regular)": 25.49
+            },
+            {
+              "date": "2021-05-27",
+              "Routine Consistency (0 irregular, 100 regular)": 59.36
+            },
+            {
+              "date": "2021-05-28",
+              "Routine Consistency (0 irregular, 100 regular)": 62.53
+            },
+            {
+              "date": "2021-05-29",
+              "Routine Consistency (0 irregular, 100 regular)": 44.26
+            },
+            {
+              "date": "2021-05-30",
+              "Routine Consistency (0 irregular, 100 regular)": 42.7
+            },
+            {
+              "date": "2021-05-31",
+              "Routine Consistency (0 irregular, 100 regular)": 63.94
+            },
+            {
+              "date": "2021-06-01",
+              "Routine Consistency (0 irregular, 100 regular)": 60.55
+            },
+            {
+              "date": "2021-06-02",
+              "Routine Consistency (0 irregular, 100 regular)": 55.76
+            },
+            {
+              "date": "2021-06-03",
+              "Routine Consistency (0 irregular, 100 regular)": 63.73
+            },
+            {
+              "date": "2021-06-04",
+              "Routine Consistency (0 irregular, 100 regular)": 59.41
+            },
+            {
+              "date": "2021-06-05",
+              "Routine Consistency (0 irregular, 100 regular)": 63.58
+            },
+            {
+              "date": "2021-06-06",
+              "Routine Consistency (0 irregular, 100 regular)": 70.22
+            }
+          ],
+          "spec": {
+            "name": "Routine Consistency (0 irregular, 100 regular)",
+            "fact_type": "trend",
+            "fact_description": "Routine Consistency scores fluctuated notably from 2021-05-09 to 2021-06-06 (28 days).",
+            "attribute": "variable",
+            "time_1": "2021-05-09",
+            "time_2": "2021-06-06"
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "trend",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "From 2021-05-09 to 2021-06-06 (28 days), daily step counts varied widely.",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Total Steps (Steps)": null
+            },
+            {
+              "date": "2021-03-30",
+              "Total Steps (Steps)": null
+            },
+            {
+              "date": "2021-03-31",
+              "Total Steps (Steps)": 4161.0
+            },
+            {
+              "date": "2021-04-01",
+              "Total Steps (Steps)": 13673.0
+            },
+            {
+              "date": "2021-04-02",
+              "Total Steps (Steps)": 13557.0
+            },
+            {
+              "date": "2021-04-03",
+              "Total Steps (Steps)": 19817.0
+            },
+            {
+              "date": "2021-04-04",
+              "Total Steps (Steps)": 15032.0
+            },
+            {
+              "date": "2021-04-05",
+              "Total Steps (Steps)": 13733.0
+            },
+            {
+              "date": "2021-04-06",
+              "Total Steps (Steps)": 12587.0
+            },
+            {
+              "date": "2021-04-07",
+              "Total Steps (Steps)": 14130.0
+            },
+            {
+              "date": "2021-04-08",
+              "Total Steps (Steps)": 10413.0
+            },
+            {
+              "date": "2021-04-09",
+              "Total Steps (Steps)": 13822.0
+            },
+            {
+              "date": "2021-04-10",
+              "Total Steps (Steps)": 13608.0
+            },
+            {
+              "date": "2021-04-11",
+              "Total Steps (Steps)": 13752.0
+            },
+            {
+              "date": "2021-04-12",
+              "Total Steps (Steps)": 15202.0
+            },
+            {
+              "date": "2021-04-13",
+              "Total Steps (Steps)": 15078.0
+            },
+            {
+              "date": "2021-04-14",
+              "Total Steps (Steps)": 15852.0
+            },
+            {
+              "date": "2021-04-15",
+              "Total Steps (Steps)": 13048.0
+            },
+            {
+              "date": "2021-04-16",
+              "Total Steps (Steps)": 12032.0
+            },
+            {
+              "date": "2021-04-17",
+              "Total Steps (Steps)": null
+            },
+            {
+              "date": "2021-04-18",
+              "Total Steps (Steps)": null
+            },
+            {
+              "date": "2021-04-19",
+              "Total Steps (Steps)": 10111.0
+            },
+            {
+              "date": "2021-04-20",
+              "Total Steps (Steps)": 14702.0
+            },
+            {
+              "date": "2021-04-21",
+              "Total Steps (Steps)": 11925.0
+            },
+            {
+              "date": "2021-04-22",
+              "Total Steps (Steps)": 11294.0
+            },
+            {
+              "date": "2021-04-23",
+              "Total Steps (Steps)": 13093.0
+            },
+            {
+              "date": "2021-04-24",
+              "Total Steps (Steps)": 11245.0
+            },
+            {
+              "date": "2021-04-25",
+              "Total Steps (Steps)": 29579.0
+            },
+            {
+              "date": "2021-04-26",
+              "Total Steps (Steps)": 11669.0
+            },
+            {
+              "date": "2021-04-27",
+              "Total Steps (Steps)": 12234.0
+            },
+            {
+              "date": "2021-04-28",
+              "Total Steps (Steps)": 10586.0
+            },
+            {
+              "date": "2021-04-29",
+              "Total Steps (Steps)": 10162.0
+            },
+            {
+              "date": "2021-04-30",
+              "Total Steps (Steps)": 14106.0
+            },
+            {
+              "date": "2021-05-01",
+              "Total Steps (Steps)": 10377.0
+            },
+            {
+              "date": "2021-05-02",
+              "Total Steps (Steps)": 25279.0
+            },
+            {
+              "date": "2021-05-03",
+              "Total Steps (Steps)": 9749.0
+            },
+            {
+              "date": "2021-05-04",
+              "Total Steps (Steps)": 13620.0
+            },
+            {
+              "date": "2021-05-05",
+              "Total Steps (Steps)": 12016.0
+            },
+            {
+              "date": "2021-05-06",
+              "Total Steps (Steps)": 7447.0
+            },
+            {
+              "date": "2021-05-07",
+              "Total Steps (Steps)": 6137.0
+            },
+            {
+              "date": "2021-05-08",
+              "Total Steps (Steps)": 25121.0
+            },
+            {
+              "date": "2021-05-09",
+              "Total Steps (Steps)": 8964.0
+            },
+            {
+              "date": "2021-05-10",
+              "Total Steps (Steps)": 14711.0
+            },
+            {
+              "date": "2021-05-11",
+              "Total Steps (Steps)": 10746.0
+            },
+            {
+              "date": "2021-05-12",
+              "Total Steps (Steps)": 12597.0
+            },
+            {
+              "date": "2021-05-13",
+              "Total Steps (Steps)": 9942.0
+            },
+            {
+              "date": "2021-05-14",
+              "Total Steps (Steps)": 16680.0
+            },
+            {
+              "date": "2021-05-15",
+              "Total Steps (Steps)": 5835.0
+            },
+            {
+              "date": "2021-05-16",
+              "Total Steps (Steps)": 23149.0
+            },
+            {
+              "date": "2021-05-17",
+              "Total Steps (Steps)": 9538.0
+            },
+            {
+              "date": "2021-05-18",
+              "Total Steps (Steps)": 6653.0
+            },
+            {
+              "date": "2021-05-19",
+              "Total Steps (Steps)": 6122.0
+            },
+            {
+              "date": "2021-05-20",
+              "Total Steps (Steps)": 3850.0
+            },
+            {
+              "date": "2021-05-21",
+              "Total Steps (Steps)": 13278.0
+            },
+            {
+              "date": "2021-05-22",
+              "Total Steps (Steps)": 8258.0
+            },
+            {
+              "date": "2021-05-23",
+              "Total Steps (Steps)": 26581.0
+            },
+            {
+              "date": "2021-05-24",
+              "Total Steps (Steps)": 7871.0
+            },
+            {
+              "date": "2021-05-25",
+              "Total Steps (Steps)": 10379.0
+            },
+            {
+              "date": "2021-05-26",
+              "Total Steps (Steps)": 9051.0
+            },
+            {
+              "date": "2021-05-27",
+              "Total Steps (Steps)": 10230.0
+            },
+            {
+              "date": "2021-05-28",
+              "Total Steps (Steps)": 9564.0
+            },
+            {
+              "date": "2021-05-29",
+              "Total Steps (Steps)": null
+            },
+            {
+              "date": "2021-05-30",
+              "Total Steps (Steps)": 7497.0
+            },
+            {
+              "date": "2021-05-31",
+              "Total Steps (Steps)": 15308.0
+            },
+            {
+              "date": "2021-06-01",
+              "Total Steps (Steps)": 9459.0
+            },
+            {
+              "date": "2021-06-02",
+              "Total Steps (Steps)": 21239.0
+            },
+            {
+              "date": "2021-06-03",
+              "Total Steps (Steps)": 9994.0
+            },
+            {
+              "date": "2021-06-04",
+              "Total Steps (Steps)": 13014.0
+            },
+            {
+              "date": "2021-06-05",
+              "Total Steps (Steps)": 12088.0
+            },
+            {
+              "date": "2021-06-06",
+              "Total Steps (Steps)": 10899.0
+            }
+          ],
+          "spec": {
+            "name": "Total Steps (Steps)",
+            "fact_type": "trend",
+            "fact_description": "From 2021-05-09 to 2021-06-06 (28 days), daily step counts varied widely.",
+            "attribute": "variable",
+            "time_1": "2021-05-09",
+            "time_2": "2021-06-06"
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "trend",
+          "isShowL2": true
+        }
+      ]
+    },
+    {
+      "key": "insight-2",
+      "summaryTitle": "PHQ-4 score increased from 4.0 to 6.0.",
+      "sources": [
+        "survey"
+      ],
+      "insightType": [
+        "psychological"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "On 2021-06-06, the PHQ-4 score was 6.0, indicating moderate distress.",
+          "dataPoints": [
+            {
+              "date": "2021-04-04",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-04-11",
+              "PHQ-4 (0-12)": 3.0
+            },
+            {
+              "date": "2021-04-18",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-04-25",
+              "PHQ-4 (0-12)": 6.0
+            },
+            {
+              "date": "2021-05-02",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-05-09",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-05-16",
+              "PHQ-4 (0-12)": 5.0
+            },
+            {
+              "date": "2021-05-24",
+              "PHQ-4 (0-12)": 5.0
+            },
+            {
+              "date": "2021-05-30",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-06-06",
+              "PHQ-4 (0-12)": 6.0
+            }
+          ],
+          "spec": {
+            "name": "PHQ-4 (0-12)",
+            "fact_type": "extreme",
+            "fact_description": "On 2021-06-06, the PHQ-4 score was 6.0, indicating moderate distress.",
+            "attribute": "max",
+            "time": "2021-06-06",
+            "value": 6.0
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "extreme",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "The PHQ-4 score increased from 4.0 (mild distress) on 2021-05-30 to 6.0 (moderate distress) on 2021-06-06.",
+          "dataPoints": [
+            {
+              "date": "2021-04-04",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-04-11",
+              "PHQ-4 (0-12)": 3.0
+            },
+            {
+              "date": "2021-04-18",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-04-25",
+              "PHQ-4 (0-12)": 6.0
+            },
+            {
+              "date": "2021-05-02",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-05-09",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-05-16",
+              "PHQ-4 (0-12)": 5.0
+            },
+            {
+              "date": "2021-05-24",
+              "PHQ-4 (0-12)": 5.0
+            },
+            {
+              "date": "2021-05-30",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-06-06",
+              "PHQ-4 (0-12)": 6.0
+            }
+          ],
+          "spec": {
+            "name": "PHQ-4 (0-12)",
             "fact_type": "difference",
-            "fact_description": "Routine consistency dropped from 40.02 to 15.35 between 2021-05-21 and 2021-05-22, indicating increased irregularity.",
+            "fact_description": "The PHQ-4 score increased from 4.0 (mild distress) on 2021-05-30 to 6.0 (moderate distress) on 2021-06-06.",
+            "attribute": "more",
+            "time_1": "2021-05-30",
+            "time_2": "2021-06-06",
+            "value_1": 4.0,
+            "value_2": 6.0
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "difference",
+          "isShowL2": false
+        }
+      ]
+    },
+    {
+      "key": "insight-3",
+      "summaryTitle": "PHQ-4 depression subscale increased from 2.0 to 3.0.",
+      "sources": [
+        "survey"
+      ],
+      "insightType": [
+        "psychological"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "The PHQ-4 Depression Subscale increased from 2.0 to 3.0 between 2021-05-30 and 2021-06-06 (7 days), indicating a shift from feeling depressed more than half the days to nearly every day.",
+          "dataPoints": [
+            {
+              "date": "2021-04-04",
+              "PHQ-4 Depression Subscale (0-6)": 1.0
+            },
+            {
+              "date": "2021-04-11",
+              "PHQ-4 Depression Subscale (0-6)": 1.0
+            },
+            {
+              "date": "2021-04-18",
+              "PHQ-4 Depression Subscale (0-6)": 2.0
+            },
+            {
+              "date": "2021-04-25",
+              "PHQ-4 Depression Subscale (0-6)": 4.0
+            },
+            {
+              "date": "2021-05-02",
+              "PHQ-4 Depression Subscale (0-6)": 2.0
+            },
+            {
+              "date": "2021-05-09",
+              "PHQ-4 Depression Subscale (0-6)": 2.0
+            },
+            {
+              "date": "2021-05-16",
+              "PHQ-4 Depression Subscale (0-6)": 3.0
+            },
+            {
+              "date": "2021-05-24",
+              "PHQ-4 Depression Subscale (0-6)": 3.0
+            },
+            {
+              "date": "2021-05-30",
+              "PHQ-4 Depression Subscale (0-6)": 2.0
+            },
+            {
+              "date": "2021-06-06",
+              "PHQ-4 Depression Subscale (0-6)": 3.0
+            }
+          ],
+          "spec": {
+            "name": "PHQ-4 Depression Subscale (0-6)",
+            "fact_type": "difference",
+            "fact_description": "The PHQ-4 Depression Subscale increased from 2.0 to 3.0 between 2021-05-30 and 2021-06-06 (7 days), indicating a shift from feeling depressed more than half the days to nearly every day.",
+            "attribute": "more",
+            "time_1": "2021-05-30",
+            "time_2": "2021-06-06",
+            "value_1": 2.0,
+            "value_2": 3.0
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "difference",
+          "isShowL2": true
+        }
+      ]
+    },
+    {
+      "key": "insight-4",
+      "summaryTitle": "PHQ-4 anxiety subscale reached its maximum value of 3.0.",
+      "sources": [
+        "survey"
+      ],
+      "insightType": [
+        "psychological"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "On 2021-06-06, anxiety symptoms were present nearly every day (PHQ-4 Anxiety Score: 3.0/4).",
+          "dataPoints": [
+            {
+              "date": "2021-04-04",
+              "PHQ-4 Anxiety Subscale (0-6)": 3.0
+            },
+            {
+              "date": "2021-04-11",
+              "PHQ-4 Anxiety Subscale (0-6)": 2.0
+            },
+            {
+              "date": "2021-04-18",
+              "PHQ-4 Anxiety Subscale (0-6)": 2.0
+            },
+            {
+              "date": "2021-04-25",
+              "PHQ-4 Anxiety Subscale (0-6)": 2.0
+            },
+            {
+              "date": "2021-05-02",
+              "PHQ-4 Anxiety Subscale (0-6)": 2.0
+            },
+            {
+              "date": "2021-05-09",
+              "PHQ-4 Anxiety Subscale (0-6)": 2.0
+            },
+            {
+              "date": "2021-05-16",
+              "PHQ-4 Anxiety Subscale (0-6)": 2.0
+            },
+            {
+              "date": "2021-05-24",
+              "PHQ-4 Anxiety Subscale (0-6)": 2.0
+            },
+            {
+              "date": "2021-05-30",
+              "PHQ-4 Anxiety Subscale (0-6)": 2.0
+            },
+            {
+              "date": "2021-06-06",
+              "PHQ-4 Anxiety Subscale (0-6)": 3.0
+            }
+          ],
+          "spec": {
+            "name": "PHQ-4 Anxiety Subscale (0-6)",
+            "fact_type": "extreme",
+            "fact_description": "On 2021-06-06, anxiety symptoms were present nearly every day (PHQ-4 Anxiety Score: 3.0/4).",
+            "attribute": "max",
+            "time": "2021-06-06",
+            "value": 3.0
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "extreme",
+          "isShowL2": true
+        }
+      ]
+    },
+    {
+      "key": "insight-5",
+      "summaryTitle": "Positive affect dropped from 17.0 to 11.0.",
+      "sources": [
+        "survey"
+      ],
+      "insightType": [
+        "psychological"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "Positive Affect Subscale score decreased from 17.0 to 11.0 from 2021-05-09 to 2021-05-12 (3 days).",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 14.0
+            },
+            {
+              "date": "2021-04-04",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 16.0
+            },
+            {
+              "date": "2021-04-07",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 20.0
+            },
+            {
+              "date": "2021-04-11",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 17.0
+            },
+            {
+              "date": "2021-04-14",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 18.0
+            },
+            {
+              "date": "2021-04-18",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 12.0
+            },
+            {
+              "date": "2021-04-21",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-04-25",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 12.0
+            },
+            {
+              "date": "2021-04-28",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 9.0
+            },
+            {
+              "date": "2021-05-02",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 14.0
+            },
+            {
+              "date": "2021-05-05",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 16.0
+            },
+            {
+              "date": "2021-05-09",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 17.0
+            },
+            {
+              "date": "2021-05-12",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 11.0
+            },
+            {
+              "date": "2021-05-16",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 16.0
+            },
+            {
+              "date": "2021-05-19",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 14.0
+            },
+            {
+              "date": "2021-05-24",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-05-26",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-05-30",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-06-02",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-06-06",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 15.0
+            }
+          ],
+          "spec": {
+            "name": "Positive Affect Subscale (5-25, PANAS-SF)",
+            "fact_type": "difference",
+            "fact_description": "Positive Affect Subscale score decreased from 17.0 to 11.0 from 2021-05-09 to 2021-05-12 (3 days).",
             "attribute": "less",
-            "time_1": "2021-05-21",
-            "time_2": "2021-05-22",
-            "value_1": 40.02,
-            "value_2": 15.35
+            "time_1": "2021-05-09",
+            "time_2": "2021-05-12",
+            "value_1": 17.0,
+            "value_2": 11.0
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "difference",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "On 2021-05-12, positive affect was at its lowest, scoring 11.0 out of 25.",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 14.0
+            },
+            {
+              "date": "2021-04-04",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 16.0
+            },
+            {
+              "date": "2021-04-07",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 20.0
+            },
+            {
+              "date": "2021-04-11",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 17.0
+            },
+            {
+              "date": "2021-04-14",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 18.0
+            },
+            {
+              "date": "2021-04-18",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 12.0
+            },
+            {
+              "date": "2021-04-21",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-04-25",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 12.0
+            },
+            {
+              "date": "2021-04-28",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 9.0
+            },
+            {
+              "date": "2021-05-02",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 14.0
+            },
+            {
+              "date": "2021-05-05",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 16.0
+            },
+            {
+              "date": "2021-05-09",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 17.0
+            },
+            {
+              "date": "2021-05-12",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 11.0
+            },
+            {
+              "date": "2021-05-16",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 16.0
+            },
+            {
+              "date": "2021-05-19",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 14.0
+            },
+            {
+              "date": "2021-05-24",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-05-26",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-05-30",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-06-02",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-06-06",
+              "Positive Affect Subscale (5-25, PANAS-SF)": 15.0
+            }
+          ],
+          "spec": {
+            "name": "Positive Affect Subscale (5-25, PANAS-SF)",
+            "fact_type": "extreme",
+            "fact_description": "On 2021-05-12, positive affect was at its lowest, scoring 11.0 out of 25.",
+            "attribute": "min",
+            "time": "2021-05-12",
+            "value": 11.0
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "extreme",
+          "isShowL2": false
+        }
+      ]
+    },
+    {
+      "key": "insight-6",
+      "summaryTitle": "Negative affect decreased from 19.0 to 13.0.",
+      "sources": [
+        "survey"
+      ],
+      "insightType": [
+        "psychological"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "The Negative Affect Subscale score decreased from 19.0 to 13.0 from 2021-05-19 to 2021-05-24 (5 days).",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 7.0
+            },
+            {
+              "date": "2021-04-04",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 5.0
+            },
+            {
+              "date": "2021-04-07",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 6.0
+            },
+            {
+              "date": "2021-04-11",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 8.0
+            },
+            {
+              "date": "2021-04-14",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 12.0
+            },
+            {
+              "date": "2021-04-18",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-04-21",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 11.0
+            },
+            {
+              "date": "2021-04-25",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 18.0
+            },
+            {
+              "date": "2021-04-28",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 15.0
+            },
+            {
+              "date": "2021-05-02",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 10.0
+            },
+            {
+              "date": "2021-05-05",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-05-09",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 10.0
+            },
+            {
+              "date": "2021-05-12",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 8.0
+            },
+            {
+              "date": "2021-05-16",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 10.0
+            },
+            {
+              "date": "2021-05-19",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 19.0
+            },
+            {
+              "date": "2021-05-24",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-05-26",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-05-30",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-06-02",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 10.0
+            },
+            {
+              "date": "2021-06-06",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
+            }
+          ],
+          "spec": {
+            "name": "Negative Affect Subscale (5-25, PANAS-SF)",
+            "fact_type": "difference",
+            "fact_description": "The Negative Affect Subscale score decreased from 19.0 to 13.0 from 2021-05-19 to 2021-05-24 (5 days).",
+            "attribute": "less",
+            "time_1": "2021-05-19",
+            "time_2": "2021-05-24",
+            "value_1": 19.0,
+            "value_2": 13.0
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "difference",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "On 2021-05-19, negative affect peaked at 19.0 (scale: 5–25, PANAS-SF).",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 7.0
+            },
+            {
+              "date": "2021-04-04",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 5.0
+            },
+            {
+              "date": "2021-04-07",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 6.0
+            },
+            {
+              "date": "2021-04-11",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 8.0
+            },
+            {
+              "date": "2021-04-14",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 12.0
+            },
+            {
+              "date": "2021-04-18",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-04-21",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 11.0
+            },
+            {
+              "date": "2021-04-25",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 18.0
+            },
+            {
+              "date": "2021-04-28",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 15.0
+            },
+            {
+              "date": "2021-05-02",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 10.0
+            },
+            {
+              "date": "2021-05-05",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-05-09",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 10.0
+            },
+            {
+              "date": "2021-05-12",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 8.0
+            },
+            {
+              "date": "2021-05-16",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 10.0
+            },
+            {
+              "date": "2021-05-19",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 19.0
+            },
+            {
+              "date": "2021-05-24",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-05-26",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-05-30",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
+            },
+            {
+              "date": "2021-06-02",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 10.0
+            },
+            {
+              "date": "2021-06-06",
+              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
+            }
+          ],
+          "spec": {
+            "name": "Negative Affect Subscale (5-25, PANAS-SF)",
+            "fact_type": "extreme",
+            "fact_description": "On 2021-05-19, negative affect peaked at 19.0 (scale: 5–25, PANAS-SF).",
+            "attribute": "max",
+            "time": "2021-05-19",
+            "value": 19.0
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "extreme",
+          "isShowL2": false
+        }
+      ]
+    },
+    {
+      "key": "insight-7",
+      "summaryTitle": "Sleep duration reached a minimum of 5.38 hours.",
+      "sources": [
+        "passive sensing"
+      ],
+      "insightType": [
+        "biological"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "On 2021-05-22, total sleep duration was at its lowest, 5.38 hours (low sleep).",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-03-30",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-03-31",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-04-01",
+              "Total Sleep (hours)": 6.78
+            },
+            {
+              "date": "2021-04-02",
+              "Total Sleep (hours)": 7.97
+            },
+            {
+              "date": "2021-04-03",
+              "Total Sleep (hours)": 6.3
+            },
+            {
+              "date": "2021-04-04",
+              "Total Sleep (hours)": 7.62
+            },
+            {
+              "date": "2021-04-05",
+              "Total Sleep (hours)": 7.68
+            },
+            {
+              "date": "2021-04-06",
+              "Total Sleep (hours)": 6.87
+            },
+            {
+              "date": "2021-04-07",
+              "Total Sleep (hours)": 7.73
+            },
+            {
+              "date": "2021-04-08",
+              "Total Sleep (hours)": 7.65
+            },
+            {
+              "date": "2021-04-09",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-04-10",
+              "Total Sleep (hours)": 3.53
+            },
+            {
+              "date": "2021-04-11",
+              "Total Sleep (hours)": 7.12
+            },
+            {
+              "date": "2021-04-12",
+              "Total Sleep (hours)": 7.12
+            },
+            {
+              "date": "2021-04-13",
+              "Total Sleep (hours)": 8.0
+            },
+            {
+              "date": "2021-04-14",
+              "Total Sleep (hours)": 7.62
+            },
+            {
+              "date": "2021-04-15",
+              "Total Sleep (hours)": 6.2
+            },
+            {
+              "date": "2021-04-16",
+              "Total Sleep (hours)": 6.86
+            },
+            {
+              "date": "2021-04-17",
+              "Total Sleep (hours)": 3.97
+            },
+            {
+              "date": "2021-04-18",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-04-19",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-04-20",
+              "Total Sleep (hours)": 7.72
+            },
+            {
+              "date": "2021-04-21",
+              "Total Sleep (hours)": 7.07
+            },
+            {
+              "date": "2021-04-22",
+              "Total Sleep (hours)": 3.93
+            },
+            {
+              "date": "2021-04-23",
+              "Total Sleep (hours)": 8.75
+            },
+            {
+              "date": "2021-04-24",
+              "Total Sleep (hours)": 7.53
+            },
+            {
+              "date": "2021-04-25",
+              "Total Sleep (hours)": 5.57
+            },
+            {
+              "date": "2021-04-26",
+              "Total Sleep (hours)": 6.88
+            },
+            {
+              "date": "2021-04-27",
+              "Total Sleep (hours)": 5.35
+            },
+            {
+              "date": "2021-04-28",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-04-29",
+              "Total Sleep (hours)": 8.24
+            },
+            {
+              "date": "2021-04-30",
+              "Total Sleep (hours)": 7.92
+            },
+            {
+              "date": "2021-05-01",
+              "Total Sleep (hours)": 7.68
+            },
+            {
+              "date": "2021-05-02",
+              "Total Sleep (hours)": 7.1
+            },
+            {
+              "date": "2021-05-03",
+              "Total Sleep (hours)": 7.87
+            },
+            {
+              "date": "2021-05-04",
+              "Total Sleep (hours)": 7.52
+            },
+            {
+              "date": "2021-05-05",
+              "Total Sleep (hours)": 6.53
+            },
+            {
+              "date": "2021-05-06",
+              "Total Sleep (hours)": 7.08
+            },
+            {
+              "date": "2021-05-07",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-05-08",
+              "Total Sleep (hours)": 4.75
+            },
+            {
+              "date": "2021-05-09",
+              "Total Sleep (hours)": 8.12
+            },
+            {
+              "date": "2021-05-10",
+              "Total Sleep (hours)": 7.37
+            },
+            {
+              "date": "2021-05-11",
+              "Total Sleep (hours)": 7.78
+            },
+            {
+              "date": "2021-05-12",
+              "Total Sleep (hours)": 6.82
+            },
+            {
+              "date": "2021-05-13",
+              "Total Sleep (hours)": 7.12
+            },
+            {
+              "date": "2021-05-14",
+              "Total Sleep (hours)": 7.42
+            },
+            {
+              "date": "2021-05-15",
+              "Total Sleep (hours)": 6.97
+            },
+            {
+              "date": "2021-05-16",
+              "Total Sleep (hours)": 6.38
+            },
+            {
+              "date": "2021-05-17",
+              "Total Sleep (hours)": 8.35
+            },
+            {
+              "date": "2021-05-18",
+              "Total Sleep (hours)": 6.65
+            },
+            {
+              "date": "2021-05-19",
+              "Total Sleep (hours)": 7.32
+            },
+            {
+              "date": "2021-05-20",
+              "Total Sleep (hours)": 6.6
+            },
+            {
+              "date": "2021-05-21",
+              "Total Sleep (hours)": 5.6
+            },
+            {
+              "date": "2021-05-22",
+              "Total Sleep (hours)": 5.38
+            },
+            {
+              "date": "2021-05-23",
+              "Total Sleep (hours)": 5.95
+            },
+            {
+              "date": "2021-05-24",
+              "Total Sleep (hours)": 7.73
+            },
+            {
+              "date": "2021-05-25",
+              "Total Sleep (hours)": 8.73
+            },
+            {
+              "date": "2021-05-26",
+              "Total Sleep (hours)": 7.32
+            },
+            {
+              "date": "2021-05-27",
+              "Total Sleep (hours)": 6.58
+            },
+            {
+              "date": "2021-05-28",
+              "Total Sleep (hours)": 8.27
+            },
+            {
+              "date": "2021-05-29",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-05-30",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-05-31",
+              "Total Sleep (hours)": 5.86
+            },
+            {
+              "date": "2021-06-01",
+              "Total Sleep (hours)": 7.52
+            },
+            {
+              "date": "2021-06-02",
+              "Total Sleep (hours)": 7.97
+            },
+            {
+              "date": "2021-06-03",
+              "Total Sleep (hours)": 6.72
+            },
+            {
+              "date": "2021-06-04",
+              "Total Sleep (hours)": 9.2
+            },
+            {
+              "date": "2021-06-05",
+              "Total Sleep (hours)": 7.3
+            },
+            {
+              "date": "2021-06-06",
+              "Total Sleep (hours)": 7.77
+            }
+          ],
+          "spec": {
+            "name": "Total Sleep (hours)",
+            "fact_type": "extreme",
+            "fact_description": "On 2021-05-22, total sleep duration was at its lowest, 5.38 hours (low sleep).",
+            "attribute": "min",
+            "time": "2021-05-22",
+            "value": 5.38
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "extreme",
+          "isShowL2": true
+        }
+      ]
+    },
+    {
+      "key": "insight-8",
+      "summaryTitle": "Sleep duration peaked at 9.2 hours.",
+      "sources": [
+        "passive sensing"
+      ],
+      "insightType": [
+        "biological"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "On 2021-06-04, total sleep peaked at 9.2 hours, indicating a long sleep duration.",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-03-30",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-03-31",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-04-01",
+              "Total Sleep (hours)": 6.78
+            },
+            {
+              "date": "2021-04-02",
+              "Total Sleep (hours)": 7.97
+            },
+            {
+              "date": "2021-04-03",
+              "Total Sleep (hours)": 6.3
+            },
+            {
+              "date": "2021-04-04",
+              "Total Sleep (hours)": 7.62
+            },
+            {
+              "date": "2021-04-05",
+              "Total Sleep (hours)": 7.68
+            },
+            {
+              "date": "2021-04-06",
+              "Total Sleep (hours)": 6.87
+            },
+            {
+              "date": "2021-04-07",
+              "Total Sleep (hours)": 7.73
+            },
+            {
+              "date": "2021-04-08",
+              "Total Sleep (hours)": 7.65
+            },
+            {
+              "date": "2021-04-09",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-04-10",
+              "Total Sleep (hours)": 3.53
+            },
+            {
+              "date": "2021-04-11",
+              "Total Sleep (hours)": 7.12
+            },
+            {
+              "date": "2021-04-12",
+              "Total Sleep (hours)": 7.12
+            },
+            {
+              "date": "2021-04-13",
+              "Total Sleep (hours)": 8.0
+            },
+            {
+              "date": "2021-04-14",
+              "Total Sleep (hours)": 7.62
+            },
+            {
+              "date": "2021-04-15",
+              "Total Sleep (hours)": 6.2
+            },
+            {
+              "date": "2021-04-16",
+              "Total Sleep (hours)": 6.86
+            },
+            {
+              "date": "2021-04-17",
+              "Total Sleep (hours)": 3.97
+            },
+            {
+              "date": "2021-04-18",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-04-19",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-04-20",
+              "Total Sleep (hours)": 7.72
+            },
+            {
+              "date": "2021-04-21",
+              "Total Sleep (hours)": 7.07
+            },
+            {
+              "date": "2021-04-22",
+              "Total Sleep (hours)": 3.93
+            },
+            {
+              "date": "2021-04-23",
+              "Total Sleep (hours)": 8.75
+            },
+            {
+              "date": "2021-04-24",
+              "Total Sleep (hours)": 7.53
+            },
+            {
+              "date": "2021-04-25",
+              "Total Sleep (hours)": 5.57
+            },
+            {
+              "date": "2021-04-26",
+              "Total Sleep (hours)": 6.88
+            },
+            {
+              "date": "2021-04-27",
+              "Total Sleep (hours)": 5.35
+            },
+            {
+              "date": "2021-04-28",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-04-29",
+              "Total Sleep (hours)": 8.24
+            },
+            {
+              "date": "2021-04-30",
+              "Total Sleep (hours)": 7.92
+            },
+            {
+              "date": "2021-05-01",
+              "Total Sleep (hours)": 7.68
+            },
+            {
+              "date": "2021-05-02",
+              "Total Sleep (hours)": 7.1
+            },
+            {
+              "date": "2021-05-03",
+              "Total Sleep (hours)": 7.87
+            },
+            {
+              "date": "2021-05-04",
+              "Total Sleep (hours)": 7.52
+            },
+            {
+              "date": "2021-05-05",
+              "Total Sleep (hours)": 6.53
+            },
+            {
+              "date": "2021-05-06",
+              "Total Sleep (hours)": 7.08
+            },
+            {
+              "date": "2021-05-07",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-05-08",
+              "Total Sleep (hours)": 4.75
+            },
+            {
+              "date": "2021-05-09",
+              "Total Sleep (hours)": 8.12
+            },
+            {
+              "date": "2021-05-10",
+              "Total Sleep (hours)": 7.37
+            },
+            {
+              "date": "2021-05-11",
+              "Total Sleep (hours)": 7.78
+            },
+            {
+              "date": "2021-05-12",
+              "Total Sleep (hours)": 6.82
+            },
+            {
+              "date": "2021-05-13",
+              "Total Sleep (hours)": 7.12
+            },
+            {
+              "date": "2021-05-14",
+              "Total Sleep (hours)": 7.42
+            },
+            {
+              "date": "2021-05-15",
+              "Total Sleep (hours)": 6.97
+            },
+            {
+              "date": "2021-05-16",
+              "Total Sleep (hours)": 6.38
+            },
+            {
+              "date": "2021-05-17",
+              "Total Sleep (hours)": 8.35
+            },
+            {
+              "date": "2021-05-18",
+              "Total Sleep (hours)": 6.65
+            },
+            {
+              "date": "2021-05-19",
+              "Total Sleep (hours)": 7.32
+            },
+            {
+              "date": "2021-05-20",
+              "Total Sleep (hours)": 6.6
+            },
+            {
+              "date": "2021-05-21",
+              "Total Sleep (hours)": 5.6
+            },
+            {
+              "date": "2021-05-22",
+              "Total Sleep (hours)": 5.38
+            },
+            {
+              "date": "2021-05-23",
+              "Total Sleep (hours)": 5.95
+            },
+            {
+              "date": "2021-05-24",
+              "Total Sleep (hours)": 7.73
+            },
+            {
+              "date": "2021-05-25",
+              "Total Sleep (hours)": 8.73
+            },
+            {
+              "date": "2021-05-26",
+              "Total Sleep (hours)": 7.32
+            },
+            {
+              "date": "2021-05-27",
+              "Total Sleep (hours)": 6.58
+            },
+            {
+              "date": "2021-05-28",
+              "Total Sleep (hours)": 8.27
+            },
+            {
+              "date": "2021-05-29",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-05-30",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-05-31",
+              "Total Sleep (hours)": 5.86
+            },
+            {
+              "date": "2021-06-01",
+              "Total Sleep (hours)": 7.52
+            },
+            {
+              "date": "2021-06-02",
+              "Total Sleep (hours)": 7.97
+            },
+            {
+              "date": "2021-06-03",
+              "Total Sleep (hours)": 6.72
+            },
+            {
+              "date": "2021-06-04",
+              "Total Sleep (hours)": 9.2
+            },
+            {
+              "date": "2021-06-05",
+              "Total Sleep (hours)": 7.3
+            },
+            {
+              "date": "2021-06-06",
+              "Total Sleep (hours)": 7.77
+            }
+          ],
+          "spec": {
+            "name": "Total Sleep (hours)",
+            "fact_type": "extreme",
+            "fact_description": "On 2021-06-04, total sleep peaked at 9.2 hours, indicating a long sleep duration.",
+            "attribute": "max",
+            "time": "2021-06-04",
+            "value": 9.2
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "extreme",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "Total sleep increased from 6.72 hours on 2021-06-03 to 9.2 hours on 2021-06-04.",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-03-30",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-03-31",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-04-01",
+              "Total Sleep (hours)": 6.78
+            },
+            {
+              "date": "2021-04-02",
+              "Total Sleep (hours)": 7.97
+            },
+            {
+              "date": "2021-04-03",
+              "Total Sleep (hours)": 6.3
+            },
+            {
+              "date": "2021-04-04",
+              "Total Sleep (hours)": 7.62
+            },
+            {
+              "date": "2021-04-05",
+              "Total Sleep (hours)": 7.68
+            },
+            {
+              "date": "2021-04-06",
+              "Total Sleep (hours)": 6.87
+            },
+            {
+              "date": "2021-04-07",
+              "Total Sleep (hours)": 7.73
+            },
+            {
+              "date": "2021-04-08",
+              "Total Sleep (hours)": 7.65
+            },
+            {
+              "date": "2021-04-09",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-04-10",
+              "Total Sleep (hours)": 3.53
+            },
+            {
+              "date": "2021-04-11",
+              "Total Sleep (hours)": 7.12
+            },
+            {
+              "date": "2021-04-12",
+              "Total Sleep (hours)": 7.12
+            },
+            {
+              "date": "2021-04-13",
+              "Total Sleep (hours)": 8.0
+            },
+            {
+              "date": "2021-04-14",
+              "Total Sleep (hours)": 7.62
+            },
+            {
+              "date": "2021-04-15",
+              "Total Sleep (hours)": 6.2
+            },
+            {
+              "date": "2021-04-16",
+              "Total Sleep (hours)": 6.86
+            },
+            {
+              "date": "2021-04-17",
+              "Total Sleep (hours)": 3.97
+            },
+            {
+              "date": "2021-04-18",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-04-19",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-04-20",
+              "Total Sleep (hours)": 7.72
+            },
+            {
+              "date": "2021-04-21",
+              "Total Sleep (hours)": 7.07
+            },
+            {
+              "date": "2021-04-22",
+              "Total Sleep (hours)": 3.93
+            },
+            {
+              "date": "2021-04-23",
+              "Total Sleep (hours)": 8.75
+            },
+            {
+              "date": "2021-04-24",
+              "Total Sleep (hours)": 7.53
+            },
+            {
+              "date": "2021-04-25",
+              "Total Sleep (hours)": 5.57
+            },
+            {
+              "date": "2021-04-26",
+              "Total Sleep (hours)": 6.88
+            },
+            {
+              "date": "2021-04-27",
+              "Total Sleep (hours)": 5.35
+            },
+            {
+              "date": "2021-04-28",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-04-29",
+              "Total Sleep (hours)": 8.24
+            },
+            {
+              "date": "2021-04-30",
+              "Total Sleep (hours)": 7.92
+            },
+            {
+              "date": "2021-05-01",
+              "Total Sleep (hours)": 7.68
+            },
+            {
+              "date": "2021-05-02",
+              "Total Sleep (hours)": 7.1
+            },
+            {
+              "date": "2021-05-03",
+              "Total Sleep (hours)": 7.87
+            },
+            {
+              "date": "2021-05-04",
+              "Total Sleep (hours)": 7.52
+            },
+            {
+              "date": "2021-05-05",
+              "Total Sleep (hours)": 6.53
+            },
+            {
+              "date": "2021-05-06",
+              "Total Sleep (hours)": 7.08
+            },
+            {
+              "date": "2021-05-07",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-05-08",
+              "Total Sleep (hours)": 4.75
+            },
+            {
+              "date": "2021-05-09",
+              "Total Sleep (hours)": 8.12
+            },
+            {
+              "date": "2021-05-10",
+              "Total Sleep (hours)": 7.37
+            },
+            {
+              "date": "2021-05-11",
+              "Total Sleep (hours)": 7.78
+            },
+            {
+              "date": "2021-05-12",
+              "Total Sleep (hours)": 6.82
+            },
+            {
+              "date": "2021-05-13",
+              "Total Sleep (hours)": 7.12
+            },
+            {
+              "date": "2021-05-14",
+              "Total Sleep (hours)": 7.42
+            },
+            {
+              "date": "2021-05-15",
+              "Total Sleep (hours)": 6.97
+            },
+            {
+              "date": "2021-05-16",
+              "Total Sleep (hours)": 6.38
+            },
+            {
+              "date": "2021-05-17",
+              "Total Sleep (hours)": 8.35
+            },
+            {
+              "date": "2021-05-18",
+              "Total Sleep (hours)": 6.65
+            },
+            {
+              "date": "2021-05-19",
+              "Total Sleep (hours)": 7.32
+            },
+            {
+              "date": "2021-05-20",
+              "Total Sleep (hours)": 6.6
+            },
+            {
+              "date": "2021-05-21",
+              "Total Sleep (hours)": 5.6
+            },
+            {
+              "date": "2021-05-22",
+              "Total Sleep (hours)": 5.38
+            },
+            {
+              "date": "2021-05-23",
+              "Total Sleep (hours)": 5.95
+            },
+            {
+              "date": "2021-05-24",
+              "Total Sleep (hours)": 7.73
+            },
+            {
+              "date": "2021-05-25",
+              "Total Sleep (hours)": 8.73
+            },
+            {
+              "date": "2021-05-26",
+              "Total Sleep (hours)": 7.32
+            },
+            {
+              "date": "2021-05-27",
+              "Total Sleep (hours)": 6.58
+            },
+            {
+              "date": "2021-05-28",
+              "Total Sleep (hours)": 8.27
+            },
+            {
+              "date": "2021-05-29",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-05-30",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-05-31",
+              "Total Sleep (hours)": 5.86
+            },
+            {
+              "date": "2021-06-01",
+              "Total Sleep (hours)": 7.52
+            },
+            {
+              "date": "2021-06-02",
+              "Total Sleep (hours)": 7.97
+            },
+            {
+              "date": "2021-06-03",
+              "Total Sleep (hours)": 6.72
+            },
+            {
+              "date": "2021-06-04",
+              "Total Sleep (hours)": 9.2
+            },
+            {
+              "date": "2021-06-05",
+              "Total Sleep (hours)": 7.3
+            },
+            {
+              "date": "2021-06-06",
+              "Total Sleep (hours)": 7.77
+            }
+          ],
+          "spec": {
+            "name": "Total Sleep (hours)",
+            "fact_type": "difference",
+            "fact_description": "Total sleep increased from 6.72 hours on 2021-06-03 to 9.2 hours on 2021-06-04.",
+            "attribute": "more",
+            "time_1": "2021-06-03",
+            "time_2": "2021-06-04",
+            "value_1": 6.72,
+            "value_2": 9.2
           },
           "sources": [
             "passive sensing"
           ],
           "dataSourceType": "difference",
           "isShowL2": true
+        }
+      ]
+    },
+    {
+      "key": "insight-9",
+      "summaryTitle": "Awakening episodes increased to a peak of 24.",
+      "sources": [
+        "passive sensing"
+      ],
+      "insightType": [
+        "biological"
+      ],
+      "expandView": [
+        {
+          "summarySentence": "On 2021-05-11, the number of awakening episodes peaked at 24 times, indicating frequent sleep interruptions.",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-03-30",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-03-31",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-04-01",
+              "Awakening Episodes (Times)": 15.0
+            },
+            {
+              "date": "2021-04-02",
+              "Awakening Episodes (Times)": 14.0
+            },
+            {
+              "date": "2021-04-03",
+              "Awakening Episodes (Times)": 17.0
+            },
+            {
+              "date": "2021-04-04",
+              "Awakening Episodes (Times)": 14.0
+            },
+            {
+              "date": "2021-04-05",
+              "Awakening Episodes (Times)": 15.0
+            },
+            {
+              "date": "2021-04-06",
+              "Awakening Episodes (Times)": 7.0
+            },
+            {
+              "date": "2021-04-07",
+              "Awakening Episodes (Times)": 12.0
+            },
+            {
+              "date": "2021-04-08",
+              "Awakening Episodes (Times)": 7.0
+            },
+            {
+              "date": "2021-04-09",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-04-10",
+              "Awakening Episodes (Times)": 8.0
+            },
+            {
+              "date": "2021-04-11",
+              "Awakening Episodes (Times)": 11.0
+            },
+            {
+              "date": "2021-04-12",
+              "Awakening Episodes (Times)": 14.0
+            },
+            {
+              "date": "2021-04-13",
+              "Awakening Episodes (Times)": 16.0
+            },
+            {
+              "date": "2021-04-14",
+              "Awakening Episodes (Times)": 10.0
+            },
+            {
+              "date": "2021-04-15",
+              "Awakening Episodes (Times)": 18.0
+            },
+            {
+              "date": "2021-04-16",
+              "Awakening Episodes (Times)": 17.0
+            },
+            {
+              "date": "2021-04-17",
+              "Awakening Episodes (Times)": 7.0
+            },
+            {
+              "date": "2021-04-18",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-04-19",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-04-20",
+              "Awakening Episodes (Times)": 20.0
+            },
+            {
+              "date": "2021-04-21",
+              "Awakening Episodes (Times)": 20.0
+            },
+            {
+              "date": "2021-04-22",
+              "Awakening Episodes (Times)": 7.0
+            },
+            {
+              "date": "2021-04-23",
+              "Awakening Episodes (Times)": 8.0
+            },
+            {
+              "date": "2021-04-24",
+              "Awakening Episodes (Times)": 11.0
+            },
+            {
+              "date": "2021-04-25",
+              "Awakening Episodes (Times)": 15.0
+            },
+            {
+              "date": "2021-04-26",
+              "Awakening Episodes (Times)": 16.0
+            },
+            {
+              "date": "2021-04-27",
+              "Awakening Episodes (Times)": 11.0
+            },
+            {
+              "date": "2021-04-28",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-04-29",
+              "Awakening Episodes (Times)": 20.0
+            },
+            {
+              "date": "2021-04-30",
+              "Awakening Episodes (Times)": 17.0
+            },
+            {
+              "date": "2021-05-01",
+              "Awakening Episodes (Times)": 16.0
+            },
+            {
+              "date": "2021-05-02",
+              "Awakening Episodes (Times)": 16.0
+            },
+            {
+              "date": "2021-05-03",
+              "Awakening Episodes (Times)": 16.0
+            },
+            {
+              "date": "2021-05-04",
+              "Awakening Episodes (Times)": 14.0
+            },
+            {
+              "date": "2021-05-05",
+              "Awakening Episodes (Times)": 17.0
+            },
+            {
+              "date": "2021-05-06",
+              "Awakening Episodes (Times)": 18.0
+            },
+            {
+              "date": "2021-05-07",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-05-08",
+              "Awakening Episodes (Times)": 11.0
+            },
+            {
+              "date": "2021-05-09",
+              "Awakening Episodes (Times)": 16.0
+            },
+            {
+              "date": "2021-05-10",
+              "Awakening Episodes (Times)": 13.0
+            },
+            {
+              "date": "2021-05-11",
+              "Awakening Episodes (Times)": 24.0
+            },
+            {
+              "date": "2021-05-12",
+              "Awakening Episodes (Times)": 13.0
+            },
+            {
+              "date": "2021-05-13",
+              "Awakening Episodes (Times)": 11.0
+            },
+            {
+              "date": "2021-05-14",
+              "Awakening Episodes (Times)": 18.0
+            },
+            {
+              "date": "2021-05-15",
+              "Awakening Episodes (Times)": 18.0
+            },
+            {
+              "date": "2021-05-16",
+              "Awakening Episodes (Times)": 10.0
+            },
+            {
+              "date": "2021-05-17",
+              "Awakening Episodes (Times)": 12.0
+            },
+            {
+              "date": "2021-05-18",
+              "Awakening Episodes (Times)": 14.0
+            },
+            {
+              "date": "2021-05-19",
+              "Awakening Episodes (Times)": 10.0
+            },
+            {
+              "date": "2021-05-20",
+              "Awakening Episodes (Times)": 16.0
+            },
+            {
+              "date": "2021-05-21",
+              "Awakening Episodes (Times)": 15.0
+            },
+            {
+              "date": "2021-05-22",
+              "Awakening Episodes (Times)": 13.0
+            },
+            {
+              "date": "2021-05-23",
+              "Awakening Episodes (Times)": 3.0
+            },
+            {
+              "date": "2021-05-24",
+              "Awakening Episodes (Times)": 14.0
+            },
+            {
+              "date": "2021-05-25",
+              "Awakening Episodes (Times)": 10.0
+            },
+            {
+              "date": "2021-05-26",
+              "Awakening Episodes (Times)": 10.0
+            },
+            {
+              "date": "2021-05-27",
+              "Awakening Episodes (Times)": 5.0
+            },
+            {
+              "date": "2021-05-28",
+              "Awakening Episodes (Times)": 11.0
+            },
+            {
+              "date": "2021-05-29",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-05-30",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-05-31",
+              "Awakening Episodes (Times)": 7.0
+            },
+            {
+              "date": "2021-06-01",
+              "Awakening Episodes (Times)": 15.0
+            },
+            {
+              "date": "2021-06-02",
+              "Awakening Episodes (Times)": 20.0
+            },
+            {
+              "date": "2021-06-03",
+              "Awakening Episodes (Times)": 16.0
+            },
+            {
+              "date": "2021-06-04",
+              "Awakening Episodes (Times)": 14.0
+            },
+            {
+              "date": "2021-06-05",
+              "Awakening Episodes (Times)": 15.0
+            },
+            {
+              "date": "2021-06-06",
+              "Awakening Episodes (Times)": 15.0
+            }
+          ],
+          "spec": {
+            "name": "Awakening Episodes (Times)",
+            "fact_type": "extreme",
+            "fact_description": "On 2021-05-11, the number of awakening episodes peaked at 24 times, indicating frequent sleep interruptions.",
+            "attribute": "max",
+            "time": "2021-05-11",
+            "value": 24.0
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "extreme",
+          "isShowL2": true
         },
+        {
+          "summarySentence": "Awakening episodes increased from 13.0 on 2021-05-10 to 24.0 on 2021-05-11.",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-03-30",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-03-31",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-04-01",
+              "Awakening Episodes (Times)": 15.0
+            },
+            {
+              "date": "2021-04-02",
+              "Awakening Episodes (Times)": 14.0
+            },
+            {
+              "date": "2021-04-03",
+              "Awakening Episodes (Times)": 17.0
+            },
+            {
+              "date": "2021-04-04",
+              "Awakening Episodes (Times)": 14.0
+            },
+            {
+              "date": "2021-04-05",
+              "Awakening Episodes (Times)": 15.0
+            },
+            {
+              "date": "2021-04-06",
+              "Awakening Episodes (Times)": 7.0
+            },
+            {
+              "date": "2021-04-07",
+              "Awakening Episodes (Times)": 12.0
+            },
+            {
+              "date": "2021-04-08",
+              "Awakening Episodes (Times)": 7.0
+            },
+            {
+              "date": "2021-04-09",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-04-10",
+              "Awakening Episodes (Times)": 8.0
+            },
+            {
+              "date": "2021-04-11",
+              "Awakening Episodes (Times)": 11.0
+            },
+            {
+              "date": "2021-04-12",
+              "Awakening Episodes (Times)": 14.0
+            },
+            {
+              "date": "2021-04-13",
+              "Awakening Episodes (Times)": 16.0
+            },
+            {
+              "date": "2021-04-14",
+              "Awakening Episodes (Times)": 10.0
+            },
+            {
+              "date": "2021-04-15",
+              "Awakening Episodes (Times)": 18.0
+            },
+            {
+              "date": "2021-04-16",
+              "Awakening Episodes (Times)": 17.0
+            },
+            {
+              "date": "2021-04-17",
+              "Awakening Episodes (Times)": 7.0
+            },
+            {
+              "date": "2021-04-18",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-04-19",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-04-20",
+              "Awakening Episodes (Times)": 20.0
+            },
+            {
+              "date": "2021-04-21",
+              "Awakening Episodes (Times)": 20.0
+            },
+            {
+              "date": "2021-04-22",
+              "Awakening Episodes (Times)": 7.0
+            },
+            {
+              "date": "2021-04-23",
+              "Awakening Episodes (Times)": 8.0
+            },
+            {
+              "date": "2021-04-24",
+              "Awakening Episodes (Times)": 11.0
+            },
+            {
+              "date": "2021-04-25",
+              "Awakening Episodes (Times)": 15.0
+            },
+            {
+              "date": "2021-04-26",
+              "Awakening Episodes (Times)": 16.0
+            },
+            {
+              "date": "2021-04-27",
+              "Awakening Episodes (Times)": 11.0
+            },
+            {
+              "date": "2021-04-28",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-04-29",
+              "Awakening Episodes (Times)": 20.0
+            },
+            {
+              "date": "2021-04-30",
+              "Awakening Episodes (Times)": 17.0
+            },
+            {
+              "date": "2021-05-01",
+              "Awakening Episodes (Times)": 16.0
+            },
+            {
+              "date": "2021-05-02",
+              "Awakening Episodes (Times)": 16.0
+            },
+            {
+              "date": "2021-05-03",
+              "Awakening Episodes (Times)": 16.0
+            },
+            {
+              "date": "2021-05-04",
+              "Awakening Episodes (Times)": 14.0
+            },
+            {
+              "date": "2021-05-05",
+              "Awakening Episodes (Times)": 17.0
+            },
+            {
+              "date": "2021-05-06",
+              "Awakening Episodes (Times)": 18.0
+            },
+            {
+              "date": "2021-05-07",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-05-08",
+              "Awakening Episodes (Times)": 11.0
+            },
+            {
+              "date": "2021-05-09",
+              "Awakening Episodes (Times)": 16.0
+            },
+            {
+              "date": "2021-05-10",
+              "Awakening Episodes (Times)": 13.0
+            },
+            {
+              "date": "2021-05-11",
+              "Awakening Episodes (Times)": 24.0
+            },
+            {
+              "date": "2021-05-12",
+              "Awakening Episodes (Times)": 13.0
+            },
+            {
+              "date": "2021-05-13",
+              "Awakening Episodes (Times)": 11.0
+            },
+            {
+              "date": "2021-05-14",
+              "Awakening Episodes (Times)": 18.0
+            },
+            {
+              "date": "2021-05-15",
+              "Awakening Episodes (Times)": 18.0
+            },
+            {
+              "date": "2021-05-16",
+              "Awakening Episodes (Times)": 10.0
+            },
+            {
+              "date": "2021-05-17",
+              "Awakening Episodes (Times)": 12.0
+            },
+            {
+              "date": "2021-05-18",
+              "Awakening Episodes (Times)": 14.0
+            },
+            {
+              "date": "2021-05-19",
+              "Awakening Episodes (Times)": 10.0
+            },
+            {
+              "date": "2021-05-20",
+              "Awakening Episodes (Times)": 16.0
+            },
+            {
+              "date": "2021-05-21",
+              "Awakening Episodes (Times)": 15.0
+            },
+            {
+              "date": "2021-05-22",
+              "Awakening Episodes (Times)": 13.0
+            },
+            {
+              "date": "2021-05-23",
+              "Awakening Episodes (Times)": 3.0
+            },
+            {
+              "date": "2021-05-24",
+              "Awakening Episodes (Times)": 14.0
+            },
+            {
+              "date": "2021-05-25",
+              "Awakening Episodes (Times)": 10.0
+            },
+            {
+              "date": "2021-05-26",
+              "Awakening Episodes (Times)": 10.0
+            },
+            {
+              "date": "2021-05-27",
+              "Awakening Episodes (Times)": 5.0
+            },
+            {
+              "date": "2021-05-28",
+              "Awakening Episodes (Times)": 11.0
+            },
+            {
+              "date": "2021-05-29",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-05-30",
+              "Awakening Episodes (Times)": null
+            },
+            {
+              "date": "2021-05-31",
+              "Awakening Episodes (Times)": 7.0
+            },
+            {
+              "date": "2021-06-01",
+              "Awakening Episodes (Times)": 15.0
+            },
+            {
+              "date": "2021-06-02",
+              "Awakening Episodes (Times)": 20.0
+            },
+            {
+              "date": "2021-06-03",
+              "Awakening Episodes (Times)": 16.0
+            },
+            {
+              "date": "2021-06-04",
+              "Awakening Episodes (Times)": 14.0
+            },
+            {
+              "date": "2021-06-05",
+              "Awakening Episodes (Times)": 15.0
+            },
+            {
+              "date": "2021-06-06",
+              "Awakening Episodes (Times)": 15.0
+            }
+          ],
+          "spec": {
+            "name": "Awakening Episodes (Times)",
+            "fact_type": "difference",
+            "fact_description": "Awakening episodes increased from 13.0 on 2021-05-10 to 24.0 on 2021-05-11.",
+            "attribute": "more",
+            "time_1": "2021-05-10",
+            "time_2": "2021-05-11",
+            "value_1": 13.0,
+            "value_2": 24.0
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "difference",
+          "isShowL2": false
+        }
+      ]
+    },
+    {
+      "key": "insight-10",
+      "summaryTitle": "Routine consistency dropped from peak to lowest value.",
+      "sources": [
+        "passive sensing"
+      ],
+      "insightType": [
+        "social"
+      ],
+      "expandView": [
         {
           "summarySentence": "On 2021-05-15, routine consistency peaked at 70.22 out of 100, indicating moderate regularity.",
           "dataPoints": [
@@ -652,567 +4457,7 @@
           ],
           "dataSourceType": "extreme",
           "isShowL2": true
-        }
-      ]
-    },
-    {
-      "key": "insight-1",
-      "summaryTitle": "Positive affect decreased from 17.0 to 11.0.",
-      "sources": [
-        "survey"
-      ],
-      "insightType": [
-        "psychological"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "On 2021-05-09, the Positive Affect Subscale (PANAS-SF) peaked at 17.0 (moderate-high).",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 14.0
-            },
-            {
-              "date": "2021-04-04",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 16.0
-            },
-            {
-              "date": "2021-04-07",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 20.0
-            },
-            {
-              "date": "2021-04-11",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 17.0
-            },
-            {
-              "date": "2021-04-14",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 18.0
-            },
-            {
-              "date": "2021-04-18",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 12.0
-            },
-            {
-              "date": "2021-04-21",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-04-25",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 12.0
-            },
-            {
-              "date": "2021-04-28",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 9.0
-            },
-            {
-              "date": "2021-05-02",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 14.0
-            },
-            {
-              "date": "2021-05-05",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 16.0
-            },
-            {
-              "date": "2021-05-09",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 17.0
-            },
-            {
-              "date": "2021-05-12",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 11.0
-            },
-            {
-              "date": "2021-05-16",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 16.0
-            },
-            {
-              "date": "2021-05-19",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 14.0
-            },
-            {
-              "date": "2021-05-24",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-05-26",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-05-30",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-06-02",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-06-06",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 15.0
-            }
-          ],
-          "spec": {
-            "name": "Positive Affect Subscale (5-25, PANAS-SF)",
-            "fact_type": "extreme",
-            "fact_description": "On 2021-05-09, the Positive Affect Subscale (PANAS-SF) peaked at 17.0 (moderate-high).",
-            "attribute": "max",
-            "time": "2021-05-09",
-            "value": 17.0
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "extreme",
-          "isShowL2": true
         },
-        {
-          "summarySentence": "On 2021-05-12, positive affect was at its lowest, scoring 11.0 out of 25.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 14.0
-            },
-            {
-              "date": "2021-04-04",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 16.0
-            },
-            {
-              "date": "2021-04-07",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 20.0
-            },
-            {
-              "date": "2021-04-11",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 17.0
-            },
-            {
-              "date": "2021-04-14",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 18.0
-            },
-            {
-              "date": "2021-04-18",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 12.0
-            },
-            {
-              "date": "2021-04-21",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-04-25",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 12.0
-            },
-            {
-              "date": "2021-04-28",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 9.0
-            },
-            {
-              "date": "2021-05-02",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 14.0
-            },
-            {
-              "date": "2021-05-05",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 16.0
-            },
-            {
-              "date": "2021-05-09",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 17.0
-            },
-            {
-              "date": "2021-05-12",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 11.0
-            },
-            {
-              "date": "2021-05-16",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 16.0
-            },
-            {
-              "date": "2021-05-19",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 14.0
-            },
-            {
-              "date": "2021-05-24",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-05-26",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-05-30",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-06-02",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-06-06",
-              "Positive Affect Subscale (5-25, PANAS-SF)": 15.0
-            }
-          ],
-          "spec": {
-            "name": "Positive Affect Subscale (5-25, PANAS-SF)",
-            "fact_type": "extreme",
-            "fact_description": "On 2021-05-12, positive affect was at its lowest, scoring 11.0 out of 25.",
-            "attribute": "min",
-            "time": "2021-05-12",
-            "value": 11.0
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "extreme",
-          "isShowL2": true
-        }
-      ]
-    },
-    {
-      "key": "insight-2",
-      "summaryTitle": "Negative affect increased from 10.0 to 19.0.",
-      "sources": [
-        "survey"
-      ],
-      "insightType": [
-        "psychological"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "Negative Affect Subscale increased from 10.0 to 19.0 from 2021-05-16 to 2021-05-19 (3 days).",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 7.0
-            },
-            {
-              "date": "2021-04-04",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 5.0
-            },
-            {
-              "date": "2021-04-07",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 6.0
-            },
-            {
-              "date": "2021-04-11",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 8.0
-            },
-            {
-              "date": "2021-04-14",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 12.0
-            },
-            {
-              "date": "2021-04-18",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-04-21",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 11.0
-            },
-            {
-              "date": "2021-04-25",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 18.0
-            },
-            {
-              "date": "2021-04-28",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 15.0
-            },
-            {
-              "date": "2021-05-02",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 10.0
-            },
-            {
-              "date": "2021-05-05",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-05-09",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 10.0
-            },
-            {
-              "date": "2021-05-12",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 8.0
-            },
-            {
-              "date": "2021-05-16",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 10.0
-            },
-            {
-              "date": "2021-05-19",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 19.0
-            },
-            {
-              "date": "2021-05-24",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-05-26",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-05-30",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-06-02",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 10.0
-            },
-            {
-              "date": "2021-06-06",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
-            }
-          ],
-          "spec": {
-            "name": "Negative Affect Subscale (5-25, PANAS-SF)",
-            "fact_type": "difference",
-            "fact_description": "Negative Affect Subscale increased from 10.0 to 19.0 from 2021-05-16 to 2021-05-19 (3 days).",
-            "attribute": "more",
-            "time_1": "2021-05-16",
-            "time_2": "2021-05-19",
-            "value_1": 10.0,
-            "value_2": 19.0
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "difference",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "On 2021-05-19, negative affect peaked at 19.0 (scale: 5–25, higher indicates more distress).",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 7.0
-            },
-            {
-              "date": "2021-04-04",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 5.0
-            },
-            {
-              "date": "2021-04-07",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 6.0
-            },
-            {
-              "date": "2021-04-11",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 8.0
-            },
-            {
-              "date": "2021-04-14",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 12.0
-            },
-            {
-              "date": "2021-04-18",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-04-21",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 11.0
-            },
-            {
-              "date": "2021-04-25",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 18.0
-            },
-            {
-              "date": "2021-04-28",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 15.0
-            },
-            {
-              "date": "2021-05-02",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 10.0
-            },
-            {
-              "date": "2021-05-05",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-05-09",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 10.0
-            },
-            {
-              "date": "2021-05-12",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 8.0
-            },
-            {
-              "date": "2021-05-16",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 10.0
-            },
-            {
-              "date": "2021-05-19",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 19.0
-            },
-            {
-              "date": "2021-05-24",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-05-26",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-05-30",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
-            },
-            {
-              "date": "2021-06-02",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 10.0
-            },
-            {
-              "date": "2021-06-06",
-              "Negative Affect Subscale (5-25, PANAS-SF)": 13.0
-            }
-          ],
-          "spec": {
-            "name": "Negative Affect Subscale (5-25, PANAS-SF)",
-            "fact_type": "extreme",
-            "fact_description": "On 2021-05-19, negative affect peaked at 19.0 (scale: 5–25, higher indicates more distress).",
-            "attribute": "max",
-            "time": "2021-05-19",
-            "value": 19.0
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "extreme",
-          "isShowL2": false
-        }
-      ]
-    },
-    {
-      "key": "insight-3",
-      "summaryTitle": "Stress score peaked, then decreased to 8.0.",
-      "sources": [
-        "survey"
-      ],
-      "insightType": [
-        "psychological"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "The PSS-4 score decreased from 11.0 to 8.0 from 2021-05-19 to 2021-05-26 (7 days), indicating high perceived stress throughout.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "PSS-4 Score (0-16)": 6.0
-            },
-            {
-              "date": "2021-04-07",
-              "PSS-4 Score (0-16)": 8.0
-            },
-            {
-              "date": "2021-04-14",
-              "PSS-4 Score (0-16)": 8.0
-            },
-            {
-              "date": "2021-04-21",
-              "PSS-4 Score (0-16)": 9.0
-            },
-            {
-              "date": "2021-04-28",
-              "PSS-4 Score (0-16)": 8.0
-            },
-            {
-              "date": "2021-05-05",
-              "PSS-4 Score (0-16)": 6.0
-            },
-            {
-              "date": "2021-05-12",
-              "PSS-4 Score (0-16)": 5.0
-            },
-            {
-              "date": "2021-05-19",
-              "PSS-4 Score (0-16)": 11.0
-            },
-            {
-              "date": "2021-05-26",
-              "PSS-4 Score (0-16)": 8.0
-            },
-            {
-              "date": "2021-06-02",
-              "PSS-4 Score (0-16)": 8.0
-            }
-          ],
-          "spec": {
-            "name": "PSS-4 Score (0-16)",
-            "fact_type": "difference",
-            "fact_description": "The PSS-4 score decreased from 11.0 to 8.0 from 2021-05-19 to 2021-05-26 (7 days), indicating high perceived stress throughout.",
-            "attribute": "less",
-            "time_1": "2021-05-19",
-            "time_2": "2021-05-26",
-            "value_1": 11.0,
-            "value_2": 8.0
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "difference",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "On 2021-05-19, the PSS-4 score was 11.0, indicating high perceived stress.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "PSS-4 Score (0-16)": 6.0
-            },
-            {
-              "date": "2021-04-07",
-              "PSS-4 Score (0-16)": 8.0
-            },
-            {
-              "date": "2021-04-14",
-              "PSS-4 Score (0-16)": 8.0
-            },
-            {
-              "date": "2021-04-21",
-              "PSS-4 Score (0-16)": 9.0
-            },
-            {
-              "date": "2021-04-28",
-              "PSS-4 Score (0-16)": 8.0
-            },
-            {
-              "date": "2021-05-05",
-              "PSS-4 Score (0-16)": 6.0
-            },
-            {
-              "date": "2021-05-12",
-              "PSS-4 Score (0-16)": 5.0
-            },
-            {
-              "date": "2021-05-19",
-              "PSS-4 Score (0-16)": 11.0
-            },
-            {
-              "date": "2021-05-26",
-              "PSS-4 Score (0-16)": 8.0
-            },
-            {
-              "date": "2021-06-02",
-              "PSS-4 Score (0-16)": 8.0
-            }
-          ],
-          "spec": {
-            "name": "PSS-4 Score (0-16)",
-            "fact_type": "extreme",
-            "fact_description": "On 2021-05-19, the PSS-4 score was 11.0, indicating high perceived stress.",
-            "attribute": "max",
-            "time": "2021-05-19",
-            "value": 11.0
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "extreme",
-          "isShowL2": true
-        }
-      ]
-    },
-    {
-      "key": "insight-4",
-      "summaryTitle": "Routine consistency reached its lowest recorded value.",
-      "sources": [
-        "passive sensing"
-      ],
-      "insightType": [
-        "social"
-      ],
-      "expandView": [
         {
           "summarySentence": "On 2021-05-23, routine consistency was very low at 11.21 out of 100.",
           "dataPoints": [
@@ -1514,8 +4759,8 @@
       ]
     },
     {
-      "key": "insight-5",
-      "summaryTitle": "Time at home increased from 5.16 to 18.16 hours.",
+      "key": "insight-11",
+      "summaryTitle": "Time at home peaked at 23.27 hours.",
       "sources": [
         "passive sensing"
       ],
@@ -1524,7 +4769,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Time spent at home increased from 5.16 hours on 2021-05-26 to 18.16 hours on 2021-05-27.",
+          "summarySentence": "On 2021-05-15, the individual spent 23.27 hours at home, their highest recorded value.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -1809,1866 +5054,98 @@
           ],
           "spec": {
             "name": "Time Spent at Home (Hours)",
-            "fact_type": "difference",
-            "fact_description": "Time spent at home increased from 5.16 hours on 2021-05-26 to 18.16 hours on 2021-05-27.",
-            "attribute": "more",
-            "time_1": "2021-05-26",
-            "time_2": "2021-05-27",
-            "value_1": 5.16,
-            "value_2": 18.16
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "difference",
-          "isShowL2": true
-        }
-      ]
-    },
-    {
-      "key": "insight-6",
-      "summaryTitle": "Inactive periods increased to a peak of 125.",
-      "sources": [
-        "passive sensing"
-      ],
-      "insightType": [
-        "biological"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "Inactive periods increased from 49.0 on 2021-05-30 to 125.0 on 2021-05-31.",
-          "dataPoints": [
-            {
-              "date": "2021-03-29",
-              "Inactive Periods (Times)": null
-            },
-            {
-              "date": "2021-03-30",
-              "Inactive Periods (Times)": null
-            },
-            {
-              "date": "2021-03-31",
-              "Inactive Periods (Times)": 28.0
-            },
-            {
-              "date": "2021-04-01",
-              "Inactive Periods (Times)": 82.0
-            },
-            {
-              "date": "2021-04-02",
-              "Inactive Periods (Times)": 74.0
-            },
-            {
-              "date": "2021-04-03",
-              "Inactive Periods (Times)": 84.0
-            },
-            {
-              "date": "2021-04-04",
-              "Inactive Periods (Times)": 90.0
-            },
-            {
-              "date": "2021-04-05",
-              "Inactive Periods (Times)": 71.0
-            },
-            {
-              "date": "2021-04-06",
-              "Inactive Periods (Times)": 63.0
-            },
-            {
-              "date": "2021-04-07",
-              "Inactive Periods (Times)": 72.0
-            },
-            {
-              "date": "2021-04-08",
-              "Inactive Periods (Times)": 66.0
-            },
-            {
-              "date": "2021-04-09",
-              "Inactive Periods (Times)": 67.0
-            },
-            {
-              "date": "2021-04-10",
-              "Inactive Periods (Times)": 59.0
-            },
-            {
-              "date": "2021-04-11",
-              "Inactive Periods (Times)": 85.0
-            },
-            {
-              "date": "2021-04-12",
-              "Inactive Periods (Times)": 85.0
-            },
-            {
-              "date": "2021-04-13",
-              "Inactive Periods (Times)": 91.0
-            },
-            {
-              "date": "2021-04-14",
-              "Inactive Periods (Times)": 68.0
-            },
-            {
-              "date": "2021-04-15",
-              "Inactive Periods (Times)": 91.0
-            },
-            {
-              "date": "2021-04-16",
-              "Inactive Periods (Times)": 86.0
-            },
-            {
-              "date": "2021-04-17",
-              "Inactive Periods (Times)": null
-            },
-            {
-              "date": "2021-04-18",
-              "Inactive Periods (Times)": null
-            },
-            {
-              "date": "2021-04-19",
-              "Inactive Periods (Times)": 58.0
-            },
-            {
-              "date": "2021-04-20",
-              "Inactive Periods (Times)": 73.0
-            },
-            {
-              "date": "2021-04-21",
-              "Inactive Periods (Times)": 93.0
-            },
-            {
-              "date": "2021-04-22",
-              "Inactive Periods (Times)": 84.0
-            },
-            {
-              "date": "2021-04-23",
-              "Inactive Periods (Times)": 63.0
-            },
-            {
-              "date": "2021-04-24",
-              "Inactive Periods (Times)": 82.0
-            },
-            {
-              "date": "2021-04-25",
-              "Inactive Periods (Times)": 78.0
-            },
-            {
-              "date": "2021-04-26",
-              "Inactive Periods (Times)": 82.0
-            },
-            {
-              "date": "2021-04-27",
-              "Inactive Periods (Times)": 90.0
-            },
-            {
-              "date": "2021-04-28",
-              "Inactive Periods (Times)": 67.0
-            },
-            {
-              "date": "2021-04-29",
-              "Inactive Periods (Times)": 63.0
-            },
-            {
-              "date": "2021-04-30",
-              "Inactive Periods (Times)": 89.0
-            },
-            {
-              "date": "2021-05-01",
-              "Inactive Periods (Times)": 93.0
-            },
-            {
-              "date": "2021-05-02",
-              "Inactive Periods (Times)": 84.0
-            },
-            {
-              "date": "2021-05-03",
-              "Inactive Periods (Times)": 59.0
-            },
-            {
-              "date": "2021-05-04",
-              "Inactive Periods (Times)": 86.0
-            },
-            {
-              "date": "2021-05-05",
-              "Inactive Periods (Times)": 83.0
-            },
-            {
-              "date": "2021-05-06",
-              "Inactive Periods (Times)": 59.0
-            },
-            {
-              "date": "2021-05-07",
-              "Inactive Periods (Times)": 37.0
-            },
-            {
-              "date": "2021-05-08",
-              "Inactive Periods (Times)": 75.0
-            },
-            {
-              "date": "2021-05-09",
-              "Inactive Periods (Times)": 94.0
-            },
-            {
-              "date": "2021-05-10",
-              "Inactive Periods (Times)": 68.0
-            },
-            {
-              "date": "2021-05-11",
-              "Inactive Periods (Times)": 80.0
-            },
-            {
-              "date": "2021-05-12",
-              "Inactive Periods (Times)": 79.0
-            },
-            {
-              "date": "2021-05-13",
-              "Inactive Periods (Times)": 57.0
-            },
-            {
-              "date": "2021-05-14",
-              "Inactive Periods (Times)": 87.0
-            },
-            {
-              "date": "2021-05-15",
-              "Inactive Periods (Times)": 33.0
-            },
-            {
-              "date": "2021-05-16",
-              "Inactive Periods (Times)": 69.0
-            },
-            {
-              "date": "2021-05-17",
-              "Inactive Periods (Times)": 61.0
-            },
-            {
-              "date": "2021-05-18",
-              "Inactive Periods (Times)": 84.0
-            },
-            {
-              "date": "2021-05-19",
-              "Inactive Periods (Times)": 70.0
-            },
-            {
-              "date": "2021-05-20",
-              "Inactive Periods (Times)": 41.0
-            },
-            {
-              "date": "2021-05-21",
-              "Inactive Periods (Times)": 66.0
-            },
-            {
-              "date": "2021-05-22",
-              "Inactive Periods (Times)": 94.0
-            },
-            {
-              "date": "2021-05-23",
-              "Inactive Periods (Times)": 89.0
-            },
-            {
-              "date": "2021-05-24",
-              "Inactive Periods (Times)": 74.0
-            },
-            {
-              "date": "2021-05-25",
-              "Inactive Periods (Times)": 66.0
-            },
-            {
-              "date": "2021-05-26",
-              "Inactive Periods (Times)": 79.0
-            },
-            {
-              "date": "2021-05-27",
-              "Inactive Periods (Times)": 109.0
-            },
-            {
-              "date": "2021-05-28",
-              "Inactive Periods (Times)": 72.0
-            },
-            {
-              "date": "2021-05-29",
-              "Inactive Periods (Times)": null
-            },
-            {
-              "date": "2021-05-30",
-              "Inactive Periods (Times)": 49.0
-            },
-            {
-              "date": "2021-05-31",
-              "Inactive Periods (Times)": 125.0
-            },
-            {
-              "date": "2021-06-01",
-              "Inactive Periods (Times)": 103.0
-            },
-            {
-              "date": "2021-06-02",
-              "Inactive Periods (Times)": 84.0
-            },
-            {
-              "date": "2021-06-03",
-              "Inactive Periods (Times)": 95.0
-            },
-            {
-              "date": "2021-06-04",
-              "Inactive Periods (Times)": 117.0
-            },
-            {
-              "date": "2021-06-05",
-              "Inactive Periods (Times)": 105.0
-            },
-            {
-              "date": "2021-06-06",
-              "Inactive Periods (Times)": 110.0
-            }
-          ],
-          "spec": {
-            "name": "Inactive Periods (Times)",
-            "fact_type": "difference",
-            "fact_description": "Inactive periods increased from 49.0 on 2021-05-30 to 125.0 on 2021-05-31.",
-            "attribute": "more",
-            "time_1": "2021-05-30",
-            "time_2": "2021-05-31",
-            "value_1": 49.0,
-            "value_2": 125.0
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "difference",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "On 2021-05-31, inactive periods peaked at 125.0 times, indicating frequent inactivity.",
-          "dataPoints": [
-            {
-              "date": "2021-03-29",
-              "Inactive Periods (Times)": null
-            },
-            {
-              "date": "2021-03-30",
-              "Inactive Periods (Times)": null
-            },
-            {
-              "date": "2021-03-31",
-              "Inactive Periods (Times)": 28.0
-            },
-            {
-              "date": "2021-04-01",
-              "Inactive Periods (Times)": 82.0
-            },
-            {
-              "date": "2021-04-02",
-              "Inactive Periods (Times)": 74.0
-            },
-            {
-              "date": "2021-04-03",
-              "Inactive Periods (Times)": 84.0
-            },
-            {
-              "date": "2021-04-04",
-              "Inactive Periods (Times)": 90.0
-            },
-            {
-              "date": "2021-04-05",
-              "Inactive Periods (Times)": 71.0
-            },
-            {
-              "date": "2021-04-06",
-              "Inactive Periods (Times)": 63.0
-            },
-            {
-              "date": "2021-04-07",
-              "Inactive Periods (Times)": 72.0
-            },
-            {
-              "date": "2021-04-08",
-              "Inactive Periods (Times)": 66.0
-            },
-            {
-              "date": "2021-04-09",
-              "Inactive Periods (Times)": 67.0
-            },
-            {
-              "date": "2021-04-10",
-              "Inactive Periods (Times)": 59.0
-            },
-            {
-              "date": "2021-04-11",
-              "Inactive Periods (Times)": 85.0
-            },
-            {
-              "date": "2021-04-12",
-              "Inactive Periods (Times)": 85.0
-            },
-            {
-              "date": "2021-04-13",
-              "Inactive Periods (Times)": 91.0
-            },
-            {
-              "date": "2021-04-14",
-              "Inactive Periods (Times)": 68.0
-            },
-            {
-              "date": "2021-04-15",
-              "Inactive Periods (Times)": 91.0
-            },
-            {
-              "date": "2021-04-16",
-              "Inactive Periods (Times)": 86.0
-            },
-            {
-              "date": "2021-04-17",
-              "Inactive Periods (Times)": null
-            },
-            {
-              "date": "2021-04-18",
-              "Inactive Periods (Times)": null
-            },
-            {
-              "date": "2021-04-19",
-              "Inactive Periods (Times)": 58.0
-            },
-            {
-              "date": "2021-04-20",
-              "Inactive Periods (Times)": 73.0
-            },
-            {
-              "date": "2021-04-21",
-              "Inactive Periods (Times)": 93.0
-            },
-            {
-              "date": "2021-04-22",
-              "Inactive Periods (Times)": 84.0
-            },
-            {
-              "date": "2021-04-23",
-              "Inactive Periods (Times)": 63.0
-            },
-            {
-              "date": "2021-04-24",
-              "Inactive Periods (Times)": 82.0
-            },
-            {
-              "date": "2021-04-25",
-              "Inactive Periods (Times)": 78.0
-            },
-            {
-              "date": "2021-04-26",
-              "Inactive Periods (Times)": 82.0
-            },
-            {
-              "date": "2021-04-27",
-              "Inactive Periods (Times)": 90.0
-            },
-            {
-              "date": "2021-04-28",
-              "Inactive Periods (Times)": 67.0
-            },
-            {
-              "date": "2021-04-29",
-              "Inactive Periods (Times)": 63.0
-            },
-            {
-              "date": "2021-04-30",
-              "Inactive Periods (Times)": 89.0
-            },
-            {
-              "date": "2021-05-01",
-              "Inactive Periods (Times)": 93.0
-            },
-            {
-              "date": "2021-05-02",
-              "Inactive Periods (Times)": 84.0
-            },
-            {
-              "date": "2021-05-03",
-              "Inactive Periods (Times)": 59.0
-            },
-            {
-              "date": "2021-05-04",
-              "Inactive Periods (Times)": 86.0
-            },
-            {
-              "date": "2021-05-05",
-              "Inactive Periods (Times)": 83.0
-            },
-            {
-              "date": "2021-05-06",
-              "Inactive Periods (Times)": 59.0
-            },
-            {
-              "date": "2021-05-07",
-              "Inactive Periods (Times)": 37.0
-            },
-            {
-              "date": "2021-05-08",
-              "Inactive Periods (Times)": 75.0
-            },
-            {
-              "date": "2021-05-09",
-              "Inactive Periods (Times)": 94.0
-            },
-            {
-              "date": "2021-05-10",
-              "Inactive Periods (Times)": 68.0
-            },
-            {
-              "date": "2021-05-11",
-              "Inactive Periods (Times)": 80.0
-            },
-            {
-              "date": "2021-05-12",
-              "Inactive Periods (Times)": 79.0
-            },
-            {
-              "date": "2021-05-13",
-              "Inactive Periods (Times)": 57.0
-            },
-            {
-              "date": "2021-05-14",
-              "Inactive Periods (Times)": 87.0
-            },
-            {
-              "date": "2021-05-15",
-              "Inactive Periods (Times)": 33.0
-            },
-            {
-              "date": "2021-05-16",
-              "Inactive Periods (Times)": 69.0
-            },
-            {
-              "date": "2021-05-17",
-              "Inactive Periods (Times)": 61.0
-            },
-            {
-              "date": "2021-05-18",
-              "Inactive Periods (Times)": 84.0
-            },
-            {
-              "date": "2021-05-19",
-              "Inactive Periods (Times)": 70.0
-            },
-            {
-              "date": "2021-05-20",
-              "Inactive Periods (Times)": 41.0
-            },
-            {
-              "date": "2021-05-21",
-              "Inactive Periods (Times)": 66.0
-            },
-            {
-              "date": "2021-05-22",
-              "Inactive Periods (Times)": 94.0
-            },
-            {
-              "date": "2021-05-23",
-              "Inactive Periods (Times)": 89.0
-            },
-            {
-              "date": "2021-05-24",
-              "Inactive Periods (Times)": 74.0
-            },
-            {
-              "date": "2021-05-25",
-              "Inactive Periods (Times)": 66.0
-            },
-            {
-              "date": "2021-05-26",
-              "Inactive Periods (Times)": 79.0
-            },
-            {
-              "date": "2021-05-27",
-              "Inactive Periods (Times)": 109.0
-            },
-            {
-              "date": "2021-05-28",
-              "Inactive Periods (Times)": 72.0
-            },
-            {
-              "date": "2021-05-29",
-              "Inactive Periods (Times)": null
-            },
-            {
-              "date": "2021-05-30",
-              "Inactive Periods (Times)": 49.0
-            },
-            {
-              "date": "2021-05-31",
-              "Inactive Periods (Times)": 125.0
-            },
-            {
-              "date": "2021-06-01",
-              "Inactive Periods (Times)": 103.0
-            },
-            {
-              "date": "2021-06-02",
-              "Inactive Periods (Times)": 84.0
-            },
-            {
-              "date": "2021-06-03",
-              "Inactive Periods (Times)": 95.0
-            },
-            {
-              "date": "2021-06-04",
-              "Inactive Periods (Times)": 117.0
-            },
-            {
-              "date": "2021-06-05",
-              "Inactive Periods (Times)": 105.0
-            },
-            {
-              "date": "2021-06-06",
-              "Inactive Periods (Times)": 110.0
-            }
-          ],
-          "spec": {
-            "name": "Inactive Periods (Times)",
             "fact_type": "extreme",
-            "fact_description": "On 2021-05-31, inactive periods peaked at 125.0 times, indicating frequent inactivity.",
+            "fact_description": "On 2021-05-15, the individual spent 23.27 hours at home, their highest recorded value.",
             "attribute": "max",
-            "time": "2021-05-31",
-            "value": 125.0
+            "time": "2021-05-15",
+            "value": 23.27
           },
           "sources": [
             "passive sensing"
           ],
           "dataSourceType": "extreme",
           "isShowL2": true
-        }
-      ]
-    },
-    {
-      "key": "insight-7",
-      "summaryTitle": "PHQ-4 score increased from 4.0 to 6.0.",
-      "sources": [
-        "survey"
-      ],
-      "insightType": [
-        "psychological"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "The PHQ-4 score increased from 4.0 (mild distress) on 2021-05-30 to 6.0 (moderate distress) on 2021-06-06.",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 (0-12)": 3.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 (0-12)": 6.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 (0-12)": 5.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 (0-12)": 5.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 (0-12)": 6.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 (0-12)",
-            "fact_type": "difference",
-            "fact_description": "The PHQ-4 score increased from 4.0 (mild distress) on 2021-05-30 to 6.0 (moderate distress) on 2021-06-06.",
-            "attribute": "more",
-            "time_1": "2021-05-30",
-            "time_2": "2021-06-06",
-            "value_1": 4.0,
-            "value_2": 6.0
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "difference",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "The PHQ-4 score decreased from 5.0 (mild distress) on 2021-05-24 to 4.0 on 2021-05-30.",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 (0-12)": 3.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 (0-12)": 6.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 (0-12)": 5.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 (0-12)": 5.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 (0-12)": 6.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 (0-12)",
-            "fact_type": "difference",
-            "fact_description": "The PHQ-4 score decreased from 5.0 (mild distress) on 2021-05-24 to 4.0 on 2021-05-30.",
-            "attribute": "less",
-            "time_1": "2021-05-24",
-            "time_2": "2021-05-30",
-            "value_1": 5.0,
-            "value_2": 4.0
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "difference",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "On 2021-06-06, the PHQ-4 score was 6.0, indicating moderate distress.",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 (0-12)": 3.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 (0-12)": 6.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 (0-12)": 5.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 (0-12)": 5.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 (0-12)": 6.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 (0-12)",
-            "fact_type": "extreme",
-            "fact_description": "On 2021-06-06, the PHQ-4 score was 6.0, indicating moderate distress.",
-            "attribute": "max",
-            "time": "2021-06-06",
-            "value": 6.0
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "extreme",
-          "isShowL2": false
-        }
-      ]
-    },
-    {
-      "key": "insight-8",
-      "summaryTitle": "Anxiety score increased to its highest recorded value.",
-      "sources": [
-        "survey"
-      ],
-      "insightType": [
-        "psychological"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "The PHQ-4 Anxiety Subscale increased from 2.0 on 2021-05-30 to 3.0 on 2021-06-06, indicating anxiety nearly every day.",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 Anxiety Subscale (0-6)": 3.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 Anxiety Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 Anxiety Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 Anxiety Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 Anxiety Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 Anxiety Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 Anxiety Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 Anxiety Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 Anxiety Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 Anxiety Subscale (0-6)": 3.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 Anxiety Subscale (0-6)",
-            "fact_type": "difference",
-            "fact_description": "The PHQ-4 Anxiety Subscale increased from 2.0 on 2021-05-30 to 3.0 on 2021-06-06, indicating anxiety nearly every day.",
-            "attribute": "more",
-            "time_1": "2021-05-30",
-            "time_2": "2021-06-06",
-            "value_1": 2.0,
-            "value_2": 3.0
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "difference",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "On 2021-06-06, anxiety symptoms were present nearly every day (PHQ-4 Anxiety Score: 3.0/4).",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 Anxiety Subscale (0-6)": 3.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 Anxiety Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 Anxiety Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 Anxiety Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 Anxiety Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 Anxiety Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 Anxiety Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 Anxiety Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 Anxiety Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 Anxiety Subscale (0-6)": 3.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 Anxiety Subscale (0-6)",
-            "fact_type": "extreme",
-            "fact_description": "On 2021-06-06, anxiety symptoms were present nearly every day (PHQ-4 Anxiety Score: 3.0/4).",
-            "attribute": "max",
-            "time": "2021-06-06",
-            "value": 3.0
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "extreme",
-          "isShowL2": false
-        }
-      ]
-    },
-    {
-      "key": "insight-9",
-      "summaryTitle": "Physical activity decreased and inactivity increased.",
-      "sources": [
-        "clinical note",
-        "passive sensing"
-      ],
-      "insightType": [
-        "biological"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "[TODO?]",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Monitor for efficacy and side effects. Reassess in a few weeks; consider medication review with GP/psychiatrist if limited improvement persists."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "[TODO?]",
-          "dataPoints": null,
-          "spec": [],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "Average daily steps decreased from 13,496 to 11,553 from 2021-04-11 to 2021-06-06 (56 days).",
-          "dataPoints": null,
-          "spec": {
-            "name": "Total Steps (Steps)",
-            "fact_type": "comparison",
-            "fact_description": "Average daily steps decreased from 13,496 to 11,553 from 2021-04-11 to 2021-06-06 (56 days).",
-            "attribute": "less",
-            "aggregation": "average",
-            "time_dur_1": {
-              "time_start": "2021-04-11",
-              "time_end": "2021-05-09"
-            },
-            "time_dur_2": {
-              "time_start": "2021-05-09",
-              "time_end": "2021-06-06"
-            },
-            "value_dur_1": 13495.555555555555,
-            "value_dur_2": 11553.464285714286,
-            "significance": "indicative"
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "comparison",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Inactive periods increased from 2021-05-09 to 2021-06-06 (28 days).",
-          "dataPoints": null,
-          "spec": {
-            "name": "Inactive Periods (Times)",
-            "fact_type": "trend",
-            "fact_description": "Inactive periods increased from 2021-05-09 to 2021-06-06 (28 days).",
-            "attribute": "rise",
-            "time_1": "2021-05-09",
-            "time_2": "2021-06-06"
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "trend",
-          "isShowL2": true
-        }
-      ]
-    },
-    {
-      "key": "insight-10",
-      "summaryTitle": "Total sleep increased from 6.7 to 9.2 hours.",
-      "sources": [
-        "passive sensing"
-      ],
-      "insightType": [
-        "biological"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "Total sleep increased from 6.72 hours on 2021-06-03 to 9.2 hours on 2021-06-04.",
-          "dataPoints": [
-            {
-              "date": "2021-03-29",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-03-30",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-03-31",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-04-01",
-              "Total Sleep (hours)": 6.78
-            },
-            {
-              "date": "2021-04-02",
-              "Total Sleep (hours)": 7.97
-            },
-            {
-              "date": "2021-04-03",
-              "Total Sleep (hours)": 6.3
-            },
-            {
-              "date": "2021-04-04",
-              "Total Sleep (hours)": 7.62
-            },
-            {
-              "date": "2021-04-05",
-              "Total Sleep (hours)": 7.68
-            },
-            {
-              "date": "2021-04-06",
-              "Total Sleep (hours)": 6.87
-            },
-            {
-              "date": "2021-04-07",
-              "Total Sleep (hours)": 7.73
-            },
-            {
-              "date": "2021-04-08",
-              "Total Sleep (hours)": 7.65
-            },
-            {
-              "date": "2021-04-09",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-04-10",
-              "Total Sleep (hours)": 3.53
-            },
-            {
-              "date": "2021-04-11",
-              "Total Sleep (hours)": 7.12
-            },
-            {
-              "date": "2021-04-12",
-              "Total Sleep (hours)": 7.12
-            },
-            {
-              "date": "2021-04-13",
-              "Total Sleep (hours)": 8.0
-            },
-            {
-              "date": "2021-04-14",
-              "Total Sleep (hours)": 7.62
-            },
-            {
-              "date": "2021-04-15",
-              "Total Sleep (hours)": 6.2
-            },
-            {
-              "date": "2021-04-16",
-              "Total Sleep (hours)": 6.86
-            },
-            {
-              "date": "2021-04-17",
-              "Total Sleep (hours)": 3.97
-            },
-            {
-              "date": "2021-04-18",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-04-19",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-04-20",
-              "Total Sleep (hours)": 7.72
-            },
-            {
-              "date": "2021-04-21",
-              "Total Sleep (hours)": 7.07
-            },
-            {
-              "date": "2021-04-22",
-              "Total Sleep (hours)": 3.93
-            },
-            {
-              "date": "2021-04-23",
-              "Total Sleep (hours)": 8.75
-            },
-            {
-              "date": "2021-04-24",
-              "Total Sleep (hours)": 7.53
-            },
-            {
-              "date": "2021-04-25",
-              "Total Sleep (hours)": 5.57
-            },
-            {
-              "date": "2021-04-26",
-              "Total Sleep (hours)": 6.88
-            },
-            {
-              "date": "2021-04-27",
-              "Total Sleep (hours)": 5.35
-            },
-            {
-              "date": "2021-04-28",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-04-29",
-              "Total Sleep (hours)": 8.24
-            },
-            {
-              "date": "2021-04-30",
-              "Total Sleep (hours)": 7.92
-            },
-            {
-              "date": "2021-05-01",
-              "Total Sleep (hours)": 7.68
-            },
-            {
-              "date": "2021-05-02",
-              "Total Sleep (hours)": 7.1
-            },
-            {
-              "date": "2021-05-03",
-              "Total Sleep (hours)": 7.87
-            },
-            {
-              "date": "2021-05-04",
-              "Total Sleep (hours)": 7.52
-            },
-            {
-              "date": "2021-05-05",
-              "Total Sleep (hours)": 6.53
-            },
-            {
-              "date": "2021-05-06",
-              "Total Sleep (hours)": 7.08
-            },
-            {
-              "date": "2021-05-07",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-05-08",
-              "Total Sleep (hours)": 4.75
-            },
-            {
-              "date": "2021-05-09",
-              "Total Sleep (hours)": 8.12
-            },
-            {
-              "date": "2021-05-10",
-              "Total Sleep (hours)": 7.37
-            },
-            {
-              "date": "2021-05-11",
-              "Total Sleep (hours)": 7.78
-            },
-            {
-              "date": "2021-05-12",
-              "Total Sleep (hours)": 6.82
-            },
-            {
-              "date": "2021-05-13",
-              "Total Sleep (hours)": 7.12
-            },
-            {
-              "date": "2021-05-14",
-              "Total Sleep (hours)": 7.42
-            },
-            {
-              "date": "2021-05-15",
-              "Total Sleep (hours)": 6.97
-            },
-            {
-              "date": "2021-05-16",
-              "Total Sleep (hours)": 6.38
-            },
-            {
-              "date": "2021-05-17",
-              "Total Sleep (hours)": 8.35
-            },
-            {
-              "date": "2021-05-18",
-              "Total Sleep (hours)": 6.65
-            },
-            {
-              "date": "2021-05-19",
-              "Total Sleep (hours)": 7.32
-            },
-            {
-              "date": "2021-05-20",
-              "Total Sleep (hours)": 6.6
-            },
-            {
-              "date": "2021-05-21",
-              "Total Sleep (hours)": 5.6
-            },
-            {
-              "date": "2021-05-22",
-              "Total Sleep (hours)": 5.38
-            },
-            {
-              "date": "2021-05-23",
-              "Total Sleep (hours)": 5.95
-            },
-            {
-              "date": "2021-05-24",
-              "Total Sleep (hours)": 7.73
-            },
-            {
-              "date": "2021-05-25",
-              "Total Sleep (hours)": 8.73
-            },
-            {
-              "date": "2021-05-26",
-              "Total Sleep (hours)": 7.32
-            },
-            {
-              "date": "2021-05-27",
-              "Total Sleep (hours)": 6.58
-            },
-            {
-              "date": "2021-05-28",
-              "Total Sleep (hours)": 8.27
-            },
-            {
-              "date": "2021-05-29",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-05-30",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-05-31",
-              "Total Sleep (hours)": 5.86
-            },
-            {
-              "date": "2021-06-01",
-              "Total Sleep (hours)": 7.52
-            },
-            {
-              "date": "2021-06-02",
-              "Total Sleep (hours)": 7.97
-            },
-            {
-              "date": "2021-06-03",
-              "Total Sleep (hours)": 6.72
-            },
-            {
-              "date": "2021-06-04",
-              "Total Sleep (hours)": 9.2
-            },
-            {
-              "date": "2021-06-05",
-              "Total Sleep (hours)": 7.3
-            },
-            {
-              "date": "2021-06-06",
-              "Total Sleep (hours)": 7.77
-            }
-          ],
-          "spec": {
-            "name": "Total Sleep (hours)",
-            "fact_type": "difference",
-            "fact_description": "Total sleep increased from 6.72 hours on 2021-06-03 to 9.2 hours on 2021-06-04.",
-            "attribute": "more",
-            "time_1": "2021-06-03",
-            "time_2": "2021-06-04",
-            "value_1": 6.72,
-            "value_2": 9.2
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "difference",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "On 2021-06-04, total sleep peaked at 9.2 hours, indicating a long sleep duration.",
-          "dataPoints": [
-            {
-              "date": "2021-03-29",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-03-30",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-03-31",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-04-01",
-              "Total Sleep (hours)": 6.78
-            },
-            {
-              "date": "2021-04-02",
-              "Total Sleep (hours)": 7.97
-            },
-            {
-              "date": "2021-04-03",
-              "Total Sleep (hours)": 6.3
-            },
-            {
-              "date": "2021-04-04",
-              "Total Sleep (hours)": 7.62
-            },
-            {
-              "date": "2021-04-05",
-              "Total Sleep (hours)": 7.68
-            },
-            {
-              "date": "2021-04-06",
-              "Total Sleep (hours)": 6.87
-            },
-            {
-              "date": "2021-04-07",
-              "Total Sleep (hours)": 7.73
-            },
-            {
-              "date": "2021-04-08",
-              "Total Sleep (hours)": 7.65
-            },
-            {
-              "date": "2021-04-09",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-04-10",
-              "Total Sleep (hours)": 3.53
-            },
-            {
-              "date": "2021-04-11",
-              "Total Sleep (hours)": 7.12
-            },
-            {
-              "date": "2021-04-12",
-              "Total Sleep (hours)": 7.12
-            },
-            {
-              "date": "2021-04-13",
-              "Total Sleep (hours)": 8.0
-            },
-            {
-              "date": "2021-04-14",
-              "Total Sleep (hours)": 7.62
-            },
-            {
-              "date": "2021-04-15",
-              "Total Sleep (hours)": 6.2
-            },
-            {
-              "date": "2021-04-16",
-              "Total Sleep (hours)": 6.86
-            },
-            {
-              "date": "2021-04-17",
-              "Total Sleep (hours)": 3.97
-            },
-            {
-              "date": "2021-04-18",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-04-19",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-04-20",
-              "Total Sleep (hours)": 7.72
-            },
-            {
-              "date": "2021-04-21",
-              "Total Sleep (hours)": 7.07
-            },
-            {
-              "date": "2021-04-22",
-              "Total Sleep (hours)": 3.93
-            },
-            {
-              "date": "2021-04-23",
-              "Total Sleep (hours)": 8.75
-            },
-            {
-              "date": "2021-04-24",
-              "Total Sleep (hours)": 7.53
-            },
-            {
-              "date": "2021-04-25",
-              "Total Sleep (hours)": 5.57
-            },
-            {
-              "date": "2021-04-26",
-              "Total Sleep (hours)": 6.88
-            },
-            {
-              "date": "2021-04-27",
-              "Total Sleep (hours)": 5.35
-            },
-            {
-              "date": "2021-04-28",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-04-29",
-              "Total Sleep (hours)": 8.24
-            },
-            {
-              "date": "2021-04-30",
-              "Total Sleep (hours)": 7.92
-            },
-            {
-              "date": "2021-05-01",
-              "Total Sleep (hours)": 7.68
-            },
-            {
-              "date": "2021-05-02",
-              "Total Sleep (hours)": 7.1
-            },
-            {
-              "date": "2021-05-03",
-              "Total Sleep (hours)": 7.87
-            },
-            {
-              "date": "2021-05-04",
-              "Total Sleep (hours)": 7.52
-            },
-            {
-              "date": "2021-05-05",
-              "Total Sleep (hours)": 6.53
-            },
-            {
-              "date": "2021-05-06",
-              "Total Sleep (hours)": 7.08
-            },
-            {
-              "date": "2021-05-07",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-05-08",
-              "Total Sleep (hours)": 4.75
-            },
-            {
-              "date": "2021-05-09",
-              "Total Sleep (hours)": 8.12
-            },
-            {
-              "date": "2021-05-10",
-              "Total Sleep (hours)": 7.37
-            },
-            {
-              "date": "2021-05-11",
-              "Total Sleep (hours)": 7.78
-            },
-            {
-              "date": "2021-05-12",
-              "Total Sleep (hours)": 6.82
-            },
-            {
-              "date": "2021-05-13",
-              "Total Sleep (hours)": 7.12
-            },
-            {
-              "date": "2021-05-14",
-              "Total Sleep (hours)": 7.42
-            },
-            {
-              "date": "2021-05-15",
-              "Total Sleep (hours)": 6.97
-            },
-            {
-              "date": "2021-05-16",
-              "Total Sleep (hours)": 6.38
-            },
-            {
-              "date": "2021-05-17",
-              "Total Sleep (hours)": 8.35
-            },
-            {
-              "date": "2021-05-18",
-              "Total Sleep (hours)": 6.65
-            },
-            {
-              "date": "2021-05-19",
-              "Total Sleep (hours)": 7.32
-            },
-            {
-              "date": "2021-05-20",
-              "Total Sleep (hours)": 6.6
-            },
-            {
-              "date": "2021-05-21",
-              "Total Sleep (hours)": 5.6
-            },
-            {
-              "date": "2021-05-22",
-              "Total Sleep (hours)": 5.38
-            },
-            {
-              "date": "2021-05-23",
-              "Total Sleep (hours)": 5.95
-            },
-            {
-              "date": "2021-05-24",
-              "Total Sleep (hours)": 7.73
-            },
-            {
-              "date": "2021-05-25",
-              "Total Sleep (hours)": 8.73
-            },
-            {
-              "date": "2021-05-26",
-              "Total Sleep (hours)": 7.32
-            },
-            {
-              "date": "2021-05-27",
-              "Total Sleep (hours)": 6.58
-            },
-            {
-              "date": "2021-05-28",
-              "Total Sleep (hours)": 8.27
-            },
-            {
-              "date": "2021-05-29",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-05-30",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-05-31",
-              "Total Sleep (hours)": 5.86
-            },
-            {
-              "date": "2021-06-01",
-              "Total Sleep (hours)": 7.52
-            },
-            {
-              "date": "2021-06-02",
-              "Total Sleep (hours)": 7.97
-            },
-            {
-              "date": "2021-06-03",
-              "Total Sleep (hours)": 6.72
-            },
-            {
-              "date": "2021-06-04",
-              "Total Sleep (hours)": 9.2
-            },
-            {
-              "date": "2021-06-05",
-              "Total Sleep (hours)": 7.3
-            },
-            {
-              "date": "2021-06-06",
-              "Total Sleep (hours)": 7.77
-            }
-          ],
-          "spec": {
-            "name": "Total Sleep (hours)",
-            "fact_type": "extreme",
-            "fact_description": "On 2021-06-04, total sleep peaked at 9.2 hours, indicating a long sleep duration.",
-            "attribute": "max",
-            "time": "2021-06-04",
-            "value": 9.2
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "extreme",
-          "isShowL2": true
-        }
-      ]
-    },
-    {
-      "key": "insight-11",
-      "summaryTitle": "Mood, stress, activity, and routine remained stable.",
-      "sources": [
-        "clinical note",
-        "survey",
-        "passive sensing",
-        "session transcript"
-      ],
-      "insightType": [
-        "biological"
-      ],
-      "expandView": [
-        {
-          "summarySentence": "[TODO?]",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Lucy continues to work two shifts per week at the university IT desk. She finds the structure helpful at times but also exhausting."
-            }
-          ],
-          "sources": [
-            "clinical note"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "[TODO?]",
-          "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: Yeah, I cut back a bit, but I’m still doing two shifts a week. My manager’s been understanding about me being quieter."
-            }
-          ],
-          "sources": [
-            "session transcript"
-          ],
-          "dataSourceType": "text",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "The Positive Affect Subscale (5–25, PANAS-SF) remained stable from 2021-05-09 to 2021-06-06 (28 days).",
-          "dataPoints": null,
-          "spec": {
-            "name": "Positive Affect Subscale (5-25, PANAS-SF)",
-            "fact_type": "trend",
-            "fact_description": "The Positive Affect Subscale (5–25, PANAS-SF) remained stable from 2021-05-09 to 2021-06-06 (28 days).",
-            "attribute": "stable",
-            "time_1": "2021-05-09",
-            "time_2": "2021-06-06"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "trend",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "The Negative Affect Subscale (5–25, PANAS-SF) remained stable from 2021-05-09 to 2021-06-06 (28 days).",
-          "dataPoints": null,
-          "spec": {
-            "name": "Negative Affect Subscale (5-25, PANAS-SF)",
-            "fact_type": "trend",
-            "fact_description": "The Negative Affect Subscale (5–25, PANAS-SF) remained stable from 2021-05-09 to 2021-06-06 (28 days).",
-            "attribute": "stable",
-            "time_1": "2021-05-09",
-            "time_2": "2021-06-06"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "trend",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "From 2021-05-09 to 2021-06-06 (28 days), PSS-4 stress levels remained consistent.",
-          "dataPoints": null,
-          "spec": {
-            "name": "PSS-4 Score (0-16)",
-            "fact_type": "trend",
-            "fact_description": "From 2021-05-09 to 2021-06-06 (28 days), PSS-4 stress levels remained consistent.",
-            "attribute": "stable",
-            "time_1": "2021-05-09",
-            "time_2": "2021-06-06"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "trend",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "Routine Consistency remained stable from 2021-05-09 to 2021-06-06 (28 days).",
-          "dataPoints": null,
-          "spec": {
-            "name": "Routine Consistency (0 irregular, 100 regular)",
-            "fact_type": "trend",
-            "fact_description": "Routine Consistency remained stable from 2021-05-09 to 2021-06-06 (28 days).",
-            "attribute": "stable",
-            "time_1": "2021-05-09",
-            "time_2": "2021-06-06"
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "trend",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "From 2021-05-09 to 2021-06-06 (28 days), total daily steps remained consistent.",
-          "dataPoints": null,
-          "spec": {
-            "name": "Total Steps (Steps)",
-            "fact_type": "trend",
-            "fact_description": "From 2021-05-09 to 2021-06-06 (28 days), total daily steps remained consistent.",
-            "attribute": "stable",
-            "time_1": "2021-05-09",
-            "time_2": "2021-06-06"
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "trend",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "From 2021-05-09 to 2021-06-06 (28 days), time spent at home remained consistent.",
-          "dataPoints": null,
-          "spec": {
-            "name": "Time Spent at Home (Hours)",
-            "fact_type": "trend",
-            "fact_description": "From 2021-05-09 to 2021-06-06 (28 days), time spent at home remained consistent.",
-            "attribute": "stable",
-            "time_1": "2021-05-09",
-            "time_2": "2021-06-06"
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "trend",
-          "isShowL2": false
-        },
-        {
-          "summarySentence": "From 2021-05-09 to 2021-06-06 (28 days), distance traveled in miles remained consistent.",
-          "dataPoints": null,
-          "spec": {
-            "name": "Distance Traveled (Miles)",
-            "fact_type": "trend",
-            "fact_description": "From 2021-05-09 to 2021-06-06 (28 days), distance traveled in miles remained consistent.",
-            "attribute": "stable",
-            "time_1": "2021-05-09",
-            "time_2": "2021-06-06"
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "trend",
-          "isShowL2": false
         }
       ]
     }
   ],
   "last_encounter": [
     {
-      "fact_text": "Reported/observed persistent low mood, anhedonia, sleep/appetite disturbances, negative self-evaluation, and low motivation.",
-      "evidence": [
+      "summarySentence": "Reported/observed persistent low mood, anhedonia, sleep/appetite disturbances, negative self-evaluation, and low motivation.",
+      "dataPoints": null,
+      "spec": [
         {
+          "fact_type": "text",
           "date": "2021-05-09",
           "text": "Lucy reports that her mood and daily functioning have not changed significantly since the last session."
         },
         {
+          "fact_type": "text",
           "date": "2021-05-09",
           "text": "Lucy continues to experience pervasive thoughts of inadequacy, particularly around her academic performance, friendships, and family roles."
         },
         {
+          "fact_type": "text",
           "date": "2021-05-09",
           "text": "Lucy reports ongoing sleep disturbances, with difficulty falling asleep and sleeping during the day."
         },
         {
+          "fact_type": "text",
           "date": "2021-05-09",
           "text": "Her appetite is poor, often forgetting meals or substituting snacks for proper meals."
         },
         {
+          "fact_type": "text",
           "date": "2021-05-09",
           "text": "She describes episodes of emotional numbness and low motivation but denies active suicidal ideation or intent."
         },
         {
+          "fact_type": "text",
           "date": "2021-05-09",
           "text": "Affect: Restricted, congruent with reported mood."
         },
         {
+          "fact_type": "text",
           "date": "2021-05-09",
           "text": "Thought process: Logical, though negative and self-critical content predominates."
         }
-      ]
+      ],
+      "sources": [
+        "clinical note"
+      ],
+      "dataSourceType": "text",
+      "isShowL2": false
     },
     {
-      "fact_text": "Assessed moderate to severe major depressive disorder; some engagement in therapy, no acute safety concerns.",
-      "evidence": [
+      "summarySentence": "Assessed moderate to severe major depressive disorder; some engagement in therapy, no acute safety concerns.",
+      "dataPoints": null,
+      "spec": [
         {
+          "fact_type": "text",
           "date": "2021-05-09",
           "text": "Lucy continues to experience symptoms of moderate to severe major depressive disorder, including low mood, anhedonia, sleep and appetite disturbances, low energy, impaired concentration, and pervasive negative self-evaluation."
         },
         {
+          "fact_type": "text",
           "date": "2021-05-09",
           "text": "She demonstrates some engagement with behavioral activation and cognitive restructuring strategies but struggles with consistency and self-compassion."
         },
         {
+          "fact_type": "text",
           "date": "2021-05-09",
           "text": "Protective factors include ongoing engagement in therapy, adherence to medication, maintenance of some work and academic responsibilities, and willingness to reach out for help if needed."
         },
         {
+          "fact_type": "text",
           "date": "2021-05-09",
           "text": "No acute safety concerns at present, but ongoing monitoring is warranted given her reports of numbness and low motivation."
         }
-      ]
+      ],
+      "sources": [
+        "clinical note"
+      ],
+      "dataSourceType": "text",
+      "isShowL2": false
     }
   ],
   "session_subjective_info": [

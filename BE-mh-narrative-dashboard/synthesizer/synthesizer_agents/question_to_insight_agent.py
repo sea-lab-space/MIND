@@ -60,7 +60,7 @@ class Q2IAgent:
                 if data_fact['significance'] == 'indicative':
                     included_list.append(data_fact)
             elif data_fact['fact_type'] == "trend":
-                if data_fact["attribute"] in ["rise", "fall", "cyclic"]:
+                if data_fact["attribute"] in ["rise", "fall", "cyclic", "stable", "variable"]:
                     included_list.append(data_fact)
         
         # fallback condition

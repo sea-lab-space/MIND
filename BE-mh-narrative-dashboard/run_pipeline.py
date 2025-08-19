@@ -91,7 +91,7 @@ class MINDPipeline:
                 self._save("data_input", self.data)
         return self
 
-    def run_discoverer(self, load_from_cache=False):
+    def run_discoverer(self, run_sub_stages, load_from_cache=False):
         if load_from_cache and (self.cache_dir / "data_facts.json").exists():
             self._log("[Discoverer] Loading from cache")
             self.data_facts = self._load("data_facts")
@@ -116,13 +116,17 @@ class MINDPipeline:
                 before_date=self.before_date,
                 model_name=self.model_name
             )
-            self.data_facts = discoverer.run(self.data)
+            self.data_facts = discoverer.run(
+                features=self.data,
+                cache_dir=(self.cache_dir / "discoverer"),
+                run_stages=run_sub_stages,
+                )
 
             if self.save_to_cache:
                 self._save("data_facts", self.data_facts)
 
             # sleep 10s (prevent connection issue)
-            time.sleep(10)
+            # time.sleep(10)
         return self
 
     def run_synthesizer(self, iters=2, load_from_cache=False):
@@ -359,9 +363,15 @@ if __name__ == "__main__":
         final_output = (
             pipeline
             .load_data(load_from_cache=True)
-            .run_discoverer(load_from_cache=True)
-            .run_synthesizer(iters=1, load_from_cache=True)
-            .run_narrator(load_from_cache=True)
+            .run_discoverer(run_sub_stages={
+                "notes_summary": False,
+                "hypothesis_generation": False,
+                "plan": False,
+                "exec": True,
+                "fact_exploration": False
+            }, load_from_cache=True)
+            .run_synthesizer(iters=1, load_from_cache=False)
+            .run_narrator(load_from_cache=False)
             .run_overview(load_from_cache=True)
             .run_suggest_activity(load_from_cache=True)
             .run_visualizer()

@@ -240,10 +240,10 @@ class Synthesizer:
             key_concern['qaid'] = f"qaid-{count}"
             evidences = key_concern['evidences']
             res = self.q2i_agent.run(evidences, verbose = True)
-            if len(res) != 1:
-                print(res)
-                print(evidences)
-                raise ValueError("Something wrong with the QA agent")
+            # if len(res) != 1:
+            #     print(res)
+            #     print(evidences)
+            #     raise ValueError("Something wrong with the QA agent")
 
             for r in res:
                 r['qaid'] = f"qaid-{count}"
