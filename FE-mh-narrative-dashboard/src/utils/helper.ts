@@ -19,7 +19,6 @@ export function shouldShowChart(
 
     const hasValidKeys = Object.keys(sources[0] || {}).some((k) => k !== "date");
     const isValidType = validChartTypes.includes(dataSourceType);
-
     return isValidType && hasValidKeys;
 }
 
@@ -100,3 +99,51 @@ export function getTimerSettingFromHashUrl(): number {
   }
 }
 
+export function groupInsights(cards: InsightCardData[]) {
+    const cutoff1 = new Date("2021-05-09");
+    const cutoff2 = new Date("2021-06-07");
+
+    const groups = {
+        at0509: [] as InsightCardData[],
+        between0509And0607: [] as InsightCardData[],
+        before0509: [] as InsightCardData[],
+    };
+
+    for (const card of cards) {
+        for(const expandCard of card?.expandView){
+            const { spec } = expandCard;
+
+            let dates: Date[] = [];
+            if (spec.time) {
+                dates.push(new Date(spec.time));
+            }
+            if (spec.time_1) {
+                dates.push(new Date(spec.time_1));
+            }
+            if (spec.time_2) {
+                dates.push(new Date(spec.time_2));
+            }
+
+            // Normalize: if no valid date, skip
+            dates = dates.filter((d) => !isNaN(d.getTime()));
+            if (dates.length === 0) continue;
+
+            // For ranges, we check both
+            for (const d of dates) {
+                if (d.getTime() === cutoff1.getTime()) {
+                    groups.at0509.push(card);
+                    break; // already categorized
+                } else if (d >= cutoff1 && d <= cutoff2) {
+                    groups.between0509And0607.push(card);
+                    break;
+                } else if (d < cutoff1) {
+                    groups.before0509.push(card);
+                    break;
+                }
+            }
+        }
+
+    }
+
+    return groups;
+}

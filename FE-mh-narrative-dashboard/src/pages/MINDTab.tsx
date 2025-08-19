@@ -15,7 +15,7 @@ import {
   type InsightExpandViewItem,
 } from "@/types/props";
 import { getVisualizerDataForPerson } from "@/utils/dataConversion";
-import { flattenAllExpandViews, groupInsightsBySource } from "@/utils/helper";
+import {flattenAllExpandViews, groupInsights, groupInsightsBySource} from "@/utils/helper";
 import { type SuggestedActivity } from "@/types/dataTypes";
 import OverviewSummary from "@/components/BaseLine/OverciewSummary";
 import VerticalTimeline from "@/components/Timeline/TimelineVis";
@@ -61,6 +61,9 @@ const MINDTab: React.FC<MINDTabProps> = ({
   } = getVisualizerDataForPerson(selectedPatient);
   const [globalExpand, setGlobalExpand] = useState(false);
   const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
+
+  //to support cards be used by the timeline
+  console.log(groupInsights(insightCardData), "printing cards")
 
   const toggleSection = (
     section: "overview" | "insights" | "communication"
@@ -140,7 +143,6 @@ const MINDTab: React.FC<MINDTabProps> = ({
     .filter((card) => selectedInsightHeader.includes(card.key))
     .map((card) => card.summaryTitle);
 
-  console.log(selectedActivities);
   const timelineRef = useRef(null);
 
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({
@@ -172,8 +174,6 @@ const MINDTab: React.FC<MINDTabProps> = ({
           behavior: "smooth",
           block: "start",
         });
-
-        console.log("Scrolled to insights section");
       }
     }
   };
@@ -195,8 +195,8 @@ const MINDTab: React.FC<MINDTabProps> = ({
             <VerticalTimeline
               ref={timelineRef}
               dates={[
-                { date: "2021-03-28", label: "First session" },
-                { date: "2021-04-11", label: "Second session" },
+                // { date: "2021-03-28", label: "First session" },
+                // { date: "2021-04-11", label: "Second session" },
                 { date: "2021-05-09", label: "Last session" },
                 { date: "2021-06-07", label: "Today" },
               ]}
