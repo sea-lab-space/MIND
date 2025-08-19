@@ -297,7 +297,10 @@ class Narrator:
             for fact_id in fact_ids:
                 source_fact = search_id_in_facts(self.data_fact_list, fact_id)
                 supporting_facts.append(source_fact)
-                if source_fact['modality_type'] == 'text':
+                if source_fact["id"].startswith("qa-"):
+                    full_facts_tasks.append(
+                        (source_fact, source_fact['spec']['fact_description']))
+                elif source_fact['modality_type'] == 'text':
                     full_facts_tasks.append(
                         (source_fact, source_fact['fact_text']))
                 else:
@@ -341,7 +344,9 @@ class Narrator:
             return await asyncio.gather(*rewrite_coroutines)
         rewrite_results = asyncio.run(run_all_rewriting_tasks())
         for (fact, _), rewritten_fact in zip(full_facts_tasks, rewrite_results):
-            if fact['modality_type'] == 'text':
+            if fact["id"].startswith("qa-"):
+                fact['spec']['fact_description'] = rewritten_fact
+            elif fact['modality_type'] == 'text':
                 fact['fact_text'] = rewritten_fact
             else:
                 fact['spec']['fact_description'] = rewritten_fact
