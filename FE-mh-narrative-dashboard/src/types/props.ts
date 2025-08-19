@@ -77,17 +77,12 @@ export const overviewIconMap: Record<string, React.ElementType> = {
   activity: Activity,
   medication: Pill,
   history: History,
-
-  // Add more mappings as needed
 };
 
 export const InsightType = {
-  SLEEP: "Sleep Patterns",
-  ACTIVITY: "Physical Activity",
-  DIGITAL: "Digital Engagement",
-  EMOTIONAL: "Emotional State",
-  SOCIAL: "Social Interaction",
-  MEDICATION: "Medication & Treatment",
+  PSYCHOLOGICAL: "psychological",
+  SOCIAL: "social",
+  BIOLOGICAL: "biological",
 } as const;
 
 export type InsightType = typeof InsightType[keyof typeof InsightType];

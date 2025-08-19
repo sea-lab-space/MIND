@@ -1,7 +1,4 @@
 import {
-    BedDouble,
-    Activity,
-    PhoneCall,
     Brain,
     Users2,
     Pill,
@@ -16,33 +13,18 @@ const InsightTypeMeta: Record<InsightType, {
     icon: React.ElementType;         // component reference
     iconNode?: React.ReactNode;      // pre-rendered JSX if needed
 }> = {
-    [InsightType.SLEEP]: {
-        label: "Sleep Patterns",
-        icon: BedDouble,
-        iconNode: <BedDouble className="w-4 h-4" />
-    },
-    [InsightType.ACTIVITY]: {
-        label: "Physical Activity",
-        icon: Activity,
-        iconNode: <Activity className="w-4 h-4" />
-    },
-    [InsightType.DIGITAL]: {
-        label: "Digital Engagement",
-        icon: PhoneCall,
-        iconNode: <PhoneCall className="w-4 h-4" />
-    },
-    [InsightType.EMOTIONAL]: {
-        label: "Emotional State",
+    [InsightType.PSYCHOLOGICAL]: {
+        label: "Psychological",
         icon: Brain,
         iconNode: <Brain className="w-4 h-4" />
     },
     [InsightType.SOCIAL]: {
-        label: "Social Interaction",
+        label: "Social",
         icon: Users2,
         iconNode: <Users2 className="w-4 h-4" />
     },
-    [InsightType.MEDICATION]: {
-        label: "Medication & Treatment",
+    [InsightType.BIOLOGICAL]: {
+        label: "Biological",
         icon: Pill,
         iconNode: <Pill className="w-4 h-4" />
     }

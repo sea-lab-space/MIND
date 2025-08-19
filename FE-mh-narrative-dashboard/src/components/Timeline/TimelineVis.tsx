@@ -101,7 +101,7 @@ const VerticalTimeline = forwardRef<
     }
     const firstDate = parsedDates[0].date;
     const lastDate = parsedDates[parsedDates.length - 1].date;
-    const offset = (lastDate.getTime() - firstDate.getTime()) * 0.15;
+    const offset = (lastDate.getTime() - firstDate.getTime()) * 0.90;
     return [
       d3.timeDay.offset(firstDate, -Math.ceil(offset / (24 * 60 * 60 * 1000))),
       lastDate,
@@ -261,23 +261,38 @@ const VerticalTimeline = forwardRef<
           const yy = yScale(d.date);
           const selected = isDateSelected(d.date);
           return (
-            <rect
-              key={`date-rect-${i}`}
-              x={margin.left}
-              y={yy - 10}
-              width={width - margin.right}
-              height={20} // Fixed height for consistent clickable area
-              className={`transition-all cursor-pointer ${
-                selected
-                  ? "fill-gray-200 opacity-100"
-                  : hovered === i
-                  ? "fill-gray-200 opacity-50"
-                  : "fill-transparent"
-              }`}
-              onClick={() => handleSelectDate(d.date)}
-              onMouseEnter={() => setHovered(i)}
-              onMouseLeave={() => setHovered(null)}
-            />
+              <g key={`date-row-${i}`} onClick={() => handleSelectDate(d.date)}>
+                {/* Vertical marker line */}
+                <line
+                    x1={margin.left - 8}
+                    x2={margin.left}
+                    y1={yy}
+                    y2={yy}
+                    stroke="#000"
+                    strokeWidth={2}
+                />
+
+                {/* Highlight rect (clickable zone) */}
+                <rect
+                    x={margin.left + 10}
+                    y={yy - 10}
+                    width={width - margin.right}
+                    height={40}
+                    rx={4}
+                    ry={4}
+                    className={`cursor-pointer transition ${
+                        selected
+                            ? "fill-blue-100"
+                            : hovered === i
+                                ? "fill-gray-200"
+                                : "fill-transparent"
+                    }`}
+                    stroke="#000"         // border color
+                    strokeWidth={1.5}
+                    onMouseEnter={() => setHovered(i)}
+                    onMouseLeave={() => setHovered(null)}
+                />
+              </g>
           );
         })}
       </svg>
