@@ -62,6 +62,8 @@ class Q2IAgent:
             elif data_fact['fact_type'] == "trend":
                 if data_fact["attribute"] in ["rise", "fall", "cyclic", "stable", "variable"]:
                     included_list.append(data_fact)
+            elif data_fact['fact_type'] == "outlier":
+                included_list.append(data_fact)
         
         # fallback condition
         if len(included_list) < 2:

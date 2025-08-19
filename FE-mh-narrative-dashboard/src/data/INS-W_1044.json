@@ -49,9 +49,9 @@
       "key": "insight-0",
       "summaryTitle": "Physical activity and routine consistency were highly variable.",
       "sources": [
-        "session transcript",
+        "passive sensing",
         "clinical note",
-        "passive sensing"
+        "session transcript"
       ],
       "insightType": [
         "biological"
@@ -1297,8 +1297,8 @@
       "key": "insight-1",
       "summaryTitle": "Routine consistency and step counts showed high variability.",
       "sources": [
-        "clinical note",
-        "passive sensing"
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "psychological"
