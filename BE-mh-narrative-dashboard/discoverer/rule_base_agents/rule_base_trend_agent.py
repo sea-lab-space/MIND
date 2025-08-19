@@ -10,9 +10,11 @@ class RuleBaseTrendAgent:
         self.start_date = start_date
         self.end_date = end_date
 
-    def run(self, feature: dict, alpha: float = 0.1, verbose: bool = False) -> dict:
+    def run(self, feature: dict, alpha: float = 0.1, cv_threshold: float = 0.15, verbose: bool = False) -> dict:
         """
-        Default alpha = 0.1
+        Default:
+         - alpha = 0.1
+         - cv_threshold = 0.15 (coefficient of variation (cv))
         """
         # Convert feature to pandas
         df = pd.DataFrame(feature)
@@ -52,19 +54,30 @@ class RuleBaseTrendAgent:
             if cyclic_detected:
                 trend_type = "cyclic"
             else:
-                if np.std(data_series_interp) < 1e-8:
-                    trend_type = "stable"
-                else:
-                    with warnings.catch_warnings():
-                        warnings.simplefilter("ignore", category=UserWarning)
-                        stat, _, _, crit_vals = kpss(
-                            data_series_interp, regression='c', nlags=1)
+                # if np.std(data_series_interp) < 1e-3:
+                #     trend_type = "stable"
+                # else:
+                #     with warnings.catch_warnings():
+                #         warnings.simplefilter("ignore", category=UserWarning)
+                #         stat, _, _, crit_vals = kpss(
+                #             data_series_interp, regression='c', nlags=1)
 
-                    # print(stat, crit_vals)
-                    if stat < crit_vals['10%']:
-                        trend_type = "stable"
-                    else:
-                        trend_type = "no trend"
+                #     # print(stat, crit_vals)
+                #     if stat < crit_vals['10%']:
+                #         trend_type = "stable"
+                #     else:
+                #         trend_type = "no trend"
+                # --- CV-based stability detection ---
+                mean_val = np.mean(data_series_interp)
+                std_val = np.std(data_series_interp)
+                cv = std_val / mean_val if mean_val != 0 else np.inf
+
+                if cv < cv_threshold:
+                    trend_type = "stable"
+                elif cv > 0.3:
+                    trend_type = "variable"
+                else:
+                    trend_type = "no trend"
 
         if verbose:
             print(feature_name, ":", trend_type)
