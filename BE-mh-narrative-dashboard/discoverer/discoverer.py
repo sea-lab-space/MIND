@@ -141,22 +141,26 @@ class Discoverer:
             retrospect_date=self.retrospect_date,
             end_date=self.before_date,
         )
-        discovererMap = {
-            "comparison": comparison_rule_base_agent,
-            "trend": trend_rule_base_agent
-        }
+        outlier_rule_base_agent = RuleBaseOutlierAgent(
+            start_date=self.retrospect_date,
+            end_date=self.before_date,
+        )
+        agents = [comparison_rule_base_agent, trend_rule_base_agent, outlier_rule_base_agent]
 
         key_concern_facts = []
         for plan in execution_plan:
             question_text = plan['question_text']
             data_facts = []
-            for spec in plan['planner_spec']:
-                feature_name = spec['feature_name']
+            for feature_name in plan['features']:
                 data = search_feature_in_feature_list(
                     numeric_input, feature_name)
-                running_agent = discovererMap[spec['fact_type']]
-                res = running_agent.run(data['data'], verbose=verbose)
-                data_facts.append(res)
+                for agent in agents:
+                    res = agent.run(data['data'], verbose=verbose)
+                    # if res is a list, extend, else append
+                    if isinstance(res, list):
+                        data_facts.extend(res)
+                    else:
+                        data_facts.append(res)
             key_concern_facts.append({
                 "question_text": question_text,
                 "question_source": search_question_in_question_list(

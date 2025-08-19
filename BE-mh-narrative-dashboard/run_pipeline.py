@@ -119,7 +119,7 @@ class MINDPipeline:
             self.data_facts = discoverer.run(
                 features=self.data,
                 cache_dir=(self.cache_dir / "discoverer"),
-                run_stages=run_sub_stages,
+                run_stages=run_sub_stages
                 )
 
             if self.save_to_cache:
@@ -371,7 +371,7 @@ if __name__ == "__main__":
                 "fact_exploration": False
             }, load_from_cache=True)
             .run_synthesizer(iters=1, load_from_cache=False)
-            .run_narrator(load_from_cache=False)
+            .run_narrator(load_from_cache=True)
             .run_overview(load_from_cache=True)
             .run_suggest_activity(load_from_cache=True)
             .run_visualizer()

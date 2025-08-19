@@ -8,7 +8,7 @@ AttributeChangeDirection = Literal['more', 'less', 'even']
 AttributeAggregation = Literal['average', 'stdev', 'median', 'max', 'min']
 AttributeExtreme = Literal['min', 'max']
 AttributeTrend = Literal['rise', 'fall', 'stable', 'cyclic', 'variable', 'no trend']
-
+AttributeOutlier = Literal['spike', 'dip']
 
 # --- Helper Models ---
 class TimeDuration(BaseModel):
@@ -33,6 +33,33 @@ class BaseFactConfig(BaseModel):
 # --- 3. Templatized Fact Configurations ---
 # Each fact model inherits from the base class and uses a validator
 # to automatically generate its description.
+
+class FactOutlierConfig(BaseFactConfig):
+    """A fact indicating an outlier in a feature."""
+    fact_type: Literal['outlier'] = 'outlier'
+    attribute: AttributeOutlier = Field(
+        ..., description="The outlier attribute of the feature, one of spike or dip."
+    )
+    value: float = Field(..., description="The outlier value of the feature.")
+    time: str = Field(...,
+                      description="The time of the feature, in YYYY-MM-DD format.")
+    value: float = Field(..., description="The numeric value of the feature.")
+
+    @model_validator(mode='after')
+    def generate_description(self) -> 'FactOutlierConfig':
+        """Generates a human-readable description after model validation."""
+        if self.attribute.lower() == 'spike':
+            action = f"spiked to {self.value}"
+        elif self.attribute.lower() == 'dip':
+            action = f"dipped to {self.value}"
+        else:
+            action = f"reached {self.value}"
+
+        self.fact_description = (
+            f"An anomaly was detected for {self.name} on {self.time}, which {action}."
+        )
+        return self
+
 
 class FactComparisonConfig(BaseFactConfig):
     """A fact comparing an aggregated value between two time periods."""
@@ -213,14 +240,10 @@ class DiscovererQAOutput(BaseModel):
 
 PlannerFactTypes = Literal['comparison', 'trend']
 
-class PlannerSpec(BaseModel):
-    fact_type: PlannerFactTypes = Field(..., description="The type of data fact to explore.")
-    feature_name: str = Field(..., description="The name of the feature to explore.")
-
 class DiscovererPlannerSpec(BaseModel):
     is_computable: bool
     question_text: str
-    planner_spec: List[PlannerSpec] = Field(..., description="The list feature-fact type pairs pending compute.")
+    features: List[str] = Field(..., description="The feature name to explore.")
 
 class DiscovererPlannerOutput(BaseModel):
     hooks: DiscovererPlannerSpec
