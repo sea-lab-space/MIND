@@ -4,6 +4,8 @@ import json
 import time
 from pathlib import Path
 from dotenv import load_dotenv
+
+from kb.defs import NUMERICAL_FEATURE_KB
 load_dotenv()
 class MINDPipeline:
     def __init__(self, patient_id: str,
@@ -143,6 +145,9 @@ class MINDPipeline:
             if self.save_to_cache:
                 self._save("data_insights", self.data_insights)
                 self._save("data_facts_list", synthesizer.data_fact_list)
+                # ! This is a hack
+                # ! resave data_fact
+                self._save("data_facts", self.data_facts)
         return self
 
     def run_narrator(self, load_from_cache=False):
@@ -172,7 +177,9 @@ class MINDPipeline:
         visualizer = Visualizer(
             data_insights=self.data_insights_narrative,
             data_fact_list=self.rewritten_data_facts,
-            raw_data=self.data
+            raw_data=self.data,
+            qa_source=self.data_facts['key_concern_facts'],
+            retrospect_date=self.retrospect_date
         )
         self.visualization_spec = visualizer.run()
         return self
@@ -291,16 +298,39 @@ class MINDPipeline:
                 insight['noteRelevance'] = retrive_relevance(insight['key'], relevance_note)
 
         return self
+    
+    def _transform_encounter_date_data(self):
+        spec = []
+        for entry in self.data_facts['note_facts']:
+            spec.append({
+                "summarySentence": entry['fact_text'],
+                "dataPoints": None,
+                "spec": [
+                    {
+                        "fact_type": "text",
+                        "date": self.retrospect_date,
+                        "text": evidence['text']
+                    } for evidence in entry['evidence']
+                ],
+                "sources": ["clinical note"],
+                "dataSourceType": "text",
+                "isShowL2": False
+
+            })
+        return spec
+
 
     def run_assembly(self):
         self._log("[Run] Final assembly")
         final_spec = {
             "overview": self.overview,
             "insights": self.visualization_spec,
+            "last_encounter": self._transform_encounter_date_data(),
             "session_subjective_info": self.data['this_series'],
             "survey_raw": self._get_all_survey_raw(),
             "suggest_activity": self.suggest_activity,
             "passive_data_raw": self.data['numerical_data'],
+            "metadata": NUMERICAL_FEATURE_KB
         }
         self._save(f"{self.patient_id}", final_spec, is_parent=True)
 
@@ -330,10 +360,10 @@ if __name__ == "__main__":
             pipeline
             .load_data(load_from_cache=True)
             .run_discoverer(load_from_cache=True)
-            .run_synthesizer(iters=2, load_from_cache=False)
-            .run_narrator(load_from_cache=False)
-            .run_overview(load_from_cache=False)
-            .run_suggest_activity(load_from_cache=False)
+            .run_synthesizer(iters=1, load_from_cache=True)
+            .run_narrator(load_from_cache=True)
+            .run_overview(load_from_cache=True)
+            .run_suggest_activity(load_from_cache=True)
             .run_visualizer()
             # .run_calc_relevance()
             .run_assembly()

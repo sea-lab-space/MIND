@@ -12,6 +12,7 @@ from tqdm import tqdm, trange
 from synthesizer.synthesizer_agents.actor import InsightProposalActorAgent
 from datetime import datetime
 
+from synthesizer.synthesizer_agents.question_to_insight_agent import Q2IAgent
 from synthesizer.synthesizer_agents.reflection import InsightReflectionAgent
 from utils.datetime_checker import date_between
 
@@ -26,10 +27,29 @@ class Synthesizer:
         self.data_fact_source = data_fact_source
         self.data_fact_list = self._flatten_tag_source()
         self.data_fact_id_set = set([fact["id"] for fact in self.data_fact_list])
+
+        self.q2i_agent = Q2IAgent(model_name)
         
         self.actor_agent = InsightProposalActorAgent(self.data_fact_list, model_name)
         self.reflection_agent = InsightReflectionAgent(model_name)
         self.reflection_mem = []
+
+    def _tag_qa_facts(self, qa_fact_list):
+        fact_list = []
+        for question in qa_fact_list:
+            # print(question)
+            for fact in question["evidences"]:
+                fact_list.append({
+                    "id": f"qa-{self.fact_count}",
+                    "spec": {
+                        **fact,
+                    }
+                })
+                # also add this id to the original fact
+                fact["id"] = f"qa-{self.fact_count}"
+                self.fact_count += 1
+        
+        return fact_list
 
     # ! This is glue code: improve Discoverer data_fact data structure
     def _flatten_tag_numeric(self, num_fact_list):
@@ -90,26 +110,35 @@ class Synthesizer:
             if key == "numeric_facts":
                 numeric_fact_list = self._flatten_tag_numeric(value)
                 facts.extend(numeric_fact_list)
-            elif key == "note_facts" or key == "transcript_facts":
-                text_fact_list = self._tag_text(key, value)
-                facts.extend(text_fact_list)
+            # elif key == "note_facts" or key == "transcript_facts":
+            #     text_fact_list = self._tag_text(key, value)
+            #     facts.extend(text_fact_list)
+            elif key == "key_concern_facts":
+                qa_fact_list = self._tag_qa_facts(value)
+                facts.extend(qa_fact_list)
             else:
                 continue
+        # print(facts)
         return facts
     
     def _glue_data_fact_input(self, data_fact_set):
+
         # set fixed randomizer to shuffle data facts
-        # ! Not validated if this could be better than keep original ordering (where same modality facts come in order)
+        # ! Is this better than keep original ordering (where same modality facts come in order)?
         data_fact_list = [
-            fact for fact in self.data_fact_list if fact["id"] in data_fact_set
-        ]        
+            fact for fact in self.data_fact_list
+            if not fact["id"].startswith("qa-") and fact["id"] in data_fact_set
+        ]
         random.shuffle(data_fact_list)
 
         prompt_text_list = []
         for fact in data_fact_list:
+            # print(fact)
             prompt_text_list.append(
                 f"[{fact['id']}] {fact['full_description']}"
             )
+
+        # print(prompt_text_list)
         return "\n".join(prompt_text_list)
     
 
@@ -152,7 +181,7 @@ class Synthesizer:
         coverage = len(used_insight_id_set) / len(self.data_fact_list)
         return used_insight_id_set, coverage
     
-    def run(self, iters=2):
+    def _run_single_modal_synthesis(self, iters=2):
         full_insight_id_set = set(deepcopy(self.data_fact_id_set))
         data_insights = []
         coverage = 0
@@ -175,7 +204,7 @@ class Synthesizer:
                 The most recent reflection:
                 {mem_str_recent}
             """
-            data_insights_single_run = asyncio.run(self.actor_agent.run(prompt, False))
+            data_insights_single_run = self.actor_agent.run(prompt, False)
             data_insights = data_insights_single_run
             
             # Step 2: Evaluator run
@@ -201,5 +230,33 @@ class Synthesizer:
 
             pbar.set_description(
                 f"Coverage: {coverage:.2f}, Entropy: {insight_entropy:.2f}, # Insights: {insight_num}")
+        return data_insights
+    
+    def _run_qa_synthesis(self, verbose: bool = False):
+        key_concern_facts = self.data_fact_source['key_concern_facts']
+        all_qa_insights = []
+        count = 0
+        for key_concern in key_concern_facts:
+            key_concern['qaid'] = f"qaid-{count}"
+            evidences = key_concern['evidences']
+            res = self.q2i_agent.run(evidences, verbose = True)
+            if len(res) != 1:
+                print(res)
+                print(evidences)
+                raise ValueError("Something wrong with the QA agent")
+
+            for r in res:
+                r['qaid'] = f"qaid-{count}"
+            all_qa_insights.extend(res)
+            count += 1
+            # break
+        # print(len(key_concern_facts))
+        return all_qa_insights
+    
+    def run(self, iters=2):
+        
+        additional_insights = self._run_single_modal_synthesis(iters)
+        qa_insights = self._run_qa_synthesis(verbose=False)
+        data_insights = qa_insights + additional_insights
         return data_insights
 

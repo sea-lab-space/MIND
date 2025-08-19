@@ -19,3 +19,6 @@ from .discoverer_numeric_type import (
     DiscovererQAOutput,
     DiscovererPlannerOutput
 )
+from .synthesizer_type import (
+    InsightProposalOutputModel,
+)
