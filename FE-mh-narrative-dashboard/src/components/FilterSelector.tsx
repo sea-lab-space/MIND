@@ -11,43 +11,67 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { InsightType } from "@/types/props";
 
-const InsightTypeMeta: Record<InsightType, {
-    label: string;
-    icon: React.ElementType;         // component reference
-    iconNode?: React.ReactNode;      // pre-rendered JSX if needed
-}> = {
-    [InsightType.SLEEP]: {
-        label: "Sleep Patterns",
-        icon: BedDouble,
-        iconNode: <BedDouble className="w-4 h-4" />
-    },
-    [InsightType.ACTIVITY]: {
-        label: "Physical Activity",
-        icon: Activity,
-        iconNode: <Activity className="w-4 h-4" />
-    },
-    [InsightType.DIGITAL]: {
-        label: "Digital Engagement",
-        icon: PhoneCall,
-        iconNode: <PhoneCall className="w-4 h-4" />
-    },
-    [InsightType.EMOTIONAL]: {
-        label: "Emotional State",
-        icon: Brain,
-        iconNode: <Brain className="w-4 h-4" />
-    },
-    [InsightType.SOCIAL]: {
-        label: "Social Interaction",
-        icon: Users2,
-        iconNode: <Users2 className="w-4 h-4" />
-    },
-    [InsightType.MEDICATION]: {
-        label: "Medication & Treatment",
-        icon: Pill,
-        iconNode: <Pill className="w-4 h-4" />
-    }
-};
+// const InsightTypeMeta: Record<InsightType, {
+//     label: string;
+//     icon: React.ElementType;         // component reference
+//     iconNode?: React.ReactNode;      // pre-rendered JSX if needed
+// }> = {
+//     [InsightType.SLEEP]: {
+//         label: "Sleep Patterns",
+//         icon: BedDouble,
+//         iconNode: <BedDouble className="w-4 h-4" />
+//     },
+//     [InsightType.ACTIVITY]: {
+//         label: "Physical Activity",
+//         icon: Activity,
+//         iconNode: <Activity className="w-4 h-4" />
+//     },
+//     [InsightType.DIGITAL]: {
+//         label: "Digital Engagement",
+//         icon: PhoneCall,
+//         iconNode: <PhoneCall className="w-4 h-4" />
+//     },
+//     [InsightType.EMOTIONAL]: {
+//         label: "Emotional State",
+//         icon: Brain,
+//         iconNode: <Brain className="w-4 h-4" />
+//     },
+//     [InsightType.SOCIAL]: {
+//         label: "Social Interaction",
+//         icon: Users2,
+//         iconNode: <Users2 className="w-4 h-4" />
+//     },
+//     [InsightType.MEDICATION]: {
+//         label: "Medication & Treatment",
+//         icon: Pill,
+//         iconNode: <Pill className="w-4 h-4" />
+//     }
+// };
 
+const InsightTypeMeta: Record<
+  InsightType,
+  {
+    label: string;
+    icon: React.ElementType; // component reference
+    iconNode?: React.ReactNode; // pre-rendered JSX if needed
+  }
+> = {
+  [InsightType.BIO]: {
+    label: "Biological",
+    icon: BedDouble,
+    iconNode: <BedDouble className="w-4 h-4" />,
+  },
+  [InsightType.PSY]: {
+    label: "Psychological",
+    icon: Activity,
+    iconNode: <Activity className="w-4 h-4" />,
+  },
+  [InsightType.SOC]: {
+    label: "Social",
+    icon: PhoneCall,
+    iconNode: <PhoneCall className="w-4 h-4" />,
+  },
+};
 
 
 const FILTER_OPTIONS = Object.entries(InsightTypeMeta).map(([type, meta]) => ({

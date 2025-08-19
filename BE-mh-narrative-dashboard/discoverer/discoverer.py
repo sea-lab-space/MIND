@@ -128,6 +128,8 @@ class Discoverer:
 
         execution_plan = self.planning_agent.run(
             questions, numeric_input, verbose=False)
+        for i in range(len(execution_plan)):
+            execution_plan[i]['qaid'] = f"qaid-{i+1}"
 
         return execution_plan
     
@@ -161,11 +163,14 @@ class Discoverer:
                         data_facts.extend(res)
                     else:
                         data_facts.append(res)
+            q_source, q_action = search_question_in_question_list(
+                questions, question_text
+            )
             key_concern_facts.append({
+                "qaid": plan['qaid'],
                 "question_text": question_text,
-                "question_source": search_question_in_question_list(
-                    questions, question_text
-                ),
+                "action": q_action,
+                "question_source": q_source,
                 "evidences": data_facts
             })
         return key_concern_facts
@@ -183,7 +188,7 @@ class Discoverer:
         """
 
         # Default run_stages if None
-        if run_stages is None or cache_dir is None:
+        if run_stages == {} or cache_dir is None:
             run_stages = {
                 "notes_summary": True,
                 "hypothesis_generation": True,

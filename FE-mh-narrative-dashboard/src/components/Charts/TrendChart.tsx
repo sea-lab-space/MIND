@@ -6,16 +6,16 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  Cell,
   ReferenceArea,
-  Customized,
   ReferenceLine,
 } from "recharts";
 import type { DataPoint, TrendSpec } from "@/types/insightSpec";
-import { color } from "d3";
 import { extent } from "d3-array";
-import { dateBetween } from "@/utils/dateHelper";
-import { getColors, HIGHLIGHT_COLOR, HIGHLIGHT_FILL_OPACITY } from "@/utils/colorHelper";
+import {
+  getColors,
+  HIGHLIGHT_COLOR,
+  HIGHLIGHT_FILL_OPACITY,
+} from "@/utils/colorHelper";
 import { getUpperLimitScale } from "@/utils/dataHelper";
 
 interface TrendChartProps {
@@ -24,53 +24,70 @@ interface TrendChartProps {
   themeColor: string;
 }
 
+// --- regression helper ---
+function linearRegression(xs: number[], ys: number[]) {
+  const n = xs.length;
+  const sumX = xs.reduce((a, b) => a + b, 0);
+  const sumY = ys.reduce((a, b) => a + b, 0);
+  const sumXY = xs.reduce((sum, x, i) => sum + x * ys[i], 0);
+  const sumXX = xs.reduce((sum, x) => sum + x * x, 0);
+
+  const slope = (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);
+  const intercept = (sumY - slope * sumX) / n;
+
+  return { slope, intercept };
+}
+
 const TrendChart: React.FC<TrendChartProps> = (props) => {
   const { data, spec, themeColor } = props;
 
   const metricKey = Object.keys(data[0] || {}).find((k) => k !== "date") ?? "";
 
-  const {baseColor, highlightColor} = getColors(themeColor)
+  const { baseColor, highlightColor } = getColors(themeColor);
 
   const yRange = extent(data, (d: any) => d[metricKey]) as [number, number];
   const { yRangeUse, tickBreakUnit } = getUpperLimitScale(yRange[1]);
 
-  const getDataOnDate = (date: string): number => {
-    const response = data.find((d) => d.date === date);
-    if (!response || typeof response[metricKey] !== "number") {
-      return 0;
-    }
-    return response[metricKey];
-  };
   const auxilaryLine = () => {
     if (!spec) return null;
 
-    if (spec.attribute === "rise" || spec.attribute === "fall") {
-      return (
-        <ReferenceLine
-          stroke={HIGHLIGHT_COLOR}
-          strokeWidth={3}
-          strokeDasharray="3 3"
-          strokeOpacity={1}
-          segment={[
-            { x: spec.time_1, y: getDataOnDate(spec.time_1) },
-            { x: spec.time_2, y: getDataOnDate(spec.time_2) },
-          ]}
-        />
-      );
-    }
+    const start = new Date(spec.time_1).getTime();
+    const end = new Date(spec.time_2).getTime();
 
-    return null;
+    const subset = data.filter((d) => {
+      const t = new Date(d.date).getTime();
+      return t >= start && t <= end;
+    });
+
+    if (subset.length < 2) return null;
+
+    const xs = subset.map((d) => new Date(d.date).getTime());
+    const ys = subset.map((d) => d[metricKey] as number);
+
+    const { slope, intercept } = linearRegression(xs, ys);
+
+    const y1 = slope * start + intercept;
+    const y2 = slope * end + intercept;
+
+    const isShowLine = spec.attribute === "rise" || spec.attribute === "fall";
+
+    return (
+      isShowLine &&
+      <ReferenceLine
+        stroke={highlightColor}
+        strokeWidth={2}
+        strokeDasharray="4 2"
+        segment={[
+          { x: spec.time_1, y: y1 },
+          { x: spec.time_2, y: y2 },
+        ]}
+      />
+    );
   };
-
-
-
-  const visData = data.map((d) => ({
-    ...d,
-  }));
 
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <LineChart width={500} height={300} data={visData}>
+      <LineChart width={500} height={300} data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         {spec && (
           <ReferenceArea
@@ -90,32 +107,18 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
           type="number"
         />
         <Tooltip />
+
+        {/* original data line */}
         <Line
           dataKey={metricKey}
           isAnimationActive={false}
           stroke={baseColor}
           dot={{ r: 2 }}
           strokeWidth={2}
-        >
-          {/* {visData.map((entry, index) => (
-            <Cell
-              key={`cell-${index}`}
-              fill={
-                entry.date === spec.time_1 || entry.date === spec.time_2
-                  ? highlightColor
-                  : baseColor
-              }
-            />
-          ))} */}
-        </Line>
-        {auxilaryLine()}
+        />
 
-        {/* <Customized component={
-          (props) => {
-            console.log(props);
-            return null
-          }
-        } /> */}
+        {/* regression aux line */}
+        {auxilaryLine()}
       </LineChart>
     </ResponsiveContainer>
   );

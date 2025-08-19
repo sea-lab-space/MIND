@@ -81,14 +81,21 @@ export const overviewIconMap: Record<string, React.ElementType> = {
   // Add more mappings as needed
 };
 
+// export const InsightType = {
+//   SLEEP: "Sleep Patterns",
+//   ACTIVITY: "Physical Activity",
+//   DIGITAL: "Digital Engagement",
+//   EMOTIONAL: "Emotional State",
+//   SOCIAL: "Social Interaction",
+//   MEDICATION: "Medication & Treatment",
+// } as const;
+
 export const InsightType = {
-  SLEEP: "Sleep Patterns",
-  ACTIVITY: "Physical Activity",
-  DIGITAL: "Digital Engagement",
-  EMOTIONAL: "Emotional State",
-  SOCIAL: "Social Interaction",
-  MEDICATION: "Medication & Treatment",
+  BIO: "biological",
+  PSY: "psychological",
+  SOC: "social",
 } as const;
+
 
 export type InsightType = typeof InsightType[keyof typeof InsightType];
 
@@ -99,7 +106,8 @@ export const DataSourceType = {
   COMPARISON: "comparison",
   TEXT: "text",
   DERIVED_VALUE: "derived value",
-  RAW: "raw"
+  RAW: "raw",
+  OUTLIER: "outlier"
 } as const;
 
 export type DataSourceType = typeof DataSourceType[keyof typeof DataSourceType];

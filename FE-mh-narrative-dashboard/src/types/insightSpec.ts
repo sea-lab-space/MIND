@@ -60,14 +60,16 @@ export interface TextUnitMap {
   score: number;
 }
 
-type TrendAttributes = "rise" | "fall" | "stable" | "cyclic";
+type TrendAttributes = "rise" | "fall" | "stable" | "cyclic" | "variable" | "no trend";
 type ComparisonDifferenceAttributes = "less" | "more";
 type ExtremeAttributes = "min" | "max";
+type OutlierAttributes = 'spike' | 'dip'
 
 type SpecAttribute =
   | TrendAttributes
   | ComparisonDifferenceAttributes
-  | ExtremeAttributes;
+  | ExtremeAttributes
+  | OutlierAttributes;
 
 type SpecAggregation = 'average' | 'stdev' | 'median' | 'max' | 'min'
 
@@ -132,7 +134,15 @@ export interface TextSourceSpec {
   text: string;
 }
 
-export type HighlightSpec = ValueSpec | ComparisonSpec | DifferenceSpec | ExtremeSpec | TrendSpec | TextSourceSpec;
+export interface OutlierSpec {
+  fact_type: Extract<DataSourceType, "outlier">;
+  attribute: OutlierAttributes;
+  time: string;
+  value: number;
+  fact_description: string;
+}
+
+export type HighlightSpec = ValueSpec | ComparisonSpec | DifferenceSpec | ExtremeSpec | TrendSpec | TextSourceSpec | OutlierSpec;
 
 
 // export const specMap = (spec: HighlightSpec) => {
