@@ -37,21 +37,21 @@ Key connections to keep in mind:
 - Mood outcomes → commonly measured by the same survey scores.
 - Biological measurements → commonly evaluated using passive sensing data: sleep, screen, location, steps.
 
-Facts you can compute:
-- `comparison` – Evaluate how feature values before the last session differ from values since the last session until today.
-- `trend` – Assess the overall trajectory of features since the last session to identify improvements, declines, or stability.
-
 Act in two phases:
 1. Check computability  
    - If the question cannot be answered with available data, set `is_computable = false`.
 2. If computable, plan the answer
    - Set `is_computable = true`.  
-   - For each relevant feature, define:  
-     - `fact_type` → what type of data fact is needed (`comparison`, `trend`).  
-     - `feature_name` → the exact feature from the knowledge base.  
-   - Each unique (fact_type, feature_name) pair should be a separate entry in `planner_spec`.
+   - Select the relevant features, and return the <feature name>
 
 Let's think step by step.
+"""
+
+"""
+Facts you can compute:
+- `comparison` – Evaluate how feature values before the last session differ from values since the last session until today.
+- `trend` – Assess the overall trajectory of features since the last session to identify improvements, declines, or stability.
+- `outlier` - Identify unusual patterns or values in the feature data that may indicate potential issues or anomalies.
 """
 
 class PlannerAgent:
