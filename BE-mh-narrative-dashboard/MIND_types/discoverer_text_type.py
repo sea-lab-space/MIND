@@ -10,6 +10,7 @@ class QuestionSource(BaseModel):
 
 class TextQuestion(BaseModel):
     question: str
+    action: str = Field(..., description="A 15-word or less description of what the question is asking.")
     evidence: List[QuestionSource] = Field(..., description="The text prompted the proposed question.")
 
 class TextQuestionOutputModel(BaseModel):

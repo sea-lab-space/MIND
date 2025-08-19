@@ -8,7 +8,8 @@ const validChartTypes: DataSourceType[] = [
     DataSourceType.EXTREME,
     DataSourceType.DIFFERENCE,
     DataSourceType.DERIVED_VALUE,
-    DataSourceType.RAW
+    DataSourceType.RAW,
+    DataSourceType.OUTLIER
 ];
 
 export function shouldShowChart(

@@ -24,7 +24,7 @@ def search_feature_in_feature_list(features, feature_name):
 def search_question_in_question_list(questions, question):
     for q in questions:
         if q['question'] == question:
-            return q['evidence']
+            return q['evidence'], q['action']
         
 
 def search_modality_type(name):
@@ -59,4 +59,4 @@ def search_modality_type(name):
 def search_evidence(qa_source, qaid):
     for qa in qa_source:
         if qa['qaid'] == qaid:
-            return qa['question_source']
+            return qa['question_source'], qa['action']
