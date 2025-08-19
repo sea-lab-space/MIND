@@ -21,7 +21,6 @@ class BaseDiscovererAgent(ABC):
 
     def __init__(
         self,
-        question: str,
         retrospect_date: str,
         before_date: str,
         model: str,
@@ -30,7 +29,6 @@ class BaseDiscovererAgent(ABC):
         assert datetime.strptime(
             retrospect_date, "%Y-%m-%d") < datetime.strptime(before_date, "%Y-%m-%d"), "Retrospect date must be before or equal to before date."
         
-        self.question = question
         self.retrospect_date = retrospect_date
         self.before_date = before_date
         self.model = model
@@ -86,7 +84,6 @@ class BaseDiscovererAgent(ABC):
 
         csv_str = self._feature_to_csv(feature['data'])
         data_input = f"""
-        {f'Goal of the discovery: {self.question}' if self.question else ''}
         Data
         ```{csv_str}```
         """
