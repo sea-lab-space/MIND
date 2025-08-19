@@ -6,6 +6,7 @@ import type {
   DifferenceSpec,
   ExtremeSpec,
   HighlightSpec,
+  OutlierSpec,
   TrendSpec,
   ValueSpec,
 } from "@/types/insightSpec";
@@ -16,6 +17,7 @@ import DifferenceChart from "../Charts/DifferenceChart";
 import TrendChart from "../Charts/TrendChart";
 import ComparisonChart from "../Charts/ComparisonChart";
 import { PASSIVE_SENSING_COLOR } from "@/utils/colorHelper";
+import OutlierChart from "../Charts/OutlierChart";
 
 interface InsightGraphProps {
   dataSourceType: DataSourceType;
@@ -74,6 +76,13 @@ export default function InsightGraph({
       <TrendChart
         data={normalized}
         spec={highlightSpec as TrendSpec}
+        themeColor={color ?? PASSIVE_SENSING_COLOR}
+      />
+    ),
+    outlier: (
+      <OutlierChart
+        data={normalized}
+        spec={highlightSpec as OutlierSpec}
         themeColor={color ?? PASSIVE_SENSING_COLOR}
       />
     ),

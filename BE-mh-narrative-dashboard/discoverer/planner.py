@@ -2,6 +2,7 @@ import asyncio
 from copy import deepcopy
 from typing import List
 from utils.prompt_commons import (
+    ALL_FEATURE_DESCRIPTION,
     OPENAI_AGENTIC_REC,
     OPENAI_AGENTIC_TOOL_USE,
     OPENAI_AGENTIC_PLANNING,
@@ -17,9 +18,7 @@ from discoverer import (
 from kb.defs import NUMERICAL_FEATURE_KB
 from utils.search import search_feature_in_feature_list
 
-ALL_FEATURE_DESCRIPTION = "\n".join(
-    f"[{category}] {feature['rename']}: {feature['description']}" for category, features in NUMERICAL_FEATURE_KB.items() for _, feature in features.items()
-)
+
 
 # {OPENAI_AGENTIC_PLANNING}{OPENAI_AGENTIC_TOOL_USE}
 DISCOVERER_PLANNER_INST = f"""
@@ -28,7 +27,7 @@ DISCOVERER_PLANNER_INST = f"""
 {get_mh_data_expert_system_prompt()}
 
 You will be given a question that a clinician want to know before the start of the mental health session.
-The patient has provided multiple data modalities. In triplebacktics below, you are given all the features and definitions in the form of [<feature category>] <feature name>: <feature description>.
+The patient has provided multiple data modalities. In triplebacktics below, you are given all the features and definitions in the form of [<feature category>] `<feature name>`: <feature description>.
 ```
 {ALL_FEATURE_DESCRIPTION}
 ```
@@ -42,7 +41,7 @@ Act in two phases:
    - If the question cannot be answered with available data, set `is_computable = false`.
 2. If computable, plan the answer
    - Set `is_computable = true`.  
-   - Select the relevant features, and return the <feature name>
+   - Select the relevant features, and return the <feature name>. Do not return the [<feature category>], and return the full feature name.
 
 Let's think step by step.
 """

@@ -48,8 +48,13 @@ class DiscovererHypothesisAgent:
             You have access to the following data modalities:
                 - session transcript
                 - clinical note
-
-            Your task is to review both materials and propose questions you want to validate during the session.
+            
+            Task:
+            1. Review both materials carefully.  
+            2. Propose a set of **questions** you want to validate or clarify in today’s session.  
+                - Each question should be precise and clinically relevant.  
+                - Accompany each question with a short **action description** (≤15 words) summarizing its intent.  
+                - Link each question to the **evidence** (text excerpts) that motivated it.  
 
             Put the most weight on the **Plan** section of the clinical note--this is your previous outlook, and now it is time to validate it.
 

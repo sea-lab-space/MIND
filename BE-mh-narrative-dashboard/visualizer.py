@@ -36,6 +36,7 @@ class Visualizer:
         # self.data_insights_narrative = asyncio.run(self.narrator_agent.run(self.data_insights))
         specification = []
         for insight in self.data_insights:
+            print(insight)
             L3_fact_ids = insight['insight_source']
             L2_fact_ids = insight['l2_insight_source']
             # use the L2 sequence, and append anything remaining in L3 to the end
@@ -56,7 +57,7 @@ class Visualizer:
                     qaid = insight['qaid']
                     if qaid not in qaids:
                         qaids.append(qaid)
-                        textual_evidences = search_evidence(self.qa_source, qaid)
+                        textual_evidences, action = search_evidence(self.qa_source, qaid)
                         sources = set()
                         for textual_evidence in textual_evidences:
                             sources.add(textual_evidence["source"])
@@ -64,7 +65,7 @@ class Visualizer:
                         # get clinical notes appended
                         expand_view.append(
                             {
-                                "summarySentence": "[TODO?]",
+                                "summarySentence": action,
                                 "dataPoints": None,
                                 "spec": [
                                     {
@@ -81,7 +82,7 @@ class Visualizer:
                         )
                         expand_view.append(
                             {
-                                "summarySentence": "[TODO?]",
+                                "summarySentence": action,
                                 "dataPoints": None,
                                 "spec": [
                                     {

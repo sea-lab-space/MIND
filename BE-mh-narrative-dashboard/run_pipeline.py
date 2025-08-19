@@ -91,7 +91,7 @@ class MINDPipeline:
                 self._save("data_input", self.data)
         return self
 
-    def run_discoverer(self, run_sub_stages, load_from_cache=False):
+    def run_discoverer(self, run_sub_stages = {}, load_from_cache=False):
         if load_from_cache and (self.cache_dir / "data_facts.json").exists():
             self._log("[Discoverer] Loading from cache")
             self.data_facts = self._load("data_facts")
@@ -129,7 +129,7 @@ class MINDPipeline:
             # time.sleep(10)
         return self
 
-    def run_synthesizer(self, run_sub_stage, iters=2, load_from_cache=False):
+    def run_synthesizer(self, run_sub_stage={}, iters=2, load_from_cache=False):
         if load_from_cache and (self.cache_dir / "data_insights.json").exists() and (self.cache_dir / "data_facts_list.json").exists():
             self._log("[Synthesizer] Loading from cache")
             self.data_insights = self._load("data_insights")
@@ -144,7 +144,7 @@ class MINDPipeline:
                 model_name=self.model_name
             )
             self.data_insights = synthesizer.run(
-                iters = iters, run_stages = run_sub_stage, cache_dir=(self.cache_dir / "discoverer"))
+                iters = iters, run_stages = run_sub_stage, cache_dir=(self.cache_dir / "synthesizer"))
             self.data_fact_list = synthesizer.data_fact_list
             time.sleep(5)
             if self.save_to_cache:
@@ -307,6 +307,7 @@ class MINDPipeline:
     def _transform_encounter_date_data(self):
         spec = []
         for entry in self.data_facts['note_facts']:
+            print(spec)
             spec.append({
                 "summarySentence": entry['fact_text'],
                 "dataPoints": None,
@@ -346,8 +347,8 @@ class MINDPipeline:
 if __name__ == "__main__":
     MODEL_NAME = 'gpt-4.1'
     # USERS = ["INS-W_963", "INS-W_1044", "INS-W_1077"]
-    # USERS = ["INS-W_963"]
-    USERS = ["INS-W_1044"]
+    USERS = ["INS-W_963"]
+    # USERS = ["INS-W_1044"]
     # USERS = ["INS-W_1077"]
 
 
@@ -364,21 +365,22 @@ if __name__ == "__main__":
         final_output = (
             pipeline
             .load_data(load_from_cache=True)
-            .run_discoverer(run_sub_stages={
-                "notes_summary": False,
-                "hypothesis_generation": False,
-                "plan": False,
-                "exec": True,
-                "fact_exploration": False
-            }, load_from_cache=True)
+            .run_discoverer(
+                # run_sub_stages={
+                # "notes_summary": False,
+                # "hypothesis_generation": False,
+                # "plan": True,
+                # "exec": True,
+                # "fact_exploration": False},
+                load_from_cache=False)
             .run_synthesizer(
                 iters=1, 
-                run_sub_stage={
-                    "qa_insights": False,
-                    "simple_insights": False,
-                },
-                load_from_cache=True)
-            .run_narrator(load_from_cache=True)
+                # run_sub_stage={
+                #     "qa_insights": False,
+                #     "simple_insights": False,
+                # },
+                load_from_cache=False)
+            .run_narrator(load_from_cache=False)
             .run_overview(load_from_cache=True)
             .run_suggest_activity(load_from_cache=True)
             .run_visualizer()
