@@ -1,6 +1,7 @@
 import asyncio
 from copy import deepcopy
 import json
+import os
 from typing import Literal
 from tqdm import tqdm
 
@@ -109,57 +110,28 @@ class Discoverer:
         transcript_input = {self.retrospect_date: formatted_transcript}
         return transcript_input
     
-    def run(self, features, is_testing = False):
-        # Find fact from text data
-        text_input = features['this_series']
-        # extract on exact date
-        note_input = {
-            self.retrospect_date: next((
-                feat['clinical_note']
-                for feat in text_input if feat['encounter_date'] == self.retrospect_date), 
-                None)}
-        transcript_input = self._prep_transcript(text_input)
-
-        # assert both should not be a empty dict
-        assert len(note_input) > 0 and len(
-            transcript_input) > 0, "No text data found for the given date"
-        
-        # Thread 1: Generate past session FACTUAL summary
+    def _run_notes_extraction(self, note_input, verbose = False):
         note_facts = self.notes_summary_agent.run(note_input, verbose=False)
-        
-        # if len(self.text_agents) > 0:
-        #     print("---- Running Text Data Fact Discovery ----")
-        #     note_facts = self._run_text_discovery('clinical note', note_input)
-        #     transcript_facts = self._run_text_discovery(
-        #         'clinical transcript', transcript_input)
-        # else:
-        #     print("---- Skipping Text Data Fact Discovery ----")
-        #     note_facts = []
-        #     transcript_facts = []
-        
-        # Thread 2: Generate hypothesis and evidence
-        numeric_input = features['numerical_data']
+        return note_facts
+    
+    def _run_hypothesis_generation(self, transcript_input, note_input, verbose = False):
         print("---- Running Hypothesis Generation ----")
         questions = self.hypothesis_agent.run(
             session_transcripts=transcript_input,
             clinical_notes=note_input,
             verbose=False
         )
-        # # write questions to file
-        # with open("questions.json", "w", encoding='utf-8') as f:
-        #     json.dump(questions, f, ensure_ascii=False, indent=2)
-        # load questions.json
-        # with open("questions.json", "r", encoding='utf-8') as f:
-        #     questions = json.load(f)
-        execution_plan = self.planning_agent.run(questions, numeric_input, verbose=False)
-        # # save plan to file
-        # with open("execution_plan.json", "w", encoding='utf-8') as f:
-        #     json.dump(execution_plan, f, ensure_ascii=False, indent=2)
+        return questions
+    
+    def _run_planning(self, questions, numeric_input, verbose = False):
+        print("---- Running Planning and Discovery ----")
 
-        # read plan from file
-        # with open("execution_plan.json", "r", encoding='utf-8') as f:
-        #     execution_plan = json.load(f)
+        execution_plan = self.planning_agent.run(
+            questions, numeric_input, verbose=False)
 
+        return execution_plan
+    
+    def _run_execution(self, execution_plan, numeric_input, questions, verbose = False):
         trend_rule_base_agent = RuleBaseTrendAgent(
             start_date=self.retrospect_date,
             end_date=self.before_date,
@@ -181,9 +153,9 @@ class Discoverer:
             for spec in plan['planner_spec']:
                 feature_name = spec['feature_name']
                 data = search_feature_in_feature_list(
-                  numeric_input, feature_name)
+                    numeric_input, feature_name)
                 running_agent = discovererMap[spec['fact_type']]
-                res = running_agent.run(data['data'], verbose=False)
+                res = running_agent.run(data['data'], verbose=verbose)
                 data_facts.append(res)
             key_concern_facts.append({
                 "question_text": question_text,
@@ -192,23 +164,120 @@ class Discoverer:
                 ),
                 "evidences": data_facts
             })
-        # print(key_concern_facts)
+        return key_concern_facts
 
-        # self._run_single_modal_discovery(numeric_input)
-        
-        # Thread 3: Observe anomalies likely ignored by previous threads that are great talking points
-        if len(self.numeric_agents) > 0:
-            print("---- Running Numerical Data Fact Discovery ----")
-            # Find fact from time series data
-            numeric_facts = self._run_numeric_discovery(numeric_input, is_testing)
+
+    def run(self, features, cache_dir: str = "", run_stages: dict = None, is_testing: bool = False):
+        """
+        Orchestrates the pipeline with stage controls.
+        Stages:
+        - notes_summary
+        - hypothesis_generation
+        - plan
+        - exec
+        - fact_exploration (numeric discovery)
+        """
+
+        # Default run_stages if None
+        if run_stages is None or cache_dir is None:
+            run_stages = {
+                "notes_summary": True,
+                "hypothesis_generation": True,
+                "plan": True,
+                "exec": True,
+                "fact_exploration": True
+            }
+        # create cache dir if not exists
+        if cache_dir:
+            os.makedirs(cache_dir, exist_ok=True)
+
+        # Extract text inputs
+        text_input = features['this_series']
+        note_input = {
+            self.retrospect_date: next((
+                feat['clinical_note']
+                for feat in text_input if feat['encounter_date'] == self.retrospect_date),
+                None)
+        }
+        transcript_input = self._prep_transcript(text_input)
+
+        # Sanity check
+        assert len(note_input) > 0 and len(
+            transcript_input) > 0, "No text data found for the given date"
+
+        # Stage 1: Factual summary from notes
+        if run_stages["notes_summary"]:
+            print("[Discoverer run]: Running Notes Summary")
+            note_facts = self._run_notes_extraction(
+                note_input, verbose=False)
+            if cache_dir:
+                with open(os.path.join(cache_dir, 'note_facts.json'), 'w') as f:
+                    json.dump(note_facts, f, indent=2)
         else:
-            print("---- Skipping Numerical Data Fact Discovery ----")
+            with open(os.path.join(cache_dir, 'note_facts.json'), 'r') as f:
+                note_facts = json.load(f)
 
+        # Stage 2: Hypothesis generation
+        numeric_input = features['numerical_data']
+        if run_stages["hypothesis_generation"]:
+            print("[Discoverer run]: Running Hypothesis Generation")
+            questions = self._run_hypothesis_generation(
+                transcript_input, note_input, verbose=False)
+            if cache_dir:
+                with open(os.path.join(cache_dir, 'questions.json'), 'w') as f:
+                    json.dump(questions, f, indent=2)
+        else:
+            with open(os.path.join(cache_dir, 'questions.json'), 'r') as f:
+                questions = json.load(f)
+
+        # Stage 3: Planning / key concerns
+        # Stage 3a: Planning
+        if run_stages["plan"]:
+            print("[Discoverer run]: Running Planning")
+            execution_plan = self._run_planning(
+                questions, numeric_input, verbose=False)
+            if cache_dir:
+                with open(os.path.join(cache_dir, 'execution_plan.json'), 'w') as f:
+                    json.dump(execution_plan, f, indent=2)
+        else:
+            with open(os.path.join(cache_dir, 'execution_plan.json'), 'r') as f:
+                execution_plan = json.load(f)
+
+        # Stage 3b: Execution
+        if run_stages["exec"]:
+            print("[Discoverer run]: Running Execution")
+            key_concern_facts = self._run_execution(
+                execution_plan, numeric_input, questions, verbose=False)
+            if cache_dir:
+                with open(os.path.join(cache_dir, 'key_concern_facts.json'), 'w') as f:
+                    json.dump(key_concern_facts, f, indent=2)
+        else:
+            with open(os.path.join(cache_dir, 'key_concern_facts.json'), 'r') as f:
+                key_concern_facts = json.load(f)
+
+        # Stage 4: Numeric discovery (fact exploration)
+        numeric_facts = []
+        if run_stages["fact_exploration"]:
+            print("[Discoverer run]: Running Fact Exploration")
+            if len(self.numeric_agents) > 0:
+                print("---- Running Numerical Data Fact Discovery ----")
+                numeric_facts = self._run_numeric_discovery(
+                    numeric_input, is_testing)
+                if cache_dir:
+                    with open(os.path.join(cache_dir, 'numeric_facts.json'), 'w') as f:
+                        json.dump(numeric_facts, f, indent=2)
+            else:
+                print("---- Skipping Numerical Data Fact Discovery ----")
+        else:
+            # Load from cache if skipping
+            with open(os.path.join(cache_dir, 'numeric_facts.json'), 'r') as f:
+                numeric_facts = json.load(f)
+
+        # Return all discovered facts
         return {
             "numeric_facts": numeric_facts,
             "key_concern_facts": key_concern_facts,
             "note_facts": note_facts,
-            
             # "transcript_facts": transcript_facts,
             # "medication_facts": medication_facts
         }

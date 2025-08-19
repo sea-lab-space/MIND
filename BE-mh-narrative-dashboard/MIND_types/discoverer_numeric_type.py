@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field, model_validator
 AttributeChangeDirection = Literal['more', 'less', 'even']
 AttributeAggregation = Literal['average', 'stdev', 'median', 'max', 'min']
 AttributeExtreme = Literal['min', 'max']
-AttributeTrend = Literal['rise', 'fall', 'stable', 'cyclic', 'no trend']
+AttributeTrend = Literal['rise', 'fall', 'stable', 'cyclic', 'variable', 'no trend']
 
 
 # --- Helper Models ---
@@ -145,8 +145,22 @@ class FactTrendConfig(BaseFactConfig):
     @model_validator(mode='after')
     def generate_description(self) -> 'FactTrendConfig':
         """Generates a templated description after model validation."""
+        # Handle special wording for 'no trend' and 'variable'
+        if self.attribute == 'no trend':
+            trend_text = "no observable trend"
+        elif self.attribute == 'variable':
+            trend_text = "relatively high variability"
+        elif self.attribute == 'rise':
+            trend_text = "increasing trend"
+        elif self.attribute == 'fall':
+            trend_text = "decreasing trend"
+        elif self.attribute == 'stable':
+            trend_text = "stable trend"
+        else:
+            trend_text = f"{self.attribute} trend"
+
         self.fact_description = (
-            f"The {self.name} showed a {self.attribute} trend from "
+            f"The {self.name} showed {trend_text} from "
             f"{self.time_1} to {self.time_2}."
         )
         return self
