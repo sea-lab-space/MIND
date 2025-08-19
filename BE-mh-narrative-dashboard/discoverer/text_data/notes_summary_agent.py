@@ -41,15 +41,6 @@ class NotesCardSummaryAgent:
     OUTPUT_MODEL = TextDataDiscoveryOutputModel
 
     def __init__(self, retrospect_date: str, before_date: str, model: str):
-        """
-        Initialize a TextDiscovererAgent.
-
-        Args:
-            modality_source (Literal): Source of the clinical text ('clinical transcript' or 'clinical notes').
-            retrospect_date (str): Start date (inclusive) of the text range, in 'YYYY-MM-DD' format.
-            before_date (str): End date (exclusive) of the text range, in 'YYYY-MM-DD' format.
-            model (Any): A language model instance to use for processing the text.
-        """
         self.model = model
         self.retrospect_date = retrospect_date
         self.before_date = before_date

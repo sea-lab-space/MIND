@@ -1,15 +1,18 @@
 CATEGORIES = [
-    "Sleep Patterns",
-    "Physical Activity",
-    "Digital Engagement",
-    "Emotional State",
-    "Social Interaction",
-    "Medication & Treatment"
+    "biological",
+    "psychological",
+    "social"
 ]
 
 SYNT_CATEGORY_PROMPT = (
     "You should consider the generated insight based on the following |category/categories|:\n"
     + "\n".join(f"* {category}" for category in CATEGORIES)
+)
+
+SYNT_CATEGORIZATION_PROMPT = (
+    "The mental health expert uses the biopsychosocial model in clinical practice. You should condider the generated insight based on the following  |category/categories|:\n"
+    + "\n".join(f"* {category}" for category in CATEGORIES)
+    + "\nNote that each insight should belong to one and only one of the category."
 )
 
 SYNT_DATA_PROMPT = f"""
@@ -40,17 +43,20 @@ Reasoning: The patient is visiting more locations (passive sensing), but the pat
 
 SYNT_RULES = """
 Consider the following rules:
-* Prioritize insights that uses multiple modalities. The best insight comes from seeing a combination of clinical note, session transcript, survey and passive sensing data.
-* Seek for inconsistencies and consistencies between the different features.
-* Cover as many of the |category/categories| as possible, without being forced. Each insight could either be around one or multiple categories.
+
+* Each insight should belong to one and only one |category/categories|.
 * Prioritize insights that can be used as conversation starters to help clinicians better understand the patient.
 * Prioritize insights that can be used to help clinicians make better decisions.
+* Prioritize insightful but simple insights.
 * Describe data insight that could be useful for mental health clinicians, but do not say the insight 'indicates' or 'suggests' anything. 
 * Be concrete, specific, but succinct. Do not use more than 15 words for each data insight.
-* Mimic the examples provided by the expert. Do not start sentences with 'The patient shows' or 'The patient has', 'she/he shows' or 'she/he has' or patient's name.
+* Do not start sentences with 'The patient shows' or 'The patient has', 'she/he shows' or 'she/he has' or patient's name.
 * Ensure insights are strictly grounded in the data. Do not hallucinate or introduce unsupported claims. Avoid risky assumptions—only draw conclusions that are directly supported by the data's granularity and structure (e.g., if the data is daily, do not infer behaviors at an hourly or sub-daily level).
 """
 
+# * Prioritize insights that uses multiple modalities. The best insight comes from seeing a combination of clinical note, session transcript, survey and passive sensing data.
+# * Seek for inconsistencies and consistencies between the different features.
+# Cover as many of the |category/categories| as possible, without being forced.
 
 
 

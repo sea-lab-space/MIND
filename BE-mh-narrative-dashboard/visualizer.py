@@ -1,21 +1,24 @@
 from copy import deepcopy
 import math
 
-from utils.search import replace_NaNs_to_null, search_id_in_facts
+from utils.search import replace_NaNs_to_null, search_evidence, search_id_in_facts, search_modality_type
 
 class Visualizer:
-    def __init__(self, data_insights, data_fact_list, raw_data):
+    def __init__(self, data_insights, data_fact_list, raw_data, qa_source, retrospect_date):
         self.data_insights = data_insights
         # self.narrator_agent = NarratorAgent(model_name)
         # self.data_insights_narrative = None
         self.data_fact_list = data_fact_list
         self.raw_data = raw_data
+        self.qa_source = qa_source
         self.insight_count = 0
+        self.retrospect_date = retrospect_date
             
     def _search_raw_data(self, source, name):
         for data in self.raw_data['numerical_data']:
             if data['modality_source'] == source and data['feature_name_renamed'] == name:
                 return replace_NaNs_to_null(data['data'])
+        print('error in search')
     
     def _search_raw_text_data(self, source):
         text_list = []
@@ -41,13 +44,74 @@ class Visualizer:
             # fact_ids = insight['insight_source']
             inference_sources = []
             expand_view = []
+            qaids = []
             for fact_id in fact_ids:
                 fact = search_id_in_facts(self.data_fact_list, fact_id)
                 # ! occurance where it can not be backtraced
                 if fact is None:
                     print('error in id')
                     continue
-                if fact['modality_type'] == 'passive sensing' or fact['modality_type'] == 'survey':
+                if fact_id.startswith("qa-"):
+                    
+                    qaid = insight['qaid']
+                    if qaid not in qaids:
+                        qaids.append(qaid)
+                        textual_evidences = search_evidence(self.qa_source, qaid)
+                        sources = set()
+                        for textual_evidence in textual_evidences:
+                            sources.add(textual_evidence["source"])
+                        inference_sources = inference_sources + list(sources)
+                        # get clinical notes appended
+                        expand_view.append(
+                            {
+                                "summarySentence": "[TODO?]",
+                                "dataPoints": None,
+                                "spec": [
+                                    {
+                                        "fact_type": "text",
+                                        "date": self.retrospect_date,
+                                        "text": textual_evidence['text']
+                                    } 
+                                    for textual_evidence in textual_evidences if textual_evidence['source'] == "clinical note"
+                                ],
+                                "sources": ["clinical note"],
+                                "dataSourceType": "text",
+                                "isShowL2": False
+                            }
+                        )
+                        expand_view.append(
+                            {
+                                "summarySentence": "[TODO?]",
+                                "dataPoints": None,
+                                "spec": [
+                                    {
+                                        "fact_type": "text",
+                                        "date": self.retrospect_date,
+                                        "text": textual_evidence['text']
+                                    } 
+                                    for textual_evidence in textual_evidences if textual_evidence['source'] == "session transcript"
+                                ],
+                                "sources": ["session transcript"],
+                                "dataSourceType": "text",
+                                "isShowL2": False
+                            }
+                        )
+
+
+                    modality_type, modality_source = search_modality_type(fact['spec']['name'])
+                    
+                    inference_sources.append(modality_type)
+                    expand_view.append(
+                        {
+                            "summarySentence": fact['spec']['fact_description'],
+                            "dataPoints": self._search_raw_data(modality_source, fact['spec']['name']),
+                            "spec": fact['spec'],
+                            "sources": [modality_type],
+                            "dataSourceType": fact['spec']['fact_type'],
+                            "isShowL2": fact_id in L2_fact_ids
+                        }
+                    )
+                elif fact['modality_type'] == 'passive sensing' or fact['modality_type'] == 'survey':
                     inference_sources.append(fact['modality_type'])
                     expand_view.append(
                         {

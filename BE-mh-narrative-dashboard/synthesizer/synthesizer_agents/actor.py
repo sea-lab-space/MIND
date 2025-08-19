@@ -1,3 +1,4 @@
+import asyncio
 from pydantic import BaseModel, Field
 from agents import Agent, ModelSettings, Runner
 from typing import List, Literal
@@ -14,20 +15,23 @@ print(project_root)
 sys.path.append(str(project_root))
 load_dotenv()
 
+from MIND_types import (
+    InsightProposalOutputModel
+)
+
+
+# SYNT_TASK_PROMPT = """
+# Your task is to list all data driven insights interesting to a mental health clinician.
+# Attribute your insight to data facts. Note if text (clinical transcript) data fact is selected, remember to include one text (clinical note) data fact to support or contrast the insight.
+# For each insight, use no more than 10 data facts. Rank the used data facts by their importance and list the most important first.
+# """
+
+
 SYNT_TASK_PROMPT = """
 Your task is to list all data driven insights interesting to a mental health clinician.
-Attribute your insight to data facts. Note if text (clinical transcript) data fact is selected, remember to include one text (clinical note) data fact to support or contrast the insight.
-For each insight, use no more than 10 data facts. Rank the used data facts by their importance and list the most important first.
+Attribute your insight to data facts.
+For each insight, use no more than 5 data facts. Rank the used data facts by their importance and list the most important first.
 """
-
-class InsightSpec(BaseModel):
-    insight_description: str = Field(..., description="The description of the insight, in 15 words")
-    insight_source: List[str] = Field(..., description="The |fact-id|s that derives this insight")
-    insight_category: List[str] = Field(..., description="The |category/categories| of the insight")
-
-class InsightProposalOutputModel(BaseModel):
-    insights: List[InsightSpec]
-
 
 class InsightProposalActorAgent:
     OUTPUT_MODEL = InsightProposalOutputModel
@@ -43,6 +47,8 @@ class InsightProposalActorAgent:
             # tools=self.TOOLS
         )
 
+    # {SYNT_EXAMPLES}
+
     def _glue_instructions(self):
         return f"""
             {OPENAI_AGENTIC_REC}
@@ -53,8 +59,7 @@ class InsightProposalActorAgent:
             {SYNT_DATA_PROMPT}
             {SYNT_CATEGORY_PROMPT}
             {SYNT_RULES}
-            {SYNT_EXAMPLES}
-
+            
             Generate as much data insight as possible (at least 15).
             If provided, incorporate feedbacks of your previous versions. Improve exsisting work, and add new insights.
             Let's think step by step.
@@ -67,7 +72,7 @@ class InsightProposalActorAgent:
         # {get_mh_data_expert_task_prompt()}
         # {get_mh_data_expert_requirements_prompt()}
 
-    async def run(self, data_facts, verbose: bool = False):
+    async def _run_async(self, data_facts, verbose: bool = False):
         self.agent.instructions = self._glue_instructions()
         if verbose:
             print(data_facts)
@@ -78,3 +83,6 @@ class InsightProposalActorAgent:
         if verbose:
             print(res_dict.get("insights"))
         return res_dict.get("insights") or res_dict
+    
+    def run(self, data_facts, verbose: bool = False):
+        return asyncio.run(self._run_async(data_facts, verbose))
