@@ -3,6 +3,8 @@
 import asyncio
 from collections import Counter
 from copy import deepcopy
+import json
+import os
 import random
 import re
 from scipy.stats import entropy
@@ -253,10 +255,39 @@ class Synthesizer:
         # print(len(key_concern_facts))
         return all_qa_insights
     
-    def run(self, iters=2):
+    def _save(self, path, content):
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(content, f, indent=2, ensure_ascii=False)
+
+    def _load(self, key):
+        path = self.cache_dir / f"{key}.json"
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
         
-        additional_insights = self._run_single_modal_synthesis(iters)
-        qa_insights = self._run_qa_synthesis(verbose=False)
+    def run(self, run_stages = {}, cache_dir = None, iters=2):
+        # Default run_stages if None
+        if run_stages is None or cache_dir is None:
+            run_stages = {
+                "qa_insights": True,
+                "simple_insights": True,
+            }
+        # create cache dir if not exists
+        if cache_dir:
+            os.makedirs(cache_dir, exist_ok=True)
+        
+        if run_stages["qa_insights"]:
+            qa_insights = self._run_qa_synthesis(verbose=True)
+            self._save(os.path.join(cache_dir, 'note_facts.json'), qa_insights)
+        else:
+            # read from file
+            qa_insights = self._load(os.path.join(cache_dir, 'note_facts.json'))
+
+        if run_stages["simple_insights"]:
+            additional_insights = self._run_single_modal_synthesis(iters)
+            self._save(os.path.join(cache_dir, 'additional_facts.json'), additional_insights)
+        else:
+            additional_insights = self._load(os.path.join(cache_dir, 'additional_facts.json'))
+        
         data_insights = qa_insights + additional_insights
         return data_insights
 
