@@ -33,11 +33,19 @@ export default function InsightCardComponent({
                                                isDrillDown = false,
                                                onToggle
                                              }: InsightCardProps) {
-  const isDrillDownTemp = isDrillDown;
+  // const isDrillDownTemp = isDrillDown;
+  const showExpand = isDrillDown ? false : true;
+  const [isExpandedLocal, setIsExpandedLocal] = useState(isExpanded);
   const [hoveringButton, setHoveringButton] = useState(false);
   const [isHeaderSelected, setIsHeaderSelected] = useState(
       isInsightHeaderSelected
   );
+
+  useEffect(() => {
+    if (showExpand === false) {
+      setIsExpandedLocal(false);
+    }
+  }, [showExpand])
 
   useEffect(() => {
     setIsHeaderSelected(isInsightHeaderSelected);
@@ -90,8 +98,13 @@ export default function InsightCardComponent({
           <div className="flex flex-row justify-between gap-2">
             <div className="flex flex-col gap-2 justify-between">
               <h2
-                className="text font-bold text-gray-900 leading-tight"
+                className="text font-semibold text-gray-900 leading-tight"
                 onClick={(e) => e.stopPropagation()}
+                style={{
+                  wordBreak: "break-word",
+                  overflowWrap: "break-word",
+                  hyphens: "auto",
+                }}
               >
                 {insightCardData.summaryTitle}
               </h2>
@@ -105,8 +118,8 @@ export default function InsightCardComponent({
                   {insightCardData?.insightType?.length > 0 && (
                     <div className="flex items-center gap-2">
                       <span className="text-xs font-medium italic">
-                      Insight Type:
-                    </span>
+                        Insight Type:
+                      </span>
                       {insightCardData.insightType.map((item, idx) => {
                         const Icon =
                           InsightTypeIconMap[item?.type as InsightType];
@@ -133,24 +146,29 @@ export default function InsightCardComponent({
             </div>
 
             {/* Right: Sources */}
-              {
-                insightCardData?.expandView?.length > 1 &&
-                  <div className="flex items-start gap-1">
-
-                  <button
-                      onClick={() => onToggle?.(insightCardData.key, !isExpanded)}
-                      className="p-1 rounded-full hover:bg-gray-100 transition"
-                  >
-                    {isExpanded ? (
-                        <ChevronUp className="w-5 h-5" />
-                    ) : (
-                        <ChevronDown className="w-5 h-5" />
-                    )}
-                  </button>
-                  </div>
-              }
+            {insightCardData?.expandView?.length > 1 && (
+              <div className="flex items-start gap-1">
+                <button
+                  onClick={() => {
+                    setIsExpandedLocal((prev) => {
+                      const next = !prev;
+                      onToggle?.(insightCardData.key, next);
+                      return next;
+                    });
+                  }}
+                  className="p-1 rounded-full hover:bg-gray-100 transition"
+                  disabled={!showExpand}
+                >
+                  {showExpand ? (isExpandedLocal ? (
+                    <ChevronUp className="w-5 h-5" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5" />
+                  )) : null}
+                </button>
+              </div>
+            )}
           </div>
-          {isExpanded && (
+          {isExpandedLocal && (
             <div
               className="pt-0 space-y-1.5 text-left"
               onClick={(e) => e.stopPropagation()}
@@ -172,12 +190,12 @@ export default function InsightCardComponent({
             </div>
             <div className="ml-auto">
               <Button
-                  onMouseEnter={() => setHoveringButton(true)}
-                  onMouseLeave={() => setHoveringButton(false)}
-                  onClick={handleCardSelect}
-                  variant="outline"
-                  size="default"
-                  // className="flex items-center gap-1 self-start sm:self-auto w-8 h-14" // justify-between
+                onMouseEnter={() => setHoveringButton(true)}
+                onMouseLeave={() => setHoveringButton(false)}
+                onClick={handleCardSelect}
+                variant="outline"
+                size="default"
+                // className="flex items-center gap-1 self-start sm:self-auto w-8 h-14" // justify-between
               >
                 {/* <Microscope /> */}
                 {/* <Lightbulb /> */}

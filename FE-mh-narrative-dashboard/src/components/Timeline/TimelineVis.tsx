@@ -207,8 +207,8 @@ const VerticalTimeline = forwardRef<
             <g key={`tick-${i}`} transform={`translate(${centerX}, ${yy})`}>
               {/* Tick line */}
               <line
-                x1={-5}
-                x2={0}
+                x1={0}
+                x2={8}
                 y1={0}
                 y2={0}
                 stroke="#000"
@@ -216,7 +216,7 @@ const VerticalTimeline = forwardRef<
               />
               {/* Tick label */}
               <text
-                x={-8}
+                x={-10}
                 y={0}
                 fontSize={fontSize}
                 fill={fontColor}
@@ -269,7 +269,7 @@ const VerticalTimeline = forwardRef<
                     y1={yy}
                     y2={yy}
                     stroke="#000"
-                    strokeWidth={2}
+                    strokeWidth={1}
                 />
 
                 {/* Highlight rect (clickable zone) */}

@@ -49,9 +49,9 @@
       "key": "insight-0",
       "summaryTitle": "Physical activity shows a modest, increasing trend in total daily steps over recent weeks.",
       "sources": [
+        "session transcript",
         "passive sensing",
-        "clinical note",
-        "session transcript"
+        "clinical note"
       ],
       "insightType": [
         "biological"
@@ -701,8 +701,8 @@
       "key": "insight-1",
       "summaryTitle": "Depression and stress scores show modest increases, indicating worsening psychological symptoms.",
       "sources": [
-        "clinical note",
-        "survey"
+        "survey",
+        "clinical note"
       ],
       "insightType": [
         "psychological"
@@ -1579,9 +1579,9 @@
       "key": "insight-3",
       "summaryTitle": "Total sleep hours and screen time both show modest increases over the recent period.",
       "sources": [
+        "session transcript",
         "passive sensing",
-        "clinical note",
-        "session transcript"
+        "clinical note"
       ],
       "insightType": [
         "biological"
@@ -2241,9 +2241,9 @@
       "key": "insight-4",
       "summaryTitle": "Depressive symptoms and PHQ-4 scores modestly increase, with high variability in mood and affect.",
       "sources": [
+        "session transcript",
         "survey",
-        "clinical note",
-        "session transcript"
+        "clinical note"
       ],
       "insightType": [
         "psychological"
@@ -3029,9 +3029,9 @@
       "key": "insight-5",
       "summaryTitle": "Physical activity, sleep, and time outside the home all show modest, significant increases.",
       "sources": [
+        "session transcript",
         "passive sensing",
-        "clinical note",
-        "session transcript"
+        "clinical note"
       ],
       "insightType": [
         "biological"
@@ -5499,9 +5499,9 @@
       "key": "insight-6",
       "summaryTitle": "Routine consistency decreases significantly, suggesting increased irregularity in daily structure.",
       "sources": [
+        "session transcript",
         "passive sensing",
-        "clinical note",
-        "session transcript"
+        "clinical note"
       ],
       "insightType": [
         "social"
@@ -6151,9 +6151,9 @@
       "key": "insight-7",
       "summaryTitle": "Depressive symptoms and perceived stress both show modest increases over the recent monitoring period.",
       "sources": [
+        "session transcript",
         "survey",
-        "clinical note",
-        "session transcript"
+        "clinical note"
       ],
       "insightType": [
         "psychological"
@@ -7792,7 +7792,7 @@
   ],
   "last_encounter": [
     {
-      "summaryTitle": "Reported/observed persistent low mood, fatigue, poor sleep, low appetite, guilt, and social withdrawal.",
+      "summaryTitle": "Patient presented with persistent low mood, fatigue, poor sleep, and appetite.",
       "sources": [
         "clinical note"
       ],
@@ -7805,32 +7805,27 @@
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "her mood has remained largely unchanged since the last session, with days often blending together."
+              "text": "Alison returns for follow-up, reporting that her mood has remained largely unchanged since the last session, with days often blending together. She describes ongoing low energy, persistent fatigue, and continued difficulty with motivation."
             },
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "She describes ongoing low energy, persistent fatigue, and continued difficulty with motivation."
+              "text": "Sleep remains inconsistent; she sometimes scrolls on her phone late at night despite attempts to reduce screen time, but found that reading a magazine instead helped her mind wander less. Appetite is still poor, with frequent skipped meals and only occasional small portions eaten, often when prompted by her children."
             },
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Sleep remains inconsistent; she sometimes scrolls on her phone late at night despite attempts to reduce screen time, but found that reading a magazine instead helped her mind wander less."
+              "text": "Affect: Flat to mildly reactive; able to express some positive emotions when discussing children and sister."
             },
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Appetite is still poor, with frequent skipped meals and only occasional small portions eaten, often when prompted by her children."
+              "text": "Sleep: Fragmented, with some improvement when reducing screen time."
             },
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Alison continues to feel guilty about her perceived lack of engagement with her children and work, having missed a shift due to low motivation."
-            },
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "She describes her relationship with her partner, Dave, as distant, and feels both lonely and somewhat relieved by his absence."
+              "text": "Appetite: Decreased, with minimal intake."
             }
           ],
           "sources": [
@@ -7842,7 +7837,7 @@
       ]
     },
     {
-      "summaryTitle": "Assessed moderate major depressive disorder with incremental progress in behavioral activation, no suicidal ideation.",
+      "summaryTitle": "Assessment indicated moderate depression, incremental behavioral activation progress, no suicidality.",
       "sources": [
         "clinical note"
       ],
@@ -7866,6 +7861,36 @@
               "fact_type": "text",
               "date": "2021-05-09",
               "text": "Protective factors include strong support from her sister and children, willingness to engage in therapy, and absence of suicidal ideation."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        }
+      ]
+    },
+    {
+      "summaryTitle": "No medication prescribed.",
+      "sources": [
+        "clinical note"
+      ],
+      "insightType": [],
+      "expandView": [
+        {
+          "summarySentence": null,
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "No current pharmacological intervention."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "No medication needed at this time; continue to monitor for any changes in mood, sleep, appetite, or safety concerns."
             }
           ],
           "sources": [
@@ -8249,11 +8274,11 @@
         {
           "date": "2021-04-11",
           "medication": "Sertraline",
-          "dosage": "As previously prescribed (dose not specified in transcript)",
+          "dosage": "50 mg",
           "frequency": "Once daily in the morning"
         }
       ],
-      "clinical_note": "**Subjective:**  \nAlison returns for follow-up, reporting ongoing fatigue and low mood. She describes persistent sleep difficulties, with nights of minimal rest and frequent awakenings, despite attempts to increase physical activity. She continues to experience poor appetite, often skipping meals, and has noticed some unintentional weight loss (clothes fitting looser, family members commenting). Alison expresses feelings of guilt regarding her limited engagement with her children, who have become more self-sufficient. She reports a distant relationship with her partner, Dave, and finds it difficult to communicate her feelings, fearing she may be a burden. Alison acknowledges some support from her sister, which provides brief moments of relief, but overall she feels isolated and has withdrawn from friends. Work remains a significant stressor due to unstable hours and lack of support, contributing to her anxiety. She denies any current thoughts of self-harm or suicidality, stating she has made promises to her family and feels able to keep herself safe. Alison identifies small positive moments with her children and sister but finds it hard to sustain hope. She notes increased screen time, which serves as a distraction but sometimes worsens her mood. She is open to trying strategies such as journaling, reaching out to friends, and increasing outdoor activity.\n\n**Objective:**  \n- Appearance: Tired, low energy, affect congruent with mood.\n- Speech: Normal rate and tone, coherent.\n- Thought process: Logical, no evidence of psychosis.\n- Mood: Depressed, anhedonic.\n- Sleep: Ongoing insomnia, variable sleep duration, frequent awakenings.\n- Appetite: Poor, decreased intake, unintentional weight loss.\n- Medication adherence: Taking Sertraline daily as prescribed, no missed doses, no reported side effects.\n- Social: Limited support network (sister supportive, children self-sufficient), minimal contact with friends, strained relationship with partner.\n- Safety: Denies suicidal ideation or self-harm; safety plan in place.\n- Function: Struggling with work attendance and performance due to anxiety and fatigue; minimal engagement in pleasurable activities.\n\n**Assessment:**  \nAlison continues to experience symptoms of moderate to severe major depressive disorder, with persistent low mood, anhedonia, insomnia, poor appetite, and social withdrawal. She is adherent to Sertraline with no side effects but has not noted significant improvement in core symptoms. Psychosocial stressors remain prominent, including work instability, limited social support, and strained family relationships. Protective factors include her commitment to her children and sister, willingness to engage in therapy, and openness to behavioral interventions. No acute safety concerns at present.\n\n**Plan:**  \n1. **Medication:** Continue Sertraline as previously prescribed. Monitor for efficacy and side effects. Consider dose adjustment or augmentation if no improvement at next review.\n2. **Therapeutic Interventions:**  \n   - Encourage daily journaling to process emotions and track positive moments.\n   - Support Alison in initiating brief, honest conversations with her partner about her struggles, possibly starting with written communication.\n   - Reinforce the value of small, achievable goals: walking outside at least once this week, messaging a friend, and writing down one positive moment each day.\n   - Discuss strategies to limit screen time, especially before bed, to improve sleep hygiene.\n3. **Social Support:**  \n   - Encourage continued contact with her sister and gradual reconnection with friends (e.g., sending a text).\n   - Explore additional community or peer support resources if isolation persists.\n4. **Work/Function:**  \n   - Validate work-related stress; discuss coping strategies for managing anxiety at work (e.g., brief breaks, breathing exercises).\n   - Monitor impact of work instability on mood and functioning.\n5. **Safety:**  \n   - Reassess risk at each visit; Alison is aware of how to access crisis support if needed.\n   - Maintain open communication regarding any changes in mood or safety.\n6. **Follow-up:**  \n   - Review progress on behavioral goals and symptom changes at next appointment (scheduled in one week).\n   - Consider referral for additional psychological support (CBT or counseling) if symptoms persist or worsen.\n\nAlison is receptive to the plan and agrees to try the outlined strategies. She will contact the clinic if her mood deteriorates or if she experiences any safety concerns before the next scheduled visit.",
+      "clinical_note": "**Subjective:**  \nAlison returns for follow-up, reporting ongoing fatigue and low mood. She describes persistent sleep difficulties, with nights of minimal rest and frequent awakenings, despite attempts to increase physical activity. She continues to experience poor appetite, often skipping meals, and has noticed some unintentional weight loss (clothes fitting looser, family members commenting). Alison expresses feelings of guilt regarding her limited engagement with her children, who have become more self-sufficient. She reports a distant relationship with her partner, Dave, and finds it difficult to communicate her feelings, fearing she may be a burden. Alison acknowledges some support from her sister, which provides brief moments of relief, but overall she feels isolated and has withdrawn from friends. Work remains a significant stressor due to unstable hours and lack of support, contributing to her anxiety. She denies any current thoughts of self-harm or suicidality, stating she has made promises to her family and feels able to keep herself safe. Alison identifies small positive moments with her children and sister but finds it hard to sustain hope. She notes increased screen time, which serves as a distraction but sometimes worsens her mood. She is open to trying strategies such as journaling, reaching out to friends, and increasing outdoor activity.\n\n**Objective:**  \n- Appearance: Tired, low energy, affect congruent with mood.\n- Speech: Normal rate and tone, coherent.\n- Thought process: Logical, no evidence of psychosis.\n- Mood: Depressed, anhedonic.\n- Sleep: Ongoing insomnia, variable sleep duration, frequent awakenings.\n- Appetite: Poor, decreased intake, unintentional weight loss.\n- Medication adherence: Taking Sertraline daily as prescribed, no missed doses, no reported side effects.\n- Social: Limited support network (sister supportive, children self-sufficient), minimal contact with friends, strained relationship with partner.\n- Safety: Denies suicidal ideation or self-harm; safety plan in place.\n- Function: Struggling with work attendance and performance due to anxiety and fatigue; minimal engagement in pleasurable activities.\n\n**Assessment:**  \nAlison continues to experience symptoms of moderate to severe major depressive disorder, with persistent low mood, anhedonia, insomnia, poor appetite, and social withdrawal. She is adherent to Sertraline with no side effects but has not noted significant improvement in core symptoms. Psychosocial stressors remain prominent, including work instability, limited social support, and strained family relationships. Protective factors include her commitment to her children and sister, willingness to engage in therapy, and openness to behavioral interventions. No acute safety concerns at present.\n\n**Plan:**  \n1. **Medication:** Continue Sertraline (50mg once daily in the morning). Monitor for efficacy and side effects. Consider dose adjustment or augmentation if no improvement at next review.\n2. **Therapeutic Interventions:**  \n   - Encourage daily journaling to process emotions and track positive moments.\n   - Support Alison in initiating brief, honest conversations with her partner about her struggles, possibly starting with written communication.\n   - Reinforce the value of small, achievable goals: walking outside at least once this week, messaging a friend, and writing down one positive moment each day.\n   - Discuss strategies to limit screen time, especially before bed, to improve sleep hygiene.\n3. **Social Support:**  \n   - Encourage continued contact with her sister and gradual reconnection with friends (e.g., sending a text).\n   - Explore additional community or peer support resources if isolation persists.\n4. **Work/Function:**  \n   - Validate work-related stress; discuss coping strategies for managing anxiety at work (e.g., brief breaks, breathing exercises).\n   - Monitor impact of work instability on mood and functioning.\n5. **Safety:**  \n   - Reassess risk at each visit; Alison is aware of how to access crisis support if needed.\n   - Maintain open communication regarding any changes in mood or safety.\n6. **Follow-up:**  \n   - Review progress on behavioral goals and symptom changes at next appointment (scheduled in one week).\n   - Consider referral for additional psychological support (CBT or counseling) if symptoms persist or worsen.\n\nAlison is receptive to the plan and agrees to try the outlined strategies. She will contact the clinic if her mood deteriorates or if she experiences any safety concerns before the next scheduled visit.",
       "encounter_date": "2021-04-11"
     },
     {
@@ -8401,7 +8426,7 @@
         }
       ],
       "medication": [],
-      "clinical_note": "**Subjective:**  \nAlison returns for follow-up, reporting that her mood has remained largely unchanged since the last session, with days often blending together. She describes ongoing low energy, persistent fatigue, and continued difficulty with motivation. Alison has made efforts to implement some behavioral strategies discussed previously: she wrote down one positive thing most days, walked outside twice, messaged an old workmate, and wrote in her diary on a couple of occasions. She notes that these activities provided brief moments of relief or normalcy, though the overall impact was subtle. Messaging a friend made her feel both lighter and somewhat anxious. Sleep remains inconsistent; she sometimes scrolls on her phone late at night despite attempts to reduce screen time, but found that reading a magazine instead helped her mind wander less. Appetite is still poor, with frequent skipped meals and only occasional small portions eaten, often when prompted by her children. Alison continues to feel guilty about her perceived lack of engagement with her children and work, having missed a shift due to low motivation. She describes her relationship with her partner, Dave, as distant, and feels both lonely and somewhat relieved by his absence. She has not had thoughts of self-harm or active hopelessness, though she does feel overwhelmed at times. Alison identifies her sister as a key support, with regular visits and phone calls providing some comfort. She expresses ongoing worries about finances and the possibility that her current state may not improve.\n\n**Objective:**  \n- Affect: Flat to mildly reactive; able to express some positive emotions when discussing children and sister.\n- Speech: Normal rate and tone, coherent.\n- Thought process: Logical, though content reflects low mood and self-criticism.\n- Sleep: Fragmented, with some improvement when reducing screen time.\n- Appetite: Decreased, with minimal intake.\n- Energy: Low, with occasional brief bursts of activity.\n- Social: Maintains some contact with family and friends; limited engagement at work.\n- No evidence of psychosis, mania, or active suicidal ideation.\n- No medication currently prescribed.\n\n**Assessment:**  \nAlison continues to experience symptoms consistent with moderate major depressive disorder, including persistent low mood, anhedonia, low energy, poor sleep, reduced appetite, and feelings of guilt and worthlessness. She is making incremental progress with behavioral activation strategies, such as journaling, walking, and reaching out to others, though the benefits are subtle and not yet sustained. Protective factors include strong support from her sister and children, willingness to engage in therapy, and absence of suicidal ideation. Stressors include financial insecurity, reduced work hours, and relationship difficulties with her partner. No current pharmacological intervention.\n\n**Plan:**  \n- Continue weekly psychotherapy sessions focused on behavioral activation, cognitive restructuring, and social support.\n- Encourage Alison to maintain daily journaling of positive experiences, aim for at least one walk per week, and use music or podcasts in the evening as a relaxation strategy.\n- Support gradual communication with her partner, starting with written messages if face-to-face feels overwhelming.\n- Reinforce the importance of reaching out to her sister or clinician if mood worsens or if thoughts of self-harm emerge.\n- Discuss practical supports for financial stress and community resources at the next session.\n- No medication indicated at this time; continue to monitor for any changes in mood, sleep, appetite, or safety concerns.\n- Next appointment scheduled for the same time next week. Alison is encouraged to reach out sooner if needed.",
+      "clinical_note": "**Subjective:**  \nAlison returns for follow-up, reporting that her mood has remained largely unchanged since the last session, with days often blending together. She describes ongoing low energy, persistent fatigue, and continued difficulty with motivation. Alison has made efforts to implement some behavioral strategies discussed previously: she wrote down one positive thing most days, walked outside twice, messaged an old workmate, and wrote in her diary on a couple of occasions. She notes that these activities provided brief moments of relief or normalcy, though the overall impact was subtle. Messaging a friend made her feel both lighter and somewhat anxious. Sleep remains inconsistent; she sometimes scrolls on her phone late at night despite attempts to reduce screen time, but found that reading a magazine instead helped her mind wander less. Appetite is still poor, with frequent skipped meals and only occasional small portions eaten, often when prompted by her children. Alison continues to feel guilty about her perceived lack of engagement with her children and work, having missed a shift due to low motivation. She describes her relationship with her partner, Dave, as distant, and feels both lonely and somewhat relieved by his absence. She has not had thoughts of self-harm or active hopelessness, though she does feel overwhelmed at times. Alison identifies her sister as a key support, with regular visits and phone calls providing some comfort. She expresses ongoing worries about finances and the possibility that her current state may not improve.\n\n**Objective:**  \n- Affect: Flat to mildly reactive; able to express some positive emotions when discussing children and sister.\n- Speech: Normal rate and tone, coherent.\n- Thought process: Logical, though content reflects low mood and self-criticism.\n- Sleep: Fragmented, with some improvement when reducing screen time.\n- Appetite: Decreased, with minimal intake.\n- Energy: Low, with occasional brief bursts of activity.\n- Social: Maintains some contact with family and friends; limited engagement at work.\n- No evidence of psychosis, mania, or active suicidal ideation.\n- Taking sertraline as previously prescribed.\n\n**Assessment:**  \nAlison continues to experience symptoms consistent with moderate major depressive disorder, including persistent low mood, anhedonia, low energy, poor sleep, reduced appetite, and feelings of guilt and worthlessness. She is making incremental progress with behavioral activation strategies, such as journaling, walking, and reaching out to others, though the benefits are subtle and not yet sustained. Protective factors include strong support from her sister and children, willingness to engage in therapy, and absence of suicidal ideation. Stressors include financial insecurity, reduced work hours, and relationship difficulties with her partner. No current pharmacological intervention.\n\n**Plan:**  \n- Continue weekly psychotherapy sessions focused on behavioral activation, cognitive restructuring, and social support.\n- Encourage Alison to maintain daily journaling of positive experiences, aim for at least one walk per week, and use music or podcasts in the evening as a relaxation strategy.\n- Support gradual communication with her partner, starting with written messages if face-to-face feels overwhelming.\n- Reinforce the importance of reaching out to her sister or clinician if mood worsens or if thoughts of self-harm emerge.\n- Discuss practical supports for financial stress and community resources at the next session.\n- No medication needed at this time; continue to monitor for any changes in mood, sleep, appetite, or safety concerns.\n- Next appointment scheduled for the same time next week. Alison is encouraged to reach out sooner if needed.",
       "encounter_date": "2021-05-09"
     }
   ],
@@ -8817,294 +8842,6 @@
     {
       "modality_type": "passive sensing",
       "modality_source": "location",
-      "feature_name_renamed": "Time Spent at Home (Hours)",
-      "feature_name": "timeathome",
-      "data": [
-        {
-          "date": "2021-03-29",
-          "Time Spent at Home (Hours)": 23.78
-        },
-        {
-          "date": "2021-03-30",
-          "Time Spent at Home (Hours)": 23.85
-        },
-        {
-          "date": "2021-03-31",
-          "Time Spent at Home (Hours)": 23.91
-        },
-        {
-          "date": "2021-04-01",
-          "Time Spent at Home (Hours)": 23.9
-        },
-        {
-          "date": "2021-04-02",
-          "Time Spent at Home (Hours)": 20.65
-        },
-        {
-          "date": "2021-04-03",
-          "Time Spent at Home (Hours)": 23.96
-        },
-        {
-          "date": "2021-04-04",
-          "Time Spent at Home (Hours)": 21.37
-        },
-        {
-          "date": "2021-04-05",
-          "Time Spent at Home (Hours)": 23.97
-        },
-        {
-          "date": "2021-04-06",
-          "Time Spent at Home (Hours)": 23.28
-        },
-        {
-          "date": "2021-04-07",
-          "Time Spent at Home (Hours)": 19.07
-        },
-        {
-          "date": "2021-04-08",
-          "Time Spent at Home (Hours)": 23.53
-        },
-        {
-          "date": "2021-04-09",
-          "Time Spent at Home (Hours)": 23.63
-        },
-        {
-          "date": "2021-04-10",
-          "Time Spent at Home (Hours)": 23.55
-        },
-        {
-          "date": "2021-04-11",
-          "Time Spent at Home (Hours)": 23.72
-        },
-        {
-          "date": "2021-04-12",
-          "Time Spent at Home (Hours)": 23.8
-        },
-        {
-          "date": "2021-04-13",
-          "Time Spent at Home (Hours)": 23.88
-        },
-        {
-          "date": "2021-04-14",
-          "Time Spent at Home (Hours)": 22.86
-        },
-        {
-          "date": "2021-04-15",
-          "Time Spent at Home (Hours)": 23.13
-        },
-        {
-          "date": "2021-04-16",
-          "Time Spent at Home (Hours)": 23.65
-        },
-        {
-          "date": "2021-04-17",
-          "Time Spent at Home (Hours)": 22.9
-        },
-        {
-          "date": "2021-04-18",
-          "Time Spent at Home (Hours)": 23.55
-        },
-        {
-          "date": "2021-04-19",
-          "Time Spent at Home (Hours)": 21.58
-        },
-        {
-          "date": "2021-04-20",
-          "Time Spent at Home (Hours)": 16.94
-        },
-        {
-          "date": "2021-04-21",
-          "Time Spent at Home (Hours)": 23.48
-        },
-        {
-          "date": "2021-04-22",
-          "Time Spent at Home (Hours)": 22.07
-        },
-        {
-          "date": "2021-04-23",
-          "Time Spent at Home (Hours)": 20.0
-        },
-        {
-          "date": "2021-04-24",
-          "Time Spent at Home (Hours)": 11.99
-        },
-        {
-          "date": "2021-04-25",
-          "Time Spent at Home (Hours)": 22.09
-        },
-        {
-          "date": "2021-04-26",
-          "Time Spent at Home (Hours)": 22.63
-        },
-        {
-          "date": "2021-04-27",
-          "Time Spent at Home (Hours)": 23.92
-        },
-        {
-          "date": "2021-04-28",
-          "Time Spent at Home (Hours)": 23.8
-        },
-        {
-          "date": "2021-04-29",
-          "Time Spent at Home (Hours)": 23.87
-        },
-        {
-          "date": "2021-04-30",
-          "Time Spent at Home (Hours)": 23.93
-        },
-        {
-          "date": "2021-05-01",
-          "Time Spent at Home (Hours)": 22.54
-        },
-        {
-          "date": "2021-05-02",
-          "Time Spent at Home (Hours)": 24.0
-        },
-        {
-          "date": "2021-05-03",
-          "Time Spent at Home (Hours)": 23.06
-        },
-        {
-          "date": "2021-05-04",
-          "Time Spent at Home (Hours)": 23.97
-        },
-        {
-          "date": "2021-05-05",
-          "Time Spent at Home (Hours)": 18.93
-        },
-        {
-          "date": "2021-05-06",
-          "Time Spent at Home (Hours)": 22.38
-        },
-        {
-          "date": "2021-05-07",
-          "Time Spent at Home (Hours)": 23.98
-        },
-        {
-          "date": "2021-05-08",
-          "Time Spent at Home (Hours)": 23.44
-        },
-        {
-          "date": "2021-05-09",
-          "Time Spent at Home (Hours)": 23.89
-        },
-        {
-          "date": "2021-05-10",
-          "Time Spent at Home (Hours)": 23.89
-        },
-        {
-          "date": "2021-05-11",
-          "Time Spent at Home (Hours)": 23.61
-        },
-        {
-          "date": "2021-05-12",
-          "Time Spent at Home (Hours)": 23.8
-        },
-        {
-          "date": "2021-05-13",
-          "Time Spent at Home (Hours)": 22.68
-        },
-        {
-          "date": "2021-05-14",
-          "Time Spent at Home (Hours)": 23.92
-        },
-        {
-          "date": "2021-05-15",
-          "Time Spent at Home (Hours)": 19.42
-        },
-        {
-          "date": "2021-05-16",
-          "Time Spent at Home (Hours)": 13.96
-        },
-        {
-          "date": "2021-05-17",
-          "Time Spent at Home (Hours)": 23.86
-        },
-        {
-          "date": "2021-05-18",
-          "Time Spent at Home (Hours)": 23.76
-        },
-        {
-          "date": "2021-05-19",
-          "Time Spent at Home (Hours)": 23.46
-        },
-        {
-          "date": "2021-05-20",
-          "Time Spent at Home (Hours)": 23.4
-        },
-        {
-          "date": "2021-05-21",
-          "Time Spent at Home (Hours)": 13.36
-        },
-        {
-          "date": "2021-05-22",
-          "Time Spent at Home (Hours)": 0.0
-        },
-        {
-          "date": "2021-05-23",
-          "Time Spent at Home (Hours)": 0.0
-        },
-        {
-          "date": "2021-05-24",
-          "Time Spent at Home (Hours)": 0.0
-        },
-        {
-          "date": "2021-05-25",
-          "Time Spent at Home (Hours)": 0.0
-        },
-        {
-          "date": "2021-05-26",
-          "Time Spent at Home (Hours)": 0.0
-        },
-        {
-          "date": "2021-05-27",
-          "Time Spent at Home (Hours)": 0.0
-        },
-        {
-          "date": "2021-05-28",
-          "Time Spent at Home (Hours)": 0.0
-        },
-        {
-          "date": "2021-05-29",
-          "Time Spent at Home (Hours)": 0.0
-        },
-        {
-          "date": "2021-05-30",
-          "Time Spent at Home (Hours)": 0.0
-        },
-        {
-          "date": "2021-05-31",
-          "Time Spent at Home (Hours)": 0.0
-        },
-        {
-          "date": "2021-06-01",
-          "Time Spent at Home (Hours)": 0.0
-        },
-        {
-          "date": "2021-06-02",
-          "Time Spent at Home (Hours)": 0.0
-        },
-        {
-          "date": "2021-06-03",
-          "Time Spent at Home (Hours)": 0.0
-        },
-        {
-          "date": "2021-06-04",
-          "Time Spent at Home (Hours)": 0.0
-        },
-        {
-          "date": "2021-06-05",
-          "Time Spent at Home (Hours)": 0.0
-        },
-        {
-          "date": "2021-06-06",
-          "Time Spent at Home (Hours)": 0.0
-        }
-      ]
-    },
-    {
-      "modality_type": "passive sensing",
-      "modality_source": "location",
       "feature_name_renamed": "Distance Traveled (Miles)",
       "feature_name": "totaldistance",
       "data": [
@@ -9387,6 +9124,294 @@
         {
           "date": "2021-06-06",
           "Distance Traveled (Miles)": 7.84
+        }
+      ]
+    },
+    {
+      "modality_type": "passive sensing",
+      "modality_source": "location",
+      "feature_name_renamed": "Time Spent at Home (Hours)",
+      "feature_name": "timeathome",
+      "data": [
+        {
+          "date": "2021-03-29",
+          "Time Spent at Home (Hours)": 23.78
+        },
+        {
+          "date": "2021-03-30",
+          "Time Spent at Home (Hours)": 23.85
+        },
+        {
+          "date": "2021-03-31",
+          "Time Spent at Home (Hours)": 23.91
+        },
+        {
+          "date": "2021-04-01",
+          "Time Spent at Home (Hours)": 23.9
+        },
+        {
+          "date": "2021-04-02",
+          "Time Spent at Home (Hours)": 20.65
+        },
+        {
+          "date": "2021-04-03",
+          "Time Spent at Home (Hours)": 23.96
+        },
+        {
+          "date": "2021-04-04",
+          "Time Spent at Home (Hours)": 21.37
+        },
+        {
+          "date": "2021-04-05",
+          "Time Spent at Home (Hours)": 23.97
+        },
+        {
+          "date": "2021-04-06",
+          "Time Spent at Home (Hours)": 23.28
+        },
+        {
+          "date": "2021-04-07",
+          "Time Spent at Home (Hours)": 19.07
+        },
+        {
+          "date": "2021-04-08",
+          "Time Spent at Home (Hours)": 23.53
+        },
+        {
+          "date": "2021-04-09",
+          "Time Spent at Home (Hours)": 23.63
+        },
+        {
+          "date": "2021-04-10",
+          "Time Spent at Home (Hours)": 23.55
+        },
+        {
+          "date": "2021-04-11",
+          "Time Spent at Home (Hours)": 23.72
+        },
+        {
+          "date": "2021-04-12",
+          "Time Spent at Home (Hours)": 23.8
+        },
+        {
+          "date": "2021-04-13",
+          "Time Spent at Home (Hours)": 23.88
+        },
+        {
+          "date": "2021-04-14",
+          "Time Spent at Home (Hours)": 22.86
+        },
+        {
+          "date": "2021-04-15",
+          "Time Spent at Home (Hours)": 23.13
+        },
+        {
+          "date": "2021-04-16",
+          "Time Spent at Home (Hours)": 23.65
+        },
+        {
+          "date": "2021-04-17",
+          "Time Spent at Home (Hours)": 22.9
+        },
+        {
+          "date": "2021-04-18",
+          "Time Spent at Home (Hours)": 23.55
+        },
+        {
+          "date": "2021-04-19",
+          "Time Spent at Home (Hours)": 21.58
+        },
+        {
+          "date": "2021-04-20",
+          "Time Spent at Home (Hours)": 16.94
+        },
+        {
+          "date": "2021-04-21",
+          "Time Spent at Home (Hours)": 23.48
+        },
+        {
+          "date": "2021-04-22",
+          "Time Spent at Home (Hours)": 22.07
+        },
+        {
+          "date": "2021-04-23",
+          "Time Spent at Home (Hours)": 20.0
+        },
+        {
+          "date": "2021-04-24",
+          "Time Spent at Home (Hours)": 11.99
+        },
+        {
+          "date": "2021-04-25",
+          "Time Spent at Home (Hours)": 22.09
+        },
+        {
+          "date": "2021-04-26",
+          "Time Spent at Home (Hours)": 22.63
+        },
+        {
+          "date": "2021-04-27",
+          "Time Spent at Home (Hours)": 23.92
+        },
+        {
+          "date": "2021-04-28",
+          "Time Spent at Home (Hours)": 23.8
+        },
+        {
+          "date": "2021-04-29",
+          "Time Spent at Home (Hours)": 23.87
+        },
+        {
+          "date": "2021-04-30",
+          "Time Spent at Home (Hours)": 23.93
+        },
+        {
+          "date": "2021-05-01",
+          "Time Spent at Home (Hours)": 22.54
+        },
+        {
+          "date": "2021-05-02",
+          "Time Spent at Home (Hours)": 24.0
+        },
+        {
+          "date": "2021-05-03",
+          "Time Spent at Home (Hours)": 23.06
+        },
+        {
+          "date": "2021-05-04",
+          "Time Spent at Home (Hours)": 23.97
+        },
+        {
+          "date": "2021-05-05",
+          "Time Spent at Home (Hours)": 18.93
+        },
+        {
+          "date": "2021-05-06",
+          "Time Spent at Home (Hours)": 22.38
+        },
+        {
+          "date": "2021-05-07",
+          "Time Spent at Home (Hours)": 23.98
+        },
+        {
+          "date": "2021-05-08",
+          "Time Spent at Home (Hours)": 23.44
+        },
+        {
+          "date": "2021-05-09",
+          "Time Spent at Home (Hours)": 23.89
+        },
+        {
+          "date": "2021-05-10",
+          "Time Spent at Home (Hours)": 23.89
+        },
+        {
+          "date": "2021-05-11",
+          "Time Spent at Home (Hours)": 23.61
+        },
+        {
+          "date": "2021-05-12",
+          "Time Spent at Home (Hours)": 23.8
+        },
+        {
+          "date": "2021-05-13",
+          "Time Spent at Home (Hours)": 22.68
+        },
+        {
+          "date": "2021-05-14",
+          "Time Spent at Home (Hours)": 23.92
+        },
+        {
+          "date": "2021-05-15",
+          "Time Spent at Home (Hours)": 19.42
+        },
+        {
+          "date": "2021-05-16",
+          "Time Spent at Home (Hours)": 13.96
+        },
+        {
+          "date": "2021-05-17",
+          "Time Spent at Home (Hours)": 23.86
+        },
+        {
+          "date": "2021-05-18",
+          "Time Spent at Home (Hours)": 23.76
+        },
+        {
+          "date": "2021-05-19",
+          "Time Spent at Home (Hours)": 23.46
+        },
+        {
+          "date": "2021-05-20",
+          "Time Spent at Home (Hours)": 23.4
+        },
+        {
+          "date": "2021-05-21",
+          "Time Spent at Home (Hours)": 13.36
+        },
+        {
+          "date": "2021-05-22",
+          "Time Spent at Home (Hours)": 0.0
+        },
+        {
+          "date": "2021-05-23",
+          "Time Spent at Home (Hours)": 0.0
+        },
+        {
+          "date": "2021-05-24",
+          "Time Spent at Home (Hours)": 0.0
+        },
+        {
+          "date": "2021-05-25",
+          "Time Spent at Home (Hours)": 0.0
+        },
+        {
+          "date": "2021-05-26",
+          "Time Spent at Home (Hours)": 0.0
+        },
+        {
+          "date": "2021-05-27",
+          "Time Spent at Home (Hours)": 0.0
+        },
+        {
+          "date": "2021-05-28",
+          "Time Spent at Home (Hours)": 0.0
+        },
+        {
+          "date": "2021-05-29",
+          "Time Spent at Home (Hours)": 0.0
+        },
+        {
+          "date": "2021-05-30",
+          "Time Spent at Home (Hours)": 0.0
+        },
+        {
+          "date": "2021-05-31",
+          "Time Spent at Home (Hours)": 0.0
+        },
+        {
+          "date": "2021-06-01",
+          "Time Spent at Home (Hours)": 0.0
+        },
+        {
+          "date": "2021-06-02",
+          "Time Spent at Home (Hours)": 0.0
+        },
+        {
+          "date": "2021-06-03",
+          "Time Spent at Home (Hours)": 0.0
+        },
+        {
+          "date": "2021-06-04",
+          "Time Spent at Home (Hours)": 0.0
+        },
+        {
+          "date": "2021-06-05",
+          "Time Spent at Home (Hours)": 0.0
+        },
+        {
+          "date": "2021-06-06",
+          "Time Spent at Home (Hours)": 0.0
         }
       ]
     },
@@ -9681,294 +9706,6 @@
     {
       "modality_type": "passive sensing",
       "modality_source": "screen",
-      "feature_name_renamed": "Phone Unlocks (Times)",
-      "feature_name": "countepisodeunlock",
-      "data": [
-        {
-          "date": "2021-03-29",
-          "Phone Unlocks (Times)": 82.0
-        },
-        {
-          "date": "2021-03-30",
-          "Phone Unlocks (Times)": 110.0
-        },
-        {
-          "date": "2021-03-31",
-          "Phone Unlocks (Times)": 127.0
-        },
-        {
-          "date": "2021-04-01",
-          "Phone Unlocks (Times)": 74.0
-        },
-        {
-          "date": "2021-04-02",
-          "Phone Unlocks (Times)": 58.0
-        },
-        {
-          "date": "2021-04-03",
-          "Phone Unlocks (Times)": 55.0
-        },
-        {
-          "date": "2021-04-04",
-          "Phone Unlocks (Times)": 54.0
-        },
-        {
-          "date": "2021-04-05",
-          "Phone Unlocks (Times)": 93.0
-        },
-        {
-          "date": "2021-04-06",
-          "Phone Unlocks (Times)": 140.0
-        },
-        {
-          "date": "2021-04-07",
-          "Phone Unlocks (Times)": 104.0
-        },
-        {
-          "date": "2021-04-08",
-          "Phone Unlocks (Times)": 95.0
-        },
-        {
-          "date": "2021-04-09",
-          "Phone Unlocks (Times)": 96.0
-        },
-        {
-          "date": "2021-04-10",
-          "Phone Unlocks (Times)": 89.0
-        },
-        {
-          "date": "2021-04-11",
-          "Phone Unlocks (Times)": 71.0
-        },
-        {
-          "date": "2021-04-12",
-          "Phone Unlocks (Times)": 111.0
-        },
-        {
-          "date": "2021-04-13",
-          "Phone Unlocks (Times)": 154.0
-        },
-        {
-          "date": "2021-04-14",
-          "Phone Unlocks (Times)": 94.0
-        },
-        {
-          "date": "2021-04-15",
-          "Phone Unlocks (Times)": 121.0
-        },
-        {
-          "date": "2021-04-16",
-          "Phone Unlocks (Times)": 110.0
-        },
-        {
-          "date": "2021-04-17",
-          "Phone Unlocks (Times)": 93.0
-        },
-        {
-          "date": "2021-04-18",
-          "Phone Unlocks (Times)": 116.0
-        },
-        {
-          "date": "2021-04-19",
-          "Phone Unlocks (Times)": 190.0
-        },
-        {
-          "date": "2021-04-20",
-          "Phone Unlocks (Times)": 137.0
-        },
-        {
-          "date": "2021-04-21",
-          "Phone Unlocks (Times)": 118.0
-        },
-        {
-          "date": "2021-04-22",
-          "Phone Unlocks (Times)": 163.0
-        },
-        {
-          "date": "2021-04-23",
-          "Phone Unlocks (Times)": 134.0
-        },
-        {
-          "date": "2021-04-24",
-          "Phone Unlocks (Times)": 42.0
-        },
-        {
-          "date": "2021-04-25",
-          "Phone Unlocks (Times)": 65.0
-        },
-        {
-          "date": "2021-04-26",
-          "Phone Unlocks (Times)": 79.0
-        },
-        {
-          "date": "2021-04-27",
-          "Phone Unlocks (Times)": 152.0
-        },
-        {
-          "date": "2021-04-28",
-          "Phone Unlocks (Times)": 129.0
-        },
-        {
-          "date": "2021-04-29",
-          "Phone Unlocks (Times)": 102.0
-        },
-        {
-          "date": "2021-04-30",
-          "Phone Unlocks (Times)": 108.0
-        },
-        {
-          "date": "2021-05-01",
-          "Phone Unlocks (Times)": 66.0
-        },
-        {
-          "date": "2021-05-02",
-          "Phone Unlocks (Times)": 55.0
-        },
-        {
-          "date": "2021-05-03",
-          "Phone Unlocks (Times)": 128.0
-        },
-        {
-          "date": "2021-05-04",
-          "Phone Unlocks (Times)": 149.0
-        },
-        {
-          "date": "2021-05-05",
-          "Phone Unlocks (Times)": 66.0
-        },
-        {
-          "date": "2021-05-06",
-          "Phone Unlocks (Times)": 114.0
-        },
-        {
-          "date": "2021-05-07",
-          "Phone Unlocks (Times)": 112.0
-        },
-        {
-          "date": "2021-05-08",
-          "Phone Unlocks (Times)": 73.0
-        },
-        {
-          "date": "2021-05-09",
-          "Phone Unlocks (Times)": 176.0
-        },
-        {
-          "date": "2021-05-10",
-          "Phone Unlocks (Times)": 138.0
-        },
-        {
-          "date": "2021-05-11",
-          "Phone Unlocks (Times)": 118.0
-        },
-        {
-          "date": "2021-05-12",
-          "Phone Unlocks (Times)": 177.0
-        },
-        {
-          "date": "2021-05-13",
-          "Phone Unlocks (Times)": 144.0
-        },
-        {
-          "date": "2021-05-14",
-          "Phone Unlocks (Times)": 202.0
-        },
-        {
-          "date": "2021-05-15",
-          "Phone Unlocks (Times)": 59.0
-        },
-        {
-          "date": "2021-05-16",
-          "Phone Unlocks (Times)": 58.0
-        },
-        {
-          "date": "2021-05-17",
-          "Phone Unlocks (Times)": 126.0
-        },
-        {
-          "date": "2021-05-18",
-          "Phone Unlocks (Times)": 126.0
-        },
-        {
-          "date": "2021-05-19",
-          "Phone Unlocks (Times)": 181.0
-        },
-        {
-          "date": "2021-05-20",
-          "Phone Unlocks (Times)": 142.0
-        },
-        {
-          "date": "2021-05-21",
-          "Phone Unlocks (Times)": 171.0
-        },
-        {
-          "date": "2021-05-22",
-          "Phone Unlocks (Times)": 64.0
-        },
-        {
-          "date": "2021-05-23",
-          "Phone Unlocks (Times)": 123.0
-        },
-        {
-          "date": "2021-05-24",
-          "Phone Unlocks (Times)": 114.0
-        },
-        {
-          "date": "2021-05-25",
-          "Phone Unlocks (Times)": 174.0
-        },
-        {
-          "date": "2021-05-26",
-          "Phone Unlocks (Times)": 199.0
-        },
-        {
-          "date": "2021-05-27",
-          "Phone Unlocks (Times)": 361.0
-        },
-        {
-          "date": "2021-05-28",
-          "Phone Unlocks (Times)": 194.0
-        },
-        {
-          "date": "2021-05-29",
-          "Phone Unlocks (Times)": 152.0
-        },
-        {
-          "date": "2021-05-30",
-          "Phone Unlocks (Times)": 149.0
-        },
-        {
-          "date": "2021-05-31",
-          "Phone Unlocks (Times)": 154.0
-        },
-        {
-          "date": "2021-06-01",
-          "Phone Unlocks (Times)": 221.0
-        },
-        {
-          "date": "2021-06-02",
-          "Phone Unlocks (Times)": 150.0
-        },
-        {
-          "date": "2021-06-03",
-          "Phone Unlocks (Times)": 165.0
-        },
-        {
-          "date": "2021-06-04",
-          "Phone Unlocks (Times)": 239.0
-        },
-        {
-          "date": "2021-06-05",
-          "Phone Unlocks (Times)": 136.0
-        },
-        {
-          "date": "2021-06-06",
-          "Phone Unlocks (Times)": 97.0
-        }
-      ]
-    },
-    {
-      "modality_type": "passive sensing",
-      "modality_source": "screen",
       "feature_name_renamed": "Total Screen Time (Hours)",
       "feature_name": "sumdurationunlock",
       "data": [
@@ -10251,6 +9988,294 @@
         {
           "date": "2021-06-06",
           "Total Screen Time (Hours)": 9.07
+        }
+      ]
+    },
+    {
+      "modality_type": "passive sensing",
+      "modality_source": "screen",
+      "feature_name_renamed": "Phone Unlocks (Times)",
+      "feature_name": "countepisodeunlock",
+      "data": [
+        {
+          "date": "2021-03-29",
+          "Phone Unlocks (Times)": 82.0
+        },
+        {
+          "date": "2021-03-30",
+          "Phone Unlocks (Times)": 110.0
+        },
+        {
+          "date": "2021-03-31",
+          "Phone Unlocks (Times)": 127.0
+        },
+        {
+          "date": "2021-04-01",
+          "Phone Unlocks (Times)": 74.0
+        },
+        {
+          "date": "2021-04-02",
+          "Phone Unlocks (Times)": 58.0
+        },
+        {
+          "date": "2021-04-03",
+          "Phone Unlocks (Times)": 55.0
+        },
+        {
+          "date": "2021-04-04",
+          "Phone Unlocks (Times)": 54.0
+        },
+        {
+          "date": "2021-04-05",
+          "Phone Unlocks (Times)": 93.0
+        },
+        {
+          "date": "2021-04-06",
+          "Phone Unlocks (Times)": 140.0
+        },
+        {
+          "date": "2021-04-07",
+          "Phone Unlocks (Times)": 104.0
+        },
+        {
+          "date": "2021-04-08",
+          "Phone Unlocks (Times)": 95.0
+        },
+        {
+          "date": "2021-04-09",
+          "Phone Unlocks (Times)": 96.0
+        },
+        {
+          "date": "2021-04-10",
+          "Phone Unlocks (Times)": 89.0
+        },
+        {
+          "date": "2021-04-11",
+          "Phone Unlocks (Times)": 71.0
+        },
+        {
+          "date": "2021-04-12",
+          "Phone Unlocks (Times)": 111.0
+        },
+        {
+          "date": "2021-04-13",
+          "Phone Unlocks (Times)": 154.0
+        },
+        {
+          "date": "2021-04-14",
+          "Phone Unlocks (Times)": 94.0
+        },
+        {
+          "date": "2021-04-15",
+          "Phone Unlocks (Times)": 121.0
+        },
+        {
+          "date": "2021-04-16",
+          "Phone Unlocks (Times)": 110.0
+        },
+        {
+          "date": "2021-04-17",
+          "Phone Unlocks (Times)": 93.0
+        },
+        {
+          "date": "2021-04-18",
+          "Phone Unlocks (Times)": 116.0
+        },
+        {
+          "date": "2021-04-19",
+          "Phone Unlocks (Times)": 190.0
+        },
+        {
+          "date": "2021-04-20",
+          "Phone Unlocks (Times)": 137.0
+        },
+        {
+          "date": "2021-04-21",
+          "Phone Unlocks (Times)": 118.0
+        },
+        {
+          "date": "2021-04-22",
+          "Phone Unlocks (Times)": 163.0
+        },
+        {
+          "date": "2021-04-23",
+          "Phone Unlocks (Times)": 134.0
+        },
+        {
+          "date": "2021-04-24",
+          "Phone Unlocks (Times)": 42.0
+        },
+        {
+          "date": "2021-04-25",
+          "Phone Unlocks (Times)": 65.0
+        },
+        {
+          "date": "2021-04-26",
+          "Phone Unlocks (Times)": 79.0
+        },
+        {
+          "date": "2021-04-27",
+          "Phone Unlocks (Times)": 152.0
+        },
+        {
+          "date": "2021-04-28",
+          "Phone Unlocks (Times)": 129.0
+        },
+        {
+          "date": "2021-04-29",
+          "Phone Unlocks (Times)": 102.0
+        },
+        {
+          "date": "2021-04-30",
+          "Phone Unlocks (Times)": 108.0
+        },
+        {
+          "date": "2021-05-01",
+          "Phone Unlocks (Times)": 66.0
+        },
+        {
+          "date": "2021-05-02",
+          "Phone Unlocks (Times)": 55.0
+        },
+        {
+          "date": "2021-05-03",
+          "Phone Unlocks (Times)": 128.0
+        },
+        {
+          "date": "2021-05-04",
+          "Phone Unlocks (Times)": 149.0
+        },
+        {
+          "date": "2021-05-05",
+          "Phone Unlocks (Times)": 66.0
+        },
+        {
+          "date": "2021-05-06",
+          "Phone Unlocks (Times)": 114.0
+        },
+        {
+          "date": "2021-05-07",
+          "Phone Unlocks (Times)": 112.0
+        },
+        {
+          "date": "2021-05-08",
+          "Phone Unlocks (Times)": 73.0
+        },
+        {
+          "date": "2021-05-09",
+          "Phone Unlocks (Times)": 176.0
+        },
+        {
+          "date": "2021-05-10",
+          "Phone Unlocks (Times)": 138.0
+        },
+        {
+          "date": "2021-05-11",
+          "Phone Unlocks (Times)": 118.0
+        },
+        {
+          "date": "2021-05-12",
+          "Phone Unlocks (Times)": 177.0
+        },
+        {
+          "date": "2021-05-13",
+          "Phone Unlocks (Times)": 144.0
+        },
+        {
+          "date": "2021-05-14",
+          "Phone Unlocks (Times)": 202.0
+        },
+        {
+          "date": "2021-05-15",
+          "Phone Unlocks (Times)": 59.0
+        },
+        {
+          "date": "2021-05-16",
+          "Phone Unlocks (Times)": 58.0
+        },
+        {
+          "date": "2021-05-17",
+          "Phone Unlocks (Times)": 126.0
+        },
+        {
+          "date": "2021-05-18",
+          "Phone Unlocks (Times)": 126.0
+        },
+        {
+          "date": "2021-05-19",
+          "Phone Unlocks (Times)": 181.0
+        },
+        {
+          "date": "2021-05-20",
+          "Phone Unlocks (Times)": 142.0
+        },
+        {
+          "date": "2021-05-21",
+          "Phone Unlocks (Times)": 171.0
+        },
+        {
+          "date": "2021-05-22",
+          "Phone Unlocks (Times)": 64.0
+        },
+        {
+          "date": "2021-05-23",
+          "Phone Unlocks (Times)": 123.0
+        },
+        {
+          "date": "2021-05-24",
+          "Phone Unlocks (Times)": 114.0
+        },
+        {
+          "date": "2021-05-25",
+          "Phone Unlocks (Times)": 174.0
+        },
+        {
+          "date": "2021-05-26",
+          "Phone Unlocks (Times)": 199.0
+        },
+        {
+          "date": "2021-05-27",
+          "Phone Unlocks (Times)": 361.0
+        },
+        {
+          "date": "2021-05-28",
+          "Phone Unlocks (Times)": 194.0
+        },
+        {
+          "date": "2021-05-29",
+          "Phone Unlocks (Times)": 152.0
+        },
+        {
+          "date": "2021-05-30",
+          "Phone Unlocks (Times)": 149.0
+        },
+        {
+          "date": "2021-05-31",
+          "Phone Unlocks (Times)": 154.0
+        },
+        {
+          "date": "2021-06-01",
+          "Phone Unlocks (Times)": 221.0
+        },
+        {
+          "date": "2021-06-02",
+          "Phone Unlocks (Times)": 150.0
+        },
+        {
+          "date": "2021-06-03",
+          "Phone Unlocks (Times)": 165.0
+        },
+        {
+          "date": "2021-06-04",
+          "Phone Unlocks (Times)": 239.0
+        },
+        {
+          "date": "2021-06-05",
+          "Phone Unlocks (Times)": 136.0
+        },
+        {
+          "date": "2021-06-06",
+          "Phone Unlocks (Times)": 97.0
         }
       ]
     },
@@ -10833,294 +10858,6 @@
     {
       "modality_type": "passive sensing",
       "modality_source": "sleep",
-      "feature_name_renamed": "Bedtime (Hours in relation to midnight)",
-      "feature_name": "firstbedtimemain",
-      "data": [
-        {
-          "date": "2021-03-29",
-          "Bedtime (Hours in relation to midnight)": null
-        },
-        {
-          "date": "2021-03-30",
-          "Bedtime (Hours in relation to midnight)": null
-        },
-        {
-          "date": "2021-03-31",
-          "Bedtime (Hours in relation to midnight)": 1.36
-        },
-        {
-          "date": "2021-04-01",
-          "Bedtime (Hours in relation to midnight)": -0.42
-        },
-        {
-          "date": "2021-04-02",
-          "Bedtime (Hours in relation to midnight)": 3.07
-        },
-        {
-          "date": "2021-04-03",
-          "Bedtime (Hours in relation to midnight)": 7.05
-        },
-        {
-          "date": "2021-04-04",
-          "Bedtime (Hours in relation to midnight)": null
-        },
-        {
-          "date": "2021-04-05",
-          "Bedtime (Hours in relation to midnight)": -8.79
-        },
-        {
-          "date": "2021-04-06",
-          "Bedtime (Hours in relation to midnight)": 6.08
-        },
-        {
-          "date": "2021-04-07",
-          "Bedtime (Hours in relation to midnight)": 2.03
-        },
-        {
-          "date": "2021-04-08",
-          "Bedtime (Hours in relation to midnight)": 2.52
-        },
-        {
-          "date": "2021-04-09",
-          "Bedtime (Hours in relation to midnight)": 1.43
-        },
-        {
-          "date": "2021-04-10",
-          "Bedtime (Hours in relation to midnight)": 3.49
-        },
-        {
-          "date": "2021-04-11",
-          "Bedtime (Hours in relation to midnight)": 2.52
-        },
-        {
-          "date": "2021-04-12",
-          "Bedtime (Hours in relation to midnight)": null
-        },
-        {
-          "date": "2021-04-13",
-          "Bedtime (Hours in relation to midnight)": -12.38
-        },
-        {
-          "date": "2021-04-14",
-          "Bedtime (Hours in relation to midnight)": 5.58
-        },
-        {
-          "date": "2021-04-15",
-          "Bedtime (Hours in relation to midnight)": 5.72
-        },
-        {
-          "date": "2021-04-16",
-          "Bedtime (Hours in relation to midnight)": 1.78
-        },
-        {
-          "date": "2021-04-17",
-          "Bedtime (Hours in relation to midnight)": 1.43
-        },
-        {
-          "date": "2021-04-18",
-          "Bedtime (Hours in relation to midnight)": 1.14
-        },
-        {
-          "date": "2021-04-19",
-          "Bedtime (Hours in relation to midnight)": 1.62
-        },
-        {
-          "date": "2021-04-20",
-          "Bedtime (Hours in relation to midnight)": 1.3
-        },
-        {
-          "date": "2021-04-21",
-          "Bedtime (Hours in relation to midnight)": 3.64
-        },
-        {
-          "date": "2021-04-22",
-          "Bedtime (Hours in relation to midnight)": 1.44
-        },
-        {
-          "date": "2021-04-23",
-          "Bedtime (Hours in relation to midnight)": 0.8
-        },
-        {
-          "date": "2021-04-24",
-          "Bedtime (Hours in relation to midnight)": 5.28
-        },
-        {
-          "date": "2021-04-25",
-          "Bedtime (Hours in relation to midnight)": 9.18
-        },
-        {
-          "date": "2021-04-26",
-          "Bedtime (Hours in relation to midnight)": 6.43
-        },
-        {
-          "date": "2021-04-27",
-          "Bedtime (Hours in relation to midnight)": 4.92
-        },
-        {
-          "date": "2021-04-28",
-          "Bedtime (Hours in relation to midnight)": 10.08
-        },
-        {
-          "date": "2021-04-29",
-          "Bedtime (Hours in relation to midnight)": 4.8
-        },
-        {
-          "date": "2021-04-30",
-          "Bedtime (Hours in relation to midnight)": 5.08
-        },
-        {
-          "date": "2021-05-01",
-          "Bedtime (Hours in relation to midnight)": 4.92
-        },
-        {
-          "date": "2021-05-02",
-          "Bedtime (Hours in relation to midnight)": 5.05
-        },
-        {
-          "date": "2021-05-03",
-          "Bedtime (Hours in relation to midnight)": 4.53
-        },
-        {
-          "date": "2021-05-04",
-          "Bedtime (Hours in relation to midnight)": 5.02
-        },
-        {
-          "date": "2021-05-05",
-          "Bedtime (Hours in relation to midnight)": 4.25
-        },
-        {
-          "date": "2021-05-06",
-          "Bedtime (Hours in relation to midnight)": 4.75
-        },
-        {
-          "date": "2021-05-07",
-          "Bedtime (Hours in relation to midnight)": 4.6
-        },
-        {
-          "date": "2021-05-08",
-          "Bedtime (Hours in relation to midnight)": 5.02
-        },
-        {
-          "date": "2021-05-09",
-          "Bedtime (Hours in relation to midnight)": 2.15
-        },
-        {
-          "date": "2021-05-10",
-          "Bedtime (Hours in relation to midnight)": 4.75
-        },
-        {
-          "date": "2021-05-11",
-          "Bedtime (Hours in relation to midnight)": 1.27
-        },
-        {
-          "date": "2021-05-12",
-          "Bedtime (Hours in relation to midnight)": 0.62
-        },
-        {
-          "date": "2021-05-13",
-          "Bedtime (Hours in relation to midnight)": 3.52
-        },
-        {
-          "date": "2021-05-14",
-          "Bedtime (Hours in relation to midnight)": 5.65
-        },
-        {
-          "date": "2021-05-15",
-          "Bedtime (Hours in relation to midnight)": null
-        },
-        {
-          "date": "2021-05-16",
-          "Bedtime (Hours in relation to midnight)": 1.48
-        },
-        {
-          "date": "2021-05-17",
-          "Bedtime (Hours in relation to midnight)": 0.98
-        },
-        {
-          "date": "2021-05-18",
-          "Bedtime (Hours in relation to midnight)": 0.96
-        },
-        {
-          "date": "2021-05-19",
-          "Bedtime (Hours in relation to midnight)": 1.53
-        },
-        {
-          "date": "2021-05-20",
-          "Bedtime (Hours in relation to midnight)": 1.38
-        },
-        {
-          "date": "2021-05-21",
-          "Bedtime (Hours in relation to midnight)": 0.77
-        },
-        {
-          "date": "2021-05-22",
-          "Bedtime (Hours in relation to midnight)": 5.65
-        },
-        {
-          "date": "2021-05-23",
-          "Bedtime (Hours in relation to midnight)": 2.09
-        },
-        {
-          "date": "2021-05-24",
-          "Bedtime (Hours in relation to midnight)": -2.35
-        },
-        {
-          "date": "2021-05-25",
-          "Bedtime (Hours in relation to midnight)": 0.34
-        },
-        {
-          "date": "2021-05-26",
-          "Bedtime (Hours in relation to midnight)": 0.45
-        },
-        {
-          "date": "2021-05-27",
-          "Bedtime (Hours in relation to midnight)": 0.58
-        },
-        {
-          "date": "2021-05-28",
-          "Bedtime (Hours in relation to midnight)": 0.97
-        },
-        {
-          "date": "2021-05-29",
-          "Bedtime (Hours in relation to midnight)": 0.89
-        },
-        {
-          "date": "2021-05-30",
-          "Bedtime (Hours in relation to midnight)": -0.17
-        },
-        {
-          "date": "2021-05-31",
-          "Bedtime (Hours in relation to midnight)": 1.53
-        },
-        {
-          "date": "2021-06-01",
-          "Bedtime (Hours in relation to midnight)": 1.48
-        },
-        {
-          "date": "2021-06-02",
-          "Bedtime (Hours in relation to midnight)": 1.19
-        },
-        {
-          "date": "2021-06-03",
-          "Bedtime (Hours in relation to midnight)": 0.34
-        },
-        {
-          "date": "2021-06-04",
-          "Bedtime (Hours in relation to midnight)": -0.42
-        },
-        {
-          "date": "2021-06-05",
-          "Bedtime (Hours in relation to midnight)": 1.61
-        },
-        {
-          "date": "2021-06-06",
-          "Bedtime (Hours in relation to midnight)": 2.27
-        }
-      ]
-    },
-    {
-      "modality_type": "passive sensing",
-      "modality_source": "sleep",
       "feature_name_renamed": "Awakening Episodes (Times)",
       "feature_name": "countepisodeawakeunifiedmain",
       "data": [
@@ -11403,6 +11140,294 @@
         {
           "date": "2021-06-06",
           "Awakening Episodes (Times)": 24.0
+        }
+      ]
+    },
+    {
+      "modality_type": "passive sensing",
+      "modality_source": "sleep",
+      "feature_name_renamed": "Bedtime (Hours in relation to midnight)",
+      "feature_name": "firstbedtimemain",
+      "data": [
+        {
+          "date": "2021-03-29",
+          "Bedtime (Hours in relation to midnight)": null
+        },
+        {
+          "date": "2021-03-30",
+          "Bedtime (Hours in relation to midnight)": null
+        },
+        {
+          "date": "2021-03-31",
+          "Bedtime (Hours in relation to midnight)": 1.36
+        },
+        {
+          "date": "2021-04-01",
+          "Bedtime (Hours in relation to midnight)": -0.42
+        },
+        {
+          "date": "2021-04-02",
+          "Bedtime (Hours in relation to midnight)": 3.07
+        },
+        {
+          "date": "2021-04-03",
+          "Bedtime (Hours in relation to midnight)": 7.05
+        },
+        {
+          "date": "2021-04-04",
+          "Bedtime (Hours in relation to midnight)": null
+        },
+        {
+          "date": "2021-04-05",
+          "Bedtime (Hours in relation to midnight)": -8.79
+        },
+        {
+          "date": "2021-04-06",
+          "Bedtime (Hours in relation to midnight)": 6.08
+        },
+        {
+          "date": "2021-04-07",
+          "Bedtime (Hours in relation to midnight)": 2.03
+        },
+        {
+          "date": "2021-04-08",
+          "Bedtime (Hours in relation to midnight)": 2.52
+        },
+        {
+          "date": "2021-04-09",
+          "Bedtime (Hours in relation to midnight)": 1.43
+        },
+        {
+          "date": "2021-04-10",
+          "Bedtime (Hours in relation to midnight)": 3.49
+        },
+        {
+          "date": "2021-04-11",
+          "Bedtime (Hours in relation to midnight)": 2.52
+        },
+        {
+          "date": "2021-04-12",
+          "Bedtime (Hours in relation to midnight)": null
+        },
+        {
+          "date": "2021-04-13",
+          "Bedtime (Hours in relation to midnight)": -12.38
+        },
+        {
+          "date": "2021-04-14",
+          "Bedtime (Hours in relation to midnight)": 5.58
+        },
+        {
+          "date": "2021-04-15",
+          "Bedtime (Hours in relation to midnight)": 5.72
+        },
+        {
+          "date": "2021-04-16",
+          "Bedtime (Hours in relation to midnight)": 1.78
+        },
+        {
+          "date": "2021-04-17",
+          "Bedtime (Hours in relation to midnight)": 1.43
+        },
+        {
+          "date": "2021-04-18",
+          "Bedtime (Hours in relation to midnight)": 1.14
+        },
+        {
+          "date": "2021-04-19",
+          "Bedtime (Hours in relation to midnight)": 1.62
+        },
+        {
+          "date": "2021-04-20",
+          "Bedtime (Hours in relation to midnight)": 1.3
+        },
+        {
+          "date": "2021-04-21",
+          "Bedtime (Hours in relation to midnight)": 3.64
+        },
+        {
+          "date": "2021-04-22",
+          "Bedtime (Hours in relation to midnight)": 1.44
+        },
+        {
+          "date": "2021-04-23",
+          "Bedtime (Hours in relation to midnight)": 0.8
+        },
+        {
+          "date": "2021-04-24",
+          "Bedtime (Hours in relation to midnight)": 5.28
+        },
+        {
+          "date": "2021-04-25",
+          "Bedtime (Hours in relation to midnight)": 9.18
+        },
+        {
+          "date": "2021-04-26",
+          "Bedtime (Hours in relation to midnight)": 6.43
+        },
+        {
+          "date": "2021-04-27",
+          "Bedtime (Hours in relation to midnight)": 4.92
+        },
+        {
+          "date": "2021-04-28",
+          "Bedtime (Hours in relation to midnight)": 10.08
+        },
+        {
+          "date": "2021-04-29",
+          "Bedtime (Hours in relation to midnight)": 4.8
+        },
+        {
+          "date": "2021-04-30",
+          "Bedtime (Hours in relation to midnight)": 5.08
+        },
+        {
+          "date": "2021-05-01",
+          "Bedtime (Hours in relation to midnight)": 4.92
+        },
+        {
+          "date": "2021-05-02",
+          "Bedtime (Hours in relation to midnight)": 5.05
+        },
+        {
+          "date": "2021-05-03",
+          "Bedtime (Hours in relation to midnight)": 4.53
+        },
+        {
+          "date": "2021-05-04",
+          "Bedtime (Hours in relation to midnight)": 5.02
+        },
+        {
+          "date": "2021-05-05",
+          "Bedtime (Hours in relation to midnight)": 4.25
+        },
+        {
+          "date": "2021-05-06",
+          "Bedtime (Hours in relation to midnight)": 4.75
+        },
+        {
+          "date": "2021-05-07",
+          "Bedtime (Hours in relation to midnight)": 4.6
+        },
+        {
+          "date": "2021-05-08",
+          "Bedtime (Hours in relation to midnight)": 5.02
+        },
+        {
+          "date": "2021-05-09",
+          "Bedtime (Hours in relation to midnight)": 2.15
+        },
+        {
+          "date": "2021-05-10",
+          "Bedtime (Hours in relation to midnight)": 4.75
+        },
+        {
+          "date": "2021-05-11",
+          "Bedtime (Hours in relation to midnight)": 1.27
+        },
+        {
+          "date": "2021-05-12",
+          "Bedtime (Hours in relation to midnight)": 0.62
+        },
+        {
+          "date": "2021-05-13",
+          "Bedtime (Hours in relation to midnight)": 3.52
+        },
+        {
+          "date": "2021-05-14",
+          "Bedtime (Hours in relation to midnight)": 5.65
+        },
+        {
+          "date": "2021-05-15",
+          "Bedtime (Hours in relation to midnight)": null
+        },
+        {
+          "date": "2021-05-16",
+          "Bedtime (Hours in relation to midnight)": 1.48
+        },
+        {
+          "date": "2021-05-17",
+          "Bedtime (Hours in relation to midnight)": 0.98
+        },
+        {
+          "date": "2021-05-18",
+          "Bedtime (Hours in relation to midnight)": 0.96
+        },
+        {
+          "date": "2021-05-19",
+          "Bedtime (Hours in relation to midnight)": 1.53
+        },
+        {
+          "date": "2021-05-20",
+          "Bedtime (Hours in relation to midnight)": 1.38
+        },
+        {
+          "date": "2021-05-21",
+          "Bedtime (Hours in relation to midnight)": 0.77
+        },
+        {
+          "date": "2021-05-22",
+          "Bedtime (Hours in relation to midnight)": 5.65
+        },
+        {
+          "date": "2021-05-23",
+          "Bedtime (Hours in relation to midnight)": 2.09
+        },
+        {
+          "date": "2021-05-24",
+          "Bedtime (Hours in relation to midnight)": -2.35
+        },
+        {
+          "date": "2021-05-25",
+          "Bedtime (Hours in relation to midnight)": 0.34
+        },
+        {
+          "date": "2021-05-26",
+          "Bedtime (Hours in relation to midnight)": 0.45
+        },
+        {
+          "date": "2021-05-27",
+          "Bedtime (Hours in relation to midnight)": 0.58
+        },
+        {
+          "date": "2021-05-28",
+          "Bedtime (Hours in relation to midnight)": 0.97
+        },
+        {
+          "date": "2021-05-29",
+          "Bedtime (Hours in relation to midnight)": 0.89
+        },
+        {
+          "date": "2021-05-30",
+          "Bedtime (Hours in relation to midnight)": -0.17
+        },
+        {
+          "date": "2021-05-31",
+          "Bedtime (Hours in relation to midnight)": 1.53
+        },
+        {
+          "date": "2021-06-01",
+          "Bedtime (Hours in relation to midnight)": 1.48
+        },
+        {
+          "date": "2021-06-02",
+          "Bedtime (Hours in relation to midnight)": 1.19
+        },
+        {
+          "date": "2021-06-03",
+          "Bedtime (Hours in relation to midnight)": 0.34
+        },
+        {
+          "date": "2021-06-04",
+          "Bedtime (Hours in relation to midnight)": -0.42
+        },
+        {
+          "date": "2021-06-05",
+          "Bedtime (Hours in relation to midnight)": 1.61
+        },
+        {
+          "date": "2021-06-06",
+          "Bedtime (Hours in relation to midnight)": 2.27
         }
       ]
     },
