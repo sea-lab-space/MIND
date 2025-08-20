@@ -171,11 +171,12 @@ class Synthesizer:
             # Weighted (balanced) entropy
             alpha = 0.5
             mm_entropy = alpha * entropy_origin + (1 - alpha) * entropy_type
-            insight["entropy"] = mm_entropy
+            # insight["entropy"] = mm_entropy
             mm_entropies.append(mm_entropy)
             
         # Sort by entropy descending
-        return sorted(data_insights, key=lambda x: x["entropy"], reverse=True), np.mean(mm_entropies)
+        # return sorted(data_insights, key=lambda x: x["entropy"], reverse=True), np.mean(mm_entropies)
+        return data_insights, np.mean(mm_entropies)
 
     def _compute_coverage(self, data_insights):
         used_insight_id_set = set(
@@ -224,7 +225,6 @@ class Synthesizer:
             reflection = asyncio.run(self.reflection_agent.run(
                 self._glue_data_fact_input(full_insight_id_set),
                 data_insights,
-                entropy=entp_num,
                 coverage=cover,
                 history=mem_str,
                 verbose=False))
