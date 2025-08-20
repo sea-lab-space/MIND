@@ -340,10 +340,10 @@ if __name__ == "__main__":
                 load_from_cache=True)
             .run_synthesizer(
                 iters=1, 
-                # run_sub_stages={
-                #     "qa_insights": False,
-                #     "simple_insights": False,
-                # },
+                run_sub_stages={
+                    "qa_insights": True,
+                    "simple_insights": True,
+                },
                 load_from_cache=False)
             .run_narrator(load_from_cache=False)
             .run_overview(load_from_cache=True)

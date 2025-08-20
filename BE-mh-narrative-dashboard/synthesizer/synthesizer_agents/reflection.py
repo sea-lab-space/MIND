@@ -5,7 +5,7 @@ from datetime import datetime
 import sys
 from pathlib import Path
 from dotenv import load_dotenv
-from synthesizer.synthesizer_commons import SYNT_CATEGORIZATION_PROMPT, SYNT_CATEGORY_PROMPT, SYNT_RULES, SYNT_EXAMPLES
+from synthesizer.synthesizer_commons import SYNT_CATEGORIZATION_PROMPT, SYNT_CATEGORY_PROMPT, SYNT_DATA_PROMPT, SYNT_RULES, SYNT_EXAMPLES
 from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE, OPENAI_AGENTIC_PLANNING, get_mh_data_expert_system_prompt
 from utils.tools import retrive_data_facts
 
@@ -21,7 +21,6 @@ You are provided with a list of data insights in the following format:
     "insight_description": str,
     "insight_source": List[str],      # Format: [modality]-[source]-[id]
     "insight_category": List[str],    # Insight categories
-    "entropy": float                  # Diversity of data source types
 }
 Where:
 - `modality` can be: 
@@ -31,56 +30,57 @@ Where:
 """
 
 SYNT_CRITIQUE_PROMPT = f"""
-You are a reflective clinical insight generation assistant. 
-You have previously generated a set of data-driven insights based on a multi-modal mental health dataset.
+You are a reflective clinical insight generation assistant.
+Previously, you generated a set of data-driven insights based on a multi-modal mental health dataset.
 
-You are now given:
-1. All the data facts available
+You are now provided with:
+1. All available data facts
 2. The previously generated insights
-3. The entropy (source diversity) of each insight
-4. The overall entropy and data coverage
-5. Your past self-reflections
+3. Overall data coverage
+4. Your past self-reflections
 
 ---
 
-Your goals in this task are:
-* **Diagnose** the quality of your past insights
-* **Reflect** on what worked and what didn't
-* **Plan** concrete improvements for your next iteration
+Your objectives are to:
+* **Diagnose** the quality of your prior insights
+* **Reflect** on what worked and what didn’t
+* **Plan** concrete improvements for the next iteration
 
-Use the following guiding questions in your reflection:
-- Did you over-rely on any one modality (e.g., only survey or only transcript)?
-- Did your insights cover a broad range of the expected categories?
-- Were any insights redundant or overlapping?
+Use these guiding questions in your reflection:
+- Does each insight belong to exactly one `insight_category`?
+- Are any insights redundant or overlapping?
 - Did you miss important signals from unused data facts?
-- How well did your insights support clinical understanding or decision-making?
+- How well do your insights support clinical understanding or decision-making?
 
 {SYNT_CATEGORIZATION_PROMPT}
+{SYNT_DATA_PROMPT}
 
 ---
 
-Then, in your response, do the following:
+In your response, follow these steps:
 
 ### Step 1: Critique
-Critically assess the strengths and weaknesses of your generated insights.
+Critically assess strengths and weaknesses of the generated insights.
 
 ### Step 2: Reflection
-Summarize your key learning from this critique. What could you do better next time?
+Summarize key learnings from this critique. What could you improve next time?
 
 ### Step 3: Forward Projection
 Propose improvements for the next generation of insights:
-- What kinds of data facts would you include?
-- What insight categories would you aim to better cover?
-- How would you better balance the use of different modalities?
+- Which types of data facts should be included?
+- Which insight categories should be better covered?
 
-Focus on creating meaningful, balanced, and clinically relevant insights.
-Do not blindly maximize entropy or include too much.
+Focus on generating **meaningful, clinically relevant, and actionable insights**.
 
 Let's think step by step.
 """
+#     "entropy": float                  # Diversity of data source types
+# Do not blindly maximize entropy or include too much.
+# - Did you over-rely on any one modality (e.g., only survey or only transcript)?
+# - How would you better balance the use of different modalities?
 
 
-def get_reflection_prompt(data_facts: str, insights: str, overall_entropy: float, coverage: float, reflection_history: str) -> str:
+def get_reflection_prompt(data_facts: str, insights: str, coverage: float, reflection_history: str) -> str:
     return f"""
         |data facts|:
         {data_facts}
@@ -88,7 +88,6 @@ def get_reflection_prompt(data_facts: str, insights: str, overall_entropy: float
         |generated insights|:
         {insights}
 
-        |overall entropy|: {overall_entropy}
         |coverage|: {coverage:.2f}
 
         |self-reflection history|:
@@ -127,13 +126,12 @@ class InsightReflectionAgent:
             {SYNT_EXAMPLES}
         """
 
-    async def run(self, data_facts, data_insights, entropy, coverage, history, verbose: bool = False):
+    async def run(self, data_facts, data_insights, coverage, history, verbose: bool = False):
         self.agent.instructions = self._glue_instructions()
         
         res = await Runner.run(self.agent, get_reflection_prompt(
             data_facts,
             data_insights,
-            entropy,
             coverage,
             history
         ))
