@@ -6,7 +6,7 @@ from datetime import datetime
 import sys
 from pathlib import Path
 from dotenv import load_dotenv
-from synthesizer.synthesizer_commons import SYNT_CATEGORY_PROMPT, SYNT_DATA_PROMPT, SYNT_EXAMPLES, SYNT_RULES
+from synthesizer.synthesizer_commons import SYNT_CATEGORIZATION_PROMPT, SYNT_CATEGORY_PROMPT, SYNT_DATA_PROMPT, SYNT_EXAMPLES, SYNT_RULES
 from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE, OPENAI_AGENTIC_PLANNING, get_mh_data_expert_system_prompt
 from utils.tools import retrive_data_facts
 
@@ -28,9 +28,7 @@ from MIND_types import (
 
 
 SYNT_TASK_PROMPT = """
-Your task is to list all data driven insights interesting to a mental health clinician.
-Attribute your insight to data facts.
-For each insight, use no more than 5 data facts. Rank the used data facts by their importance and list the most important first.
+Your task is to extract data-driven insights that are clinically relevant to a mental health clinician.
 """
 
 class InsightProposalActorAgent:
@@ -54,10 +52,10 @@ class InsightProposalActorAgent:
             {OPENAI_AGENTIC_REC}
 
             {get_mh_data_expert_system_prompt()}
-            {SYNT_TASK_PROMPT}
-            
             {SYNT_DATA_PROMPT}
-            {SYNT_CATEGORY_PROMPT}
+
+            {SYNT_TASK_PROMPT}
+            {SYNT_CATEGORIZATION_PROMPT}
             {SYNT_RULES}
             
             Generate as much data insight as possible (at least 15).

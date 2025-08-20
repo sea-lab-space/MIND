@@ -49,8 +49,8 @@
       "key": "insight-0",
       "summaryTitle": "Positive affect increases while depression symptoms show high variability over recent weeks.",
       "sources": [
-        "survey",
-        "clinical note"
+        "clinical note",
+        "survey"
       ],
       "insightType": [
         "psychological"
@@ -302,8 +302,8 @@
       "key": "insight-1",
       "summaryTitle": "Positive affect is increasing and negative affect is slightly decreasing over recent weeks.",
       "sources": [
-        "survey",
-        "clinical note"
+        "clinical note",
+        "survey"
       ],
       "insightType": [
         "psychological"
@@ -548,8 +548,8 @@
       "summaryTitle": "Physical activity and positive mood both show increasing trends over the recent month.",
       "sources": [
         "passive sensing",
-        "survey",
-        "clinical note"
+        "clinical note",
+        "survey"
       ],
       "insightType": [
         "biological"
@@ -3812,17 +3812,23 @@
       "key": "insight-6",
       "summaryTitle": "Physical activity and distance traveled show significant increases over the recent period.",
       "sources": [
-        "session transcript",
-        "passive sensing"
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "biological"
       ],
       "expandView": [
         {
-          "summarySentence": "Evaluate awareness of activity-sleep relationship.",
+          "summarySentence": "Evaluate sleep disturbance and improvement.",
           "dataPoints": null,
-          "spec": [],
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Reassess mood, sleep, social engagement, and medication response at next session."
+            }
+          ],
           "sources": [
             "clinical note"
           ],
@@ -3830,15 +3836,9 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Evaluate awareness of activity-sleep relationship.",
+          "summarySentence": "Evaluate sleep disturbance and improvement.",
           "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Do you notice any patterns about when sleep is better or worse—like what you’ve done that day, or how anxious or down you were?"
-            }
-          ],
+          "spec": [],
           "sources": [
             "session transcript"
           ],
@@ -5063,17 +5063,23 @@
       "key": "insight-7",
       "summaryTitle": "Screen time shows a significant decreasing trend over the recent period.",
       "sources": [
-        "session transcript",
-        "passive sensing"
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "psychological"
       ],
       "expandView": [
         {
-          "summarySentence": "Evaluate awareness of activity-sleep relationship.",
+          "summarySentence": "Evaluate sleep disturbance and improvement.",
           "dataPoints": null,
-          "spec": [],
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Reassess mood, sleep, social engagement, and medication response at next session."
+            }
+          ],
           "sources": [
             "clinical note"
           ],
@@ -5081,15 +5087,9 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Evaluate awareness of activity-sleep relationship.",
+          "summarySentence": "Evaluate sleep disturbance and improvement.",
           "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Do you notice any patterns about when sleep is better or worse—like what you’ve done that day, or how anxious or down you were?"
-            }
-          ],
+          "spec": [],
           "sources": [
             "session transcript"
           ],
@@ -5708,17 +5708,23 @@
       "key": "insight-8",
       "summaryTitle": "Routine consistency and inactivity periods show high variability and frequent anomalies.",
       "sources": [
-        "session transcript",
-        "passive sensing"
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "social"
       ],
       "expandView": [
         {
-          "summarySentence": "Evaluate awareness of activity-sleep relationship.",
+          "summarySentence": "Evaluate sleep disturbance and improvement.",
           "dataPoints": null,
-          "spec": [],
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Reassess mood, sleep, social engagement, and medication response at next session."
+            }
+          ],
           "sources": [
             "clinical note"
           ],
@@ -5726,15 +5732,9 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Evaluate awareness of activity-sleep relationship.",
+          "summarySentence": "Evaluate sleep disturbance and improvement.",
           "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Do you notice any patterns about when sleep is better or worse—like what you’ve done that day, or how anxious or down you were?"
-            }
-          ],
+          "spec": [],
           "sources": [
             "session transcript"
           ],
@@ -8429,7 +8429,7 @@
       "key": "insight-9",
       "summaryTitle": "Positive affect shows an increasing trend over the most recent period.",
       "sources": [
-        "session transcript",
+        "clinical note",
         "survey"
       ],
       "insightType": [
@@ -8437,9 +8437,15 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Assess for presence of positive affect or hope.",
+          "summarySentence": "Monitor for safety and risk factors.",
           "dataPoints": null,
-          "spec": [],
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Continue to monitor for any emergence of suicidal ideation or significant functional decline."
+            }
+          ],
           "sources": [
             "clinical note"
           ],
@@ -8447,15 +8453,9 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Assess for presence of positive affect or hope.",
+          "summarySentence": "Monitor for safety and risk factors.",
           "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Have you had any moments, even small, where you felt a little hope, or that things might get better eventually?"
-            }
-          ],
+          "spec": [],
           "sources": [
             "session transcript"
           ],
