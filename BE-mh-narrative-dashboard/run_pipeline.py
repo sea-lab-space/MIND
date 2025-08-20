@@ -5,6 +5,7 @@ import time
 from pathlib import Path
 from dotenv import load_dotenv
 
+
 from kb.defs import NUMERICAL_FEATURE_KB
 load_dotenv()
 class MINDPipeline:
@@ -33,6 +34,7 @@ class MINDPipeline:
         self.overview = None
         self.suggest_activity = None
         self.rewritten_data_facts = None
+        self.last_encounter_note_fact = None
 
     def _log(self, msg):
         if self.save_to_cache:
@@ -106,11 +108,6 @@ class MINDPipeline:
                     DifferenceDiscovererAgent, 
                     # DerivedValueDiscovererAgent
                     ],
-                # text_agents=[],
-                # text_agents=[
-                #     NotesDiscovererAgent, 
-                #     TranscriptsDiscovererAgent
-                #     ],
                 two_session_aback_date=self.two_session_aback_date,
                 retrospect_date=self.retrospect_date,
                 before_date=self.before_date,
@@ -152,7 +149,7 @@ class MINDPipeline:
                 self._save("data_facts_list", synthesizer.data_fact_list)
                 # ! This is a hack
                 # ! resave data_fact
-                self._save("data_facts", self.data_facts)
+                # self._save("data_facts", self.data_facts)
         return self
 
     def run_narrator(self, load_from_cache=False):
@@ -187,6 +184,57 @@ class MINDPipeline:
             retrospect_date=self.retrospect_date
         )
         self.visualization_spec = visualizer.run()
+        return self
+    
+    def run_last_encounter_summary(self, load_from_cache=False, verbose=False):
+        if load_from_cache and (self.cache_dir / "last_encounter_note_fact.json").exists():
+            self._log("[Last Encounter Summary] Loading from cache")
+            self.last_encounter_note_fact = self._load("last_encounter_note_fact")
+        else:
+            self._log("[Last Encounter Summary] Generating")
+            text_input = self.data['this_series']
+            note_input = {
+                self.retrospect_date: next((
+                    feat['clinical_note']
+                    for feat in text_input if feat['encounter_date'] == self.retrospect_date),
+                    None)
+            }
+            from helpers import NotesCardSummaryAgent
+            notes_summary_agent = NotesCardSummaryAgent(
+                retrospect_date=self.retrospect_date,
+                before_date=self.before_date,
+                model=self.model_name)
+            note_facts = notes_summary_agent.run(note_input, verbose=verbose)
+            
+            spec = []
+            for entry in note_facts:
+                expandView = []
+                expandView.append({
+                    "summarySentence": None,
+                    "dataPoints": None,
+                    "spec": [
+                        {
+                            "fact_type": "text",
+                            "date": self.retrospect_date,
+                            "text": evidence['text']
+                        } for evidence in entry['evidence']
+                    ],
+                    "sources": ["clinical note"],
+                    "dataSourceType": "text",
+                    "isShowL2": False
+                })
+                spec.append({
+                    "summaryTitle": entry['fact_text'],
+                    "sources": [
+                        "clinical note"
+                    ],
+                    "insightType": [
+                    ],
+                    "expandView": expandView
+                })
+            self.last_encounter_note_fact = spec
+            self._save("last_encounter_note_fact",
+                       self.last_encounter_note_fact)
         return self
 
     def run_overview(self, load_from_cache=False):
@@ -241,97 +289,7 @@ class MINDPipeline:
                 survey_raw.append(new_datum)
         return survey_raw
     
-    def run_calc_relevance(self):
-        self._log("[Calc Relevance] Running")
-        from helpers import EmbeddingRelevance
-        calc_relevance = EmbeddingRelevance()
-        
-        transcript_data = [
-            {
-                "date": info['encounter_date'],
-                "text": "\n".join([turn['clinician'] + " " + turn['patient'] for turn in info['transcript']])
-            }
-            for info in self.data['this_series']
-        ]
 
-        clinical_notes_data = [
-            {
-                "date": info['encounter_date'],
-                "text": info['clinical_note']
-            }
-            for info in self.data['this_series']
-        ]
-
-        insights_w_transcript = [
-            {
-                "key": insight['key'],
-                "summaryTitle": insight['summaryTitle']
-            }
-            for insight in self.visualization_spec if "session transcript" in insight['sources']
-        ]
-        insights_w_clinical_notes = [
-            {
-                "key": insight['key'],
-                "summaryTitle": insight['summaryTitle']
-            }
-            for insight in self.visualization_spec if "clinical note" in insight['sources']
-        ]
-        
-        relevance_transcript = calc_relevance.run(
-            subjective_materials=transcript_data,
-            data_insights=insights_w_transcript
-        )
-
-        relevance_note = calc_relevance.run(
-            subjective_materials=clinical_notes_data,
-            data_insights=insights_w_clinical_notes
-        )
-
-        def retrive_relevance(key, relevance_data):
-            for insight in relevance_data:
-                if key == insight['key']:
-                    return insight['relevance']
-                else:
-                    # raise error
-                    ValueError("key not found in relevance_transcript")
-
-        # add back to visualization_spec
-        for insight in self.visualization_spec:
-            if "session transcript" in insight['sources']:
-                insight['transcriptRelevance'] = retrive_relevance(insight['key'], relevance_transcript)
-            if "clinical note" in insight['sources']:
-                insight['noteRelevance'] = retrive_relevance(insight['key'], relevance_note)
-
-        return self
-    
-    def _transform_encounter_date_data(self):
-        spec = []
-        for entry in self.data_facts['note_facts']:
-            expandView = []
-            expandView.append({
-                "summarySentence": None,
-                "dataPoints": None,
-                "spec": [
-                    {
-                        "fact_type": "text",
-                        "date": self.retrospect_date,
-                        "text": evidence['text']
-                    } for evidence in entry['evidence']
-                ],
-                "sources": ["clinical note"],
-                "dataSourceType": "text",
-                "isShowL2": False
-            })
-            spec.append({
-                "summaryTitle": entry['fact_text'],
-                "sources": [
-                    "clinical note"
-                ],
-                "insightType": [
-                ],
-                "expandView": expandView
-            })
-        return spec
 
 
     def run_assembly(self):
@@ -339,7 +297,7 @@ class MINDPipeline:
         final_spec = {
             "overview": self.overview,
             "insights": self.visualization_spec,
-            "last_encounter": self._transform_encounter_date_data(),
+            "last_encounter": self.last_encounter_note_fact,
             "session_subjective_info": self.data['this_series'],
             "survey_raw": self._get_all_survey_raw(),
             "suggest_activity": self.suggest_activity,
@@ -372,10 +330,9 @@ if __name__ == "__main__":
 
         final_output = (
             pipeline
-            .load_data(load_from_cache=True)
+            .load_data(load_from_cache=False)
             .run_discoverer(
                 # run_sub_stages={
-                # "notes_summary": False,
                 # "hypothesis_generation": False,
                 # "plan": False,
                 # "exec": True,
@@ -391,7 +348,73 @@ if __name__ == "__main__":
             .run_narrator(load_from_cache=True)
             .run_overview(load_from_cache=True)
             .run_suggest_activity(load_from_cache=True)
+            .run_last_encounter_summary(load_from_cache=False)
             .run_visualizer()
-            # .run_calc_relevance()
             .run_assembly()
         )
+
+
+# def run_calc_relevance(self):
+#        self._log("[Calc Relevance] Running")
+#         from helpers import EmbeddingRelevance
+#         calc_relevance = EmbeddingRelevance()
+
+#         transcript_data = [
+#             {
+#                 "date": info['encounter_date'],
+#                 "text": "\n".join([turn['clinician'] + " " + turn['patient'] for turn in info['transcript']])
+#             }
+#             for info in self.data['this_series']
+#         ]
+
+#         clinical_notes_data = [
+#             {
+#                 "date": info['encounter_date'],
+#                 "text": info['clinical_note']
+#             }
+#             for info in self.data['this_series']
+#         ]
+
+#         insights_w_transcript = [
+#             {
+#                 "key": insight['key'],
+#                 "summaryTitle": insight['summaryTitle']
+#             }
+#             for insight in self.visualization_spec if "session transcript" in insight['sources']
+#         ]
+#         insights_w_clinical_notes = [
+#             {
+#                 "key": insight['key'],
+#                 "summaryTitle": insight['summaryTitle']
+#             }
+#             for insight in self.visualization_spec if "clinical note" in insight['sources']
+#         ]
+
+#         relevance_transcript = calc_relevance.run(
+#             subjective_materials=transcript_data,
+#             data_insights=insights_w_transcript
+#         )
+
+#         relevance_note = calc_relevance.run(
+#             subjective_materials=clinical_notes_data,
+#             data_insights=insights_w_clinical_notes
+#         )
+
+#         def retrive_relevance(key, relevance_data):
+#             for insight in relevance_data:
+#                 if key == insight['key']:
+#                     return insight['relevance']
+#                 else:
+#                     # raise error
+#                     ValueError("key not found in relevance_transcript")
+
+#         # add back to visualization_spec
+#         for insight in self.visualization_spec:
+#             if "session transcript" in insight['sources']:
+#                 insight['transcriptRelevance'] = retrive_relevance(
+#                     insight['key'], relevance_transcript)
+#             if "clinical note" in insight['sources']:
+#                 insight['noteRelevance'] = retrive_relevance(
+#                     insight['key'], relevance_note)
+
+#         return self

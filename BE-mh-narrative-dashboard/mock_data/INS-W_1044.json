@@ -50,8 +50,8 @@
       "summaryTitle": "Depressive symptoms and negative affect spiked mid-May, with increased inactivity and variable daily routines.",
       "sources": [
         "passive sensing",
-        "clinical note",
-        "survey"
+        "survey",
+        "clinical note"
       ],
       "insightType": [
         "psychological"
@@ -841,9 +841,9 @@
       "key": "insight-1",
       "summaryTitle": "Bedtime is trending earlier, while awakening episodes show high variability and anomalies.",
       "sources": [
+        "session transcript",
         "passive sensing",
-        "clinical note",
-        "session transcript"
+        "clinical note"
       ],
       "insightType": [
         "biological"
@@ -2675,9 +2675,9 @@
       "key": "insight-2",
       "summaryTitle": "Negative affect and depression scores show significant, cyclic fluctuations over the past week.",
       "sources": [
+        "session transcript",
         "survey",
-        "clinical note",
-        "session transcript"
+        "clinical note"
       ],
       "insightType": [
         "psychological"
@@ -2975,9 +2975,9 @@
       "key": "insight-3",
       "summaryTitle": "Routine consistency, time at home, and distance traveled all show significant, irregular fluctuations recently.",
       "sources": [
+        "session transcript",
         "passive sensing",
-        "clinical note",
-        "session transcript"
+        "clinical note"
       ],
       "insightType": [
         "social"
@@ -5542,7 +5542,7 @@
   ],
   "last_encounter": [
     {
-      "summaryTitle": "Reported/observed persistent low mood, anhedonia, sleep/appetite disturbances, negative self-evaluation, and low motivation.",
+      "summaryTitle": "Patient presented with persistent low mood, sleep/appetite issues, negative self-view.",
       "sources": [
         "clinical note"
       ],
@@ -5560,47 +5560,12 @@
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "She describes feeling a transient improvement in mood after walking, but this was short-lived, and she subsequently felt discouraged and self-critical for not continuing."
-            },
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
               "text": "Lucy continues to experience pervasive thoughts of inadequacy, particularly around her academic performance, friendships, and family roles."
             },
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Lucy reports ongoing sleep disturbances, with difficulty falling asleep and sleeping during the day."
-            },
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Her appetite is poor, often forgetting meals or substituting snacks for proper meals."
-            },
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "She describes episodes of emotional numbness and low motivation but denies active suicidal ideation or intent."
-            },
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Affect: Restricted, congruent with reported mood."
-            },
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Sleep: Poor, with insomnia and hypersomnia."
-            },
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Appetite: Decreased, irregular meals."
-            },
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Functioning: Attending work (reduced hours), behind on academic tasks, limited social engagement."
+              "text": "Lucy reports ongoing sleep disturbances, with difficulty falling asleep and sleeping during the day. Her appetite is poor, often forgetting meals or substituting snacks for proper meals."
             }
           ],
           "sources": [
@@ -5612,7 +5577,7 @@
       ]
     },
     {
-      "summaryTitle": "Assessed moderate to severe major depressive disorder; some engagement in therapy, no acute safety concerns.",
+      "summaryTitle": "Assessment indicated moderate-severe depression, partial engagement in therapy, no acute safety risk.",
       "sources": [
         "clinical note"
       ],
@@ -5635,12 +5600,32 @@
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Protective factors include ongoing engagement in therapy, adherence to medication, maintenance of some work and academic responsibilities, and willingness to reach out for help if needed."
-            },
+              "text": "No acute safety concerns at present, but ongoing monitoring is warranted given her reports of numbness and low motivation."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        }
+      ]
+    },
+    {
+      "summaryTitle": "Continue sertraline (50 mg, once daily).",
+      "sources": [
+        "clinical note"
+      ],
+      "insightType": [],
+      "expandView": [
+        {
+          "summarySentence": null,
+          "dataPoints": null,
+          "spec": [
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "No acute safety concerns at present, but ongoing monitoring is warranted given her reports of numbness and low motivation."
+              "text": "Continue sertraline as prescribed (50 mg once daily in the morning)."
             }
           ],
           "sources": [
@@ -5932,11 +5917,11 @@
         {
           "date": "2021-04-11",
           "medication": "Sertraline",
-          "dosage": "As previously prescribed (likely 50mg daily, but not specified in this transcript)",
+          "dosage": "50mg",
           "frequency": "Once daily in the morning"
         }
       ],
-      "clinical_note": "**Subjective:**  \nLucy reports that her mood has been \"mixed\" since the last session, with some days feeling slightly easier, particularly when distracted by friends or brief outings. However, she continues to struggle with low motivation, persistent feelings of disconnection, and loneliness. She has not disclosed her feelings to friends or family, fearing she would bring down their mood or not be understood. Lucy describes ongoing negative self-comparisons, especially related to university performance and social interactions, which often lead her to withdraw and spend extended periods alone, typically scrolling on her phone. She identifies university-related activities and communication from parents or classmates as triggers for intensified negative thoughts. \n\nLucy continues to experience disrupted sleep, characterized by difficulty falling asleep, frequent awakenings, and occasional all-nighters, resulting in persistent fatigue. Her appetite remains low, with irregular eating patterns and occasional snacking. She acknowledges ongoing thoughts of unworthiness and numbness, including passive thoughts about not caring if she were present or not, but denies any active suicidal intent or plans. She expresses willingness to reach out to her GP if her safety becomes a concern and is open to developing a safety plan that includes her GP and crisis line contacts, but prefers not to involve family or housemates at this time.\n\nAcademically, Lucy is significantly behind in her coursework, missing lectures and struggling to catch up, which increases her anxiety about failing. She has not yet reached out to university support services due to fear of judgment but is open to assistance in drafting communication. At work, she has reduced her hours and feels less engaged, attributing this to fatigue from university stress. Financially, she is managing with her scholarship and job, but is anxious about the potential consequences of academic or occupational setbacks.\n\nLucy reports adherence to her sertraline regimen, taking it every morning as prescribed. She notes minimal side effects (mild initial nausea, now resolved) and has not observed significant improvement in mood yet. She expresses interest in learning techniques to manage negative thoughts and increase motivation, though she finds it difficult to sustain self-help efforts. She is willing to try thought-challenging exercises and brief daily activities, such as short walks, as discussed in session.\n\n**Objective:**  \n- Affect: Flat, with periods of tearfulness and expressed hopelessness.\n- Speech: Normal rate and tone, coherent.\n- Thought process: Logical, though preoccupied with negative self-appraisal and hopelessness.\n- No evidence of psychosis or mania.\n- Denies active suicidal ideation, intent, or plan.\n- Sleep: Disrupted, with insomnia and non-restorative sleep.\n- Appetite: Decreased, with irregular eating.\n- Function: Impaired academic and occupational performance; social withdrawal.\n- Medication adherence: Reports taking sertraline daily as prescribed; no significant side effects currently.\n\n**Assessment:**  \nLucy continues to experience symptoms consistent with moderate to severe Major Depressive Disorder, including persistent low mood, anhedonia, social withdrawal, sleep and appetite disturbances, low energy, impaired concentration, and passive thoughts of worthlessness. She is at risk for further functional decline academically and occupationally. Protective factors include insight, willingness to engage in treatment, and openness to safety planning. She is adherent to sertraline, with minimal side effects, but has not yet experienced significant therapeutic benefit. No current active suicidal ideation or intent, but ongoing monitoring is warranted given her passive thoughts and functional impairment.\n\n**Plan:**  \n1. **Medication:** Continue sertraline as prescribed (likely 50mg daily in the morning). Monitor for efficacy and side effects. Consider dose adjustment if no improvement in symptoms after an adequate trial period.\n2. **Safety:** Develop a personalized safety plan including GP and crisis line contacts; provide information on text/online support resources. Encourage Lucy to reach out if her safety becomes a concern.\n3. **Psychosocial Interventions:**  \n   - Introduce thought-challenging exercises; encourage Lucy to record negative thoughts and bring them to the next session.\n   - Encourage engagement in small, manageable activities (e.g., five-minute daily walks) and track mood changes.\n   - Assist Lucy in drafting an email to university support/tutors to address academic concerns.\n4. **Support:** Provide crisis line and student support contact information. Reinforce the importance of self-compassion and gradual progress.\n5. **Follow-up:** Schedule next session for one week. Encourage Lucy to reach out between sessions if needed. Continue to monitor mood, safety, medication adherence, and functional status. \n\n**Patient verbalized understanding and agreement with the plan.**",
+      "clinical_note": "**Subjective:**  \nLucy reports that her mood has been \"mixed\" since the last session, with some days feeling slightly easier, particularly when distracted by friends or brief outings. However, she continues to struggle with low motivation, persistent feelings of disconnection, and loneliness. She has not disclosed her feelings to friends or family, fearing she would bring down their mood or not be understood. Lucy describes ongoing negative self-comparisons, especially related to university performance and social interactions, which often lead her to withdraw and spend extended periods alone, typically scrolling on her phone. She identifies university-related activities and communication from parents or classmates as triggers for intensified negative thoughts. \n\nLucy continues to experience disrupted sleep, characterized by difficulty falling asleep, frequent awakenings, and occasional all-nighters, resulting in persistent fatigue. Her appetite remains low, with irregular eating patterns and occasional snacking. She acknowledges ongoing thoughts of unworthiness and numbness, including passive thoughts about not caring if she were present or not, but denies any active suicidal intent or plans. She expresses willingness to reach out to her GP if her safety becomes a concern and is open to developing a safety plan that includes her GP and crisis line contacts, but prefers not to involve family or housemates at this time.\n\nAcademically, Lucy is significantly behind in her coursework, missing lectures and struggling to catch up, which increases her anxiety about failing. She has not yet reached out to university support services due to fear of judgment but is open to assistance in drafting communication. At work, she has reduced her hours and feels less engaged, attributing this to fatigue from university stress. Financially, she is managing with her scholarship and job, but is anxious about the potential consequences of academic or occupational setbacks.\n\nLucy reports adherence to her sertraline regimen, taking it every morning as prescribed. She notes minimal side effects (mild initial nausea, now resolved) and has not observed significant improvement in mood yet. She expresses interest in learning techniques to manage negative thoughts and increase motivation, though she finds it difficult to sustain self-help efforts. She is willing to try thought-challenging exercises and brief daily activities, such as short walks, as discussed in session.\n\n**Objective:**  \n- Affect: Flat, with periods of tearfulness and expressed hopelessness.\n- Speech: Normal rate and tone, coherent.\n- Thought process: Logical, though preoccupied with negative self-appraisal and hopelessness.\n- No evidence of psychosis or mania.\n- Denies active suicidal ideation, intent, or plan.\n- Sleep: Disrupted, with insomnia and non-restorative sleep.\n- Appetite: Decreased, with irregular eating.\n- Function: Impaired academic and occupational performance; social withdrawal.\n- Medication adherence: Reports taking sertraline daily as prescribed; no significant side effects currently.\n\n**Assessment:**  \nLucy continues to experience symptoms consistent with moderate to severe Major Depressive Disorder, including persistent low mood, anhedonia, social withdrawal, sleep and appetite disturbances, low energy, impaired concentration, and passive thoughts of worthlessness. She is at risk for further functional decline academically and occupationally. Protective factors include insight, willingness to engage in treatment, and openness to safety planning. She is adherent to sertraline, with minimal side effects, but has not yet experienced significant therapeutic benefit. No current active suicidal ideation or intent, but ongoing monitoring is warranted given her passive thoughts and functional impairment.\n\n**Plan:**  \n1. **Medication:** Continue sertraline as prescribed (50mg daily in the morning). Monitor for efficacy and side effects. Consider dose adjustment if no improvement in symptoms after an adequate trial period.\n2. **Safety:** Develop a personalized safety plan including GP and crisis line contacts; provide information on text/online support resources. Encourage Lucy to reach out if her safety becomes a concern.\n3. **Psychosocial Interventions:**  \n   - Introduce thought-challenging exercises; encourage Lucy to record negative thoughts and bring them to the next session.\n   - Encourage engagement in small, manageable activities (e.g., five-minute daily walks) and track mood changes.\n   - Assist Lucy in drafting an email to university support/tutors to address academic concerns.\n4. **Support:** Provide crisis line and student support contact information. Reinforce the importance of self-compassion and gradual progress.\n5. **Follow-up:** Schedule next session for one week. Encourage Lucy to reach out between sessions if needed. Continue to monitor mood, safety, medication adherence, and functional status. \n\n**Patient verbalized understanding and agreement with the plan.**",
       "encounter_date": "2021-04-11"
     },
     {
@@ -6111,11 +6096,11 @@
         {
           "date": "2021-05-09",
           "medication": "Sertraline",
-          "dosage": "As previously prescribed (commonly 50 mg once daily, but confirm with patient's chart)",
+          "dosage": "50 mg once daily",
           "frequency": "Every morning"
         }
       ],
-      "clinical_note": "**Subjective:**  \nLucy reports that her mood and daily functioning have not changed significantly since the last session. She attempted to implement some behavioral activation strategies discussed previously, such as going for a short walk, but found it difficult to maintain consistency. She describes feeling a transient improvement in mood after walking, but this was short-lived, and she subsequently felt discouraged and self-critical for not continuing. Lucy continues to experience pervasive thoughts of inadequacy, particularly around her academic performance, friendships, and family roles. She attempted to journal her negative thoughts but found the process uncomfortable and unhelpful, as it increased her awareness of negativity. Lucy acknowledges that she is able to maintain some responsibilities, such as attending work and therapy, but minimizes these achievements, viewing them as the \"bare minimum.\" She recognizes a pattern of being more compassionate toward others than herself and is open to practicing self-compassion, though she is unsure if it will help.\n\nLucy reports ongoing sleep disturbances, with difficulty falling asleep and sleeping during the day. Her appetite is poor, often forgetting meals or substituting snacks for proper meals. She feels some guilt when roommates inquire about her well-being but is hesitant to share her struggles for fear of burdening others. She is open to the idea of reaching out to a friend via text and worked with the clinician to draft a message during the session.\n\nAcademically, Lucy remains behind on assignments and lectures but managed to listen to a recorded lecture, which she identified as a small win. She feels overwhelmed by her workload and experiences anxiety when confronted with her to-do list. She is willing to try breaking tasks into smaller, more manageable steps.\n\nLucy continues to work two shifts per week at the university IT desk. She finds the structure helpful at times but also exhausting. She is concerned about asking for further flexibility due to financial needs and fear of disappointing her employer. She is open to incorporating brief self-care activities, such as listening to music or making tea, into her routine.\n\nLucy is currently taking sertraline every morning as prescribed and reports no new side effects. She is unsure if the medication is helping but is willing to continue for now. She describes episodes of emotional numbness and low motivation but denies active suicidal ideation or intent. She is aware of crisis resources and agrees to reach out if her symptoms worsen.\n\n**Objective:**  \n- Appearance: Tired, but engaged and cooperative during session.\n- Affect: Restricted, congruent with reported mood.\n- Thought process: Logical, though negative and self-critical content predominates.\n- Insight: Good; recognizes patterns of negative thinking and is open to therapeutic interventions.\n- Sleep: Poor, with insomnia and hypersomnia.\n- Appetite: Decreased, irregular meals.\n- Functioning: Attending work (reduced hours), behind on academic tasks, limited social engagement.\n- Medication adherence: Reports taking sertraline daily, no side effects.\n- Safety: No current suicidal ideation or intent; passive thoughts of numbness and apathy.\n\n**Assessment:**  \nLucy continues to experience symptoms of moderate to severe major depressive disorder, including low mood, anhedonia, sleep and appetite disturbances, low energy, impaired concentration, and pervasive negative self-evaluation. She demonstrates some engagement with behavioral activation and cognitive restructuring strategies but struggles with consistency and self-compassion. Protective factors include ongoing engagement in therapy, adherence to medication, maintenance of some work and academic responsibilities, and willingness to reach out for help if needed. No acute safety concerns at present, but ongoing monitoring is warranted given her reports of numbness and low motivation.\n\n**Plan:**  \n1. **Medication:** Continue sertraline as prescribed (commonly 50 mg once daily in the morning; confirm dosage in chart). Monitor for efficacy and side effects. Reassess in a few weeks; consider medication review with GP/psychiatrist if limited improvement persists.\n2. **Therapy:** Continue weekly sessions focused on behavioral activation, cognitive restructuring, and self-compassion exercises. Encourage Lucy to notice and challenge negative self-talk and to practice responding to herself as she would to a friend.\n3. **Behavioral Activation:** Support Lucy in identifying and implementing small, manageable daily activities (e.g., listening to music, making tea, brief walks, stretching). Emphasize the value of small steps and celebrate incremental progress.\n4. **Academic Support:** Encourage breaking academic tasks into smaller steps and focusing on one task at a time. Reinforce any progress, however minor.\n5. **Social Support:** Support Lucy in reaching out to a friend via text, using the drafted message. Encourage her to notice the impact of this connection.\n6. **Self-care:** Brainstorm and implement brief self-care activities throughout the day.\n7. **Safety:** Provide crisis line and support contact information. Reinforce plan for reaching out if symptoms worsen or if suicidal ideation emerges.\n8. **Follow-up:** Schedule next session for one week. Email support contacts as discussed. Continue to monitor mood, functioning, and safety.",
+      "clinical_note": "**Subjective:**  \nLucy reports that her mood and daily functioning have not changed significantly since the last session. She attempted to implement some behavioral activation strategies discussed previously, such as going for a short walk, but found it difficult to maintain consistency. She describes feeling a transient improvement in mood after walking, but this was short-lived, and she subsequently felt discouraged and self-critical for not continuing. Lucy continues to experience pervasive thoughts of inadequacy, particularly around her academic performance, friendships, and family roles. She attempted to journal her negative thoughts but found the process uncomfortable and unhelpful, as it increased her awareness of negativity. Lucy acknowledges that she is able to maintain some responsibilities, such as attending work and therapy, but minimizes these achievements, viewing them as the \"bare minimum.\" She recognizes a pattern of being more compassionate toward others than herself and is open to practicing self-compassion, though she is unsure if it will help.\n\nLucy reports ongoing sleep disturbances, with difficulty falling asleep and sleeping during the day. Her appetite is poor, often forgetting meals or substituting snacks for proper meals. She feels some guilt when roommates inquire about her well-being but is hesitant to share her struggles for fear of burdening others. She is open to the idea of reaching out to a friend via text and worked with the clinician to draft a message during the session.\n\nAcademically, Lucy remains behind on assignments and lectures but managed to listen to a recorded lecture, which she identified as a small win. She feels overwhelmed by her workload and experiences anxiety when confronted with her to-do list. She is willing to try breaking tasks into smaller, more manageable steps.\n\nLucy continues to work two shifts per week at the university IT desk. She finds the structure helpful at times but also exhausting. She is concerned about asking for further flexibility due to financial needs and fear of disappointing her employer. She is open to incorporating brief self-care activities, such as listening to music or making tea, into her routine.\n\nLucy is currently taking sertraline every morning as prescribed and reports no new side effects. She is unsure if the medication is helping but is willing to continue for now. She describes episodes of emotional numbness and low motivation but denies active suicidal ideation or intent. She is aware of crisis resources and agrees to reach out if her symptoms worsen.\n\n**Objective:**  \n- Appearance: Tired, but engaged and cooperative during session.\n- Affect: Restricted, congruent with reported mood.\n- Thought process: Logical, though negative and self-critical content predominates.\n- Insight: Good; recognizes patterns of negative thinking and is open to therapeutic interventions.\n- Sleep: Poor, with insomnia and hypersomnia.\n- Appetite: Decreased, irregular meals.\n- Functioning: Attending work (reduced hours), behind on academic tasks, limited social engagement.\n- Medication adherence: Reports taking sertraline daily, no side effects.\n- Safety: No current suicidal ideation or intent; passive thoughts of numbness and apathy.\n\n**Assessment:**  \nLucy continues to experience symptoms of moderate to severe major depressive disorder, including low mood, anhedonia, sleep and appetite disturbances, low energy, impaired concentration, and pervasive negative self-evaluation. She demonstrates some engagement with behavioral activation and cognitive restructuring strategies but struggles with consistency and self-compassion. Protective factors include ongoing engagement in therapy, adherence to medication, maintenance of some work and academic responsibilities, and willingness to reach out for help if needed. No acute safety concerns at present, but ongoing monitoring is warranted given her reports of numbness and low motivation.\n\n**Plan:**  \n1. **Medication:** Continue sertraline as prescribed (50 mg once daily in the morning). Monitor for efficacy and side effects. Reassess in a few weeks; consider medication review with GP/psychiatrist if limited improvement persists.\n2. **Therapy:** Continue weekly sessions focused on behavioral activation, cognitive restructuring, and self-compassion exercises. Encourage Lucy to notice and challenge negative self-talk and to practice responding to herself as she would to a friend.\n3. **Behavioral Activation:** Support Lucy in identifying and implementing small, manageable daily activities (e.g., listening to music, making tea, brief walks, stretching). Emphasize the value of small steps and celebrate incremental progress.\n4. **Academic Support:** Encourage breaking academic tasks into smaller steps and focusing on one task at a time. Reinforce any progress, however minor.\n5. **Social Support:** Support Lucy in reaching out to a friend via text, using the drafted message. Encourage her to notice the impact of this connection.\n6. **Self-care:** Brainstorm and implement brief self-care activities throughout the day.\n7. **Safety:** Provide crisis line and support contact information. Reinforce plan for reaching out if symptoms worsen or if suicidal ideation emerges.\n8. **Follow-up:** Schedule next session for one week. Email support contacts as discussed. Continue to monitor mood, functioning, and safety.",
       "encounter_date": "2021-05-09"
     }
   ],
@@ -6309,6 +6294,56 @@
       "dataPoints": [
         {
           "date": "2021-04-04",
+          "PHQ-4 Anxiety Subscale (0-6)": 3.0
+        },
+        {
+          "date": "2021-04-11",
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
+        },
+        {
+          "date": "2021-04-18",
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
+        },
+        {
+          "date": "2021-04-25",
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
+        },
+        {
+          "date": "2021-05-02",
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
+        },
+        {
+          "date": "2021-05-09",
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
+        },
+        {
+          "date": "2021-05-16",
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
+        },
+        {
+          "date": "2021-05-24",
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
+        },
+        {
+          "date": "2021-05-30",
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
+        },
+        {
+          "date": "2021-06-06",
+          "PHQ-4 Anxiety Subscale (0-6)": 3.0
+        }
+      ],
+      "summarySentence": "Displaying phq-4 anxiety subscale (0-6) survey scores."
+    },
+    {
+      "isShowL2": false,
+      "sources": [
+        "survey"
+      ],
+      "dataSourceType": "raw",
+      "dataPoints": [
+        {
+          "date": "2021-04-04",
           "PHQ-4 (0-12)": 4.0
         },
         {
@@ -6399,56 +6434,6 @@
         }
       ],
       "summarySentence": "Displaying phq-4 depression subscale (0-6) survey scores."
-    },
-    {
-      "isShowL2": false,
-      "sources": [
-        "survey"
-      ],
-      "dataSourceType": "raw",
-      "dataPoints": [
-        {
-          "date": "2021-04-04",
-          "PHQ-4 Anxiety Subscale (0-6)": 3.0
-        },
-        {
-          "date": "2021-04-11",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-04-18",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-04-25",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-02",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-09",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-16",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-24",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-30",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-06-06",
-          "PHQ-4 Anxiety Subscale (0-6)": 3.0
-        }
-      ],
-      "summarySentence": "Displaying phq-4 anxiety subscale (0-6) survey scores."
     },
     {
       "isShowL2": false,
@@ -7971,288 +7956,288 @@
     {
       "modality_type": "passive sensing",
       "modality_source": "sleep",
-      "feature_name_renamed": "Bedtime (Hours in relation to midnight)",
-      "feature_name": "firstbedtimemain",
+      "feature_name_renamed": "Total Sleep (hours)",
+      "feature_name": "sumdurationasleepunifiedmain",
       "data": [
         {
           "date": "2021-03-29",
-          "Bedtime (Hours in relation to midnight)": null
+          "Total Sleep (hours)": null
         },
         {
           "date": "2021-03-30",
-          "Bedtime (Hours in relation to midnight)": null
+          "Total Sleep (hours)": null
         },
         {
           "date": "2021-03-31",
-          "Bedtime (Hours in relation to midnight)": 1.12
+          "Total Sleep (hours)": null
         },
         {
           "date": "2021-04-01",
-          "Bedtime (Hours in relation to midnight)": 0.24
+          "Total Sleep (hours)": 6.78
         },
         {
           "date": "2021-04-02",
-          "Bedtime (Hours in relation to midnight)": 0.05
+          "Total Sleep (hours)": 7.97
         },
         {
           "date": "2021-04-03",
-          "Bedtime (Hours in relation to midnight)": -1.42
+          "Total Sleep (hours)": 6.3
         },
         {
           "date": "2021-04-04",
-          "Bedtime (Hours in relation to midnight)": 0.39
+          "Total Sleep (hours)": 7.62
         },
         {
           "date": "2021-04-05",
-          "Bedtime (Hours in relation to midnight)": 1.2
+          "Total Sleep (hours)": 7.68
         },
         {
           "date": "2021-04-06",
-          "Bedtime (Hours in relation to midnight)": 0.56
+          "Total Sleep (hours)": 6.87
         },
         {
           "date": "2021-04-07",
-          "Bedtime (Hours in relation to midnight)": 0.73
+          "Total Sleep (hours)": 7.73
         },
         {
           "date": "2021-04-08",
-          "Bedtime (Hours in relation to midnight)": null
+          "Total Sleep (hours)": 7.65
         },
         {
           "date": "2021-04-09",
-          "Bedtime (Hours in relation to midnight)": 0.84
+          "Total Sleep (hours)": null
         },
         {
           "date": "2021-04-10",
-          "Bedtime (Hours in relation to midnight)": 1.0
+          "Total Sleep (hours)": 3.53
         },
         {
           "date": "2021-04-11",
-          "Bedtime (Hours in relation to midnight)": 0.59
+          "Total Sleep (hours)": 7.12
         },
         {
           "date": "2021-04-12",
-          "Bedtime (Hours in relation to midnight)": 0.42
+          "Total Sleep (hours)": 7.12
         },
         {
           "date": "2021-04-13",
-          "Bedtime (Hours in relation to midnight)": 0.88
+          "Total Sleep (hours)": 8.0
         },
         {
           "date": "2021-04-14",
-          "Bedtime (Hours in relation to midnight)": 1.59
+          "Total Sleep (hours)": 7.62
         },
         {
           "date": "2021-04-15",
-          "Bedtime (Hours in relation to midnight)": 1.22
+          "Total Sleep (hours)": 6.2
         },
         {
           "date": "2021-04-16",
-          "Bedtime (Hours in relation to midnight)": -0.24
+          "Total Sleep (hours)": 6.86
         },
         {
           "date": "2021-04-17",
-          "Bedtime (Hours in relation to midnight)": null
+          "Total Sleep (hours)": 3.97
         },
         {
           "date": "2021-04-18",
-          "Bedtime (Hours in relation to midnight)": null
+          "Total Sleep (hours)": null
         },
         {
           "date": "2021-04-19",
-          "Bedtime (Hours in relation to midnight)": 0.39
+          "Total Sleep (hours)": null
         },
         {
           "date": "2021-04-20",
-          "Bedtime (Hours in relation to midnight)": 0.89
+          "Total Sleep (hours)": 7.72
         },
         {
           "date": "2021-04-21",
-          "Bedtime (Hours in relation to midnight)": 1.97
+          "Total Sleep (hours)": 7.07
         },
         {
           "date": "2021-04-22",
-          "Bedtime (Hours in relation to midnight)": 0.19
+          "Total Sleep (hours)": 3.93
         },
         {
           "date": "2021-04-23",
-          "Bedtime (Hours in relation to midnight)": 0.7
+          "Total Sleep (hours)": 8.75
         },
         {
           "date": "2021-04-24",
-          "Bedtime (Hours in relation to midnight)": 2.12
+          "Total Sleep (hours)": 7.53
         },
         {
           "date": "2021-04-25",
-          "Bedtime (Hours in relation to midnight)": 1.25
+          "Total Sleep (hours)": 5.57
         },
         {
           "date": "2021-04-26",
-          "Bedtime (Hours in relation to midnight)": 1.28
+          "Total Sleep (hours)": 6.88
         },
         {
           "date": "2021-04-27",
-          "Bedtime (Hours in relation to midnight)": null
+          "Total Sleep (hours)": 5.35
         },
         {
           "date": "2021-04-28",
-          "Bedtime (Hours in relation to midnight)": 1.12
+          "Total Sleep (hours)": null
         },
         {
           "date": "2021-04-29",
-          "Bedtime (Hours in relation to midnight)": -0.72
+          "Total Sleep (hours)": 8.24
         },
         {
           "date": "2021-04-30",
-          "Bedtime (Hours in relation to midnight)": 0.32
+          "Total Sleep (hours)": 7.92
         },
         {
           "date": "2021-05-01",
-          "Bedtime (Hours in relation to midnight)": 0.48
+          "Total Sleep (hours)": 7.68
         },
         {
           "date": "2021-05-02",
-          "Bedtime (Hours in relation to midnight)": -0.3
+          "Total Sleep (hours)": 7.1
         },
         {
           "date": "2021-05-03",
-          "Bedtime (Hours in relation to midnight)": 1.02
+          "Total Sleep (hours)": 7.87
         },
         {
           "date": "2021-05-04",
-          "Bedtime (Hours in relation to midnight)": 0.88
+          "Total Sleep (hours)": 7.52
         },
         {
           "date": "2021-05-05",
-          "Bedtime (Hours in relation to midnight)": 1.1
+          "Total Sleep (hours)": 6.53
         },
         {
           "date": "2021-05-06",
-          "Bedtime (Hours in relation to midnight)": null
+          "Total Sleep (hours)": 7.08
         },
         {
           "date": "2021-05-07",
-          "Bedtime (Hours in relation to midnight)": 1.79
+          "Total Sleep (hours)": null
         },
         {
           "date": "2021-05-08",
-          "Bedtime (Hours in relation to midnight)": 0.05
+          "Total Sleep (hours)": 4.75
         },
         {
           "date": "2021-05-09",
-          "Bedtime (Hours in relation to midnight)": 0.87
+          "Total Sleep (hours)": 8.12
         },
         {
           "date": "2021-05-10",
-          "Bedtime (Hours in relation to midnight)": 1.04
+          "Total Sleep (hours)": 7.37
         },
         {
           "date": "2021-05-11",
-          "Bedtime (Hours in relation to midnight)": 0.99
+          "Total Sleep (hours)": 7.78
         },
         {
           "date": "2021-05-12",
-          "Bedtime (Hours in relation to midnight)": 1.48
+          "Total Sleep (hours)": 6.82
         },
         {
           "date": "2021-05-13",
-          "Bedtime (Hours in relation to midnight)": 1.22
+          "Total Sleep (hours)": 7.12
         },
         {
           "date": "2021-05-14",
-          "Bedtime (Hours in relation to midnight)": 1.02
+          "Total Sleep (hours)": 7.42
         },
         {
           "date": "2021-05-15",
-          "Bedtime (Hours in relation to midnight)": 2.62
+          "Total Sleep (hours)": 6.97
         },
         {
           "date": "2021-05-16",
-          "Bedtime (Hours in relation to midnight)": 0.62
+          "Total Sleep (hours)": 6.38
         },
         {
           "date": "2021-05-17",
-          "Bedtime (Hours in relation to midnight)": 1.14
+          "Total Sleep (hours)": 8.35
         },
         {
           "date": "2021-05-18",
-          "Bedtime (Hours in relation to midnight)": 1.82
+          "Total Sleep (hours)": 6.65
         },
         {
           "date": "2021-05-19",
-          "Bedtime (Hours in relation to midnight)": 1.58
+          "Total Sleep (hours)": 7.32
         },
         {
           "date": "2021-05-20",
-          "Bedtime (Hours in relation to midnight)": 1.7
+          "Total Sleep (hours)": 6.6
         },
         {
           "date": "2021-05-21",
-          "Bedtime (Hours in relation to midnight)": 0.03
+          "Total Sleep (hours)": 5.6
         },
         {
           "date": "2021-05-22",
-          "Bedtime (Hours in relation to midnight)": 3.51
+          "Total Sleep (hours)": 5.38
         },
         {
           "date": "2021-05-23",
-          "Bedtime (Hours in relation to midnight)": -0.17
+          "Total Sleep (hours)": 5.95
         },
         {
           "date": "2021-05-24",
-          "Bedtime (Hours in relation to midnight)": 0.15
+          "Total Sleep (hours)": 7.73
         },
         {
           "date": "2021-05-25",
-          "Bedtime (Hours in relation to midnight)": 0.84
+          "Total Sleep (hours)": 8.73
         },
         {
           "date": "2021-05-26",
-          "Bedtime (Hours in relation to midnight)": 0.52
+          "Total Sleep (hours)": 7.32
         },
         {
           "date": "2021-05-27",
-          "Bedtime (Hours in relation to midnight)": 0.72
+          "Total Sleep (hours)": 6.58
         },
         {
           "date": "2021-05-28",
-          "Bedtime (Hours in relation to midnight)": null
+          "Total Sleep (hours)": 8.27
         },
         {
           "date": "2021-05-29",
-          "Bedtime (Hours in relation to midnight)": null
+          "Total Sleep (hours)": null
         },
         {
           "date": "2021-05-30",
-          "Bedtime (Hours in relation to midnight)": 2.19
+          "Total Sleep (hours)": null
         },
         {
           "date": "2021-05-31",
-          "Bedtime (Hours in relation to midnight)": -0.22
+          "Total Sleep (hours)": 5.86
         },
         {
           "date": "2021-06-01",
-          "Bedtime (Hours in relation to midnight)": 0.88
+          "Total Sleep (hours)": 7.52
         },
         {
           "date": "2021-06-02",
-          "Bedtime (Hours in relation to midnight)": 0.83
+          "Total Sleep (hours)": 7.97
         },
         {
           "date": "2021-06-03",
-          "Bedtime (Hours in relation to midnight)": -0.32
+          "Total Sleep (hours)": 6.72
         },
         {
           "date": "2021-06-04",
-          "Bedtime (Hours in relation to midnight)": 1.18
+          "Total Sleep (hours)": 9.2
         },
         {
           "date": "2021-06-05",
-          "Bedtime (Hours in relation to midnight)": 0.31
+          "Total Sleep (hours)": 7.3
         },
         {
           "date": "2021-06-06",
-          "Bedtime (Hours in relation to midnight)": -0.24
+          "Total Sleep (hours)": 7.77
         }
       ]
     },
@@ -8835,288 +8820,288 @@
     {
       "modality_type": "passive sensing",
       "modality_source": "sleep",
-      "feature_name_renamed": "Total Sleep (hours)",
-      "feature_name": "sumdurationasleepunifiedmain",
+      "feature_name_renamed": "Bedtime (Hours in relation to midnight)",
+      "feature_name": "firstbedtimemain",
       "data": [
         {
           "date": "2021-03-29",
-          "Total Sleep (hours)": null
+          "Bedtime (Hours in relation to midnight)": null
         },
         {
           "date": "2021-03-30",
-          "Total Sleep (hours)": null
+          "Bedtime (Hours in relation to midnight)": null
         },
         {
           "date": "2021-03-31",
-          "Total Sleep (hours)": null
+          "Bedtime (Hours in relation to midnight)": 1.12
         },
         {
           "date": "2021-04-01",
-          "Total Sleep (hours)": 6.78
+          "Bedtime (Hours in relation to midnight)": 0.24
         },
         {
           "date": "2021-04-02",
-          "Total Sleep (hours)": 7.97
+          "Bedtime (Hours in relation to midnight)": 0.05
         },
         {
           "date": "2021-04-03",
-          "Total Sleep (hours)": 6.3
+          "Bedtime (Hours in relation to midnight)": -1.42
         },
         {
           "date": "2021-04-04",
-          "Total Sleep (hours)": 7.62
+          "Bedtime (Hours in relation to midnight)": 0.39
         },
         {
           "date": "2021-04-05",
-          "Total Sleep (hours)": 7.68
+          "Bedtime (Hours in relation to midnight)": 1.2
         },
         {
           "date": "2021-04-06",
-          "Total Sleep (hours)": 6.87
+          "Bedtime (Hours in relation to midnight)": 0.56
         },
         {
           "date": "2021-04-07",
-          "Total Sleep (hours)": 7.73
+          "Bedtime (Hours in relation to midnight)": 0.73
         },
         {
           "date": "2021-04-08",
-          "Total Sleep (hours)": 7.65
+          "Bedtime (Hours in relation to midnight)": null
         },
         {
           "date": "2021-04-09",
-          "Total Sleep (hours)": null
+          "Bedtime (Hours in relation to midnight)": 0.84
         },
         {
           "date": "2021-04-10",
-          "Total Sleep (hours)": 3.53
+          "Bedtime (Hours in relation to midnight)": 1.0
         },
         {
           "date": "2021-04-11",
-          "Total Sleep (hours)": 7.12
+          "Bedtime (Hours in relation to midnight)": 0.59
         },
         {
           "date": "2021-04-12",
-          "Total Sleep (hours)": 7.12
+          "Bedtime (Hours in relation to midnight)": 0.42
         },
         {
           "date": "2021-04-13",
-          "Total Sleep (hours)": 8.0
+          "Bedtime (Hours in relation to midnight)": 0.88
         },
         {
           "date": "2021-04-14",
-          "Total Sleep (hours)": 7.62
+          "Bedtime (Hours in relation to midnight)": 1.59
         },
         {
           "date": "2021-04-15",
-          "Total Sleep (hours)": 6.2
+          "Bedtime (Hours in relation to midnight)": 1.22
         },
         {
           "date": "2021-04-16",
-          "Total Sleep (hours)": 6.86
+          "Bedtime (Hours in relation to midnight)": -0.24
         },
         {
           "date": "2021-04-17",
-          "Total Sleep (hours)": 3.97
+          "Bedtime (Hours in relation to midnight)": null
         },
         {
           "date": "2021-04-18",
-          "Total Sleep (hours)": null
+          "Bedtime (Hours in relation to midnight)": null
         },
         {
           "date": "2021-04-19",
-          "Total Sleep (hours)": null
+          "Bedtime (Hours in relation to midnight)": 0.39
         },
         {
           "date": "2021-04-20",
-          "Total Sleep (hours)": 7.72
+          "Bedtime (Hours in relation to midnight)": 0.89
         },
         {
           "date": "2021-04-21",
-          "Total Sleep (hours)": 7.07
+          "Bedtime (Hours in relation to midnight)": 1.97
         },
         {
           "date": "2021-04-22",
-          "Total Sleep (hours)": 3.93
+          "Bedtime (Hours in relation to midnight)": 0.19
         },
         {
           "date": "2021-04-23",
-          "Total Sleep (hours)": 8.75
+          "Bedtime (Hours in relation to midnight)": 0.7
         },
         {
           "date": "2021-04-24",
-          "Total Sleep (hours)": 7.53
+          "Bedtime (Hours in relation to midnight)": 2.12
         },
         {
           "date": "2021-04-25",
-          "Total Sleep (hours)": 5.57
+          "Bedtime (Hours in relation to midnight)": 1.25
         },
         {
           "date": "2021-04-26",
-          "Total Sleep (hours)": 6.88
+          "Bedtime (Hours in relation to midnight)": 1.28
         },
         {
           "date": "2021-04-27",
-          "Total Sleep (hours)": 5.35
+          "Bedtime (Hours in relation to midnight)": null
         },
         {
           "date": "2021-04-28",
-          "Total Sleep (hours)": null
+          "Bedtime (Hours in relation to midnight)": 1.12
         },
         {
           "date": "2021-04-29",
-          "Total Sleep (hours)": 8.24
+          "Bedtime (Hours in relation to midnight)": -0.72
         },
         {
           "date": "2021-04-30",
-          "Total Sleep (hours)": 7.92
+          "Bedtime (Hours in relation to midnight)": 0.32
         },
         {
           "date": "2021-05-01",
-          "Total Sleep (hours)": 7.68
+          "Bedtime (Hours in relation to midnight)": 0.48
         },
         {
           "date": "2021-05-02",
-          "Total Sleep (hours)": 7.1
+          "Bedtime (Hours in relation to midnight)": -0.3
         },
         {
           "date": "2021-05-03",
-          "Total Sleep (hours)": 7.87
+          "Bedtime (Hours in relation to midnight)": 1.02
         },
         {
           "date": "2021-05-04",
-          "Total Sleep (hours)": 7.52
+          "Bedtime (Hours in relation to midnight)": 0.88
         },
         {
           "date": "2021-05-05",
-          "Total Sleep (hours)": 6.53
+          "Bedtime (Hours in relation to midnight)": 1.1
         },
         {
           "date": "2021-05-06",
-          "Total Sleep (hours)": 7.08
+          "Bedtime (Hours in relation to midnight)": null
         },
         {
           "date": "2021-05-07",
-          "Total Sleep (hours)": null
+          "Bedtime (Hours in relation to midnight)": 1.79
         },
         {
           "date": "2021-05-08",
-          "Total Sleep (hours)": 4.75
+          "Bedtime (Hours in relation to midnight)": 0.05
         },
         {
           "date": "2021-05-09",
-          "Total Sleep (hours)": 8.12
+          "Bedtime (Hours in relation to midnight)": 0.87
         },
         {
           "date": "2021-05-10",
-          "Total Sleep (hours)": 7.37
+          "Bedtime (Hours in relation to midnight)": 1.04
         },
         {
           "date": "2021-05-11",
-          "Total Sleep (hours)": 7.78
+          "Bedtime (Hours in relation to midnight)": 0.99
         },
         {
           "date": "2021-05-12",
-          "Total Sleep (hours)": 6.82
+          "Bedtime (Hours in relation to midnight)": 1.48
         },
         {
           "date": "2021-05-13",
-          "Total Sleep (hours)": 7.12
+          "Bedtime (Hours in relation to midnight)": 1.22
         },
         {
           "date": "2021-05-14",
-          "Total Sleep (hours)": 7.42
+          "Bedtime (Hours in relation to midnight)": 1.02
         },
         {
           "date": "2021-05-15",
-          "Total Sleep (hours)": 6.97
+          "Bedtime (Hours in relation to midnight)": 2.62
         },
         {
           "date": "2021-05-16",
-          "Total Sleep (hours)": 6.38
+          "Bedtime (Hours in relation to midnight)": 0.62
         },
         {
           "date": "2021-05-17",
-          "Total Sleep (hours)": 8.35
+          "Bedtime (Hours in relation to midnight)": 1.14
         },
         {
           "date": "2021-05-18",
-          "Total Sleep (hours)": 6.65
+          "Bedtime (Hours in relation to midnight)": 1.82
         },
         {
           "date": "2021-05-19",
-          "Total Sleep (hours)": 7.32
+          "Bedtime (Hours in relation to midnight)": 1.58
         },
         {
           "date": "2021-05-20",
-          "Total Sleep (hours)": 6.6
+          "Bedtime (Hours in relation to midnight)": 1.7
         },
         {
           "date": "2021-05-21",
-          "Total Sleep (hours)": 5.6
+          "Bedtime (Hours in relation to midnight)": 0.03
         },
         {
           "date": "2021-05-22",
-          "Total Sleep (hours)": 5.38
+          "Bedtime (Hours in relation to midnight)": 3.51
         },
         {
           "date": "2021-05-23",
-          "Total Sleep (hours)": 5.95
+          "Bedtime (Hours in relation to midnight)": -0.17
         },
         {
           "date": "2021-05-24",
-          "Total Sleep (hours)": 7.73
+          "Bedtime (Hours in relation to midnight)": 0.15
         },
         {
           "date": "2021-05-25",
-          "Total Sleep (hours)": 8.73
+          "Bedtime (Hours in relation to midnight)": 0.84
         },
         {
           "date": "2021-05-26",
-          "Total Sleep (hours)": 7.32
+          "Bedtime (Hours in relation to midnight)": 0.52
         },
         {
           "date": "2021-05-27",
-          "Total Sleep (hours)": 6.58
+          "Bedtime (Hours in relation to midnight)": 0.72
         },
         {
           "date": "2021-05-28",
-          "Total Sleep (hours)": 8.27
+          "Bedtime (Hours in relation to midnight)": null
         },
         {
           "date": "2021-05-29",
-          "Total Sleep (hours)": null
+          "Bedtime (Hours in relation to midnight)": null
         },
         {
           "date": "2021-05-30",
-          "Total Sleep (hours)": null
+          "Bedtime (Hours in relation to midnight)": 2.19
         },
         {
           "date": "2021-05-31",
-          "Total Sleep (hours)": 5.86
+          "Bedtime (Hours in relation to midnight)": -0.22
         },
         {
           "date": "2021-06-01",
-          "Total Sleep (hours)": 7.52
+          "Bedtime (Hours in relation to midnight)": 0.88
         },
         {
           "date": "2021-06-02",
-          "Total Sleep (hours)": 7.97
+          "Bedtime (Hours in relation to midnight)": 0.83
         },
         {
           "date": "2021-06-03",
-          "Total Sleep (hours)": 6.72
+          "Bedtime (Hours in relation to midnight)": -0.32
         },
         {
           "date": "2021-06-04",
-          "Total Sleep (hours)": 9.2
+          "Bedtime (Hours in relation to midnight)": 1.18
         },
         {
           "date": "2021-06-05",
-          "Total Sleep (hours)": 7.3
+          "Bedtime (Hours in relation to midnight)": 0.31
         },
         {
           "date": "2021-06-06",
-          "Total Sleep (hours)": 7.77
+          "Bedtime (Hours in relation to midnight)": -0.24
         }
       ]
     },
@@ -9875,6 +9860,54 @@
     {
       "modality_type": "survey",
       "modality_source": "survey",
+      "feature_name_renamed": "PHQ-4 Anxiety Subscale (0-6)",
+      "feature_name": "phq4_anxiety_EMA",
+      "data": [
+        {
+          "date": "2021-04-04",
+          "PHQ-4 Anxiety Subscale (0-6)": 3.0
+        },
+        {
+          "date": "2021-04-11",
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
+        },
+        {
+          "date": "2021-04-18",
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
+        },
+        {
+          "date": "2021-04-25",
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
+        },
+        {
+          "date": "2021-05-02",
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
+        },
+        {
+          "date": "2021-05-09",
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
+        },
+        {
+          "date": "2021-05-16",
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
+        },
+        {
+          "date": "2021-05-24",
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
+        },
+        {
+          "date": "2021-05-30",
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
+        },
+        {
+          "date": "2021-06-06",
+          "PHQ-4 Anxiety Subscale (0-6)": 3.0
+        }
+      ]
+    },
+    {
+      "modality_type": "survey",
+      "modality_source": "survey",
       "feature_name_renamed": "PHQ-4 (0-12)",
       "feature_name": "phq4_EMA",
       "data": [
@@ -9965,54 +9998,6 @@
         {
           "date": "2021-06-06",
           "PHQ-4 Depression Subscale (0-6)": 3.0
-        }
-      ]
-    },
-    {
-      "modality_type": "survey",
-      "modality_source": "survey",
-      "feature_name_renamed": "PHQ-4 Anxiety Subscale (0-6)",
-      "feature_name": "phq4_anxiety_EMA",
-      "data": [
-        {
-          "date": "2021-04-04",
-          "PHQ-4 Anxiety Subscale (0-6)": 3.0
-        },
-        {
-          "date": "2021-04-11",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-04-18",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-04-25",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-02",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-09",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-16",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-24",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-30",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-06-06",
-          "PHQ-4 Anxiety Subscale (0-6)": 3.0
         }
       ]
     },

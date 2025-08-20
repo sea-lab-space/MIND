@@ -16,16 +16,25 @@ Now consider this scenario: you are preparing an encounter with a patient, and y
 
 You have access to the previous clinical note, written in the SOAP note format.
 
-Your task is to provide two concise summaries:
+Your task is to provide three concise summaries:
 1. Symptoms & Observations (S/O):
-* In ≤15 words, summarize key symptoms or findings.
+* In ≤12 words, summarize key symptoms or findings.
 * Cite the exact sentence(s) from the note as evidence.
-* Start with: Reported/observed...
+* Start with: Patient presented with...
 
 2. Assessment (A):
-* In ≤15 words, summarize key assessment.
+* In ≤12 words, summarize key assessment.
+* Make the sentence readible, e.g., when describing engagement in threapy, don't just say "show engagement", say "show <activity name> participation".
 * Cite the exact sentence(s) from the note as evidence.
-* Start with: Assessed...
+* Start with: Assessment indicated...
+
+3. Plan (P):
+- In ≤10 words, summarize the medication prescribed.  
+- If yes:
+  - If the same as the last session: write "Continue <medication name> (<dosage>, <frequency>)."
+  - If new or changed: just write "Prescribed <medication name> (<dosage>, <frequency>)."
+  - <frequency> should be described like "once daily", don't need to specify at which point of day.
+- If none: write "No medication prescribed."  
 
 Rules:
 1. Do not invent any information.  

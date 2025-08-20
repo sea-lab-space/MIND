@@ -10,7 +10,7 @@ from discoverer.rule_base_agents.rule_base_trend_agent import RuleBaseTrendAgent
 from discoverer.rule_base_agents.rule_base_outlier_agent import RuleBaseOutlierAgent
 from discoverer.planner import PlannerAgent
 from discoverer.text_data.hypothesis_agent import DiscovererHypothesisAgent
-from discoverer.text_data.notes_summary_agent import NotesCardSummaryAgent
+from helpers.notes_summary_agent import NotesCardSummaryAgent
 from utils.search import search_feature_in_feature_list, search_question_in_question_list
 
 class Discoverer:
@@ -26,10 +26,6 @@ class Discoverer:
         # self.text_agents = [
         #     agent(retrospect_date, before_date, model=model_name) for agent in text_agents
         # ]
-        self.notes_summary_agent = NotesCardSummaryAgent(
-            retrospect_date=retrospect_date,
-            before_date=before_date,
-            model=model_name)
         self.hypothesis_agent = DiscovererHypothesisAgent(
             before_date=before_date,
             retrospect_date=retrospect_date,
@@ -110,9 +106,7 @@ class Discoverer:
         transcript_input = {self.retrospect_date: formatted_transcript}
         return transcript_input
     
-    def _run_notes_extraction(self, note_input, verbose = False):
-        note_facts = self.notes_summary_agent.run(note_input, verbose=False)
-        return note_facts
+
     
     def _run_hypothesis_generation(self, transcript_input, note_input, verbose = False):
         print("---- Running Hypothesis Generation ----")
@@ -190,7 +184,6 @@ class Discoverer:
         # Default run_stages if None
         if run_stages == {} or cache_dir is None:
             run_stages = {
-                "notes_summary": True,
                 "hypothesis_generation": True,
                 "plan": True,
                 "exec": True,
@@ -213,18 +206,6 @@ class Discoverer:
         # Sanity check
         assert len(note_input) > 0 and len(
             transcript_input) > 0, "No text data found for the given date"
-
-        # Stage 1: Factual summary from notes
-        if run_stages["notes_summary"]:
-            print("[Discoverer run]: Running Notes Summary")
-            note_facts = self._run_notes_extraction(
-                note_input, verbose=False)
-            if cache_dir:
-                with open(os.path.join(cache_dir, 'note_facts.json'), 'w') as f:
-                    json.dump(note_facts, f, indent=2)
-        else:
-            with open(os.path.join(cache_dir, 'note_facts.json'), 'r') as f:
-                note_facts = json.load(f)
 
         # Stage 2: Hypothesis generation
         numeric_input = features['numerical_data']
@@ -286,7 +267,6 @@ class Discoverer:
         return {
             "numeric_facts": numeric_facts,
             "key_concern_facts": key_concern_facts,
-            "note_facts": note_facts,
             # "transcript_facts": transcript_facts,
             # "medication_facts": medication_facts
         }

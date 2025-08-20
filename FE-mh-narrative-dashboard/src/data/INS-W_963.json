@@ -49,8 +49,8 @@
       "key": "insight-0",
       "summaryTitle": "Positive affect increases while depression symptoms show high variability over recent weeks.",
       "sources": [
-        "clinical note",
-        "survey"
+        "survey",
+        "clinical note"
       ],
       "insightType": [
         "psychological"
@@ -302,8 +302,8 @@
       "key": "insight-1",
       "summaryTitle": "Positive affect is increasing and negative affect is slightly decreasing over recent weeks.",
       "sources": [
-        "clinical note",
-        "survey"
+        "survey",
+        "clinical note"
       ],
       "insightType": [
         "psychological"
@@ -548,8 +548,8 @@
       "summaryTitle": "Physical activity and positive mood both show increasing trends over the recent month.",
       "sources": [
         "passive sensing",
-        "clinical note",
-        "survey"
+        "survey",
+        "clinical note"
       ],
       "insightType": [
         "biological"
@@ -3812,8 +3812,8 @@
       "key": "insight-6",
       "summaryTitle": "Physical activity and distance traveled show significant increases over the recent period.",
       "sources": [
-        "passive sensing",
-        "session transcript"
+        "session transcript",
+        "passive sensing"
       ],
       "insightType": [
         "biological"
@@ -5063,8 +5063,8 @@
       "key": "insight-7",
       "summaryTitle": "Screen time shows a significant decreasing trend over the recent period.",
       "sources": [
-        "passive sensing",
-        "session transcript"
+        "session transcript",
+        "passive sensing"
       ],
       "insightType": [
         "psychological"
@@ -5708,8 +5708,8 @@
       "key": "insight-8",
       "summaryTitle": "Routine consistency and inactivity periods show high variability and frequent anomalies.",
       "sources": [
-        "passive sensing",
-        "session transcript"
+        "session transcript",
+        "passive sensing"
       ],
       "insightType": [
         "social"
@@ -8429,8 +8429,8 @@
       "key": "insight-9",
       "summaryTitle": "Positive affect shows an increasing trend over the most recent period.",
       "sources": [
-        "survey",
-        "session transcript"
+        "session transcript",
+        "survey"
       ],
       "insightType": [
         "psychological"
@@ -12445,7 +12445,7 @@
   ],
   "last_encounter": [
     {
-      "summaryTitle": "Reported/observed persistent emotional numbness, fatigue, negative self-perception, social withdrawal, and sleep disturbance.",
+      "summaryTitle": "Patient presented with persistent numbness, fatigue, negative thoughts, social withdrawal.",
       "sources": [
         "clinical note"
       ],
@@ -12463,17 +12463,12 @@
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "She continues to experience significant self-doubt and guilt, particularly after a recent argument with her mother regarding job and university applications."
+              "text": "She has been able to track negative thoughts as previously discussed, noting recurring themes of self-criticism and feelings of inadequacy (“I’m useless,” “I’m letting everyone down”)."
             },
             {
               "fact_type": "text",
               "date": "2021-05-09",
               "text": "Social withdrawal persists; she has not contacted friends or returned to campus, expressing feelings of being “stuck” and left behind compared to her peers."
-            },
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Sleep remains disturbed, with difficulty falling and staying asleep, and she notes increased late-night snacking."
             }
           ],
           "sources": [
@@ -12485,7 +12480,7 @@
       ]
     },
     {
-      "summaryTitle": "Assessed ongoing moderate Major Depressive Disorder with persistent anhedonia, low energy, and entrenched negative cognitions.",
+      "summaryTitle": "Assessment indicated moderate depression, persistent anhedonia, and fleeting positive affect.",
       "sources": [
         "clinical note"
       ],
@@ -12509,6 +12504,31 @@
               "fact_type": "text",
               "date": "2021-05-09",
               "text": "There is some engagement in behavioral activation (music, walks, work shifts), but positive affect is fleeting and overshadowed by entrenched negative cognitions."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        }
+      ]
+    },
+    {
+      "summaryTitle": "Continue Sertraline (50 mg, once daily).",
+      "sources": [
+        "clinical note"
+      ],
+      "insightType": [],
+      "expandView": [
+        {
+          "summarySentence": null,
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Continue Sertraline 50 mg daily in the morning with breakfast."
             }
           ],
           "sources": [
@@ -12997,6 +13017,96 @@
       "dataPoints": [
         {
           "date": "2021-03-31",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 6.0
+        },
+        {
+          "date": "2021-04-04",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 8.0
+        },
+        {
+          "date": "2021-04-07",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-04-11",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 7.0
+        },
+        {
+          "date": "2021-04-14",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-04-18",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-04-21",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-04-25",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-04-28",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 6.0
+        },
+        {
+          "date": "2021-05-02",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-05-05",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-05-09",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-05-12",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-05-16",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-05-19",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-05-24",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-05-26",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-05-30",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-06-02",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 6.0
+        },
+        {
+          "date": "2021-06-06",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 6.0
+        }
+      ],
+      "summarySentence": "Displaying positive affect subscale (5-25, panas-sf) survey scores."
+    },
+    {
+      "isShowL2": false,
+      "sources": [
+        "survey"
+      ],
+      "dataSourceType": "raw",
+      "dataPoints": [
+        {
+          "date": "2021-03-31",
           "Negative Affect Subscale (5-25, PANAS-SF)": 12.0
         },
         {
@@ -13086,87 +13196,47 @@
       "dataSourceType": "raw",
       "dataPoints": [
         {
-          "date": "2021-03-31",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 6.0
-        },
-        {
           "date": "2021-04-04",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 8.0
-        },
-        {
-          "date": "2021-04-07",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+          "PHQ-4 Anxiety Subscale (0-6)": 4.0
         },
         {
           "date": "2021-04-11",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 7.0
-        },
-        {
-          "date": "2021-04-14",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
         },
         {
           "date": "2021-04-18",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
-        },
-        {
-          "date": "2021-04-21",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
         },
         {
           "date": "2021-04-25",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
-        },
-        {
-          "date": "2021-04-28",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 6.0
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
         },
         {
           "date": "2021-05-02",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
-        },
-        {
-          "date": "2021-05-05",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
         },
         {
           "date": "2021-05-09",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
-        },
-        {
-          "date": "2021-05-12",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+          "PHQ-4 Anxiety Subscale (0-6)": 3.0
         },
         {
           "date": "2021-05-16",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
-        },
-        {
-          "date": "2021-05-19",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
         },
         {
           "date": "2021-05-24",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
-        },
-        {
-          "date": "2021-05-26",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
         },
         {
           "date": "2021-05-30",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
-        },
-        {
-          "date": "2021-06-02",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 6.0
+          "PHQ-4 Anxiety Subscale (0-6)": 0.0
         },
         {
           "date": "2021-06-06",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 6.0
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
         }
       ],
-      "summarySentence": "Displaying positive affect subscale (5-25, panas-sf) survey scores."
+      "summarySentence": "Displaying phq-4 anxiety subscale (0-6) survey scores."
     },
     {
       "isShowL2": false,
@@ -13267,56 +13337,6 @@
         }
       ],
       "summarySentence": "Displaying phq-4 depression subscale (0-6) survey scores."
-    },
-    {
-      "isShowL2": false,
-      "sources": [
-        "survey"
-      ],
-      "dataSourceType": "raw",
-      "dataPoints": [
-        {
-          "date": "2021-04-04",
-          "PHQ-4 Anxiety Subscale (0-6)": 4.0
-        },
-        {
-          "date": "2021-04-11",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-04-18",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-04-25",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-02",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-09",
-          "PHQ-4 Anxiety Subscale (0-6)": 3.0
-        },
-        {
-          "date": "2021-05-16",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-24",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-30",
-          "PHQ-4 Anxiety Subscale (0-6)": 0.0
-        },
-        {
-          "date": "2021-06-06",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        }
-      ],
-      "summarySentence": "Displaying phq-4 anxiety subscale (0-6) survey scores."
     },
     {
       "isShowL2": false,
@@ -13687,294 +13707,6 @@
     {
       "modality_type": "passive sensing",
       "modality_source": "location",
-      "feature_name_renamed": "Routine Consistency (0 irregular, 100 regular)",
-      "feature_name": "circdnrtn",
-      "data": [
-        {
-          "date": "2021-03-29",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-03-30",
-          "Routine Consistency (0 irregular, 100 regular)": 86.47
-        },
-        {
-          "date": "2021-03-31",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-04-01",
-          "Routine Consistency (0 irregular, 100 regular)": 86.95
-        },
-        {
-          "date": "2021-04-02",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-04-03",
-          "Routine Consistency (0 irregular, 100 regular)": 90.43
-        },
-        {
-          "date": "2021-04-04",
-          "Routine Consistency (0 irregular, 100 regular)": 86.9
-        },
-        {
-          "date": "2021-04-05",
-          "Routine Consistency (0 irregular, 100 regular)": 86.79
-        },
-        {
-          "date": "2021-04-06",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-04-07",
-          "Routine Consistency (0 irregular, 100 regular)": 86.15
-        },
-        {
-          "date": "2021-04-08",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-04-09",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-04-10",
-          "Routine Consistency (0 irregular, 100 regular)": 78.56
-        },
-        {
-          "date": "2021-04-11",
-          "Routine Consistency (0 irregular, 100 regular)": 23.3
-        },
-        {
-          "date": "2021-04-12",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-04-13",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-04-14",
-          "Routine Consistency (0 irregular, 100 regular)": 63.97
-        },
-        {
-          "date": "2021-04-15",
-          "Routine Consistency (0 irregular, 100 regular)": null
-        },
-        {
-          "date": "2021-04-16",
-          "Routine Consistency (0 irregular, 100 regular)": null
-        },
-        {
-          "date": "2021-04-17",
-          "Routine Consistency (0 irregular, 100 regular)": 38.21
-        },
-        {
-          "date": "2021-04-18",
-          "Routine Consistency (0 irregular, 100 regular)": 90.43
-        },
-        {
-          "date": "2021-04-19",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-04-20",
-          "Routine Consistency (0 irregular, 100 regular)": 90.43
-        },
-        {
-          "date": "2021-04-21",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-04-22",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-04-23",
-          "Routine Consistency (0 irregular, 100 regular)": 86.26
-        },
-        {
-          "date": "2021-04-24",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-04-25",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-04-26",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-04-27",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-04-28",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-04-29",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-04-30",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-01",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-02",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-03",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-04",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-05",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-06",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-07",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-08",
-          "Routine Consistency (0 irregular, 100 regular)": 86.36
-        },
-        {
-          "date": "2021-05-09",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-10",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-11",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-12",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-13",
-          "Routine Consistency (0 irregular, 100 regular)": 86.53
-        },
-        {
-          "date": "2021-05-14",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-15",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-16",
-          "Routine Consistency (0 irregular, 100 regular)": 93.58
-        },
-        {
-          "date": "2021-05-17",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-18",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-19",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-20",
-          "Routine Consistency (0 irregular, 100 regular)": 90.32
-        },
-        {
-          "date": "2021-05-21",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-22",
-          "Routine Consistency (0 irregular, 100 regular)": 64.93
-        },
-        {
-          "date": "2021-05-23",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-24",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-25",
-          "Routine Consistency (0 irregular, 100 regular)": 55.05
-        },
-        {
-          "date": "2021-05-26",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-27",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-28",
-          "Routine Consistency (0 irregular, 100 regular)": 46.44
-        },
-        {
-          "date": "2021-05-29",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-05-30",
-          "Routine Consistency (0 irregular, 100 regular)": 50.72
-        },
-        {
-          "date": "2021-05-31",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-06-01",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-06-02",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-06-03",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-06-04",
-          "Routine Consistency (0 irregular, 100 regular)": 50.88
-        },
-        {
-          "date": "2021-06-05",
-          "Routine Consistency (0 irregular, 100 regular)": 93.63
-        },
-        {
-          "date": "2021-06-06",
-          "Routine Consistency (0 irregular, 100 regular)": 86.31
-        }
-      ]
-    },
-    {
-      "modality_type": "passive sensing",
-      "modality_source": "location",
       "feature_name_renamed": "Time Spent at Home (Hours)",
       "feature_name": "timeathome",
       "data": [
@@ -14257,6 +13989,294 @@
         {
           "date": "2021-06-06",
           "Time Spent at Home (Hours)": 21.18
+        }
+      ]
+    },
+    {
+      "modality_type": "passive sensing",
+      "modality_source": "location",
+      "feature_name_renamed": "Routine Consistency (0 irregular, 100 regular)",
+      "feature_name": "circdnrtn",
+      "data": [
+        {
+          "date": "2021-03-29",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-03-30",
+          "Routine Consistency (0 irregular, 100 regular)": 86.47
+        },
+        {
+          "date": "2021-03-31",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-04-01",
+          "Routine Consistency (0 irregular, 100 regular)": 86.95
+        },
+        {
+          "date": "2021-04-02",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-04-03",
+          "Routine Consistency (0 irregular, 100 regular)": 90.43
+        },
+        {
+          "date": "2021-04-04",
+          "Routine Consistency (0 irregular, 100 regular)": 86.9
+        },
+        {
+          "date": "2021-04-05",
+          "Routine Consistency (0 irregular, 100 regular)": 86.79
+        },
+        {
+          "date": "2021-04-06",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-04-07",
+          "Routine Consistency (0 irregular, 100 regular)": 86.15
+        },
+        {
+          "date": "2021-04-08",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-04-09",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-04-10",
+          "Routine Consistency (0 irregular, 100 regular)": 78.56
+        },
+        {
+          "date": "2021-04-11",
+          "Routine Consistency (0 irregular, 100 regular)": 23.3
+        },
+        {
+          "date": "2021-04-12",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-04-13",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-04-14",
+          "Routine Consistency (0 irregular, 100 regular)": 63.97
+        },
+        {
+          "date": "2021-04-15",
+          "Routine Consistency (0 irregular, 100 regular)": null
+        },
+        {
+          "date": "2021-04-16",
+          "Routine Consistency (0 irregular, 100 regular)": null
+        },
+        {
+          "date": "2021-04-17",
+          "Routine Consistency (0 irregular, 100 regular)": 38.21
+        },
+        {
+          "date": "2021-04-18",
+          "Routine Consistency (0 irregular, 100 regular)": 90.43
+        },
+        {
+          "date": "2021-04-19",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-04-20",
+          "Routine Consistency (0 irregular, 100 regular)": 90.43
+        },
+        {
+          "date": "2021-04-21",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-04-22",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-04-23",
+          "Routine Consistency (0 irregular, 100 regular)": 86.26
+        },
+        {
+          "date": "2021-04-24",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-04-25",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-04-26",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-04-27",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-04-28",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-04-29",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-04-30",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-01",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-02",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-03",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-04",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-05",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-06",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-07",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-08",
+          "Routine Consistency (0 irregular, 100 regular)": 86.36
+        },
+        {
+          "date": "2021-05-09",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-10",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-11",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-12",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-13",
+          "Routine Consistency (0 irregular, 100 regular)": 86.53
+        },
+        {
+          "date": "2021-05-14",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-15",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-16",
+          "Routine Consistency (0 irregular, 100 regular)": 93.58
+        },
+        {
+          "date": "2021-05-17",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-18",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-19",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-20",
+          "Routine Consistency (0 irregular, 100 regular)": 90.32
+        },
+        {
+          "date": "2021-05-21",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-22",
+          "Routine Consistency (0 irregular, 100 regular)": 64.93
+        },
+        {
+          "date": "2021-05-23",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-24",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-25",
+          "Routine Consistency (0 irregular, 100 regular)": 55.05
+        },
+        {
+          "date": "2021-05-26",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-27",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-28",
+          "Routine Consistency (0 irregular, 100 regular)": 46.44
+        },
+        {
+          "date": "2021-05-29",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-05-30",
+          "Routine Consistency (0 irregular, 100 regular)": 50.72
+        },
+        {
+          "date": "2021-05-31",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-06-01",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-06-02",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-06-03",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-06-04",
+          "Routine Consistency (0 irregular, 100 regular)": 50.88
+        },
+        {
+          "date": "2021-06-05",
+          "Routine Consistency (0 irregular, 100 regular)": 93.63
+        },
+        {
+          "date": "2021-06-06",
+          "Routine Consistency (0 irregular, 100 regular)": 86.31
         }
       ]
     },
@@ -14839,288 +14859,288 @@
     {
       "modality_type": "passive sensing",
       "modality_source": "sleep",
-      "feature_name_renamed": "Awakening Episodes (Times)",
-      "feature_name": "countepisodeawakeunifiedmain",
+      "feature_name_renamed": "Total Sleep (hours)",
+      "feature_name": "sumdurationasleepunifiedmain",
       "data": [
         {
           "date": "2021-03-29",
-          "Awakening Episodes (Times)": null
+          "Total Sleep (hours)": null
         },
         {
           "date": "2021-03-30",
-          "Awakening Episodes (Times)": 11.0
+          "Total Sleep (hours)": 6.78
         },
         {
           "date": "2021-03-31",
-          "Awakening Episodes (Times)": 12.0
+          "Total Sleep (hours)": 7.47
         },
         {
           "date": "2021-04-01",
-          "Awakening Episodes (Times)": 2.0
+          "Total Sleep (hours)": 4.85
         },
         {
           "date": "2021-04-02",
-          "Awakening Episodes (Times)": 11.0
+          "Total Sleep (hours)": 7.52
         },
         {
           "date": "2021-04-03",
-          "Awakening Episodes (Times)": 9.0
+          "Total Sleep (hours)": 7.95
         },
         {
           "date": "2021-04-04",
-          "Awakening Episodes (Times)": 9.0
+          "Total Sleep (hours)": 6.32
         },
         {
           "date": "2021-04-05",
-          "Awakening Episodes (Times)": 12.0
+          "Total Sleep (hours)": 6.17
         },
         {
           "date": "2021-04-06",
-          "Awakening Episodes (Times)": 4.0
+          "Total Sleep (hours)": 6.3
         },
         {
           "date": "2021-04-07",
-          "Awakening Episodes (Times)": 9.0
+          "Total Sleep (hours)": 6.42
         },
         {
           "date": "2021-04-08",
-          "Awakening Episodes (Times)": 7.0
+          "Total Sleep (hours)": 6.37
         },
         {
           "date": "2021-04-09",
-          "Awakening Episodes (Times)": 4.0
+          "Total Sleep (hours)": 5.4
         },
         {
           "date": "2021-04-10",
-          "Awakening Episodes (Times)": 6.0
+          "Total Sleep (hours)": 8.27
         },
         {
           "date": "2021-04-11",
-          "Awakening Episodes (Times)": 5.0
+          "Total Sleep (hours)": 7.48
         },
         {
           "date": "2021-04-12",
-          "Awakening Episodes (Times)": 3.0
+          "Total Sleep (hours)": 6.58
         },
         {
           "date": "2021-04-13",
-          "Awakening Episodes (Times)": 5.0
+          "Total Sleep (hours)": 6.17
         },
         {
           "date": "2021-04-14",
-          "Awakening Episodes (Times)": 5.0
+          "Total Sleep (hours)": 6.33
         },
         {
           "date": "2021-04-15",
-          "Awakening Episodes (Times)": 6.0
+          "Total Sleep (hours)": 6.35
         },
         {
           "date": "2021-04-16",
-          "Awakening Episodes (Times)": 10.0
+          "Total Sleep (hours)": 8.55
         },
         {
           "date": "2021-04-17",
-          "Awakening Episodes (Times)": 5.0
+          "Total Sleep (hours)": 7.25
         },
         {
           "date": "2021-04-18",
-          "Awakening Episodes (Times)": 9.0
+          "Total Sleep (hours)": 7.45
         },
         {
           "date": "2021-04-19",
-          "Awakening Episodes (Times)": 7.0
+          "Total Sleep (hours)": 7.07
         },
         {
           "date": "2021-04-20",
-          "Awakening Episodes (Times)": 4.0
+          "Total Sleep (hours)": 7.28
         },
         {
           "date": "2021-04-21",
-          "Awakening Episodes (Times)": 3.0
+          "Total Sleep (hours)": 7.47
         },
         {
           "date": "2021-04-22",
-          "Awakening Episodes (Times)": 7.0
+          "Total Sleep (hours)": 7.3
         },
         {
           "date": "2021-04-23",
-          "Awakening Episodes (Times)": 7.0
+          "Total Sleep (hours)": 7.35
         },
         {
           "date": "2021-04-24",
-          "Awakening Episodes (Times)": 10.0
+          "Total Sleep (hours)": 6.85
         },
         {
           "date": "2021-04-25",
-          "Awakening Episodes (Times)": 11.0
+          "Total Sleep (hours)": 7.17
         },
         {
           "date": "2021-04-26",
-          "Awakening Episodes (Times)": 12.0
+          "Total Sleep (hours)": 6.57
         },
         {
           "date": "2021-04-27",
-          "Awakening Episodes (Times)": 6.0
+          "Total Sleep (hours)": 7.47
         },
         {
           "date": "2021-04-28",
-          "Awakening Episodes (Times)": 10.0
+          "Total Sleep (hours)": 7.18
         },
         {
           "date": "2021-04-29",
-          "Awakening Episodes (Times)": 8.0
+          "Total Sleep (hours)": 6.5
         },
         {
           "date": "2021-04-30",
-          "Awakening Episodes (Times)": 8.0
+          "Total Sleep (hours)": 8.53
         },
         {
           "date": "2021-05-01",
-          "Awakening Episodes (Times)": 6.0
+          "Total Sleep (hours)": 7.63
         },
         {
           "date": "2021-05-02",
-          "Awakening Episodes (Times)": 8.0
+          "Total Sleep (hours)": 7.72
         },
         {
           "date": "2021-05-03",
-          "Awakening Episodes (Times)": 2.0
+          "Total Sleep (hours)": 6.37
         },
         {
           "date": "2021-05-04",
-          "Awakening Episodes (Times)": 3.0
+          "Total Sleep (hours)": 6.87
         },
         {
           "date": "2021-05-05",
-          "Awakening Episodes (Times)": 5.0
+          "Total Sleep (hours)": 6.37
         },
         {
           "date": "2021-05-06",
-          "Awakening Episodes (Times)": 11.0
+          "Total Sleep (hours)": 5.73
         },
         {
           "date": "2021-05-07",
-          "Awakening Episodes (Times)": 6.0
+          "Total Sleep (hours)": 7.55
         },
         {
           "date": "2021-05-08",
-          "Awakening Episodes (Times)": 10.0
+          "Total Sleep (hours)": 7.13
         },
         {
           "date": "2021-05-09",
-          "Awakening Episodes (Times)": 3.0
+          "Total Sleep (hours)": 4.72
         },
         {
           "date": "2021-05-10",
-          "Awakening Episodes (Times)": 13.0
+          "Total Sleep (hours)": 7.58
         },
         {
           "date": "2021-05-11",
-          "Awakening Episodes (Times)": 5.0
+          "Total Sleep (hours)": 6.38
         },
         {
           "date": "2021-05-12",
-          "Awakening Episodes (Times)": 4.0
+          "Total Sleep (hours)": 6.67
         },
         {
           "date": "2021-05-13",
-          "Awakening Episodes (Times)": 5.0
+          "Total Sleep (hours)": 7.07
         },
         {
           "date": "2021-05-14",
-          "Awakening Episodes (Times)": 9.0
+          "Total Sleep (hours)": 7.23
         },
         {
           "date": "2021-05-15",
-          "Awakening Episodes (Times)": 6.0
+          "Total Sleep (hours)": 7.0
         },
         {
           "date": "2021-05-16",
-          "Awakening Episodes (Times)": 11.0
+          "Total Sleep (hours)": 7.55
         },
         {
           "date": "2021-05-17",
-          "Awakening Episodes (Times)": 5.0
+          "Total Sleep (hours)": 6.97
         },
         {
           "date": "2021-05-18",
-          "Awakening Episodes (Times)": 6.0
+          "Total Sleep (hours)": 6.62
         },
         {
           "date": "2021-05-19",
-          "Awakening Episodes (Times)": 6.0
+          "Total Sleep (hours)": 7.35
         },
         {
           "date": "2021-05-20",
-          "Awakening Episodes (Times)": 7.0
+          "Total Sleep (hours)": 5.77
         },
         {
           "date": "2021-05-21",
-          "Awakening Episodes (Times)": 5.0
+          "Total Sleep (hours)": 8.07
         },
         {
           "date": "2021-05-22",
-          "Awakening Episodes (Times)": 10.0
+          "Total Sleep (hours)": 6.68
         },
         {
           "date": "2021-05-23",
-          "Awakening Episodes (Times)": 12.0
+          "Total Sleep (hours)": 6.75
         },
         {
           "date": "2021-05-24",
-          "Awakening Episodes (Times)": 9.0
+          "Total Sleep (hours)": 6.95
         },
         {
           "date": "2021-05-25",
-          "Awakening Episodes (Times)": 4.0
+          "Total Sleep (hours)": 5.85
         },
         {
           "date": "2021-05-26",
-          "Awakening Episodes (Times)": 8.0
+          "Total Sleep (hours)": 8.38
         },
         {
           "date": "2021-05-27",
-          "Awakening Episodes (Times)": 5.0
+          "Total Sleep (hours)": 7.1
         },
         {
           "date": "2021-05-28",
-          "Awakening Episodes (Times)": 2.0
+          "Total Sleep (hours)": 7.3
         },
         {
           "date": "2021-05-29",
-          "Awakening Episodes (Times)": 5.0
+          "Total Sleep (hours)": 8.1
         },
         {
           "date": "2021-05-30",
-          "Awakening Episodes (Times)": 6.0
+          "Total Sleep (hours)": 7.2
         },
         {
           "date": "2021-05-31",
-          "Awakening Episodes (Times)": 6.0
+          "Total Sleep (hours)": 8.13
         },
         {
           "date": "2021-06-01",
-          "Awakening Episodes (Times)": 7.0
+          "Total Sleep (hours)": 7.08
         },
         {
           "date": "2021-06-02",
-          "Awakening Episodes (Times)": 8.0
+          "Total Sleep (hours)": 7.02
         },
         {
           "date": "2021-06-03",
-          "Awakening Episodes (Times)": 9.0
+          "Total Sleep (hours)": 7.9
         },
         {
           "date": "2021-06-04",
-          "Awakening Episodes (Times)": 11.0
+          "Total Sleep (hours)": 6.27
         },
         {
           "date": "2021-06-05",
-          "Awakening Episodes (Times)": 9.0
+          "Total Sleep (hours)": 6.9
         },
         {
           "date": "2021-06-06",
-          "Awakening Episodes (Times)": 6.0
+          "Total Sleep (hours)": 8.42
         }
       ]
     },
@@ -15415,6 +15435,294 @@
     {
       "modality_type": "passive sensing",
       "modality_source": "sleep",
+      "feature_name_renamed": "Awakening Episodes (Times)",
+      "feature_name": "countepisodeawakeunifiedmain",
+      "data": [
+        {
+          "date": "2021-03-29",
+          "Awakening Episodes (Times)": null
+        },
+        {
+          "date": "2021-03-30",
+          "Awakening Episodes (Times)": 11.0
+        },
+        {
+          "date": "2021-03-31",
+          "Awakening Episodes (Times)": 12.0
+        },
+        {
+          "date": "2021-04-01",
+          "Awakening Episodes (Times)": 2.0
+        },
+        {
+          "date": "2021-04-02",
+          "Awakening Episodes (Times)": 11.0
+        },
+        {
+          "date": "2021-04-03",
+          "Awakening Episodes (Times)": 9.0
+        },
+        {
+          "date": "2021-04-04",
+          "Awakening Episodes (Times)": 9.0
+        },
+        {
+          "date": "2021-04-05",
+          "Awakening Episodes (Times)": 12.0
+        },
+        {
+          "date": "2021-04-06",
+          "Awakening Episodes (Times)": 4.0
+        },
+        {
+          "date": "2021-04-07",
+          "Awakening Episodes (Times)": 9.0
+        },
+        {
+          "date": "2021-04-08",
+          "Awakening Episodes (Times)": 7.0
+        },
+        {
+          "date": "2021-04-09",
+          "Awakening Episodes (Times)": 4.0
+        },
+        {
+          "date": "2021-04-10",
+          "Awakening Episodes (Times)": 6.0
+        },
+        {
+          "date": "2021-04-11",
+          "Awakening Episodes (Times)": 5.0
+        },
+        {
+          "date": "2021-04-12",
+          "Awakening Episodes (Times)": 3.0
+        },
+        {
+          "date": "2021-04-13",
+          "Awakening Episodes (Times)": 5.0
+        },
+        {
+          "date": "2021-04-14",
+          "Awakening Episodes (Times)": 5.0
+        },
+        {
+          "date": "2021-04-15",
+          "Awakening Episodes (Times)": 6.0
+        },
+        {
+          "date": "2021-04-16",
+          "Awakening Episodes (Times)": 10.0
+        },
+        {
+          "date": "2021-04-17",
+          "Awakening Episodes (Times)": 5.0
+        },
+        {
+          "date": "2021-04-18",
+          "Awakening Episodes (Times)": 9.0
+        },
+        {
+          "date": "2021-04-19",
+          "Awakening Episodes (Times)": 7.0
+        },
+        {
+          "date": "2021-04-20",
+          "Awakening Episodes (Times)": 4.0
+        },
+        {
+          "date": "2021-04-21",
+          "Awakening Episodes (Times)": 3.0
+        },
+        {
+          "date": "2021-04-22",
+          "Awakening Episodes (Times)": 7.0
+        },
+        {
+          "date": "2021-04-23",
+          "Awakening Episodes (Times)": 7.0
+        },
+        {
+          "date": "2021-04-24",
+          "Awakening Episodes (Times)": 10.0
+        },
+        {
+          "date": "2021-04-25",
+          "Awakening Episodes (Times)": 11.0
+        },
+        {
+          "date": "2021-04-26",
+          "Awakening Episodes (Times)": 12.0
+        },
+        {
+          "date": "2021-04-27",
+          "Awakening Episodes (Times)": 6.0
+        },
+        {
+          "date": "2021-04-28",
+          "Awakening Episodes (Times)": 10.0
+        },
+        {
+          "date": "2021-04-29",
+          "Awakening Episodes (Times)": 8.0
+        },
+        {
+          "date": "2021-04-30",
+          "Awakening Episodes (Times)": 8.0
+        },
+        {
+          "date": "2021-05-01",
+          "Awakening Episodes (Times)": 6.0
+        },
+        {
+          "date": "2021-05-02",
+          "Awakening Episodes (Times)": 8.0
+        },
+        {
+          "date": "2021-05-03",
+          "Awakening Episodes (Times)": 2.0
+        },
+        {
+          "date": "2021-05-04",
+          "Awakening Episodes (Times)": 3.0
+        },
+        {
+          "date": "2021-05-05",
+          "Awakening Episodes (Times)": 5.0
+        },
+        {
+          "date": "2021-05-06",
+          "Awakening Episodes (Times)": 11.0
+        },
+        {
+          "date": "2021-05-07",
+          "Awakening Episodes (Times)": 6.0
+        },
+        {
+          "date": "2021-05-08",
+          "Awakening Episodes (Times)": 10.0
+        },
+        {
+          "date": "2021-05-09",
+          "Awakening Episodes (Times)": 3.0
+        },
+        {
+          "date": "2021-05-10",
+          "Awakening Episodes (Times)": 13.0
+        },
+        {
+          "date": "2021-05-11",
+          "Awakening Episodes (Times)": 5.0
+        },
+        {
+          "date": "2021-05-12",
+          "Awakening Episodes (Times)": 4.0
+        },
+        {
+          "date": "2021-05-13",
+          "Awakening Episodes (Times)": 5.0
+        },
+        {
+          "date": "2021-05-14",
+          "Awakening Episodes (Times)": 9.0
+        },
+        {
+          "date": "2021-05-15",
+          "Awakening Episodes (Times)": 6.0
+        },
+        {
+          "date": "2021-05-16",
+          "Awakening Episodes (Times)": 11.0
+        },
+        {
+          "date": "2021-05-17",
+          "Awakening Episodes (Times)": 5.0
+        },
+        {
+          "date": "2021-05-18",
+          "Awakening Episodes (Times)": 6.0
+        },
+        {
+          "date": "2021-05-19",
+          "Awakening Episodes (Times)": 6.0
+        },
+        {
+          "date": "2021-05-20",
+          "Awakening Episodes (Times)": 7.0
+        },
+        {
+          "date": "2021-05-21",
+          "Awakening Episodes (Times)": 5.0
+        },
+        {
+          "date": "2021-05-22",
+          "Awakening Episodes (Times)": 10.0
+        },
+        {
+          "date": "2021-05-23",
+          "Awakening Episodes (Times)": 12.0
+        },
+        {
+          "date": "2021-05-24",
+          "Awakening Episodes (Times)": 9.0
+        },
+        {
+          "date": "2021-05-25",
+          "Awakening Episodes (Times)": 4.0
+        },
+        {
+          "date": "2021-05-26",
+          "Awakening Episodes (Times)": 8.0
+        },
+        {
+          "date": "2021-05-27",
+          "Awakening Episodes (Times)": 5.0
+        },
+        {
+          "date": "2021-05-28",
+          "Awakening Episodes (Times)": 2.0
+        },
+        {
+          "date": "2021-05-29",
+          "Awakening Episodes (Times)": 5.0
+        },
+        {
+          "date": "2021-05-30",
+          "Awakening Episodes (Times)": 6.0
+        },
+        {
+          "date": "2021-05-31",
+          "Awakening Episodes (Times)": 6.0
+        },
+        {
+          "date": "2021-06-01",
+          "Awakening Episodes (Times)": 7.0
+        },
+        {
+          "date": "2021-06-02",
+          "Awakening Episodes (Times)": 8.0
+        },
+        {
+          "date": "2021-06-03",
+          "Awakening Episodes (Times)": 9.0
+        },
+        {
+          "date": "2021-06-04",
+          "Awakening Episodes (Times)": 11.0
+        },
+        {
+          "date": "2021-06-05",
+          "Awakening Episodes (Times)": 9.0
+        },
+        {
+          "date": "2021-06-06",
+          "Awakening Episodes (Times)": 6.0
+        }
+      ]
+    },
+    {
+      "modality_type": "passive sensing",
+      "modality_source": "sleep",
       "feature_name_renamed": "Bedtime (Hours in relation to midnight)",
       "feature_name": "firstbedtimemain",
       "data": [
@@ -15697,294 +16005,6 @@
         {
           "date": "2021-06-06",
           "Bedtime (Hours in relation to midnight)": 0.47
-        }
-      ]
-    },
-    {
-      "modality_type": "passive sensing",
-      "modality_source": "sleep",
-      "feature_name_renamed": "Total Sleep (hours)",
-      "feature_name": "sumdurationasleepunifiedmain",
-      "data": [
-        {
-          "date": "2021-03-29",
-          "Total Sleep (hours)": null
-        },
-        {
-          "date": "2021-03-30",
-          "Total Sleep (hours)": 6.78
-        },
-        {
-          "date": "2021-03-31",
-          "Total Sleep (hours)": 7.47
-        },
-        {
-          "date": "2021-04-01",
-          "Total Sleep (hours)": 4.85
-        },
-        {
-          "date": "2021-04-02",
-          "Total Sleep (hours)": 7.52
-        },
-        {
-          "date": "2021-04-03",
-          "Total Sleep (hours)": 7.95
-        },
-        {
-          "date": "2021-04-04",
-          "Total Sleep (hours)": 6.32
-        },
-        {
-          "date": "2021-04-05",
-          "Total Sleep (hours)": 6.17
-        },
-        {
-          "date": "2021-04-06",
-          "Total Sleep (hours)": 6.3
-        },
-        {
-          "date": "2021-04-07",
-          "Total Sleep (hours)": 6.42
-        },
-        {
-          "date": "2021-04-08",
-          "Total Sleep (hours)": 6.37
-        },
-        {
-          "date": "2021-04-09",
-          "Total Sleep (hours)": 5.4
-        },
-        {
-          "date": "2021-04-10",
-          "Total Sleep (hours)": 8.27
-        },
-        {
-          "date": "2021-04-11",
-          "Total Sleep (hours)": 7.48
-        },
-        {
-          "date": "2021-04-12",
-          "Total Sleep (hours)": 6.58
-        },
-        {
-          "date": "2021-04-13",
-          "Total Sleep (hours)": 6.17
-        },
-        {
-          "date": "2021-04-14",
-          "Total Sleep (hours)": 6.33
-        },
-        {
-          "date": "2021-04-15",
-          "Total Sleep (hours)": 6.35
-        },
-        {
-          "date": "2021-04-16",
-          "Total Sleep (hours)": 8.55
-        },
-        {
-          "date": "2021-04-17",
-          "Total Sleep (hours)": 7.25
-        },
-        {
-          "date": "2021-04-18",
-          "Total Sleep (hours)": 7.45
-        },
-        {
-          "date": "2021-04-19",
-          "Total Sleep (hours)": 7.07
-        },
-        {
-          "date": "2021-04-20",
-          "Total Sleep (hours)": 7.28
-        },
-        {
-          "date": "2021-04-21",
-          "Total Sleep (hours)": 7.47
-        },
-        {
-          "date": "2021-04-22",
-          "Total Sleep (hours)": 7.3
-        },
-        {
-          "date": "2021-04-23",
-          "Total Sleep (hours)": 7.35
-        },
-        {
-          "date": "2021-04-24",
-          "Total Sleep (hours)": 6.85
-        },
-        {
-          "date": "2021-04-25",
-          "Total Sleep (hours)": 7.17
-        },
-        {
-          "date": "2021-04-26",
-          "Total Sleep (hours)": 6.57
-        },
-        {
-          "date": "2021-04-27",
-          "Total Sleep (hours)": 7.47
-        },
-        {
-          "date": "2021-04-28",
-          "Total Sleep (hours)": 7.18
-        },
-        {
-          "date": "2021-04-29",
-          "Total Sleep (hours)": 6.5
-        },
-        {
-          "date": "2021-04-30",
-          "Total Sleep (hours)": 8.53
-        },
-        {
-          "date": "2021-05-01",
-          "Total Sleep (hours)": 7.63
-        },
-        {
-          "date": "2021-05-02",
-          "Total Sleep (hours)": 7.72
-        },
-        {
-          "date": "2021-05-03",
-          "Total Sleep (hours)": 6.37
-        },
-        {
-          "date": "2021-05-04",
-          "Total Sleep (hours)": 6.87
-        },
-        {
-          "date": "2021-05-05",
-          "Total Sleep (hours)": 6.37
-        },
-        {
-          "date": "2021-05-06",
-          "Total Sleep (hours)": 5.73
-        },
-        {
-          "date": "2021-05-07",
-          "Total Sleep (hours)": 7.55
-        },
-        {
-          "date": "2021-05-08",
-          "Total Sleep (hours)": 7.13
-        },
-        {
-          "date": "2021-05-09",
-          "Total Sleep (hours)": 4.72
-        },
-        {
-          "date": "2021-05-10",
-          "Total Sleep (hours)": 7.58
-        },
-        {
-          "date": "2021-05-11",
-          "Total Sleep (hours)": 6.38
-        },
-        {
-          "date": "2021-05-12",
-          "Total Sleep (hours)": 6.67
-        },
-        {
-          "date": "2021-05-13",
-          "Total Sleep (hours)": 7.07
-        },
-        {
-          "date": "2021-05-14",
-          "Total Sleep (hours)": 7.23
-        },
-        {
-          "date": "2021-05-15",
-          "Total Sleep (hours)": 7.0
-        },
-        {
-          "date": "2021-05-16",
-          "Total Sleep (hours)": 7.55
-        },
-        {
-          "date": "2021-05-17",
-          "Total Sleep (hours)": 6.97
-        },
-        {
-          "date": "2021-05-18",
-          "Total Sleep (hours)": 6.62
-        },
-        {
-          "date": "2021-05-19",
-          "Total Sleep (hours)": 7.35
-        },
-        {
-          "date": "2021-05-20",
-          "Total Sleep (hours)": 5.77
-        },
-        {
-          "date": "2021-05-21",
-          "Total Sleep (hours)": 8.07
-        },
-        {
-          "date": "2021-05-22",
-          "Total Sleep (hours)": 6.68
-        },
-        {
-          "date": "2021-05-23",
-          "Total Sleep (hours)": 6.75
-        },
-        {
-          "date": "2021-05-24",
-          "Total Sleep (hours)": 6.95
-        },
-        {
-          "date": "2021-05-25",
-          "Total Sleep (hours)": 5.85
-        },
-        {
-          "date": "2021-05-26",
-          "Total Sleep (hours)": 8.38
-        },
-        {
-          "date": "2021-05-27",
-          "Total Sleep (hours)": 7.1
-        },
-        {
-          "date": "2021-05-28",
-          "Total Sleep (hours)": 7.3
-        },
-        {
-          "date": "2021-05-29",
-          "Total Sleep (hours)": 8.1
-        },
-        {
-          "date": "2021-05-30",
-          "Total Sleep (hours)": 7.2
-        },
-        {
-          "date": "2021-05-31",
-          "Total Sleep (hours)": 8.13
-        },
-        {
-          "date": "2021-06-01",
-          "Total Sleep (hours)": 7.08
-        },
-        {
-          "date": "2021-06-02",
-          "Total Sleep (hours)": 7.02
-        },
-        {
-          "date": "2021-06-03",
-          "Total Sleep (hours)": 7.9
-        },
-        {
-          "date": "2021-06-04",
-          "Total Sleep (hours)": 6.27
-        },
-        {
-          "date": "2021-06-05",
-          "Total Sleep (hours)": 6.9
-        },
-        {
-          "date": "2021-06-06",
-          "Total Sleep (hours)": 8.42
         }
       ]
     },
@@ -16567,6 +16587,94 @@
     {
       "modality_type": "survey",
       "modality_source": "survey",
+      "feature_name_renamed": "Positive Affect Subscale (5-25, PANAS-SF)",
+      "feature_name": "positive_affect_EMA",
+      "data": [
+        {
+          "date": "2021-03-31",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 6.0
+        },
+        {
+          "date": "2021-04-04",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 8.0
+        },
+        {
+          "date": "2021-04-07",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-04-11",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 7.0
+        },
+        {
+          "date": "2021-04-14",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-04-18",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-04-21",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-04-25",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-04-28",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 6.0
+        },
+        {
+          "date": "2021-05-02",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-05-05",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-05-09",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-05-12",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-05-16",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-05-19",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-05-24",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-05-26",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-05-30",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+        },
+        {
+          "date": "2021-06-02",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 6.0
+        },
+        {
+          "date": "2021-06-06",
+          "Positive Affect Subscale (5-25, PANAS-SF)": 6.0
+        }
+      ]
+    },
+    {
+      "modality_type": "survey",
+      "modality_source": "survey",
       "feature_name_renamed": "Negative Affect Subscale (5-25, PANAS-SF)",
       "feature_name": "negative_affect_EMA",
       "data": [
@@ -16655,88 +16763,48 @@
     {
       "modality_type": "survey",
       "modality_source": "survey",
-      "feature_name_renamed": "Positive Affect Subscale (5-25, PANAS-SF)",
-      "feature_name": "positive_affect_EMA",
+      "feature_name_renamed": "PHQ-4 Anxiety Subscale (0-6)",
+      "feature_name": "phq4_anxiety_EMA",
       "data": [
         {
-          "date": "2021-03-31",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 6.0
-        },
-        {
           "date": "2021-04-04",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 8.0
-        },
-        {
-          "date": "2021-04-07",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+          "PHQ-4 Anxiety Subscale (0-6)": 4.0
         },
         {
           "date": "2021-04-11",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 7.0
-        },
-        {
-          "date": "2021-04-14",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
         },
         {
           "date": "2021-04-18",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
-        },
-        {
-          "date": "2021-04-21",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
         },
         {
           "date": "2021-04-25",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
-        },
-        {
-          "date": "2021-04-28",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 6.0
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
         },
         {
           "date": "2021-05-02",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
-        },
-        {
-          "date": "2021-05-05",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
         },
         {
           "date": "2021-05-09",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
-        },
-        {
-          "date": "2021-05-12",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+          "PHQ-4 Anxiety Subscale (0-6)": 3.0
         },
         {
           "date": "2021-05-16",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
-        },
-        {
-          "date": "2021-05-19",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
         },
         {
           "date": "2021-05-24",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
-        },
-        {
-          "date": "2021-05-26",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
         },
         {
           "date": "2021-05-30",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 5.0
-        },
-        {
-          "date": "2021-06-02",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 6.0
+          "PHQ-4 Anxiety Subscale (0-6)": 0.0
         },
         {
           "date": "2021-06-06",
-          "Positive Affect Subscale (5-25, PANAS-SF)": 6.0
+          "PHQ-4 Anxiety Subscale (0-6)": 2.0
         }
       ]
     },
@@ -16833,54 +16901,6 @@
         {
           "date": "2021-06-06",
           "PHQ-4 Depression Subscale (0-6)": 2.0
-        }
-      ]
-    },
-    {
-      "modality_type": "survey",
-      "modality_source": "survey",
-      "feature_name_renamed": "PHQ-4 Anxiety Subscale (0-6)",
-      "feature_name": "phq4_anxiety_EMA",
-      "data": [
-        {
-          "date": "2021-04-04",
-          "PHQ-4 Anxiety Subscale (0-6)": 4.0
-        },
-        {
-          "date": "2021-04-11",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-04-18",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-04-25",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-02",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-09",
-          "PHQ-4 Anxiety Subscale (0-6)": 3.0
-        },
-        {
-          "date": "2021-05-16",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-24",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
-        },
-        {
-          "date": "2021-05-30",
-          "PHQ-4 Anxiety Subscale (0-6)": 0.0
-        },
-        {
-          "date": "2021-06-06",
-          "PHQ-4 Anxiety Subscale (0-6)": 2.0
         }
       ]
     },
