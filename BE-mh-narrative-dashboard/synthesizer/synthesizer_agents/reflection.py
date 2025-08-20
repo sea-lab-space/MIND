@@ -5,7 +5,7 @@ from datetime import datetime
 import sys
 from pathlib import Path
 from dotenv import load_dotenv
-from synthesizer.synthesizer_commons import SYNT_CATEGORY_PROMPT, SYNT_RULES, SYNT_EXAMPLES
+from synthesizer.synthesizer_commons import SYNT_CATEGORIZATION_PROMPT, SYNT_CATEGORY_PROMPT, SYNT_RULES, SYNT_EXAMPLES
 from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE, OPENAI_AGENTIC_PLANNING, get_mh_data_expert_system_prompt
 from utils.tools import retrive_data_facts
 
@@ -27,7 +27,6 @@ Where:
 - `modality` can be: 
     - `sv` (survey)
     - `ps` (passive sensing)
-    - `text` (session transcript or clinical notes)
 - `insight_source` refers to supporting fact IDs from different modalities.
 """
 
@@ -56,7 +55,7 @@ Use the following guiding questions in your reflection:
 - Did you miss important signals from unused data facts?
 - How well did your insights support clinical understanding or decision-making?
 
-{SYNT_CATEGORY_PROMPT}
+{SYNT_CATEGORIZATION_PROMPT}
 
 ---
 

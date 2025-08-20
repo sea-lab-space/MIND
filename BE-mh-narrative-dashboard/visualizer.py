@@ -36,7 +36,7 @@ class Visualizer:
         # self.data_insights_narrative = asyncio.run(self.narrator_agent.run(self.data_insights))
         specification = []
         for insight in self.data_insights:
-            print(insight)
+            # print(insight)
             L3_fact_ids = insight['insight_source']
             L2_fact_ids = insight['l2_insight_source']
             # use the L2 sequence, and append anything remaining in L3 to the end

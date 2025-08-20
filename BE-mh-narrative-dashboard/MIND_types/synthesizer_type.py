@@ -8,7 +8,7 @@ class InsightSpec(BaseModel):
     insight_source: List[str] = Field(...,
                                       description="The |fact-id|s that derives this insight")
     insight_category: List[str] = Field(
-        ..., description="The |category/categories| of the insight")
+        ..., description="The |category| of the insight")
 
 
 class InsightProposalOutputModel(BaseModel):
