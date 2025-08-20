@@ -49,8 +49,8 @@
       "key": "insight-0",
       "summaryTitle": "Depressive symptoms and negative affect spiked mid-May, with increased inactivity and variable daily routines.",
       "sources": [
-        "passive sensing",
         "survey",
+        "passive sensing",
         "clinical note"
       ],
       "insightType": [
@@ -58,13 +58,13 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Quantify changes in mood, energy, and motivation.",
+          "summarySentence": "Evaluate overall progress in mood and daily functioning.",
           "dataPoints": null,
           "spec": [
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Lucy reports that her mood and daily functioning have not changed significantly since the last session."
+              "text": "Monitor for efficacy and side effects. Reassess in a few weeks; consider medication review with GP/psychiatrist if limited improvement persists."
             }
           ],
           "sources": [
@@ -74,7 +74,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Quantify changes in mood, energy, and motivation.",
+          "summarySentence": "Evaluate overall progress in mood and daily functioning.",
           "dataPoints": null,
           "spec": [],
           "sources": [
@@ -841,7 +841,6 @@
       "key": "insight-1",
       "summaryTitle": "Bedtime is trending earlier, while awakening episodes show high variability and anomalies.",
       "sources": [
-        "session transcript",
         "passive sensing",
         "clinical note"
       ],
@@ -850,13 +849,13 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Monitor sleep quality and disturbances.",
+          "summarySentence": "Assess consistency with behavioral activation strategies.",
           "dataPoints": null,
           "spec": [
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Sleep: Poor, with insomnia and hypersomnia."
+              "text": "Support Lucy in identifying and implementing small, manageable daily activities (e.g., listening to music, making tea, brief walks, stretching). Emphasize the value of small steps and celebrate incremental progress."
             }
           ],
           "sources": [
@@ -866,15 +865,9 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Monitor sleep quality and disturbances.",
+          "summarySentence": "Assess consistency with behavioral activation strategies.",
           "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: Sleep is still not great. I have nights where I just lie awake for hours, then I’ll sleep half the next day."
-            }
-          ],
+          "spec": [],
           "sources": [
             "session transcript"
           ],
@@ -2675,7 +2668,6 @@
       "key": "insight-2",
       "summaryTitle": "Negative affect and depression scores show significant, cyclic fluctuations over the past week.",
       "sources": [
-        "session transcript",
         "survey",
         "clinical note"
       ],
@@ -2702,13 +2694,7 @@
         {
           "summarySentence": "Monitor for safety and risk of self-harm.",
           "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Clinician: Just checking in—since our last session, have you had any thoughts of not wanting to be here or thoughts of hurting yourself? Patient: I have had a couple days where I just felt really numb again. Not really wanting to do anything. I didn’t really want to hurt myself, I just felt like I didn’t care much either way."
-            }
-          ],
+          "spec": [],
           "sources": [
             "session transcript"
           ],
@@ -2975,7 +2961,6 @@
       "key": "insight-3",
       "summaryTitle": "Routine consistency, time at home, and distance traveled all show significant, irregular fluctuations recently.",
       "sources": [
-        "session transcript",
         "passive sensing",
         "clinical note"
       ],
@@ -2984,13 +2969,13 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Assess occupational functioning and work attendance.",
+          "summarySentence": "Assess changes in sleep patterns.",
           "dataPoints": null,
           "spec": [
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Lucy continues to work two shifts per week at the university IT desk. She finds the structure helpful at times but also exhausting."
+              "text": "Sleep: Poor, with insomnia and hypersomnia."
             }
           ],
           "sources": [
@@ -3000,15 +2985,9 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Assess occupational functioning and work attendance.",
+          "summarySentence": "Assess changes in sleep patterns.",
           "dataPoints": null,
-          "spec": [
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Patient: Yeah, I cut back a bit, but I’m still doing two shifts a week. My manager’s been understanding about me being quieter."
-            }
-          ],
+          "spec": [],
           "sources": [
             "session transcript"
           ],
