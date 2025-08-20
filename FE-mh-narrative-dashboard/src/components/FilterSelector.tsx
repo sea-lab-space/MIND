@@ -2,7 +2,7 @@ import {
     Brain,
     Users2,
     Pill,
-    Filter
+    Filter, Activity
 } from "lucide-react"
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -64,8 +64,8 @@ const InsightTypeMeta: Record<
     },
     [InsightType.BIOLOGICAL]: {
         label: "Biological",
-        icon: Pill,
-        iconNode: <Pill className="w-4 h-4" />
+        icon: Activity,
+        iconNode: <Activity className="w-4 h-4" />
     }
 };
 

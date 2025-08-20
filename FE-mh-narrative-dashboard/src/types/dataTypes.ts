@@ -71,12 +71,9 @@ export type Encounter = {
 };
 
 export const InsightTypeIconMap: Record<InsightType, React.ElementType> = {
-    "Sleep Patterns": BedDouble,
-    "Physical Activity": Activity,
-    "Digital Engagement": PhoneCall,
-    "Emotional State": Brain,
-    "Social Interaction": Users2,
-    "Medication & Treatment": Pill,
+    "biological": Activity,
+    "psychological": Brain,
+    "social": Users2,
 };
 
 export interface SuggestedActivity {

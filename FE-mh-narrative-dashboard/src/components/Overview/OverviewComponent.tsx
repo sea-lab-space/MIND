@@ -48,7 +48,6 @@ export default function OverviewComponent({
           >
             {infoData.map((card, index) => {
               // const Icon = overviewIconMap[card.icon];
-              console.log(card.overviewHeadTitle);
               if (card.overviewHeadTitle === "Medical History")
                 return (
                   <OverviewCardComponent

@@ -14,28 +14,28 @@ type SurveyInfo = {
 
 // Mapping dictionary
 const surveyMap: Record<string, SurveyInfo> = {
-    "positive affect": {
+    "positive affect subscale (5-25, panas-sf)": {
         label: "Positive Affect Scores",
         definition: "A 5-item subscale of the Positive and Negative Affect Schedule Short Form (PANAS-SF) that measures positive affect. Each item is rated 1-5, with a total score range of 5-25. Higher scores reflect greater positive affect."
     },
-    "negative affect": {
+    "negative affect subscale (5-25, panas-sf)": {
         label: "Negative Affect Scores",
         definition: "A 5-item subscale of the Positive and Negative Affect Schedule Short Form (PANAS-SF) that measures negative affect. Each item is rated 1-5, with a total score range of 5-25. Higher scores reflect greater negative affect."
     },
-    "phq-4": {
+    "phq-4 (0-12)": {
         label: "PHQ-4 Score",
         definition: "A 4-item survey for mental health conditions, including anxiety and depression. Each item is rated 0-3, with a total score range of 0-12, " +
             "calculated by summing all four items. Interpretation of total scores: Normal (0-2), Mild (3-5), Moderate (6-8), Severe (9-12)."
     },
-    "phq-4 depression": {
+    "phq-4 depression subscale (0-6)": {
         label: "PHQ-4 Depression Subscale",
         definition: "A subscale of PHQ-4, consisting of the last two items of PHQ-4. Scores range from 0-6, with scores greater than 3 suggesting depression."
     },
-    "phq-4 anxiety": {
+    "phq-4 anxiety subscale (0-6)": {
         label: "PHQ-4 Anxiety Subscale",
         definition: "A subscale of PHQ-4, consisting of the first two items of PHQ-4. Scores range from 0-6, with scores greater than 3 suggesting anxiety."
     },
-    "pss-4": {
+    "pss-4 score (0-16)": {
         label: "Perceived Stress Scale (PSS-4)",
         definition: "A 4-item measure of perceived stress. Each item is rated 0-4, with a total score range of 0-16. Higher scores indicate greater levels of perceived stress, with scores greater than 6 suggesting high stress."
     }
@@ -53,7 +53,7 @@ export default function SurveyScoreDetail({
             <div className="space-y-4">
                 {surveyScoreFacts?.map((detail, index) => {
 
-                    const match = detail.summarySentence.match(/^Displaying (.*) score survey scores\.$/);
+                    const match = detail.summarySentence.match(/^Displaying (.*) survey scores\.$/);
                     const surveyName: string | null = match ? match[1] : null;
                     const surveyInfo = getSurveyInfo(surveyName)
 
@@ -77,7 +77,7 @@ export default function SurveyScoreDetail({
                             </div>
 
                             {showChart && (
-                                <div className="mt-2 bg-gray-50 border border-gray-200 rounded-lg h-48 pr-4 pt-2">
+                                <div className="mt-2 bg-gray-50 border border-gray-200 rounded-lg h-48 pr-4 pt-4">
                                     <InsightGraph
                                         data={detail.dataPoints}
                                         highlightSpec={detail.highlightSpec}

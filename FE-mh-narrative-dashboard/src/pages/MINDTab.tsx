@@ -65,10 +65,15 @@ const MINDTab: React.FC<MINDTabProps> = ({
     last_encounter
   } = getVisualizerDataForPerson(selectedPatient);
   const [globalExpand, setGlobalExpand] = useState(false);
+  const [expandTimelineSections, setExpandTimelineSections] = useState({
+    overview: false,
+    lastSession: true,
+    insights: false,
+    communication: false,
+  });
   const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
 
   //to support cards be used by the timeline
-  console.log(groupInsights(insightCardData), "printing cards");
 
   const allData = [
     ...insightCardData, ...last_encounter
@@ -78,6 +83,15 @@ const MINDTab: React.FC<MINDTabProps> = ({
     section: "overview" | "insights" | "communication"
   ) => {
     setExpandedSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
+
+  const toggleTimelineSection = (
+      section: "overview" | "insights" | "lastSession" | "communication"
+  ) => {
+    setExpandTimelineSections((prev) => ({
       ...prev,
       [section]: !prev[section],
     }));
@@ -98,6 +112,12 @@ const MINDTab: React.FC<MINDTabProps> = ({
   useEffect(() => {
     setExpandedSections({
       overview: false,
+      insights: false,
+      communication: false,
+    });
+    setExpandTimelineSections({
+      overview: false,
+      lastSession: true,
       insights: false,
       communication: false,
     });
@@ -158,11 +178,44 @@ const MINDTab: React.FC<MINDTabProps> = ({
 
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({
     overview: null,
+    lastSession: null,
     insights: null,
     communication: null,
   });
 
   const [section, setSection] = useState<string>("overview");
+
+  const dateSectionMap = [
+    {
+      start: "2021-05-09", // single-day
+      end: "2021-06-07",
+      section: "insights",
+    },
+    {
+      start: "2021-05-09", // range example
+      end: "2021-05-09",
+      section: "lastSession",
+    },
+    {
+      start: "2021-07-01",
+      end: "2021-07-01",
+      section: "communication",
+    },
+  ];
+
+
+  const lastTimelineSectionRef = useRef<string | null>(null);
+
+  const toggleTimelineSectionSingle = (sectionToToggle: keyof typeof expandTimelineSections) => {
+    setExpandTimelineSections((prev) => {
+      const newState: Record<string, boolean> = {};
+      Object.keys(prev).forEach((key) => {
+        newState[key] = key === sectionToToggle ? true : false;
+      });
+      return newState;
+    });
+  };
+
 
   const handleTimelineStateChange = (state: [Date, Date] | null) => {
     if (!state) return;
@@ -170,24 +223,25 @@ const MINDTab: React.FC<MINDTabProps> = ({
     const [startDate, endDate] = state;
     const parseDate = d3.timeParse("%Y-%m-%d");
 
-    const targetStart = parseDate("2021-05-09");
-    const targetEnd = parseDate("2021-06-07");
+    for (const entry of dateSectionMap) {
+      const targetStart = parseDate(entry.start);
+      const targetEnd = parseDate(entry.end);
+      if (!targetStart || !targetEnd) continue;
 
-    if (targetStart && targetEnd) {
-      if (
-        startDate.getTime() === targetStart.getTime() &&
-        endDate.getTime() === targetEnd.getTime()
-      ) {
-        setSection("insights");
+      const isMatch =
+          startDate.getTime() === targetStart.getTime() &&
+          endDate.getTime() === targetEnd.getTime();
 
-        const target = sectionRefs.current.insights;
-        target?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+      if (isMatch && lastTimelineSectionRef.current !== entry.section) {
+        lastTimelineSectionRef.current = entry.section; // update ref
+        toggleTimelineSectionSingle(entry.section); // only update if new section
+        const target = sectionRefs.current[entry.section];
+        target?.scrollIntoView({ behavior: "smooth", block: "start" });
+        break;
       }
     }
   };
+
 
   return (
     <>
@@ -250,57 +304,97 @@ const MINDTab: React.FC<MINDTabProps> = ({
                 // }}
               >
                 <SectionTitle
-                  title="Last Session"
-                  // subtitle="test"
-                  isExpanded={expandedSections.insights || globalExpand}
-                  // TODO
-                  onClick={() => {}}
+                    title="Last Session"
+                    // isExpanded={expandedSections.lastSession || globalExpand}
+                    onClick={() =>
+                        toggleTimelineSection("lastSession")
+                    }
                 >
-                  <div
-                    className={`${
-                      isDrillDown
-                        ? "flex flex-col gap-4"
-                        : "grid grid-cols-1 sm:grid-cols-2 gap-4"
-                    }`}
-                  >
-                    {/* Left Column */}
-                    <div className="flex flex-col gap-4">
-                      {last_encounter.map((card, index) => (
-                        <div
-                          key={card.key}
-                          ref={(el) => {
-                            cardRefs.current[index * 2] = el;
-                          }}
-                          className="w-full"
-                        >
-                          <InsightCardComponent
-                            key={card.key}
-                            insightCardData={card}
-                            isExpanded={false
-                              // globalExpand || expandedCards.has(card.key)
-                            }
-                            onToggle={handleToggleCard}
-                            isDrillDown={isDrillDown}
-                            title={card.summaryTitle}
-                            sources={card.sources}
-                            isInsightHeaderSelected={selectedInsightHeader.includes(
-                              card.key
-                            )}
-                            isInsightCardSelected={
-                              selectedInsightCard === card.key
-                            }
-                            handleCardSelect={() =>
-                              handleCardSelection(card.key, index * 2)
-                            }
-                            handleCardHeaderClick={() =>
-                              handleInsightCardHeaderSelect(card.key)
-                            }
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  {
+                    expandTimelineSections.lastSession &&
+                      <div
+                          className={`grid gap-4 ${
+                              isDrillDown ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2"
+                          }`}
+                      >
+                        {last_encounter.map((card, index) => (
+                            <div
+                                key={card.key}
+                                ref={(el) => {
+                                  cardRefs.current[index] = el;
+                                }}
+                                className="w-full"
+                            >
+                              <InsightCardComponent
+                                  key={card.key}
+                                  insightCardData={card}
+                                  isExpanded={expandedSections.insights || globalExpand}
+                                  onToggle={handleToggleCard}
+                                  isDrillDown={isDrillDown}
+                                  title={card.summaryTitle}
+                                  sources={card.sources}
+                                  isInsightHeaderSelected={selectedInsightHeader.includes(card.key)}
+                                  isInsightCardSelected={selectedInsightCard === card.key}
+                                  handleCardSelect={() => handleCardSelection(card.key, index)}
+                                  handleCardHeaderClick={() => handleInsightCardHeaderSelect(card.key)}
+                              />
+                            </div>
+                        ))}
+                      </div>
+                  }
                 </SectionTitle>
+
+                {/*<SectionTitle*/}
+                {/*  title="Last Session"*/}
+                {/*  // subtitle="test"*/}
+                {/*  isExpanded={expandedSections.insights || globalExpand}*/}
+                {/*  // TODO*/}
+                {/*  onClick={() => {}}*/}
+                {/*>*/}
+                {/*  <div*/}
+                {/*      className={`grid gap-4 ${*/}
+                {/*          isDrillDown ? "grid-cols-2" : "grid-cols-1 sm:grid-cols-2"*/}
+                {/*      }`}*/}
+                {/*  >*/}
+
+                {/*  /!* Left Column *!/*/}
+                {/*    <div className="flex flex-col gap-4">*/}
+                {/*      {last_encounter.map((card, index) => (*/}
+                {/*        <div*/}
+                {/*          key={card.key}*/}
+                {/*          ref={(el) => {*/}
+                {/*            cardRefs.current[index * 2] = el;*/}
+                {/*          }}*/}
+                {/*          className="w-full"*/}
+                {/*        >*/}
+                {/*          <InsightCardComponent*/}
+                {/*            key={card.key}*/}
+                {/*            insightCardData={card}*/}
+                {/*            isExpanded={false*/}
+                {/*              // globalExpand || expandedCards.has(card.key)*/}
+                {/*            }*/}
+                {/*            onToggle={handleToggleCard}*/}
+                {/*            isDrillDown={isDrillDown}*/}
+                {/*            title={card.summaryTitle}*/}
+                {/*            sources={card.sources}*/}
+                {/*            isInsightHeaderSelected={selectedInsightHeader.includes(*/}
+                {/*              card.key*/}
+                {/*            )}*/}
+                {/*            isInsightCardSelected={*/}
+                {/*              selectedInsightCard === card.key*/}
+                {/*            }*/}
+                {/*            handleCardSelect={() =>*/}
+                {/*              handleCardSelection(card.key, index * 2)*/}
+                {/*            }*/}
+                {/*            handleCardHeaderClick={() =>*/}
+                {/*              handleInsightCardHeaderSelect(card.key)*/}
+                {/*            }*/}
+                {/*          />*/}
+                {/*        </div>*/}
+                {/*      ))}*/}
+                {/*    </div>*/}
+                {/*  </div>*/}
+                {/*</SectionTitle>*/}
               </div>
               {/* Data-driven Insights bg-green-200/50 */}
               <div
@@ -309,111 +403,99 @@ const MINDTab: React.FC<MINDTabProps> = ({
                   sectionRefs.current.insights = el;
                 }}
               >
+
                 <SectionTitle
-                  title="Clinical Insights"
-                  // subtitle="test"
-                  isExpanded={expandedSections.insights || globalExpand}
-                  onClick={() => {
-                    setGlobalExpand((prev) => !prev);
-                    if (!globalExpand) {
-                      setExpandedCards(new Set()); // Clear overrides when expanding all
+                    title="Clinical Insights"
+                    isExpanded={expandedSections.insights || globalExpand}
+                    onClick={() =>
+                        toggleTimelineSection("insights")
                     }
-                  }}
                 >
-                  {!isDrillDown && (
-                    <FilterSelector
-                      selectedPatient={selectedPatient}
-                      selected={selectedInsightTypes}
-                      onToggle={(type) => {
-                        setSelectedInsightTypes((prev) =>
-                          prev.includes(type) ? [] : [type]
-                        );
-                      }}
-                    />
-                  )}
+                  {
+                    expandTimelineSections?.insights &&
+                      <>
+                        {!isDrillDown && (
+                            <FilterSelector
+                                selectedPatient={selectedPatient}
+                                selected={selectedInsightTypes}
+                                onToggle={(type) => {
+                                  setSelectedInsightTypes((prev) =>
+                                      prev.includes(type) ? [] : [type]
+                                  );
+                                }}
+                            />
+                        )}
 
-                  <div
-                    className={`${
-                      isDrillDown
-                        ? "flex flex-col gap-4"
-                        : "grid grid-cols-1 sm:grid-cols-2 gap-4"
-                    }`}
-                  >
-                    {/* Left column */}
-                    <div className="flex flex-col gap-4">
-                      {leftColumnCards.map((card, index) => (
                         <div
-                          key={card.key}
-                          ref={(el) => {
-                            cardRefs.current[index * 2] = el;
-                          }}
-                          className="w-full"
+                            className={`grid gap-4 ${
+                                isDrillDown ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2"
+                            }`}
                         >
-                          <InsightCardComponent
-                            key={card.key}
-                            insightCardData={card}
-                            isExpanded={
-                              globalExpand || expandedCards.has(card.key)
-                            }
-                            onToggle={handleToggleCard}
-                            isDrillDown={isDrillDown}
-                            title={card.summaryTitle}
-                            sources={card.sources}
-                            isInsightHeaderSelected={selectedInsightHeader.includes(
-                              card.key
-                            )}
-                            isInsightCardSelected={
-                              selectedInsightCard === card.key
-                            }
-                            handleCardSelect={() =>
-                              handleCardSelection(card.key, index * 2)
-                            }
-                            handleCardHeaderClick={() =>
-                              handleInsightCardHeaderSelect(card.key)
-                            }
-                          />
+                          {filteredInsightCards.map((card, index) => (
+                              <div
+                                  key={card.key}
+                                  ref={(el) => {
+                                    cardRefs.current[index] = el;
+                                  }}
+                                  className="w-full"
+                              >
+                                <InsightCardComponent
+                                    key={card.key}
+                                    insightCardData={card}
+                                    isExpanded={globalExpand || expandedCards.has(card.key)}
+                                    onToggle={handleToggleCard}
+                                    isDrillDown={isDrillDown}
+                                    title={card.summaryTitle}
+                                    sources={card.sources}
+                                    isInsightHeaderSelected={selectedInsightHeader.includes(card.key)}
+                                    isInsightCardSelected={selectedInsightCard === card.key}
+                                    handleCardSelect={() => handleCardSelection(card.key, index)}
+                                    handleCardHeaderClick={() => handleInsightCardHeaderSelect(card.key)}
+                                />
+                              </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
+                      </>
+                  }
 
-                    {/* Right column */}
-                    <div className="flex flex-col gap-4">
-                      {rightColumnCards.map((card, index) => (
-                        <div
-                          key={card.key}
-                          ref={(el) => {
-                            cardRefs.current[index * 2 + 1] = el;
-                          }}
-                          className="w-full"
-                        >
-                          <InsightCardComponent
-                            key={card.key}
-                            insightCardData={card}
-                            isExpanded={
-                              globalExpand || expandedCards.has(card.key)
-                            }
-                            onToggle={handleToggleCard}
-                            isDrillDown={isDrillDown}
-                            title={card.summaryTitle}
-                            sources={card.sources}
-                            isInsightHeaderSelected={selectedInsightHeader.includes(
-                              card.key
-                            )}
-                            isInsightCardSelected={
-                              selectedInsightCard === card.key
-                            }
-                            handleCardSelect={() =>
-                              handleCardSelection(card.key, index * 2 + 1)
-                            }
-                            handleCardHeaderClick={() =>
-                              handleInsightCardHeaderSelect(card.key)
-                            }
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
                 </SectionTitle>
+
+                {/*    /!* Right column *!/*/}
+                {/*    <div className="flex flex-col gap-4">*/}
+                {/*      {filteredInsightCards.map(*/}
+                {/*          (card, index) =>*/}
+                {/*              index % 2 === 1 && ( // Odd index → right*/}
+                {/*                  <div*/}
+                {/*                      key={card.key}*/}
+                {/*                      ref={(el) => {*/}
+                {/*                        cardRefs.current[index] = el;*/}
+                {/*                      }}*/}
+                {/*                      className="w-full"*/}
+                {/*                  >*/}
+                {/*                    <InsightCardComponent*/}
+                {/*                        key={card.key}*/}
+                {/*                        insightCardData={card}*/}
+                {/*                        isExpanded={globalExpand || expandedCards.has(card.key)}*/}
+                {/*                        onToggle={handleToggleCard}*/}
+                {/*                        isDrillDown={isDrillDown}*/}
+                {/*                        title={card.summaryTitle}*/}
+                {/*                        sources={card.sources}*/}
+                {/*                        isInsightHeaderSelected={selectedInsightHeader.includes(card.key)}*/}
+                {/*                        isInsightCardSelected={selectedInsightCard === card.key}*/}
+                {/*                        handleCardSelect={() =>*/}
+                {/*                            handleCardSelection(card.key, index)*/}
+                {/*                        }*/}
+                {/*                        handleCardHeaderClick={() =>*/}
+                {/*                            handleInsightCardHeaderSelect(card.key)*/}
+                {/*                        }*/}
+                {/*                    />*/}
+                {/*                  </div>*/}
+                {/*              )*/}
+                {/*      )}*/}
+                {/*    </div>*/}
+                {/*  </div>*/}
+                {/*</SectionTitle>*/}
+
               </div>
 
               {/* Patient Communication bg-yellow-200/50  */}
@@ -427,7 +509,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
                   title="Patient Communication"
                   // subtitle="test"
                   isExpanded={expandedSections.communication}
-                  onClick={() => toggleSection("communication")}
+                  onClick={() => toggleTimelineSection("communication")}
                   action={
                     <Button
                       variant="outline"
@@ -439,12 +521,15 @@ const MINDTab: React.FC<MINDTabProps> = ({
                   }
                   shouldExpand={false}
                 >
-                  <PatientCommunicationComponent
-                    isDrillDown={isDrillDown}
-                    selectedInsightCardTitles={selectedInsightCardTitles}
-                    suggested_activity_data={suggested_activity_data}
-                    updateActivities={setSelectedActivities}
-                  />
+                  {
+                    expandTimelineSections.communication &&
+                      <PatientCommunicationComponent
+                          isDrillDown={isDrillDown}
+                          selectedInsightCardTitles={selectedInsightCardTitles}
+                          suggested_activity_data={suggested_activity_data}
+                          updateActivities={setSelectedActivities}
+                      />
+                  }
                 </SectionTitle>
               </div>
             </div>

@@ -104,9 +104,9 @@ export default function InsightCardComponent({
                   {/* Left: Insight Types */}
                   {insightCardData?.insightType?.length > 0 && (
                     <div className="flex items-center gap-2">
-                      {/* <span className="text-xs font-medium italic">
+                      <span className="text-xs font-medium italic">
                       Insight Type:
-                    </span> */}
+                    </span>
                       {insightCardData.insightType.map((item, idx) => {
                         const Icon =
                           InsightTypeIconMap[item?.type as InsightType];
@@ -133,21 +133,22 @@ export default function InsightCardComponent({
             </div>
 
             {/* Right: Sources */}
-            <div className="flex items-start gap-1">
-              <Button
-                onMouseEnter={() => setHoveringButton(true)}
-                onMouseLeave={() => setHoveringButton(false)}
-                onClick={handleCardSelect}
-                variant="outline"
-                size="default"
-                // className="flex items-center gap-1 self-start sm:self-auto w-8 h-14" // justify-between
-              >
-                {/* <Microscope /> */}
-                {/* <Lightbulb /> */}
-                {/* <Sparkles /> */}
-                <ChartColumn />
-              </Button>
-            </div>
+              {
+                insightCardData?.expandView?.length > 1 &&
+                  <div className="flex items-start gap-1">
+
+                  <button
+                      onClick={() => onToggle?.(insightCardData.key, !isExpanded)}
+                      className="p-1 rounded-full hover:bg-gray-100 transition"
+                  >
+                    {isExpanded ? (
+                        <ChevronUp className="w-5 h-5" />
+                    ) : (
+                        <ChevronDown className="w-5 h-5" />
+                    )}
+                  </button>
+                  </div>
+              }
           </div>
           {isExpanded && (
             <div
@@ -170,16 +171,19 @@ export default function InsightCardComponent({
               ))}
             </div>
             <div className="ml-auto">
-              <button
-                onClick={() => onToggle?.(insightCardData.key, !isExpanded)}
-                className="p-1 rounded-full hover:bg-gray-100 transition"
+              <Button
+                  onMouseEnter={() => setHoveringButton(true)}
+                  onMouseLeave={() => setHoveringButton(false)}
+                  onClick={handleCardSelect}
+                  variant="outline"
+                  size="default"
+                  // className="flex items-center gap-1 self-start sm:self-auto w-8 h-14" // justify-between
               >
-                {isExpanded ? (
-                  <ChevronUp className="w-5 h-5" />
-                ) : (
-                  <ChevronDown className="w-5 h-5" />
-                )}
-              </button>
+                {/* <Microscope /> */}
+                {/* <Lightbulb /> */}
+                {/* <Sparkles /> */}
+                <ChartColumn />
+              </Button>
             </div>
           </div>
         </div>

@@ -69,7 +69,7 @@ const PassiveSensingCard = ({ passiveSensingFacts }: PassiveSensingCardProps) =>
 
             {/* Right Side: Chart */}
             <div className="flex items-center justify-center flex-1">
-              <div className="w-full h-72">
+                <div className="w-full h-72">
                 {showChart && selectedInsight && (
                   <InsightGraph
                     dataSourceType={selectedInsight.dataSourceType}
