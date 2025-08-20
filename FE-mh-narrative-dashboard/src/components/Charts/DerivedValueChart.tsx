@@ -13,6 +13,7 @@ import {
   Line,
   Customized,
   ReferenceArea,
+  Legend,
 } from "recharts";
 import type { DataPoint, ValueSpec } from "@/types/insightSpec";
 import { color, extent } from "d3";
@@ -78,7 +79,7 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
         <ReferenceArea
           x1={spec.time_1}
           x2={spec.time_2}
-          y1={0}
+          y1={yRange[0] < 0 ? yRange[0] : 0}
           y2={yRangeUse}
           fillOpacity={HIGHLIGHT_FILL_OPACITY}
         />
@@ -95,6 +96,7 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
           dataKey={metricKey}
           isAnimationActive={false}
           maxBarSize={MAX_BAR_SIZE}
+          fill={baseColor}
         >
           {visData.map((entry, index) => (
             <Cell
@@ -110,7 +112,7 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
           <ReferenceLine
             label={renderLabel}
             stroke={HIGHLIGHT_COLOR}
-            strokeWidth={3}
+            strokeWidth={2}
             strokeDasharray="3 3"
             segment={[
               { x: spec.time_1, y: showVal },
@@ -124,6 +126,7 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
             }}
           /> */}
         </Bar>
+        <Legend iconSize={14} wrapperStyle={{ fontSize: "14px" }} />
       </BarChart>
     </ResponsiveContainer>
   );

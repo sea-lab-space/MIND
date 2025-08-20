@@ -22,7 +22,7 @@ export default function OverviewComponent({
             isDrillDown ? "flex-col" : "flex-col sm:flex-row"
           }`}
         >
-          <div className={isDrillDown ? "w-full" : "w-[260px] shrink-0 "}>
+          {/* <div className={isDrillDown ? "w-full" : "w-[260px] shrink-0 "}>
             <div className="h-full bg-white shadow-sm rounded-xl px-3 py-2 border border-gray-200 flex flex-col">
               <h3 className="text-base font-semibold mb-2">Patient Summary</h3>
               <div className="space-y-1">
@@ -39,7 +39,7 @@ export default function OverviewComponent({
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div
             className={`flex flex-col gap-2 ${
@@ -48,17 +48,19 @@ export default function OverviewComponent({
           >
             {infoData.map((card, index) => {
               // const Icon = overviewIconMap[card.icon];
-              return (
-                <OverviewCardComponent
-                  key={index}
-                  // icon={Icon}
-                  title={card.overviewHeadTitle}
-                >
-                  {isExpanded
-                    ? card.cardContent.expanded
-                    : card.cardContent.folded}
-                </OverviewCardComponent>
-              );
+              console.log(card.overviewHeadTitle);
+              if (card.overviewHeadTitle === "Medical History")
+                return (
+                  <OverviewCardComponent
+                    key={index}
+                    // icon={Icon}
+                    title={card.overviewHeadTitle}
+                  >
+                    {isExpanded
+                      ? card.cardContent.expanded
+                      : card.cardContent.folded}
+                  </OverviewCardComponent>
+                );
             })}
           </div>
         </div>

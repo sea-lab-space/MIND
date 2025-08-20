@@ -307,9 +307,9 @@ class MINDPipeline:
     def _transform_encounter_date_data(self):
         spec = []
         for entry in self.data_facts['note_facts']:
-            print(spec)
-            spec.append({
-                "summarySentence": entry['fact_text'],
+            expandView = []
+            expandView.append({
+                "summarySentence": None,
                 "dataPoints": None,
                 "spec": [
                     {
@@ -321,7 +321,15 @@ class MINDPipeline:
                 "sources": ["clinical note"],
                 "dataSourceType": "text",
                 "isShowL2": False
-
+            })
+            spec.append({
+                "summaryTitle": entry['fact_text'],
+                "sources": [
+                    "clinical note"
+                ],
+                "insightType": [
+                ],
+                "expandView": expandView
             })
         return spec
 
@@ -346,8 +354,8 @@ class MINDPipeline:
 
 if __name__ == "__main__":
     MODEL_NAME = 'gpt-4.1'
-    # USERS = ["INS-W_963", "INS-W_1044", "INS-W_1077"]
-    USERS = ["INS-W_963"]
+    USERS = ["INS-W_963", "INS-W_1044", "INS-W_1077"]
+    # USERS = ["INS-W_963"]
     # USERS = ["INS-W_1044"]
     # USERS = ["INS-W_1077"]
 
@@ -369,18 +377,18 @@ if __name__ == "__main__":
                 # run_sub_stages={
                 # "notes_summary": False,
                 # "hypothesis_generation": False,
-                # "plan": True,
+                # "plan": False,
                 # "exec": True,
                 # "fact_exploration": False},
-                load_from_cache=False)
+                load_from_cache=True)
             .run_synthesizer(
                 iters=1, 
                 # run_sub_stage={
                 #     "qa_insights": False,
                 #     "simple_insights": False,
                 # },
-                load_from_cache=False)
-            .run_narrator(load_from_cache=False)
+                load_from_cache=True)
+            .run_narrator(load_from_cache=True)
             .run_overview(load_from_cache=True)
             .run_suggest_activity(load_from_cache=True)
             .run_visualizer()

@@ -164,4 +164,5 @@ export interface InputSpecStructure {
   survey_raw: any[];
   suggest_activity: any[];
   passive_data_raw: any[];
+  last_encounter: any[];
 }

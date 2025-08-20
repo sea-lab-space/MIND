@@ -46,15 +46,15 @@ return (
       </div>
     </CardHeader>
     <CardContent>
-      <div className="flex gap-6 min-h-[400px]">
+      <div className="flex min-h-[400px]">
         {/* Left Side: Button List */}
-        <div className="flex-shrink-0 space-y-4 w-[30%]">
+        <div className="flex-shrink-0 space-y-4 w-[35%] max-h-[400px] overflow-y-auto">
           {surveyScoreFacts.map((insight) => (
             <Button
               key={insight.key}
               variant="outline"
               onClick={() => setSelectedKey(insight.key)}
-              className={`w-full justify-start h-auto text-left whitespace-normal p-4 text-sm text-[#1e1e1e] border-[#d9d9d9] ${
+              className={`w-full justify-start h-auto text-left whitespace-normal text-sm text-[#1e1e1e] border-[#d9d9d9] ${
                 selectedKey === insight.key ? "bg-[#f7f5f5]" : "bg-white"
               }`}
             >

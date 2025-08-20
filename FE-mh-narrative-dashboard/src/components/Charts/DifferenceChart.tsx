@@ -7,6 +7,7 @@ import {
   Tooltip,
   ResponsiveContainer,
   Cell,
+  Legend,
 } from "recharts";
 import type { DataPoint, DifferenceSpec, ValueSpec } from "@/types/insightSpec";
 import { color, extent } from "d3";
@@ -49,6 +50,7 @@ const DifferenceChart: React.FC<DifferenceChartProps> = (props) => {
           dataKey={metricKey}
           isAnimationActive={false}
           maxBarSize={MAX_BAR_SIZE}
+          fill={baseColor}
         >
           {visData.map((entry, index) => (
             <Cell
@@ -61,6 +63,7 @@ const DifferenceChart: React.FC<DifferenceChartProps> = (props) => {
             />
           ))}
         </Bar>
+        <Legend iconSize={14} wrapperStyle={{ fontSize: "14px" }} />
       </BarChart>
     </ResponsiveContainer>
   );

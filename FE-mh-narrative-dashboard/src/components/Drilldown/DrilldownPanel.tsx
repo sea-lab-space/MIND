@@ -73,8 +73,6 @@ const DrilldownPanel: React.FC<DrilldownPanelProps> = ({
     };
   }, [insightData, sessionInfo]);
 
-
-
   return (
     <div className="flex-1">
       <div className="absolute z-10 items-center justify-center bottom-1/2 top-1/2">

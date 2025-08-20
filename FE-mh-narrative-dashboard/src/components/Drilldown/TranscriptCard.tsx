@@ -111,14 +111,14 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
 
           <div className="flex gap-8">
             {/* Left vertical buttons (summary sentences for selected date) */}
-            <div className="flex-shrink-0 space-y-4 w-[30%]">
+            {/* <div className="flex-shrink-0 space-y-4 w-[30%]">
               {clinicalTranscriptsFacts.map((fact) => (
                 <Button
                   key={fact.key}
                   disabled={!highlightDates.has(selectedDate ?? "")}
                   variant="outline"
                   onClick={() => setSelectedFactKey(fact.key)}
-                  className={`w-full justify-start h-auto text-left whitespace-normal p-4 text-sm border-[#d9d9d9] ${
+                  className={`w-full justify-start h-auto text-left whitespace-normal text-sm border-[#d9d9d9] ${
                     selectedFactKey === fact.key ? "bg-[#f7f5f5]" : "bg-white"
                   }`}
                 >
@@ -128,7 +128,7 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
                   </div>
                 </Button>
               ))}
-            </div>
+            </div> */}
 
             {/* Right side: selected fact details */}
             <div
@@ -136,7 +136,7 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
               className="space-y-6 text-sm text-[#2c2c2c] overflow-y-auto"
               style={{
                 flex: 1,
-                maxHeight: "500px" /* match container height */,
+                maxHeight: "300px" /* match container height */,
                 paddingRight: "1rem",
               }}
             >

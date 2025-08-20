@@ -110,30 +110,30 @@ const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFac
 
           <div className="flex gap-8">
             {/* Left vertical buttons (summary sentences for selected date) */}
-            <div className="flex-shrink-0 space-y-4 w-[30%]">
+            {/* <div className="flex-shrink-0 space-y-4 w-[30%]">
               {clinicalNotesFacts.map((fact) => (
                 <Button
                   key={fact.key}
                   disabled={!highlightDates.has(selectedDate ?? "")}
                   variant="outline"
                   onClick={() => setSelectedFactKey(fact.key)}
-                  className={`w-full justify-start h-auto text-left whitespace-normal p-4 text-sm border-[#d9d9d9] ${
+                  className={`w-full justify-start h-auto text-left whitespace-normal text-sm border-[#d9d9d9] ${
                     selectedFactKey === fact.key ? "bg-[#f7f5f5]" : "bg-white"
                   }`}
                 >
                   <div className="flex items-start gap-2">
-                    <div className="w-2 h-2 bg-gray-600 rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0" />
                     <span>{fact.summarySentence}</span>
                   </div>
                 </Button>
               ))}
-            </div>
+            </div> */}
 
             {/* Right side: selected fact details */}
             <div
               ref={scrollContainerRef}
               className="space-y-6 text-sm text-[#2c2c2c] overflow-y-auto"
-              style={{ flex: 1, maxHeight: "500px", paddingRight: "1rem" }}
+              style={{ flex: 1, maxHeight: "300px", paddingRight: "1rem" }}
             >
               {sessionInfo
                 ?.filter((dp) => dp.encounter_date === selectedDate)

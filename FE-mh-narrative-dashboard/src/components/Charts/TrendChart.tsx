@@ -8,6 +8,7 @@ import {
   ResponsiveContainer,
   ReferenceArea,
   ReferenceLine,
+  Legend,
 } from "recharts";
 import type { DataPoint, TrendSpec } from "@/types/insightSpec";
 import { extent } from "d3-array";
@@ -76,7 +77,7 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
       <ReferenceLine
         stroke={highlightColor}
         strokeWidth={2}
-        strokeDasharray="4 2"
+        strokeDasharray="3 3"
         segment={[
           { x: spec.time_1, y: y1 },
           { x: spec.time_2, y: y2 },
@@ -93,7 +94,7 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
           <ReferenceArea
             x1={spec.time_1}
             x2={spec.time_2}
-            y1={0}
+            y1={yRange[0] < 0 ? yRange[0] : 0}
             y2={yRangeUse}
             fillOpacity={HIGHLIGHT_FILL_OPACITY}
           />
@@ -119,6 +120,7 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
 
         {/* regression aux line */}
         {auxilaryLine()}
+        <Legend iconSize={14} wrapperStyle={{ fontSize: "14px" }} />
       </LineChart>
     </ResponsiveContainer>
   );
