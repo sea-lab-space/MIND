@@ -76,10 +76,10 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
       <Card className="bg-white border-[#eaeaea]">
         <CardContent className="px-6">
           {/* Header */}
-          <div className="flex items-center gap-2 mb-4 font-medium">
+          <div className="flex items-center gap-2 mb-4 font-medium  text-[#2c2c2c]">
             {/* <MessageSquare className="w-4 h-4 text-[#9FB40F]" />
                     <span className="text-[#9FB40F] font-medium">Transcript</span> */}
-            <DataSourceIcon iconType="session transcript" showType />
+            <DataSourceIcon iconType="session transcript" showType />*
           </div>
 
           {/* Date buttons on top */}

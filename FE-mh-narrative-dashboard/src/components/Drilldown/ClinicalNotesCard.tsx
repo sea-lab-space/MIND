@@ -75,12 +75,11 @@ const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFac
       <Card className="bg-white border-[#eaeaea]">
         <CardContent className="px-6">
           {/* Header */}
-          <div className="flex items-center gap-2 mb-4 font-medium">
+          <div className="flex items-center gap-2 mb-4 font-medium text-[#ffc100]">
             {/* <StickyNote className="w-4 h-4 text-[#ffc100]" />
                     <span className="text-[#ffc100] font-medium">Clinical Notes</span> */}
-            <DataSourceIcon iconType="clinical note" showType />
+            <DataSourceIcon iconType="clinical note" showType />*
           </div>
-
           {/* Date buttons on top */}
           <div className="flex gap-4 mb-6 overflow-x-auto no-scrollbar">
             {dates?.map((date) => {

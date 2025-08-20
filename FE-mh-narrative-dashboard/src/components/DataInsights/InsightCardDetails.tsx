@@ -24,7 +24,7 @@ export default function InsightCardDetail({
             detail.dataPoints
           );
 
-          const shouldRenderChart = showAll ? showChart : showChart && index === 0;
+          const shouldRenderChart = showAll ? showChart : showChart && !hasShownChart;
           const shouldRenderFact = isBaseline ? true: detail.isShowL2
 
           if (shouldRenderChart) {

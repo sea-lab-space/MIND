@@ -52,6 +52,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
   const [expandedSections, setExpandedSections] = useState({
     overview: false,
     insights: false,
+    lastSession: false,
     communication: false,
   });
 
@@ -162,8 +163,6 @@ const MINDTab: React.FC<MINDTabProps> = ({
 
   const midpoint = Math.ceil(filteredInsightCards.length / 2);
 
-  const leftColumnCards = filteredInsightCards.slice(0, midpoint); // first half
-  const rightColumnCards = filteredInsightCards.slice(midpoint); // second half
   const allExpandViews = flattenAllExpandViews(insightCardData);
 
   const {
@@ -305,7 +304,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
               >
                 <SectionTitle
                     title="Last Session"
-                    // isExpanded={expandedSections.lastSession || globalExpand}
+                    isExpanded={expandedSections.lastSession || globalExpand}
                     onClick={() =>
                         toggleTimelineSection("lastSession")
                     }
