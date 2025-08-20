@@ -66,8 +66,8 @@ class RuleBaseComparisonAgent:
                 "time_end": self.end_date,
             },
             aggregation=aggregation,
-            value_dur_1=time_dur_1_val,
-            value_dur_2=time_dur_2_val,
+            value_dur_1=round(time_dur_1_val, 2),
+            value_dur_2=round(time_dur_2_val, 2),
             significance="indicative" if p_val < alpha else "insignificant",
             fact_description="",
         )

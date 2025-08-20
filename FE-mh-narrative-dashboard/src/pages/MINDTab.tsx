@@ -15,7 +15,11 @@ import {
   type InsightExpandViewItem,
 } from "@/types/props";
 import { getVisualizerDataForPerson } from "@/utils/dataConversion";
-import {flattenAllExpandViews, groupInsights, groupInsightsBySource} from "@/utils/helper";
+import {
+  flattenAllExpandViews,
+  groupInsights,
+  groupInsightsBySource,
+} from "@/utils/helper";
 import { type SuggestedActivity } from "@/types/dataTypes";
 import OverviewSummary from "@/components/BaseLine/OverciewSummary";
 import VerticalTimeline from "@/components/Timeline/TimelineVis";
@@ -58,12 +62,17 @@ const MINDTab: React.FC<MINDTabProps> = ({
     session_subjective_info,
     suggested_activity_data,
     survey_data,
+    last_encounter
   } = getVisualizerDataForPerson(selectedPatient);
   const [globalExpand, setGlobalExpand] = useState(false);
   const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
 
   //to support cards be used by the timeline
-  console.log(groupInsights(insightCardData), "printing cards")
+  console.log(groupInsights(insightCardData), "printing cards");
+
+  const allData = [
+    ...insightCardData, ...last_encounter
+  ]
 
   const toggleSection = (
     section: "overview" | "insights" | "communication"
@@ -131,8 +140,10 @@ const MINDTab: React.FC<MINDTabProps> = ({
             )
         );
 
-  const leftColumnCards = filteredInsightCards.filter((_, i) => i % 2 === 0);
-  const rightColumnCards = filteredInsightCards.filter((_, i) => i % 2 !== 0);
+  const midpoint = Math.ceil(filteredInsightCards.length / 2);
+
+  const leftColumnCards = filteredInsightCards.slice(0, midpoint); // first half
+  const rightColumnCards = filteredInsightCards.slice(midpoint); // second half
   const allExpandViews = flattenAllExpandViews(insightCardData);
 
   const {
@@ -185,7 +196,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
         {/* Left column: scrollable independently */}
         {overviewCardData && !isDrillDown && (
           <div
-            className="flex flex-col w-[260px] shrink-0 sticky top-0 z-10 gap-2"
+            className="flex flex-col w-[220px] shrink-0 sticky top-0 z-10 gap-2"
             ref={(el) => {
               sectionRefs.current.overview = el;
             }}
@@ -215,9 +226,9 @@ const MINDTab: React.FC<MINDTabProps> = ({
             }`}
           >
             <div className="relative">
-              <div className="absolute left-8.5 top-4 bottom-0 w-0.5 bg-[#d9d9d9] z-0" />
+              <div className="absolute left-4.5 top-4 bottom-0 w-0.5 bg-[#d9d9d9] z-0" />
               {/* ChartReview bg-red-200/50 */}
-              <div className="rounded p-4 relative z-10">
+              <div className="rounded relative z-10">
                 <SectionTitle
                   title="Overview"
                   // subtitle="test"
@@ -232,9 +243,68 @@ const MINDTab: React.FC<MINDTabProps> = ({
                 </SectionTitle>
               </div>
 
+              <div
+                className="rounded mb-2 mt-2 relative z-10"
+                // ref={(el) => {
+                //   sectionRefs.current.insights = el;
+                // }}
+              >
+                <SectionTitle
+                  title="Last Session"
+                  // subtitle="test"
+                  isExpanded={expandedSections.insights || globalExpand}
+                  // TODO
+                  onClick={() => {}}
+                >
+                  <div
+                    className={`${
+                      isDrillDown
+                        ? "flex flex-col gap-4"
+                        : "grid grid-cols-1 sm:grid-cols-2 gap-4"
+                    }`}
+                  >
+                    {/* Left Column */}
+                    <div className="flex flex-col gap-4">
+                      {last_encounter.map((card, index) => (
+                        <div
+                          key={card.key}
+                          ref={(el) => {
+                            cardRefs.current[index * 2] = el;
+                          }}
+                          className="w-full"
+                        >
+                          <InsightCardComponent
+                            key={card.key}
+                            insightCardData={card}
+                            isExpanded={false
+                              // globalExpand || expandedCards.has(card.key)
+                            }
+                            onToggle={handleToggleCard}
+                            isDrillDown={isDrillDown}
+                            title={card.summaryTitle}
+                            sources={card.sources}
+                            isInsightHeaderSelected={selectedInsightHeader.includes(
+                              card.key
+                            )}
+                            isInsightCardSelected={
+                              selectedInsightCard === card.key
+                            }
+                            handleCardSelect={() =>
+                              handleCardSelection(card.key, index * 2)
+                            }
+                            handleCardHeaderClick={() =>
+                              handleInsightCardHeaderSelect(card.key)
+                            }
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </SectionTitle>
+              </div>
               {/* Data-driven Insights bg-green-200/50 */}
               <div
-                className="rounded p-4 mb-2 relative z-10"
+                className="rounded mb-2 mt-2 relative z-10"
                 ref={(el) => {
                   sectionRefs.current.insights = el;
                 }}
@@ -348,7 +418,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
 
               {/* Patient Communication bg-yellow-200/50  */}
               <div
-                className="rounded p-4 relative z-10"
+                className="rounded relative z-10"
                 ref={(el) => {
                   sectionRefs.current.communication = el;
                 }}
@@ -389,7 +459,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
               <DrilldownPanel
                 key={selectedInsightCard}
                 insightData={
-                  insightCardData.find(
+                  allData.find(
                     (data) => data.key === selectedInsightCard
                   ) || ({} as InsightCardData)
                 }

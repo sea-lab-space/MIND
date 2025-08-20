@@ -49,9 +49,9 @@
       "key": "insight-0",
       "summaryTitle": "Depressive symptoms and negative affect spiked mid-May, with increased inactivity and variable daily routines.",
       "sources": [
-        "survey",
+        "passive sensing",
         "clinical note",
-        "passive sensing"
+        "survey"
       ],
       "insightType": [
         "psychological"
@@ -841,9 +841,9 @@
       "key": "insight-1",
       "summaryTitle": "Bedtime is trending earlier, while awakening episodes show high variability and anomalies.",
       "sources": [
-        "session transcript",
         "passive sensing",
-        "clinical note"
+        "clinical note",
+        "session transcript"
       ],
       "insightType": [
         "biological"
@@ -2675,9 +2675,9 @@
       "key": "insight-2",
       "summaryTitle": "Negative affect and depression scores show significant, cyclic fluctuations over the past week.",
       "sources": [
-        "session transcript",
         "survey",
-        "clinical note"
+        "clinical note",
+        "session transcript"
       ],
       "insightType": [
         "psychological"
@@ -2975,9 +2975,9 @@
       "key": "insight-3",
       "summaryTitle": "Routine consistency, time at home, and distance traveled all show significant, irregular fluctuations recently.",
       "sources": [
-        "session transcript",
         "passive sensing",
-        "clinical note"
+        "clinical note",
+        "session transcript"
       ],
       "insightType": [
         "social"
@@ -5542,96 +5542,114 @@
   ],
   "last_encounter": [
     {
-      "summarySentence": "Reported/observed persistent low mood, anhedonia, sleep/appetite disturbances, negative self-evaluation, and low motivation.",
-      "dataPoints": null,
-      "spec": [
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "Lucy reports that her mood and daily functioning have not changed significantly since the last session."
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "She describes feeling a transient improvement in mood after walking, but this was short-lived, and she subsequently felt discouraged and self-critical for not continuing."
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "Lucy continues to experience pervasive thoughts of inadequacy, particularly around her academic performance, friendships, and family roles."
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "Lucy reports ongoing sleep disturbances, with difficulty falling asleep and sleeping during the day."
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "Her appetite is poor, often forgetting meals or substituting snacks for proper meals."
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "She describes episodes of emotional numbness and low motivation but denies active suicidal ideation or intent."
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "Affect: Restricted, congruent with reported mood."
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "Sleep: Poor, with insomnia and hypersomnia."
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "Appetite: Decreased, irregular meals."
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "Functioning: Attending work (reduced hours), behind on academic tasks, limited social engagement."
-        }
-      ],
+      "summaryTitle": "Reported/observed persistent low mood, anhedonia, sleep/appetite disturbances, negative self-evaluation, and low motivation.",
       "sources": [
         "clinical note"
       ],
-      "dataSourceType": "text",
-      "isShowL2": false
+      "insightType": [],
+      "expandView": [
+        {
+          "summarySentence": null,
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Lucy reports that her mood and daily functioning have not changed significantly since the last session."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "She describes feeling a transient improvement in mood after walking, but this was short-lived, and she subsequently felt discouraged and self-critical for not continuing."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Lucy continues to experience pervasive thoughts of inadequacy, particularly around her academic performance, friendships, and family roles."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Lucy reports ongoing sleep disturbances, with difficulty falling asleep and sleeping during the day."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Her appetite is poor, often forgetting meals or substituting snacks for proper meals."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "She describes episodes of emotional numbness and low motivation but denies active suicidal ideation or intent."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Affect: Restricted, congruent with reported mood."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Sleep: Poor, with insomnia and hypersomnia."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Appetite: Decreased, irregular meals."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Functioning: Attending work (reduced hours), behind on academic tasks, limited social engagement."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        }
+      ]
     },
     {
-      "summarySentence": "Assessed moderate to severe major depressive disorder; some engagement in therapy, no acute safety concerns.",
-      "dataPoints": null,
-      "spec": [
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "Lucy continues to experience symptoms of moderate to severe major depressive disorder, including low mood, anhedonia, sleep and appetite disturbances, low energy, impaired concentration, and pervasive negative self-evaluation."
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "She demonstrates some engagement with behavioral activation and cognitive restructuring strategies but struggles with consistency and self-compassion."
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "Protective factors include ongoing engagement in therapy, adherence to medication, maintenance of some work and academic responsibilities, and willingness to reach out for help if needed."
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "No acute safety concerns at present, but ongoing monitoring is warranted given her reports of numbness and low motivation."
-        }
-      ],
+      "summaryTitle": "Assessed moderate to severe major depressive disorder; some engagement in therapy, no acute safety concerns.",
       "sources": [
         "clinical note"
       ],
-      "dataSourceType": "text",
-      "isShowL2": false
+      "insightType": [],
+      "expandView": [
+        {
+          "summarySentence": null,
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Lucy continues to experience symptoms of moderate to severe major depressive disorder, including low mood, anhedonia, sleep and appetite disturbances, low energy, impaired concentration, and pervasive negative self-evaluation."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "She demonstrates some engagement with behavioral activation and cognitive restructuring strategies but struggles with consistency and self-compassion."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Protective factors include ongoing engagement in therapy, adherence to medication, maintenance of some work and academic responsibilities, and willingness to reach out for help if needed."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "No acute safety concerns at present, but ongoing monitoring is warranted given her reports of numbness and low motivation."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        }
+      ]
     }
   ],
   "session_subjective_info": [

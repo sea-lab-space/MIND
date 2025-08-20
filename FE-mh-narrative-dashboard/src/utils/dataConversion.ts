@@ -26,7 +26,8 @@ export const getVisualizerDataForPerson = (personName: string) => {
           session_subjective_info: [],
           survey_data: [],
           suggested_activity_data: [],
-          passive_data_raw: []
+          passive_data_raw: [],
+          last_encounter: []
         };
     }
 
@@ -59,13 +60,40 @@ export const getVisualizerDataForPerson = (personName: string) => {
     const suggested_activity_data = personData.suggest_activity as SuggestedActivity[];
     const passive_data_raw = personData.passive_data_raw as any[];
 
+    const last_encounter: InsightCardData[] = personData.last_encounter.map(
+      (group, index) => ({
+        key: `last-encounter-${index + 1}`,
+        summaryTitle: group.summaryTitle,
+        sources: group.sources.map((type: string) => ({
+          type: type.trim() as DatasourceIconType,
+        })),
+        insightType: group.insightType.map((type: string) => ({
+          type: type as InsightType,
+        })),
+        expandView: group.expandView.map(
+          (insight: any, idx: number) =>
+            ({
+              ...insight,
+              key: `insight-${index + 1}-detail-${idx + 1}`,
+              summarySentence: insight.summarySentence,
+              dataPoints: insight.dataPoints,
+              dataSourceType: insight.dataSourceType as DataSourceType,
+              highlightSpec: insight.spec as HighlightSpec,
+              source: insight.sources[0] as keyof typeof DatasourceIconTypes,
+              isShowL2: insight.isShowL2 as boolean,
+            } as InsightExpandViewItem)
+        ),
+      })
+    );
+
     return {
-        overviewCardData,
-        insightCardData,
-        session_subjective_info,
-        survey_data,
-        suggested_activity_data,
-        passive_data_raw
+      overviewCardData,
+      insightCardData,
+      session_subjective_info,
+      survey_data,
+      suggested_activity_data,
+      passive_data_raw,
+      last_encounter,
     };
 };
 

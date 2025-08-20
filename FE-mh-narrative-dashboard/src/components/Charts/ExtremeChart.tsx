@@ -8,6 +8,7 @@ import {
   ResponsiveContainer,
   Cell,
   LabelList,
+  Legend,
 } from "recharts";
 import type {
   DataPoint,
@@ -58,6 +59,7 @@ const ExtremeChart: React.FC<ExtremeChartProps> = (props) => {
           dataKey={metricKey}
           isAnimationActive={false}
           maxBarSize={MAX_BAR_SIZE}
+          fill={baseColor}
         >
           {visData.map((entry, index) => (
             <Cell
@@ -67,6 +69,7 @@ const ExtremeChart: React.FC<ExtremeChartProps> = (props) => {
           ))}
           <LabelList dataKey="highlightVal" position="top" />
         </Bar>
+        <Legend iconSize={14} wrapperStyle={{ fontSize: "14px" }} />
       </BarChart>
     </ResponsiveContainer>
   );

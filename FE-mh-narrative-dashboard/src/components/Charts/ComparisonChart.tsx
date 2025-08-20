@@ -10,6 +10,7 @@ import {
   ReferenceLine,
   ReferenceDot,
   Label,
+  Legend,
 } from "recharts";
 import type { ComparisonSpec, DataPoint } from "@/types/insightSpec";
 import { extent } from "d3-array";
@@ -134,15 +135,15 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
           <ReferenceArea
             x1={spec.time_dur_1.time_start}
             x2={spec.time_dur_1.time_end}
-            y1={0}
+            y1={yRange[0] < 0 ? yRange[0] : 0}
             y2={yRangeUse}
             // stroke=HIGHLIGHT_COLOR
-            fillOpacity={HIGHLIGHT_FILL_OPACITY}
+            fillOpacity={HIGHLIGHT_FILL_OPACITY * 0.5}
           />
           <ReferenceArea
             x1={spec.time_dur_2.time_start}
             x2={spec.time_dur_2.time_end}
-            y1={0}
+            y1={yRange[0] < 0 ? yRange[0] : 0}
             y2={yRangeUse}
             // stroke=HIGHLIGHT_COLOR
             fillOpacity={HIGHLIGHT_FILL_OPACITY}
@@ -193,7 +194,7 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
             <ReferenceLine
               label={(props) => renderLabel(props, spec.value_dur_1)}
               stroke={HIGHLIGHT_COLOR}
-              strokeWidth={3}
+              strokeWidth={2}
               strokeDasharray="3 3"
               segment={[
                 { x: spec.time_dur_1.time_start, y: showVal?.time_1 },
@@ -214,7 +215,7 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
             <ReferenceLine
               label={(props) => renderLabel(props, spec.value_dur_2)}
               stroke={HIGHLIGHT_COLOR}
-              strokeWidth={3}
+              strokeWidth={2}
               strokeDasharray="3 3"
               segment={[
                 { x: spec.time_dur_2.time_start, y: showVal?.time_2 },
@@ -222,6 +223,7 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
               ]}
             />
           )}
+          <Legend iconSize={14} wrapperStyle={{ fontSize: "14px" }} />
         </LineChart>
       </ResponsiveContainer>
     </div>

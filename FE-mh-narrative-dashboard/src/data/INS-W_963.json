@@ -547,8 +547,8 @@
       "key": "insight-2",
       "summaryTitle": "Physical activity and positive mood both show increasing trends over the recent month.",
       "sources": [
-        "clinical note",
         "passive sensing",
+        "clinical note",
         "survey"
       ],
       "insightType": [
@@ -1281,8 +1281,8 @@
       "key": "insight-3",
       "summaryTitle": "Bedtime and awakening episodes show high variability, indicating irregular sleep patterns.",
       "sources": [
-        "clinical note",
-        "passive sensing"
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "biological"
@@ -1916,8 +1916,8 @@
       "key": "insight-4",
       "summaryTitle": "Total screen time shows a modest, consistent decrease over the observed period.",
       "sources": [
-        "clinical note",
-        "passive sensing"
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "psychological"
@@ -2561,8 +2561,8 @@
       "key": "insight-5",
       "summaryTitle": "Physical activity and inactivity both show modest increases, with sleep duration remaining stable.",
       "sources": [
-        "clinical note",
-        "passive sensing"
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "biological"
@@ -12445,61 +12445,79 @@
   ],
   "last_encounter": [
     {
-      "summarySentence": "Reported/observed persistent emotional numbness, fatigue, negative self-perception, social withdrawal, and sleep disturbance.",
-      "dataPoints": null,
-      "spec": [
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "She describes persistent feelings of emotional numbness and fatigue, stating, “I just do what I have to but I don’t feel much—happy, sad, anything.”"
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "She continues to experience significant self-doubt and guilt, particularly after a recent argument with her mother regarding job and university applications."
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "Social withdrawal persists; she has not contacted friends or returned to campus, expressing feelings of being “stuck” and left behind compared to her peers."
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "Sleep remains disturbed, with difficulty falling and staying asleep, and she notes increased late-night snacking."
-        }
-      ],
+      "summaryTitle": "Reported/observed persistent emotional numbness, fatigue, negative self-perception, social withdrawal, and sleep disturbance.",
       "sources": [
         "clinical note"
       ],
-      "dataSourceType": "text",
-      "isShowL2": false
+      "insightType": [],
+      "expandView": [
+        {
+          "summarySentence": null,
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "She describes persistent feelings of emotional numbness and fatigue, stating, “I just do what I have to but I don’t feel much—happy, sad, anything.”"
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "She continues to experience significant self-doubt and guilt, particularly after a recent argument with her mother regarding job and university applications."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Social withdrawal persists; she has not contacted friends or returned to campus, expressing feelings of being “stuck” and left behind compared to her peers."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Sleep remains disturbed, with difficulty falling and staying asleep, and she notes increased late-night snacking."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        }
+      ]
     },
     {
-      "summarySentence": "Assessed ongoing moderate Major Depressive Disorder with persistent anhedonia, low energy, and entrenched negative cognitions.",
-      "dataPoints": null,
-      "spec": [
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "Gabriella continues to experience symptoms consistent with Major Depressive Disorder, moderate severity."
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "She reports persistent anhedonia, low energy, negative self-perception, social withdrawal, and sleep disturbance."
-        },
-        {
-          "fact_type": "text",
-          "date": "2021-05-09",
-          "text": "There is some engagement in behavioral activation (music, walks, work shifts), but positive affect is fleeting and overshadowed by entrenched negative cognitions."
-        }
-      ],
+      "summaryTitle": "Assessed ongoing moderate Major Depressive Disorder with persistent anhedonia, low energy, and entrenched negative cognitions.",
       "sources": [
         "clinical note"
       ],
-      "dataSourceType": "text",
-      "isShowL2": false
+      "insightType": [],
+      "expandView": [
+        {
+          "summarySentence": null,
+          "dataPoints": null,
+          "spec": [
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Gabriella continues to experience symptoms consistent with Major Depressive Disorder, moderate severity."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "She reports persistent anhedonia, low energy, negative self-perception, social withdrawal, and sleep disturbance."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "There is some engagement in behavioral activation (music, walks, work shifts), but positive affect is fleeting and overshadowed by entrenched negative cognitions."
+            }
+          ],
+          "sources": [
+            "clinical note"
+          ],
+          "dataSourceType": "text",
+          "isShowL2": false
+        }
+      ]
     }
   ],
   "session_subjective_info": [

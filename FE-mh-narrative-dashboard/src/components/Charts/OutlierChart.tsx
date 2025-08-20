@@ -9,6 +9,7 @@ import {
   ReferenceArea,
   ReferenceLine,
   ReferenceDot,
+  Legend,
 } from "recharts";
 import type { DataPoint, OutlierSpec } from "@/types/insightSpec";
 import { extent } from "d3-array";
@@ -66,15 +67,15 @@ const OutlierChart: React.FC<OutlierChartProps> = (props) => {
           stroke={baseColor}
           dot={{ r: 2 }}
           strokeWidth={2}
-          type="monotone"
         />
         <ReferenceDot
           x={spec?.time}
           y={spec?.value}
-          r={6}
+          r={4.5}
           fill={highlightColor}
           stroke="none"
         />
+        <Legend iconSize={14} wrapperStyle={{ fontSize: "14px" }} />
       </LineChart>
     </ResponsiveContainer>
   );
