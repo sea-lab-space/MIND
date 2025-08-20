@@ -43,7 +43,7 @@ export default function InsightCardDetail({
               </div>
 
               {shouldRenderChart && (
-                <div className="mt-2 bg-gray-50 border border-gray-200 rounded-lg h-48 pr-4 pt-2">
+                <div className="mt-2 bg-gray-50 border border-gray-200 rounded-lg h-48 pr-4 pt-4">
                   <InsightGraph
                     data={detail.dataPoints}
                     highlightSpec={detail.highlightSpec}

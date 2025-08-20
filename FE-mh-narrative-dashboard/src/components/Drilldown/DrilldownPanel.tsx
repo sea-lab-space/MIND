@@ -54,6 +54,9 @@ const DrilldownPanel: React.FC<DrilldownPanelProps> = ({
       [DatasourceIconTypes.passiveSensing]: passiveSensingFacts?.length ? (
         <PassiveSensingCard passiveSensingFacts={passiveSensingFacts} />
       ) : null,
+      [DatasourceIconTypes.surveyScore]: surveyScoreFacts?.length ? (
+          <MeasurementScalesCard surveyScoreFacts={surveyScoreFacts} />
+      ) : null,
       [DatasourceIconTypes.clinicalNotes]: clinicalNotesFacts?.length ? (
         <ClinicalNotesCard
           clinicalNotesFacts={clinicalNotesFacts}
@@ -67,9 +70,6 @@ const DrilldownPanel: React.FC<DrilldownPanelProps> = ({
             sessionInfo={sessionInfo}
           />
         ) : null,
-      [DatasourceIconTypes.surveyScore]: surveyScoreFacts?.length ? (
-        <MeasurementScalesCard surveyScoreFacts={surveyScoreFacts} />
-      ) : null,
     };
   }, [insightData, sessionInfo]);
 
