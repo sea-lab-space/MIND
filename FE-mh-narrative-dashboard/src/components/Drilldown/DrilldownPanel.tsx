@@ -9,7 +9,7 @@ import TranscriptCard from "./TranscriptCard";
 import MeasurementScalesCard from "./MeasurementScalesCard";
 import { type Encounter } from "@/types/dataTypes";
 import { groupInsightsBySource } from "@/utils/helper";
-import { DataSourceType, type DatasourceIconType, type InsightCardData, type InsightExpandViewItem } from "@/types/props";
+import { type DatasourceIconType, type InsightCardData } from "@/types/props";
 import { DatasourceIconTypes } from "@/types/props";
 
 interface DrilldownPanelProps {
@@ -97,9 +97,13 @@ const DrilldownPanel: React.FC<DrilldownPanelProps> = ({
           <SourcesSection
             sources={insightData?.sources.map((source) => source.type)}
           />
+
           {insightData?.sources.map((source, _) => {
             return cardMap[source.type as DatasourceIconType];
           })}
+          <div>
+            * Clinical notes and transcript used to motivate this insight
+          </div>
         </div>
       </div>
     </div>
