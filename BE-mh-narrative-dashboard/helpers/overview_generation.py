@@ -26,6 +26,8 @@ def get_health_system_prompt(length: Literal['minimal', 'short']):
         """
     else:
         raise ValueError("Invalid length")
+    
+
 
 MENTAL_HEALTH_SYSTEM = f"""
 {get_mh_data_expert_system_prompt()}
@@ -84,6 +86,20 @@ class SummarizationAgent:
 
         results = asyncio.run(self._gather_results(tasks))
         return results
+    
+    def _run_all_history(self, previous_ehr):
+        agent = deepcopy(self.general_agent)
+        agent.instructions = f"{GENERAL_SUMMARIZATION_SYSTEM}"
+
+        psychological = asyncio.run(Runner.run(
+            agent, input=f"Summarize the patient's medical (psychological) history into a minimal, comma-connected description within 15 words. Add a date to each history, in the style of <history> (date). Do not return anything else than the response.\n {previous_ehr}"))
+        physical = asyncio.run(Runner.run(
+            agent, input=f"Summarize the patient's medical (physical) history into a minimal, comma-connected description within 15 words. Add a date to each history, in the style of <history> (date). Do not return anything else than the response.\n {previous_ehr}"))
+
+        return {
+            "psychological": psychological.final_output,
+            "physical": physical.final_output
+        }
     
     def _run_mental_health(self, previous_session):
         versions = ['minimal', 'short']
@@ -171,6 +187,8 @@ class SummarizationAgent:
             )
         else:
             medication_note = "No medication history with current sessions."
+
+        all_history = self._run_all_history(previous_ehr)
                 
         return {
             "basicInfoCard": {
@@ -201,5 +219,6 @@ class SummarizationAgent:
                         "expanded": medication_note
                     }
                 }
-            ]
+            ],
+            "clinicalHistory": all_history
         }

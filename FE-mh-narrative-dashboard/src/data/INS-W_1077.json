@@ -14,8 +14,8 @@
         "icon": "history",
         "overviewHeadTitle": "Medical History",
         "cardContent": {
-          "folded": "Medical Concerns: Acute URI, hypertension, obesity, low back pain, allergic rhinitis, pharyngitis, iron deficiency anemia, insomnia;  \nPsychiatric Concerns: Generalized anxiety, major depression (single/recurrent), adjustment disorder, suicide attempt, relationship distress.",
-          "expanded": "Medical Concerns: Hypertension, obesity, iron deficiency anemia, acute upper respiratory infection, allergic rhinitis, acute pharyngitis, low back pain, insomnia;  \nPsychiatric Concerns: Generalized anxiety disorder, major depressive disorder (single and recurrent episodes), adjustment disorder with depressed mood, suicide attempt (paracetamol overdose), relationship distress."
+          "folded": "Medical Concerns: Hypertension, obesity, iron deficiency anemia, allergic rhinitis, insomnia, acute URI, pharyngitis, low back pain; Psychiatric Concerns: Major depressive disorder, generalized anxiety disorder, adjustment disorder, relationship distress, suicide attempt.",
+          "expanded": "Medical Concerns: Hypertension, obesity, iron deficiency anemia, allergic rhinitis, acute upper respiratory infection, acute pharyngitis, low back pain, insomnia  \nPsychiatric Concerns: Generalized anxiety disorder, major depressive disorder (single and recurrent episodes), adjustment disorder with depressed mood, suicide attempt (paracetamol overdose), relationship distress with partner"
         }
       },
       {
@@ -23,15 +23,15 @@
         "overviewHeadTitle": "Sessions Recap",
         "cardContent": {
           "folded": "Persistent low mood, anhedonia, fatigue, insomnia, poor appetite, guilt, strained relationships, financial stress.",
-          "expanded": "Alison has persistent moderate to severe depression with low mood, anhedonia, fatigue, poor sleep and appetite, guilt, and functional impairment. She has tried Sertraline and behavioral strategies with subtle improvement. Support from her sister and children is protective; financial and relationship stressors persist."
+          "expanded": "Alison has persistent moderate to severe depression with low mood, anhedonia, fatigue, poor sleep and appetite, guilt, and functional impairment. She is trying behavioral strategies and maintains some support from her sister and children. No current suicidal ideation. Relationship and financial stressors remain significant."
         }
       },
       {
         "icon": "brain",
         "overviewHeadTitle": "Current Concerns",
         "cardContent": {
-          "folded": "Mood unchanged, low motivation, fragmented sleep, poor appetite, guilt, financial worries, subtle progress.",
-          "expanded": "Ongoing low mood, fatigue, poor motivation, insomnia, reduced appetite, guilt about parenting and work, financial worries, and strained relationship with partner. No current suicidal ideation; feels isolated but is engaging in therapy and small behavioral changes."
+          "folded": "Mood unchanged, low motivation, subtle benefit from behavioral strategies, ongoing guilt, financial and relationship worries.",
+          "expanded": "Ongoing low mood, fatigue, poor motivation, insomnia, reduced appetite, guilt about parenting and work, financial worries, and strained relationship with her partner. Progress with behavioral activation is slow, and she feels isolated but is receptive to support and therapy."
         }
       },
       {
@@ -42,7 +42,11 @@
           "expanded": "2021-03-28: Sertraline; 2021-04-11: Sertraline"
         }
       }
-    ]
+    ],
+    "clinicalHistory": {
+      "psychological": "Generalized anxiety disorder (2018-04-18), major depressive disorder (2019-01-12, 2020-11-02), suicide attempt (2019-03-02), adjustment disorder (2019-09-20), insomnia (2020-01-10), relationship distress (2021-02-15).",
+      "physical": "Acute URI (2016-02-15), hypertension (2016-09-10), obesity (2017-03-22), low back pain (2017-11-05), allergic rhinitis (2018-08-30), acute pharyngitis (2020-04-25), iron deficiency anemia (2020-07-18)."
+    }
   },
   "insights": [
     {
@@ -694,8 +698,8 @@
       "key": "insight-1",
       "summaryTitle": "Increasing depression and stress scores with variable mood and spiking negative affect indicate mood worsening.",
       "sources": [
-        "clinical note",
-        "survey"
+        "survey",
+        "clinical note"
       ],
       "insightType": [
         "biological",
@@ -1827,9 +1831,9 @@
       "key": "insight-3",
       "summaryTitle": "Increased depressive symptoms and routine irregularity with higher sleep and physical activity suggest fluctuating energy and motivation.",
       "sources": [
+        "survey",
         "passive sensing",
-        "clinical note",
-        "survey"
+        "clinical note"
       ],
       "insightType": [
         "biological",
