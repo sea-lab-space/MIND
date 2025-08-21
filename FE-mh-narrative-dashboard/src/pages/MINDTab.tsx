@@ -160,8 +160,8 @@ const MINDTab: React.FC<MINDTabProps> = ({
 
   const filteredInsightCards =
     selectedInsightTypes.length === 0
-      ? allData
-      : allData.filter(
+      ? insightCardData
+      : insightCardData.filter(
           (card) =>
             Array.isArray(card.insightType) &&
             card.insightType.some((insight) =>
@@ -169,7 +169,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
             )
         );
 
-  const allExpandViews = flattenAllExpandViews(allData);
+  const allExpandViews = flattenAllExpandViews(insightCardData);
 
   const {
     passiveSensingFacts = [],
