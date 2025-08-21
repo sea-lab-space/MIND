@@ -33,7 +33,8 @@ export const VerticalTimeline = forwardRef<HTMLDivElement, VerticalTimelineProps
         useImperativeHandle(ref, () => containerRef.current as HTMLDivElement);
 
         useEffect(() => {
-            if (!svgRef.current || dates.length < 2) return;
+            if (!svgRef.current || !containerRef.current || dates.length < 2)
+              return;
 
             // ===== Setup & sizing =====
             const svg = d3.select(svgRef.current);
@@ -42,7 +43,12 @@ export const VerticalTimeline = forwardRef<HTMLDivElement, VerticalTimelineProps
             // Compact margins; width fixed at 200; height = 50% of screen
             const margin = { top: 30, right: 80, bottom: 30, left: 60 };
             const width = 200;
-            const svgHeight = Math.max(200, windowHeight * 0.6);
+            const parent = containerRef.current.parentElement;
+            if (!parent) return;
+            
+            const parentHeight = parent.clientHeight;
+
+            const svgHeight = parentHeight; 
 
             svg.attr("width", width).attr("height", svgHeight);
 
@@ -124,12 +130,15 @@ export const VerticalTimeline = forwardRef<HTMLDivElement, VerticalTimelineProps
             // Helper function to update all button backgrounds
             const updateAllButtonBackgrounds = (svg: d3.Selection<SVGSVGElement, unknown, null, undefined>, selectedValue: string | null) => {
                 // Update date buttons
-                svg.selectAll("foreignObject[data-date] button")
-                    .style("background", function() {
-                        const parentFO = d3.select(this.parentNode as Element);
-                        const buttonDate = parentFO.attr("data-date");
-                        return selectedValue === buttonDate ? "lightgrey" : "white";
-                    });
+                svg
+                  .selectAll<HTMLButtonElement, unknown>(
+                    "foreignObject[data-date] button"
+                  )
+                  .style("background", function () {
+                    const parentFO = d3.select(this.parentNode as Element);
+                    const buttonDate = parentFO.attr("data-date");
+                    return selectedValue === buttonDate ? "lightgrey" : "white";
+                  });
 
                 // Update history button
                 svg.selectAll("foreignObject[data-option='history'] button")

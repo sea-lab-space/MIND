@@ -14,44 +14,48 @@
         "icon": "history",
         "overviewHeadTitle": "Medical History",
         "cardContent": {
-          "folded": "Medical Concerns: Mild persistent asthma, allergic rhinitis, migraine, insomnia, UTI, fatigue, viral infections; Psychiatric Concerns: Generalized anxiety, adjustment disorder, major depressive disorder, suicidal ideation, social anxiety disorder.",
-          "expanded": "Medical Concerns: Mild persistent asthma, allergic rhinitis, acute pharyngitis, urinary tract infection, migraine without aura, insomnia, acute upper respiratory infection, fatigue;  \nPsychiatric Concerns: Generalized anxiety disorder, adjustment disorder with mixed anxiety and depressed mood, major depressive disorder (single and recurrent episodes), suicidal ideation, social anxiety disorder."
+          "folded": "Medical Concerns: Mild persistent asthma, allergic rhinitis, migraine, insomnia, UTI, fatigue, viral infections; Psychiatric Concerns: Generalized anxiety disorder, adjustment disorder, major depressive disorder, suicidal ideation, social anxiety disorder.",
+          "expanded": "Medical Concerns: Mild persistent asthma, allergic rhinitis, migraine without aura, insomnia, acute pharyngitis, upper respiratory infection, urinary tract infection, fatigue;  \nPsychiatric Concerns: Generalized anxiety disorder, adjustment disorder with mixed anxiety and depressed mood, major depressive disorder (single and recurrent episodes), social anxiety disorder, suicidal ideation."
         }
       },
       {
         "icon": "history",
         "overviewHeadTitle": "Sessions Recap",
         "cardContent": {
-          "folded": "Lucy reports persistent low mood, anhedonia, social withdrawal, academic stress, poor sleep, and self-criticism.",
-          "expanded": "Lucy, a university student, has persistent moderate to severe depression with low mood, anhedonia, social withdrawal, sleep/appetite disturbance, and negative self-evaluation. She is adherent to sertraline, engaged in therapy, and making small efforts toward behavioral activation and self-compassion, but struggles with consistency and self-criticism."
+          "folded": "Persistent low mood, anhedonia, social withdrawal, academic stress, sleep/appetite disturbance, negative self-evaluation, minimal improvement.",
+          "expanded": "Lucy, a university student, has experienced persistent low mood, anhedonia, social withdrawal, and academic decline over several months. She is adherent to sertraline, engaged in therapy, and open to behavioral activation and cognitive restructuring, but struggles with consistency, self-compassion, and ongoing functional impairment."
         }
       },
       {
         "icon": "brain",
         "overviewHeadTitle": "Current Concerns",
         "cardContent": {
-          "folded": "Low motivation, negative self-evaluation, academic overwhelm, sleep/appetite issues, limited social support, passive numbness.",
-          "expanded": "Lucy remains highly self-critical, struggles with academic and social functioning, and experiences ongoing low motivation, sleep/appetite issues, and passive thoughts of numbness. She is open to support but finds it difficult to sustain self-help strategies and fears burdening others."
+          "folded": "Ongoing low motivation, negative thoughts, academic backlog, poor sleep, isolation, difficulty sustaining self-help.",
+          "expanded": "Lucy continues to report low motivation, negative self-evaluation, disrupted sleep and appetite, academic anxiety, and social isolation. She feels overwhelmed by tasks, struggles to sustain self-help efforts, and experiences passive thoughts of numbness and unworthiness, though she denies active suicidal ideation."
         }
       },
       {
         "icon": "medication",
         "overviewHeadTitle": "Medication and Treatment",
         "cardContent": {
-          "folded": "2021-05-09: Sertraline; 2021-04-11: Sertraline; 2021-03-28: Sertraline",
-          "expanded": "2021-05-09: Sertraline; 2021-04-11: Sertraline; 2021-03-28: Sertraline"
+          "folded": "2021-05-09: Sertraline; 2021-03-28: Sertraline; 2021-04-11: Sertraline",
+          "expanded": "2021-05-09: Sertraline; 2021-03-28: Sertraline; 2021-04-11: Sertraline"
         }
       }
-    ]
+    ],
+    "clinicalHistory": {
+      "psychological": "Generalized anxiety disorder (2019-05-10), adjustment disorder with mixed anxiety/depressed mood (2019-10-18), major depressive disorder, recurrent, moderate (2020-11-05), suicidal ideation (2021-01-10), social anxiety disorder (2021-02-15).",
+      "physical": "Routine adolescent health exam (2017-09-15), acute pharyngitis (2017-12-10), mild persistent asthma (2018-03-20), allergic rhinitis (2018-09-05), urinary tract infection (2019-01-22), migraine (2020-01-15), insomnia (2020-03-02), upper respiratory infection (2020-04-10), fatigue (2020-08-12)."
+    }
   },
   "insights": [
     {
       "key": "insight-0",
       "summaryTitle": "Highly variable routine, activity, and affect indicate unstable mood and inconsistent functioning.",
       "sources": [
+        "survey",
         "passive sensing",
-        "clinical note",
-        "survey"
+        "clinical note"
       ],
       "insightType": [
         "biological",
@@ -2193,8 +2197,8 @@
       "key": "insight-2",
       "summaryTitle": "A sharp increase in negative affect suggests worsening mood and heightened psychological distress around 2021-05-19.",
       "sources": [
-        "clinical note",
-        "survey"
+        "survey",
+        "clinical note"
       ],
       "insightType": [
         "psychological"
