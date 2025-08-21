@@ -14,43 +14,47 @@
         "icon": "history",
         "overviewHeadTitle": "Medical History",
         "cardContent": {
-          "folded": "Medical Concerns: Mild persistent asthma, allergic rhinitis, migraine, insomnia, acne vulgaris, recurrent UTI, acute appendicitis, low back pain; Psychiatric Concerns: Generalized anxiety disorder, adjustment disorder with depressed mood, mild and moderate depressive episodes, social anxiety disorder.",
-          "expanded": "Medical Concerns: Mild persistent asthma, allergic rhinitis, migraine without aura, recurrent urinary tract infections, acute appendicitis (status post-appendectomy), acne vulgaris, low back pain, acute pharyngitis, insomnia, mild persistent asthma, and routine immunizations.  \nPsychiatric Concerns: Generalized anxiety disorder, adjustment disorder with depressed mood, mild and moderate depressive episodes, social anxiety disorder, insomnia related to anxiety/stress."
+          "folded": "Medical Concerns: Mild persistent asthma, allergic rhinitis, migraine, insomnia, acne, recurrent UTI, appendicitis, low back pain, acute pharyngitis, routine immunizations; Psychiatric Concerns: Generalized anxiety disorder, adjustment disorder with depressed mood, mild and moderate depressive episodes, social anxiety disorder.",
+          "expanded": "Medical Concerns: Mild persistent asthma, allergic rhinitis, migraine without aura, insomnia, acne vulgaris, recurrent urinary tract infections, acute appendicitis (status post-appendectomy), low back pain, acute pharyngitis, mild persistent asthma, routine immunizations.  \nPsychiatric Concerns: Generalized anxiety disorder, adjustment disorder with depressed mood, mild and moderate depressive episodes, social anxiety disorder."
         }
       },
       {
         "icon": "history",
         "overviewHeadTitle": "Sessions Recap",
         "cardContent": {
-          "folded": "Persistent low mood, fatigue, negative self-perception, social withdrawal, sleep disturbance, minimal improvement, ongoing therapy.",
-          "expanded": "Gabriella, a young adult on a break from university, presents with persistent low mood, anhedonia, fatigue, negative self-perception, and social withdrawal following a breakup. She is adherent to sertraline and CBT, with some engagement in behavioral activation but minimal improvement in core depressive symptoms."
+          "folded": "Persistent low mood, fatigue, negative self-perception, social withdrawal, sleep disturbance, minimal improvement, good medication adherence.",
+          "expanded": "Gabriella, a young adult on leave from university, presents with persistent low mood, fatigue, anhedonia, negative self-perception, and social withdrawal following a breakup. She is adherent to sertraline and CBT, with some engagement in activities but minimal improvement. No suicidal ideation reported."
         }
       },
       {
         "icon": "brain",
         "overviewHeadTitle": "Current Concerns",
         "cardContent": {
-          "folded": "Emotional numbness, entrenched self-criticism, family conflict, academic pressure, isolation, poor sleep, low motivation.",
-          "expanded": "Gabriella continues to struggle with emotional numbness, entrenched negative thoughts, sleep disturbance, and social isolation. She feels stuck, guilty, and unable to communicate her struggles to her mother, with fleeting positive affect and ongoing difficulty countering negative beliefs."
+          "folded": "Emotional numbness, entrenched self-criticism, family conflict, academic pressure, difficulty connecting with others.",
+          "expanded": "Gabriella continues to struggle with emotional numbness, entrenched negative thoughts, poor sleep, and social isolation. She feels stuck, guilty, and unable to communicate her struggles to her mother, with fleeting positive affect and ongoing academic and family stress."
         }
       },
       {
         "icon": "medication",
         "overviewHeadTitle": "Medication and Treatment",
         "cardContent": {
-          "folded": "2021-04-11: Sertraline; 2021-05-09: Sertraline; 2021-03-28: Sertraline",
-          "expanded": "2021-04-11: Sertraline; 2021-05-09: Sertraline; 2021-03-28: Sertraline"
+          "folded": "2021-05-09: Sertraline; 2021-03-28: Sertraline; 2021-04-11: Sertraline",
+          "expanded": "2021-05-09: Sertraline; 2021-03-28: Sertraline; 2021-04-11: Sertraline"
         }
       }
-    ]
+    ],
+    "clinicalHistory": {
+      "psychological": "Generalized anxiety disorder (2019-10-12), adjustment disorder with depressed mood (2020-03-22), insomnia (2020-06-10), mild depressive episode (2020-08-05), major depressive disorder, moderate (2021-02-01), social anxiety disorder (2021-02-15).",
+      "physical": "Routine childhood immunization (2017-09-15), acute pharyngitis (2018-02-10), mild persistent asthma (2018-11-20), allergic rhinitis (2019-03-05), migraine without aura (2020-01-18), insomnia (2020-06-10), acne vulgaris (2020-10-15), recurrent urinary tract infection (2020-11-20), acute appendicitis (2021-01-10), low back pain (2021-03-10)."
+    }
   },
   "insights": [
     {
       "key": "insight-0",
       "summaryTitle": "Increasing positive affect and variable depression suggest fluctuating but improving mood since the last session.",
       "sources": [
-        "clinical note",
-        "survey"
+        "survey",
+        "clinical note"
       ],
       "insightType": [
         "psychological"
@@ -4941,9 +4945,9 @@
       "key": "insight-4",
       "summaryTitle": "Increasing positive affect and physical activity, with decreasing screen time, suggest no functional decline.",
       "sources": [
+        "survey",
         "passive sensing",
-        "clinical note",
-        "survey"
+        "clinical note"
       ],
       "insightType": [
         "biological",
@@ -6148,8 +6152,8 @@
       "key": "insight-5",
       "summaryTitle": "Increasing positive affect suggests improved ability to identify and hold onto positive moments.",
       "sources": [
-        "clinical note",
-        "survey"
+        "survey",
+        "clinical note"
       ],
       "insightType": [
         "psychological"

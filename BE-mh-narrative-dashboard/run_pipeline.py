@@ -354,7 +354,7 @@ if __name__ == "__main__":
                 #     "fact_deduplication": True,
                 # },
                 load_from_cache=True)
-            .run_overview(load_from_cache=True)
+            .run_overview(load_from_cache=False)
             .run_suggest_activity(load_from_cache=True)
             .run_last_encounter_summary(load_from_cache=True)
             .run_visualizer()
