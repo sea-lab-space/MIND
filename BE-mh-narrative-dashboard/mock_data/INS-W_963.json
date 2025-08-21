@@ -53,8 +53,8 @@
       "key": "insight-0",
       "summaryTitle": "Increasing positive affect and variable depression suggest fluctuating but improving mood since the last session.",
       "sources": [
-        "survey",
-        "clinical note"
+        "clinical note",
+        "survey"
       ],
       "insightType": [
         "psychological"
@@ -306,8 +306,8 @@
       "key": "insight-1",
       "summaryTitle": "Modestly increased total steps and inactive periods with variable routine consistency suggest fluctuating engagement in pleasurable activities.",
       "sources": [
-        "passive sensing",
-        "clinical note"
+        "clinical note",
+        "passive sensing"
       ],
       "insightType": [
         "biological",
@@ -2164,8 +2164,8 @@
       "key": "insight-2",
       "summaryTitle": "Increasing total steps and decreasing total screen time with variable sleep patterns suggest partial sleep hygiene implementation.",
       "sources": [
-        "passive sensing",
-        "clinical note"
+        "clinical note",
+        "passive sensing"
       ],
       "insightType": [
         "biological",
@@ -3714,8 +3714,8 @@
       "key": "insight-3",
       "summaryTitle": "Variable bedtime and awakening episodes with stable total sleep and wake time indicate inconsistent sleep patterns.",
       "sources": [
-        "passive sensing",
-        "clinical note"
+        "clinical note",
+        "passive sensing"
       ],
       "insightType": [
         "biological"
@@ -4945,9 +4945,9 @@
       "key": "insight-4",
       "summaryTitle": "Increasing positive affect and physical activity, with decreasing screen time, suggest no functional decline.",
       "sources": [
+        "clinical note",
         "survey",
-        "passive sensing",
-        "clinical note"
+        "passive sensing"
       ],
       "insightType": [
         "biological",
@@ -6152,8 +6152,8 @@
       "key": "insight-5",
       "summaryTitle": "Increasing positive affect suggests improved ability to identify and hold onto positive moments.",
       "sources": [
-        "survey",
-        "clinical note"
+        "clinical note",
+        "survey"
       ],
       "insightType": [
         "psychological"
@@ -6289,8 +6289,8 @@
       "key": "insight-6",
       "summaryTitle": "Increasing distance traveled and fluctuating routine suggest variable social engagement and possible changes in isolation.",
       "sources": [
-        "passive sensing",
-        "clinical note"
+        "clinical note",
+        "passive sensing"
       ],
       "insightType": [
         "social",
@@ -9314,7 +9314,7 @@
   ],
   "last_encounter": [
     {
-      "summaryTitle": "Patient presented with persistent numbness, fatigue, negative thoughts, social withdrawal.",
+      "summaryTitle": "<b>Subjective/Objective</b>: Persistent numbness, fatigue, negative thoughts, social withdrawal, sleep disturbance.",
       "sources": [
         "clinical note"
       ],
@@ -9338,6 +9338,11 @@
               "fact_type": "text",
               "date": "2021-05-09",
               "text": "Social withdrawal persists; she has not contacted friends or returned to campus, expressing feelings of being “stuck” and left behind compared to her peers."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Sleep remains disturbed, with difficulty falling and staying asleep, and she notes increased late-night snacking."
             }
           ],
           "sources": [
@@ -9349,7 +9354,7 @@
       ]
     },
     {
-      "summaryTitle": "Assessment indicated moderate depression, persistent anhedonia, and fleeting positive affect.",
+      "summaryTitle": "<b>Assessment</b>: Moderate major depression, some behavioral activation, entrenched negative cognitions.",
       "sources": [
         "clinical note"
       ],
@@ -9367,11 +9372,6 @@
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "She reports persistent anhedonia, low energy, negative self-perception, social withdrawal, and sleep disturbance."
-            },
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
               "text": "There is some engagement in behavioral activation (music, walks, work shifts), but positive affect is fleeting and overshadowed by entrenched negative cognitions."
             }
           ],
@@ -9384,7 +9384,7 @@
       ]
     },
     {
-      "summaryTitle": "Continue Sertraline (50 mg, once daily).",
+      "summaryTitle": "<b>Medication Plan</b>: Continue Sertraline (50 mg, once daily).",
       "sources": [
         "clinical note"
       ],

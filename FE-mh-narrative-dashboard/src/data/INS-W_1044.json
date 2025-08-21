@@ -54,8 +54,8 @@
       "summaryTitle": "Highly variable routine, activity, and affect indicate unstable mood and inconsistent functioning.",
       "sources": [
         "survey",
-        "passive sensing",
-        "clinical note"
+        "clinical note",
+        "passive sensing"
       ],
       "insightType": [
         "biological",
@@ -1253,8 +1253,8 @@
       "key": "insight-1",
       "summaryTitle": "Decreasing total steps and variable routine consistency indicate reduced and unstable behavioral activation.",
       "sources": [
-        "passive sensing",
-        "clinical note"
+        "clinical note",
+        "passive sensing"
       ],
       "insightType": [
         "psychological",
@@ -2334,8 +2334,8 @@
       "key": "insight-3",
       "summaryTitle": "Variable routine, time at home, and travel patterns indicate unstable work schedule and poor stress coping.",
       "sources": [
-        "passive sensing",
-        "clinical note"
+        "clinical note",
+        "passive sensing"
       ],
       "insightType": [
         "psychological",
@@ -3268,8 +3268,8 @@
       "key": "insight-4",
       "summaryTitle": "Earlier bedtime and increasing wake time with stable total sleep suggest shifting sleep patterns.",
       "sources": [
-        "passive sensing",
-        "clinical note"
+        "clinical note",
+        "passive sensing"
       ],
       "insightType": [
         "biological"
@@ -5898,7 +5898,7 @@
   ],
   "last_encounter": [
     {
-      "summaryTitle": "Patient presented with persistent low mood, sleep/appetite issues, negative self-view.",
+      "summaryTitle": "<b>Subjective/Objective</b>: Persistent low mood, poor sleep, appetite, and academic difficulties.",
       "sources": [
         "clinical note"
       ],
@@ -5916,12 +5916,17 @@
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Lucy continues to experience pervasive thoughts of inadequacy, particularly around her academic performance, friendships, and family roles."
+              "text": "Lucy reports ongoing sleep disturbances, with difficulty falling asleep and sleeping during the day. Her appetite is poor, often forgetting meals or substituting snacks for proper meals."
             },
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Lucy reports ongoing sleep disturbances, with difficulty falling asleep and sleeping during the day. Her appetite is poor, often forgetting meals or substituting snacks for proper meals."
+              "text": "Academically, Lucy remains behind on assignments and lectures but managed to listen to a recorded lecture, which she identified as a small win."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Sleep: Poor, with insomnia and hypersomnia. Appetite: Decreased, irregular meals. Functioning: Attending work (reduced hours), behind on academic tasks, limited social engagement."
             }
           ],
           "sources": [
@@ -5933,7 +5938,7 @@
       ]
     },
     {
-      "summaryTitle": "Assessment indicated moderate-severe depression, partial engagement in therapy, no acute safety risk.",
+      "summaryTitle": "<b>Assessment</b>: Moderate to severe depression, some engagement in therapy strategies.",
       "sources": [
         "clinical note"
       ],
@@ -5952,11 +5957,6 @@
               "fact_type": "text",
               "date": "2021-05-09",
               "text": "She demonstrates some engagement with behavioral activation and cognitive restructuring strategies but struggles with consistency and self-compassion."
-            },
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "No acute safety concerns at present, but ongoing monitoring is warranted given her reports of numbness and low motivation."
             }
           ],
           "sources": [
@@ -5968,7 +5968,7 @@
       ]
     },
     {
-      "summaryTitle": "Continue sertraline (50 mg, once daily).",
+      "summaryTitle": "<b>Medication Plan</b>: Continue sertraline (50 mg, once daily).",
       "sources": [
         "clinical note"
       ],
