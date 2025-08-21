@@ -16,7 +16,7 @@ import type {
 } from "@/types/insightSpec";
 import { getColors, MAX_BAR_SIZE } from "@/utils/colorHelper";
 import { extent } from "d3";
-import { getUpperLimitScale } from "@/utils/dataHelper";
+import { getUpperLimitScale, getYRange } from "@/utils/dataHelper";
 
 interface ExtremeChartProps {
   data: DataPoint[];
@@ -29,7 +29,7 @@ const ExtremeChart: React.FC<ExtremeChartProps> = (props) => {
 
   const metricKey = Object.keys(data[0] || {}).find((k) => k !== "date") ?? "";
 
-  const yRange = extent(data, (d: any) => d[metricKey]) as [number, number];
+  const yRange = getYRange(data, metricKey);
   const { yRangeUse, tickBreakUnit } = getUpperLimitScale(yRange[1]);
 
   const {baseColor, highlightColor} = getColors(themeColor)

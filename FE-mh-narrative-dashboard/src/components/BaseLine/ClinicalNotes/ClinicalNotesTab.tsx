@@ -34,7 +34,7 @@ const ClinicalNotesTab: React.FC<ClinicalNotesTabProps> = ({
     return (
       <div className="flex gap-4 h-full py-2 px-4">
         {/* Sidebar: Overview + Date Buttons */}
-        <div className="w-[220px] h-full shrink-0 sticky top-0 z-10">
+        <div className="w-[240px] h-full shrink-0 sticky top-0 z-10">
           {showOverviewCardData && overviewCardData && (
             <OverviewSummary overviewCardData={overviewCardData} />
           )}

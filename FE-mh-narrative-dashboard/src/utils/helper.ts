@@ -148,3 +148,13 @@ export function groupInsights(cards: InsightCardData[]) {
 
     return groups;
 }
+
+
+export function removeHtmlTags(htmlString: string): string {
+  if (!htmlString) {
+    return "";
+  }
+  let clean = htmlString.replace(/<[^>]*>/g, "");
+  return clean;
+}
+

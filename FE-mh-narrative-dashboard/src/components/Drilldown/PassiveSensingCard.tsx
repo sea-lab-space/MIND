@@ -61,7 +61,15 @@ const PassiveSensingCard = ({ passiveSensingFacts }: PassiveSensingCardProps) =>
                 >
                   <div className="flex items-start gap-2">
                     <div className="w-2 h-2 bg-gray-600 rounded-full mt-2 flex-shrink-0" />
-                    <span>{insight.summarySentence}</span>
+                    <span
+                      style={{
+                        wordBreak: "break-word",
+                        overflowWrap: "break-word",
+                        hyphens: "auto",
+                      }}
+                    >
+                      {insight.summarySentence}
+                    </span>
                   </div>
                 </Button>
               ))}
@@ -69,7 +77,7 @@ const PassiveSensingCard = ({ passiveSensingFacts }: PassiveSensingCardProps) =>
 
             {/* Right Side: Chart */}
             <div className="flex items-center justify-center flex-1">
-                <div className="w-full h-72">
+              <div className="w-full h-72">
                 {showChart && selectedInsight && (
                   <InsightGraph
                     dataSourceType={selectedInsight.dataSourceType}

@@ -31,27 +31,36 @@ export default function InsightCardDetail({
             hasShownChart = true;
           }
 
-          return shouldRenderFact && (
-            <div key={detail.key}>
-              <div className="flex items-start gap-3">
+          return (
+            shouldRenderFact && (
+              <div key={detail.key}>
+                <div className="flex items-start gap-3">
                   <>
                     <div className="w-2 h-2 bg-gray-600 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-gray-700 ml-1">
+                    <span
+                      className="text-gray-700 ml-1"
+                      style={{
+                        wordBreak: "break-word",
+                        overflowWrap: "break-word",
+                        hyphens: "auto",
+                      }}
+                    >
                       {detail.summarySentence}
                     </span>
                   </>
-              </div>
-
-              {shouldRenderChart && (
-                <div className="mt-2 bg-gray-50 border border-gray-200 rounded-lg h-48 pr-4 pt-4">
-                  <InsightGraph
-                    data={detail.dataPoints}
-                    highlightSpec={detail.highlightSpec}
-                    dataSourceType={detail.dataSourceType}
-                  />
                 </div>
-              )}
-            </div>
+
+                {shouldRenderChart && (
+                  <div className="mt-2 bg-gray-50 border border-gray-200 rounded-lg h-48 pr-4 pt-4">
+                    <InsightGraph
+                      data={detail.dataPoints}
+                      highlightSpec={detail.highlightSpec}
+                      dataSourceType={detail.dataSourceType}
+                    />
+                  </div>
+                )}
+              </div>
+            )
           );
       })}
       </div>

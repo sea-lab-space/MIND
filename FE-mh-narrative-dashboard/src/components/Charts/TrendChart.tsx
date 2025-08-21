@@ -17,7 +17,7 @@ import {
   HIGHLIGHT_COLOR,
   HIGHLIGHT_FILL_OPACITY,
 } from "@/utils/colorHelper";
-import { getUpperLimitScale } from "@/utils/dataHelper";
+import { getUpperLimitScale, getYRange } from "@/utils/dataHelper";
 
 interface TrendChartProps {
   data: DataPoint[];
@@ -46,7 +46,7 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
 
   const { baseColor, highlightColor } = getColors(themeColor);
 
-  const yRange = extent(data, (d: any) => d[metricKey]) as [number, number];
+  const yRange = getYRange(data, metricKey);
   const { yRangeUse, tickBreakUnit } = getUpperLimitScale(yRange[1]);
 
   const auxilaryLine = () => {
