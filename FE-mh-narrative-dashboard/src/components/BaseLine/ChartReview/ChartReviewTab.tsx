@@ -10,7 +10,7 @@ const ChartReviewTab = ({
   return (
     <div className="flex-1 gap-4 h-full w-full  py-2 px-4 flex">
       {/* Left Overview */}
-      <div className="w-[220px] shrink-0 h-full overflow-y-auto">
+      <div className="w-[240px] shrink-0 h-full overflow-y-auto">
         <OverviewSummary overviewCardData={overviewCardData} />
       </div>
 

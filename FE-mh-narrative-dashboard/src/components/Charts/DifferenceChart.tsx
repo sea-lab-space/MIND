@@ -12,7 +12,7 @@ import {
 import type { DataPoint, DifferenceSpec, ValueSpec } from "@/types/insightSpec";
 import { color, extent } from "d3";
 import { getColors, MAX_BAR_SIZE } from "@/utils/colorHelper";
-import { getUpperLimitScale } from "@/utils/dataHelper";
+import { getUpperLimitScale, getYRange } from "@/utils/dataHelper";
 
 interface DifferenceChartProps {
   data: DataPoint[];
@@ -24,7 +24,7 @@ const DifferenceChart: React.FC<DifferenceChartProps> = (props) => {
 
   const metricKey = Object.keys(data[0] || {}).find((k) => k !== "date") ?? "";
   
-  const yRange = extent(data, (d: any) => d[metricKey]) as [number, number];
+  const yRange = getYRange(data, metricKey);
   const { yRangeUse, tickBreakUnit } = getUpperLimitScale(yRange[1]);
   
   const {baseColor, highlightColor} = getColors(themeColor)

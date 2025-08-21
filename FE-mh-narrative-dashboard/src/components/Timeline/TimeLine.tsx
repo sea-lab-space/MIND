@@ -5,54 +5,73 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
-import {Button as MuiButton, Typography} from "@mui/material";
-import * as React from "react";
+import { Button as MuiButton, Typography } from "@mui/material";
+import { useEffect, useRef, useState } from "react";
+import { useWindowSize } from "react-use";
 
 interface TimelineDataItem {
-    key: string;
-    label: string;
-    date: string;
+  key: string;
+  label: string;
+  date: string;
 }
 
 interface TimeLineGraphProps {
-    selectedTimeline: string | null;
-    handleTimelineSelect: (key: string) => void;
-    timelineData?: TimelineDataItem[];
+  selectedTimeline: string | null;
+  handleTimelineSelect: (key: string) => void;
+  timelineData?: TimelineDataItem[];
 }
 
 const timelineData = [
-    { key: 'first-session', label: 'First Session', date: '2021-03-18' },
-    { key: 'second-session', label: 'Second Session', date: '2021-04-11' },
-    { key: 'lastSession', label: 'Session Recap', date: '2021-05-09' },
-    { key: 'recapToday', label: 'Summary Today', date: '2021-06-07' },
-    { key: 'insights', label: 'Patient Data Insights (05-09 to 06-07)', date: ''},
-    { key: 'medicalHistory', label: 'Medical History (before 03-18)', date: ''}
+  { key: "first-session", label: "First Session", date: "2021-03-18" },
+  { key: "second-session", label: "Second Session", date: "2021-04-11" },
+  { key: "lastSession", label: "Session Recap", date: "2021-05-09" },
+  { key: "recapToday", label: "Summary Today", date: "2021-06-07" },
+  {
+    key: "insights",
+    label: "Patient Data Insights (05-09 to 06-07)",
+    date: "",
+  },
+  { key: "medicalHistory", label: "Medical History (before 03-18)", date: "" },
 ];
 
 const TimeLineGraph: React.FC<TimeLineGraphProps> = ({
-                                                         selectedTimeline,
-                                                         handleTimelineSelect,
-                                                     }) => {
+  selectedTimeline,
+  handleTimelineSelect,
+}) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const { width: triggerWidth, height: triggerHeight } = useWindowSize();
+  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
+  useEffect(() => {
+    if (containerRef.current) {
+      const { clientWidth, clientHeight } = containerRef.current;
+      setContainerSize({ width: clientWidth, height: clientHeight });
+    }
+  }, [triggerWidth, triggerHeight]);
 
+  const width = containerSize.width;
+  const height = containerSize.height;
 
-    const getButtonStyles = (key) => ({
-        fontSize: "12px",
-        textTransform: "none",
-        whiteSpace: "nowrap",
-        minwidth: 85,
-        width: 100,
-        color: selectedTimeline === key ? 'white' : 'black',
-        border: selectedTimeline === key ? '1px solid #A0A0A0' : '1px solid grey',
-        backgroundColor: selectedTimeline === key ? 'grey' : 'transparent',
-        '&:hover': {
-            backgroundColor: '#666',
-            border: '1px solid grey',
-            color: 'white'
-        },
-    });
+  console.log(width, height);
 
-    return (
+  const getButtonStyles = (key) => ({
+    fontSize: "12px",
+    textTransform: "none",
+    whiteSpace: "nowrap",
+    minwidth: 85,
+    width: 100,
+    color: selectedTimeline === key ? "white" : "black",
+    border: selectedTimeline === key ? "1px solid #A0A0A0" : "1px solid grey",
+    backgroundColor: selectedTimeline === key ? "grey" : "transparent",
+    "&:hover": {
+      backgroundColor: "#666",
+      border: "1px solid grey",
+      color: "white",
+    },
+  });
+
+  return (
+    <div ref={containerRef}>
       <Timeline
         sx={{
           width: "224px",
@@ -68,7 +87,8 @@ const TimeLineGraph: React.FC<TimeLineGraphProps> = ({
               whiteSpace: "nowrap",
               fontSize: "12px",
               width: 85,
-              marginTop: selectedTimeline === timelineData[5].key ? "105px" : "65px", // This line aligns the date with the dot
+              marginTop:
+                selectedTimeline === timelineData[5].key ? "105px" : "65px", // This line aligns the date with the dot
             }}
           >
             {timelineData[0].date}
@@ -76,7 +96,8 @@ const TimeLineGraph: React.FC<TimeLineGraphProps> = ({
           <TimelineSeparator>
             <TimelineConnector
               sx={{
-                height: selectedTimeline === timelineData[5].key ? "100px" : "60px",
+                height:
+                  selectedTimeline === timelineData[5].key ? "100px" : "60px",
               }}
             />
             <TimelineDot />
@@ -98,7 +119,7 @@ const TimeLineGraph: React.FC<TimeLineGraphProps> = ({
                 textAlign: "center", // fallback for text
                 cursor: "pointer", // <-- add this
                 transition: "height 0.2s ease, background-color 0.2s ease",
-                marginBottom: "5px"
+                marginBottom: "5px",
               }}
               onClick={() => {
                 handleTimelineSelect(timelineData[5].key);
@@ -108,7 +129,10 @@ const TimeLineGraph: React.FC<TimeLineGraphProps> = ({
                 sx={{
                   fontSize: "12px",
                   padding: "3px",
-                  color: selectedTimeline === timelineData[5].key ? "white" : "black",
+                  color:
+                    selectedTimeline === timelineData[5].key
+                      ? "white"
+                      : "black",
                   width: 100,
                 }}
               >
@@ -242,7 +266,8 @@ const TimeLineGraph: React.FC<TimeLineGraphProps> = ({
           </TimelineContent>
         </TimelineItem>
       </Timeline>
-    );
-}
+    </div>
+  );
+};
 
-export default TimeLineGraph
+export default TimeLineGraph;

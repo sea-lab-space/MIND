@@ -98,7 +98,7 @@ export default function InsightCardComponent({
           <div className="flex flex-row justify-between gap-2">
             <div className="flex flex-col gap-2 justify-between">
               <h2
-                className="text font-medium text-gray-900 leading-tight"
+                className="text-[16px] font-medium text-gray-900 leading-tight"
                 onClick={(e) => e.stopPropagation()}
                 style={{
                   wordBreak: "break-word",

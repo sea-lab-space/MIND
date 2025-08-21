@@ -19,7 +19,7 @@ import type { DataPoint, ValueSpec } from "@/types/insightSpec";
 import { color, extent } from "d3";
 import { dateBetween } from "@/utils/dateHelper";
 import { getColors, HIGHLIGHT_COLOR, HIGHLIGHT_FILL_OPACITY, MAX_BAR_SIZE } from "@/utils/colorHelper";
-import { calcAverageBetweenDate, getUpperLimitScale } from "@/utils/dataHelper";
+import { calcAverageBetweenDate, getUpperLimitScale, getYRange } from "@/utils/dataHelper";
 
 interface DerivedValueChartProps {
   data: DataPoint[];
@@ -33,7 +33,7 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
 
   const { baseColor, highlightColor } = getColors(themeColor);
 
-  const yRange = extent(data, (d: any) => d[metricKey]) as [number, number];
+  const yRange = getYRange(data, metricKey);
   const { yRangeUse, tickBreakUnit } = getUpperLimitScale(yRange[1]);
 
   const averageBetweenDate = calcAverageBetweenDate(data, spec.time_1, spec.time_2, metricKey)

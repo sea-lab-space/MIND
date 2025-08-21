@@ -20,7 +20,7 @@ import {
   HIGHLIGHT_COLOR,
   HIGHLIGHT_FILL_OPACITY,
 } from "@/utils/colorHelper";
-import { calcAverageBetweenDate, getUpperLimitScale } from "@/utils/dataHelper";
+import { calcAverageBetweenDate, getUpperLimitScale, getYRange } from "@/utils/dataHelper";
 import { useEffect, useRef, useState } from "react";
 import { useWindowSize } from "react-use";
 
@@ -30,6 +30,7 @@ interface ComparisonChartProps {
   themeColor: string;
 }
 
+
 const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
   const { data, spec, themeColor } = props;
 
@@ -37,7 +38,7 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
 
   const { baseColor, highlightColor } = getColors(themeColor);
 
-  const yRange = extent(data, (d: any) => d[metricKey]) as [number, number];
+  const yRange = getYRange(data, metricKey);
   const { yRangeUse, tickBreakUnit } = getUpperLimitScale(yRange[1]);
 
   const isShowAvg = spec.aggregation === "stdev";

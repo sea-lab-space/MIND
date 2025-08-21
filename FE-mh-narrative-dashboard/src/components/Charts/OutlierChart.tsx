@@ -18,7 +18,7 @@ import {
   HIGHLIGHT_COLOR,
   HIGHLIGHT_FILL_OPACITY,
 } from "@/utils/colorHelper";
-import { getUpperLimitScale } from "@/utils/dataHelper";
+import { getUpperLimitScale, getYRange } from "@/utils/dataHelper";
 
 interface OutlierChartProps {
   data: DataPoint[];
@@ -26,6 +26,12 @@ interface OutlierChartProps {
   themeColor: string;
 }
 
+const knownThreshHold = {
+  "PSS-4 Score (0-16)": 6,
+  "PHQ-4 Depression Subscale (0-6)": 3,
+  "PHQ-4 Anxiety Subscale (0-6)": 3,
+  "PHQ-4 (0-12)": 6,
+};
 
 const OutlierChart: React.FC<OutlierChartProps> = (props) => {
   const { data, spec, themeColor } = props;
@@ -34,7 +40,7 @@ const OutlierChart: React.FC<OutlierChartProps> = (props) => {
 
   const { baseColor, highlightColor } = getColors(themeColor);
 
-  const yRange = extent(data, (d: any) => d[metricKey]) as [number, number];
+  const yRange = getYRange(data, metricKey);
   const { yRangeUse, tickBreakUnit } = getUpperLimitScale(yRange[1]);
 
   return (

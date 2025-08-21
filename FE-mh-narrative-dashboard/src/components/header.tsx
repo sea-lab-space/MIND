@@ -98,7 +98,7 @@ const Header: React.FC<HeaderProps> = (props) => {
         {/* Right - Retrospect Navigation and Avatar */}
         <div className="flex items-center gap-4 w-1/3 justify-end">
           <p className="text-sm text-right">
-            <b>Last Encounter</b>: 2021-05-09 <br /> <b>Today</b>: 2021-06-07
+            <b>Last session</b>: 2021-05-09 <br /> <b>Today</b>: 2021-06-07
           </p>
 
           {/* TODO: we can customize it to individual participants if we want */}

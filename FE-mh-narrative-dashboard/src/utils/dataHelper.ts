@@ -1,5 +1,6 @@
 import type { DataPoint } from "@/types/insightSpec";
 import { dateBetween } from "./dateHelper";
+import { extent } from "d3";
 
 export const calcAverageBetweenDate = (
   data: DataPoint[],
@@ -26,6 +27,23 @@ export const calcAverageBetweenDate = (
     return 0;
 };
 
+
+const knownRangeDataSource = {
+  "Negative Affect Subscale (5-25, PANAS-SF)": [0, 25],
+  "Positive Affect Subscale (5-25, PANAS-SF)": [0, 25],
+  "PSS-4 Score (0-16)": [0, 16],
+  "PHQ-4 Depression Subscale (0-6)": [0, 6],
+  "PHQ-4 Anxiety Subscale (0-6)": [0, 6],
+  "PHQ-4 (0-12)": [0, 12],
+  "Routine Consistency (0 irregular, 100 regular)": [0, 100],
+}
+
+export const getYRange = (data: DataPoint[], metricKey: string) => {
+  if (knownRangeDataSource[metricKey]) {
+    return knownRangeDataSource[metricKey];
+  }
+  return extent(data, (d: any) => d[metricKey]) as [number, number];
+}
 
 
 export const getUpperLimitScale = (yRangeMax: number) => {
