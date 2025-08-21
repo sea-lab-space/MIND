@@ -109,3 +109,22 @@ export const DataSourceType = {
 } as const;
 
 export type DataSourceType = typeof DataSourceType[keyof typeof DataSourceType];
+
+
+export const dateSectionMap = [
+  {
+    start: "2021-05-09", // single-day
+    end: "2021-06-07",
+    section: "insights",
+  },
+  {
+    start: "2021-05-09", // range example
+    end: "2021-05-09",
+    section: "lastSession",
+  },
+  {
+    start: "2021-07-01",
+    end: "2021-07-01",
+    section: "communication",
+  },
+];
