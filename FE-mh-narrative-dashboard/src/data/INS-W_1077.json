@@ -53,8 +53,8 @@
       "key": "insight-0",
       "summaryTitle": "Increasing total steps suggests improved physical activity and biological functioning.",
       "sources": [
-        "passive sensing",
-        "clinical note"
+        "clinical note",
+        "passive sensing"
       ],
       "insightType": [
         "biological"
@@ -698,8 +698,8 @@
       "key": "insight-1",
       "summaryTitle": "Increasing depression and stress scores with variable mood and spiking negative affect indicate mood worsening.",
       "sources": [
-        "survey",
-        "clinical note"
+        "clinical note",
+        "survey"
       ],
       "insightType": [
         "biological",
@@ -1196,8 +1196,8 @@
       "key": "insight-2",
       "summaryTitle": "Increasing total sleep and rising awakening episodes indicate more disrupted but longer sleep.",
       "sources": [
-        "passive sensing",
-        "clinical note"
+        "clinical note",
+        "passive sensing"
       ],
       "insightType": [
         "biological"
@@ -1831,9 +1831,9 @@
       "key": "insight-3",
       "summaryTitle": "Increased depressive symptoms and routine irregularity with higher sleep and physical activity suggest fluctuating energy and motivation.",
       "sources": [
+        "clinical note",
         "survey",
-        "passive sensing",
-        "clinical note"
+        "passive sensing"
       ],
       "insightType": [
         "biological",
@@ -6300,7 +6300,7 @@
   ],
   "last_encounter": [
     {
-      "summaryTitle": "Patient presented with persistent low mood, fatigue, poor sleep, and appetite.",
+      "summaryTitle": "<b>Subjective/Objective</b>: Mood unchanged, low energy, poor sleep, decreased appetite, no suicidality.",
       "sources": [
         "clinical note"
       ],
@@ -6313,12 +6313,27 @@
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Alison returns for follow-up, reporting that her mood has remained largely unchanged since the last session, with days often blending together. She describes ongoing low energy, persistent fatigue, and continued difficulty with motivation."
+              "text": "Alison returns for follow-up, reporting that her mood has remained largely unchanged since the last session, with days often blending together."
             },
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Sleep remains inconsistent; she sometimes scrolls on her phone late at night despite attempts to reduce screen time, but found that reading a magazine instead helped her mind wander less. Appetite is still poor, with frequent skipped meals and only occasional small portions eaten, often when prompted by her children."
+              "text": "She describes ongoing low energy, persistent fatigue, and continued difficulty with motivation."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Sleep remains inconsistent; she sometimes scrolls on her phone late at night despite attempts to reduce screen time, but found that reading a magazine instead helped her mind wander less."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "Appetite is still poor, with frequent skipped meals and only occasional small portions eaten, often when prompted by her children."
+            },
+            {
+              "fact_type": "text",
+              "date": "2021-05-09",
+              "text": "She has not had thoughts of self-harm or active hopelessness, though she does feel overwhelmed at times."
             },
             {
               "fact_type": "text",
@@ -6328,12 +6343,7 @@
             {
               "fact_type": "text",
               "date": "2021-05-09",
-              "text": "Sleep: Fragmented, with some improvement when reducing screen time."
-            },
-            {
-              "fact_type": "text",
-              "date": "2021-05-09",
-              "text": "Appetite: Decreased, with minimal intake."
+              "text": "No evidence of psychosis, mania, or active suicidal ideation."
             }
           ],
           "sources": [
@@ -6345,7 +6355,7 @@
       ]
     },
     {
-      "summaryTitle": "Assessment indicated moderate depression, incremental behavioral activation progress, no suicidality.",
+      "summaryTitle": "<b>Assessment</b>: Moderate depression, incremental behavioral activation progress, no suicidal ideation.",
       "sources": [
         "clinical note"
       ],
@@ -6380,7 +6390,7 @@
       ]
     },
     {
-      "summaryTitle": "No medication prescribed.",
+      "summaryTitle": "<b>Medication Plan</b>: No medication prescribed.",
       "sources": [
         "clinical note"
       ],

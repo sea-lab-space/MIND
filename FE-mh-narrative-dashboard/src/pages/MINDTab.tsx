@@ -160,8 +160,8 @@ const MINDTab: React.FC<MINDTabProps> = ({
 
   const filteredInsightCards =
     selectedInsightTypes.length === 0
-      ? insightCardData
-      : insightCardData.filter(
+      ? allData
+      : allData.filter(
           (card) =>
             Array.isArray(card.insightType) &&
             card.insightType.some((insight) =>
@@ -169,13 +169,13 @@ const MINDTab: React.FC<MINDTabProps> = ({
             )
         );
 
-  const allExpandViews = flattenAllExpandViews(insightCardData);
+  const allExpandViews = flattenAllExpandViews(allData);
 
   const {
     passiveSensingFacts = [],
   }: { passiveSensingFacts?: InsightExpandViewItem[] } =
     groupInsightsBySource(allExpandViews);
-  const selectedInsightCardTitles = insightCardData
+  const selectedInsightCardTitles = allData
     .filter((card) => selectedInsightHeader.includes(card.key))
     .map((card) => card.summaryTitle);
 

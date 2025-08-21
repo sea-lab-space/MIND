@@ -17,16 +17,16 @@ Now consider this scenario: you are preparing an encounter with a patient, and y
 You have access to the previous clinical note, written in the SOAP note format.
 
 Your task is to provide three concise summaries:
-1. Symptoms & Observations (S/O):
-* In ≤12 words, summarize key symptoms or findings.
+1. Subjective & Objective (S/O):
+* In ≤12 words, summarize key subjective or objective symptoms or findings.
 * Cite the exact sentence(s) from the note as evidence.
-* Start with: Patient presented with...
+* Start with: <b>Subjective/Objective</b>: (keep this HTML tag)
 
 2. Assessment (A):
 * In ≤12 words, summarize key assessment.
 * Make the sentence readible, e.g., when describing engagement in threapy, don't just say "show engagement", say "show <activity name> participation".
 * Cite the exact sentence(s) from the note as evidence.
-* Start with: Assessment indicated...
+* Start with: <b>Assessment</b>: (keep this HTML tag)
 
 3. Plan (P):
 - In ≤10 words, summarize the medication prescribed.  
@@ -34,12 +34,14 @@ Your task is to provide three concise summaries:
   - If the same as the last session: write "Continue <medication name> (<dosage>, <frequency>)."
   - If new or changed: just write "Prescribed <medication name> (<dosage>, <frequency>)."
   - <frequency> should be described like "once daily", don't need to specify at which point of day.
-- If none: write "No medication prescribed."  
+- If none: write "No medication prescribed." 
+- Start with: <b>Medication Plan</b>:  (keep this HTML tag)
 
 Rules:
 1. Do not invent any information.  
 2. Do not omit any original text; include the text exactly as it appears.  
 3. Split the evidence into individual sentences if the evidence is too long.
+4. Make sure to keep the specified HTML tag in the output.
 
 Let's think step by step.
 """
