@@ -312,9 +312,9 @@ class MINDPipeline:
 
 if __name__ == "__main__":
     MODEL_NAME = 'gpt-4.1'
-    # USERS = ["INS-W_963", "INS-W_1044", "INS-W_1077"]
+    USERS = ["INS-W_963", "INS-W_1044", "INS-W_1077"]
     # USERS = ["INS-W_963"]
-    USERS = ["INS-W_1044"]
+    # USERS = ["INS-W_1044"]
     # USERS = ["INS-W_1077"]
 
 
@@ -346,14 +346,15 @@ if __name__ == "__main__":
                 # },
                 load_from_cache=True)
             .run_narrator(
-                # run_sub_stages={
-                #     "thread": False,
-                #     "guardrail_qa": True,
-                #     "guardrail_simple_insight": True,
-                #     "fact_rewrite": True,
-                #     "fact_deduplication": True,
-                # },
-                load_from_cache=True)
+                run_sub_stages={
+                    "thread": False,
+                    "fact_rewrite": False,
+                    "fact_deduplication": False,
+                    "guardrail_qa": True,
+                    "guardrail_simple_insight": True,
+                    
+                },
+                load_from_cache=False)
             .run_overview(load_from_cache=True)
             .run_suggest_activity(load_from_cache=True)
             .run_last_encounter_summary(load_from_cache=True)

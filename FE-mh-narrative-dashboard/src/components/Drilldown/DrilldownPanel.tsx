@@ -101,9 +101,14 @@ const DrilldownPanel: React.FC<DrilldownPanelProps> = ({
           {insightData?.sources.map((source, _) => {
             return cardMap[source.type as DatasourceIconType];
           })}
-          <div>
-            * Clinical notes and transcript used to motivate this insight
-          </div>
+          {insightData?.sources.some(
+            (source) =>
+              source.type === "clinical note" || source.type === "session transcript"
+          ) && (
+            <div className="text-sm text-gray-400">
+              * Clinical notes and transcript used to motivate this insight
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -51,7 +51,7 @@
   "insights": [
     {
       "key": "insight-0",
-      "summaryTitle": "Increasing total steps suggests improved physical activity and biological functioning.",
+      "summaryTitle": "Modest, increasing total steps indicate <b>improved biological functioning</b>.",
       "sources": [
         "clinical note",
         "passive sensing"
@@ -87,7 +87,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The average daily step count rose moderately, increasing from 2,625.97 steps during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 4,737.76 steps from 2021-05-09 to 2021-06-06 (4 weeks).",
+          "summarySentence": "The average daily step count rose moderately, increasing from 2,625.97 steps during the period from 2021-04-11 to 2021-05-09 (28 days) to 4,737.76 steps from 2021-05-09 to 2021-06-06 (28 days).",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -373,7 +373,7 @@
           "spec": {
             "name": "Total Steps (Steps)",
             "fact_type": "comparison",
-            "fact_description": "The average daily step count rose moderately, increasing from 2,625.97 steps during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 4,737.76 steps from 2021-05-09 to 2021-06-06 (4 weeks).",
+            "fact_description": "The average daily step count rose moderately, increasing from 2,625.97 steps during the period from 2021-04-11 to 2021-05-09 (28 days) to 4,737.76 steps from 2021-05-09 to 2021-06-06 (28 days).",
             "attribute": "more",
             "aggregation": "average",
             "time_dur_1": {
@@ -696,10 +696,10 @@
     },
     {
       "key": "insight-1",
-      "summaryTitle": "Increasing depression and stress scores with variable mood and spiking negative affect indicate mood worsening.",
+      "summaryTitle": "Rising depression and stress scores with fluctuating mood and episodic negative affect indicate <b>worsening mood</b>.",
       "sources": [
-        "clinical note",
-        "survey"
+        "survey",
+        "clinical note"
       ],
       "insightType": [
         "biological",
@@ -801,7 +801,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The average Perceived Stress Scale (PSS-4) score, which reflects self-reported stress levels, rose from 12.25 during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 14.0 from 2021-05-09 to 2021-06-06 (4 weeks), indicating an increase in perceived stress, with both values falling within the high stress range.",
+          "summarySentence": "The average perceived stress level, as measured by the PSS-4, rose from 12.25 (from 2021-04-11 to 2021-05-09, indicating already high stress) to 14.0 (from 2021-05-09 to 2021-06-06, reflecting a further increase in perceived stress over this period).",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -847,7 +847,7 @@
           "spec": {
             "name": "PSS-4 Score (0-16)",
             "fact_type": "comparison",
-            "fact_description": "The average Perceived Stress Scale (PSS-4) score, which reflects self-reported stress levels, rose from 12.25 during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 14.0 from 2021-05-09 to 2021-06-06 (4 weeks), indicating an increase in perceived stress, with both values falling within the high stress range.",
+            "fact_description": "The average perceived stress level, as measured by the PSS-4, rose from 12.25 (from 2021-04-11 to 2021-05-09, indicating already high stress) to 14.0 (from 2021-05-09 to 2021-06-06, reflecting a further increase in perceived stress over this period).",
             "attribute": "more",
             "aggregation": "average",
             "time_dur_1": {
@@ -869,7 +869,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "On 2021-05-19, the Negative Affect Subscale (PANAS-SF) showed a notable increase, reaching a score of 22.0, which indicates a high level of negative emotions on that day.",
+          "summarySentence": "On 2021-05-19, the Negative Affect Subscale (PANAS-SF) showed a notable increase, reaching a score of 22.0, which is considered high and suggests a significant elevation in negative emotional experiences.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -955,7 +955,7 @@
           "spec": {
             "name": "Negative Affect Subscale (5-25, PANAS-SF)",
             "fact_type": "outlier",
-            "fact_description": "On 2021-05-19, the Negative Affect Subscale (PANAS-SF) showed a notable increase, reaching a score of 22.0, which indicates a high level of negative emotions on that day.",
+            "fact_description": "On 2021-05-19, the Negative Affect Subscale (PANAS-SF) showed a notable increase, reaching a score of 22.0, which is considered high and suggests a significant elevation in negative emotional experiences.",
             "attribute": "spike",
             "value": 22.0,
             "time": "2021-05-19"
@@ -965,74 +965,6 @@
           ],
           "dataSourceType": "outlier",
           "isShowL2": true
-        },
-        {
-          "summarySentence": "The average score on the PHQ-4 Depression Subscale rose from 1.0, indicating minimal depressive symptoms, during the period from 2021-04-11 to 2021-05-09 (28 days), to 3.8, which approaches the threshold suggestive of depression, in the period from 2021-05-09 to 2021-06-06 (28 days).",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 Depression Subscale (0-6)": 1.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 Depression Subscale (0-6)": 0.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 Depression Subscale (0-6)": 0.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 Depression Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 Depression Subscale (0-6)": 1.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 Depression Subscale (0-6)": 2.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 Depression Subscale (0-6)": 5.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 Depression Subscale (0-6)": 4.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 Depression Subscale (0-6)": 3.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 Depression Subscale (0-6)": 5.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 Depression Subscale (0-6)",
-            "fact_type": "comparison",
-            "fact_description": "The average score on the PHQ-4 Depression Subscale rose from 1.0, indicating minimal depressive symptoms, during the period from 2021-04-11 to 2021-05-09 (28 days), to 3.8, which approaches the threshold suggestive of depression, in the period from 2021-05-09 to 2021-06-06 (28 days).",
-            "attribute": "more",
-            "aggregation": "average",
-            "time_dur_1": {
-              "time_start": "2021-04-11",
-              "time_end": "2021-05-09"
-            },
-            "time_dur_2": {
-              "time_start": "2021-05-09",
-              "time_end": "2021-06-06"
-            },
-            "value_dur_1": 1.0,
-            "value_dur_2": 3.8,
-            "significance": "indicative"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "comparison",
-          "isShowL2": false
         },
         {
           "summarySentence": "The PHQ-4 Depression Subscale scores fluctuated considerably from 2021-05-09 to 2021-06-06 (28 days), indicating notable changes in reported depressive symptoms during this period.",
@@ -1090,10 +1022,78 @@
             "survey"
           ],
           "dataSourceType": "trend",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "The average score on the PHQ-4 Depression Subscale rose from 1.0 (from 2021-04-11 to 2021-05-09, indicating minimal depressive symptoms) to 3.8 (from 2021-05-09 to 2021-06-06, approaching the threshold suggestive of clinically significant depressive symptoms).",
+          "dataPoints": [
+            {
+              "date": "2021-04-04",
+              "PHQ-4 Depression Subscale (0-6)": 1.0
+            },
+            {
+              "date": "2021-04-11",
+              "PHQ-4 Depression Subscale (0-6)": 0.0
+            },
+            {
+              "date": "2021-04-18",
+              "PHQ-4 Depression Subscale (0-6)": 0.0
+            },
+            {
+              "date": "2021-04-25",
+              "PHQ-4 Depression Subscale (0-6)": 2.0
+            },
+            {
+              "date": "2021-05-02",
+              "PHQ-4 Depression Subscale (0-6)": 1.0
+            },
+            {
+              "date": "2021-05-09",
+              "PHQ-4 Depression Subscale (0-6)": 2.0
+            },
+            {
+              "date": "2021-05-16",
+              "PHQ-4 Depression Subscale (0-6)": 5.0
+            },
+            {
+              "date": "2021-05-24",
+              "PHQ-4 Depression Subscale (0-6)": 4.0
+            },
+            {
+              "date": "2021-05-30",
+              "PHQ-4 Depression Subscale (0-6)": 3.0
+            },
+            {
+              "date": "2021-06-06",
+              "PHQ-4 Depression Subscale (0-6)": 5.0
+            }
+          ],
+          "spec": {
+            "name": "PHQ-4 Depression Subscale (0-6)",
+            "fact_type": "comparison",
+            "fact_description": "The average score on the PHQ-4 Depression Subscale rose from 1.0 (from 2021-04-11 to 2021-05-09, indicating minimal depressive symptoms) to 3.8 (from 2021-05-09 to 2021-06-06, approaching the threshold suggestive of clinically significant depressive symptoms).",
+            "attribute": "more",
+            "aggregation": "average",
+            "time_dur_1": {
+              "time_start": "2021-04-11",
+              "time_end": "2021-05-09"
+            },
+            "time_dur_2": {
+              "time_start": "2021-05-09",
+              "time_end": "2021-06-06"
+            },
+            "value_dur_1": 1.0,
+            "value_dur_2": 3.8,
+            "significance": "indicative"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "comparison",
           "isShowL2": false
         },
         {
-          "summarySentence": "On 2021-05-09, the Negative Affect Subscale score (PANAS-SF) rose sharply to 20.0, indicating a notably high level of negative emotions on that day.",
+          "summarySentence": "On 2021-05-09, the Negative Affect Subscale (PANAS-SF) showed a notable increase, reaching a score of 20.0, which reflects a high level of negative emotions on that day.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -1179,7 +1179,7 @@
           "spec": {
             "name": "Negative Affect Subscale (5-25, PANAS-SF)",
             "fact_type": "outlier",
-            "fact_description": "On 2021-05-09, the Negative Affect Subscale score (PANAS-SF) rose sharply to 20.0, indicating a notably high level of negative emotions on that day.",
+            "fact_description": "On 2021-05-09, the Negative Affect Subscale (PANAS-SF) showed a notable increase, reaching a score of 20.0, which reflects a high level of negative emotions on that day.",
             "attribute": "spike",
             "value": 20.0,
             "time": "2021-05-09"
@@ -1194,7 +1194,7 @@
     },
     {
       "key": "insight-2",
-      "summaryTitle": "Increasing total sleep and rising awakening episodes indicate more disrupted but longer sleep.",
+      "summaryTitle": "Increasing total sleep and frequent awakening episodes indicate <b>fragmented but prolonged sleep</b>.",
       "sources": [
         "clinical note",
         "passive sensing"
@@ -1230,7 +1230,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The amount of total sleep per day gradually increased from 2021-05-09 to 2021-06-06 (28 days), indicating a trend toward longer nightly sleep duration over this period.",
+          "summarySentence": "The amount of total sleep per night gradually increased from 2021-05-09 to 2021-06-06 (28 days).",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -1516,7 +1516,7 @@
           "spec": {
             "name": "Total Sleep (hours)",
             "fact_type": "trend",
-            "fact_description": "The amount of total sleep per day gradually increased from 2021-05-09 to 2021-06-06 (28 days), indicating a trend toward longer nightly sleep duration over this period.",
+            "fact_description": "The amount of total sleep per night gradually increased from 2021-05-09 to 2021-06-06 (28 days).",
             "attribute": "rise",
             "time_1": "2021-05-09",
             "time_2": "2021-06-06"
@@ -1528,7 +1528,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The number of times the individual woke up during sleep increased over the period from 2021-05-09 to 2021-06-06.",
+          "summarySentence": "The number of times the individual woke up during sleep increased steadily from 2021-05-09 to 2021-06-06 (28 days), indicating a trend toward more disrupted sleep over this period.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -1814,7 +1814,7 @@
           "spec": {
             "name": "Awakening Episodes (Times)",
             "fact_type": "trend",
-            "fact_description": "The number of times the individual woke up during sleep increased over the period from 2021-05-09 to 2021-06-06.",
+            "fact_description": "The number of times the individual woke up during sleep increased steadily from 2021-05-09 to 2021-06-06 (28 days), indicating a trend toward more disrupted sleep over this period.",
             "attribute": "rise",
             "time_1": "2021-05-09",
             "time_2": "2021-06-06"
@@ -1829,10 +1829,10 @@
     },
     {
       "key": "insight-3",
-      "summaryTitle": "Increased depressive symptoms and routine irregularity with higher sleep and physical activity suggest fluctuating energy and motivation.",
+      "summaryTitle": "Elevated depressive symptoms and irregular routine with increased sleep and physical activity indicate <b>fluctuating energy and motivation</b>.",
       "sources": [
-        "clinical note",
         "survey",
+        "clinical note",
         "passive sensing"
       ],
       "insightType": [
@@ -1868,7 +1868,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The average PHQ-4 score, which reflects overall symptoms of anxiety and depression, rose from 6.4 (moderate range) during the period from 2021-04-11 to 2021-05-09 (28 days) to 9.8 (severe range) from 2021-05-09 to 2021-06-06 (28 days), indicating a notable worsening in reported mental health symptoms.",
+          "summarySentence": "The average PHQ-4 score, which reflects overall symptoms of anxiety and depression, rose from 6.4 (moderate range) during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 9.8 (severe range) from 2021-05-09 to 2021-06-06 (4 weeks), indicating a notable worsening in reported mental health symptoms.",
           "dataPoints": [
             {
               "date": "2021-04-04",
@@ -1914,7 +1914,7 @@
           "spec": {
             "name": "PHQ-4 (0-12)",
             "fact_type": "comparison",
-            "fact_description": "The average PHQ-4 score, which reflects overall symptoms of anxiety and depression, rose from 6.4 (moderate range) during the period from 2021-04-11 to 2021-05-09 (28 days) to 9.8 (severe range) from 2021-05-09 to 2021-06-06 (28 days), indicating a notable worsening in reported mental health symptoms.",
+            "fact_description": "The average PHQ-4 score, which reflects overall symptoms of anxiety and depression, rose from 6.4 (moderate range) during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 9.8 (severe range) from 2021-05-09 to 2021-06-06 (4 weeks), indicating a notable worsening in reported mental health symptoms.",
             "attribute": "more",
             "aggregation": "average",
             "time_dur_1": {
@@ -1936,7 +1936,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The regularity of daily routines declined, with the average routine consistency score dropping from 74.7 (from 2021-04-11 to 2021-05-09, indicating fairly consistent routines) to 44.41 (from 2021-05-09 to 2021-06-06, reflecting a more irregular daily pattern).",
+          "summarySentence": "The individual's daily routine became noticeably less regular, with the average routine consistency score dropping from 74.7 (from 2021-04-11 to 2021-05-09, indicating fairly consistent routines) to 44.41 (from 2021-05-09 to 2021-06-06, reflecting a more irregular pattern).",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -2222,7 +2222,7 @@
           "spec": {
             "name": "Routine Consistency (0 irregular, 100 regular)",
             "fact_type": "comparison",
-            "fact_description": "The regularity of daily routines declined, with the average routine consistency score dropping from 74.7 (from 2021-04-11 to 2021-05-09, indicating fairly consistent routines) to 44.41 (from 2021-05-09 to 2021-06-06, reflecting a more irregular daily pattern).",
+            "fact_description": "The individual's daily routine became noticeably less regular, with the average routine consistency score dropping from 74.7 (from 2021-04-11 to 2021-05-09, indicating fairly consistent routines) to 44.41 (from 2021-05-09 to 2021-06-06, reflecting a more irregular pattern).",
             "attribute": "less",
             "aggregation": "average",
             "time_dur_1": {
@@ -2244,7 +2244,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The average daily step count increased from 2,625.97 steps during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 4,737.76 steps from 2021-05-09 to 2021-06-06 (4 weeks), indicating a moderate improvement in physical activity levels.",
+          "summarySentence": "The average daily step count rose from 2,625.97 steps during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 4,737.76 steps from 2021-05-09 to 2021-06-06 (4 weeks), indicating a moderate increase in physical activity.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -2530,7 +2530,7 @@
           "spec": {
             "name": "Total Steps (Steps)",
             "fact_type": "comparison",
-            "fact_description": "The average daily step count increased from 2,625.97 steps during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 4,737.76 steps from 2021-05-09 to 2021-06-06 (4 weeks), indicating a moderate improvement in physical activity levels.",
+            "fact_description": "The average daily step count rose from 2,625.97 steps during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 4,737.76 steps from 2021-05-09 to 2021-06-06 (4 weeks), indicating a moderate increase in physical activity.",
             "attribute": "more",
             "aggregation": "average",
             "time_dur_1": {
@@ -3524,7 +3524,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The amount of sleep each night gradually increased from 2021-05-09 to 2021-06-06 (28 days).",
+          "summarySentence": "The amount of total sleep per night gradually increased from 2021-05-09 to 2021-06-06 (28 days).",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -3810,7 +3810,7 @@
           "spec": {
             "name": "Total Sleep (hours)",
             "fact_type": "trend",
-            "fact_description": "The amount of sleep each night gradually increased from 2021-05-09 to 2021-06-06 (28 days).",
+            "fact_description": "The amount of total sleep per night gradually increased from 2021-05-09 to 2021-06-06 (28 days).",
             "attribute": "rise",
             "time_1": "2021-05-09",
             "time_2": "2021-06-06"
@@ -3825,7 +3825,7 @@
     },
     {
       "key": "insight-4",
-      "summaryTitle": "Rising PHQ-4 depression subscale indicates worsening depressive symptoms between 2021-05-09 and 2021-05-16.",
+      "summaryTitle": "Rising PHQ-4 depression subscale indicates <b>worsening depressive symptoms</b>.",
       "sources": [
         "survey"
       ],
@@ -3834,7 +3834,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "The PHQ-4 Depression Subscale score increased from 2.0 to 5.0 (no unit) between 2021-05-09 and 2021-05-16 (7 days), indicating a shift from a normal to a mild level of depressive symptoms.",
+          "summarySentence": "The PHQ-4 Depression Subscale score increased from 2.0 to 5.0 (no unit) from 2021-05-09 to 2021-05-16 (7 days), indicating a shift from a normal to a mild level of depressive symptoms.",
           "dataPoints": [
             {
               "date": "2021-04-04",
@@ -3880,7 +3880,7 @@
           "spec": {
             "name": "PHQ-4 Depression Subscale (0-6)",
             "fact_type": "difference",
-            "fact_description": "The PHQ-4 Depression Subscale score increased from 2.0 to 5.0 (no unit) between 2021-05-09 and 2021-05-16 (7 days), indicating a shift from a normal to a mild level of depressive symptoms.",
+            "fact_description": "The PHQ-4 Depression Subscale score increased from 2.0 to 5.0 (no unit) from 2021-05-09 to 2021-05-16 (7 days), indicating a shift from a normal to a mild level of depressive symptoms.",
             "attribute": "more",
             "time_1": "2021-05-09",
             "time_2": "2021-05-16",
@@ -3949,13 +3949,13 @@
             "survey"
           ],
           "dataSourceType": "extreme",
-          "isShowL2": false
+          "isShowL2": true
         }
       ]
     },
     {
       "key": "insight-5",
-      "summaryTitle": "Elevated PHQ-4 anxiety subscale scores indicate persistent high anxiety around 2021-05-09 and 2021-05-16.",
+      "summaryTitle": "Elevated PHQ-4 anxiety subscale scores indicate <b>persistent severe anxiety symptoms</b>.",
       "sources": [
         "survey"
       ],
@@ -3964,7 +3964,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "The PHQ-4 Anxiety Subscale score was 6.0 on both 2021-05-09 and 2021-05-16, indicating persistently severe anxiety symptoms during this period.",
+          "summarySentence": "The PHQ-4 Anxiety Subscale score was 6.0 on 2021-05-09 and remained at 6.0 on 2021-05-16, indicating consistently severe anxiety symptoms during this period.",
           "dataPoints": [
             {
               "date": "2021-04-04",
@@ -4010,7 +4010,7 @@
           "spec": {
             "name": "PHQ-4 Anxiety Subscale (0-6)",
             "fact_type": "difference",
-            "fact_description": "The PHQ-4 Anxiety Subscale score was 6.0 on both 2021-05-09 and 2021-05-16, indicating persistently severe anxiety symptoms during this period.",
+            "fact_description": "The PHQ-4 Anxiety Subscale score was 6.0 on 2021-05-09 and remained at 6.0 on 2021-05-16, indicating consistently severe anxiety symptoms during this period.",
             "attribute": "even",
             "time_1": "2021-05-09",
             "time_2": "2021-05-16",
@@ -4024,7 +4024,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "On 2021-05-09, the PHQ-4 Anxiety Subscale score was 6, which is the highest possible value and indicates severe anxiety symptoms.",
+          "summarySentence": "On 2021-05-09, the PHQ-4 Anxiety Subscale score reached 6.0, indicating the highest possible level of anxiety symptoms according to this measure.",
           "dataPoints": [
             {
               "date": "2021-04-04",
@@ -4070,7 +4070,7 @@
           "spec": {
             "name": "PHQ-4 Anxiety Subscale (0-6)",
             "fact_type": "extreme",
-            "fact_description": "On 2021-05-09, the PHQ-4 Anxiety Subscale score was 6, which is the highest possible value and indicates severe anxiety symptoms.",
+            "fact_description": "On 2021-05-09, the PHQ-4 Anxiety Subscale score reached 6.0, indicating the highest possible level of anxiety symptoms according to this measure.",
             "attribute": "max",
             "time": "2021-05-09",
             "value": 6.0
@@ -4085,7 +4085,7 @@
     },
     {
       "key": "insight-6",
-      "summaryTitle": "Elevated PHQ-4 total score with a peak on 2021-05-16 indicates severe mood symptoms, then mild improvement by 2021-05-30.",
+      "summaryTitle": "Elevated PHQ-4 total score followed by a modest decline indicates <b>persistent severe mood symptoms</b>.",
       "sources": [
         "survey"
       ],
@@ -4093,126 +4093,6 @@
         "psychological"
       ],
       "expandView": [
-        {
-          "summarySentence": "The PHQ-4 score, which measures symptoms of anxiety and depression, increased from 8.0 (indicating moderate symptoms) on 2021-05-09 to 11.0 (indicating severe symptoms) on 2021-05-16.",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 (0-12)": 3.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 (0-12)": 6.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 (0-12)": 8.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 (0-12)": 7.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 (0-12)": 8.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 (0-12)": 11.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 (0-12)": 10.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 (0-12)": 9.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 (0-12)": 11.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 (0-12)",
-            "fact_type": "difference",
-            "fact_description": "The PHQ-4 score, which measures symptoms of anxiety and depression, increased from 8.0 (indicating moderate symptoms) on 2021-05-09 to 11.0 (indicating severe symptoms) on 2021-05-16.",
-            "attribute": "more",
-            "time_1": "2021-05-09",
-            "time_2": "2021-05-16",
-            "value_1": 8.0,
-            "value_2": 11.0
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "difference",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "The PHQ-4 score, which reflects overall symptoms of anxiety and depression, was in the severe range at 10.0 on 2021-05-24 and showed a slight improvement to 9.0, still within the severe range, on 2021-05-30.",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 (0-12)": 3.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 (0-12)": 6.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 (0-12)": 8.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 (0-12)": 7.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 (0-12)": 8.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 (0-12)": 11.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 (0-12)": 10.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 (0-12)": 9.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 (0-12)": 11.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 (0-12)",
-            "fact_type": "difference",
-            "fact_description": "The PHQ-4 score, which reflects overall symptoms of anxiety and depression, was in the severe range at 10.0 on 2021-05-24 and showed a slight improvement to 9.0, still within the severe range, on 2021-05-30.",
-            "attribute": "less",
-            "time_1": "2021-05-24",
-            "time_2": "2021-05-30",
-            "value_1": 10.0,
-            "value_2": 9.0
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "difference",
-          "isShowL2": true
-        },
         {
           "summarySentence": "The PHQ-4 score peaked at 11.0 on 2021-05-16, indicating a severe level of combined anxiety and depression symptoms.",
           "dataPoints": [
@@ -4269,13 +4149,133 @@
             "survey"
           ],
           "dataSourceType": "extreme",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "The PHQ-4 score, which reflects overall symptoms of anxiety and depression, was in the severe range at 10.0 on 2021-05-24 and showed a slight decrease to 9.0 on 2021-05-30, though it remained within the severe category.",
+          "dataPoints": [
+            {
+              "date": "2021-04-04",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-04-11",
+              "PHQ-4 (0-12)": 3.0
+            },
+            {
+              "date": "2021-04-18",
+              "PHQ-4 (0-12)": 6.0
+            },
+            {
+              "date": "2021-04-25",
+              "PHQ-4 (0-12)": 8.0
+            },
+            {
+              "date": "2021-05-02",
+              "PHQ-4 (0-12)": 7.0
+            },
+            {
+              "date": "2021-05-09",
+              "PHQ-4 (0-12)": 8.0
+            },
+            {
+              "date": "2021-05-16",
+              "PHQ-4 (0-12)": 11.0
+            },
+            {
+              "date": "2021-05-24",
+              "PHQ-4 (0-12)": 10.0
+            },
+            {
+              "date": "2021-05-30",
+              "PHQ-4 (0-12)": 9.0
+            },
+            {
+              "date": "2021-06-06",
+              "PHQ-4 (0-12)": 11.0
+            }
+          ],
+          "spec": {
+            "name": "PHQ-4 (0-12)",
+            "fact_type": "difference",
+            "fact_description": "The PHQ-4 score, which reflects overall symptoms of anxiety and depression, was in the severe range at 10.0 on 2021-05-24 and showed a slight decrease to 9.0 on 2021-05-30, though it remained within the severe category.",
+            "attribute": "less",
+            "time_1": "2021-05-24",
+            "time_2": "2021-05-30",
+            "value_1": 10.0,
+            "value_2": 9.0
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "difference",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "The PHQ-4 score, which measures symptoms of anxiety and depression on a scale from 0 to 12, increased from 8 (moderate severity) on 2021-05-09 to 11 (severe severity) on 2021-05-16.",
+          "dataPoints": [
+            {
+              "date": "2021-04-04",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-04-11",
+              "PHQ-4 (0-12)": 3.0
+            },
+            {
+              "date": "2021-04-18",
+              "PHQ-4 (0-12)": 6.0
+            },
+            {
+              "date": "2021-04-25",
+              "PHQ-4 (0-12)": 8.0
+            },
+            {
+              "date": "2021-05-02",
+              "PHQ-4 (0-12)": 7.0
+            },
+            {
+              "date": "2021-05-09",
+              "PHQ-4 (0-12)": 8.0
+            },
+            {
+              "date": "2021-05-16",
+              "PHQ-4 (0-12)": 11.0
+            },
+            {
+              "date": "2021-05-24",
+              "PHQ-4 (0-12)": 10.0
+            },
+            {
+              "date": "2021-05-30",
+              "PHQ-4 (0-12)": 9.0
+            },
+            {
+              "date": "2021-06-06",
+              "PHQ-4 (0-12)": 11.0
+            }
+          ],
+          "spec": {
+            "name": "PHQ-4 (0-12)",
+            "fact_type": "difference",
+            "fact_description": "The PHQ-4 score, which measures symptoms of anxiety and depression on a scale from 0 to 12, increased from 8 (moderate severity) on 2021-05-09 to 11 (severe severity) on 2021-05-16.",
+            "attribute": "more",
+            "time_1": "2021-05-09",
+            "time_2": "2021-05-16",
+            "value_1": 8.0,
+            "value_2": 11.0
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "difference",
           "isShowL2": false
         }
       ]
     },
     {
       "key": "insight-7",
-      "summaryTitle": "Elevated negative affect on 2021-05-19 followed by reduced negative affect by 2021-05-30 suggests mood improvement.",
+      "summaryTitle": "Elevated negative affect followed by a marked decrease suggests <b>improved emotional state</b> around 2021-05-30.",
       "sources": [
         "survey"
       ],
@@ -4483,7 +4483,7 @@
     },
     {
       "key": "insight-8",
-      "summaryTitle": "Fluctuating total sleep duration suggests variable sleep patterns.",
+      "summaryTitle": "Fluctuating total sleep duration indicates <b>variable sleep patterns</b>.",
       "sources": [
         "passive sensing"
       ],
@@ -4790,7 +4790,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "On 2021-06-05, the individual experienced their longest recorded sleep duration, totaling 10.83 hours, which is notably high compared to typical nightly sleep.",
+          "summarySentence": "On 2021-06-05, the individual experienced their longest recorded sleep duration, totaling 10.83 hours, which is notably higher than typical adult sleep needs.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -5076,7 +5076,7 @@
           "spec": {
             "name": "Total Sleep (hours)",
             "fact_type": "extreme",
-            "fact_description": "On 2021-06-05, the individual experienced their longest recorded sleep duration, totaling 10.83 hours, which is notably high compared to typical nightly sleep.",
+            "fact_description": "On 2021-06-05, the individual experienced their longest recorded sleep duration, totaling 10.83 hours, which is notably higher than typical adult sleep needs.",
             "attribute": "max",
             "time": "2021-06-05",
             "value": 10.83
@@ -5091,7 +5091,7 @@
     },
     {
       "key": "insight-9",
-      "summaryTitle": "Decreased routine consistency indicates worsening daily structure and possible mood instability.",
+      "summaryTitle": "Markedly reduced routine consistency indicates <b>increased daily unpredictability</b>.",
       "sources": [
         "passive sensing"
       ],
@@ -5099,306 +5099,6 @@
         "social"
       ],
       "expandView": [
-        {
-          "summarySentence": "The regularity of the individual's daily routine was moderate at 51.93 on 2021-05-21, but it dropped to a much more irregular pattern with a score of 21.78 on 2021-05-22.",
-          "dataPoints": [
-            {
-              "date": "2021-03-29",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-03-30",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-03-31",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-01",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-02",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-03",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-04",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-05",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-06",
-              "Routine Consistency (0 irregular, 100 regular)": 72.59
-            },
-            {
-              "date": "2021-04-07",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-08",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-09",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-10",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-11",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-12",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-13",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-14",
-              "Routine Consistency (0 irregular, 100 regular)": 72.57
-            },
-            {
-              "date": "2021-04-15",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-16",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-17",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-18",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-19",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-20",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-21",
-              "Routine Consistency (0 irregular, 100 regular)": 72.64
-            },
-            {
-              "date": "2021-04-22",
-              "Routine Consistency (0 irregular, 100 regular)": 69.38
-            },
-            {
-              "date": "2021-04-23",
-              "Routine Consistency (0 irregular, 100 regular)": 63.53
-            },
-            {
-              "date": "2021-04-24",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-25",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-26",
-              "Routine Consistency (0 irregular, 100 regular)": 72.69
-            },
-            {
-              "date": "2021-04-27",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-28",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-29",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-04-30",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-01",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-02",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-03",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-04",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-05",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-06",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-07",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-08",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-09",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-10",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-11",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-12",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-13",
-              "Routine Consistency (0 irregular, 100 regular)": 72.54
-            },
-            {
-              "date": "2021-05-14",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-15",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-16",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-17",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-18",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-19",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-20",
-              "Routine Consistency (0 irregular, 100 regular)": 75.64
-            },
-            {
-              "date": "2021-05-21",
-              "Routine Consistency (0 irregular, 100 regular)": 51.93
-            },
-            {
-              "date": "2021-05-22",
-              "Routine Consistency (0 irregular, 100 regular)": 21.78
-            },
-            {
-              "date": "2021-05-23",
-              "Routine Consistency (0 irregular, 100 regular)": 20.24
-            },
-            {
-              "date": "2021-05-24",
-              "Routine Consistency (0 irregular, 100 regular)": 20.93
-            },
-            {
-              "date": "2021-05-25",
-              "Routine Consistency (0 irregular, 100 regular)": 21.78
-            },
-            {
-              "date": "2021-05-26",
-              "Routine Consistency (0 irregular, 100 regular)": 21.78
-            },
-            {
-              "date": "2021-05-27",
-              "Routine Consistency (0 irregular, 100 regular)": 21.78
-            },
-            {
-              "date": "2021-05-28",
-              "Routine Consistency (0 irregular, 100 regular)": 20.14
-            },
-            {
-              "date": "2021-05-29",
-              "Routine Consistency (0 irregular, 100 regular)": 17.56
-            },
-            {
-              "date": "2021-05-30",
-              "Routine Consistency (0 irregular, 100 regular)": 21.78
-            },
-            {
-              "date": "2021-05-31",
-              "Routine Consistency (0 irregular, 100 regular)": 19.39
-            },
-            {
-              "date": "2021-06-01",
-              "Routine Consistency (0 irregular, 100 regular)": 21.78
-            },
-            {
-              "date": "2021-06-02",
-              "Routine Consistency (0 irregular, 100 regular)": 20.98
-            },
-            {
-              "date": "2021-06-03",
-              "Routine Consistency (0 irregular, 100 regular)": 20.14
-            },
-            {
-              "date": "2021-06-04",
-              "Routine Consistency (0 irregular, 100 regular)": 18.35
-            },
-            {
-              "date": "2021-06-05",
-              "Routine Consistency (0 irregular, 100 regular)": 21.13
-            },
-            {
-              "date": "2021-06-06",
-              "Routine Consistency (0 irregular, 100 regular)": 21.97
-            }
-          ],
-          "spec": {
-            "name": "Routine Consistency (0 irregular, 100 regular)",
-            "fact_type": "difference",
-            "fact_description": "The regularity of the individual's daily routine was moderate at 51.93 on 2021-05-21, but it dropped to a much more irregular pattern with a score of 21.78 on 2021-05-22.",
-            "attribute": "less",
-            "time_1": "2021-05-21",
-            "time_2": "2021-05-22",
-            "value_1": 51.93,
-            "value_2": 21.78
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "difference",
-          "isShowL2": true
-        },
         {
           "summarySentence": "On 2021-05-29, the individual's daily routine was highly irregular, as indicated by a Routine Consistency score of 17.56.",
           "dataPoints": [
@@ -5698,7 +5398,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "On 2021-05-09, the individual's daily routine was at its most regular, with a routine consistency score of 75.64, indicating a fairly consistent pattern of daily activities.",
+          "summarySentence": "On 2021-05-09, the individual's daily routine was notably regular, with a routine consistency score reaching its highest value of 75.64, indicating a relatively stable pattern of daily activities.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -5984,7 +5684,7 @@
           "spec": {
             "name": "Routine Consistency (0 irregular, 100 regular)",
             "fact_type": "extreme",
-            "fact_description": "On 2021-05-09, the individual's daily routine was at its most regular, with a routine consistency score of 75.64, indicating a fairly consistent pattern of daily activities.",
+            "fact_description": "On 2021-05-09, the individual's daily routine was notably regular, with a routine consistency score reaching its highest value of 75.64, indicating a relatively stable pattern of daily activities.",
             "attribute": "max",
             "time": "2021-05-09",
             "value": 75.64
@@ -5993,7 +5693,7 @@
             "passive sensing"
           ],
           "dataSourceType": "extreme",
-          "isShowL2": false
+          "isShowL2": true
         },
         {
           "summarySentence": "The regularity of the individual's daily routine decreased, with a routine consistency score dropping from 75.64 to 51.93 between 2021-05-20 and 2021-05-21, indicating a shift from a fairly regular to a more irregular pattern.",
@@ -6288,6 +5988,306 @@
             "time_2": "2021-05-21",
             "value_1": 75.64,
             "value_2": 51.93
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "difference",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "The regularity of the individual's daily routine decreased notably, with the routine consistency score dropping from a moderately regular 51.93 to a much more irregular 21.78 between 2021-05-21 and 2021-05-22.",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-03-30",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-03-31",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-01",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-02",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-03",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-04",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-05",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-06",
+              "Routine Consistency (0 irregular, 100 regular)": 72.59
+            },
+            {
+              "date": "2021-04-07",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-08",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-09",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-10",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-11",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-12",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-13",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-14",
+              "Routine Consistency (0 irregular, 100 regular)": 72.57
+            },
+            {
+              "date": "2021-04-15",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-16",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-17",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-18",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-19",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-20",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-21",
+              "Routine Consistency (0 irregular, 100 regular)": 72.64
+            },
+            {
+              "date": "2021-04-22",
+              "Routine Consistency (0 irregular, 100 regular)": 69.38
+            },
+            {
+              "date": "2021-04-23",
+              "Routine Consistency (0 irregular, 100 regular)": 63.53
+            },
+            {
+              "date": "2021-04-24",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-25",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-26",
+              "Routine Consistency (0 irregular, 100 regular)": 72.69
+            },
+            {
+              "date": "2021-04-27",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-28",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-29",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-04-30",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-01",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-02",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-03",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-04",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-05",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-06",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-07",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-08",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-09",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-10",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-11",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-12",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-13",
+              "Routine Consistency (0 irregular, 100 regular)": 72.54
+            },
+            {
+              "date": "2021-05-14",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-15",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-16",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-17",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-18",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-19",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-20",
+              "Routine Consistency (0 irregular, 100 regular)": 75.64
+            },
+            {
+              "date": "2021-05-21",
+              "Routine Consistency (0 irregular, 100 regular)": 51.93
+            },
+            {
+              "date": "2021-05-22",
+              "Routine Consistency (0 irregular, 100 regular)": 21.78
+            },
+            {
+              "date": "2021-05-23",
+              "Routine Consistency (0 irregular, 100 regular)": 20.24
+            },
+            {
+              "date": "2021-05-24",
+              "Routine Consistency (0 irregular, 100 regular)": 20.93
+            },
+            {
+              "date": "2021-05-25",
+              "Routine Consistency (0 irregular, 100 regular)": 21.78
+            },
+            {
+              "date": "2021-05-26",
+              "Routine Consistency (0 irregular, 100 regular)": 21.78
+            },
+            {
+              "date": "2021-05-27",
+              "Routine Consistency (0 irregular, 100 regular)": 21.78
+            },
+            {
+              "date": "2021-05-28",
+              "Routine Consistency (0 irregular, 100 regular)": 20.14
+            },
+            {
+              "date": "2021-05-29",
+              "Routine Consistency (0 irregular, 100 regular)": 17.56
+            },
+            {
+              "date": "2021-05-30",
+              "Routine Consistency (0 irregular, 100 regular)": 21.78
+            },
+            {
+              "date": "2021-05-31",
+              "Routine Consistency (0 irregular, 100 regular)": 19.39
+            },
+            {
+              "date": "2021-06-01",
+              "Routine Consistency (0 irregular, 100 regular)": 21.78
+            },
+            {
+              "date": "2021-06-02",
+              "Routine Consistency (0 irregular, 100 regular)": 20.98
+            },
+            {
+              "date": "2021-06-03",
+              "Routine Consistency (0 irregular, 100 regular)": 20.14
+            },
+            {
+              "date": "2021-06-04",
+              "Routine Consistency (0 irregular, 100 regular)": 18.35
+            },
+            {
+              "date": "2021-06-05",
+              "Routine Consistency (0 irregular, 100 regular)": 21.13
+            },
+            {
+              "date": "2021-06-06",
+              "Routine Consistency (0 irregular, 100 regular)": 21.97
+            }
+          ],
+          "spec": {
+            "name": "Routine Consistency (0 irregular, 100 regular)",
+            "fact_type": "difference",
+            "fact_description": "The regularity of the individual's daily routine decreased notably, with the routine consistency score dropping from a moderately regular 51.93 to a much more irregular 21.78 between 2021-05-21 and 2021-05-22.",
+            "attribute": "less",
+            "time_1": "2021-05-21",
+            "time_2": "2021-05-22",
+            "value_1": 51.93,
+            "value_2": 21.78
           },
           "sources": [
             "passive sensing"

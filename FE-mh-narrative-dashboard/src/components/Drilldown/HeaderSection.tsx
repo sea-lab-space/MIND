@@ -20,7 +20,17 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-3">
-        <h1 className="text-xl font-semibold text-[#1e1e1e]">{title}</h1>
+        <h1
+          className="text-xl font-semibold text-[#1e1e1e]"
+          style={{
+            wordBreak: "break-word",
+            overflowWrap: "break-word",
+            hyphens: "auto",
+          }}
+          dangerouslySetInnerHTML={{
+            __html: title,
+          }}
+        ></h1>
       </div>
       <div>
         <Button variant="outline" onClick={onClick}>

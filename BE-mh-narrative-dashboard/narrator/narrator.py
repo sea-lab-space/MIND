@@ -35,11 +35,10 @@ class Narrator:
         # Default run_stages if None
         if run_stages == {} or cache_dir is None:
             run_stages = {
-                "thread": True,
-                "guardrail_qa": True,
-                "guardrail_simple_insight": True,
                 "fact_rewrite": True,
-                "fact_deduplication": True
+                "fact_deduplication": True,
+                "guardrail_simple_insight": True,
+                "guardrail_qa": True,
             }
         # create cache dir if not exists
         if cache_dir:
@@ -53,29 +52,7 @@ class Narrator:
             self._save(os.path.join(cache_dir, "data_insights_threaded.json"), data_insights_narrative)
         else:
             data_insights_narrative = self._load(os.path.join(cache_dir, "data_insights_threaded.json"))
-        
-        # Step 2: guardrail - this stage only checks qa insights (no need to check simpler insights)
-        if run_stages["guardrail_qa"]:
-            for insight in data_insights_narrative:
-                if "qaid" in insight:
-                    question = search_question(questions, insight['qaid'])
-                    description = insight["insight_description"]
-                    insight["insight_description"] = self.qia_agent.run(
-                         question, description, verbose=True)
-            self._save(os.path.join(cache_dir, "data_insights_guardrail_qa.json"), data_insights_narrative)
-        else:
-            data_insights_narrative = self._load(os.path.join(cache_dir, "data_insights_guardrail_qa.json"))
 
-        # Step 3: guardrail - this stage only checks simpler insights (no need to check qa insights)
-        if run_stages["guardrail_simple_insight"]:
-            for insight in data_insights_narrative:
-                if "qaid" not in insight:
-                    description = insight["insight_description"]
-                    insight["insight_description"] = self.simple_insight_agent.run(
-                        description, verbose=True)
-            self._save(os.path.join(cache_dir, "data_insights_guardrail_simple_insight.json"), data_insights_narrative)
-        else:
-            data_insights_narrative = self._load(os.path.join(cache_dir, "data_insights_guardrail_simple_insight.json"))
 
         full_facts_tasks = []
         tasks = []
@@ -102,6 +79,7 @@ class Narrator:
         # Step 4: fact rewrite
         if run_stages["fact_rewrite"]:
             print("-- [Narrator] Running fact rewrite")
+
             async def run_all_rewriting_tasks():
                 rewrite_coroutines = [
                     deepcopy(self.fact_rewriter_agent).run(fact, verbose=False)
@@ -118,10 +96,12 @@ class Narrator:
                     fact['spec']['fact_description'] = rewritten_fact
 
             new_fact_list = [fact for (fact, _) in full_facts_tasks]
-            self._save(os.path.join(cache_dir, "data_fact_list_rewritten.json"), new_fact_list)
+            self._save(os.path.join(
+                cache_dir, "data_fact_list_rewritten.json"), new_fact_list)
         else:
-            new_fact_list = self._load(os.path.join(cache_dir, "data_fact_list_rewritten.json"))
-        
+            new_fact_list = self._load(os.path.join(
+                cache_dir, "data_fact_list_rewritten.json"))
+
         time.sleep(10)
         # Step 5: Deduplication
         if run_stages["fact_deduplication"]:
@@ -137,9 +117,40 @@ class Narrator:
                 run_all_QoS_tasks(self.deduplication_agent))
             for (insight, _, _), l2_insight in zip(tasks, dedup_results):
                 insight['l2_insight_source'] = l2_insight
-            self._save(os.path.join(cache_dir, "data_fact_deduplication.json"), data_insights_narrative)
+            self._save(os.path.join(
+                cache_dir, "data_fact_deduplication.json"), data_insights_narrative)
         else:
-            data_insights_narrative = self._load(os.path.join(cache_dir, "data_fact_deduplication.json"))
+            data_insights_narrative = self._load(
+                os.path.join(cache_dir, "data_fact_deduplication.json"))
+
+        # Step 2: guardrail - this stage only checks qa insights (no need to check simpler insights)
+        if run_stages["guardrail_qa"]:
+            for insight in data_insights_narrative:
+                if "qaid" in insight:
+                    question = search_question(questions, insight['qaid'])
+                    description = insight["insight_description"]
+                    insight["insight_description"] = self.qia_agent.run(
+                        question, description, verbose=True)
+            self._save(os.path.join(
+                cache_dir, "data_insights_guardrail_qa.json"), data_insights_narrative)
+        else:
+            data_insights_narrative = self._load(os.path.join(
+                cache_dir, "data_insights_guardrail_qa.json"))
+            
+        # Step 3: guardrail - this stage only checks simpler insights (no need to check qa insights)
+        if run_stages["guardrail_simple_insight"]:
+            for insight in data_insights_narrative:
+                if "qaid" not in insight:
+                    description = insight["insight_description"]
+                    insight["insight_description"] = self.simple_insight_agent.run(
+                        description, verbose=True)
+            self._save(os.path.join(
+                cache_dir, "data_insights_guardrail_simple_insight.json"), data_insights_narrative)
+        else:
+            data_insights_narrative = self._load(os.path.join(
+                cache_dir, "data_insights_guardrail_simple_insight.json"))
+
+
 
 
         # for (insight, _, _) in tasks:

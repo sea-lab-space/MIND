@@ -51,10 +51,10 @@
   "insights": [
     {
       "key": "insight-0",
-      "summaryTitle": "Increasing positive affect and variable depression suggest fluctuating but improving mood since the last session.",
+      "summaryTitle": "Increasing positive affect and variable depression suggest <b>fluctuating mood and unstable depressive symptoms</b>.",
       "sources": [
-        "clinical note",
-        "survey"
+        "survey",
+        "clinical note"
       ],
       "insightType": [
         "psychological"
@@ -87,7 +87,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The individual's scores on the Positive Affect Subscale (5-25, PANAS-SF) showed a steady increase from 2021-05-09 to 2021-06-06 (28 days), indicating a gradual improvement in reported positive emotions over this period.",
+          "summarySentence": "The individual's Positive Affect Subscale score (range: 5-25) demonstrated a rising trend from 2021-05-09 to 2021-06-06 (28 days), indicating an overall increase in reported positive emotions during this period.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -173,8 +173,66 @@
           "spec": {
             "name": "Positive Affect Subscale (5-25, PANAS-SF)",
             "fact_type": "trend",
-            "fact_description": "The individual's scores on the Positive Affect Subscale (5-25, PANAS-SF) showed a steady increase from 2021-05-09 to 2021-06-06 (28 days), indicating a gradual improvement in reported positive emotions over this period.",
+            "fact_description": "The individual's Positive Affect Subscale score (range: 5-25) demonstrated a rising trend from 2021-05-09 to 2021-06-06 (28 days), indicating an overall increase in reported positive emotions during this period.",
             "attribute": "rise",
+            "time_1": "2021-05-09",
+            "time_2": "2021-06-06"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "trend",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "The PHQ-4 total scores fluctuated noticeably from 2021-05-09 to 2021-06-06 (28 days), indicating inconsistent levels of anxiety and depression symptoms during this period.",
+          "dataPoints": [
+            {
+              "date": "2021-04-04",
+              "PHQ-4 (0-12)": 8.0
+            },
+            {
+              "date": "2021-04-11",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-04-18",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-04-25",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-05-02",
+              "PHQ-4 (0-12)": 6.0
+            },
+            {
+              "date": "2021-05-09",
+              "PHQ-4 (0-12)": 7.0
+            },
+            {
+              "date": "2021-05-16",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-05-24",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-05-30",
+              "PHQ-4 (0-12)": 0.0
+            },
+            {
+              "date": "2021-06-06",
+              "PHQ-4 (0-12)": 4.0
+            }
+          ],
+          "spec": {
+            "name": "PHQ-4 (0-12)",
+            "fact_type": "trend",
+            "fact_description": "The PHQ-4 total scores fluctuated noticeably from 2021-05-09 to 2021-06-06 (28 days), indicating inconsistent levels of anxiety and depression symptoms during this period.",
+            "attribute": "variable",
             "time_1": "2021-05-09",
             "time_2": "2021-06-06"
           },
@@ -240,71 +298,13 @@
             "survey"
           ],
           "dataSourceType": "trend",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "The PHQ-4 total scores fluctuated noticeably from 2021-05-09 to 2021-06-06 (28 days), indicating significant changes in the individual's reported symptoms of anxiety and depression during this period.",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 (0-12)": 8.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 (0-12)": 6.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 (0-12)": 7.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 (0-12)": 0.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 (0-12)": 4.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 (0-12)",
-            "fact_type": "trend",
-            "fact_description": "The PHQ-4 total scores fluctuated noticeably from 2021-05-09 to 2021-06-06 (28 days), indicating significant changes in the individual's reported symptoms of anxiety and depression during this period.",
-            "attribute": "variable",
-            "time_1": "2021-05-09",
-            "time_2": "2021-06-06"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "trend",
           "isShowL2": false
         }
       ]
     },
     {
       "key": "insight-1",
-      "summaryTitle": "Modestly increased total steps and inactive periods with variable routine consistency suggest fluctuating engagement in pleasurable activities.",
+      "summaryTitle": "Modestly increased physical activity and highly variable routine suggest <b>inconsistent engagement in pleasurable activities</b>.",
       "sources": [
         "clinical note",
         "passive sensing"
@@ -341,7 +341,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The average daily step count rose moderately, increasing from 2,167 steps per day during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 2,996 steps per day from 2021-05-09 to 2021-06-06 (4 weeks), indicating a slight improvement in physical activity levels.",
+          "summarySentence": "The average daily step count rose moderately, increasing from 2167.07 steps during the period from 2021-04-11 to 2021-05-09 (28 days) to 2995.97 steps from 2021-05-09 to 2021-06-06 (28 days), indicating a slight improvement in physical activity levels.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -627,7 +627,7 @@
           "spec": {
             "name": "Total Steps (Steps)",
             "fact_type": "comparison",
-            "fact_description": "The average daily step count rose moderately, increasing from 2,167 steps per day during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 2,996 steps per day from 2021-05-09 to 2021-06-06 (4 weeks), indicating a slight improvement in physical activity levels.",
+            "fact_description": "The average daily step count rose moderately, increasing from 2167.07 steps during the period from 2021-04-11 to 2021-05-09 (28 days) to 2995.97 steps from 2021-05-09 to 2021-06-06 (28 days), indicating a slight improvement in physical activity levels.",
             "attribute": "more",
             "aggregation": "average",
             "time_dur_1": {
@@ -649,7 +649,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The average number of sedentary episodes per day increased moderately, rising from 40.55 times during the period from 2021-04-11 to 2021-05-09 (28 days) to 54.62 times from 2021-05-09 to 2021-06-06 (28 days).",
+          "summarySentence": "The average number of sedentary episodes per day increased moderately, rising from 40.55 times during the period from 2021-04-11 to 2021-05-09 (28 days) to 54.62 times from 2021-05-09 to 2021-06-06 (28 days), indicating a trend toward more frequent periods of inactivity.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -935,7 +935,7 @@
           "spec": {
             "name": "Inactive Periods (Times)",
             "fact_type": "comparison",
-            "fact_description": "The average number of sedentary episodes per day increased moderately, rising from 40.55 times during the period from 2021-04-11 to 2021-05-09 (28 days) to 54.62 times from 2021-05-09 to 2021-06-06 (28 days).",
+            "fact_description": "The average number of sedentary episodes per day increased moderately, rising from 40.55 times during the period from 2021-04-11 to 2021-05-09 (28 days) to 54.62 times from 2021-05-09 to 2021-06-06 (28 days), indicating a trend toward more frequent periods of inactivity.",
             "attribute": "more",
             "aggregation": "average",
             "time_dur_1": {
@@ -1255,7 +1255,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "On 2021-06-04, the individual's routine consistency score dropped to 50.88, indicating a moderate level of irregularity in their daily activities compared to previous patterns.",
+          "summarySentence": "On 2021-06-04, the individual's daily routine became noticeably less regular, with their routine consistency score dropping to 50.88, indicating a moderate level of irregularity in their daily activities.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -1541,7 +1541,7 @@
           "spec": {
             "name": "Routine Consistency (0 irregular, 100 regular)",
             "fact_type": "outlier",
-            "fact_description": "On 2021-06-04, the individual's routine consistency score dropped to 50.88, indicating a moderate level of irregularity in their daily activities compared to previous patterns.",
+            "fact_description": "On 2021-06-04, the individual's daily routine became noticeably less regular, with their routine consistency score dropping to 50.88, indicating a moderate level of irregularity in their daily activities.",
             "attribute": "dip",
             "value": 50.88,
             "time": "2021-06-04"
@@ -1861,7 +1861,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "On 2021-05-22, there was a notable decrease in the regularity of the individual's daily routine, with the routine consistency score dropping to 64.93, indicating a moderate level of irregularity compared to a perfectly consistent routine.",
+          "summarySentence": "On 2021-05-22, there was a notable decrease in routine consistency, with the score dropping to 64.93, indicating a moderate level of irregularity in daily activities.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -2147,7 +2147,7 @@
           "spec": {
             "name": "Routine Consistency (0 irregular, 100 regular)",
             "fact_type": "outlier",
-            "fact_description": "On 2021-05-22, there was a notable decrease in the regularity of the individual's daily routine, with the routine consistency score dropping to 64.93, indicating a moderate level of irregularity compared to a perfectly consistent routine.",
+            "fact_description": "On 2021-05-22, there was a notable decrease in routine consistency, with the score dropping to 64.93, indicating a moderate level of irregularity in daily activities.",
             "attribute": "dip",
             "value": 64.93,
             "time": "2021-05-22"
@@ -2162,7 +2162,7 @@
     },
     {
       "key": "insight-2",
-      "summaryTitle": "Increasing total steps and decreasing total screen time with variable sleep patterns suggest partial sleep hygiene implementation.",
+      "summaryTitle": "Increasing total steps and decreasing total screen time with variable sleep patterns suggest <b>partial adoption of sleep hygiene strategies</b>.",
       "sources": [
         "clinical note",
         "passive sensing"
@@ -2199,7 +2199,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The average daily step count rose moderately, increasing from 2167.07 steps during the period from 2021-04-11 to 2021-05-09 (28 days) to 2995.97 steps from 2021-05-09 to 2021-06-06 (28 days).",
+          "summarySentence": "The average daily step count rose moderately, increasing from 2,167 steps per day during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 2,996 steps per day from 2021-05-09 to 2021-06-06 (4 weeks).",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -2485,7 +2485,7 @@
           "spec": {
             "name": "Total Steps (Steps)",
             "fact_type": "comparison",
-            "fact_description": "The average daily step count rose moderately, increasing from 2167.07 steps during the period from 2021-04-11 to 2021-05-09 (28 days) to 2995.97 steps from 2021-05-09 to 2021-06-06 (28 days).",
+            "fact_description": "The average daily step count rose moderately, increasing from 2,167 steps per day during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 2,996 steps per day from 2021-05-09 to 2021-06-06 (4 weeks).",
             "attribute": "more",
             "aggregation": "average",
             "time_dur_1": {
@@ -2507,7 +2507,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The average amount of time spent using the phone each day decreased moderately, from 7.84 hours per day during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 6.16 hours per day from 2021-05-09 to 2021-06-06 (4 weeks).",
+          "summarySentence": "The average amount of time spent on the phone each day decreased moderately, from 7.84 hours per day during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 6.16 hours per day from 2021-05-09 to 2021-06-06 (4 weeks).",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -2793,7 +2793,7 @@
           "spec": {
             "name": "Total Screen Time (Hours)",
             "fact_type": "comparison",
-            "fact_description": "The average amount of time spent using the phone each day decreased moderately, from 7.84 hours per day during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 6.16 hours per day from 2021-05-09 to 2021-06-06 (4 weeks).",
+            "fact_description": "The average amount of time spent on the phone each day decreased moderately, from 7.84 hours per day during the period from 2021-04-11 to 2021-05-09 (4 weeks) to 6.16 hours per day from 2021-05-09 to 2021-06-06 (4 weeks).",
             "attribute": "less",
             "aggregation": "average",
             "time_dur_1": {
@@ -2815,7 +2815,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The times at which the individual went to bed varied considerably from day to day during the period from 2021-05-09 to 2021-06-06 (28 days), indicating an inconsistent sleep schedule.",
+          "summarySentence": "The time the individual went to bed varied considerably from day to day during the period from 2021-05-09 to 2021-06-06, indicating an inconsistent sleep schedule.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -3101,7 +3101,7 @@
           "spec": {
             "name": "Bedtime (Hours in relation to midnight)",
             "fact_type": "trend",
-            "fact_description": "The times at which the individual went to bed varied considerably from day to day during the period from 2021-05-09 to 2021-06-06 (28 days), indicating an inconsistent sleep schedule.",
+            "fact_description": "The time the individual went to bed varied considerably from day to day during the period from 2021-05-09 to 2021-06-06, indicating an inconsistent sleep schedule.",
             "attribute": "variable",
             "time_1": "2021-05-09",
             "time_2": "2021-06-06"
@@ -3113,7 +3113,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The amount of time spent using the phone each day steadily decreased from 2021-05-09 to 2021-06-06 (28 days).",
+          "summarySentence": "The amount of time spent using the phone each day gradually decreased from 2021-05-09 to 2021-06-06 (28 days).",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -3399,7 +3399,7 @@
           "spec": {
             "name": "Total Screen Time (Hours)",
             "fact_type": "trend",
-            "fact_description": "The amount of time spent using the phone each day steadily decreased from 2021-05-09 to 2021-06-06 (28 days).",
+            "fact_description": "The amount of time spent using the phone each day gradually decreased from 2021-05-09 to 2021-06-06 (28 days).",
             "attribute": "fall",
             "time_1": "2021-05-09",
             "time_2": "2021-06-06"
@@ -3411,7 +3411,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The total number of steps taken each day showed a steady increase from 2021-05-09 to 2021-06-06 (28 days), indicating a rise in daily physical activity over this period.",
+          "summarySentence": "The total number of steps taken each day showed a steady increase from 2021-05-09 to 2021-06-06 (28 days), indicating a rise in daily physical activity during this period.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -3697,7 +3697,7 @@
           "spec": {
             "name": "Total Steps (Steps)",
             "fact_type": "trend",
-            "fact_description": "The total number of steps taken each day showed a steady increase from 2021-05-09 to 2021-06-06 (28 days), indicating a rise in daily physical activity over this period.",
+            "fact_description": "The total number of steps taken each day showed a steady increase from 2021-05-09 to 2021-06-06 (28 days), indicating a rise in daily physical activity during this period.",
             "attribute": "rise",
             "time_1": "2021-05-09",
             "time_2": "2021-06-06"
@@ -3712,7 +3712,7 @@
     },
     {
       "key": "insight-3",
-      "summaryTitle": "Variable bedtime and awakening episodes with stable total sleep and wake time indicate inconsistent sleep patterns.",
+      "summaryTitle": "Variable bedtime and awakening episodes with stable total sleep and wake time indicate <b>fluctuating sleep quality</b>.",
       "sources": [
         "clinical note",
         "passive sensing"
@@ -3748,7 +3748,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The times at which the individual went to bed varied considerably from day to day during the period from 2021-05-09 to 2021-06-06 (28 days), indicating an inconsistent sleep schedule.",
+          "summarySentence": "The time the individual went to bed varied considerably from day to day during the period from 2021-05-09 to 2021-06-06, indicating an inconsistent sleep schedule.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -4034,7 +4034,7 @@
           "spec": {
             "name": "Bedtime (Hours in relation to midnight)",
             "fact_type": "trend",
-            "fact_description": "The times at which the individual went to bed varied considerably from day to day during the period from 2021-05-09 to 2021-06-06 (28 days), indicating an inconsistent sleep schedule.",
+            "fact_description": "The time the individual went to bed varied considerably from day to day during the period from 2021-05-09 to 2021-06-06, indicating an inconsistent sleep schedule.",
             "attribute": "variable",
             "time_1": "2021-05-09",
             "time_2": "2021-06-06"
@@ -4046,603 +4046,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The total amount of sleep per night remained consistent from 2021-05-09 to 2021-06-06 (28 days), indicating stable sleep duration during this period.",
-          "dataPoints": [
-            {
-              "date": "2021-03-29",
-              "Total Sleep (hours)": null
-            },
-            {
-              "date": "2021-03-30",
-              "Total Sleep (hours)": 6.78
-            },
-            {
-              "date": "2021-03-31",
-              "Total Sleep (hours)": 7.47
-            },
-            {
-              "date": "2021-04-01",
-              "Total Sleep (hours)": 4.85
-            },
-            {
-              "date": "2021-04-02",
-              "Total Sleep (hours)": 7.52
-            },
-            {
-              "date": "2021-04-03",
-              "Total Sleep (hours)": 7.95
-            },
-            {
-              "date": "2021-04-04",
-              "Total Sleep (hours)": 6.32
-            },
-            {
-              "date": "2021-04-05",
-              "Total Sleep (hours)": 6.17
-            },
-            {
-              "date": "2021-04-06",
-              "Total Sleep (hours)": 6.3
-            },
-            {
-              "date": "2021-04-07",
-              "Total Sleep (hours)": 6.42
-            },
-            {
-              "date": "2021-04-08",
-              "Total Sleep (hours)": 6.37
-            },
-            {
-              "date": "2021-04-09",
-              "Total Sleep (hours)": 5.4
-            },
-            {
-              "date": "2021-04-10",
-              "Total Sleep (hours)": 8.27
-            },
-            {
-              "date": "2021-04-11",
-              "Total Sleep (hours)": 7.48
-            },
-            {
-              "date": "2021-04-12",
-              "Total Sleep (hours)": 6.58
-            },
-            {
-              "date": "2021-04-13",
-              "Total Sleep (hours)": 6.17
-            },
-            {
-              "date": "2021-04-14",
-              "Total Sleep (hours)": 6.33
-            },
-            {
-              "date": "2021-04-15",
-              "Total Sleep (hours)": 6.35
-            },
-            {
-              "date": "2021-04-16",
-              "Total Sleep (hours)": 8.55
-            },
-            {
-              "date": "2021-04-17",
-              "Total Sleep (hours)": 7.25
-            },
-            {
-              "date": "2021-04-18",
-              "Total Sleep (hours)": 7.45
-            },
-            {
-              "date": "2021-04-19",
-              "Total Sleep (hours)": 7.07
-            },
-            {
-              "date": "2021-04-20",
-              "Total Sleep (hours)": 7.28
-            },
-            {
-              "date": "2021-04-21",
-              "Total Sleep (hours)": 7.47
-            },
-            {
-              "date": "2021-04-22",
-              "Total Sleep (hours)": 7.3
-            },
-            {
-              "date": "2021-04-23",
-              "Total Sleep (hours)": 7.35
-            },
-            {
-              "date": "2021-04-24",
-              "Total Sleep (hours)": 6.85
-            },
-            {
-              "date": "2021-04-25",
-              "Total Sleep (hours)": 7.17
-            },
-            {
-              "date": "2021-04-26",
-              "Total Sleep (hours)": 6.57
-            },
-            {
-              "date": "2021-04-27",
-              "Total Sleep (hours)": 7.47
-            },
-            {
-              "date": "2021-04-28",
-              "Total Sleep (hours)": 7.18
-            },
-            {
-              "date": "2021-04-29",
-              "Total Sleep (hours)": 6.5
-            },
-            {
-              "date": "2021-04-30",
-              "Total Sleep (hours)": 8.53
-            },
-            {
-              "date": "2021-05-01",
-              "Total Sleep (hours)": 7.63
-            },
-            {
-              "date": "2021-05-02",
-              "Total Sleep (hours)": 7.72
-            },
-            {
-              "date": "2021-05-03",
-              "Total Sleep (hours)": 6.37
-            },
-            {
-              "date": "2021-05-04",
-              "Total Sleep (hours)": 6.87
-            },
-            {
-              "date": "2021-05-05",
-              "Total Sleep (hours)": 6.37
-            },
-            {
-              "date": "2021-05-06",
-              "Total Sleep (hours)": 5.73
-            },
-            {
-              "date": "2021-05-07",
-              "Total Sleep (hours)": 7.55
-            },
-            {
-              "date": "2021-05-08",
-              "Total Sleep (hours)": 7.13
-            },
-            {
-              "date": "2021-05-09",
-              "Total Sleep (hours)": 4.72
-            },
-            {
-              "date": "2021-05-10",
-              "Total Sleep (hours)": 7.58
-            },
-            {
-              "date": "2021-05-11",
-              "Total Sleep (hours)": 6.38
-            },
-            {
-              "date": "2021-05-12",
-              "Total Sleep (hours)": 6.67
-            },
-            {
-              "date": "2021-05-13",
-              "Total Sleep (hours)": 7.07
-            },
-            {
-              "date": "2021-05-14",
-              "Total Sleep (hours)": 7.23
-            },
-            {
-              "date": "2021-05-15",
-              "Total Sleep (hours)": 7.0
-            },
-            {
-              "date": "2021-05-16",
-              "Total Sleep (hours)": 7.55
-            },
-            {
-              "date": "2021-05-17",
-              "Total Sleep (hours)": 6.97
-            },
-            {
-              "date": "2021-05-18",
-              "Total Sleep (hours)": 6.62
-            },
-            {
-              "date": "2021-05-19",
-              "Total Sleep (hours)": 7.35
-            },
-            {
-              "date": "2021-05-20",
-              "Total Sleep (hours)": 5.77
-            },
-            {
-              "date": "2021-05-21",
-              "Total Sleep (hours)": 8.07
-            },
-            {
-              "date": "2021-05-22",
-              "Total Sleep (hours)": 6.68
-            },
-            {
-              "date": "2021-05-23",
-              "Total Sleep (hours)": 6.75
-            },
-            {
-              "date": "2021-05-24",
-              "Total Sleep (hours)": 6.95
-            },
-            {
-              "date": "2021-05-25",
-              "Total Sleep (hours)": 5.85
-            },
-            {
-              "date": "2021-05-26",
-              "Total Sleep (hours)": 8.38
-            },
-            {
-              "date": "2021-05-27",
-              "Total Sleep (hours)": 7.1
-            },
-            {
-              "date": "2021-05-28",
-              "Total Sleep (hours)": 7.3
-            },
-            {
-              "date": "2021-05-29",
-              "Total Sleep (hours)": 8.1
-            },
-            {
-              "date": "2021-05-30",
-              "Total Sleep (hours)": 7.2
-            },
-            {
-              "date": "2021-05-31",
-              "Total Sleep (hours)": 8.13
-            },
-            {
-              "date": "2021-06-01",
-              "Total Sleep (hours)": 7.08
-            },
-            {
-              "date": "2021-06-02",
-              "Total Sleep (hours)": 7.02
-            },
-            {
-              "date": "2021-06-03",
-              "Total Sleep (hours)": 7.9
-            },
-            {
-              "date": "2021-06-04",
-              "Total Sleep (hours)": 6.27
-            },
-            {
-              "date": "2021-06-05",
-              "Total Sleep (hours)": 6.9
-            },
-            {
-              "date": "2021-06-06",
-              "Total Sleep (hours)": 8.42
-            }
-          ],
-          "spec": {
-            "name": "Total Sleep (hours)",
-            "fact_type": "trend",
-            "fact_description": "The total amount of sleep per night remained consistent from 2021-05-09 to 2021-06-06 (28 days), indicating stable sleep duration during this period.",
-            "attribute": "stable",
-            "time_1": "2021-05-09",
-            "time_2": "2021-06-06"
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "trend",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "The time the individual woke up each day remained consistent from 2021-05-09 to 2021-06-06.",
-          "dataPoints": [
-            {
-              "date": "2021-03-29",
-              "Wake Time (Hours in relation to midnight)": null
-            },
-            {
-              "date": "2021-03-30",
-              "Wake Time (Hours in relation to midnight)": 8.16
-            },
-            {
-              "date": "2021-03-31",
-              "Wake Time (Hours in relation to midnight)": 8.15
-            },
-            {
-              "date": "2021-04-01",
-              "Wake Time (Hours in relation to midnight)": 7.38
-            },
-            {
-              "date": "2021-04-02",
-              "Wake Time (Hours in relation to midnight)": 8.88
-            },
-            {
-              "date": "2021-04-03",
-              "Wake Time (Hours in relation to midnight)": 9.32
-            },
-            {
-              "date": "2021-04-04",
-              "Wake Time (Hours in relation to midnight)": 9.15
-            },
-            {
-              "date": "2021-04-05",
-              "Wake Time (Hours in relation to midnight)": 8.25
-            },
-            {
-              "date": "2021-04-06",
-              "Wake Time (Hours in relation to midnight)": 8.1
-            },
-            {
-              "date": "2021-04-07",
-              "Wake Time (Hours in relation to midnight)": 8.2
-            },
-            {
-              "date": "2021-04-08",
-              "Wake Time (Hours in relation to midnight)": 8.22
-            },
-            {
-              "date": "2021-04-09",
-              "Wake Time (Hours in relation to midnight)": 7.68
-            },
-            {
-              "date": "2021-04-10",
-              "Wake Time (Hours in relation to midnight)": 9.33
-            },
-            {
-              "date": "2021-04-11",
-              "Wake Time (Hours in relation to midnight)": 9.11
-            },
-            {
-              "date": "2021-04-12",
-              "Wake Time (Hours in relation to midnight)": 8.3
-            },
-            {
-              "date": "2021-04-13",
-              "Wake Time (Hours in relation to midnight)": 8.18
-            },
-            {
-              "date": "2021-04-14",
-              "Wake Time (Hours in relation to midnight)": 8.27
-            },
-            {
-              "date": "2021-04-15",
-              "Wake Time (Hours in relation to midnight)": 8.34
-            },
-            {
-              "date": "2021-04-16",
-              "Wake Time (Hours in relation to midnight)": 9.35
-            },
-            {
-              "date": "2021-04-17",
-              "Wake Time (Hours in relation to midnight)": 8.5
-            },
-            {
-              "date": "2021-04-18",
-              "Wake Time (Hours in relation to midnight)": 8.64
-            },
-            {
-              "date": "2021-04-19",
-              "Wake Time (Hours in relation to midnight)": 8.16
-            },
-            {
-              "date": "2021-04-20",
-              "Wake Time (Hours in relation to midnight)": 8.24
-            },
-            {
-              "date": "2021-04-21",
-              "Wake Time (Hours in relation to midnight)": 8.21
-            },
-            {
-              "date": "2021-04-22",
-              "Wake Time (Hours in relation to midnight)": 8.36
-            },
-            {
-              "date": "2021-04-23",
-              "Wake Time (Hours in relation to midnight)": 9.32
-            },
-            {
-              "date": "2021-04-24",
-              "Wake Time (Hours in relation to midnight)": 9.54
-            },
-            {
-              "date": "2021-04-25",
-              "Wake Time (Hours in relation to midnight)": 9.46
-            },
-            {
-              "date": "2021-04-26",
-              "Wake Time (Hours in relation to midnight)": 8.27
-            },
-            {
-              "date": "2021-04-27",
-              "Wake Time (Hours in relation to midnight)": 8.54
-            },
-            {
-              "date": "2021-04-28",
-              "Wake Time (Hours in relation to midnight)": 8.28
-            },
-            {
-              "date": "2021-04-29",
-              "Wake Time (Hours in relation to midnight)": 8.22
-            },
-            {
-              "date": "2021-04-30",
-              "Wake Time (Hours in relation to midnight)": 9.54
-            },
-            {
-              "date": "2021-05-01",
-              "Wake Time (Hours in relation to midnight)": 9.55
-            },
-            {
-              "date": "2021-05-02",
-              "Wake Time (Hours in relation to midnight)": 9.08
-            },
-            {
-              "date": "2021-05-03",
-              "Wake Time (Hours in relation to midnight)": 8.22
-            },
-            {
-              "date": "2021-05-04",
-              "Wake Time (Hours in relation to midnight)": 8.22
-            },
-            {
-              "date": "2021-05-05",
-              "Wake Time (Hours in relation to midnight)": 8.26
-            },
-            {
-              "date": "2021-05-06",
-              "Wake Time (Hours in relation to midnight)": 8.25
-            },
-            {
-              "date": "2021-05-07",
-              "Wake Time (Hours in relation to midnight)": 9.31
-            },
-            {
-              "date": "2021-05-08",
-              "Wake Time (Hours in relation to midnight)": 9.43
-            },
-            {
-              "date": "2021-05-09",
-              "Wake Time (Hours in relation to midnight)": 8.48
-            },
-            {
-              "date": "2021-05-10",
-              "Wake Time (Hours in relation to midnight)": 8.32
-            },
-            {
-              "date": "2021-05-11",
-              "Wake Time (Hours in relation to midnight)": 8.32
-            },
-            {
-              "date": "2021-05-12",
-              "Wake Time (Hours in relation to midnight)": 8.17
-            },
-            {
-              "date": "2021-05-13",
-              "Wake Time (Hours in relation to midnight)": 8.05
-            },
-            {
-              "date": "2021-05-14",
-              "Wake Time (Hours in relation to midnight)": 9.18
-            },
-            {
-              "date": "2021-05-15",
-              "Wake Time (Hours in relation to midnight)": 8.53
-            },
-            {
-              "date": "2021-05-16",
-              "Wake Time (Hours in relation to midnight)": 8.98
-            },
-            {
-              "date": "2021-05-17",
-              "Wake Time (Hours in relation to midnight)": 8.28
-            },
-            {
-              "date": "2021-05-18",
-              "Wake Time (Hours in relation to midnight)": 8.37
-            },
-            {
-              "date": "2021-05-19",
-              "Wake Time (Hours in relation to midnight)": 8.33
-            },
-            {
-              "date": "2021-05-20",
-              "Wake Time (Hours in relation to midnight)": 8.32
-            },
-            {
-              "date": "2021-05-21",
-              "Wake Time (Hours in relation to midnight)": 9.33
-            },
-            {
-              "date": "2021-05-22",
-              "Wake Time (Hours in relation to midnight)": 8.7
-            },
-            {
-              "date": "2021-05-23",
-              "Wake Time (Hours in relation to midnight)": 8.88
-            },
-            {
-              "date": "2021-05-24",
-              "Wake Time (Hours in relation to midnight)": 8.24
-            },
-            {
-              "date": "2021-05-25",
-              "Wake Time (Hours in relation to midnight)": 8.44
-            },
-            {
-              "date": "2021-05-26",
-              "Wake Time (Hours in relation to midnight)": 9.33
-            },
-            {
-              "date": "2021-05-27",
-              "Wake Time (Hours in relation to midnight)": 9.27
-            },
-            {
-              "date": "2021-05-28",
-              "Wake Time (Hours in relation to midnight)": 8.48
-            },
-            {
-              "date": "2021-05-29",
-              "Wake Time (Hours in relation to midnight)": 8.73
-            },
-            {
-              "date": "2021-05-30",
-              "Wake Time (Hours in relation to midnight)": 8.5
-            },
-            {
-              "date": "2021-05-31",
-              "Wake Time (Hours in relation to midnight)": 9.67
-            },
-            {
-              "date": "2021-06-01",
-              "Wake Time (Hours in relation to midnight)": 8.77
-            },
-            {
-              "date": "2021-06-02",
-              "Wake Time (Hours in relation to midnight)": 8.18
-            },
-            {
-              "date": "2021-06-03",
-              "Wake Time (Hours in relation to midnight)": 8.25
-            },
-            {
-              "date": "2021-06-04",
-              "Wake Time (Hours in relation to midnight)": 8.48
-            },
-            {
-              "date": "2021-06-05",
-              "Wake Time (Hours in relation to midnight)": 8.62
-            },
-            {
-              "date": "2021-06-06",
-              "Wake Time (Hours in relation to midnight)": 8.92
-            }
-          ],
-          "spec": {
-            "name": "Wake Time (Hours in relation to midnight)",
-            "fact_type": "trend",
-            "fact_description": "The time the individual woke up each day remained consistent from 2021-05-09 to 2021-06-06.",
-            "attribute": "stable",
-            "time_1": "2021-05-09",
-            "time_2": "2021-06-06"
-          },
-          "sources": [
-            "passive sensing"
-          ],
-          "dataSourceType": "trend",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "The number of times the individual woke up during sleep varied considerably from 2021-05-09 to 2021-06-06, indicating inconsistent sleep continuity over this period.",
+          "summarySentence": "The number of times the individual woke up during sleep varied considerably from 2021-05-09 to 2021-06-06 (28 days), indicating inconsistent sleep continuity during this period.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -4928,7 +4332,7 @@
           "spec": {
             "name": "Awakening Episodes (Times)",
             "fact_type": "trend",
-            "fact_description": "The number of times the individual woke up during sleep varied considerably from 2021-05-09 to 2021-06-06, indicating inconsistent sleep continuity over this period.",
+            "fact_description": "The number of times the individual woke up during sleep varied considerably from 2021-05-09 to 2021-06-06 (28 days), indicating inconsistent sleep continuity during this period.",
             "attribute": "variable",
             "time_1": "2021-05-09",
             "time_2": "2021-06-06"
@@ -4937,16 +4341,612 @@
             "passive sensing"
           ],
           "dataSourceType": "trend",
-          "isShowL2": false
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "The total amount of sleep per night remained consistent from 2021-05-09 to 2021-06-06 (28 days), with little variation in nightly sleep duration.",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Total Sleep (hours)": null
+            },
+            {
+              "date": "2021-03-30",
+              "Total Sleep (hours)": 6.78
+            },
+            {
+              "date": "2021-03-31",
+              "Total Sleep (hours)": 7.47
+            },
+            {
+              "date": "2021-04-01",
+              "Total Sleep (hours)": 4.85
+            },
+            {
+              "date": "2021-04-02",
+              "Total Sleep (hours)": 7.52
+            },
+            {
+              "date": "2021-04-03",
+              "Total Sleep (hours)": 7.95
+            },
+            {
+              "date": "2021-04-04",
+              "Total Sleep (hours)": 6.32
+            },
+            {
+              "date": "2021-04-05",
+              "Total Sleep (hours)": 6.17
+            },
+            {
+              "date": "2021-04-06",
+              "Total Sleep (hours)": 6.3
+            },
+            {
+              "date": "2021-04-07",
+              "Total Sleep (hours)": 6.42
+            },
+            {
+              "date": "2021-04-08",
+              "Total Sleep (hours)": 6.37
+            },
+            {
+              "date": "2021-04-09",
+              "Total Sleep (hours)": 5.4
+            },
+            {
+              "date": "2021-04-10",
+              "Total Sleep (hours)": 8.27
+            },
+            {
+              "date": "2021-04-11",
+              "Total Sleep (hours)": 7.48
+            },
+            {
+              "date": "2021-04-12",
+              "Total Sleep (hours)": 6.58
+            },
+            {
+              "date": "2021-04-13",
+              "Total Sleep (hours)": 6.17
+            },
+            {
+              "date": "2021-04-14",
+              "Total Sleep (hours)": 6.33
+            },
+            {
+              "date": "2021-04-15",
+              "Total Sleep (hours)": 6.35
+            },
+            {
+              "date": "2021-04-16",
+              "Total Sleep (hours)": 8.55
+            },
+            {
+              "date": "2021-04-17",
+              "Total Sleep (hours)": 7.25
+            },
+            {
+              "date": "2021-04-18",
+              "Total Sleep (hours)": 7.45
+            },
+            {
+              "date": "2021-04-19",
+              "Total Sleep (hours)": 7.07
+            },
+            {
+              "date": "2021-04-20",
+              "Total Sleep (hours)": 7.28
+            },
+            {
+              "date": "2021-04-21",
+              "Total Sleep (hours)": 7.47
+            },
+            {
+              "date": "2021-04-22",
+              "Total Sleep (hours)": 7.3
+            },
+            {
+              "date": "2021-04-23",
+              "Total Sleep (hours)": 7.35
+            },
+            {
+              "date": "2021-04-24",
+              "Total Sleep (hours)": 6.85
+            },
+            {
+              "date": "2021-04-25",
+              "Total Sleep (hours)": 7.17
+            },
+            {
+              "date": "2021-04-26",
+              "Total Sleep (hours)": 6.57
+            },
+            {
+              "date": "2021-04-27",
+              "Total Sleep (hours)": 7.47
+            },
+            {
+              "date": "2021-04-28",
+              "Total Sleep (hours)": 7.18
+            },
+            {
+              "date": "2021-04-29",
+              "Total Sleep (hours)": 6.5
+            },
+            {
+              "date": "2021-04-30",
+              "Total Sleep (hours)": 8.53
+            },
+            {
+              "date": "2021-05-01",
+              "Total Sleep (hours)": 7.63
+            },
+            {
+              "date": "2021-05-02",
+              "Total Sleep (hours)": 7.72
+            },
+            {
+              "date": "2021-05-03",
+              "Total Sleep (hours)": 6.37
+            },
+            {
+              "date": "2021-05-04",
+              "Total Sleep (hours)": 6.87
+            },
+            {
+              "date": "2021-05-05",
+              "Total Sleep (hours)": 6.37
+            },
+            {
+              "date": "2021-05-06",
+              "Total Sleep (hours)": 5.73
+            },
+            {
+              "date": "2021-05-07",
+              "Total Sleep (hours)": 7.55
+            },
+            {
+              "date": "2021-05-08",
+              "Total Sleep (hours)": 7.13
+            },
+            {
+              "date": "2021-05-09",
+              "Total Sleep (hours)": 4.72
+            },
+            {
+              "date": "2021-05-10",
+              "Total Sleep (hours)": 7.58
+            },
+            {
+              "date": "2021-05-11",
+              "Total Sleep (hours)": 6.38
+            },
+            {
+              "date": "2021-05-12",
+              "Total Sleep (hours)": 6.67
+            },
+            {
+              "date": "2021-05-13",
+              "Total Sleep (hours)": 7.07
+            },
+            {
+              "date": "2021-05-14",
+              "Total Sleep (hours)": 7.23
+            },
+            {
+              "date": "2021-05-15",
+              "Total Sleep (hours)": 7.0
+            },
+            {
+              "date": "2021-05-16",
+              "Total Sleep (hours)": 7.55
+            },
+            {
+              "date": "2021-05-17",
+              "Total Sleep (hours)": 6.97
+            },
+            {
+              "date": "2021-05-18",
+              "Total Sleep (hours)": 6.62
+            },
+            {
+              "date": "2021-05-19",
+              "Total Sleep (hours)": 7.35
+            },
+            {
+              "date": "2021-05-20",
+              "Total Sleep (hours)": 5.77
+            },
+            {
+              "date": "2021-05-21",
+              "Total Sleep (hours)": 8.07
+            },
+            {
+              "date": "2021-05-22",
+              "Total Sleep (hours)": 6.68
+            },
+            {
+              "date": "2021-05-23",
+              "Total Sleep (hours)": 6.75
+            },
+            {
+              "date": "2021-05-24",
+              "Total Sleep (hours)": 6.95
+            },
+            {
+              "date": "2021-05-25",
+              "Total Sleep (hours)": 5.85
+            },
+            {
+              "date": "2021-05-26",
+              "Total Sleep (hours)": 8.38
+            },
+            {
+              "date": "2021-05-27",
+              "Total Sleep (hours)": 7.1
+            },
+            {
+              "date": "2021-05-28",
+              "Total Sleep (hours)": 7.3
+            },
+            {
+              "date": "2021-05-29",
+              "Total Sleep (hours)": 8.1
+            },
+            {
+              "date": "2021-05-30",
+              "Total Sleep (hours)": 7.2
+            },
+            {
+              "date": "2021-05-31",
+              "Total Sleep (hours)": 8.13
+            },
+            {
+              "date": "2021-06-01",
+              "Total Sleep (hours)": 7.08
+            },
+            {
+              "date": "2021-06-02",
+              "Total Sleep (hours)": 7.02
+            },
+            {
+              "date": "2021-06-03",
+              "Total Sleep (hours)": 7.9
+            },
+            {
+              "date": "2021-06-04",
+              "Total Sleep (hours)": 6.27
+            },
+            {
+              "date": "2021-06-05",
+              "Total Sleep (hours)": 6.9
+            },
+            {
+              "date": "2021-06-06",
+              "Total Sleep (hours)": 8.42
+            }
+          ],
+          "spec": {
+            "name": "Total Sleep (hours)",
+            "fact_type": "trend",
+            "fact_description": "The total amount of sleep per night remained consistent from 2021-05-09 to 2021-06-06 (28 days), with little variation in nightly sleep duration.",
+            "attribute": "stable",
+            "time_1": "2021-05-09",
+            "time_2": "2021-06-06"
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "trend",
+          "isShowL2": true
+        },
+        {
+          "summarySentence": "The time the individual woke up each day remained consistent from 2021-05-09 to 2021-06-06, indicating a stable morning routine during this period.",
+          "dataPoints": [
+            {
+              "date": "2021-03-29",
+              "Wake Time (Hours in relation to midnight)": null
+            },
+            {
+              "date": "2021-03-30",
+              "Wake Time (Hours in relation to midnight)": 8.16
+            },
+            {
+              "date": "2021-03-31",
+              "Wake Time (Hours in relation to midnight)": 8.15
+            },
+            {
+              "date": "2021-04-01",
+              "Wake Time (Hours in relation to midnight)": 7.38
+            },
+            {
+              "date": "2021-04-02",
+              "Wake Time (Hours in relation to midnight)": 8.88
+            },
+            {
+              "date": "2021-04-03",
+              "Wake Time (Hours in relation to midnight)": 9.32
+            },
+            {
+              "date": "2021-04-04",
+              "Wake Time (Hours in relation to midnight)": 9.15
+            },
+            {
+              "date": "2021-04-05",
+              "Wake Time (Hours in relation to midnight)": 8.25
+            },
+            {
+              "date": "2021-04-06",
+              "Wake Time (Hours in relation to midnight)": 8.1
+            },
+            {
+              "date": "2021-04-07",
+              "Wake Time (Hours in relation to midnight)": 8.2
+            },
+            {
+              "date": "2021-04-08",
+              "Wake Time (Hours in relation to midnight)": 8.22
+            },
+            {
+              "date": "2021-04-09",
+              "Wake Time (Hours in relation to midnight)": 7.68
+            },
+            {
+              "date": "2021-04-10",
+              "Wake Time (Hours in relation to midnight)": 9.33
+            },
+            {
+              "date": "2021-04-11",
+              "Wake Time (Hours in relation to midnight)": 9.11
+            },
+            {
+              "date": "2021-04-12",
+              "Wake Time (Hours in relation to midnight)": 8.3
+            },
+            {
+              "date": "2021-04-13",
+              "Wake Time (Hours in relation to midnight)": 8.18
+            },
+            {
+              "date": "2021-04-14",
+              "Wake Time (Hours in relation to midnight)": 8.27
+            },
+            {
+              "date": "2021-04-15",
+              "Wake Time (Hours in relation to midnight)": 8.34
+            },
+            {
+              "date": "2021-04-16",
+              "Wake Time (Hours in relation to midnight)": 9.35
+            },
+            {
+              "date": "2021-04-17",
+              "Wake Time (Hours in relation to midnight)": 8.5
+            },
+            {
+              "date": "2021-04-18",
+              "Wake Time (Hours in relation to midnight)": 8.64
+            },
+            {
+              "date": "2021-04-19",
+              "Wake Time (Hours in relation to midnight)": 8.16
+            },
+            {
+              "date": "2021-04-20",
+              "Wake Time (Hours in relation to midnight)": 8.24
+            },
+            {
+              "date": "2021-04-21",
+              "Wake Time (Hours in relation to midnight)": 8.21
+            },
+            {
+              "date": "2021-04-22",
+              "Wake Time (Hours in relation to midnight)": 8.36
+            },
+            {
+              "date": "2021-04-23",
+              "Wake Time (Hours in relation to midnight)": 9.32
+            },
+            {
+              "date": "2021-04-24",
+              "Wake Time (Hours in relation to midnight)": 9.54
+            },
+            {
+              "date": "2021-04-25",
+              "Wake Time (Hours in relation to midnight)": 9.46
+            },
+            {
+              "date": "2021-04-26",
+              "Wake Time (Hours in relation to midnight)": 8.27
+            },
+            {
+              "date": "2021-04-27",
+              "Wake Time (Hours in relation to midnight)": 8.54
+            },
+            {
+              "date": "2021-04-28",
+              "Wake Time (Hours in relation to midnight)": 8.28
+            },
+            {
+              "date": "2021-04-29",
+              "Wake Time (Hours in relation to midnight)": 8.22
+            },
+            {
+              "date": "2021-04-30",
+              "Wake Time (Hours in relation to midnight)": 9.54
+            },
+            {
+              "date": "2021-05-01",
+              "Wake Time (Hours in relation to midnight)": 9.55
+            },
+            {
+              "date": "2021-05-02",
+              "Wake Time (Hours in relation to midnight)": 9.08
+            },
+            {
+              "date": "2021-05-03",
+              "Wake Time (Hours in relation to midnight)": 8.22
+            },
+            {
+              "date": "2021-05-04",
+              "Wake Time (Hours in relation to midnight)": 8.22
+            },
+            {
+              "date": "2021-05-05",
+              "Wake Time (Hours in relation to midnight)": 8.26
+            },
+            {
+              "date": "2021-05-06",
+              "Wake Time (Hours in relation to midnight)": 8.25
+            },
+            {
+              "date": "2021-05-07",
+              "Wake Time (Hours in relation to midnight)": 9.31
+            },
+            {
+              "date": "2021-05-08",
+              "Wake Time (Hours in relation to midnight)": 9.43
+            },
+            {
+              "date": "2021-05-09",
+              "Wake Time (Hours in relation to midnight)": 8.48
+            },
+            {
+              "date": "2021-05-10",
+              "Wake Time (Hours in relation to midnight)": 8.32
+            },
+            {
+              "date": "2021-05-11",
+              "Wake Time (Hours in relation to midnight)": 8.32
+            },
+            {
+              "date": "2021-05-12",
+              "Wake Time (Hours in relation to midnight)": 8.17
+            },
+            {
+              "date": "2021-05-13",
+              "Wake Time (Hours in relation to midnight)": 8.05
+            },
+            {
+              "date": "2021-05-14",
+              "Wake Time (Hours in relation to midnight)": 9.18
+            },
+            {
+              "date": "2021-05-15",
+              "Wake Time (Hours in relation to midnight)": 8.53
+            },
+            {
+              "date": "2021-05-16",
+              "Wake Time (Hours in relation to midnight)": 8.98
+            },
+            {
+              "date": "2021-05-17",
+              "Wake Time (Hours in relation to midnight)": 8.28
+            },
+            {
+              "date": "2021-05-18",
+              "Wake Time (Hours in relation to midnight)": 8.37
+            },
+            {
+              "date": "2021-05-19",
+              "Wake Time (Hours in relation to midnight)": 8.33
+            },
+            {
+              "date": "2021-05-20",
+              "Wake Time (Hours in relation to midnight)": 8.32
+            },
+            {
+              "date": "2021-05-21",
+              "Wake Time (Hours in relation to midnight)": 9.33
+            },
+            {
+              "date": "2021-05-22",
+              "Wake Time (Hours in relation to midnight)": 8.7
+            },
+            {
+              "date": "2021-05-23",
+              "Wake Time (Hours in relation to midnight)": 8.88
+            },
+            {
+              "date": "2021-05-24",
+              "Wake Time (Hours in relation to midnight)": 8.24
+            },
+            {
+              "date": "2021-05-25",
+              "Wake Time (Hours in relation to midnight)": 8.44
+            },
+            {
+              "date": "2021-05-26",
+              "Wake Time (Hours in relation to midnight)": 9.33
+            },
+            {
+              "date": "2021-05-27",
+              "Wake Time (Hours in relation to midnight)": 9.27
+            },
+            {
+              "date": "2021-05-28",
+              "Wake Time (Hours in relation to midnight)": 8.48
+            },
+            {
+              "date": "2021-05-29",
+              "Wake Time (Hours in relation to midnight)": 8.73
+            },
+            {
+              "date": "2021-05-30",
+              "Wake Time (Hours in relation to midnight)": 8.5
+            },
+            {
+              "date": "2021-05-31",
+              "Wake Time (Hours in relation to midnight)": 9.67
+            },
+            {
+              "date": "2021-06-01",
+              "Wake Time (Hours in relation to midnight)": 8.77
+            },
+            {
+              "date": "2021-06-02",
+              "Wake Time (Hours in relation to midnight)": 8.18
+            },
+            {
+              "date": "2021-06-03",
+              "Wake Time (Hours in relation to midnight)": 8.25
+            },
+            {
+              "date": "2021-06-04",
+              "Wake Time (Hours in relation to midnight)": 8.48
+            },
+            {
+              "date": "2021-06-05",
+              "Wake Time (Hours in relation to midnight)": 8.62
+            },
+            {
+              "date": "2021-06-06",
+              "Wake Time (Hours in relation to midnight)": 8.92
+            }
+          ],
+          "spec": {
+            "name": "Wake Time (Hours in relation to midnight)",
+            "fact_type": "trend",
+            "fact_description": "The time the individual woke up each day remained consistent from 2021-05-09 to 2021-06-06, indicating a stable morning routine during this period.",
+            "attribute": "stable",
+            "time_1": "2021-05-09",
+            "time_2": "2021-06-06"
+          },
+          "sources": [
+            "passive sensing"
+          ],
+          "dataSourceType": "trend",
+          "isShowL2": true
         }
       ]
     },
     {
       "key": "insight-4",
-      "summaryTitle": "Increasing positive affect and physical activity, with decreasing screen time, suggest no functional decline.",
+      "summaryTitle": "Rising positive affect and physical activity with reduced screen time indicate <b>no evidence of suicidal ideation or functional decline</b>.",
       "sources": [
-        "clinical note",
         "survey",
+        "clinical note",
         "passive sensing"
       ],
       "insightType": [
@@ -4981,7 +4981,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The individual's scores on the Positive Affect Subscale (range 5-25) steadily increased from 2021-05-09 to 2021-06-06 (28 days), indicating a gradual improvement in reported positive emotions over this period.",
+          "summarySentence": "The individual's Positive Affect Subscale score (range 5-25) demonstrated a steady increase from 2021-05-09 to 2021-06-06 (28 days), indicating a gradual improvement in reported positive emotions over this period.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -5067,7 +5067,7 @@
           "spec": {
             "name": "Positive Affect Subscale (5-25, PANAS-SF)",
             "fact_type": "trend",
-            "fact_description": "The individual's scores on the Positive Affect Subscale (range 5-25) steadily increased from 2021-05-09 to 2021-06-06 (28 days), indicating a gradual improvement in reported positive emotions over this period.",
+            "fact_description": "The individual's Positive Affect Subscale score (range 5-25) demonstrated a steady increase from 2021-05-09 to 2021-06-06 (28 days), indicating a gradual improvement in reported positive emotions over this period.",
             "attribute": "rise",
             "time_1": "2021-05-09",
             "time_2": "2021-06-06"
@@ -5675,6 +5675,64 @@
           "isShowL2": true
         },
         {
+          "summarySentence": "The PHQ-4 total scores fluctuated noticeably from 2021-05-09 to 2021-06-06 (28 days), indicating inconsistent levels of anxiety and depression symptoms during this period.",
+          "dataPoints": [
+            {
+              "date": "2021-04-04",
+              "PHQ-4 (0-12)": 8.0
+            },
+            {
+              "date": "2021-04-11",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-04-18",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-04-25",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-05-02",
+              "PHQ-4 (0-12)": 6.0
+            },
+            {
+              "date": "2021-05-09",
+              "PHQ-4 (0-12)": 7.0
+            },
+            {
+              "date": "2021-05-16",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-05-24",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-05-30",
+              "PHQ-4 (0-12)": 0.0
+            },
+            {
+              "date": "2021-06-06",
+              "PHQ-4 (0-12)": 4.0
+            }
+          ],
+          "spec": {
+            "name": "PHQ-4 (0-12)",
+            "fact_type": "trend",
+            "fact_description": "The PHQ-4 total scores fluctuated noticeably from 2021-05-09 to 2021-06-06 (28 days), indicating inconsistent levels of anxiety and depression symptoms during this period.",
+            "attribute": "variable",
+            "time_1": "2021-05-09",
+            "time_2": "2021-06-06"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "trend",
+          "isShowL2": true
+        },
+        {
           "summarySentence": "The total distance traveled each day in miles steadily increased from 2021-05-09 to 2021-06-06 (28 days), indicating a rise in daily mobility over this period.",
           "dataPoints": [
             {
@@ -5973,64 +6031,6 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The PHQ-4 total scores fluctuated noticeably from 2021-05-09 to 2021-06-06 (28 days), indicating inconsistent levels of anxiety and depression symptoms during this period.",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 (0-12)": 8.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 (0-12)": 6.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 (0-12)": 7.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 (0-12)": 0.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 (0-12)": 4.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 (0-12)",
-            "fact_type": "trend",
-            "fact_description": "The PHQ-4 total scores fluctuated noticeably from 2021-05-09 to 2021-06-06 (28 days), indicating inconsistent levels of anxiety and depression symptoms during this period.",
-            "attribute": "variable",
-            "time_1": "2021-05-09",
-            "time_2": "2021-06-06"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "trend",
-          "isShowL2": false
-        },
-        {
           "summarySentence": "The PHQ-4 Depression Subscale scores fluctuated considerably from 2021-05-09 to 2021-06-06 (28 days), indicating notable changes in reported depressive symptoms during this period.",
           "dataPoints": [
             {
@@ -6150,10 +6150,10 @@
     },
     {
       "key": "insight-5",
-      "summaryTitle": "Increasing positive affect suggests improved ability to identify and hold onto positive moments.",
+      "summaryTitle": "Increasing positive affect indicates improved ability to experience and retain <b>positive emotional moments</b>.",
       "sources": [
-        "clinical note",
-        "survey"
+        "survey",
+        "clinical note"
       ],
       "insightType": [
         "psychological"
@@ -6186,7 +6186,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The individual's Positive Affect Subscale score, which reflects levels of positive emotions and mood, showed a steady increase from 2021-05-09 to 2021-06-06 (28 days).",
+          "summarySentence": "The individual's scores on the Positive Affect Subscale (5-25, PANAS-SF) steadily increased from 2021-05-09 to 2021-06-06 (28 days), indicating a gradual improvement in reported positive emotions over this period.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -6272,7 +6272,7 @@
           "spec": {
             "name": "Positive Affect Subscale (5-25, PANAS-SF)",
             "fact_type": "trend",
-            "fact_description": "The individual's Positive Affect Subscale score, which reflects levels of positive emotions and mood, showed a steady increase from 2021-05-09 to 2021-06-06 (28 days).",
+            "fact_description": "The individual's scores on the Positive Affect Subscale (5-25, PANAS-SF) steadily increased from 2021-05-09 to 2021-06-06 (28 days), indicating a gradual improvement in reported positive emotions over this period.",
             "attribute": "rise",
             "time_1": "2021-05-09",
             "time_2": "2021-06-06"
@@ -6287,7 +6287,7 @@
     },
     {
       "key": "insight-6",
-      "summaryTitle": "Increasing distance traveled and fluctuating routine suggest variable social engagement and possible changes in isolation.",
+      "summaryTitle": "Increasing distance traveled and fluctuating routine suggest <b>variable social engagement</b>.",
       "sources": [
         "clinical note",
         "passive sensing"
@@ -6632,7 +6632,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "On 2021-05-28, the individual's daily routine became notably less regular, with their routine consistency score dropping to 46.44, indicating a moderate level of irregularity in their daily activities.",
+          "summarySentence": "On 2021-05-28, there was a notable drop in routine consistency, with the score decreasing to 46.44, indicating a period of moderately irregular daily patterns.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -6918,7 +6918,7 @@
           "spec": {
             "name": "Routine Consistency (0 irregular, 100 regular)",
             "fact_type": "outlier",
-            "fact_description": "On 2021-05-28, the individual's daily routine became notably less regular, with their routine consistency score dropping to 46.44, indicating a moderate level of irregularity in their daily activities.",
+            "fact_description": "On 2021-05-28, there was a notable drop in routine consistency, with the score decreasing to 46.44, indicating a period of moderately irregular daily patterns.",
             "attribute": "dip",
             "value": 46.44,
             "time": "2021-05-28"
@@ -6930,7 +6930,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The total distance traveled each day in miles steadily increased from 2021-05-09 to 2021-06-06 (28 days), indicating a rise in daily mobility over this period.",
+          "summarySentence": "The total distance traveled each day in miles showed a steady increase from 2021-05-09 to 2021-06-06 (28 days), indicating greater daily mobility over this period.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -7216,7 +7216,7 @@
           "spec": {
             "name": "Distance Traveled (Miles)",
             "fact_type": "trend",
-            "fact_description": "The total distance traveled each day in miles steadily increased from 2021-05-09 to 2021-06-06 (28 days), indicating a rise in daily mobility over this period.",
+            "fact_description": "The total distance traveled each day in miles showed a steady increase from 2021-05-09 to 2021-06-06 (28 days), indicating greater daily mobility over this period.",
             "attribute": "rise",
             "time_1": "2021-05-09",
             "time_2": "2021-06-06"
@@ -7228,7 +7228,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "On 2021-05-22, there was a notable decrease in routine consistency, with the score dropping to 64.93, indicating a moderate level of irregularity in daily activities.",
+          "summarySentence": "On 2021-05-22, there was a noticeable drop in routine consistency, with the score decreasing to 64.93, indicating a moderate level of irregularity in daily activities compared to previous patterns.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -7514,7 +7514,7 @@
           "spec": {
             "name": "Routine Consistency (0 irregular, 100 regular)",
             "fact_type": "outlier",
-            "fact_description": "On 2021-05-22, there was a notable decrease in routine consistency, with the score dropping to 64.93, indicating a moderate level of irregularity in daily activities.",
+            "fact_description": "On 2021-05-22, there was a noticeable drop in routine consistency, with the score decreasing to 64.93, indicating a moderate level of irregularity in daily activities compared to previous patterns.",
             "attribute": "dip",
             "value": 64.93,
             "time": "2021-05-22"
@@ -7529,7 +7529,7 @@
     },
     {
       "key": "insight-7",
-      "summaryTitle": "Decreasing PHQ-4 scores indicate improved mood and reduced depressive and anxiety symptoms.",
+      "summaryTitle": "Rapidly decreasing PHQ-4 scores indicate <b>marked improvement in mood and anxiety symptoms</b>.",
       "sources": [
         "survey"
       ],
@@ -7598,7 +7598,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The PHQ-4 score peaked at 7.0 on 2021-05-09, indicating a moderate level of anxiety and depression symptoms.",
+          "summarySentence": "On 2021-05-09, the PHQ-4 score peaked at 7, indicating a moderate level of combined anxiety and depression symptoms.",
           "dataPoints": [
             {
               "date": "2021-04-04",
@@ -7644,7 +7644,7 @@
           "spec": {
             "name": "PHQ-4 (0-12)",
             "fact_type": "extreme",
-            "fact_description": "The PHQ-4 score peaked at 7.0 on 2021-05-09, indicating a moderate level of anxiety and depression symptoms.",
+            "fact_description": "On 2021-05-09, the PHQ-4 score peaked at 7, indicating a moderate level of combined anxiety and depression symptoms.",
             "attribute": "max",
             "time": "2021-05-09",
             "value": 7.0
@@ -7656,7 +7656,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The PHQ-4 total score was at its lowest, with a value of 0 (indicating no reported symptoms of anxiety or depression), on 2021-05-30.",
+          "summarySentence": "On 2021-05-30, the PHQ-4 score was at its lowest recorded value of 0, indicating no reported symptoms of anxiety or depression.",
           "dataPoints": [
             {
               "date": "2021-04-04",
@@ -7702,7 +7702,7 @@
           "spec": {
             "name": "PHQ-4 (0-12)",
             "fact_type": "extreme",
-            "fact_description": "The PHQ-4 total score was at its lowest, with a value of 0 (indicating no reported symptoms of anxiety or depression), on 2021-05-30.",
+            "fact_description": "On 2021-05-30, the PHQ-4 score was at its lowest recorded value of 0, indicating no reported symptoms of anxiety or depression.",
             "attribute": "min",
             "time": "2021-05-30",
             "value": 0.0
@@ -7717,7 +7717,7 @@
     },
     {
       "key": "insight-8",
-      "summaryTitle": "Rising PHQ-4 Depression Subscale scores indicate mild worsening of depressive symptoms.",
+      "summaryTitle": "Rising PHQ-4 Depression Subscale scores indicate <b>worsening depressive symptoms</b>.",
       "sources": [
         "survey"
       ],
@@ -7726,7 +7726,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "The PHQ-4 Depression Subscale score increased from 0.0 to 2.0 (no unit) between 2021-05-30 and 2021-06-06, indicating a shift from no depressive symptoms to a mild level, though still within the normal range.",
+          "summarySentence": "The PHQ-4 Depression Subscale score increased from 0.0 to 2.0 (out of 6) between 2021-05-30 and 2021-06-06, indicating a shift from no depressive symptoms to a low level of depressive symptoms.",
           "dataPoints": [
             {
               "date": "2021-04-04",
@@ -7772,7 +7772,7 @@
           "spec": {
             "name": "PHQ-4 Depression Subscale (0-6)",
             "fact_type": "difference",
-            "fact_description": "The PHQ-4 Depression Subscale score increased from 0.0 to 2.0 (no unit) between 2021-05-30 and 2021-06-06, indicating a shift from no depressive symptoms to a mild level, though still within the normal range.",
+            "fact_description": "The PHQ-4 Depression Subscale score increased from 0.0 to 2.0 (out of 6) between 2021-05-30 and 2021-06-06, indicating a shift from no depressive symptoms to a low level of depressive symptoms.",
             "attribute": "more",
             "time_1": "2021-05-30",
             "time_2": "2021-06-06",
@@ -7786,7 +7786,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "On 2021-05-30, the PHQ-4 Depression Subscale score was at its lowest recorded value of 0, indicating no reported symptoms of depression.",
+          "summarySentence": "On 2021-05-30, the PHQ-4 Depression Subscale score was at its lowest recorded value of 0, indicating no reported symptoms of depression on that day.",
           "dataPoints": [
             {
               "date": "2021-04-04",
@@ -7832,7 +7832,7 @@
           "spec": {
             "name": "PHQ-4 Depression Subscale (0-6)",
             "fact_type": "extreme",
-            "fact_description": "On 2021-05-30, the PHQ-4 Depression Subscale score was at its lowest recorded value of 0, indicating no reported symptoms of depression.",
+            "fact_description": "On 2021-05-30, the PHQ-4 Depression Subscale score was at its lowest recorded value of 0, indicating no reported symptoms of depression on that day.",
             "attribute": "min",
             "time": "2021-05-30",
             "value": 0.0
@@ -7841,13 +7841,13 @@
             "survey"
           ],
           "dataSourceType": "extreme",
-          "isShowL2": false
+          "isShowL2": true
         }
       ]
     },
     {
       "key": "insight-9",
-      "summaryTitle": "Elevated perceived stress peaked then moderately declined, indicating fluctuating stress levels around mid-May.",
+      "summaryTitle": "Elevated PSS-4 Score peaking then decreasing indicates <b>fluctuating perceived stress</b>.",
       "sources": [
         "survey"
       ],
@@ -7914,67 +7914,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The individual's perceived stress level, as measured by the PSS-4, was elevated at 9.0 on 2021-05-19 and showed a decrease to 7.0 on 2021-05-26, though both scores indicate high perceived stress.",
-          "dataPoints": [
-            {
-              "date": "2021-03-31",
-              "PSS-4 Score (0-16)": 11.0
-            },
-            {
-              "date": "2021-04-07",
-              "PSS-4 Score (0-16)": 11.0
-            },
-            {
-              "date": "2021-04-14",
-              "PSS-4 Score (0-16)": 12.0
-            },
-            {
-              "date": "2021-04-21",
-              "PSS-4 Score (0-16)": 10.0
-            },
-            {
-              "date": "2021-04-28",
-              "PSS-4 Score (0-16)": 9.0
-            },
-            {
-              "date": "2021-05-05",
-              "PSS-4 Score (0-16)": 9.0
-            },
-            {
-              "date": "2021-05-12",
-              "PSS-4 Score (0-16)": 10.0
-            },
-            {
-              "date": "2021-05-19",
-              "PSS-4 Score (0-16)": 9.0
-            },
-            {
-              "date": "2021-05-26",
-              "PSS-4 Score (0-16)": 7.0
-            },
-            {
-              "date": "2021-06-02",
-              "PSS-4 Score (0-16)": 7.0
-            }
-          ],
-          "spec": {
-            "name": "PSS-4 Score (0-16)",
-            "fact_type": "difference",
-            "fact_description": "The individual's perceived stress level, as measured by the PSS-4, was elevated at 9.0 on 2021-05-19 and showed a decrease to 7.0 on 2021-05-26, though both scores indicate high perceived stress.",
-            "attribute": "less",
-            "time_1": "2021-05-19",
-            "time_2": "2021-05-26",
-            "value_1": 9.0,
-            "value_2": 7.0
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "difference",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "On 2021-06-02, the individual's perceived stress level, as measured by the PSS-4, was at its lowest recorded value of 7.0, which is above the threshold for high stress.",
+          "summarySentence": "On 2021-06-02, the individual's perceived stress, as measured by the PSS-4, was at its lowest recorded level of 7.0, which indicates a high level of perceived stress.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -8020,7 +7960,7 @@
           "spec": {
             "name": "PSS-4 Score (0-16)",
             "fact_type": "extreme",
-            "fact_description": "On 2021-06-02, the individual's perceived stress level, as measured by the PSS-4, was at its lowest recorded value of 7.0, which is above the threshold for high stress.",
+            "fact_description": "On 2021-06-02, the individual's perceived stress, as measured by the PSS-4, was at its lowest recorded level of 7.0, which indicates a high level of perceived stress.",
             "attribute": "min",
             "time": "2021-06-02",
             "value": 7.0
@@ -8029,10 +7969,10 @@
             "survey"
           ],
           "dataSourceType": "extreme",
-          "isShowL2": false
+          "isShowL2": true
         },
         {
-          "summarySentence": "The individual's perceived stress level, as measured by the PSS-4, was 7.0 on 2021-05-26 and remained at 7.0 on 2021-06-02, indicating a consistently elevated level of stress (scores above 6 suggest high stress) during this period.",
+          "summarySentence": "The individual's perceived stress level, as measured by the PSS-4, was elevated at 9.0 on 2021-05-19 and decreased to 7.0 on 2021-05-26, though both scores indicate high perceived stress.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -8078,7 +8018,67 @@
           "spec": {
             "name": "PSS-4 Score (0-16)",
             "fact_type": "difference",
-            "fact_description": "The individual's perceived stress level, as measured by the PSS-4, was 7.0 on 2021-05-26 and remained at 7.0 on 2021-06-02, indicating a consistently elevated level of stress (scores above 6 suggest high stress) during this period.",
+            "fact_description": "The individual's perceived stress level, as measured by the PSS-4, was elevated at 9.0 on 2021-05-19 and decreased to 7.0 on 2021-05-26, though both scores indicate high perceived stress.",
+            "attribute": "less",
+            "time_1": "2021-05-19",
+            "time_2": "2021-05-26",
+            "value_1": 9.0,
+            "value_2": 7.0
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "difference",
+          "isShowL2": false
+        },
+        {
+          "summarySentence": "The individual's perceived stress level, as measured by the PSS-4, was 7.0 on both 2021-05-26 and 2021-06-02, indicating a consistently elevated level of stress across this period.",
+          "dataPoints": [
+            {
+              "date": "2021-03-31",
+              "PSS-4 Score (0-16)": 11.0
+            },
+            {
+              "date": "2021-04-07",
+              "PSS-4 Score (0-16)": 11.0
+            },
+            {
+              "date": "2021-04-14",
+              "PSS-4 Score (0-16)": 12.0
+            },
+            {
+              "date": "2021-04-21",
+              "PSS-4 Score (0-16)": 10.0
+            },
+            {
+              "date": "2021-04-28",
+              "PSS-4 Score (0-16)": 9.0
+            },
+            {
+              "date": "2021-05-05",
+              "PSS-4 Score (0-16)": 9.0
+            },
+            {
+              "date": "2021-05-12",
+              "PSS-4 Score (0-16)": 10.0
+            },
+            {
+              "date": "2021-05-19",
+              "PSS-4 Score (0-16)": 9.0
+            },
+            {
+              "date": "2021-05-26",
+              "PSS-4 Score (0-16)": 7.0
+            },
+            {
+              "date": "2021-06-02",
+              "PSS-4 Score (0-16)": 7.0
+            }
+          ],
+          "spec": {
+            "name": "PSS-4 Score (0-16)",
+            "fact_type": "difference",
+            "fact_description": "The individual's perceived stress level, as measured by the PSS-4, was 7.0 on both 2021-05-26 and 2021-06-02, indicating a consistently elevated level of stress across this period.",
             "attribute": "even",
             "time_1": "2021-05-26",
             "time_2": "2021-06-02",
@@ -8095,7 +8095,7 @@
     },
     {
       "key": "insight-10",
-      "summaryTitle": "Low total sleep followed by increased total sleep suggests improving sleep patterns.",
+      "summaryTitle": "Rising total sleep duration indicates <b>improving sleep patterns</b>.",
       "sources": [
         "passive sensing"
       ],
@@ -8703,7 +8703,7 @@
     },
     {
       "key": "insight-11",
-      "summaryTitle": "Routine consistency became irregular, indicating disrupted daily structure between 2021-05-27 and 2021-05-28.",
+      "summaryTitle": "Routine Consistency sharply decreased, indicating <b>disrupted daily structure</b> around 2021-05-28.",
       "sources": [
         "passive sensing"
       ],
@@ -9012,7 +9012,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "On 2021-05-28, the individual's daily routine was at its most irregular, with a routine consistency score of 46.44, indicating a moderate level of variability in daily activities.",
+          "summarySentence": "On 2021-05-28, the individual's daily routine was at its most irregular, with a routine consistency score of 46.44, indicating a notable lack of structure in daily activities.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -9298,7 +9298,7 @@
           "spec": {
             "name": "Routine Consistency (0 irregular, 100 regular)",
             "fact_type": "extreme",
-            "fact_description": "On 2021-05-28, the individual's daily routine was at its most irregular, with a routine consistency score of 46.44, indicating a moderate level of variability in daily activities.",
+            "fact_description": "On 2021-05-28, the individual's daily routine was at its most irregular, with a routine consistency score of 46.44, indicating a notable lack of structure in daily activities.",
             "attribute": "min",
             "time": "2021-05-28",
             "value": 46.44

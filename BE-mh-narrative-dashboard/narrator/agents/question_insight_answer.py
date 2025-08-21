@@ -41,6 +41,8 @@ Rules:
 * Do not say is A not B. Just say A.
 * Use one adjective per attribute.
 * The answer should be clinically readable for other mental health professionals.
+* Wrap the <clinical conclusion> in <b></b> tags.
+* Be diverse in <descriptor/adjective> choice.
 """
 
 
@@ -51,7 +53,7 @@ class RewriterQIAAgent:
         self.agent = Agent(
             name=f"Clinical Insight QA Agent",
             instructions=NARRATOR_QIA_SYSTEM,
-            model_settings=ModelSettings(temperature=0.0),
+            model_settings=ModelSettings(temperature=0.0, top_p=0.8),
             model=model,
             output_type=self.OUTPUT_MODEL,
         )

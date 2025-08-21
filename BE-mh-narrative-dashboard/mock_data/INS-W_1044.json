@@ -51,7 +51,7 @@
   "insights": [
     {
       "key": "insight-0",
-      "summaryTitle": "Highly variable routine, activity, and affect indicate unstable mood and inconsistent functioning.",
+      "summaryTitle": "Variable routine, activity, and affect indicate <b>no clear improvement in mood or functioning</b>.",
       "sources": [
         "survey",
         "clinical note",
@@ -90,293 +90,293 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The regularity of the individual's daily routine fluctuated considerably from 2021-05-09 to 2021-06-06, indicating inconsistent patterns in daily activities during this period.",
+          "summarySentence": "The number of steps taken each day fluctuated considerably from 2021-05-09 to 2021-06-06 (28 days), indicating inconsistent levels of daily physical activity during this period.",
           "dataPoints": [
             {
               "date": "2021-03-29",
-              "Routine Consistency (0 irregular, 100 regular)": 70.06
+              "Total Steps (Steps)": null
             },
             {
               "date": "2021-03-30",
-              "Routine Consistency (0 irregular, 100 regular)": 41.95
+              "Total Steps (Steps)": null
             },
             {
               "date": "2021-03-31",
-              "Routine Consistency (0 irregular, 100 regular)": 8.46
+              "Total Steps (Steps)": 4161.0
             },
             {
               "date": "2021-04-01",
-              "Routine Consistency (0 irregular, 100 regular)": 40.74
+              "Total Steps (Steps)": 13673.0
             },
             {
               "date": "2021-04-02",
-              "Routine Consistency (0 irregular, 100 regular)": 45.45
+              "Total Steps (Steps)": 13557.0
             },
             {
               "date": "2021-04-03",
-              "Routine Consistency (0 irregular, 100 regular)": 4.12
+              "Total Steps (Steps)": 19817.0
             },
             {
               "date": "2021-04-04",
-              "Routine Consistency (0 irregular, 100 regular)": 27.44
+              "Total Steps (Steps)": 15032.0
             },
             {
               "date": "2021-04-05",
-              "Routine Consistency (0 irregular, 100 regular)": 13.09
+              "Total Steps (Steps)": 13733.0
             },
             {
               "date": "2021-04-06",
-              "Routine Consistency (0 irregular, 100 regular)": 8.59
+              "Total Steps (Steps)": 12587.0
             },
             {
               "date": "2021-04-07",
-              "Routine Consistency (0 irregular, 100 regular)": 7.2
+              "Total Steps (Steps)": 14130.0
             },
             {
               "date": "2021-04-08",
-              "Routine Consistency (0 irregular, 100 regular)": 12.17
+              "Total Steps (Steps)": 10413.0
             },
             {
               "date": "2021-04-09",
-              "Routine Consistency (0 irregular, 100 regular)": 9.77
+              "Total Steps (Steps)": 13822.0
             },
             {
               "date": "2021-04-10",
-              "Routine Consistency (0 irregular, 100 regular)": 20.7
+              "Total Steps (Steps)": 13608.0
             },
             {
               "date": "2021-04-11",
-              "Routine Consistency (0 irregular, 100 regular)": 63.99
+              "Total Steps (Steps)": 13752.0
             },
             {
               "date": "2021-04-12",
-              "Routine Consistency (0 irregular, 100 regular)": 63.25
+              "Total Steps (Steps)": 15202.0
             },
             {
               "date": "2021-04-13",
-              "Routine Consistency (0 irregular, 100 regular)": 61.93
+              "Total Steps (Steps)": 15078.0
             },
             {
               "date": "2021-04-14",
-              "Routine Consistency (0 irregular, 100 regular)": 56.84
+              "Total Steps (Steps)": 15852.0
             },
             {
               "date": "2021-04-15",
-              "Routine Consistency (0 irregular, 100 regular)": 67.44
+              "Total Steps (Steps)": 13048.0
             },
             {
               "date": "2021-04-16",
-              "Routine Consistency (0 irregular, 100 regular)": 59.08
+              "Total Steps (Steps)": 12032.0
             },
             {
               "date": "2021-04-17",
-              "Routine Consistency (0 irregular, 100 regular)": 44.88
+              "Total Steps (Steps)": null
             },
             {
               "date": "2021-04-18",
-              "Routine Consistency (0 irregular, 100 regular)": 53.16
+              "Total Steps (Steps)": null
             },
             {
               "date": "2021-04-19",
-              "Routine Consistency (0 irregular, 100 regular)": 70.22
+              "Total Steps (Steps)": 10111.0
             },
             {
               "date": "2021-04-20",
-              "Routine Consistency (0 irregular, 100 regular)": 67.03
+              "Total Steps (Steps)": 14702.0
             },
             {
               "date": "2021-04-21",
-              "Routine Consistency (0 irregular, 100 regular)": 56.69
+              "Total Steps (Steps)": 11925.0
             },
             {
               "date": "2021-04-22",
-              "Routine Consistency (0 irregular, 100 regular)": 48.15
+              "Total Steps (Steps)": 11294.0
             },
             {
               "date": "2021-04-23",
-              "Routine Consistency (0 irregular, 100 regular)": 17.16
+              "Total Steps (Steps)": 13093.0
             },
             {
               "date": "2021-04-24",
-              "Routine Consistency (0 irregular, 100 regular)": 29.35
+              "Total Steps (Steps)": 11245.0
             },
             {
               "date": "2021-04-25",
-              "Routine Consistency (0 irregular, 100 regular)": 58.64
+              "Total Steps (Steps)": 29579.0
             },
             {
               "date": "2021-04-26",
-              "Routine Consistency (0 irregular, 100 regular)": 65.64
+              "Total Steps (Steps)": 11669.0
             },
             {
               "date": "2021-04-27",
-              "Routine Consistency (0 irregular, 100 regular)": 66.72
+              "Total Steps (Steps)": 12234.0
             },
             {
               "date": "2021-04-28",
-              "Routine Consistency (0 irregular, 100 regular)": 67.7
+              "Total Steps (Steps)": 10586.0
             },
             {
               "date": "2021-04-29",
-              "Routine Consistency (0 irregular, 100 regular)": 67.44
+              "Total Steps (Steps)": 10162.0
             },
             {
               "date": "2021-04-30",
-              "Routine Consistency (0 irregular, 100 regular)": 59.23
+              "Total Steps (Steps)": 14106.0
             },
             {
               "date": "2021-05-01",
-              "Routine Consistency (0 irregular, 100 regular)": 60.24
+              "Total Steps (Steps)": 10377.0
             },
             {
               "date": "2021-05-02",
-              "Routine Consistency (0 irregular, 100 regular)": 32.38
+              "Total Steps (Steps)": 25279.0
             },
             {
               "date": "2021-05-03",
-              "Routine Consistency (0 irregular, 100 regular)": 12.55
+              "Total Steps (Steps)": 9749.0
             },
             {
               "date": "2021-05-04",
-              "Routine Consistency (0 irregular, 100 regular)": 35.98
+              "Total Steps (Steps)": 13620.0
             },
             {
               "date": "2021-05-05",
-              "Routine Consistency (0 irregular, 100 regular)": 66.1
+              "Total Steps (Steps)": 12016.0
             },
             {
               "date": "2021-05-06",
-              "Routine Consistency (0 irregular, 100 regular)": 53.7
+              "Total Steps (Steps)": 7447.0
             },
             {
               "date": "2021-05-07",
-              "Routine Consistency (0 irregular, 100 regular)": 61.57
+              "Total Steps (Steps)": 6137.0
             },
             {
               "date": "2021-05-08",
-              "Routine Consistency (0 irregular, 100 regular)": 54.24
+              "Total Steps (Steps)": 25121.0
             },
             {
               "date": "2021-05-09",
-              "Routine Consistency (0 irregular, 100 regular)": 67.8
+              "Total Steps (Steps)": 8964.0
             },
             {
               "date": "2021-05-10",
-              "Routine Consistency (0 irregular, 100 regular)": 49.0
+              "Total Steps (Steps)": 14711.0
             },
             {
               "date": "2021-05-11",
-              "Routine Consistency (0 irregular, 100 regular)": 59.31
+              "Total Steps (Steps)": 10746.0
             },
             {
               "date": "2021-05-12",
-              "Routine Consistency (0 irregular, 100 regular)": 27.47
+              "Total Steps (Steps)": 12597.0
             },
             {
               "date": "2021-05-13",
-              "Routine Consistency (0 irregular, 100 regular)": 67.44
+              "Total Steps (Steps)": 9942.0
             },
             {
               "date": "2021-05-14",
-              "Routine Consistency (0 irregular, 100 regular)": 62.19
+              "Total Steps (Steps)": 16680.0
             },
             {
               "date": "2021-05-15",
-              "Routine Consistency (0 irregular, 100 regular)": 70.22
+              "Total Steps (Steps)": 5835.0
             },
             {
               "date": "2021-05-16",
-              "Routine Consistency (0 irregular, 100 regular)": 61.78
+              "Total Steps (Steps)": 23149.0
             },
             {
               "date": "2021-05-17",
-              "Routine Consistency (0 irregular, 100 regular)": 55.68
+              "Total Steps (Steps)": 9538.0
             },
             {
               "date": "2021-05-18",
-              "Routine Consistency (0 irregular, 100 regular)": 52.44
+              "Total Steps (Steps)": 6653.0
             },
             {
               "date": "2021-05-19",
-              "Routine Consistency (0 irregular, 100 regular)": 31.56
+              "Total Steps (Steps)": 6122.0
             },
             {
               "date": "2021-05-20",
-              "Routine Consistency (0 irregular, 100 regular)": 70.22
+              "Total Steps (Steps)": 3850.0
             },
             {
               "date": "2021-05-21",
-              "Routine Consistency (0 irregular, 100 regular)": 40.02
+              "Total Steps (Steps)": 13278.0
             },
             {
               "date": "2021-05-22",
-              "Routine Consistency (0 irregular, 100 regular)": 15.35
+              "Total Steps (Steps)": 8258.0
             },
             {
               "date": "2021-05-23",
-              "Routine Consistency (0 irregular, 100 regular)": 11.21
+              "Total Steps (Steps)": 26581.0
             },
             {
               "date": "2021-05-24",
-              "Routine Consistency (0 irregular, 100 regular)": 13.07
+              "Total Steps (Steps)": 7871.0
             },
             {
               "date": "2021-05-25",
-              "Routine Consistency (0 irregular, 100 regular)": 14.66
+              "Total Steps (Steps)": 10379.0
             },
             {
               "date": "2021-05-26",
-              "Routine Consistency (0 irregular, 100 regular)": 25.49
+              "Total Steps (Steps)": 9051.0
             },
             {
               "date": "2021-05-27",
-              "Routine Consistency (0 irregular, 100 regular)": 59.36
+              "Total Steps (Steps)": 10230.0
             },
             {
               "date": "2021-05-28",
-              "Routine Consistency (0 irregular, 100 regular)": 62.53
+              "Total Steps (Steps)": 9564.0
             },
             {
               "date": "2021-05-29",
-              "Routine Consistency (0 irregular, 100 regular)": 44.26
+              "Total Steps (Steps)": null
             },
             {
               "date": "2021-05-30",
-              "Routine Consistency (0 irregular, 100 regular)": 42.7
+              "Total Steps (Steps)": 7497.0
             },
             {
               "date": "2021-05-31",
-              "Routine Consistency (0 irregular, 100 regular)": 63.94
+              "Total Steps (Steps)": 15308.0
             },
             {
               "date": "2021-06-01",
-              "Routine Consistency (0 irregular, 100 regular)": 60.55
+              "Total Steps (Steps)": 9459.0
             },
             {
               "date": "2021-06-02",
-              "Routine Consistency (0 irregular, 100 regular)": 55.76
+              "Total Steps (Steps)": 21239.0
             },
             {
               "date": "2021-06-03",
-              "Routine Consistency (0 irregular, 100 regular)": 63.73
+              "Total Steps (Steps)": 9994.0
             },
             {
               "date": "2021-06-04",
-              "Routine Consistency (0 irregular, 100 regular)": 59.41
+              "Total Steps (Steps)": 13014.0
             },
             {
               "date": "2021-06-05",
-              "Routine Consistency (0 irregular, 100 regular)": 63.58
+              "Total Steps (Steps)": 12088.0
             },
             {
               "date": "2021-06-06",
-              "Routine Consistency (0 irregular, 100 regular)": 70.22
+              "Total Steps (Steps)": 10899.0
             }
           ],
           "spec": {
-            "name": "Routine Consistency (0 irregular, 100 regular)",
+            "name": "Total Steps (Steps)",
             "fact_type": "trend",
-            "fact_description": "The regularity of the individual's daily routine fluctuated considerably from 2021-05-09 to 2021-06-06, indicating inconsistent patterns in daily activities during this period.",
+            "fact_description": "The number of steps taken each day fluctuated considerably from 2021-05-09 to 2021-06-06 (28 days), indicating inconsistent levels of daily physical activity during this period.",
             "attribute": "variable",
             "time_1": "2021-05-09",
             "time_2": "2021-06-06"
@@ -385,64 +385,6 @@
             "passive sensing"
           ],
           "dataSourceType": "trend",
-          "isShowL2": true
-        },
-        {
-          "summarySentence": "On 2021-05-16, the PHQ-4 score increased sharply to 5.0, indicating a shift into the mild range for symptoms of anxiety and depression.",
-          "dataPoints": [
-            {
-              "date": "2021-04-04",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-04-11",
-              "PHQ-4 (0-12)": 3.0
-            },
-            {
-              "date": "2021-04-18",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-04-25",
-              "PHQ-4 (0-12)": 6.0
-            },
-            {
-              "date": "2021-05-02",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-05-09",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-05-16",
-              "PHQ-4 (0-12)": 5.0
-            },
-            {
-              "date": "2021-05-24",
-              "PHQ-4 (0-12)": 5.0
-            },
-            {
-              "date": "2021-05-30",
-              "PHQ-4 (0-12)": 4.0
-            },
-            {
-              "date": "2021-06-06",
-              "PHQ-4 (0-12)": 6.0
-            }
-          ],
-          "spec": {
-            "name": "PHQ-4 (0-12)",
-            "fact_type": "outlier",
-            "fact_description": "On 2021-05-16, the PHQ-4 score increased sharply to 5.0, indicating a shift into the mild range for symptoms of anxiety and depression.",
-            "attribute": "spike",
-            "value": 5.0,
-            "time": "2021-05-16"
-          },
-          "sources": [
-            "survey"
-          ],
-          "dataSourceType": "outlier",
           "isShowL2": true
         },
         {
@@ -544,7 +486,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "On 2021-05-19, the Negative Affect Subscale (PANAS-SF) showed a notable increase, reaching a score of 19.0, which indicates a high level of negative emotions on that day.",
+          "summarySentence": "On 2021-05-19, the Negative Affect Subscale (PANAS-SF) showed a notable increase, reaching a score of 19.0. This value is considered high, indicating a significant elevation in negative emotional experiences on that day.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -630,7 +572,7 @@
           "spec": {
             "name": "Negative Affect Subscale (5-25, PANAS-SF)",
             "fact_type": "outlier",
-            "fact_description": "On 2021-05-19, the Negative Affect Subscale (PANAS-SF) showed a notable increase, reaching a score of 19.0, which indicates a high level of negative emotions on that day.",
+            "fact_description": "On 2021-05-19, the Negative Affect Subscale (PANAS-SF) showed a notable increase, reaching a score of 19.0. This value is considered high, indicating a significant elevation in negative emotional experiences on that day.",
             "attribute": "spike",
             "value": 19.0,
             "time": "2021-05-19"
@@ -950,293 +892,293 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The number of steps taken each day fluctuated considerably from 2021-05-09 to 2021-06-06 (28 days), indicating inconsistent levels of daily physical activity during this period.",
+          "summarySentence": "The regularity of the individual's daily routine fluctuated considerably from 2021-05-09 to 2021-06-06 (28 days), indicating inconsistent patterns in daily activities during this period.",
           "dataPoints": [
             {
               "date": "2021-03-29",
-              "Total Steps (Steps)": null
+              "Routine Consistency (0 irregular, 100 regular)": 70.06
             },
             {
               "date": "2021-03-30",
-              "Total Steps (Steps)": null
+              "Routine Consistency (0 irregular, 100 regular)": 41.95
             },
             {
               "date": "2021-03-31",
-              "Total Steps (Steps)": 4161.0
+              "Routine Consistency (0 irregular, 100 regular)": 8.46
             },
             {
               "date": "2021-04-01",
-              "Total Steps (Steps)": 13673.0
+              "Routine Consistency (0 irregular, 100 regular)": 40.74
             },
             {
               "date": "2021-04-02",
-              "Total Steps (Steps)": 13557.0
+              "Routine Consistency (0 irregular, 100 regular)": 45.45
             },
             {
               "date": "2021-04-03",
-              "Total Steps (Steps)": 19817.0
+              "Routine Consistency (0 irregular, 100 regular)": 4.12
             },
             {
               "date": "2021-04-04",
-              "Total Steps (Steps)": 15032.0
+              "Routine Consistency (0 irregular, 100 regular)": 27.44
             },
             {
               "date": "2021-04-05",
-              "Total Steps (Steps)": 13733.0
+              "Routine Consistency (0 irregular, 100 regular)": 13.09
             },
             {
               "date": "2021-04-06",
-              "Total Steps (Steps)": 12587.0
+              "Routine Consistency (0 irregular, 100 regular)": 8.59
             },
             {
               "date": "2021-04-07",
-              "Total Steps (Steps)": 14130.0
+              "Routine Consistency (0 irregular, 100 regular)": 7.2
             },
             {
               "date": "2021-04-08",
-              "Total Steps (Steps)": 10413.0
+              "Routine Consistency (0 irregular, 100 regular)": 12.17
             },
             {
               "date": "2021-04-09",
-              "Total Steps (Steps)": 13822.0
+              "Routine Consistency (0 irregular, 100 regular)": 9.77
             },
             {
               "date": "2021-04-10",
-              "Total Steps (Steps)": 13608.0
+              "Routine Consistency (0 irregular, 100 regular)": 20.7
             },
             {
               "date": "2021-04-11",
-              "Total Steps (Steps)": 13752.0
+              "Routine Consistency (0 irregular, 100 regular)": 63.99
             },
             {
               "date": "2021-04-12",
-              "Total Steps (Steps)": 15202.0
+              "Routine Consistency (0 irregular, 100 regular)": 63.25
             },
             {
               "date": "2021-04-13",
-              "Total Steps (Steps)": 15078.0
+              "Routine Consistency (0 irregular, 100 regular)": 61.93
             },
             {
               "date": "2021-04-14",
-              "Total Steps (Steps)": 15852.0
+              "Routine Consistency (0 irregular, 100 regular)": 56.84
             },
             {
               "date": "2021-04-15",
-              "Total Steps (Steps)": 13048.0
+              "Routine Consistency (0 irregular, 100 regular)": 67.44
             },
             {
               "date": "2021-04-16",
-              "Total Steps (Steps)": 12032.0
+              "Routine Consistency (0 irregular, 100 regular)": 59.08
             },
             {
               "date": "2021-04-17",
-              "Total Steps (Steps)": null
+              "Routine Consistency (0 irregular, 100 regular)": 44.88
             },
             {
               "date": "2021-04-18",
-              "Total Steps (Steps)": null
+              "Routine Consistency (0 irregular, 100 regular)": 53.16
             },
             {
               "date": "2021-04-19",
-              "Total Steps (Steps)": 10111.0
+              "Routine Consistency (0 irregular, 100 regular)": 70.22
             },
             {
               "date": "2021-04-20",
-              "Total Steps (Steps)": 14702.0
+              "Routine Consistency (0 irregular, 100 regular)": 67.03
             },
             {
               "date": "2021-04-21",
-              "Total Steps (Steps)": 11925.0
+              "Routine Consistency (0 irregular, 100 regular)": 56.69
             },
             {
               "date": "2021-04-22",
-              "Total Steps (Steps)": 11294.0
+              "Routine Consistency (0 irregular, 100 regular)": 48.15
             },
             {
               "date": "2021-04-23",
-              "Total Steps (Steps)": 13093.0
+              "Routine Consistency (0 irregular, 100 regular)": 17.16
             },
             {
               "date": "2021-04-24",
-              "Total Steps (Steps)": 11245.0
+              "Routine Consistency (0 irregular, 100 regular)": 29.35
             },
             {
               "date": "2021-04-25",
-              "Total Steps (Steps)": 29579.0
+              "Routine Consistency (0 irregular, 100 regular)": 58.64
             },
             {
               "date": "2021-04-26",
-              "Total Steps (Steps)": 11669.0
+              "Routine Consistency (0 irregular, 100 regular)": 65.64
             },
             {
               "date": "2021-04-27",
-              "Total Steps (Steps)": 12234.0
+              "Routine Consistency (0 irregular, 100 regular)": 66.72
             },
             {
               "date": "2021-04-28",
-              "Total Steps (Steps)": 10586.0
+              "Routine Consistency (0 irregular, 100 regular)": 67.7
             },
             {
               "date": "2021-04-29",
-              "Total Steps (Steps)": 10162.0
+              "Routine Consistency (0 irregular, 100 regular)": 67.44
             },
             {
               "date": "2021-04-30",
-              "Total Steps (Steps)": 14106.0
+              "Routine Consistency (0 irregular, 100 regular)": 59.23
             },
             {
               "date": "2021-05-01",
-              "Total Steps (Steps)": 10377.0
+              "Routine Consistency (0 irregular, 100 regular)": 60.24
             },
             {
               "date": "2021-05-02",
-              "Total Steps (Steps)": 25279.0
+              "Routine Consistency (0 irregular, 100 regular)": 32.38
             },
             {
               "date": "2021-05-03",
-              "Total Steps (Steps)": 9749.0
+              "Routine Consistency (0 irregular, 100 regular)": 12.55
             },
             {
               "date": "2021-05-04",
-              "Total Steps (Steps)": 13620.0
+              "Routine Consistency (0 irregular, 100 regular)": 35.98
             },
             {
               "date": "2021-05-05",
-              "Total Steps (Steps)": 12016.0
+              "Routine Consistency (0 irregular, 100 regular)": 66.1
             },
             {
               "date": "2021-05-06",
-              "Total Steps (Steps)": 7447.0
+              "Routine Consistency (0 irregular, 100 regular)": 53.7
             },
             {
               "date": "2021-05-07",
-              "Total Steps (Steps)": 6137.0
+              "Routine Consistency (0 irregular, 100 regular)": 61.57
             },
             {
               "date": "2021-05-08",
-              "Total Steps (Steps)": 25121.0
+              "Routine Consistency (0 irregular, 100 regular)": 54.24
             },
             {
               "date": "2021-05-09",
-              "Total Steps (Steps)": 8964.0
+              "Routine Consistency (0 irregular, 100 regular)": 67.8
             },
             {
               "date": "2021-05-10",
-              "Total Steps (Steps)": 14711.0
+              "Routine Consistency (0 irregular, 100 regular)": 49.0
             },
             {
               "date": "2021-05-11",
-              "Total Steps (Steps)": 10746.0
+              "Routine Consistency (0 irregular, 100 regular)": 59.31
             },
             {
               "date": "2021-05-12",
-              "Total Steps (Steps)": 12597.0
+              "Routine Consistency (0 irregular, 100 regular)": 27.47
             },
             {
               "date": "2021-05-13",
-              "Total Steps (Steps)": 9942.0
+              "Routine Consistency (0 irregular, 100 regular)": 67.44
             },
             {
               "date": "2021-05-14",
-              "Total Steps (Steps)": 16680.0
+              "Routine Consistency (0 irregular, 100 regular)": 62.19
             },
             {
               "date": "2021-05-15",
-              "Total Steps (Steps)": 5835.0
+              "Routine Consistency (0 irregular, 100 regular)": 70.22
             },
             {
               "date": "2021-05-16",
-              "Total Steps (Steps)": 23149.0
+              "Routine Consistency (0 irregular, 100 regular)": 61.78
             },
             {
               "date": "2021-05-17",
-              "Total Steps (Steps)": 9538.0
+              "Routine Consistency (0 irregular, 100 regular)": 55.68
             },
             {
               "date": "2021-05-18",
-              "Total Steps (Steps)": 6653.0
+              "Routine Consistency (0 irregular, 100 regular)": 52.44
             },
             {
               "date": "2021-05-19",
-              "Total Steps (Steps)": 6122.0
+              "Routine Consistency (0 irregular, 100 regular)": 31.56
             },
             {
               "date": "2021-05-20",
-              "Total Steps (Steps)": 3850.0
+              "Routine Consistency (0 irregular, 100 regular)": 70.22
             },
             {
               "date": "2021-05-21",
-              "Total Steps (Steps)": 13278.0
+              "Routine Consistency (0 irregular, 100 regular)": 40.02
             },
             {
               "date": "2021-05-22",
-              "Total Steps (Steps)": 8258.0
+              "Routine Consistency (0 irregular, 100 regular)": 15.35
             },
             {
               "date": "2021-05-23",
-              "Total Steps (Steps)": 26581.0
+              "Routine Consistency (0 irregular, 100 regular)": 11.21
             },
             {
               "date": "2021-05-24",
-              "Total Steps (Steps)": 7871.0
+              "Routine Consistency (0 irregular, 100 regular)": 13.07
             },
             {
               "date": "2021-05-25",
-              "Total Steps (Steps)": 10379.0
+              "Routine Consistency (0 irregular, 100 regular)": 14.66
             },
             {
               "date": "2021-05-26",
-              "Total Steps (Steps)": 9051.0
+              "Routine Consistency (0 irregular, 100 regular)": 25.49
             },
             {
               "date": "2021-05-27",
-              "Total Steps (Steps)": 10230.0
+              "Routine Consistency (0 irregular, 100 regular)": 59.36
             },
             {
               "date": "2021-05-28",
-              "Total Steps (Steps)": 9564.0
+              "Routine Consistency (0 irregular, 100 regular)": 62.53
             },
             {
               "date": "2021-05-29",
-              "Total Steps (Steps)": null
+              "Routine Consistency (0 irregular, 100 regular)": 44.26
             },
             {
               "date": "2021-05-30",
-              "Total Steps (Steps)": 7497.0
+              "Routine Consistency (0 irregular, 100 regular)": 42.7
             },
             {
               "date": "2021-05-31",
-              "Total Steps (Steps)": 15308.0
+              "Routine Consistency (0 irregular, 100 regular)": 63.94
             },
             {
               "date": "2021-06-01",
-              "Total Steps (Steps)": 9459.0
+              "Routine Consistency (0 irregular, 100 regular)": 60.55
             },
             {
               "date": "2021-06-02",
-              "Total Steps (Steps)": 21239.0
+              "Routine Consistency (0 irregular, 100 regular)": 55.76
             },
             {
               "date": "2021-06-03",
-              "Total Steps (Steps)": 9994.0
+              "Routine Consistency (0 irregular, 100 regular)": 63.73
             },
             {
               "date": "2021-06-04",
-              "Total Steps (Steps)": 13014.0
+              "Routine Consistency (0 irregular, 100 regular)": 59.41
             },
             {
               "date": "2021-06-05",
-              "Total Steps (Steps)": 12088.0
+              "Routine Consistency (0 irregular, 100 regular)": 63.58
             },
             {
               "date": "2021-06-06",
-              "Total Steps (Steps)": 10899.0
+              "Routine Consistency (0 irregular, 100 regular)": 70.22
             }
           ],
           "spec": {
-            "name": "Total Steps (Steps)",
+            "name": "Routine Consistency (0 irregular, 100 regular)",
             "fact_type": "trend",
-            "fact_description": "The number of steps taken each day fluctuated considerably from 2021-05-09 to 2021-06-06 (28 days), indicating inconsistent levels of daily physical activity during this period.",
+            "fact_description": "The regularity of the individual's daily routine fluctuated considerably from 2021-05-09 to 2021-06-06 (28 days), indicating inconsistent patterns in daily activities during this period.",
             "attribute": "variable",
             "time_1": "2021-05-09",
             "time_2": "2021-06-06"
@@ -1246,12 +1188,70 @@
           ],
           "dataSourceType": "trend",
           "isShowL2": false
+        },
+        {
+          "summarySentence": "On 2021-05-16, the PHQ-4 score increased to 5.0, indicating a mild level of anxiety and depression symptoms, which represents a notable change from previous scores.",
+          "dataPoints": [
+            {
+              "date": "2021-04-04",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-04-11",
+              "PHQ-4 (0-12)": 3.0
+            },
+            {
+              "date": "2021-04-18",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-04-25",
+              "PHQ-4 (0-12)": 6.0
+            },
+            {
+              "date": "2021-05-02",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-05-09",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-05-16",
+              "PHQ-4 (0-12)": 5.0
+            },
+            {
+              "date": "2021-05-24",
+              "PHQ-4 (0-12)": 5.0
+            },
+            {
+              "date": "2021-05-30",
+              "PHQ-4 (0-12)": 4.0
+            },
+            {
+              "date": "2021-06-06",
+              "PHQ-4 (0-12)": 6.0
+            }
+          ],
+          "spec": {
+            "name": "PHQ-4 (0-12)",
+            "fact_type": "outlier",
+            "fact_description": "On 2021-05-16, the PHQ-4 score increased to 5.0, indicating a mild level of anxiety and depression symptoms, which represents a notable change from previous scores.",
+            "attribute": "spike",
+            "value": 5.0,
+            "time": "2021-05-16"
+          },
+          "sources": [
+            "survey"
+          ],
+          "dataSourceType": "outlier",
+          "isShowL2": false
         }
       ]
     },
     {
       "key": "insight-1",
-      "summaryTitle": "Decreasing total steps and variable routine consistency indicate reduced and unstable behavioral activation.",
+      "summaryTitle": "Decreasing total steps and variable routine consistency indicate <b>reduced behavioral activation</b>.",
       "sources": [
         "clinical note",
         "passive sensing"
@@ -2195,7 +2195,7 @@
     },
     {
       "key": "insight-2",
-      "summaryTitle": "A sharp increase in negative affect suggests worsening mood and heightened psychological distress around 2021-05-19.",
+      "summaryTitle": "A pronounced spike in negative affect suggests <b>worsening mood</b> around 2021-05-19.",
       "sources": [
         "survey",
         "clinical note"
@@ -2231,7 +2231,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "On 2021-05-19, the Negative Affect Subscale (PANAS-SF) showed a notable increase, reaching a score of 19.0, which indicates a high level of negative emotions compared to typical values.",
+          "summarySentence": "On 2021-05-19, the Negative Affect Subscale (PANAS-SF) showed a notable increase, reaching a score of 19.0, which reflects a high level of negative emotions on that day.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -2317,7 +2317,7 @@
           "spec": {
             "name": "Negative Affect Subscale (5-25, PANAS-SF)",
             "fact_type": "outlier",
-            "fact_description": "On 2021-05-19, the Negative Affect Subscale (PANAS-SF) showed a notable increase, reaching a score of 19.0, which indicates a high level of negative emotions compared to typical values.",
+            "fact_description": "On 2021-05-19, the Negative Affect Subscale (PANAS-SF) showed a notable increase, reaching a score of 19.0, which reflects a high level of negative emotions on that day.",
             "attribute": "spike",
             "value": 19.0,
             "time": "2021-05-19"
@@ -2332,7 +2332,7 @@
     },
     {
       "key": "insight-3",
-      "summaryTitle": "Variable routine, time at home, and travel patterns indicate unstable work schedule and poor stress coping.",
+      "summaryTitle": "Variable routine, time at home, and travel patterns indicate <b>work schedule instability and poor coping with work-related stress</b>.",
       "sources": [
         "clinical note",
         "passive sensing"
@@ -2369,7 +2369,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The regularity of the individual's daily routine fluctuated considerably from 2021-05-09 to 2021-06-06, indicating inconsistent patterns in daily activities during this period.",
+          "summarySentence": "The regularity of the individual's daily routine fluctuated considerably from 2021-05-09 to 2021-06-06 (28 days), indicating inconsistent patterns in daily activities during this period.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -2655,7 +2655,7 @@
           "spec": {
             "name": "Routine Consistency (0 irregular, 100 regular)",
             "fact_type": "trend",
-            "fact_description": "The regularity of the individual's daily routine fluctuated considerably from 2021-05-09 to 2021-06-06, indicating inconsistent patterns in daily activities during this period.",
+            "fact_description": "The regularity of the individual's daily routine fluctuated considerably from 2021-05-09 to 2021-06-06 (28 days), indicating inconsistent patterns in daily activities during this period.",
             "attribute": "variable",
             "time_1": "2021-05-09",
             "time_2": "2021-06-06"
@@ -3266,7 +3266,7 @@
     },
     {
       "key": "insight-4",
-      "summaryTitle": "Earlier bedtime and increasing wake time with stable total sleep suggest shifting sleep patterns.",
+      "summaryTitle": "Earlier bedtime and modestly later wake time with stable total sleep indicate <b>mildly shifting sleep patterns</b>.",
       "sources": [
         "clinical note",
         "passive sensing"
@@ -3302,7 +3302,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "The average time the individual got out of bed shifted slightly later, increasing from 8.06 hours after midnight (approximately 8:04 AM) during the period from 2021-04-11 to 2021-05-09 (28 days), to 8.56 hours after midnight (about 8:34 AM) from 2021-05-09 to 2021-06-06 (28 days).",
+          "summarySentence": "The average time the individual got up in the morning shifted slightly later, increasing from 8.06 hours after midnight (from 2021-04-11 to 2021-05-09, or approximately 8:04 AM) to 8.56 hours after midnight (from 2021-05-09 to 2021-06-06, or approximately 8:34 AM).",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -3588,7 +3588,7 @@
           "spec": {
             "name": "Wake Time (Hours in relation to midnight)",
             "fact_type": "comparison",
-            "fact_description": "The average time the individual got out of bed shifted slightly later, increasing from 8.06 hours after midnight (approximately 8:04 AM) during the period from 2021-04-11 to 2021-05-09 (28 days), to 8.56 hours after midnight (about 8:34 AM) from 2021-05-09 to 2021-06-06 (28 days).",
+            "fact_description": "The average time the individual got up in the morning shifted slightly later, increasing from 8.06 hours after midnight (from 2021-04-11 to 2021-05-09, or approximately 8:04 AM) to 8.56 hours after midnight (from 2021-05-09 to 2021-06-06, or approximately 8:34 AM).",
             "attribute": "more",
             "aggregation": "average",
             "time_dur_1": {
@@ -3610,7 +3610,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The time the individual went to bed became progressively earlier from 2021-05-09 to 2021-06-06 (28 days).",
+          "summarySentence": "The time the individual went to bed became progressively earlier from 2021-05-09 to 2021-06-06.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -3896,7 +3896,7 @@
           "spec": {
             "name": "Bedtime (Hours in relation to midnight)",
             "fact_type": "trend",
-            "fact_description": "The time the individual went to bed became progressively earlier from 2021-05-09 to 2021-06-06 (28 days).",
+            "fact_description": "The time the individual went to bed became progressively earlier from 2021-05-09 to 2021-06-06.",
             "attribute": "fall",
             "time_1": "2021-05-09",
             "time_2": "2021-06-06"
@@ -4209,7 +4209,7 @@
     },
     {
       "key": "insight-5",
-      "summaryTitle": "Elevated PSS-4 stress score suggests increased perceived stress around 2021-05-19.",
+      "summaryTitle": "Elevated PSS-4 stress score suggests <b>increased perceived stress</b> around 2021-05-19.",
       "sources": [
         "survey"
       ],
@@ -4276,7 +4276,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The individual's perceived stress level, as measured by the PSS-4, increased from a moderate score of 5.0 to a high score of 11.0 (no unit) between 2021-05-12 and 2021-05-19.",
+          "summarySentence": "The individual's perceived stress level, as measured by the PSS-4, increased from a low score of 5.0 on 2021-05-12 to a high score of 11.0 on 2021-05-19, indicating a notable rise in reported stress.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -4322,7 +4322,7 @@
           "spec": {
             "name": "PSS-4 Score (0-16)",
             "fact_type": "difference",
-            "fact_description": "The individual's perceived stress level, as measured by the PSS-4, increased from a moderate score of 5.0 to a high score of 11.0 (no unit) between 2021-05-12 and 2021-05-19.",
+            "fact_description": "The individual's perceived stress level, as measured by the PSS-4, increased from a low score of 5.0 on 2021-05-12 to a high score of 11.0 on 2021-05-19, indicating a notable rise in reported stress.",
             "attribute": "more",
             "time_1": "2021-05-12",
             "time_2": "2021-05-19",
@@ -4339,7 +4339,7 @@
     },
     {
       "key": "insight-6",
-      "summaryTitle": "Decreased Positive Affect Subscale suggests lower positive mood between 2021-05-09 and 2021-05-12.",
+      "summaryTitle": "Decreased Positive Affect Subscale indicates <b>worsening mood</b> between 2021-05-09 and 2021-05-12.",
       "sources": [
         "survey"
       ],
@@ -4348,7 +4348,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "The individual's Positive Affect Subscale score, which reflects their level of positive emotions, decreased from 17.0 to 11.0 (no unit) between 2021-05-09 and 2021-05-12, indicating a notable reduction in positive affect over this period.",
+          "summarySentence": "The individual's Positive Affect score, which reflects their experience of positive emotions, decreased from 17.0 to 11.0 (no unit) between 2021-05-09 and 2021-05-12, indicating a notable reduction in positive mood during this period.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -4434,7 +4434,7 @@
           "spec": {
             "name": "Positive Affect Subscale (5-25, PANAS-SF)",
             "fact_type": "difference",
-            "fact_description": "The individual's Positive Affect Subscale score, which reflects their level of positive emotions, decreased from 17.0 to 11.0 (no unit) between 2021-05-09 and 2021-05-12, indicating a notable reduction in positive affect over this period.",
+            "fact_description": "The individual's Positive Affect score, which reflects their experience of positive emotions, decreased from 17.0 to 11.0 (no unit) between 2021-05-09 and 2021-05-12, indicating a notable reduction in positive mood during this period.",
             "attribute": "less",
             "time_1": "2021-05-09",
             "time_2": "2021-05-12",
@@ -4448,7 +4448,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "On 2021-05-12, the Positive Affect Subscale score dropped to 11.0, indicating a notably low level of positive emotions as measured by the PANAS-SF.",
+          "summarySentence": "On 2021-05-12, the Positive Affect Subscale score dropped to 11.0, indicating a notably low level of positive emotions and mood on that day.",
           "dataPoints": [
             {
               "date": "2021-03-31",
@@ -4534,7 +4534,7 @@
           "spec": {
             "name": "Positive Affect Subscale (5-25, PANAS-SF)",
             "fact_type": "extreme",
-            "fact_description": "On 2021-05-12, the Positive Affect Subscale score dropped to 11.0, indicating a notably low level of positive emotions as measured by the PANAS-SF.",
+            "fact_description": "On 2021-05-12, the Positive Affect Subscale score dropped to 11.0, indicating a notably low level of positive emotions and mood on that day.",
             "attribute": "min",
             "time": "2021-05-12",
             "value": 11.0
@@ -4549,7 +4549,7 @@
     },
     {
       "key": "insight-7",
-      "summaryTitle": "Elevated PHQ-4 score indicates moderate psychological distress around 2021-06-06.",
+      "summaryTitle": "Elevated PHQ-4 score indicates <b>moderate psychological distress</b> around 2021-06-06.",
       "sources": [
         "survey"
       ],
@@ -4616,7 +4616,7 @@
           "isShowL2": true
         },
         {
-          "summarySentence": "The PHQ-4 score, which measures symptoms of anxiety and depression, increased from 4.0 (mild range) on 2021-05-30 to 6.0 (moderate range) on 2021-06-06.",
+          "summarySentence": "The PHQ-4 score increased from 4.0 (mild symptoms) on 2021-05-30 to 6.0 (moderate symptoms) on 2021-06-06, indicating a rise in reported anxiety and depression symptoms.",
           "dataPoints": [
             {
               "date": "2021-04-04",
@@ -4662,7 +4662,7 @@
           "spec": {
             "name": "PHQ-4 (0-12)",
             "fact_type": "difference",
-            "fact_description": "The PHQ-4 score, which measures symptoms of anxiety and depression, increased from 4.0 (mild range) on 2021-05-30 to 6.0 (moderate range) on 2021-06-06.",
+            "fact_description": "The PHQ-4 score increased from 4.0 (mild symptoms) on 2021-05-30 to 6.0 (moderate symptoms) on 2021-06-06, indicating a rise in reported anxiety and depression symptoms.",
             "attribute": "more",
             "time_1": "2021-05-30",
             "time_2": "2021-06-06",
@@ -4673,13 +4673,13 @@
             "survey"
           ],
           "dataSourceType": "difference",
-          "isShowL2": false
+          "isShowL2": true
         }
       ]
     },
     {
       "key": "insight-8",
-      "summaryTitle": "A brief surge in distance traveled followed by a sharp decline suggests fluctuating activity levels.",
+      "summaryTitle": "Fluctuating distance traveled with a sharp decline suggests <b>variable engagement in daily activities</b>.",
       "sources": [
         "passive sensing"
       ],
@@ -5287,7 +5287,7 @@
     },
     {
       "key": "insight-9",
-      "summaryTitle": "Markedly increased inactive periods suggest decreased physical activity around 2021-05-31.",
+      "summaryTitle": "A sharp increase in inactive periods suggests <b>markedly reduced physical activity</b> around 2021-05-31.",
       "sources": [
         "passive sensing"
       ],
@@ -5296,7 +5296,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "The number of sedentary episodes increased significantly from 49 times on 2021-05-30 to 125 times on 2021-05-31, indicating a marked rise in periods of inactivity.",
+          "summarySentence": "The number of sedentary episodes increased from 49 on 2021-05-30 to 125 on 2021-05-31, indicating a substantial rise in periods of inactivity.",
           "dataPoints": [
             {
               "date": "2021-03-29",
@@ -5582,7 +5582,7 @@
           "spec": {
             "name": "Inactive Periods (Times)",
             "fact_type": "difference",
-            "fact_description": "The number of sedentary episodes increased significantly from 49 times on 2021-05-30 to 125 times on 2021-05-31, indicating a marked rise in periods of inactivity.",
+            "fact_description": "The number of sedentary episodes increased from 49 on 2021-05-30 to 125 on 2021-05-31, indicating a substantial rise in periods of inactivity.",
             "attribute": "more",
             "time_1": "2021-05-30",
             "time_2": "2021-05-31",
@@ -5891,7 +5891,7 @@
             "passive sensing"
           ],
           "dataSourceType": "extreme",
-          "isShowL2": false
+          "isShowL2": true
         }
       ]
     }
