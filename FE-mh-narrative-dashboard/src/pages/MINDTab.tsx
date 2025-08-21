@@ -12,7 +12,7 @@ import { FilterSelector } from "@/components/FilterSelector";
 import {
   InsightType,
   type InsightCardData,
-  type InsightExpandViewItem,
+  type InsightExpandViewItem, dateSectionMap,
 } from "@/types/props";
 import { getVisualizerDataForPerson } from "@/utils/dataConversion";
 import {
@@ -161,8 +161,6 @@ const MINDTab: React.FC<MINDTabProps> = ({
             )
         );
 
-  const midpoint = Math.ceil(filteredInsightCards.length / 2);
-
   const allExpandViews = flattenAllExpandViews(insightCardData);
 
   const {
@@ -182,26 +180,6 @@ const MINDTab: React.FC<MINDTabProps> = ({
     communication: null,
   });
 
-  const [section, setSection] = useState<string>("overview");
-
-  const dateSectionMap = [
-    {
-      start: "2021-05-09", // single-day
-      end: "2021-06-07",
-      section: "insights",
-    },
-    {
-      start: "2021-05-09", // range example
-      end: "2021-05-09",
-      section: "lastSession",
-    },
-    {
-      start: "2021-07-01",
-      end: "2021-07-01",
-      section: "communication",
-    },
-  ];
-
 
   const lastTimelineSectionRef = useRef<string | null>(null);
 
@@ -216,29 +194,33 @@ const MINDTab: React.FC<MINDTabProps> = ({
   };
 
 
-  const handleTimelineStateChange = (state: [Date, Date] | null) => {
-    if (!state) return;
+// In MINDTab component, replace the handleTimelineStateChange function with this:
 
-    const [startDate, endDate] = state;
-    const parseDate = d3.timeParse("%Y-%m-%d");
+  const handleTimelineStateChange = (selectedValue: string | null) => {
+    if (!selectedValue) return;
 
-    for (const entry of dateSectionMap) {
-      const targetStart = parseDate(entry.start);
-      const targetEnd = parseDate(entry.end);
-      if (!targetStart || !targetEnd) continue;
+    const sectionMap: Record<string, keyof typeof expandTimelineSections> = {
+      "insights": "insights",
+      "2021-05-09": "lastSession", // Date maps to lastSession
+      "2021-06-07": "communication" // Date maps to communication (today)
+    };
 
-      const isMatch =
-          startDate.getTime() === targetStart.getTime() &&
-          endDate.getTime() === targetEnd.getTime();
+    const targetSection = sectionMap[selectedValue];
+    if (!targetSection) return;
 
-      if (isMatch && lastTimelineSectionRef.current !== entry.section) {
-        lastTimelineSectionRef.current = entry.section; // update ref
-        toggleTimelineSectionSingle(entry.section); // only update if new section
-        const target = sectionRefs.current[entry.section];
-        target?.scrollIntoView({ behavior: "smooth", block: "start" });
-        break;
-      }
-    }
+    // Expand only the selected section
+    setExpandTimelineSections(prev => ({
+      overview: false,
+      lastSession: targetSection === "lastSession",
+      insights: targetSection === "insights",
+      communication: targetSection === "communication"
+    }));
+
+    // Scroll to section
+    sectionRefs.current[targetSection]?.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   };
 
 
@@ -259,8 +241,6 @@ const MINDTab: React.FC<MINDTabProps> = ({
             <VerticalTimeline
               ref={timelineRef}
               dates={[
-                // { date: "2021-03-28", label: "First session" },
-                // { date: "2021-04-11", label: "Second session" },
                 { date: "2021-05-09", label: "Last session" },
                 { date: "2021-06-07", label: "Today" },
               ]}
@@ -283,7 +263,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
               {/* ChartReview bg-red-200/50 */}
               <div className="rounded relative z-10">
                 <SectionTitle
-                  title="Overview"
+                  title="Medical history"
                   // subtitle="test"
                   isExpanded={expandedSections.overview}
                   onClick={() => toggleSection("overview")}
@@ -303,7 +283,8 @@ const MINDTab: React.FC<MINDTabProps> = ({
                 // }}
               >
                 <SectionTitle
-                    title="Last Session"
+                    title="Session Recap"
+                    subtitle="(2021-05-09)"
                     isExpanded={expandedSections.lastSession || globalExpand}
                     onClick={() =>
                         toggleTimelineSection("lastSession")
@@ -404,7 +385,8 @@ const MINDTab: React.FC<MINDTabProps> = ({
               >
 
                 <SectionTitle
-                    title="Clinical Insights"
+                    title="Patient Data Outlook"
+                    subtitle="(2021-05-09 to 2021-06-07)"
                     isExpanded={expandedSections.insights || globalExpand}
                     onClick={() =>
                         toggleTimelineSection("insights")
@@ -505,7 +487,8 @@ const MINDTab: React.FC<MINDTabProps> = ({
                 }}
               >
                 <SectionTitle
-                  title="Patient Communication"
+                  title="Discussion points today"
+                  subtitle="(2021-06-07)"
                   // subtitle="test"
                   isExpanded={expandedSections.communication}
                   onClick={() => toggleTimelineSection("communication")}
