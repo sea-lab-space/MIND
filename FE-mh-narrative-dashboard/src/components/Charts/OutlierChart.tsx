@@ -75,7 +75,13 @@ const OutlierChart: React.FC<OutlierChartProps> = (props) => {
           fill={highlightColor}
           stroke="none"
         />
-        <Legend iconSize={14} wrapperStyle={{ fontSize: "14px" }} />
+        <Legend
+          iconSize={14}
+          wrapperStyle={{ fontSize: "14px" }}
+          align="left"
+          verticalAlign="top"
+          height={32}
+        />
       </LineChart>
     </ResponsiveContainer>
   );

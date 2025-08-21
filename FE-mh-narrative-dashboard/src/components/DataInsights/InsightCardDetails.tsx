@@ -18,7 +18,7 @@ export default function InsightCardDetail({
   return (
     <div className="space-y-2 pt-3 pl-3 text-sm">
       <div className="space-y-4">
-        {insightCardDataExpandView?.map((detail, index) => {
+        {insightCardDataExpandView?.map((detail, _) => {
           const showChart = shouldShowChart(
             detail.dataSourceType,
             detail.dataPoints

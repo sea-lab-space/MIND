@@ -126,7 +126,13 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
             }}
           /> */}
         </Bar>
-        <Legend iconSize={14} wrapperStyle={{ fontSize: "14px" }} />
+        <Legend
+          iconSize={14}
+          wrapperStyle={{ fontSize: "14px" }}
+          align="left"
+          verticalAlign="top"
+          height={32}
+        />
       </BarChart>
     </ResponsiveContainer>
   );

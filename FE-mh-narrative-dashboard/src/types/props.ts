@@ -57,6 +57,7 @@ export interface InsightExpandViewItem {
   insightType?: InsightType;
   // ! use this feature to determine if it should be shown on L2
   isShowL2: boolean;
+  spec?: any;
 }
 
 export interface InsightCardData {

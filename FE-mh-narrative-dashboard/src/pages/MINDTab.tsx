@@ -25,6 +25,7 @@ import OverviewSummary from "@/components/BaseLine/OverciewSummary";
 import * as React from 'react';
 import PatientMessageDialog from "@/components/PatientCommunication/PatientMessageDialog";
 import TimeLineGraph from "@/components/Timeline/TimeLine";
+import type { SectionType } from "@/types/insightSpec";
 
 
 
@@ -45,7 +46,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
   );
   const [selectedInsightTypes, setSelectedInsightTypes] = useState<
     InsightType[]
-  >(['psychological']);
+  >(['biological']);
 
   const [selectedActivities, setSelectedActivities] = useState<
     SuggestedActivity[]
@@ -94,11 +95,11 @@ const MINDTab: React.FC<MINDTabProps> = ({
 
   const handleTimelineSelect = (key: string) => {
     setSelectedTimeline(key);
-    selectTimelineSection(key);
+    selectTimelineSection(key as SectionType);
   };
 
   const selectTimelineSection = (
-      section: "medicalHistory" | "insights" | "lastSession" | "recapToday"
+    section:SectionType
   ) => {
     setExpandTimelineSections({
       medicalHistory: false,
@@ -123,7 +124,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
 
   useEffect(() => {
     setExpandTimelineSections({
-      overview: false,
+      medicalHistory: false,
       lastSession: true,
       insights: false,
       recapToday: false,
@@ -201,7 +202,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
                 }}
             >
               <OverviewSummary overviewCardData={overviewCardData} />
-              <h3 className="text-base font-semibold">Navigation</h3>
+              {/* <h3 className="text-base font-semibold">Navigation</h3> */}
 
               {/* Timeline graph section */}
                 <div className="max-w-[400px]">
@@ -228,8 +229,8 @@ const MINDTab: React.FC<MINDTabProps> = ({
               {/* ChartReview bg-red-200/50 */}
               <div className="rounded relative z-10">
                 <SectionTitle
-                  title="Medical history"
-                  // subtitle="test"
+                  title="Medical History"
+                  subtitle="(Before 2021-03-18)"
                   isExpanded={expandTimelineSections.medicalHistory}
                   onClick={() => toggleTimelineSection("medicalHistory")}
                 >
@@ -364,9 +365,8 @@ const MINDTab: React.FC<MINDTabProps> = ({
                 }}
               >
                 <SectionTitle
-                  title="Discussion points today"
+                  title="Summary Today"
                   subtitle="(2021-06-07)"
-                  // subtitle="test"
                   isExpanded={expandTimelineSections.recapToday}
                   onClick={() => toggleTimelineSection("recapToday")}
                   action={
@@ -378,7 +378,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
                       Draft Patient Message
                     </Button>
                   }
-                  shouldExpand={false}
+                  shouldExpand={true}
                 >
                   {
                     expandTimelineSections.recapToday &&

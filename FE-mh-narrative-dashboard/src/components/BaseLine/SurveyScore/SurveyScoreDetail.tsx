@@ -51,7 +51,7 @@ export default function SurveyScoreDetail({
     return (
         <div className="space-y-2 pt-3 pl-3 text-sm">
             <div className="space-y-4">
-                {surveyScoreFacts?.map((detail, index) => {
+                {surveyScoreFacts?.map((detail, _) => {
 
                     const match = detail.summarySentence.match(/^Displaying (.*) survey scores\.$/);
                     const surveyName: string | null = match ? match[1] : null;

@@ -150,7 +150,7 @@ export const VerticalTimeline = forwardRef<HTMLDivElement, VerticalTimelineProps
             };
 
             // ===== Render each date row =====
-            dates.forEach((d, index) => {
+            dates.forEach((d, _) => {
                 const y = yScale(d.date)!;
 
                 // Left-side date text (smaller font)

@@ -52,7 +52,12 @@ const InsightTypeMeta: Record<
     icon: React.ElementType;         // component reference
     iconNode?: React.ReactNode;      // pre-rendered JSX if needed
 }> = {
-    [InsightType.PSYCHOLOGICAL]: {
+      [InsightType.BIOLOGICAL]: {
+        label: "Biological",
+        icon: Activity,
+        iconNode: <Activity className="w-4 h-4" />
+    },  
+  [InsightType.PSYCHOLOGICAL]: {
         label: "Psychological",
         icon: Brain,
         iconNode: <Brain className="w-4 h-4" />
@@ -62,11 +67,7 @@ const InsightTypeMeta: Record<
         icon: Users2,
         iconNode: <Users2 className="w-4 h-4" />
     },
-    [InsightType.BIOLOGICAL]: {
-        label: "Biological",
-        icon: Activity,
-        iconNode: <Activity className="w-4 h-4" />
-    }
+
 };
 
 

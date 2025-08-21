@@ -20,7 +20,11 @@ export interface OverviewSpec {
     occupation: string;
     generation: string;
   };
-  infoCards: InfoCardSpec[]
+  infoCards: InfoCardSpec[];
+  clinicalHistory: {
+    "physical": string,
+    "psychological": string,
+  }
 }
 
 export interface InsightSpec {
@@ -166,3 +170,12 @@ export interface InputSpecStructure {
   passive_data_raw: any[];
   last_encounter: any[];
 }
+
+
+export type SectionType =
+  | "medicalHistory"
+  | "insights"
+  | "lastSession"
+  | "recapToday"
+  | "first-session"
+  | "second-session";
