@@ -60,3 +60,8 @@ def search_evidence(qa_source, qaid):
     for qa in qa_source:
         if qa['qaid'] == qaid:
             return qa['question_source'], qa['action']
+        
+def search_question(qa_source, qaid):
+    for qa in qa_source:
+        if qa['qaid'] == qaid:
+            return qa['question_text']

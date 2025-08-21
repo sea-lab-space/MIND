@@ -8,7 +8,7 @@ from .discoverer_text_type import (
     TextDataDiscoveryOutputModel,
     TextQuestionOutputModel
 )
-from .narrator_type import NarratorOutputModel, InsightGuardrailOutputModel, RewriterOutputModel
+from .narrator_type import NarratorOutputModel, InsightGuardrailOutputModel, RewriterOutputModel, QIAOutputModel
 from .discoverer_numeric_type import (
     DiscovererOutput,
     FactComparisonConfig,

@@ -123,7 +123,7 @@ class MINDPipeline:
                 self._save("data_facts", self.data_facts)
 
             # sleep 10s (prevent connection issue)
-            # time.sleep(10)
+            time.sleep(20)
         return self
 
     def run_synthesizer(self, run_sub_stages={}, iters=2, load_from_cache=False):
@@ -152,7 +152,7 @@ class MINDPipeline:
                 # self._save("data_facts", self.data_facts)
         return self
 
-    def run_narrator(self, load_from_cache=False):
+    def run_narrator(self, run_sub_stages={}, load_from_cache=False):
         if load_from_cache and (self.cache_dir / "data_insights_narrative.json").exists():
             self._log("[Narrator] Loading from cache")
             self.data_insights_narrative = self._load(
@@ -166,7 +166,7 @@ class MINDPipeline:
                 data_insights_full=self.data_insights,
                 model_name=self.model_name)
             self.data_insights_narrative, self.rewritten_data_facts = narrator.run(
-                self.data_insights, verbose=False)
+                self.data_insights, self.data_facts['key_concern_facts'], run_sub_stages, cache_dir=(self.cache_dir / "narrator"), verbose=False)
             if self.save_to_cache:
                 self._save("data_insights_narrative",
                            self.data_insights_narrative)
@@ -340,12 +340,20 @@ if __name__ == "__main__":
                 load_from_cache=True)
             .run_synthesizer(
                 iters=1, 
+                # run_sub_stages={
+                #     "qa_insights": True,
+                #     "simple_insights": True,
+                # },
+                load_from_cache=True)
+            .run_narrator(
                 run_sub_stages={
-                    "qa_insights": True,
-                    "simple_insights": True,
+                    "thread": False,
+                    "guardrail_qa": True,
+                    "guardrail_simple_insight": True,
+                    "fact_rewrite": True,
+                    "fact_deduplication": True,
                 },
                 load_from_cache=False)
-            .run_narrator(load_from_cache=False)
             .run_overview(load_from_cache=True)
             .run_suggest_activity(load_from_cache=True)
             .run_last_encounter_summary(load_from_cache=True)

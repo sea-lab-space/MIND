@@ -29,7 +29,7 @@ Rules:
 2. Use clear, plain language and present tense; no preamble, reasoning, or suggestion.  
 3. Prioritize significant trends relevant to the question; mention "stable" only if nothing significant applies.  
 4. If the question is about medication, state the insight and append: `may link to <medication name> use`.  
-5. If the question contains multiple facets according to the biopsychosocial model, split them into individual insights.
+5. Give one insight per question.
 
 Optimization: If no significant signals, choose at most 6 (aim for 3) data facts that are:
 a) most clinically relevant to the question;
