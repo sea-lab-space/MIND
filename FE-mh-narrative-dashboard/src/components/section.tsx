@@ -56,8 +56,8 @@ const Section: React.FC<SectionProps> = (props) => {
         <h2 className="text-lg font-semibold text-[#000000]">
           {title}
           {subtitle && (
-            <span className="text-lg text-[#000000] font-normal">
-              {" "}
+              <span className="text-sm text-[#000000] font-normal">
+                {" "}
               - {subtitle}
             </span>
           )}
