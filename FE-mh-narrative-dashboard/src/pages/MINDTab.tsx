@@ -4,9 +4,7 @@ import SectionTitle from "../components/section";
 import DrilldownPanel from "../components/Drilldown/DrilldownPanel";
 import OverviewComponent from "@/components/Overview/OverviewComponent";
 import PatientCommunicationComponent from "@/components/PatientCommunication/PatientCommunicationComponent";
-import PatientMessageDialog from "@/components/PatientCommunication/PatientMessageDialog";
 import { useWindowSize } from "usehooks-ts";
-import { Button } from "@/components/ui";
 import { Pencil } from "lucide-react";
 import { FilterSelector } from "@/components/FilterSelector";
 import {
@@ -20,10 +18,15 @@ import {
   groupInsights,
   groupInsightsBySource,
 } from "@/utils/helper";
+import { Button } from "@/components/ui";
+
 import { type SuggestedActivity } from "@/types/dataTypes";
 import OverviewSummary from "@/components/BaseLine/OverciewSummary";
-import VerticalTimeline from "@/components/Timeline/TimelineVis";
-import * as d3 from "d3";
+import * as React from 'react';
+import PatientMessageDialog from "@/components/PatientCommunication/PatientMessageDialog";
+import TimeLineGraph from "@/components/Timeline/TimeLine";
+
+
 
 interface MINDTabProps {
   selectedPatient: string;
@@ -42,7 +45,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
   );
   const [selectedInsightTypes, setSelectedInsightTypes] = useState<
     InsightType[]
-  >([]);
+  >(['psychological']);
 
   const [selectedActivities, setSelectedActivities] = useState<
     SuggestedActivity[]
@@ -50,10 +53,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
 
   const [isDrillDown, setIsDrillDown] = useState(false);
   const [expandedSections, setExpandedSections] = useState({
-    overview: false,
     insights: false,
-    lastSession: false,
-    communication: false,
   });
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -65,14 +65,14 @@ const MINDTab: React.FC<MINDTabProps> = ({
     survey_data,
     last_encounter
   } = getVisualizerDataForPerson(selectedPatient);
-  const [globalExpand, setGlobalExpand] = useState(false);
   const [expandTimelineSections, setExpandTimelineSections] = useState({
-    overview: false,
+    medicalHistory: false,
     lastSession: true,
     insights: false,
-    communication: false,
+    recapToday: false,
   });
   const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
+  const [selectedTimeline, setSelectedTimeline] = useState<string | null>(null);
 
   //to support cards be used by the timeline
 
@@ -80,22 +80,33 @@ const MINDTab: React.FC<MINDTabProps> = ({
     ...insightCardData, ...last_encounter
   ]
 
-  const toggleSection = (
-    section: "overview" | "insights" | "communication"
-  ) => {
-    setExpandedSections((prev) => ({
-      ...prev,
-      [section]: !prev[section],
-    }));
-  };
-
   const toggleTimelineSection = (
-      section: "overview" | "insights" | "lastSession" | "communication"
+      section: "medicalHistory" | "insights" | "lastSession" | "recapToday"
   ) => {
     setExpandTimelineSections((prev) => ({
       ...prev,
       [section]: !prev[section],
     }));
+    if(section !==  "medicalHistory" &&  !expandTimelineSections[section]){
+      setSelectedTimeline(section);
+    }
+  };
+
+  const handleTimelineSelect = (key: string) => {
+    setSelectedTimeline(key);
+    selectTimelineSection(key);
+  };
+
+  const selectTimelineSection = (
+      section: "medicalHistory" | "insights" | "lastSession" | "recapToday"
+  ) => {
+    setExpandTimelineSections({
+      medicalHistory: false,
+      insights: false,
+      lastSession: false,
+      recapToday: false,
+      [section]: true, // only this section is true
+    });
   };
 
   const handleToggleCard = (cardKey: string, expand: boolean) => {
@@ -111,17 +122,13 @@ const MINDTab: React.FC<MINDTabProps> = ({
   };
 
   useEffect(() => {
-    setExpandedSections({
-      overview: false,
-      insights: false,
-      communication: false,
-    });
     setExpandTimelineSections({
       overview: false,
       lastSession: true,
       insights: false,
-      communication: false,
+      recapToday: false,
     });
+    handleTimelineSelect('lastSession')
     setSelectedInsightCard(null);
     setIsDrillDown(false);
     setSelectedInsightHeader([]);
@@ -177,51 +184,8 @@ const MINDTab: React.FC<MINDTabProps> = ({
     overview: null,
     lastSession: null,
     insights: null,
-    communication: null,
+    recapToday: null,
   });
-
-
-  const lastTimelineSectionRef = useRef<string | null>(null);
-
-  const toggleTimelineSectionSingle = (sectionToToggle: keyof typeof expandTimelineSections) => {
-    setExpandTimelineSections((prev) => {
-      const newState: Record<string, boolean> = {};
-      Object.keys(prev).forEach((key) => {
-        newState[key] = key === sectionToToggle ? true : false;
-      });
-      return newState;
-    });
-  };
-
-
-// In MINDTab component, replace the handleTimelineStateChange function with this:
-
-  const handleTimelineStateChange = (selectedValue: string | null) => {
-    if (!selectedValue) return;
-
-    const sectionMap: Record<string, keyof typeof expandTimelineSections> = {
-      "insights": "insights",
-      "2021-05-09": "lastSession", // Date maps to lastSession
-      "2021-06-07": "communication" // Date maps to communication (today)
-    };
-
-    const targetSection = sectionMap[selectedValue];
-    if (!targetSection) return;
-
-    // Expand only the selected section
-    setExpandTimelineSections(prev => ({
-      overview: false,
-      lastSession: targetSection === "lastSession",
-      insights: targetSection === "insights",
-      communication: targetSection === "communication"
-    }));
-
-    // Scroll to section
-    sectionRefs.current[targetSection]?.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  };
 
 
   return (
@@ -230,26 +194,27 @@ const MINDTab: React.FC<MINDTabProps> = ({
       <div className="flex gap-4 h-full py-2 px-4">
         {/* Left column: scrollable independently */}
         {overviewCardData && !isDrillDown && (
-          <div
-            className="flex flex-col w-[220px] shrink-0 sticky top-0 z-10 gap-2"
-            ref={(el) => {
-              sectionRefs.current.overview = el;
-            }}
-          >
-            <OverviewSummary overviewCardData={overviewCardData} />
-            <h3 className="text-base font-semibold">Navigation</h3>
-            <VerticalTimeline
-              ref={timelineRef}
-              dates={[
-                { date: "2021-05-09", label: "Last session" },
-                { date: "2021-06-07", label: "Today" },
-              ]}
-              onStateChange={handleTimelineStateChange}
-            />
-          </div>
+            <div
+                className="flex flex-col w-[220px] shrink-0 sticky top-0 z-10 gap-2 max-h-screen overflow-y-auto"
+                ref={(el) => {
+                  sectionRefs.current.overview = el;
+                }}
+            >
+              <OverviewSummary overviewCardData={overviewCardData} />
+              <h3 className="text-base font-semibold">Navigation</h3>
+
+              {/* Timeline graph section */}
+                <div className="max-w-[400px]">
+                 <TimeLineGraph  selectedTimeline={selectedTimeline}
+                                 handleTimelineSelect={handleTimelineSelect}
+                  />
+              </div>
+            </div>
         )}
+
+
         <div
-          className={`flex flex-grow py-0 px-4 gap-4 overflow-y-auto ${
+          className={`flex flex-grow py-0 px-2 gap-4 overflow-y-auto ${
             !isDrillDown ? "flex-col w-full mx-auto" : ""
           }`}
         >
@@ -265,12 +230,12 @@ const MINDTab: React.FC<MINDTabProps> = ({
                 <SectionTitle
                   title="Medical history"
                   // subtitle="test"
-                  isExpanded={expandedSections.overview}
-                  onClick={() => toggleSection("overview")}
+                  isExpanded={expandTimelineSections.medicalHistory}
+                  onClick={() => toggleTimelineSection("medicalHistory")}
                 >
                   <OverviewComponent
                     overviewData={overviewCardData}
-                    isExpanded={expandedSections.overview}
+                    isExpanded={expandTimelineSections.medicalHistory}
                     isDrillDown={isDrillDown}
                   />
                 </SectionTitle>
@@ -285,7 +250,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
                 <SectionTitle
                     title="Session Recap"
                     subtitle="(2021-05-09)"
-                    isExpanded={expandedSections.lastSession || globalExpand}
+                    isExpanded={expandTimelineSections.lastSession}
                     onClick={() =>
                         toggleTimelineSection("lastSession")
                     }
@@ -308,7 +273,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
                               <InsightCardComponent
                                   key={card.key}
                                   insightCardData={card}
-                                  isExpanded={expandedSections.insights || globalExpand}
+                                  isExpanded={expandedSections.insights}
                                   onToggle={handleToggleCard}
                                   isDrillDown={isDrillDown}
                                   title={card.summaryTitle}
@@ -324,57 +289,6 @@ const MINDTab: React.FC<MINDTabProps> = ({
                   }
                 </SectionTitle>
 
-                {/*<SectionTitle*/}
-                {/*  title="Last Session"*/}
-                {/*  // subtitle="test"*/}
-                {/*  isExpanded={expandedSections.insights || globalExpand}*/}
-                {/*  // TODO*/}
-                {/*  onClick={() => {}}*/}
-                {/*>*/}
-                {/*  <div*/}
-                {/*      className={`grid gap-4 ${*/}
-                {/*          isDrillDown ? "grid-cols-2" : "grid-cols-1 sm:grid-cols-2"*/}
-                {/*      }`}*/}
-                {/*  >*/}
-
-                {/*  /!* Left Column *!/*/}
-                {/*    <div className="flex flex-col gap-4">*/}
-                {/*      {last_encounter.map((card, index) => (*/}
-                {/*        <div*/}
-                {/*          key={card.key}*/}
-                {/*          ref={(el) => {*/}
-                {/*            cardRefs.current[index * 2] = el;*/}
-                {/*          }}*/}
-                {/*          className="w-full"*/}
-                {/*        >*/}
-                {/*          <InsightCardComponent*/}
-                {/*            key={card.key}*/}
-                {/*            insightCardData={card}*/}
-                {/*            isExpanded={false*/}
-                {/*              // globalExpand || expandedCards.has(card.key)*/}
-                {/*            }*/}
-                {/*            onToggle={handleToggleCard}*/}
-                {/*            isDrillDown={isDrillDown}*/}
-                {/*            title={card.summaryTitle}*/}
-                {/*            sources={card.sources}*/}
-                {/*            isInsightHeaderSelected={selectedInsightHeader.includes(*/}
-                {/*              card.key*/}
-                {/*            )}*/}
-                {/*            isInsightCardSelected={*/}
-                {/*              selectedInsightCard === card.key*/}
-                {/*            }*/}
-                {/*            handleCardSelect={() =>*/}
-                {/*              handleCardSelection(card.key, index * 2)*/}
-                {/*            }*/}
-                {/*            handleCardHeaderClick={() =>*/}
-                {/*              handleInsightCardHeaderSelect(card.key)*/}
-                {/*            }*/}
-                {/*          />*/}
-                {/*        </div>*/}
-                {/*      ))}*/}
-                {/*    </div>*/}
-                {/*  </div>*/}
-                {/*</SectionTitle>*/}
               </div>
               {/* Data-driven Insights bg-green-200/50 */}
               <div
@@ -385,9 +299,9 @@ const MINDTab: React.FC<MINDTabProps> = ({
               >
 
                 <SectionTitle
-                    title="Patient Data Outlook"
+                    title="Patient Data Insights"
                     subtitle="(2021-05-09 to 2021-06-07)"
-                    isExpanded={expandedSections.insights || globalExpand}
+                    isExpanded={expandTimelineSections.insights}
                     onClick={() =>
                         toggleTimelineSection("insights")
                     }
@@ -423,7 +337,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
                                 <InsightCardComponent
                                     key={card.key}
                                     insightCardData={card}
-                                    isExpanded={globalExpand || expandedCards.has(card.key)}
+                                    isExpanded={expandedCards.has(card.key)}
                                     onToggle={handleToggleCard}
                                     isDrillDown={isDrillDown}
                                     title={card.summaryTitle}
@@ -440,58 +354,21 @@ const MINDTab: React.FC<MINDTabProps> = ({
                   }
 
                 </SectionTitle>
-
-                {/*    /!* Right column *!/*/}
-                {/*    <div className="flex flex-col gap-4">*/}
-                {/*      {filteredInsightCards.map(*/}
-                {/*          (card, index) =>*/}
-                {/*              index % 2 === 1 && ( // Odd index → right*/}
-                {/*                  <div*/}
-                {/*                      key={card.key}*/}
-                {/*                      ref={(el) => {*/}
-                {/*                        cardRefs.current[index] = el;*/}
-                {/*                      }}*/}
-                {/*                      className="w-full"*/}
-                {/*                  >*/}
-                {/*                    <InsightCardComponent*/}
-                {/*                        key={card.key}*/}
-                {/*                        insightCardData={card}*/}
-                {/*                        isExpanded={globalExpand || expandedCards.has(card.key)}*/}
-                {/*                        onToggle={handleToggleCard}*/}
-                {/*                        isDrillDown={isDrillDown}*/}
-                {/*                        title={card.summaryTitle}*/}
-                {/*                        sources={card.sources}*/}
-                {/*                        isInsightHeaderSelected={selectedInsightHeader.includes(card.key)}*/}
-                {/*                        isInsightCardSelected={selectedInsightCard === card.key}*/}
-                {/*                        handleCardSelect={() =>*/}
-                {/*                            handleCardSelection(card.key, index)*/}
-                {/*                        }*/}
-                {/*                        handleCardHeaderClick={() =>*/}
-                {/*                            handleInsightCardHeaderSelect(card.key)*/}
-                {/*                        }*/}
-                {/*                    />*/}
-                {/*                  </div>*/}
-                {/*              )*/}
-                {/*      )}*/}
-                {/*    </div>*/}
-                {/*  </div>*/}
-                {/*</SectionTitle>*/}
-
               </div>
 
               {/* Patient Communication bg-yellow-200/50  */}
               <div
                 className="rounded relative z-10"
                 ref={(el) => {
-                  sectionRefs.current.communication = el;
+                  sectionRefs.current.recapToday = el;
                 }}
               >
                 <SectionTitle
                   title="Discussion points today"
                   subtitle="(2021-06-07)"
                   // subtitle="test"
-                  isExpanded={expandedSections.communication}
-                  onClick={() => toggleTimelineSection("communication")}
+                  isExpanded={expandTimelineSections.recapToday}
+                  onClick={() => toggleTimelineSection("recapToday")}
                   action={
                     <Button
                       variant="outline"
@@ -504,7 +381,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
                   shouldExpand={false}
                 >
                   {
-                    expandTimelineSections.communication &&
+                    expandTimelineSections.recapToday &&
                       <PatientCommunicationComponent
                           isDrillDown={isDrillDown}
                           selectedInsightCardTitles={selectedInsightCardTitles}
@@ -550,8 +427,6 @@ const MINDTab: React.FC<MINDTabProps> = ({
         patientName={selectedPatient}
         clinicianName={clinicianName ?? "[Your care team]"}
       />
-      {/*<div className="flex flex-col bg-gray-50">*/}
-      {/*</div>*/}
     </>
   );
 };
