@@ -49,15 +49,15 @@
       "key": "insight-0",
       "summaryTitle": "Increasing total steps suggests improved physical activity and biological functioning.",
       "sources": [
-        "clinical note",
-        "passive sensing"
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "biological"
       ],
       "expandView": [
         {
-          "summarySentence": "Evaluate frequency of walking as a behavioral activation goal.",
+          "summarySentence": "Has Alison gone for at least one walk per week since the last session?",
           "dataPoints": null,
           "spec": [
             {
@@ -73,7 +73,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Evaluate frequency of walking as a behavioral activation goal.",
+          "summarySentence": "Has Alison gone for at least one walk per week since the last session?",
           "dataPoints": null,
           "spec": [],
           "sources": [
@@ -703,7 +703,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Monitor changes in mood as a primary depression metric.",
+          "summarySentence": "Have there been any changes in Alison's mood, such as improvement or worsening, since the last session?",
           "dataPoints": null,
           "spec": [
             {
@@ -719,7 +719,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Monitor changes in mood as a primary depression metric.",
+          "summarySentence": "Have there been any changes in Alison's mood, such as improvement or worsening, since the last session?",
           "dataPoints": null,
           "spec": [],
           "sources": [
@@ -1192,15 +1192,15 @@
       "key": "insight-2",
       "summaryTitle": "Increasing total sleep and rising awakening episodes indicate more disrupted but longer sleep.",
       "sources": [
-        "clinical note",
-        "passive sensing"
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "biological"
       ],
       "expandView": [
         {
-          "summarySentence": "Assess sleep quality and changes as a biological metric.",
+          "summarySentence": "Has Alison experienced any changes in her sleep patterns or quality since the last session?",
           "dataPoints": null,
           "spec": [
             {
@@ -1216,7 +1216,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Assess sleep quality and changes as a biological metric.",
+          "summarySentence": "Has Alison experienced any changes in her sleep patterns or quality since the last session?",
           "dataPoints": null,
           "spec": [],
           "sources": [
@@ -1827,8 +1827,8 @@
       "key": "insight-3",
       "summaryTitle": "Increased depressive symptoms and routine irregularity with higher sleep and physical activity suggest fluctuating energy and motivation.",
       "sources": [
-        "clinical note",
         "passive sensing",
+        "clinical note",
         "survey"
       ],
       "insightType": [
@@ -1838,7 +1838,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Assess energy and motivation as biological depression symptoms.",
+          "summarySentence": "Has Alison experienced any changes in her energy levels or motivation since the last session?",
           "dataPoints": null,
           "spec": [
             {
@@ -1854,7 +1854,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Assess energy and motivation as biological depression symptoms.",
+          "summarySentence": "Has Alison experienced any changes in her energy levels or motivation since the last session?",
           "dataPoints": null,
           "spec": [],
           "sources": [

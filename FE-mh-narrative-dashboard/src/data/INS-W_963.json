@@ -49,15 +49,15 @@
       "key": "insight-0",
       "summaryTitle": "Increasing positive affect and variable depression suggest fluctuating but improving mood since the last session.",
       "sources": [
-        "survey",
-        "clinical note"
+        "clinical note",
+        "survey"
       ],
       "insightType": [
         "psychological"
       ],
       "expandView": [
         {
-          "summarySentence": "Quantify mood and depression severity since last session.",
+          "summarySentence": "Has there been any change in Gabriella’s mood or severity of depressive symptoms since the last session?",
           "dataPoints": null,
           "spec": [
             {
@@ -73,7 +73,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Quantify mood and depression severity since last session.",
+          "summarySentence": "Has there been any change in Gabriella’s mood or severity of depressive symptoms since the last session?",
           "dataPoints": null,
           "spec": [],
           "sources": [
@@ -302,8 +302,8 @@
       "key": "insight-1",
       "summaryTitle": "Modestly increased total steps and inactive periods with variable routine consistency suggest fluctuating engagement in pleasurable activities.",
       "sources": [
-        "clinical note",
-        "passive sensing"
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "biological",
@@ -311,7 +311,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Assess behavioral activation and activity engagement.",
+          "summarySentence": "Has Gabriella maintained engagement in pleasurable activities such as listening to music and taking walks?",
           "dataPoints": null,
           "spec": [
             {
@@ -327,7 +327,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Assess behavioral activation and activity engagement.",
+          "summarySentence": "Has Gabriella maintained engagement in pleasurable activities such as listening to music and taking walks?",
           "dataPoints": null,
           "spec": [],
           "sources": [
@@ -2160,8 +2160,8 @@
       "key": "insight-2",
       "summaryTitle": "Increasing total steps and decreasing total screen time with variable sleep patterns suggest partial sleep hygiene implementation.",
       "sources": [
-        "clinical note",
-        "passive sensing"
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "biological",
@@ -2169,7 +2169,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Assess sleep hygiene practices and their impact.",
+          "summarySentence": "Has Gabriella implemented any sleep hygiene strategies, such as limiting phone use before bed or increasing physical activity?",
           "dataPoints": null,
           "spec": [
             {
@@ -2185,7 +2185,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Assess sleep hygiene practices and their impact.",
+          "summarySentence": "Has Gabriella implemented any sleep hygiene strategies, such as limiting phone use before bed or increasing physical activity?",
           "dataPoints": null,
           "spec": [],
           "sources": [
@@ -3710,15 +3710,15 @@
       "key": "insight-3",
       "summaryTitle": "Variable bedtime and awakening episodes with stable total sleep and wake time indicate inconsistent sleep patterns.",
       "sources": [
-        "clinical note",
-        "passive sensing"
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "biological"
       ],
       "expandView": [
         {
-          "summarySentence": "Monitor sleep quality and disturbances.",
+          "summarySentence": "Has Gabriella experienced any changes in sleep quality or patterns since the last session?",
           "dataPoints": null,
           "spec": [
             {
@@ -3734,7 +3734,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Monitor sleep quality and disturbances.",
+          "summarySentence": "Has Gabriella experienced any changes in sleep quality or patterns since the last session?",
           "dataPoints": null,
           "spec": [],
           "sources": [
@@ -4941,9 +4941,9 @@
       "key": "insight-4",
       "summaryTitle": "Increasing positive affect and physical activity, with decreasing screen time, suggest no functional decline.",
       "sources": [
-        "survey",
+        "passive sensing",
         "clinical note",
-        "passive sensing"
+        "survey"
       ],
       "insightType": [
         "biological",
@@ -4951,7 +4951,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Screen for suicidality and functional status.",
+          "summarySentence": "Has Gabriella experienced any emergence of suicidal ideation or significant functional decline?",
           "dataPoints": null,
           "spec": [
             {
@@ -4967,7 +4967,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Screen for suicidality and functional status.",
+          "summarySentence": "Has Gabriella experienced any emergence of suicidal ideation or significant functional decline?",
           "dataPoints": null,
           "spec": [],
           "sources": [
@@ -6148,15 +6148,15 @@
       "key": "insight-5",
       "summaryTitle": "Increasing positive affect suggests improved ability to identify and hold onto positive moments.",
       "sources": [
-        "survey",
-        "clinical note"
+        "clinical note",
+        "survey"
       ],
       "insightType": [
         "psychological"
       ],
       "expandView": [
         {
-          "summarySentence": "Assess ability to recognize and internalize positive experiences.",
+          "summarySentence": "Has Gabriella been able to identify and hold onto positive or neutral moments, even if brief?",
           "dataPoints": null,
           "spec": [
             {
@@ -6172,7 +6172,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Assess ability to recognize and internalize positive experiences.",
+          "summarySentence": "Has Gabriella been able to identify and hold onto positive or neutral moments, even if brief?",
           "dataPoints": null,
           "spec": [],
           "sources": [
@@ -6285,8 +6285,8 @@
       "key": "insight-6",
       "summaryTitle": "Increasing distance traveled and fluctuating routine suggest variable social engagement and possible changes in isolation.",
       "sources": [
-        "clinical note",
-        "passive sensing"
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "social",
@@ -6294,7 +6294,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Monitor social engagement and isolation.",
+          "summarySentence": "Has Gabriella experienced any changes in social withdrawal or isolation since the last session?",
           "dataPoints": null,
           "spec": [
             {
@@ -6310,7 +6310,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Monitor social engagement and isolation.",
+          "summarySentence": "Has Gabriella experienced any changes in social withdrawal or isolation since the last session?",
           "dataPoints": null,
           "spec": [],
           "sources": [

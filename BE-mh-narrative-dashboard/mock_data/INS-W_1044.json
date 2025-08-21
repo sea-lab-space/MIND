@@ -49,8 +49,8 @@
       "key": "insight-0",
       "summaryTitle": "Highly variable routine, activity, and affect indicate unstable mood and inconsistent functioning.",
       "sources": [
-        "clinical note",
         "passive sensing",
+        "clinical note",
         "survey"
       ],
       "insightType": [
@@ -60,7 +60,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Evaluate overall progress in mood and functioning.",
+          "summarySentence": "Has there been any noticeable improvement in mood or functioning since the last session?",
           "dataPoints": null,
           "spec": [
             {
@@ -76,7 +76,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Evaluate overall progress in mood and functioning.",
+          "summarySentence": "Has there been any noticeable improvement in mood or functioning since the last session?",
           "dataPoints": null,
           "spec": [],
           "sources": [
@@ -1249,8 +1249,8 @@
       "key": "insight-1",
       "summaryTitle": "Decreasing total steps and variable routine consistency indicate reduced and unstable behavioral activation.",
       "sources": [
-        "clinical note",
-        "passive sensing"
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "psychological",
@@ -1258,7 +1258,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Assess engagement with behavioral activation strategies.",
+          "summarySentence": "Is Lucy consistently engaging in behavioral activation activities such as walking, listening to music, or making tea?",
           "dataPoints": null,
           "spec": [
             {
@@ -1274,7 +1274,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Assess engagement with behavioral activation strategies.",
+          "summarySentence": "Is Lucy consistently engaging in behavioral activation activities such as walking, listening to music, or making tea?",
           "dataPoints": null,
           "spec": [],
           "sources": [
@@ -2201,7 +2201,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Monitor for safety and risk of self-harm.",
+          "summarySentence": "Has Lucy experienced any worsening of mood, increased numbness, or emergence of suicidal ideation?",
           "dataPoints": null,
           "spec": [
             {
@@ -2217,7 +2217,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Monitor for safety and risk of self-harm.",
+          "summarySentence": "Has Lucy experienced any worsening of mood, increased numbness, or emergence of suicidal ideation?",
           "dataPoints": null,
           "spec": [],
           "sources": [
@@ -2330,8 +2330,8 @@
       "key": "insight-3",
       "summaryTitle": "Variable routine, time at home, and travel patterns indicate unstable work schedule and poor stress coping.",
       "sources": [
-        "clinical note",
-        "passive sensing"
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "psychological",
@@ -2339,7 +2339,7 @@
       ],
       "expandView": [
         {
-          "summarySentence": "Assess occupational functioning and stress management.",
+          "summarySentence": "Is Lucy maintaining her work schedule, and how is she coping with work-related stress?",
           "dataPoints": null,
           "spec": [
             {
@@ -2355,7 +2355,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Assess occupational functioning and stress management.",
+          "summarySentence": "Is Lucy maintaining her work schedule, and how is she coping with work-related stress?",
           "dataPoints": null,
           "spec": [],
           "sources": [
@@ -3264,15 +3264,15 @@
       "key": "insight-4",
       "summaryTitle": "Earlier bedtime and increasing wake time with stable total sleep suggest shifting sleep patterns.",
       "sources": [
-        "clinical note",
-        "passive sensing"
+        "passive sensing",
+        "clinical note"
       ],
       "insightType": [
         "biological"
       ],
       "expandView": [
         {
-          "summarySentence": "Monitor biological symptoms: sleep and appetite.",
+          "summarySentence": "Have there been any changes in Lucy’s sleep patterns or appetite since the last session?",
           "dataPoints": null,
           "spec": [
             {
@@ -3288,7 +3288,7 @@
           "isShowL2": false
         },
         {
-          "summarySentence": "Monitor biological symptoms: sleep and appetite.",
+          "summarySentence": "Have there been any changes in Lucy’s sleep patterns or appetite since the last session?",
           "dataPoints": null,
           "spec": [],
           "sources": [
