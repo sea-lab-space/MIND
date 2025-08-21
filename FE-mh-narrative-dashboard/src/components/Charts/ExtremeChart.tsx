@@ -69,7 +69,13 @@ const ExtremeChart: React.FC<ExtremeChartProps> = (props) => {
           ))}
           <LabelList dataKey="highlightVal" position="top" />
         </Bar>
-        <Legend iconSize={14} wrapperStyle={{ fontSize: "14px" }} />
+        <Legend
+          iconSize={14}
+          wrapperStyle={{ fontSize: "14px" }}
+          align="left"
+          verticalAlign="top"
+          height={32}
+        />
       </BarChart>
     </ResponsiveContainer>
   );

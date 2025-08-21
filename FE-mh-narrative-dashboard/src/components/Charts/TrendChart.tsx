@@ -120,7 +120,13 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
 
         {/* regression aux line */}
         {auxilaryLine()}
-        <Legend iconSize={14} wrapperStyle={{ fontSize: "14px" }} />
+        <Legend
+          iconSize={14}
+          wrapperStyle={{ fontSize: "14px" }}
+          align="left"
+          verticalAlign="top"
+          height={32}
+        />
       </LineChart>
     </ResponsiveContainer>
   );

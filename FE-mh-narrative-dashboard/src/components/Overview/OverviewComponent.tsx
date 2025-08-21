@@ -17,7 +17,7 @@ export default function OverviewComponent({
 
     const clinicalRelevantInfo = overviewData.clinicalHistory;
 
-    console.log(overviewData)
+    console.log(isExpanded)
 
     return (
       <div className="transition-all duration-300 text-sm">
@@ -66,26 +66,26 @@ export default function OverviewComponent({
                 );
             })}
           </div> */}
-          <div
-            className={`flex flex-col gap-2 ${
-              isDrillDown ? "w-full" : "w-full"
-            }`}
-          >
-            <OverviewCardComponent
-              key={"overview-1"}
-              // icon={Icon}
-              title={"Physical"}
+          {isExpanded ? (
+            <div
+              className={`flex flex-col gap-2`}
             >
-              {clinicalRelevantInfo["physical"]}
-            </OverviewCardComponent>
-            <OverviewCardComponent
-              key={"overview-2"}
-              // icon={Icon}
-              title={"Psychological"}
-            >
-              {clinicalRelevantInfo["psychological"]}
-            </OverviewCardComponent>
-          </div>
+              <OverviewCardComponent
+                key={"overview-1"}
+                // icon={Icon}
+                title={"Physical"}
+              >
+                {clinicalRelevantInfo["physical"]}
+              </OverviewCardComponent>
+              <OverviewCardComponent
+                key={"overview-2"}
+                // icon={Icon}
+                title={"Psychological"}
+              >
+                {clinicalRelevantInfo["psychological"]}
+              </OverviewCardComponent>
+            </div>
+          ) : null}
         </div>
       </div>
     );
