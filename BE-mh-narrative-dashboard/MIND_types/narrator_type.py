@@ -10,3 +10,6 @@ class InsightGuardrailOutputModel(BaseModel):
 
 class RewriterOutputModel(BaseModel):
     rewritten_data_fact: str = Field(..., description="The rewritten data fact.")
+
+class QIAOutputModel(BaseModel):
+    answer_text: str = Field(..., description="The answer to the question.")

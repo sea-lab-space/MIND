@@ -9,7 +9,7 @@ from utils.prompt_commons import ALL_FEATURE_DESCRIPTION_W_UNITS
 # ! Case-specific prompt, remove in the future
 DATE_INSTRUCTION = """
 The date today is 2021-06-07.
-The last encounter was 2021-05-08.
+The last encounter was 2021-05-09.
 """
 
 NARRATOR_REWRITER_SYSTEM = f"""
@@ -27,15 +27,16 @@ Requirements:
 * Format the dates in your output:
   * For single dates, use the dates verbatim (e.g., 2021-05-12, 2021-06-04).
   * For date ranges, use the format "from <start_date> to <end_date> (<x> days/weeks)" (e.g., from 2021-05-12 to 2021-05-16 (4 days)).
-* For values, contextualize the data using the above knowledge.
-* For values, add <feature unit> to the description, if it has unit (i.e., not None)
-* Bold the <feature name> with <wsv></wsv>
-* Write the data facts with the style of writing a data story/data-rich document.
-* For each data fact, control the length to be less than 15 words.
+* For values, contextualize the data (high, low etc.) using the above knowledge.
+* For values, put its corresponding unit after the value (e.g., 5.5 kg, 3.2 mmHg). Note that some values does not have units, in which case you should not add any unit.
+* For each data fact, describe it with similar length to the original text.
 * Do not add any new information. 
+* If dates are already mentioned, don't need to end with descriptions such as "on that date", "during this period" etc.
+* The text should be clinically readable for other mental health professionals.
 """
 # * Do not infer the speed of the data change (i.e., don't use words like steadily, sharply, etc.).
 # * Remove any mention of a concrete year(e.g., 2021).
+# * Bold the <feature name> with <wsv></wsv>
 
 
 
