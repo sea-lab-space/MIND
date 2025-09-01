@@ -40,7 +40,7 @@ class FactOutlierConfig(BaseFactConfig):
     attribute: AttributeOutlier = Field(
         ..., description="The outlier attribute of the feature, one of spike or dip."
     )
-    value: float = Field(..., description="The outlier value of the feature.")
+    # value: float = Field(..., description="The outlier value of the feature.")
     time: str = Field(...,
                       description="The time of the feature, in YYYY-MM-DD format.")
     value: float = Field(..., description="The numeric value of the feature.")
@@ -237,8 +237,6 @@ AllFactConfigs = Union[
 
 class DiscovererQAOutput(BaseModel):
     facts: List[AllFactConfigs]
-
-PlannerFactTypes = Literal['comparison', 'trend']
 
 class DiscovererPlannerSpec(BaseModel):
     is_computable: bool
