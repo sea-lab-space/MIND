@@ -67,7 +67,7 @@ export function getUserFromHashUrl(): string {
   if (typeof window === "undefined") return "-";
 
   try {
-    const hash = window.location.hash; // e.g. "#/baseline?user=Orson"
+    const hash = window.location.hash;
     const queryIndex = hash.indexOf("?");
     if (queryIndex === -1) return "-";
 
@@ -84,7 +84,7 @@ export function getTimerSettingFromHashUrl(): number {
   if (typeof window === "undefined") return 0;
 
   try {
-    const hash = window.location.hash; // e.g. "#/baseline?user=Orson&timer=5"
+    const hash = window.location.hash;
     const queryIndex = hash.indexOf("?");
     if (queryIndex === -1) return 0;
 
