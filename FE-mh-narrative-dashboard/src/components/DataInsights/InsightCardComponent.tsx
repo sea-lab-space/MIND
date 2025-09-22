@@ -148,7 +148,7 @@ export default function InsightCardComponent({
               </div>
             </div>
 
-            {/* Right: Sources */}
+            {/* Right: Sources 
             {insightCardData?.expandView?.length > 1 && (
               <div className="flex items-start gap-1">
                 <button
@@ -172,6 +172,7 @@ export default function InsightCardComponent({
                 </button>
               </div>
             )}
+              */}
           </div>
           {isExpandedLocal && (
             <div
