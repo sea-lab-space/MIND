@@ -4,20 +4,20 @@ from .encounter_type import EncounterResponse
 from .transcript_type import TranscriptResponse
 # Computation pipeline types
 from .activity_type import ActivityResponse
-from .discoverer_text_type import (
+from .analyzer_text_type import (
     TextDataDiscoveryOutputModel,
     TextQuestionOutputModel
 )
 from .narrator_type import NarratorOutputModel, InsightGuardrailOutputModel, RewriterOutputModel, QIAOutputModel
-from .discoverer_numeric_type import (
-    DiscovererOutput,
+from .analyzer_numeric_type import (
+    AnalyzerOutput,
     FactComparisonConfig,
     FactDifferenceConfig,
     FactExtremeConfig,
     FactDerivedValueConfig,
     FactTrendConfig,
-    DiscovererQAOutput,
-    DiscovererPlannerOutput
+    AnalyzerQAOutput,
+    AnalyzerPlannerOutput
 )
 from .synthesizer_type import (
     InsightProposalOutputModel,

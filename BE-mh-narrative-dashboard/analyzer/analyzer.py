@@ -2,35 +2,34 @@ import asyncio
 from copy import deepcopy
 import json
 import os
-from typing import Literal
-from tqdm import tqdm
 
-from discoverer.rule_base_agents.rule_base_comparison_agent import RuleBaseComparisonAgent
-from discoverer.rule_base_agents.rule_base_trend_agent import RuleBaseTrendAgent
-from discoverer.rule_base_agents.rule_base_outlier_agent import RuleBaseOutlierAgent
-from discoverer.planner import PlannerAgent
-from discoverer.text_data.hypothesis_agent import DiscovererHypothesisAgent
-from helpers.notes_summary_agent import NotesCardSummaryAgent
+from analyzer.data_analyzer_agents.difference_agent import DifferenceAnalyzerAgent
+from analyzer.data_analyzer_agents.extreme_agent import ExtremeAnalyzerAgent
+from analyzer.data_analyzer_agents.rule_base_comparison_agent import RuleBaseComparisonAgent
+from analyzer.data_analyzer_agents.rule_base_trend_agent import RuleBaseTrendAgent
+from analyzer.data_analyzer_agents.rule_base_outlier_agent import RuleBaseOutlierAgent
+from analyzer.planner import AnalyzerPlannerAgent
+from analyzer.inquirer import AnalyzerInquirerAgent
 from utils.search import search_feature_in_feature_list, search_question_in_question_list
 
-class Discoverer:
-    def __init__(self, numeric_agents, two_session_aback_date, retrospect_date, before_date, model_name):
+class Analyzer:
+    def __init__(self, two_session_aback_date, retrospect_date, before_date, model_name):
         # all agents have the same base class
         self.numeric_agents = [
-            agent(
-                retrospect_date = retrospect_date, 
-                before_date = before_date, 
-                model=model_name) for agent in numeric_agents
+            ExtremeAnalyzerAgent(
+                retrospect_date=retrospect_date,
+                before_date=before_date,
+                model=model_name),
+            DifferenceAnalyzerAgent(
+                retrospect_date=retrospect_date,
+                before_date=before_date,
+                model=model_name),
         ]
-        # differentiate by agent name
-        # self.text_agents = [
-        #     agent(retrospect_date, before_date, model=model_name) for agent in text_agents
-        # ]
-        self.hypothesis_agent = DiscovererHypothesisAgent(
+        self.hypothesis_agent = AnalyzerInquirerAgent(
             before_date=before_date,
             retrospect_date=retrospect_date,
             model=model_name)
-        self.planning_agent = PlannerAgent(
+        self.planning_agent = AnalyzerPlannerAgent(
             before_date=before_date,
             retrospect_date=retrospect_date,
             model=model_name
@@ -44,13 +43,13 @@ class Discoverer:
             feature_list = feature_list[:1]
 
         tasks = []
-        for discoverer in self.numeric_agents:
+        for analyzer in self.numeric_agents:
             for feature in feature_list:
-                tasks.append((deepcopy(discoverer), feature))
+                tasks.append((deepcopy(analyzer), feature))
 
-        async def run_task(discoverer, feature):
-            result = await discoverer.run(feature, verbose=False)
-            return discoverer, feature, result
+        async def run_task(analyzer, feature):
+            result = await analyzer.run(feature, verbose=False)
+            return analyzer, feature, result
 
         coroutines = [run_task(d, f) for d, f in tasks]
         results = await asyncio.gather(*coroutines)
@@ -68,26 +67,7 @@ class Discoverer:
 
     def _run_numeric_discovery(self, feature_list, is_testing):
         return asyncio.run(self._async_run_numeric_discovery(feature_list, is_testing))
-    
-    # def _run_single_modal_discovery(self, feature_list):
-    #     outlier_agent = RuleBaseOutlierAgent(
-    #         start_date=self.retrospect_date,
-    #         end_date=self.before_date,
-    #     )
-    #     for feature in feature_list:
-    #         outlier_agent.run(feature['data'])
-    
-    # def _run_text_discovery(self, text_type: Literal['clinical note', 'clinical transcript'], context: str):
-    #     running_agent = None
-    #     for text_agent in self.text_agents:
-    #         if text_agent.modality_source == text_type:
-    #             running_agent = text_agent
-    #     assert running_agent is not None, "No text agent found for the given modality type"
 
-    #     res = asyncio.run(running_agent.run(context, verbose=False))
-    #     return res
-
-    
     def _prep_transcript(self, text_input):
         matching_feat = next(
             (feat['transcript'] for feat in text_input if feat['encounter_date']
@@ -107,7 +87,6 @@ class Discoverer:
         return transcript_input
     
 
-    
     def _run_hypothesis_generation(self, transcript_input, note_input, verbose = False):
         print("---- Running Hypothesis Generation ----")
         questions = self.hypothesis_agent.run(
@@ -210,7 +189,7 @@ class Discoverer:
         # Stage 2: Hypothesis generation
         numeric_input = features['numerical_data']
         if run_stages["hypothesis_generation"]:
-            print("[Discoverer run]: Running Hypothesis Generation")
+            print("[Analyzer run]: Running Hypothesis Generation")
             questions = self._run_hypothesis_generation(
                 transcript_input, note_input, verbose=False)
             if cache_dir:
@@ -223,7 +202,7 @@ class Discoverer:
         # Stage 3: Planning / key concerns
         # Stage 3a: Planning
         if run_stages["plan"]:
-            print("[Discoverer run]: Running Planning")
+            print("[Analyzer run]: Running Planning")
             execution_plan = self._run_planning(
                 questions, numeric_input, verbose=False)
             if cache_dir:
@@ -235,7 +214,7 @@ class Discoverer:
 
         # Stage 3b: Execution
         if run_stages["exec"]:
-            print("[Discoverer run]: Running Execution")
+            print("[Analyzer run]: Running Execution")
             key_concern_facts = self._run_execution(
                 execution_plan, numeric_input, questions, verbose=False)
             if cache_dir:
@@ -248,7 +227,7 @@ class Discoverer:
         # Stage 4: Numeric discovery (fact exploration)
         numeric_facts = []
         if run_stages["fact_exploration"]:
-            print("[Discoverer run]: Running Fact Exploration")
+            print("[Analyzer run]: Running Fact Exploration")
             if len(self.numeric_agents) > 0:
                 print("---- Running Numerical Data Fact Discovery ----")
                 numeric_facts = self._run_numeric_discovery(
@@ -267,6 +246,4 @@ class Discoverer:
         return {
             "numeric_facts": numeric_facts,
             "key_concern_facts": key_concern_facts,
-            # "transcript_facts": transcript_facts,
-            # "medication_facts": medication_facts
         }

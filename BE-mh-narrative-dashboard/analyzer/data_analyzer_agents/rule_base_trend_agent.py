@@ -1,4 +1,3 @@
-import warnings
 import numpy as np
 from MIND_types import FactTrendConfig
 import pandas as pd
@@ -47,27 +46,13 @@ class RuleBaseTrendAgent:
             for lag, (val, (low, high)) in enumerate(zip(acf_vals, confint)):
                 if lag == 0:
                     continue
-                if val < low or val > high:  # significant autocorrelation
+                if val < low or val > high:
                     cyclic_detected = True
                     break
 
             if cyclic_detected:
                 trend_type = "cyclic"
             else:
-                # if np.std(data_series_interp) < 1e-3:
-                #     trend_type = "stable"
-                # else:
-                #     with warnings.catch_warnings():
-                #         warnings.simplefilter("ignore", category=UserWarning)
-                #         stat, _, _, crit_vals = kpss(
-                #             data_series_interp, regression='c', nlags=1)
-
-                #     # print(stat, crit_vals)
-                #     if stat < crit_vals['10%']:
-                #         trend_type = "stable"
-                #     else:
-                #         trend_type = "no trend"
-                # --- CV-based stability detection ---
                 mean_val = np.mean(data_series_interp)
                 std_val = np.std(data_series_interp)
                 cv = std_val / mean_val if mean_val != 0 else np.inf

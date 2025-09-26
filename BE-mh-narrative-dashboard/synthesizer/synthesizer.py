@@ -6,13 +6,11 @@ from copy import deepcopy
 import json
 import os
 import random
-import re
 from scipy.stats import entropy
 import numpy as np
 
-from tqdm import tqdm, trange
+from tqdm import trange
 from synthesizer.synthesizer_agents.actor import InsightProposalActorAgent
-from datetime import datetime
 
 from synthesizer.synthesizer_agents.question_to_insight_agent import Q2IAgent
 from synthesizer.synthesizer_agents.reflection import InsightReflectionAgent
@@ -21,7 +19,6 @@ from utils.datetime_checker import date_between
 random.seed(42)
 
 class Synthesizer:
-    # TODO: Implement critiquer & narrator
     def __init__(self, data_fact_source, retrospect_date, before_date, model_name):
         self.fact_count = 0
         self.before_date = before_date
@@ -53,7 +50,6 @@ class Synthesizer:
         
         return fact_list
 
-    # ! This is glue code: improve Discoverer data_fact data structure
     def _flatten_tag_numeric(self, num_fact_list):
         id_map = {
             "passive sensing": "ps",
@@ -91,7 +87,6 @@ class Synthesizer:
                     self.fact_count += 1
         return fact_list
     
-    # ! This is glue code: improve Discoverer data_fact data structure
     def _tag_text(self, modality, text_list):
         txt_map = {
             "note_facts": "clinical note",
@@ -105,7 +100,6 @@ class Synthesizer:
             self.fact_count += 1
         return text_list
 
-    # ! This is glue code: improve Discoverer data_fact data structure
     def _flatten_tag_source(self):
         facts = []
         for key, value in self.data_fact_source.items():

@@ -2,7 +2,6 @@ import numpy as np
 from MIND_types import FactComparisonConfig
 import pandas as pd
 from scipy.stats import mannwhitneyu
-import pymannkendall as mk
 
 
 class RuleBaseComparisonAgent:
@@ -73,15 +72,3 @@ class RuleBaseComparisonAgent:
         )
 
         return comparison_spec.model_dump()
-
-
-        # trend_spec = FactTrendConfig(
-        #     name=feature_name,
-        #     attribute=trend_type,
-        #     time_1=self.start_date,
-        #     time_2=self.end_date,
-        #     fact_type="trend",
-        #     fact_description=""
-        # )
-
-        # return trend_spec

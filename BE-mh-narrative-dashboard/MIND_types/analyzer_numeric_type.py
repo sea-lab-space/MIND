@@ -222,7 +222,7 @@ class FactDerivedValueConfig(BaseFactConfig):
 FactType = TypeVar('FactType', bound=BaseFactConfig)
 
 
-class DiscovererOutput(BaseModel, Generic[FactType]):
+class AnalyzerOutput(BaseModel, Generic[FactType]):
     """A generic container for a list of discovered facts."""
     facts: List[FactType]
 
@@ -235,13 +235,13 @@ AllFactConfigs = Union[
     FactDerivedValueConfig,
 ]
 
-class DiscovererQAOutput(BaseModel):
+class AnalyzerQAOutput(BaseModel):
     facts: List[AllFactConfigs]
 
-class DiscovererPlannerSpec(BaseModel):
+class AnalyzerPlannerSpec(BaseModel):
     is_computable: bool
     question_text: str
     features: List[str] = Field(..., description="The feature name to explore.")
 
-class DiscovererPlannerOutput(BaseModel):
-    hooks: DiscovererPlannerSpec
+class AnalyzerPlannerOutput(BaseModel):
+    hooks: AnalyzerPlannerSpec

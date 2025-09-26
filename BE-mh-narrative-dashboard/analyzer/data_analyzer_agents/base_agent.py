@@ -6,9 +6,9 @@ from datetime import datetime
 
 from kb.defs import NUMERICAL_FEATURE_KB
 
-class BaseDiscovererAgent(ABC):
+class BaseAnalyzerAgent(ABC):
     """
-    BaseDiscoverer: A generic base class for data-driven discoverer agents.
+    BaseAnalyzer: A generic base class for data-driven analyzer agents.
     
     Args:
         retrospect_date (str): The date for retrospective analysis, YYYY-MM-DD.
@@ -63,7 +63,7 @@ class BaseDiscovererAgent(ABC):
 
     async def run(self, feature: dict, verbose: bool = False) -> dict:
         """
-        Run the discoverer on the given feature dict.
+        Run the analyzer on the given feature dict.
         
         Args:
             feature (dict): Must contain keys 'modality_source', 'feature_name', and 'data'.

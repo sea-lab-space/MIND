@@ -1,27 +1,17 @@
 import asyncio
 from copy import deepcopy
-from typing import List
 from utils.prompt_commons import (
     ALL_FEATURE_DESCRIPTION,
     OPENAI_AGENTIC_REC,
-    OPENAI_AGENTIC_TOOL_USE,
-    OPENAI_AGENTIC_PLANNING,
     get_mh_data_expert_system_prompt,
 )
-from agents import Agent, ModelSettings, RunContextWrapper, Runner, function_tool, handoff, trace
+from agents import Agent, ModelSettings, Runner
 from MIND_types import (
-    DiscovererPlannerOutput,
+    AnalyzerPlannerOutput,
 )
-from discoverer import (
-    TrendDiscovererAgent
-)
-from kb.defs import NUMERICAL_FEATURE_KB
-from utils.search import search_feature_in_feature_list
-
-
 
 # {OPENAI_AGENTIC_PLANNING}{OPENAI_AGENTIC_TOOL_USE}
-DISCOVERER_PLANNER_INST = f"""
+PLANNER_INST = f"""
 {OPENAI_AGENTIC_REC}
 
 {get_mh_data_expert_system_prompt()}
@@ -53,9 +43,9 @@ Facts you can compute:
 - `outlier` - Identify unusual patterns or values in the feature data that may indicate potential issues or anomalies.
 """
 
-class PlannerAgent:
+class AnalyzerPlannerAgent:
 
-    OUTPUT_MODEL = DiscovererPlannerOutput
+    OUTPUT_MODEL = AnalyzerPlannerOutput
 
     def __init__(self, retrospect_date: str, before_date: str, model: str):
         self.model = model
@@ -65,7 +55,7 @@ class PlannerAgent:
             name=f"Planner Agent",
             model_settings=ModelSettings(temperature=0.2),
             model=model,
-            instructions=DISCOVERER_PLANNER_INST,
+            instructions=PLANNER_INST,
             output_type=self.OUTPUT_MODEL
         )
 

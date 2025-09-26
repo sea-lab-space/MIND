@@ -38,8 +38,6 @@ A expert co-creation process followed where we aligned the two data sources to c
 
 ## 🧠 Architecture/Pipeline and Code Structure
 
-* **Discoverer**
-  * **Data Fact Discoverer**: Evidences
-  * **Data Insight Discoverer**: Clinical interpretations
+* **Analyzer**
 * **Synthesizer**: Bridge active and passive modalities to generate actionable insights and coherent clinical narrative.
 * **Visualizer**: Utility module to port the insights to the dashboard specifications.

@@ -1,5 +1,4 @@
 def get_mh_data_expert_system_prompt():
-    # ! Using case tailored prompt
     return f"""
         You are a mental health expert with over 20 years of experience and is well versed with mental health data and data analysis. 
         You will be treating a patient with depression. 
@@ -32,23 +31,8 @@ def get_mh_data_expert_requirements_prompt():
 
         Let’s think step by step.
     """
-# You are expected to return at least 3 data facts per fact type.
-# Specifically: 1) you are encouraged to discover more: you will be awarded if you can find the complete set of data facts; 2) you are penalized if you hallucinate: if you cannot find 3 data facts, you should return what you have found, even if less than 3.
 
 def get_mh_eveness_prompt():
     return f"""
         Ensure your fact discovery accounts for all provided time points in the dataset.
     """
-
-# ! scrapped this (causes unecessary wrong outputs)
-def get_mh_data_date_prompt(retrospect_date_str: str, before_date_str: str, is_comparison: bool = False):
-    common = f"You should put the most attention on data fact between {retrospect_date_str} and {before_date_str}."
-    if is_comparison:
-        return f"""
-            By default, you should compare the data before {retrospect_date_str} and between {retrospect_date_str} and {before_date_str}.
-            You should also add extra comparison if there is any other interesting data facts.
-        """
-    else:
-        return f"""
-            {common}
-        """

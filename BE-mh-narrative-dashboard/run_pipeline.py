@@ -1,4 +1,3 @@
-import asyncio
 from copy import deepcopy
 import json
 import time
@@ -93,29 +92,22 @@ class MINDPipeline:
                 self._save("data_input", self.data)
         return self
 
-    def run_discoverer(self, run_sub_stages = {}, load_from_cache=False):
+    def run_analyzer(self, run_sub_stages = {}, load_from_cache=False):
         if load_from_cache and (self.cache_dir / "data_facts.json").exists():
-            self._log("[Discoverer] Loading from cache")
+            self._log("[Analyzer] Loading from cache")
             self.data_facts = self._load("data_facts")
         else:
-            self._log("[Discoverer] Running agents")
-            from discoverer import Discoverer, TrendDiscovererAgent, ExtremeDiscovererAgent, ComparisonDiscovererAgent, DifferenceDiscovererAgent, DerivedValueDiscovererAgent, NotesDiscovererAgent, TranscriptsDiscovererAgent
-            discoverer = Discoverer(
-                numeric_agents=[
-                    # TrendDiscovererAgent, 
-                    ExtremeDiscovererAgent, 
-                    # ComparisonDiscovererAgent,
-                    DifferenceDiscovererAgent, 
-                    # DerivedValueDiscovererAgent
-                    ],
+            self._log("[Analyzer] Running agents")
+            from analyzer import Analyzer
+            analyzer = Analyzer(
                 two_session_aback_date=self.two_session_aback_date,
                 retrospect_date=self.retrospect_date,
                 before_date=self.before_date,
                 model_name=self.model_name
             )
-            self.data_facts = discoverer.run(
+            self.data_facts = analyzer.run(
                 features=self.data,
-                cache_dir=(self.cache_dir / "discoverer"),
+                cache_dir=(self.cache_dir / "analyzer"),
                 run_stages=run_sub_stages
                 )
 
@@ -147,9 +139,6 @@ class MINDPipeline:
             if self.save_to_cache:
                 self._save("data_insights", self.data_insights)
                 self._save("data_facts_list", synthesizer.data_fact_list)
-                # ! This is a hack
-                # ! resave data_fact
-                # self._save("data_facts", self.data_facts)
         return self
 
     def run_narrator(self, run_sub_stages={}, load_from_cache=False):
@@ -289,9 +278,6 @@ class MINDPipeline:
                 survey_raw.append(new_datum)
         return survey_raw
     
-
-
-
     def run_assembly(self):
         self._log("[Run] Final assembly")
         final_spec = {
@@ -332,20 +318,20 @@ if __name__ == "__main__":
         final_output = (
             pipeline
             .load_data(load_from_cache=False)
-            .run_discoverer(
+            .run_analyzer(
                 # run_sub_stages={
                 # "hypothesis_generation": True,
                 # "plan": True,
                 # "exec": True,
                 # "fact_exploration": False},
-                load_from_cache=False)
+                load_from_cache=True)
             .run_synthesizer(
                 iters=1, 
                 # run_sub_stages={
                 #     "qa_insights": True,
                 #     "simple_insights": True,
                 # },
-                load_from_cache=False)
+                load_from_cache=True)
             .run_narrator(
                 # run_sub_stages={
                 #     "thread": False,
@@ -354,76 +340,10 @@ if __name__ == "__main__":
                 #     "guardrail_qa": True,
                 #     "guardrail_simple_insight": True,
                 # },
-                load_from_cache=False)
-            .run_overview(load_from_cache=False)
-            .run_suggest_activity(load_from_cache=False)
-            .run_last_encounter_summary(load_from_cache=False)
+                load_from_cache=True)
+            .run_overview(load_from_cache=True)
+            .run_suggest_activity(load_from_cache=True)
+            .run_last_encounter_summary(load_from_cache=True)
             .run_visualizer()
             .run_assembly()
         )
-
-
-# def run_calc_relevance(self):
-#        self._log("[Calc Relevance] Running")
-#         from helpers import EmbeddingRelevance
-#         calc_relevance = EmbeddingRelevance()
-
-#         transcript_data = [
-#             {
-#                 "date": info['encounter_date'],
-#                 "text": "\n".join([turn['clinician'] + " " + turn['patient'] for turn in info['transcript']])
-#             }
-#             for info in self.data['this_series']
-#         ]
-
-#         clinical_notes_data = [
-#             {
-#                 "date": info['encounter_date'],
-#                 "text": info['clinical_note']
-#             }
-#             for info in self.data['this_series']
-#         ]
-
-#         insights_w_transcript = [
-#             {
-#                 "key": insight['key'],
-#                 "summaryTitle": insight['summaryTitle']
-#             }
-#             for insight in self.visualization_spec if "session transcript" in insight['sources']
-#         ]
-#         insights_w_clinical_notes = [
-#             {
-#                 "key": insight['key'],
-#                 "summaryTitle": insight['summaryTitle']
-#             }
-#             for insight in self.visualization_spec if "clinical note" in insight['sources']
-#         ]
-
-#         relevance_transcript = calc_relevance.run(
-#             subjective_materials=transcript_data,
-#             data_insights=insights_w_transcript
-#         )
-
-#         relevance_note = calc_relevance.run(
-#             subjective_materials=clinical_notes_data,
-#             data_insights=insights_w_clinical_notes
-#         )
-
-#         def retrive_relevance(key, relevance_data):
-#             for insight in relevance_data:
-#                 if key == insight['key']:
-#                     return insight['relevance']
-#                 else:
-#                     # raise error
-#                     ValueError("key not found in relevance_transcript")
-
-#         # add back to visualization_spec
-#         for insight in self.visualization_spec:
-#             if "session transcript" in insight['sources']:
-#                 insight['transcriptRelevance'] = retrive_relevance(
-#                     insight['key'], relevance_transcript)
-#             if "clinical note" in insight['sources']:
-#                 insight['noteRelevance'] = retrive_relevance(
-#                     insight['key'], relevance_note)
-
-#         return self

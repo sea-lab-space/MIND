@@ -4,18 +4,18 @@ from utils.prompt_commons import (
     get_mh_data_expert_system_prompt,
 )
 from agents import Agent, ModelSettings, Runner
-from MIND_types.discoverer_text_type import (
+from MIND_types.analyzer_text_type import (
     TextQuestionOutputModel
 )
 
 
-class DiscovererHypothesisAgent:
+class AnalyzerInquirerAgent:
 
     OUTPUT_MODEL = TextQuestionOutputModel
 
     def __init__(self, retrospect_date: str, before_date: str, model: str):
         """
-        Initialize a DiscovererHypothesisAgent.
+        Initialize a AnalyzerInquirerAgent.
 
         Args:
             retrospect_date (str): Start date (inclusive) of the text range, in 'YYYY-MM-DD' format.

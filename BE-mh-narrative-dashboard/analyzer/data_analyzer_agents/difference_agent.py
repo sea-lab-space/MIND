@@ -1,32 +1,28 @@
-from discoverer.numeric_tab_data.base_agent import BaseDiscovererAgent
+from analyzer.data_analyzer_agents.base_agent import BaseAnalyzerAgent
 from utils.tools import agent_tool_validate_fact_value
 from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE, OPENAI_AGENTIC_PLANNING
 from MIND_types import (
-    DiscovererOutput,
+    AnalyzerOutput,
     FactDifferenceConfig
 )
 
-
-class DifferenceDiscovererAgent(BaseDiscovererAgent):
+class DifferenceAnalyzerAgent(BaseAnalyzerAgent):
     DEFINITION = r"""
         Difference captures how the value of a feature between two time points change in the data. 
         Only return differences between adjacent time points to capture sudden changes.
     """
-    OUTPUT_MODEL = DiscovererOutput[FactDifferenceConfig]
+    OUTPUT_MODEL = AnalyzerOutput[FactDifferenceConfig]
     TOOLS = [agent_tool_validate_fact_value]
 
     def _glue_instructions(self, modality_source, feature_name, feature_definition):
-        from discoverer.numeric_tab_data.system_prompt import (
+        from analyzer.data_analyzer_agents.system_prompt import (
             get_mh_data_expert_modality_prompt,
             get_mh_data_expert_feature_prompt,
             get_mh_data_expert_system_prompt,
             get_mh_data_expert_task_prompt,
-            get_mh_data_expert_requirements_prompt,
-            get_mh_eveness_prompt
+            get_mh_data_expert_requirements_prompt
         )
 
-        # {get_mh_data_date_prompt(retrospect_date_str=self.retrospect_date, before_date_str=self.before_date)}
-        # {get_mh_eveness_prompt()}
         return f"""
             {OPENAI_AGENTIC_REC}
             {OPENAI_AGENTIC_TOOL_USE}

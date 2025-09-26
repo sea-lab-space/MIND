@@ -4,7 +4,7 @@ from utils.prompt_commons import (
     get_mh_data_expert_system_prompt,
 )
 from agents import Agent, ModelSettings, Runner
-from MIND_types.discoverer_text_type import (
+from MIND_types.analyzer_text_type import (
     TextDataDiscoveryOutputModel
 )
 
