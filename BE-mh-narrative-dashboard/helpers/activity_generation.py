@@ -1,9 +1,5 @@
 import asyncio
-from copy import deepcopy
-from typing import Literal
 from agents import Agent, ModelSettings, Runner
-from pydantic import BaseModel, Field
-from utils.datetime_checker import date_before, date_between
 from utils.prompt_commons import get_mh_data_expert_system_prompt
 from MIND_types import (
     ActivityResponse

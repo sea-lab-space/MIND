@@ -2,15 +2,12 @@ from typing import List, Literal, TypeVar, Generic, Union
 from pydantic import BaseModel, Field, model_validator
 
 # --- 1. Generalized Literal Types ---
-# All literal types are defined upfront for clarity and reusability.
-
 AttributeChangeDirection = Literal['more', 'less', 'even']
 AttributeAggregation = Literal['average', 'stdev', 'median', 'max', 'min']
 AttributeExtreme = Literal['min', 'max']
 AttributeTrend = Literal['rise', 'fall', 'stable', 'cyclic', 'variable', 'no trend']
 AttributeOutlier = Literal['spike', 'dip']
 
-# --- Helper Models ---
 class TimeDuration(BaseModel):
     """Represents a duration with a start and end time."""
     time_start: str = Field(...,
@@ -31,9 +28,6 @@ class BaseFactConfig(BaseModel):
 
 
 # --- 3. Templatized Fact Configurations ---
-# Each fact model inherits from the base class and uses a validator
-# to automatically generate its description.
-
 class FactOutlierConfig(BaseFactConfig):
     """A fact indicating an outlier in a feature."""
     fact_type: Literal['outlier'] = 'outlier'
@@ -59,7 +53,6 @@ class FactOutlierConfig(BaseFactConfig):
             f"An anomaly was detected for {self.name} on {self.time}, which {action}."
         )
         return self
-
 
 class FactComparisonConfig(BaseFactConfig):
     """A fact comparing an aggregated value between two time periods."""
@@ -109,11 +102,7 @@ class FactComparisonConfig(BaseFactConfig):
                 f"from {self.value_dur_1} (period: {self.time_dur_1.time_start} to {self.time_dur_1.time_end}) "
                 f"to {self.value_dur_2} (period: {self.time_dur_2.time_start} to {self.time_dur_2.time_end})."
             )
-
         return self
-
-
-
 
 class FactDifferenceConfig(BaseFactConfig):
     """A fact describing the difference in value between two points in time."""
@@ -217,8 +206,6 @@ class FactDerivedValueConfig(BaseFactConfig):
 
 
 # --- 4. Generic Output Model ---
-# A single, reusable output model using Python's generics.
-
 FactType = TypeVar('FactType', bound=BaseFactConfig)
 
 

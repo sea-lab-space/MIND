@@ -38,7 +38,7 @@ c) diverse in fact type and data modality.
 """
 
 
-class Q2IAgent:
+class GuidedSynthesizerAgnet:
 
     OUTPUT_MODEL = InsightProposalOutputModel
 
@@ -69,8 +69,6 @@ class Q2IAgent:
         if len(included_list) < 2:
             print("No significant result found")
             included_list = data_facts
-            
-        # print(included_list)
         
         prompt_list = [f"[{fact['id']}] {fact['fact_description']}" for fact in included_list]
         evidence_str = "\n".join(prompt_list)

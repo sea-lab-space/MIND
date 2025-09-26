@@ -22,12 +22,6 @@ Name: PSS-4 (Perceived Stress Scale 4)
 Description: A 4-item measure of perceived stress. Each item is rated 0-4, with a total score range of 0-16. Higher scores indicate greater levels of perceived stress, with scores greater than 6 suggesting high stress.
 """
 
-# PANAS = """
-# Name: PANAS (Positive and Negative Affect Schedule)
-
-# Description: A 10-item scale measuring the level of (a) positive and (b) negative affects. Higher values indicates larger extent.
-# """
-
 PANAS_POS = """
 Name: Positive Affect (PANAS-SF Positive Affect Subscale) 
 

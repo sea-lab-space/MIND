@@ -1,16 +1,8 @@
-
-
 import asyncio
 import random
 from agents import Agent, ModelSettings, Runner
 from MIND_types import RewriterOutputModel
-from utils.prompt_commons import ALL_FEATURE_DESCRIPTION_W_UNITS
-
-# ! Case-specific prompt, remove in the future
-DATE_INSTRUCTION = """
-The date today is 2021-06-07.
-The last encounter was 2021-05-09.
-"""
+from utils.prompt_commons import ALL_FEATURE_DESCRIPTION_W_UNITS, DATE_INSTRUCTION
 
 NARRATOR_REWRITER_SYSTEM = f"""
 You are an expert in clinical mental health narrative generation.
@@ -34,11 +26,6 @@ Requirements:
 * If dates are already mentioned, don't need to end with descriptions such as "on that date", "during this period" etc.
 * The text should be clinically readable for other mental health professionals.
 """
-# * Do not infer the speed of the data change (i.e., don't use words like steadily, sharply, etc.).
-# * Remove any mention of a concrete year(e.g., 2021).
-# * Bold the <feature name> with <wsv></wsv>
-
-
 
 class RewriterNarratorAgent:
     OUTPUT_MODEL = RewriterOutputModel
@@ -54,7 +41,6 @@ class RewriterNarratorAgent:
 
     async def run(self, data_fact, verbose=False):
         prompt_input = f"|data fact|: {data_fact}"
-        # TODO: API fail control (now default try 5 times, and raise error if all fail)
         for attempt in range(5):
             try:
                 res = await Runner.run(self.agent, prompt_input)

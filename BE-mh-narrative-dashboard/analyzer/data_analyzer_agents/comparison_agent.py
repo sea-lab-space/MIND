@@ -36,10 +36,6 @@ class ComparisonAnalyzerAgent(BaseAnalyzerAgent):
             get_mh_eveness_prompt
         )
 
-        # {get_mh_data_date_prompt(retrospect_date_str=self.retrospect_date, before_date_str=self.before_date)}
-        # {get_mh_data_date_prompt(retrospect_date_str=self.retrospect_date,
-        #                          before_date_str=self.before_date, is_comparison=True)}
-
         return f"""
             {OPENAI_AGENTIC_REC}
             {OPENAI_AGENTIC_TOOL_USE}

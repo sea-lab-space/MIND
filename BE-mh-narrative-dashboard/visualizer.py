@@ -1,13 +1,8 @@
 from copy import deepcopy
-import math
-
 from utils.search import replace_NaNs_to_null, search_evidence, search_id_in_facts, search_modality_type
-
 class Visualizer:
     def __init__(self, data_insights, data_fact_list, raw_data, qa_source, retrospect_date):
         self.data_insights = data_insights
-        # self.narrator_agent = NarratorAgent(model_name)
-        # self.data_insights_narrative = None
         self.data_fact_list = data_fact_list
         self.raw_data = raw_data
         self.qa_source = qa_source
@@ -33,10 +28,8 @@ class Visualizer:
     
 
     def run(self):
-        # self.data_insights_narrative = asyncio.run(self.narrator_agent.run(self.data_insights))
         specification = []
         for insight in self.data_insights:
-            # print(insight)
             L3_fact_ids = insight['insight_source']
             L2_fact_ids = insight['l2_insight_source']
             # use the L2 sequence, and append anything remaining in L3 to the end
@@ -48,7 +41,6 @@ class Visualizer:
             qaids = []
             for fact_id in fact_ids:
                 fact = search_id_in_facts(self.data_fact_list, fact_id)
-                # ! occurance where it can not be backtraced
                 if fact is None:
                     print('error in id')
                     continue
@@ -155,8 +147,6 @@ class Visualizer:
                     "sources": list(set(inference_sources)),
                     "insightType": insight['insight_category'],
                     "expandView": expand_view,
-                    # # TODO: relevance computation with sentenceBERT
-                    # "relevance": random.random()
                 }
             )
             self.insight_count += 1

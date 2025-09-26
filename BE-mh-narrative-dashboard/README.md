@@ -24,6 +24,15 @@ Computation pipeline for the MIND dashboard. The goal is to make sure the design
 
 > **For future development**: Use `uv` instead to ensure the `uv.lock` file would be updated.
 
+## Preparation
+
+Create a `.env` file within the `BE-MH-NARRATIVE-DASHBOARD` folder. Add the following environment variables:
+
+```
+OPENAI_API_KEY=<"e.g., sk-xxxxx">
+```
+
+
 ## 📈 Data Usage
 
 We created the simulated patient encounters data by collaborating with experts. We used the following resources as seeds:

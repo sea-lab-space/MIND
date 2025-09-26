@@ -12,7 +12,6 @@ class EncounterSpec(BaseModel):
     ICD_10_CM: str = Field(...,
                            description="The ICD-10-CM code for the medical condition.")
     CPT_code: str = Field(..., description="The CPT code for the encounter.")
-    # notes: str = Field(..., description="Progress note about the encounter.")
 
 
 class EncounterResponse(BaseModel):

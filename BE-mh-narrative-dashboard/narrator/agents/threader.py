@@ -2,7 +2,7 @@ from agents import Agent, ModelSettings, Runner
 from synthesizer import (
     CATEGORIES
 )
-from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE, OPENAI_AGENTIC_PLANNING, get_mh_data_expert_system_prompt
+from utils.prompt_commons import OPENAI_AGENTIC_REC, get_mh_data_expert_system_prompt
 from MIND_types import NarratorOutputModel
 
 NARRATOR_CATEGORY_THEMES = (

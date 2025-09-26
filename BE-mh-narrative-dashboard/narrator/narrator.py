@@ -4,22 +4,21 @@ import json
 import os
 import time
 from narrator.agents.deduplicator import DeduplicationNarratorAgent
-from narrator.agents.guardrail import GuardrailNarratorAgent
-from narrator.agents.question_insight_answer import RewriterQIAAgent
-from narrator.agents.rewriter import RewriterNarratorAgent
-from narrator.agents.simple_insight import RewriterSimpleInsightAgent
+from narrator.agents.guided_insight_narrator import GuidedInsightNarrator
+from narrator.agents.fact_narrator import RewriterNarratorAgent
+from narrator.agents.exp_insight_narrator import ExpInsightNarrator
 from narrator.agents.threader import ThreaderNarratorAgent
-from utils.search import search_evidence, search_id_in_facts, search_question
+from utils.search import search_id_in_facts, search_question
 
 
 class Narrator:
     def __init__(self, data_insights_full, data_fact_list, model_name: str = "gpt-4.1"):
         self.threader_agent = ThreaderNarratorAgent(model=model_name)
-        self.simple_insight_agent = RewriterSimpleInsightAgent(
+        self.simple_insight_agent = ExpInsightNarrator(
             model=model_name)
         self.deduplication_agent = DeduplicationNarratorAgent(model=model_name)
         self.fact_rewriter_agent = RewriterNarratorAgent(model=model_name)
-        self.qia_agent = RewriterQIAAgent(model=model_name)
+        self.qia_agent = GuidedInsightNarrator(model=model_name)
         self.data_insights_full = data_insights_full
         self.data_fact_list = data_fact_list
 
@@ -150,14 +149,4 @@ class Narrator:
             data_insights_narrative = self._load(os.path.join(
                 cache_dir, "data_insights_guardrail_simple_insight.json"))
 
-
-
-
-        # for (insight, _, _) in tasks:
-        #     print(insight)
-        #     if 'l2_insight_source' not in insight:
-        #         insight['l2_insight_source'] = insight['insight_source']
-
-
-        
         return data_insights_narrative, new_fact_list

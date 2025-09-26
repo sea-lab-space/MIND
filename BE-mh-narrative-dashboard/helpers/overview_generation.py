@@ -46,10 +46,8 @@ def get_mh_system_prompt(length: Literal['minimal', 'short']):
         raise ValueError("Invalid length")
 
 class SummarizationFacets(BaseModel):
-    # medical_history: str = Field(..., description="The patient's medical history")
     sessions_recap: str = Field(..., description="The patient's sessions recap")
     current_concerns: str = Field(..., description="The patient's current concerns")
-    # medication: str = Field(..., description="The patient's medication")
 
 class SummarizationAgent:
     def __init__(self, data, retrospect_date, before_date, model_name):

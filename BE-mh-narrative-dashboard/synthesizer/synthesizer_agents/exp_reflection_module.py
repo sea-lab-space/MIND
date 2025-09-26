@@ -1,13 +1,10 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from agents import Agent, ModelSettings, Runner
-from typing import List, Literal
-from datetime import datetime
 import sys
 from pathlib import Path
 from dotenv import load_dotenv
-from synthesizer.synthesizer_commons import SYNT_CATEGORIZATION_PROMPT, SYNT_CATEGORY_PROMPT, SYNT_DATA_PROMPT, SYNT_RULES, SYNT_EXAMPLES
-from utils.prompt_commons import OPENAI_AGENTIC_REC, OPENAI_AGENTIC_TOOL_USE, OPENAI_AGENTIC_PLANNING, get_mh_data_expert_system_prompt
-from utils.tools import retrive_data_facts
+from synthesizer.synthesizer_commons import SYNT_CATEGORIZATION_PROMPT, SYNT_DATA_PROMPT, SYNT_RULES, SYNT_EXAMPLES
+from utils.prompt_commons import OPENAI_AGENTIC_REC, get_mh_data_expert_system_prompt
 
 project_root = Path(__file__).parent.parent.parent
 print(project_root)

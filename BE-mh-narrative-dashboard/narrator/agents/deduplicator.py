@@ -18,6 +18,7 @@ Requirement:
 * Make sure to return at least 1 data fact.
 """
 
+# ! For expanded card (disabled in final version)
 
 class DeduplicationNarratorAgent:
     OUTPUT_MODEL = List[str]

@@ -1,6 +1,11 @@
 
 from kb.defs import NUMERICAL_FEATURE_KB
 
+# ! Case-specific prompt, remove in the future
+DATE_INSTRUCTION = """
+The date today is 2021-06-07.
+The last encounter was 2021-05-09.
+"""
 
 def get_mh_data_expert_system_prompt():
     # ! Using case tailored prompt

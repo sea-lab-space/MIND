@@ -2,9 +2,8 @@ from datetime import datetime
 import re
 from utils.datetime_checker import datetime_checker
 import numpy as np
-from typing import List, Literal
-from typing_extensions import TypedDict, Any
-from agents import Agent, FunctionTool, RunContextWrapper, function_tool
+from typing import List
+from agents import RunContextWrapper, function_tool
 
 # ! Warning: DO NOT alter doc string of function tools!
 # ! Its used as part of the prompt for agent-decision making: write comments with # instead
@@ -36,27 +35,6 @@ def agent_tool_validate_fact_value(wrapper: RunContextWrapper[List], date: str) 
             return datum[keys[1]]
 
     return "Data not found for date: " + date
-
-# @function_tool
-# def agent_tool_validate_difference(wrapper: RunContextWrapper[List], time_1: str, time_2: str, attribute: Literal['more', 'less']) -> str:
-#     """
-#     Valid if the difference data fact found is valid.
-
-#     Args:
-#         time_1: The first timepoint, in YYYY-MM-DD format.
-#         time_2: The second timepoint, in YYYY-MM-DD format.
-#         attribute: The attribute of the feature, more or less.
-#     """
-
-#     # check formatting of the date with regex
-#     if not datetime_checker(time_1) or not datetime_checker(time_2):
-#         print("triggered invalid date response")
-#         return "Invalid date format. Please use YYYY-MM-DD."
-    
-#     data = wrapper.context
-#     val1 = find_data_by_date(data, time_1)
-#     val2 = find_data_by_date(data, time_2)
-#     return val1 - val2
 
 def find_data_by_date(data, date):
     keys = data[0].keys()

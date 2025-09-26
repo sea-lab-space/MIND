@@ -1,8 +1,6 @@
 
 import math
-
 from kb.defs import NUMERICAL_FEATURE_KB
-
 
 def search_id_in_facts(data_fact_list, fact_id):
     for fact in data_fact_list:

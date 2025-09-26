@@ -10,10 +10,10 @@ from scipy.stats import entropy
 import numpy as np
 
 from tqdm import trange
-from synthesizer.synthesizer_agents.actor import InsightProposalActorAgent
+from synthesizer.synthesizer_agents.exp_synthesizer import ExploratorySynthesizerAgnet
 
-from synthesizer.synthesizer_agents.question_to_insight_agent import Q2IAgent
-from synthesizer.synthesizer_agents.reflection import InsightReflectionAgent
+from synthesizer.synthesizer_agents.guided_synthesizer import GuidedSynthesizerAgnet
+from synthesizer.synthesizer_agents.exp_reflection_module import InsightReflectionAgent
 from utils.datetime_checker import date_between
 
 random.seed(42)
@@ -27,9 +27,9 @@ class Synthesizer:
         self.data_fact_list = self._flatten_tag_source()
         self.data_fact_id_set = set([fact["id"] for fact in self.data_fact_list])
 
-        self.q2i_agent = Q2IAgent(model_name)
+        self.guided_syn_agent = GuidedSynthesizerAgnet(model_name)
         
-        self.actor_agent = InsightProposalActorAgent(self.data_fact_list, model_name)
+        self.exp_syn_agent = ExploratorySynthesizerAgnet(self.data_fact_list, model_name)
         self.reflection_agent = InsightReflectionAgent(model_name)
         self.reflection_mem = []
 
@@ -120,7 +120,6 @@ class Synthesizer:
     def _glue_data_fact_input(self, data_fact_set):
 
         # set fixed randomizer to shuffle data facts
-        # ! Is this better than keep original ordering (where same modality facts come in order)?
         data_fact_list = [
             fact for fact in self.data_fact_list
             if not fact["id"].startswith("qa-") and fact["id"] in data_fact_set
@@ -201,7 +200,7 @@ class Synthesizer:
                 The most recent reflection:
                 {mem_str_recent}
             """
-            data_insights_single_run = self.actor_agent.run(prompt, False)
+            data_insights_single_run = self.exp_syn_agent.run(prompt, False)
             data_insights = data_insights_single_run
             
             # Step 2: Evaluator run
@@ -234,18 +233,12 @@ class Synthesizer:
         count = 0
         for key_concern in key_concern_facts:
             evidences = key_concern['evidences']
-            res = self.q2i_agent.run(evidences, verbose = True)
-            # if len(res) != 1:
-            #     print(res)
-            #     print(evidences)
-            #     raise ValueError("Something wrong with the QA agent")
-
+            res = self.guided_syn_agent.run(evidences, verbose = True)
             for r in res:
                 r['qaid'] = key_concern['qaid']
             all_qa_insights.extend(res)
             count += 1
-            # break
-        # print(len(key_concern_facts))
+
         return all_qa_insights
     
     def _save(self, path, content):

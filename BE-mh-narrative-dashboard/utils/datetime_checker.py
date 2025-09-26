@@ -2,7 +2,6 @@
 from datetime import datetime
 import re
 
-
 def datetime_checker(date: str):
     try:
         datetime.strptime(date, "%Y-%m-%d")
@@ -10,13 +9,11 @@ def datetime_checker(date: str):
     except ValueError:
         return False
 
-
 def strip_date(date):
     match = re.search(r'\d{4}-\d{2}-\d{2}', date)
     if not match:
         return None
     return datetime.strptime(match.group(), '%Y-%m-%d')
-
 
 def date_between(date, start_date, end_date):
     date = strip_date(date)
