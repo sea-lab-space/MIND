@@ -26,20 +26,3 @@ class TranscriptsDiscovererAgent(BaseTextDiscovererAgent):
             before_date=before_date,
             model=model
         )
-
-if __name__ == "__main__":
-    # load generate_mock_data/context/INS-W_963.json
-    with open("./generate_mock_data/context/INS-W_963_full.json", "r") as f:
-        data = json.load(f)
-
-    notes = {}
-    for datum in data:
-        notes[datum["before_date"]] = datum['clinical_note']
-
-    agent = NotesDiscovererAgent(
-        before_date="2021-06-06",
-        retrospect_date="2021-05-09",
-        model="gpt-4.1-nano")
-    print(agent.modality_source)
-    res = asyncio.run(agent.run(notes, verbose=True))
-    # print(res)

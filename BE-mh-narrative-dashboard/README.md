@@ -1,6 +1,6 @@
-# ✨ MIND Computation Pipeline
+# 💡 MIND Computation Pipeline
 
-Modular computation pipeline for the MIND dashboard. Designed to be modular and reusable under the **pipes and filter** software architecture.
+Computation pipeline for the MIND dashboard. The goal is to make sure the design is modular and reusable under the **pipes and filter** software architecture.
 
 ## 🍵 Dependencies
 
@@ -9,38 +9,37 @@ Modular computation pipeline for the MIND dashboard. Designed to be modular and 
 * Install uv globally on your machine: `pip install uv`
 * Check if uv is installed by running `uv --version`
 * Sync dependencies: `uv sync`. This will 1) create a python venv with a virtual python version consistent with the repo, and 2) install and manage all the dependencies needed to run the project.
-* Run the project (single python file): `uv run <script_name>`. Make sure the project root is the `BE-MH-Narrative-Dashboard` Folder.
+* Change the root folder to be `BE-MH-Narrative-Dashboard`.
+* Run scripts in the project: `uv run <script_name>`: to rerun the data insight discovery pipeline, run `uv run run_pipeline.py`.
 
-> For devs: Remember to add packages using `uv add`.
+> **For future development**: Add packages using `uv add` to ensure consistent package management.
 
-### Install with `conda` + `pip`
+### Install with `conda` + `pip` [For preview only]
 
-TBD... (TODO: export a requirements.txt in the end)
+* Create a virtual environment with `conda create -n <env_name> python=3.9`
+* Activate the environment with `conda activate <env_name>`
+* Install all the dependencies with `pip install -r requirements.txt`
+* Change the root folder to be `BE-MH-Narrative-Dashboard`.
+* Run scripts in the project: `python <script_name>`: to rerun the data insight discovery pipeline, run `python run_pipeline.py`.
+
+> **For future development**: Use `uv` instead to ensure the `uv.lock` file would be updated.
 
 ## 📈 Data Usage
 
-We use a slice of GLOBEM as our dataset for the experiments in the paper.
-The repo is self-contained (we document the examples used in this study in this repo) and you don't need full access to GLOBEM to run our scripts. All data used in this study is under the `data` folder. (Note: The ema data is stored in separate files because the times does not align with each measurement: each test is administered at different times.)
+We created the simulated patient encounters data by collaborating with experts. We used the following resources as seeds:
+* **[GLOBEM Dataset](https://github.com/UW-EXP/GLOBEM)**: a large-scale data set where we sourced the passive sensing and survey scores for our simulated patients. We selected patient ids 963, 1044, 1077 (all with high depression symptoms), which we assigned names "Gabriella (Lin)", "Lucy (Sutton)", and "Alison (Daniels)" respectively.
+* **Online resources of patient interviews**: We used three resources:
+  - **Case 1**: Case study clinical example CBT: First session with a client with symptoms of depression (CBT model) -- used as seed for simulated patient "Lucy" [[link]](https://www.youtube.com/watch?v=7LD8iC4NqXM)
+  - **Case 2**: Case study clinical example: First session with a client with symptoms of depression (CBT model)-- used as seed for simulated patient "Gabriella" [[link]](https://www.youtube.com/watch?v=JKUFWK6iSsw)
+  - **Case 3**: Psychiatric Interviews for Teaching: Depression -- used as seed for simulated patient "Alison" [[link]](https://www.youtube.com/watch?v=4YhpWZCdiZc)
 
-To see the full data processing pipeline, please refer to the [`GLOBEM Github Repo`](https://github.com/UW-EXP/GLOBEM) to obtain the full dataset. Our preprocess pipeline is in `passive_data_extraction` folder. To run the full preprocessing pipeline, put the whole dataset under `pasive_data_extraction/data_raw` folder and initiate a interactive session (notebook) with the scripts in `pasive_data_extraction/data_extraction.py`. Full `.ipynb` file will be provided upon request.
+A expert co-creation process followed where we aligned the two data sources to create coherent simulated patient personas.
 
-We also use synthetic data to simulate patient encounters. To see how its raw form is created, check `generate_mock_data/README.md`
 
-## 🧠 Architecture/Pipeline
+## 🧠 Architecture/Pipeline and Code Structure
 
 * **Discoverer**
   * **Data Fact Discoverer**: Evidences
   * **Data Insight Discoverer**: Clinical interpretations
 * **Synthesizer**: Bridge active and passive modalities to generate actionable insights and coherent clinical narrative.
 * **Visualizer**: Utility module to port the insights to the dashboard specifications.
-
-
-## 📕 Prompt References
-* [Englhardt et al. From Classification to Clinical Insights: Towards Analyzing and Reasoning About Mobile and Behavioral Health Data With Large Language Models [IMWUT'24]](https://github.com/ubicomplab/classification-to-clinical)
-
-
-## 🧋 TODOs (Engineering perspective)
-- [x] Use asyncio for concurrent API calls (currently sequential)
-- [x] Change NaN to null in generated dataset.
-- [x] Unit conversions (minutes --> hours, meters --> feet/miles etc.)? 
-- [ ] API rate limit control (! If the code does not run & returns connection error, this is likely the cause. Temporary fix: run each stage separately)

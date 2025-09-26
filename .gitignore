@@ -47,3 +47,8 @@ test-results/
 # Lockfiles (optional)
 yarn.lock
 pnpm-lock.yaml
+
+# Internal Dev Logs
+/BE-mh-narrative-dashboard/README_INTERNAL.md
+/BE-mh-narrative-dashboard/passive_data_extraction
+/BE-mh-narrative-dashboard/generate_mock_data

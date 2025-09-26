@@ -62,9 +62,9 @@ class MINDPipeline:
             self._log("[Data] Generating fresh")
             from utils.extract_single_feature import feature_transform
 
-            with open("./generate_mock_data/context/personas_full.json", "r", encoding="utf-8") as f:
+            with open("./data/context/personas_full.json", "r", encoding="utf-8") as f:
                 personas = json.load(f)[self.patient_id]
-            with open(f"./generate_mock_data/context/{self.patient_id}_full.json", "r", encoding="utf-8") as f:
+            with open(f"./data/context/{self.patient_id}_full.json", "r", encoding="utf-8") as f:
                 this_encounter = json.load(f)
 
             for encounter in this_encounter:
@@ -312,8 +312,9 @@ class MINDPipeline:
 
 if __name__ == "__main__":
     MODEL_NAME = 'gpt-4.1'
-    USERS = ["INS-W_963", "INS-W_1044", "INS-W_1077"]
-    # USERS = ["INS-W_963"]
+    
+    # USERS = ["INS-W_963", "INS-W_1044", "INS-W_1077"]
+    USERS = ["INS-W_963"]
     # USERS = ["INS-W_1044"]
     # USERS = ["INS-W_1077"]
 
@@ -330,34 +331,33 @@ if __name__ == "__main__":
 
         final_output = (
             pipeline
-            .load_data(load_from_cache=True)
+            .load_data(load_from_cache=False)
             .run_discoverer(
                 # run_sub_stages={
                 # "hypothesis_generation": True,
                 # "plan": True,
                 # "exec": True,
                 # "fact_exploration": False},
-                load_from_cache=True)
+                load_from_cache=False)
             .run_synthesizer(
                 iters=1, 
                 # run_sub_stages={
                 #     "qa_insights": True,
                 #     "simple_insights": True,
                 # },
-                load_from_cache=True)
-            .run_narrator(
-                run_sub_stages={
-                    "thread": False,
-                    "fact_rewrite": False,
-                    "fact_deduplication": False,
-                    "guardrail_qa": True,
-                    "guardrail_simple_insight": True,
-                    
-                },
                 load_from_cache=False)
-            .run_overview(load_from_cache=True)
-            .run_suggest_activity(load_from_cache=True)
-            .run_last_encounter_summary(load_from_cache=True)
+            .run_narrator(
+                # run_sub_stages={
+                #     "thread": False,
+                #     "fact_rewrite": False,
+                #     "fact_deduplication": False,
+                #     "guardrail_qa": True,
+                #     "guardrail_simple_insight": True,
+                # },
+                load_from_cache=False)
+            .run_overview(load_from_cache=False)
+            .run_suggest_activity(load_from_cache=False)
+            .run_last_encounter_summary(load_from_cache=False)
             .run_visualizer()
             .run_assembly()
         )
