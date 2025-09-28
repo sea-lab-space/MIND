@@ -20,9 +20,8 @@ A clinician-facing mental health dashboard.
 
 ## 📂 Project Setup
 
-### 1. Clone the repository and open mh-narrative-dashboard FE code
-git clone https://github.com/your-username/mh-narrative-dashboard.git
-cd mh-narrative-dashboard
+### 1. Open mh-narrative-dashboard FE code
+cd mh-narrative-dashboard/FE-mh-narrative-dashboard
 ### 2. Install dependencies
 npm install
 ### 3. Run the development server
