@@ -1,6 +1,6 @@
 # 🧠 MH Narrative Dashboard
 
-A clinician-facing mental health dashboard.
+Frontend interface of the MIND and FACT (baseline) dashboards.
 
 ---
 
@@ -21,14 +21,19 @@ A clinician-facing mental health dashboard.
 ## 📂 Project Setup
 
 ### 1. Open mh-narrative-dashboard FE code
-cd mh-narrative-dashboard/FE-mh-narrative-dashboard
+```cd mh-narrative-dashboard/FE-mh-narrative-dashboard```
+
 ### 2. Install dependencies
-npm install
+```npm install```
+
 ### 3. Run the development server
-npm run dev
+```npm run dev```
+
 The app will start on http://localhost:5173.
+
 ### 4. Build for production
-npm run build
+```npm run build```
 This will generate a dist/ folder with optimized static files.
+
 ### 5. Preview the production build
-npm run preview
+```npm run preview```
