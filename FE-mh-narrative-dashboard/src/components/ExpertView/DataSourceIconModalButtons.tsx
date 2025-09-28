@@ -10,7 +10,6 @@ import ClinicalNotesTab from "@/components/BaseLine/ClinicalNotes/ClinicalNotesT
 import SurveyScoreTab from "@/components/BaseLine/SurveyScore/SurveyScoreTab";
 import TranscriptionTab from "@/components/BaseLine/Transcription/TranscriptionTab";
 
-// Icon + color config
 const dataSourceIconConfig: Record<DatasourceIconType, { icon: JSX.Element; color: string }> = {
     [DatasourceIconTypes.passiveSensing]: {
         icon: <Watch className="w-5 h-5" />,

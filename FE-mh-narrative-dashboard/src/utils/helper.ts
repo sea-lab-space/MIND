@@ -37,7 +37,6 @@ export function groupInsightsBySource(insights: InsightExpandViewItem[]) {
 
     for (const insight of insights) {
         const rawSource = insight.source;
-        // console.log(insight, rawSource)
         const baseKey = reverseMap[rawSource];
         const groupKey = `${baseKey}Facts`;
 
@@ -125,11 +124,9 @@ export function groupInsights(cards: InsightCardData[]) {
                 dates.push(new Date(spec.time_2));
             }
 
-            // Normalize: if no valid date, skip
             dates = dates.filter((d) => !isNaN(d.getTime()));
             if (dates.length === 0) continue;
 
-            // For ranges, we check both
             for (const d of dates) {
                 if (d.getTime() === cutoff1.getTime()) {
                     groups.at0509.push(card);

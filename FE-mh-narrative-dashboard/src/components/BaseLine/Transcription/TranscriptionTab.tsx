@@ -25,20 +25,17 @@ const TranscriptionTab: React.FC<TranscriptionTabProps> = ({
         }
     }, [dates, selectedDate]);
 
-    // Get the record for the selected date
     const selectedFact = clinicalTranscriptsFacts?.find(
         (fact) => fact.encounter_date === selectedDate
     );
 
     return (
       <div className="flex gap-4 h-full py-2 px-4">
-        {/* Sidebar: Overview + Date Buttons */}
         <div className="w-[240px] shrink-0 h-full sticky top-0 z-10">
           {showOverviewCardData && overviewCardData && (
             <OverviewSummary overviewCardData={overviewCardData} />
           )}
 
-          {/* Date selection buttons */}
           <div
             className={`flex flex-col gap-2 shrink-0 sticky top-0 z-10 ${
               showOverviewCardData ? "mt-8" : ""
@@ -66,7 +63,6 @@ const TranscriptionTab: React.FC<TranscriptionTabProps> = ({
           </div>
         </div>
 
-        {/* Main Content: Clinical Note Text */}
         <div className="flex-1 overflow-y-auto h-full p-4 bg-gray-50 border rounded-xl shadow">
           <h2 className="text-lg font-semibold">Transcriptions</h2>
           <p className="text-sm text-muted-foreground mb-4">

@@ -37,14 +37,12 @@ const Header: React.FC<HeaderProps> = (props) => {
   return (
     <div className="w-full bg-white border-b border-[#d9d9d9]">
       <div className="flex items-center justify-between px-6 py-2">
-        {/* Left - Brand */}
         <div className="flex items-center w-1/3">
           <h1 className="text-2xl font-bold text-black tracking-tight">
             {isHomePage ? "MIND" : "FACT"}
           </h1>
         </div>
 
-        {/* Center - Person Selector */}
         <div className="flex items-center w-1/3 justify-center">
           <Popover open={open} onOpenChange={setOpen}>
             <PopoverTrigger asChild>
@@ -95,13 +93,11 @@ const Header: React.FC<HeaderProps> = (props) => {
           </Popover>
         </div>
 
-        {/* Right - Retrospect Navigation and Avatar */}
         <div className="flex items-center gap-4 w-1/3 justify-end">
           <p className="text-sm text-right">
             <b>Last session</b>: 2021-05-09 <br /> <b>Today</b>: 2021-06-07
           </p>
 
-          {/* TODO: we can customize it to individual participants if we want */}
           <Avatar className="w-10 h-10 bg-[#b3adad] border border-[#d9d9d9]">
             <AvatarFallback className="bg-[#b3adad] text-black font-semibold">
               {userName.charAt(0).toUpperCase()}

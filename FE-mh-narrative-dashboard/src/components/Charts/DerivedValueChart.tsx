@@ -42,7 +42,6 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
 
   const visData = data.map((d) => ({
     ...d,
-    // date: `2025-${d.date.split("-").slice(1).join("-")}`,
     [metricKey]: Number(Number(d[metricKey]).toFixed(2)),
   }));
 
@@ -52,10 +51,8 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
       : false;
 
   const renderLabel = (props: any) => {
-    // console.log(props.viewBox)
     const { offset } = props;
     const { x, y, width } = props.viewBox;
-    // place label in the middle horizontally
 
     return (
       <foreignObject
@@ -63,7 +60,6 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
         y={y + offset}
         width={160}
         height={30}
-        // style={{ overflow: "visible" }}
       >
         <div className="bg-white/70 text-gray-500 text-s flex items-center justify-center">
           {`${spec.aggregation} is ${spec.value.toFixed(2)}`}
@@ -119,12 +115,6 @@ const DerivedValueChart: React.FC<DerivedValueChartProps> = (props) => {
               { x: spec.time_2, y: showVal },
             ]}
           />
-          {/* <Customized
-            component={(chartProps: any) => {
-              console.log(chartProps);
-              return null;
-            }}
-          /> */}
         </Bar>
         <Legend
           iconSize={14}

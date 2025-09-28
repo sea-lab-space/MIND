@@ -37,7 +37,6 @@ export default function TabsView({ tabItems, defaultTab, isMIND = true }: TabsVi
             onValueChange={handleTabChange}
             className="w-full flex flex-col flex-1 min-h-0"
         >
-            {/* Sticky Tabs Header */}
             <div className="sticky top-0 z-10 px-4 bg-white">
                 <TabsList
                     className={`grid gap-2 w-full ${
@@ -52,7 +51,6 @@ export default function TabsView({ tabItems, defaultTab, isMIND = true }: TabsVi
                 </TabsList>
             </div>
 
-            {/* Scrollable Content Area */}
             <div ref={contentRef} className="flex-1 min-h-0 overflow-y-auto">
                 {tabItems.map((tab) => (
                     <TabsContent key={tab.key} value={tab.key} className="h-full">

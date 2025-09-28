@@ -16,20 +16,15 @@ interface StudyEndModalProps {
 }
 
 export function StudyEndModal({ open, onOpenChange }: StudyEndModalProps) {
-  // Custom handler: only allow open or explicit close (via button)
   const handleOpenChange = useCallback(
     (nextOpen: boolean) => {
-      // Allow opening
       if (nextOpen) {
         onOpenChange(true);
       }
-      // Prevent closing by backdrop or escape
-      // Do nothing if nextOpen === false
     },
     [onOpenChange]
   );
 
-  // Function to close explicitly from button
   const handleCloseClick = () => {
     onOpenChange(false);
   };
@@ -47,7 +42,6 @@ export function StudyEndModal({ open, onOpenChange }: StudyEndModalProps) {
           Please wait for the study coordinator for the next instructions.
         </div>
         <DialogFooter>
-          {/* Close button triggers explicit close */}
           <Button variant="outline" onClick={handleCloseClick}>
             Exit
           </Button>

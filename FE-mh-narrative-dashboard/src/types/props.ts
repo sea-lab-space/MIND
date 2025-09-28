@@ -29,7 +29,6 @@ export interface HeaderProps {
 
 
 // TODO: support more granularities
-// Now the value should be the number of days
 export type RetrospectOptions = {
   [key: string]: number;
 };
@@ -55,7 +54,6 @@ export interface InsightExpandViewItem {
   highlightSpec?: HighlightSpec;
   dataSourceType: DataSourceType;
   insightType?: InsightType;
-  // ! use this feature to determine if it should be shown on L2
   isShowL2: boolean;
   spec?: any;
 }
@@ -66,7 +64,6 @@ export interface InsightCardData {
   sources: { type: DatasourceIconType }[];
   insightType: { type: InsightType }[];
   expandView: InsightExpandViewItem[];
-  // ! use this to show relevance score if it has the modality
   transcriptRelevance?: DataPoint[];
   noteRelevance?: DataPoint[];
 }
@@ -79,15 +76,6 @@ export const overviewIconMap: Record<string, React.ElementType> = {
   medication: Pill,
   history: History,
 };
-
-// export const InsightType = {
-//   SLEEP: "Sleep Patterns",
-//   ACTIVITY: "Physical Activity",
-//   DIGITAL: "Digital Engagement",
-//   EMOTIONAL: "Emotional State",
-//   SOCIAL: "Social Interaction",
-//   MEDICATION: "Medication & Treatment",
-// } as const;
 
 export const InsightType = {
   PSYCHOLOGICAL: "psychological",

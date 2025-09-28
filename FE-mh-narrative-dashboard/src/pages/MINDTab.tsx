@@ -15,7 +15,6 @@ import {
 import { getVisualizerDataForPerson } from "@/utils/dataConversion";
 import {
   flattenAllExpandViews,
-  groupInsights,
   groupInsightsBySource,
   removeHtmlTags,
 } from "@/utils/helper";
@@ -27,7 +26,6 @@ import * as React from 'react';
 import PatientMessageDialog from "@/components/PatientCommunication/PatientMessageDialog";
 import TimeLineGraph from "@/components/Timeline/TimeLine";
 import type { SectionType } from "@/types/insightSpec";
-
 
 
 interface MINDTabProps {
@@ -192,9 +190,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
 
   return (
     <>
-      {/* <div className="flex flex-col h-full"> */}
       <div className="flex gap-4 h-full py-2 px-4">
-        {/* Left column: scrollable independently */}
         {overviewCardData && !isDrillDown && (
           <div
             className="flex flex-col w-[240px] shrink-0 sticky top-0 z-10 gap-2 max-h-screen"
@@ -203,9 +199,7 @@ const MINDTab: React.FC<MINDTabProps> = ({
             }}
           >
             <OverviewSummary overviewCardData={overviewCardData} />
-            {/* <h3 className="text-base font-semibold">Navigation</h3> */}
 
-            {/* Timeline graph section */}
             <div className="max-w-[400px]  overflow-y-auto">
               <TimeLineGraph
                 selectedTimeline={selectedTimeline}
@@ -227,7 +221,6 @@ const MINDTab: React.FC<MINDTabProps> = ({
           >
             <div className="relative">
               <div className="absolute left-4.5 top-4 bottom-0 w-0.5 bg-[#d9d9d9] z-0" />
-              {/* ChartReview bg-red-200/50 */}
               <div className="rounded relative z-10">
                 <SectionTitle
                   title="Medical History"
@@ -245,9 +238,6 @@ const MINDTab: React.FC<MINDTabProps> = ({
 
               <div
                 className="rounded mb-2 mt-2 relative z-10"
-                // ref={(el) => {
-                //   sectionRefs.current.insights = el;
-                // }}
               >
                 <SectionTitle
                   title="Session Recap"
@@ -298,7 +288,6 @@ const MINDTab: React.FC<MINDTabProps> = ({
                   )}
                 </SectionTitle>
               </div>
-              {/* Data-driven Insights bg-green-200/50 */}
               <div
                 className="rounded mb-2 mt-2 relative z-10"
                 ref={(el) => {
@@ -369,7 +358,6 @@ const MINDTab: React.FC<MINDTabProps> = ({
                 </SectionTitle>
               </div>
 
-              {/* Patient Communication bg-yellow-200/50  */}
               <div
                 className="rounded relative z-10"
                 ref={(el) => {
@@ -405,7 +393,6 @@ const MINDTab: React.FC<MINDTabProps> = ({
             </div>
           </div>
 
-          {/* Right drilldown panel */}
           {isDrillDown && (
             <div
               className="bg-gray-100 rounded overflow-y-auto overflow-x-hidden h-full"
@@ -428,7 +415,6 @@ const MINDTab: React.FC<MINDTabProps> = ({
         </div>
       </div>
 
-      {/* Dialog mounted outside main layout */}
       <PatientMessageDialog
         open={isDialogOpen}
         onOpenChange={setIsDialogOpen}

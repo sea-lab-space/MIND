@@ -28,7 +28,6 @@ const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFac
         }
     }, [clinicalNotesFacts]);
 
-    // Find selected fact based on selectedFactKey
     const selectedFact = clinicalNotesFacts.find(fact => fact.key === selectedFactKey);
     const selectedFactSpec = selectedFact?.highlightSpec;
     const dates = sessionInfo?.map(item => item.encounter_date);
@@ -74,13 +73,9 @@ const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFac
     return (
       <Card className="bg-white border-[#eaeaea]">
         <CardContent className="px-6">
-          {/* Header */}
           <div className="flex items-center gap-2 mb-4 font-medium text-[#ffc100]">
-            {/* <StickyNote className="w-4 h-4 text-[#ffc100]" />
-                    <span className="text-[#ffc100] font-medium">Clinical Notes</span> */}
             <DataSourceIcon iconType="clinical note" showType />*
           </div>
-          {/* Date buttons on top */}
           <div className="flex gap-4 mb-6 overflow-x-auto no-scrollbar">
             {dates?.map((date) => {
               const isSelected = selectedDate === date;
@@ -100,7 +95,6 @@ const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFac
                     isHighlighted ? highlightBg : "bg-white"
                   } ${isSelected ? selectedBorder : ""}`}
                 >
-                  {/* {formatDate(date)} */}
                   {date}
                 </Button>
               );
@@ -108,27 +102,6 @@ const ClinicalNotesCard = ({ clinicalNotesFacts, sessionInfo }: clinicalNotesFac
           </div>
 
           <div className="flex gap-8">
-            {/* Left vertical buttons (summary sentences for selected date) */}
-            {/* <div className="flex-shrink-0 space-y-4 w-[30%]">
-              {clinicalNotesFacts.map((fact) => (
-                <Button
-                  key={fact.key}
-                  disabled={!highlightDates.has(selectedDate ?? "")}
-                  variant="outline"
-                  onClick={() => setSelectedFactKey(fact.key)}
-                  className={`w-full justify-start h-auto text-left whitespace-normal text-sm border-[#d9d9d9] ${
-                    selectedFactKey === fact.key ? "bg-[#f7f5f5]" : "bg-white"
-                  }`}
-                >
-                  <div className="flex items-start gap-2">
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0" />
-                    <span>{fact.summarySentence}</span>
-                  </div>
-                </Button>
-              ))}
-            </div> */}
-
-            {/* Right side: selected fact details */}
             <div
               ref={scrollContainerRef}
               className="space-y-6 text-sm text-[#2c2c2c] overflow-y-auto"

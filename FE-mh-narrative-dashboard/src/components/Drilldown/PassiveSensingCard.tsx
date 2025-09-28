@@ -41,14 +41,11 @@ const PassiveSensingCard = ({ passiveSensingFacts }: PassiveSensingCardProps) =>
       <Card className="bg-white border-[#eaeaea]">
         <CardHeader>
           <div className="flex items-center gap-2 font-medium">
-            {/* <Watch className="w-4 h-4 text-[#626681]" />
-                    <span className="text-[#757575] font-medium">Passive Sensing Data</span> */}
             <DataSourceIcon iconType="passive sensing" showType />
           </div>
         </CardHeader>
         <CardContent>
           <div className="flex min-h-[400px]">
-            {/* Left Side: Button List */}
             <div className="flex-shrink-0 space-y-4 w-[35%] max-h-[400px] overflow-y-auto">
               {passiveSensingFacts.map((insight) => (
                 <Button
@@ -75,7 +72,6 @@ const PassiveSensingCard = ({ passiveSensingFacts }: PassiveSensingCardProps) =>
               ))}
             </div>
 
-            {/* Right Side: Chart */}
             <div className="flex items-center justify-center flex-1">
               <div className="w-full h-72">
                 {showChart && selectedInsight && (

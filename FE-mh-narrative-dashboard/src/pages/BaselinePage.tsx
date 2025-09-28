@@ -160,29 +160,6 @@ export default function BaselinePage() {
           isMIND={false}
         />
       </div>
-
-
-        {/* User study specific
-        {selectedPatient && timeLimit && (
-          <TranscriptModal
-            selectedPatient={selectedPatient}
-            open={modalState}
-            onOpenChange={setModalState}
-          />
-        )}
-        {modalState === false && selectedPatient && timeLimit && (
-          <Timer
-            totalLength={timeLimit}
-            terminate={isTerminated}
-            onTerminate={() => {
-              setIsTerminated(true);
-              setStudyEndState(true);
-            }}
-          />
-        )}
-        {studyEndState && (
-          <StudyEndModal open={studyEndState} onOpenChange={setStudyEndState} />
-        )} */}
     </div>
   );
 }

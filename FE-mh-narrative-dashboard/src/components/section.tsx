@@ -63,13 +63,10 @@ const Section: React.FC<SectionProps> = (props) => {
           )}
         </h2>
 
-        {/* ✅ This is now right after the title */}
         {action && <div>{action}</div>}
-
         {icon && <div className="flex-shrink-0">{icon}</div>}
       </div>
 
-      {/* Section content */}
       {children && <div className={cn("px-14", className)}>{children}</div>}
     </div>
   );

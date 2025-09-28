@@ -44,7 +44,6 @@ export default function HomePage() {
             <div>
                 <h1>Patient Not Found</h1>
                 <p>The patient ID you entered is invalid. Please type in a url with valid patient name.</p>
-                {/* <button onClick={() => setInvalidPatient(false)}>Go Back</button> */}
             </div>
         );
     }
@@ -132,7 +131,6 @@ export default function HomePage() {
 
     return (
       <div className="flex flex-col h-screen">
-        {/* Sticky Header */}
         <div className="sticky top-0 z-50 shadow-md mb-2">
           <Header
             isHomePage
@@ -144,31 +142,9 @@ export default function HomePage() {
             disabled={!!patientId}
           />
         </div>
-        {/* Tab View fills the rest */}
         <div className="flex-1 min-h-0 flex">
           <TabsView tabItems={tabItems} defaultTab="mind" isMIND={true} />
         </div>
-        {/* User study specific */}
-        {/* {selectedPatient && timeLimit && (
-          <TranscriptModal
-            selectedPatient={selectedPatient}
-            open={modalState}
-            onOpenChange={setModalState}
-          />
-        )}
-        {modalState === false && selectedPatient && timeLimit && (
-          <Timer
-            totalLength={timeLimit}
-            terminate={isTerminated}
-            onTerminate={() => {
-              setIsTerminated(true);
-              setStudyEndState(true);
-            }}
-          />
-        )}
-        {studyEndState && (
-          <StudyEndModal open={studyEndState} onOpenChange={setStudyEndState} />
-        )} */}
       </div>
     );
 }

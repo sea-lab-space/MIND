@@ -25,7 +25,6 @@ export type RetrospectOptions = {
     [label: string]: number; // e.g., "Last 3 months": 90
 };
 
-// ChartReview info
 export interface BasicInfoCard {
     name: string;
     age: number;
@@ -34,7 +33,6 @@ export interface BasicInfoCard {
     relationship: string;
 }
 
-// ChartReview section card
 export interface OverviewInfoCard {
     icon: string;
     overviewHeadTitle: string;
@@ -44,7 +42,6 @@ export interface OverviewInfoCard {
     };
 }
 
-// Patient communication suggestions
 export interface SuggestedActivity {
     header: string;
     description: string;

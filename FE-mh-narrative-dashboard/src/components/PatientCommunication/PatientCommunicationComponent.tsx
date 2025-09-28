@@ -2,20 +2,6 @@ import PatientInsightHeaderCard from "./PatientInsightHeaderCard";
 import SuggestedActivitiesCard from "./SuggestedActivitiesCard";
 import type {SuggestedActivity} from "@/types/dataTypes";
 
-
-// const insights = [
-//     "Increased social activity, yet remains in a closed circle",
-//     "Growing Activity Level Despite Persistent Fatigue",
-//     "Shift to Passive Consumption (App Usage Categories)",
-// ];
-
-// const activities = [
-//     { label: "Just Five Minutes Rule", checked: true },
-//     { label: "Energy Audit", checked: false },
-//     { label: '"Tiny Wins" Journal', checked: false },
-//     { label: "Purposeful Pauses", checked: true },
-// ];
-
 interface PatientCommunicationComponentProps {
     isDrillDown?: boolean;
     selectedInsightCardTitles: string[];

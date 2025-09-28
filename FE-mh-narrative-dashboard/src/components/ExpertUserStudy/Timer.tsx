@@ -14,7 +14,6 @@ export default function Timer({
   const [secondsLeft, setSecondsLeft] = useState(totalLength);
 
   useEffect(() => {
-    // Reset if terminate is triggered
     if (terminate) {
       setSecondsLeft(totalLength);
       return;

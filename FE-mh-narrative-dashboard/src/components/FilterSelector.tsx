@@ -8,43 +8,6 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { InsightType } from "@/types/props";
 
-// const InsightTypeMeta: Record<InsightType, {
-//     label: string;
-//     icon: React.ElementType;         // component reference
-//     iconNode?: React.ReactNode;      // pre-rendered JSX if needed
-// }> = {
-//     [InsightType.SLEEP]: {
-//         label: "Sleep Patterns",
-//         icon: BedDouble,
-//         iconNode: <BedDouble className="w-4 h-4" />
-//     },
-//     [InsightType.ACTIVITY]: {
-//         label: "Physical Activity",
-//         icon: Activity,
-//         iconNode: <Activity className="w-4 h-4" />
-//     },
-//     [InsightType.DIGITAL]: {
-//         label: "Digital Engagement",
-//         icon: PhoneCall,
-//         iconNode: <PhoneCall className="w-4 h-4" />
-//     },
-//     [InsightType.EMOTIONAL]: {
-//         label: "Emotional State",
-//         icon: Brain,
-//         iconNode: <Brain className="w-4 h-4" />
-//     },
-//     [InsightType.SOCIAL]: {
-//         label: "Social Interaction",
-//         icon: Users2,
-//         iconNode: <Users2 className="w-4 h-4" />
-//     },
-//     [InsightType.MEDICATION]: {
-//         label: "Medication & Treatment",
-//         icon: Pill,
-//         iconNode: <Pill className="w-4 h-4" />
-//     }
-// };
-
 const InsightTypeMeta: Record<
   InsightType,
   {
@@ -87,7 +50,6 @@ export function FilterSelector({ selected, onToggle, selectedPatient }: FilterSe
     const patientName = selectedPatient
     return (
       <div className="flex justify-between items-center gap-1 sticky top-8 z-10 bg-white mb-1">
-        {/**mx-6 mt-2  */}
         <div className="flex items-center gap-2 flex-wrap">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Filter className="w-4 h-4" />

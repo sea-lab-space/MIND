@@ -67,8 +67,6 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
         time_2: spec.value_dur_2,
       };
 
-  // console.log(showVal)
-
   const visData = data.map((d) => ({
     ...d,
   }));
@@ -90,18 +88,15 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
     const labelWidth = 120;
     const labelHeight = 30;
 
-    // Initial positions
     let labelX = x + width / 2 - labelWidth / 2;
     let labelY = y + offset;
 
-    // Adjust X if label goes beyond chart boundaries
     if (labelX < 0) {
       labelX = 0;
     } else if (labelX + labelWidth > chartSize.width) {
       labelX = chartSize.width - labelWidth;
     }
 
-    // Adjust Y if label goes above the top
     if (labelY < 0) {
       labelY = 0;
     } else if (labelY + labelHeight > chartSize.height) {
@@ -130,7 +125,6 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={visData}
-          // margin={{ top: 20, left: 0, right: 10, bottom: 0 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
           <ReferenceArea
@@ -138,7 +132,6 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
             x2={spec.time_dur_1.time_end}
             y1={yRange[0] < 0 ? yRange[0] : 0}
             y2={yRangeUse}
-            // stroke=HIGHLIGHT_COLOR
             fillOpacity={HIGHLIGHT_FILL_OPACITY * 0.5}
           />
           <ReferenceArea
@@ -146,7 +139,6 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
             x2={spec.time_dur_2.time_end}
             y1={yRange[0] < 0 ? yRange[0] : 0}
             y2={yRangeUse}
-            // stroke=HIGHLIGHT_COLOR
             fillOpacity={HIGHLIGHT_FILL_OPACITY}
           />
           <XAxis dataKey="date" tick={{ fontSize: 10 }} />
@@ -157,12 +149,6 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
             scale="linear"
             type="number"
           >
-            {/* <Label
-              value={spec.name}
-              position='insideTopRight'
-              angle={-90}
-              offset={60}
-            /> */}
           </YAxis>
           <Tooltip />
           <Line
@@ -172,16 +158,6 @@ const ComparisonChart: React.FC<ComparisonChartProps> = (props) => {
             dot={{ r: 2 }}
             strokeWidth={2}
           >
-            {/* {visData.map((entry, index) => (
-            <Cell
-              key={`cell-${index}`}
-              fill={
-                entry.date === spec.time_1 || entry.date === spec.time_2
-                  ? highlightColor
-                  : baseColor
-              }
-            />
-          ))} */}
           </Line>
 
           {spec.time_dur_1.time_start == spec.time_dur_1.time_end ? (

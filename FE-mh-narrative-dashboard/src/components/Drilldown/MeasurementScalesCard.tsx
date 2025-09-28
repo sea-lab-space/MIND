@@ -5,7 +5,6 @@ import {shouldShowChart} from "@/utils/helper";
 import InsightGraph from "@/components/DataInsights/InsightGraph";
 import type {InsightExpandViewItem} from "@/types/props";
 import { SURVEY_COLOR } from "@/utils/colorHelper";
-import {ClipboardList} from "lucide-react";
 import DataSourceIcon from "../DatasourceIcon";
 
 interface measurementScoreFactsProps {
@@ -40,14 +39,11 @@ return (
   <Card className="bg-white border-[#eaeaea]">
     <CardHeader>
       <div className="flex items-center gap-2 font-medium">
-        {/* <ClipboardList className="w-4 h-4 text-[#fb923c]" />
-          <span className="text-[#fb923c] font-medium">Survey Scores</span> */}
         <DataSourceIcon iconType="survey" showType />
       </div>
     </CardHeader>
     <CardContent>
       <div className="flex min-h-[400px]">
-        {/* Left Side: Button List */}
         <div className="flex-shrink-0 space-y-4 w-[35%] max-h-[400px] overflow-y-auto">
           {surveyScoreFacts.map((insight) => (
             <Button
@@ -74,7 +70,6 @@ return (
           ))}
         </div>
 
-        {/* Right Side: Chart */}
         <div className="flex items-center justify-center flex-1 ">
           <div className="w-full h-72">
             {showChart && selectedInsight && (

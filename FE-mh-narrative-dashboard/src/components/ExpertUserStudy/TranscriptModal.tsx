@@ -31,8 +31,7 @@ export default function TranscriptModal({
 
   useEffect(() => {
     if (open) {
-      setSecondModalOpen(false); // reset second modal if first modal is opened
-      // Blur focused element after modal opens
+      setSecondModalOpen(false);
       setTimeout(() => {
         if (document.activeElement instanceof HTMLElement) {
           document.activeElement.blur();
@@ -41,18 +40,14 @@ export default function TranscriptModal({
     }
   }, [open]);
 
-  // Handle first modal open state change (like user clicking close)
   const handleFirstModalOpenChange = (isOpen: boolean) => {
     if (!isOpen) {
-      // Instead of closing first modal, open second modal
       setSecondModalOpen(true);
-      // Don't call onOpenChange(false) yet to keep first modal open
     } else {
-      onOpenChange(true); // allow opening normally
+      onOpenChange(true);
     }
   };
 
-  // Called when user confirms in second modal to close both
   const handleConfirmStart = () => {
     setSecondModalOpen(false);
     onOpenChange(false);

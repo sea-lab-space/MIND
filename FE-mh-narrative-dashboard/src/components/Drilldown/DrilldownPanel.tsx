@@ -29,18 +29,6 @@ const DrilldownPanel: React.FC<DrilldownPanelProps> = ({
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  // const {
-  //   passiveSensingFacts = [],
-  //   clinicalNotesFacts = [],
-  //   clinicalTranscriptsFacts = [],
-  //   surveyScoreFacts = [],
-  // }: {
-  //   passiveSensingFacts?: InsightExpandViewItem[];
-  //   clinicalNotesFacts?: InsightExpandViewItem[];
-  //   clinicalTranscriptsFacts?: InsightExpandViewItem[];
-  //   surveyScoreFacts?: InsightExpandViewItem[];
-  // } = groupInsightsBySource(insightData?.expandView);
-
   const cardMap = useMemo(() => {
     if (!insightData?.expandView) return {};
     const {

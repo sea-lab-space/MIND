@@ -25,7 +25,6 @@ interface TrendChartProps {
   themeColor: string;
 }
 
-// --- regression helper ---
 function linearRegression(xs: number[], ys: number[]) {
   const n = xs.length;
   const sumX = xs.reduce((a, b) => a + b, 0);
@@ -109,7 +108,6 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
         />
         <Tooltip />
 
-        {/* original data line */}
         <Line
           dataKey={metricKey}
           isAnimationActive={false}
@@ -118,7 +116,6 @@ const TrendChart: React.FC<TrendChartProps> = (props) => {
           strokeWidth={2}
         />
 
-        {/* regression aux line */}
         {auxilaryLine()}
         <Legend
           iconSize={14}

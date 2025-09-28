@@ -40,26 +40,6 @@ export const getVisualizerDataForPerson = (personName: string) => {
     }
 
     const overviewCardData = personData.overview as OverviewSpec;
-    // const insightCardData: InsightCardData[] = personData.insights.map((group, index) => ({
-    //     key: `insight-${index + 1}`,
-    //     summaryTitle: group.summaryTitle,
-    //     sources: group.sources.map((type: string) => ({
-    //         type: type.trim() as DatasourceIconType
-    //     })),
-    //     insightType: group.insightType.map((type: string) => ({
-    //         type: type as InsightType
-    //     })),
-    //     expandView: group.expandView.map((insight: any, idx: number) => ({
-    //         ...insight,
-    //         key: `insight-${index + 1}-detail-${idx+1}`,
-    //         summarySentence: insight.summarySentence,
-    //         dataPoints: insight.dataPoints,
-    //         dataSourceType: insight.dataSourceType as DataSourceType,
-    //         highlightSpec: insight.spec as HighlightSpec,
-    //         source: insight.sources[0] as keyof typeof DatasourceIconTypes,
-    //         isShowL2: insight.isShowL2 as boolean,
-    //     }) as InsightExpandViewItem)
-    // }));
     const insightCardData: InsightCardData[] = personData.insights.map((group, index) => {
         const sources = group.sources
             .map((type: string) => ({type: type.trim() as DatasourceIconType,})).sort((a, b) => sourceOrder[a.type] - sourceOrder[b.type]);
@@ -77,7 +57,6 @@ export const getVisualizerDataForPerson = (personName: string) => {
                     isShowL2: insight.isShowL2 as boolean,
                 }) as InsightExpandViewItem
             )
-            // .sort((a, b) => sourceOrder[a.source] - sourceOrder[b.source]);
         return {
             key: `insight-${index + 1}`,
             summaryTitle: group.summaryTitle,
@@ -134,7 +113,6 @@ export const getVisualizerDataForPerson = (personName: string) => {
 };
 
 
-// TODO: rename function --> normalize does not mean that typically
 export function normalizeDataPoints(
     rawData: Record<string, number | null> | any[]
 ){

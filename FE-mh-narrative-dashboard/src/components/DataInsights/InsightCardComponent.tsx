@@ -2,12 +2,11 @@ import InsightCardDetail from "@/components/DataInsights/InsightCardDetails";
 import type { DatasourceIconType, InsightType } from "../../types/props";
 import DataSourceIcon from "../DatasourceIcon";
 import { Button } from "../ui/button";
-import { ChartColumn, Lightbulb, Microscope, Search, Sparkles } from "lucide-react";
+import { ChartColumn } from "lucide-react";
 import { type InsightCardData } from "../../types/props";
 import { InsightTypeIconMap } from "@/types/dataTypes";
 import { useEffect, useState } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
-import { ChevronDown, ChevronUp } from "lucide-react";
 
 
 interface InsightCardProps {
@@ -33,7 +32,6 @@ export default function InsightCardComponent({
                                                isDrillDown = false,
                                                onToggle
                                              }: InsightCardProps) {
-  // const isDrillDownTemp = isDrillDown;
   const showExpand = isDrillDown ? false : true;
   const [isExpandedLocal, setIsExpandedLocal] = useState(isExpanded);
   const [hoveringButton, setHoveringButton] = useState(false);
@@ -64,7 +62,6 @@ export default function InsightCardComponent({
       }`}
     >
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-        {/* Left: Checkbox + Title */}
         <div className="flex items-start gap-3">
           <Tooltip>
             <TooltipTrigger asChild>
@@ -109,7 +106,6 @@ export default function InsightCardComponent({
                   __html: insightCardData.summaryTitle,
                 }}
               >
-                {/* {insightCardData.summaryTitle} */}
               </h2>
               <div>
                 <div
@@ -117,7 +113,6 @@ export default function InsightCardComponent({
                     isDrillDown ? "flex-col" : "flex-row justify-between"
                   } gap-y-2 pr-3 w-full`}
                 >
-                  {/* Left: Insight Types */}
                   {insightCardData?.insightType?.length > 0 && (
                     <div className="flex items-center gap-2">
                       <span className="text-xs font-medium italic">
@@ -148,31 +143,6 @@ export default function InsightCardComponent({
               </div>
             </div>
 
-            {/* Right: Sources 
-            {insightCardData?.expandView?.length > 1 && (
-              <div className="flex items-start gap-1">
-                <button
-                  onClick={() => {
-                    setIsExpandedLocal((prev) => {
-                      const next = !prev;
-                      onToggle?.(insightCardData.key, next);
-                      return next;
-                    });
-                  }}
-                  className="p-1 rounded-full hover:bg-gray-100 transition"
-                  disabled={!showExpand}
-                >
-                  {showExpand ? (
-                    isExpandedLocal ? (
-                      <ChevronUp className="w-5 h-5" />
-                    ) : (
-                      <ChevronDown className="w-5 h-5" />
-                    )
-                  ) : null}
-                </button>
-              </div>
-            )}
-              */}
           </div>
           {isExpandedLocal && (
             <div
@@ -201,11 +171,7 @@ export default function InsightCardComponent({
                 onClick={handleCardSelect}
                 variant="outline"
                 size="default"
-                // className="flex items-center gap-1 self-start sm:self-auto w-8 h-14" // justify-between
               >
-                {/* <Microscope /> */}
-                {/* <Lightbulb /> */}
-                {/* <Sparkles /> */}
                 <ChartColumn />
               </Button>
             </div>

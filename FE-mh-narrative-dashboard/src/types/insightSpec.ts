@@ -148,23 +148,10 @@ export interface OutlierSpec {
 
 export type HighlightSpec = ValueSpec | ComparisonSpec | DifferenceSpec | ExtremeSpec | TrendSpec | TextSourceSpec | OutlierSpec;
 
-
-// export const specMap = (spec: HighlightSpec) => {
-//   if (spec.fact_type === "trend") return spec as TrendSpec;
-//   else if (spec.fact_type === "extreme") return spec as ExtremeSpec;
-//   else if (spec.fact_type === "difference") return spec as DifferenceSpec;
-//   else if (spec.fact_type === "comparison") return spec as ComparisonSpec;
-//   else if (spec.fact_type === "derived value") return spec as ValueSpec;
-//   else if (spec.fact_type === "text") return spec as TextSourceSpec;
-//   else throw new Error("Invalid spec type");
-// };
-
 export interface InputSpecStructure {
   overview: OverviewSpec;
-  // ! for simplicity
   insights: any[];
   session_subjective_info: Encounter[];
-  // ! for simplicity
   survey_raw: any[];
   suggest_activity: any[];
   passive_data_raw: any[];

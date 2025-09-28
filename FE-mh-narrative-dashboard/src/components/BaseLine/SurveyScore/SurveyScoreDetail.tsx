@@ -12,7 +12,6 @@ type SurveyInfo = {
     definition: string;
 };
 
-// Mapping dictionary
 const surveyMap: Record<string, SurveyInfo> = {
     "positive affect subscale (5-25, panas-sf)": {
         label: "Positive Affect Scores",

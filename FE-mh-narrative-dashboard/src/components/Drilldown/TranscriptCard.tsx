@@ -37,7 +37,6 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
         }
     }, [selectedDate, selectedFactKey]);
 
-    // Find selected fact based on selectedFactKey
     const selectedFact = clinicalTranscriptsFacts.find(fact => fact.key === selectedFactKey);
     const dates = sessionInfo?.map(item => item.encounter_date);
     const selectedFactSpec = selectedFact?.highlightSpec;
@@ -63,7 +62,6 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
 
         highlights.forEach((highlight) => {
             if (!highlight) return;
-            // Escape special regex chars
             const escaped = highlight.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
             const regex = new RegExp(`(${escaped})`, "gi");
             result = result.replace(regex, '<mark style="background-color: rgba(0, 188, 125, 0.15);">$1</mark>');
@@ -75,14 +73,10 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
     return (
       <Card className="bg-white border-[#eaeaea]">
         <CardContent className="px-6">
-          {/* Header */}
           <div className="flex items-center gap-2 mb-4 font-medium  text-[#2c2c2c]">
-            {/* <MessageSquare className="w-4 h-4 text-[#9FB40F]" />
-                    <span className="text-[#9FB40F] font-medium">Transcript</span> */}
             <DataSourceIcon iconType="session transcript" showType />*
           </div>
 
-          {/* Date buttons on top */}
           <div className="flex gap-4 mb-6 overflow-x-auto no-scrollbar">
             {dates?.map((date) => {
               const isSelected = selectedDate === date;
@@ -102,7 +96,6 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
                     isHighlighted ? highlightBg : "bg-white"
                   } ${isSelected ? selectedBorder : ""}`}
                 >
-                  {/* {formatDate(date)} */}
                   {date}
                 </Button>
               );
@@ -110,27 +103,6 @@ const TranscriptCard = ({clinicalTranscriptsFacts, sessionInfo} : clinicalTransc
           </div>
 
           <div className="flex gap-8">
-            {/* Left vertical buttons (summary sentences for selected date) */}
-            {/* <div className="flex-shrink-0 space-y-4 w-[30%]">
-              {clinicalTranscriptsFacts.map((fact) => (
-                <Button
-                  key={fact.key}
-                  disabled={!highlightDates.has(selectedDate ?? "")}
-                  variant="outline"
-                  onClick={() => setSelectedFactKey(fact.key)}
-                  className={`w-full justify-start h-auto text-left whitespace-normal text-sm border-[#d9d9d9] ${
-                    selectedFactKey === fact.key ? "bg-[#f7f5f5]" : "bg-white"
-                  }`}
-                >
-                  <div className="flex items-start gap-2">
-                    <div className="w-2 h-2 bg-gray-600 rounded-full mt-2 flex-shrink-0" />
-                    <span>{fact.summarySentence}</span>
-                  </div>
-                </Button>
-              ))}
-            </div> */}
-
-            {/* Right side: selected fact details */}
             <div
               ref={scrollContainerRef}
               className="space-y-6 text-sm text-[#2c2c2c] overflow-y-auto"

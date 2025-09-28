@@ -47,15 +47,6 @@ const OutlierChart: React.FC<OutlierChartProps> = (props) => {
     <ResponsiveContainer width="100%" height="100%">
       <LineChart width={500} height={300} data={data}>
         <CartesianGrid strokeDasharray="3 3" />
-        {/* {spec && (
-          <ReferenceArea
-            x1={spec.time_1}
-            x2={spec.time_2}
-            y1={0}
-            y2={yRangeUse}
-            fillOpacity={HIGHLIGHT_FILL_OPACITY}
-          />
-        )} */}
         <XAxis dataKey="date" tick={{ fontSize: 10 }} />
         <YAxis
           domain={[0, yRangeUse]}
@@ -66,7 +57,6 @@ const OutlierChart: React.FC<OutlierChartProps> = (props) => {
         />
         <Tooltip />
 
-        {/* original data line */}
         <Line
           dataKey={metricKey}
           isAnimationActive={false}
