@@ -30,7 +30,7 @@ export default function InsightCardComponent({
                                                handleCardSelect,
                                                handleCardHeaderClick,
                                                isDrillDown = false,
-                                               onToggle
+                                              //  onToggle
                                              }: InsightCardProps) {
   const showExpand = isDrillDown ? false : true;
   const [isExpandedLocal, setIsExpandedLocal] = useState(isExpanded);

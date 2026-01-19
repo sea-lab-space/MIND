@@ -15,6 +15,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import teaser from "@/assets/teaser.webp";
+import React from "react";
+import { toast } from "sonner"
+import { Toaster } from "@/components/ui/sonner";
 
 const abbrevTitle = "MIND";
 const subTitle =
@@ -122,6 +125,18 @@ export default function PubPage() {
       "_blank",
       "noopener,noreferrer"
     );
+  };
+
+  const handleCopyBib = () => {
+    navigator.clipboard.writeText(bibliography);
+    toast.success("Copied!", {
+      // description: "BibTeX citation copied to clipboard.",
+      // action: {
+      //   label: "Undo",
+      //   onClick: () => {}, // No undo logic needed, but matches reference usage
+      // },
+      duration: 1500,
+    });
   };
 
   return (
@@ -262,7 +277,7 @@ export default function PubPage() {
             {/* Replace the src with your actual video link */}
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/OIjAvoWdVCo"
+              src="https://www.youtube.com/embed/yP3xUMRLJ1g"
               title="MIND Video Teaser"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -306,10 +321,11 @@ export default function PubPage() {
               <code style={{ wordBreak: "break-all", whiteSpace: "pre-line" }}>
                 {bibliography}
               </code>
+              <Toaster />
               <Button
                 size="sm"
                 variant="default"
-                onClick={() => navigator.clipboard.writeText(bibliography)}
+                onClick={handleCopyBib}
                 className="absolute top-2 right-2 px-2 py-1 text-xs flex items-center gap-1"
                 aria-label="Copy citation"
               >
