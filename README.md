@@ -2,7 +2,7 @@
 
 [![BSD-3-Clause License](https://img.shields.io/github/license/sea-lab-space/MIND)](/LICENSE) [![arXiv](https://img.shields.io/badge/arXiv-[number]-b31b1b.svg)](https://arxiv.org/abs/[number])
 
-![Teaser](FE-mh-narrative-dashboard\src\assets\teaser.webp)
+![Teaser](FE-mh-narrative-dashboard/src/assets/teaser.webp)
 
 MIND (<u>M</u>ultimodal <u>I</u>ntegrated <u>N</u>arrative <u>D</u>ashboard) is a proof-of-concept research prototype that explores how multimodal patient data can be best represented to mental health clinicians for clinical decision-making. Instead of designing a "data collection" dashboard (i.e., showing multimodal data in separate tabs), MIND is narrative--multimodal data are curated through an automatic pipeline into a coherent "story". We designed the narrative (and the computation pipeline behind it) motivated by co-design sessions with 5 mental health clinicians, and conducted a mixed-method evaluation study with 16 clinicians to understand the benefits and limitations of the narrative dashboard design. We found that clinicians perceive MIND as a significant improvement over baseline methods, reporting improved performance to reveal hidden and clinically relevant data insights and support their decision-making.
 
