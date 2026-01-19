@@ -15,9 +15,16 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import teaser from "@/assets/teaser.webp";
-import React from "react";
+import seaLabLogo from "@/assets/SEA_Lab_Logo.png"; // Adjust extension if needed
 import { toast } from "sonner"
 import { Toaster } from "@/components/ui/sonner";
+import columbiaLogo from "@/assets/affiliations/Columbia.webp";
+import uwLogo from "@/assets/affiliations/UW.webp";
+import hmhLogo from "@/assets/affiliations/HM.webp";
+import wcmLogo from "@/assets/affiliations/WCM.webp";
+import uoLogo from "@/assets/affiliations/UO.webp";
+import cornellLogo from "@/assets/affiliations/Cornell.webp";
+import neuLogo from "@/assets/affiliations/NEU.webp";
 
 const abbrevTitle = "MIND";
 const subTitle =
@@ -45,31 +52,31 @@ const authors = [
   {
     name: "Jihan Ryu",
     affiliation: "Hamilton-Madison House",
-    webpage: "",
+    webpage: "https://scholar.google.com/citations?user=wo4TELcAAAAJ&hl=en",
     coFirst: false,
   },
   {
     name: "Timothy Becker",
     affiliation: "Weill Cornell Medicine",
-    webpage: "",
+    webpage: "https://scholar.google.com/citations?user=tML6N1QAAAAJ&hl=en&authuser=1&oi=ao",
     coFirst: false,
   },
   {
     name: "Nicholas Allen",
     affiliation: "University of Oregon",
-    webpage: "",
+    webpage: "https://scholar.google.com/citations?user=ksVPCBsAAAAJ&hl=en",
     coFirst: false,
   },
   {
     name: "Anne Marie Albano",
     affiliation: "Columbia University",
-    webpage: "",
+    webpage: "https://scholar.google.com/citations?user=EbuR1EUAAAAJ&hl=en",
     coFirst: false,
   },
   {
     name: "Randy Auerbach",
     affiliation: "Columbia University",
-    webpage: "",
+    webpage: "https://www.auerbachlab.com/a-randy-p-auerbach-phd-abpp",
     coFirst: false,
   },
   {
@@ -99,7 +106,7 @@ const authors = [
   {
     name: "Ryan Sultan",
     affiliation: "Columbia University",
-    webpage: "",
+    webpage: "https://www.integrative-psych.org/experts/dr-ryan-sultan",
     coFirst: false,
   },
   {
@@ -110,21 +117,46 @@ const authors = [
   },
 ];
 
+
+// Get unique affiliations and assign numbers
+const uniqueAffiliations: string[] = [];
+const affiliationMap: Record<string, number> = {};
+authors.forEach(author => {
+  if (!affiliationMap[author.affiliation] && author.affiliation) {
+    uniqueAffiliations.push(author.affiliation);
+    affiliationMap[author.affiliation] = uniqueAffiliations.length;
+  }
+});
+
+const affiliationLogos: Record<string, string> = {
+  "Columbia University": columbiaLogo,
+  "University of Washington": uwLogo,
+  "Hamilton-Madison House": hmhLogo,
+  "Weill Cornell Medicine": wcmLogo,
+  "University of Oregon": uoLogo,
+  "Cornell University": cornellLogo,
+  "Northeastern University": neuLogo,
+};
+
 const bibliography = `@inproceedings{zou2026mind,
+  Conditionally accepted to appear in Proceedings of CHI 2026 (full bib coming soon)
+}`;
+/*
   author    = {Ruishi Zou and Shiyu Xu and Margaret Morris and Jihan Ryu and Timothy Becker and Nicholas Allen and Anne Marie Albano and Randy Auerbach and Dan Adler and Varun Mishra and Lace Padilla and Dakuo Wang and Ryan Sultan and Xuhai "Orson" Xu},
   title     = {MIND: Empowering Mental Health Clinicians with Multimodal Data Insights through a Narrative Dashboard},
   booktitle = {Proceedings of CHI 2026},
   year      = {2026},
-}`;
+*/
 
 export default function PubPage() {
   // Handler to open dropdown in a new tab (for Explore)
+  const base = import.meta.env.BASE_URL || "/";
   const handleExplore = (route: string) => {
-    window.open(
-      window.location.origin + "#" + route,
-      "_blank",
-      "noopener,noreferrer"
-    );
+    // Ensure base ends with a slash and route does not start with one
+    const normalizedBase = base.endsWith("/") ? base : base + "/";
+    const normalizedRoute = route.startsWith("/") ? route.slice(1) : route;
+    const url = normalizedBase + "#/" + normalizedRoute;
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   const handleCopyBib = () => {
@@ -167,16 +199,40 @@ export default function PubPage() {
               ) : (
                 <span className="text-gray-600 font-normal">{author.name}</span>
               )}
-              {author.coFirst ? <sup>*</sup> : null}
+              {/* Superscript for affiliation number(s) */}
+              {author.affiliation && (
+                <sup>
+                  {affiliationMap[author.affiliation]}
+                  {author.coFirst ? "*" : ""}
+                </sup>
+              )}
+              {!author.affiliation && author.coFirst ? <sup>*</sup> : null}
               {idx < authors.length - 1 && <span>,</span>}
             </div>
+          ))}
+        </div>
+        {/* Affiliation legend */}
+        <div className="text-sm text-muted-foreground mb-2 text-center flex flex-wrap justify-center gap-x-4">
+          {uniqueAffiliations.map((aff, i) => (
+            <span key={aff} className="inline-flex items-center">
+              <sup>{i + 1}</sup>
+              <span className="inline-flex items-center">
+                <img
+                  src={affiliationLogos[aff] || ""}
+                  alt={`${aff} logo`}
+                  className="w-[24px] h-[24px]mr-1"
+                  style={{ objectFit: "contain" }}
+                />
+                {aff}
+              </span>
+            </span>
           ))}
         </div>
         <div className="text-sm text-muted-foreground mb-2 text-center">
           <sup>*</sup>Equal contribution
         </div>
         <div className="flex flex-row flex-wrap gap-4 mb-4 w-full justify-center sm:justify-center max-w-xl mx-auto">
-          <Button asChild variant="outline" className="">
+          {/* <Button asChild variant="outline" className="">
             <a
               href="https://arxiv.org/abs/xxxx.xxxxx"
               target="_blank"
@@ -186,8 +242,8 @@ export default function PubPage() {
               <FileText className="w-4 h-4" />
               Paper
             </a>
-          </Button>
-          <Button asChild variant="outline" className="">
+          </Button> */}
+          <Button variant="outline" disabled={true}>
             <a
               href="https://arxiv.org/abs/xxxx.xxxxx"
               target="_blank"
@@ -232,7 +288,7 @@ export default function PubPage() {
                   onClick={() => handleExplore("/fact")}
                   className="cursor-pointer"
                 >
-                  FACT
+                  FACT (Baseline)
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -277,7 +333,7 @@ export default function PubPage() {
             {/* Replace the src with your actual video link */}
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/yP3xUMRLJ1g"
+              src="https://www.youtube.com/embed/t0QBgZ0V5uk"
               title="MIND Video Teaser"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -323,8 +379,8 @@ export default function PubPage() {
               </code>
               <Toaster />
               <Button
-                size="sm"
-                variant="default"
+                size="default"
+                variant="outline"
                 onClick={handleCopyBib}
                 className="absolute top-2 right-2 px-2 py-1 text-xs flex items-center gap-1"
                 aria-label="Copy citation"
@@ -336,7 +392,7 @@ export default function PubPage() {
           </div>
         </section>
 
-        <footer className="w-full mt-5 flex justify-start items-center py-6">
+        <footer className="w-full mt-5 flex justify-between items-center py-6">
           <a
             href="https://sea-lab.space/"
             target="_blank"
@@ -345,6 +401,12 @@ export default function PubPage() {
           >
             © SEA Lab 2026
           </a>
+          <img
+            src={seaLabLogo}
+            alt="SEA Lab Logo"
+            className="h-16"
+            style={{ display: "inline-block" }}
+          />
         </footer>
       </div>
     </div>
