@@ -1,6 +1,6 @@
 # MIND: Multimodal Integrated Narrative Dashboard
 
-[![ACM Digital Library](https://img.shields.io/badge/ACM–DL-000000?logo=acm&logoColor=white)](https://dl.acm.org/doi/10.1145/10.1145/3772318.3790529) [![arXiv](https://img.shields.io/badge/arXiv-[number]-b31b1b.svg)](https://arxiv.org/abs/[number]) [![BSD-3-Clause License](https://img.shields.io/github/license/sea-lab-space/MIND)](/LICENSE)
+[![ACM Digital Library](https://img.shields.io/badge/ACM–DL-000000?logo=acm&logoColor=white)](https://dl.acm.org/doi/10.1145/10.1145/3772318.3790529) [![arXiv](https://img.shields.io/badge/arXiv-2601.14641-b31b1b.svg)](https://arxiv.org/abs/2601.14641) [![BSD-3-Clause License](https://img.shields.io/github/license/sea-lab-space/MIND)](/LICENSE)
 
 
 ![Teaser](FE-mh-narrative-dashboard/src/assets/teaser.webp)
@@ -22,6 +22,10 @@ In case you want to try it locally, MIND is structured with a frontend and backe
 If you find MIND a fun/useful project, please cite our paper (and give us a star): 
 
 ```bib
-@inproceedings{zou2026mind,
-}
+@misc{zou2026mind,
+    author = {Zou, Ruishi and Xu, Shiyu and Morris, Margaret E. and Ryu, Jihan and Becker, Timothy D. and Allen, Nicholas and Albano, Anne Marie and Auerbach, Randy and Adler, Dan and Mishra, Varun and Padilla, Lace and Wang, Dakuo and Sultan, Ryan and Xu, Xuhai "Orson"},
+    title = {MIND: Empowering Mental Health Clinicians with Multimodal Data Insights through a Narrative Dashboard},
+    booktitle = {arXiv preprint arXiv:2601.14641},
+    year = {2026}
+};
 ```

@@ -36,7 +36,7 @@ class RuleBaseTrendAgent:
         elif mk_result.trend == "decreasing":
             trend_type = "fall"
         else:
-            data_series_interp = df['y'].interpolate(method='linear').dropna()
+            data_series_interp = df['y'].interpolate(method='time')
             data_stream = data_series_interp.to_numpy()
             # 2. No monotonic trend → check cyclicity
             acf_vals, confint = acf(data_series_interp, fft=True,

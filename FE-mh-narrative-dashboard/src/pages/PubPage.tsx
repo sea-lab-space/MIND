@@ -138,15 +138,13 @@ const affiliationLogos: Record<string, string> = {
   "Northeastern University": neuLogo,
 };
 
-const bibliography = `@inproceedings{zou2026mind,
-  Conditionally accepted to appear in Proceedings of CHI 2026 (full bib coming soon)
-}`;
-/*
-  author    = {Ruishi Zou and Shiyu Xu and Margaret Morris and Jihan Ryu and Timothy Becker and Nicholas Allen and Anne Marie Albano and Randy Auerbach and Dan Adler and Varun Mishra and Lace Padilla and Dakuo Wang and Ryan Sultan and Xuhai "Orson" Xu},
-  title     = {MIND: Empowering Mental Health Clinicians with Multimodal Data Insights through a Narrative Dashboard},
-  booktitle = {Proceedings of CHI 2026},
-  year      = {2026},
-*/
+const bibliography = `@misc{zou2026mind,
+author = {Zou, Ruishi and Xu, Shiyu and Morris, Margaret E. and Ryu, Jihan and Becker, Timothy D. and Allen, Nicholas and Albano, Anne Marie and Auerbach, Randy and Adler, Dan and Mishra, Varun and Padilla, Lace and Wang, Dakuo and Sultan, Ryan and Xu, Xuhai "Orson"},
+title = {MIND: Empowering Mental Health Clinicians with Multimodal Data Insights through a Narrative Dashboard},
+booktitle = {arXiv preprint arXiv:2601.14641},
+year = {2026}
+};
+`
 
 export default function PubPage() {
   // Handler to open dropdown in a new tab (for Explore)
@@ -232,7 +230,7 @@ export default function PubPage() {
           <sup>*</sup>Equal contribution
         </div>
         <div className="flex flex-row flex-wrap gap-4 mb-4 w-full justify-center sm:justify-center max-w-xl mx-auto">
-          {/* <Button asChild variant="outline" className="">
+          <Button disabled variant="outline" className="">
             <a
               href="https://arxiv.org/abs/xxxx.xxxxx"
               target="_blank"
@@ -242,10 +240,10 @@ export default function PubPage() {
               <FileText className="w-4 h-4" />
               Paper
             </a>
-          </Button> */}
-          <Button variant="outline" disabled={true}>
+          </Button>
+          <Button asChild variant="outline">
             <a
-              href="https://arxiv.org/abs/xxxx.xxxxx"
+              href="https://arxiv.org/abs/2601.14641"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 justify-center"
