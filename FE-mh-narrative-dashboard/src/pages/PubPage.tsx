@@ -7,6 +7,7 @@ import {
   ChevronDown,
   Microscope,
   Copy,
+  Video,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -139,11 +140,11 @@ const affiliationLogos: Record<string, string> = {
 };
 
 const bibliography = `@misc{zou2026mind,
-author = {Zou, Ruishi and Xu, Shiyu and Morris, Margaret E. and Ryu, Jihan and Becker, Timothy D. and Allen, Nicholas and Albano, Anne Marie and Auerbach, Randy and Adler, Dan and Mishra, Varun and Padilla, Lace and Wang, Dakuo and Sultan, Ryan and Xu, Xuhai "Orson"},
-title = {MIND: Empowering Mental Health Clinicians with Multimodal Data Insights through a Narrative Dashboard},
-booktitle = {arXiv preprint arXiv:2601.14641},
-year = {2026}
-};
+    author = {Zou, Ruishi and Xu, Shiyu and Morris, Margaret E. and Ryu, Jihan and Becker, Timothy D. and Allen, Nicholas and Albano, Anne Marie and Auerbach, Randy and Adler, Dan and Mishra, Varun and Padilla, Lace and Wang, Dakuo and Sultan, Ryan and Xu, Xuhai "Orson"},
+    title = {MIND: Empowering Mental Health Clinicians with Multimodal Data Insights through a Narrative Dashboard},
+    year = {2026}
+    doi = {10.48550/arXiv:2601.14641}
+}
 `
 
 export default function PubPage() {
@@ -171,7 +172,7 @@ export default function PubPage() {
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center px-4 py-8 space-y-8 overflow-y-auto">
-      <div className="w-full sm:w-[90%] md:w-[80%] lg:w-[70%] flex flex-col items-center shadow-none bg-transparent border-none">
+      <div className="w-full sm:w-[75%] md:w-[65%] lg:w-[55%] flex flex-col items-center shadow-none bg-transparent border-none">
         {/* Title and Authors */}
         <h1 className="text-6xl font-extrabold mb-2 text-center drop-shadow-lg">
           {abbrevTitle}
@@ -228,6 +229,10 @@ export default function PubPage() {
         </div>
         <div className="text-sm text-muted-foreground mb-2 text-center">
           <sup>*</sup>Equal contribution
+
+        </div>
+        <div className="mb-2 text-amber-600">
+            🏅 Best Paper Honorable Mention Award
         </div>
         <div className="flex flex-row flex-wrap gap-4 mb-4 w-full justify-center sm:justify-center max-w-xl mx-auto">
           <Button disabled variant="outline" className="">
@@ -296,7 +301,7 @@ export default function PubPage() {
         {/* Introduction Section */}
         <section className="w-full mb-6">
           <div className="w-full flex justify-center">
-            <div className="w-full max-w-xl mb-4 rounded-lg overflow-hidden flex justify-center">
+            <div className="w-full sm:w-[90%] md:w-[80%] lg:w-[70%] mt-8 mb-4 rounded-lg overflow-hidden flex justify-center">
               <img
                 src={teaser}
                 alt="Teaser for MIND project"
@@ -327,7 +332,19 @@ export default function PubPage() {
         <section className="w-full mb-6 flex flex-col">
           <h2 className="text-2xl font-semibold mb-2">Video Teaser</h2>
           <Separator className="mb-4" />
-          <div className="w-full aspect-video max-w-xl mb-4 rounded-lg overflow-hidden bg-black mx-auto">
+          <p className="w-full mb-2 text-gray-600 flex flex-wrap items-center gap-1">
+            Please refer to our 
+            <a
+              href="https://www.youtube.com/watch?v=c8PE6zYSFSc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-1 underline flex items-center gap-1 text-gray-600 hover:text-gray-900"
+            >
+              <Video /> full paper talk
+            </a>
+            for more detailed discussions.
+          </p>
+          <div className="w-full aspect-video sm:w-[90%] md:w-[80%] lg:w-[70%] mb-4 rounded-lg overflow-hidden bg-black mx-auto">
             {/* Replace the src with your actual video link */}
             <iframe
               className="w-full h-full"
@@ -336,16 +353,6 @@ export default function PubPage() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
-          </div>
-          {/* Reserved space for talk video link */}
-          <div className="w-full flex justify-center mb-2">
-            <a
-              href="#"
-              className="text-primary underline text-sm opacity-50 pointer-events-none"
-              tabIndex={-1}
-            >
-              [Talk video link coming soon]
-            </a>
           </div>
         </section>
 

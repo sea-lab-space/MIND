@@ -25,7 +25,7 @@ If you find MIND a fun/useful project, please cite our paper (and give us a star
 @misc{zou2026mind,
     author = {Zou, Ruishi and Xu, Shiyu and Morris, Margaret E. and Ryu, Jihan and Becker, Timothy D. and Allen, Nicholas and Albano, Anne Marie and Auerbach, Randy and Adler, Dan and Mishra, Varun and Padilla, Lace and Wang, Dakuo and Sultan, Ryan and Xu, Xuhai "Orson"},
     title = {MIND: Empowering Mental Health Clinicians with Multimodal Data Insights through a Narrative Dashboard},
-    booktitle = {arXiv preprint arXiv:2601.14641},
     year = {2026}
-};
+    doi = {10.48550/arXiv:2601.14641}
+}
 ```
