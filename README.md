@@ -22,10 +22,20 @@ In case you want to try it locally, MIND is structured with a frontend and backe
 If you find MIND a fun/useful project, please cite our paper (and give us a star): 
 
 ```bib
-@misc{zou2026mind,
-    author = {Zou, Ruishi and Xu, Shiyu and Morris, Margaret E. and Ryu, Jihan and Becker, Timothy D. and Allen, Nicholas and Albano, Anne Marie and Auerbach, Randy and Adler, Dan and Mishra, Varun and Padilla, Lace and Wang, Dakuo and Sultan, Ryan and Xu, Xuhai "Orson"},
-    title = {MIND: Empowering Mental Health Clinicians with Multimodal Data Insights through a Narrative Dashboard},
-    year = {2026}
-    doi = {10.48550/arXiv:2601.14641}
+@inproceedings{10.1145/3772318.3790529,
+author = {Zou, Ruishi and Xu, Shiyu and Morris, Margaret E and Ryu, Jihan and Becker, Timothy D. and Allen, Nicholas and Albano, Anne Marie and Auerbach, Randy and Adler, Dan and Mishra, Varun and Padilla, Lace M. and Wang, Dakuo and Sultan, Ryan and Xu, Xuhai},
+title = {MIND: Empowering Mental Health Clinicians with Multimodal Data Insights through a Narrative Dashboard},
+year = {2026},
+isbn = {9798400722783},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3772318.3790529},
+doi = {10.1145/3772318.3790529},
+booktitle = {Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},
+articleno = {27},
+numpages = {26},
+keywords = {Clinical Dashboard, Multimodal Data, Narrative Visualization, Natural Language Processing, Mental Healthcare},
+location = {},
+series = {CHI '26}
 }
 ```

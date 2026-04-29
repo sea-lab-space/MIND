@@ -45,7 +45,7 @@ const authors = [
     coFirst: true,
   },
   {
-    name: "Margaret Morris",
+    name: "Margaret E. Morris",
     affiliation: "University of Washington",
     webpage: "https://www.margaretmorrisphd.com/",
     coFirst: false,
@@ -139,11 +139,20 @@ const affiliationLogos: Record<string, string> = {
   "Northeastern University": neuLogo,
 };
 
-const bibliography = `@misc{zou2026mind,
-    author = {Zou, Ruishi and Xu, Shiyu and Morris, Margaret E. and Ryu, Jihan and Becker, Timothy D. and Allen, Nicholas and Albano, Anne Marie and Auerbach, Randy and Adler, Dan and Mishra, Varun and Padilla, Lace and Wang, Dakuo and Sultan, Ryan and Xu, Xuhai "Orson"},
-    title = {MIND: Empowering Mental Health Clinicians with Multimodal Data Insights through a Narrative Dashboard},
-    year = {2026}
-    doi = {10.48550/arXiv:2601.14641}
+const bibliography = `@inproceedings{10.1145/3772318.3790529,
+author = {Zou, Ruishi and Xu, Shiyu and Morris, Margaret E and Ryu, Jihan and Becker, Timothy D. and Allen, Nicholas and Albano, Anne Marie and Auerbach, Randy and Adler, Dan and Mishra, Varun and Padilla, Lace M. and Wang, Dakuo and Sultan, Ryan and Xu, Xuhai},
+title = {MIND: Empowering Mental Health Clinicians with Multimodal Data Insights through a Narrative Dashboard},
+year = {2026},
+isbn = {9798400722783},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3772318.3790529},
+doi = {10.1145/3772318.3790529},
+booktitle = {Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},
+articleno = {27},
+numpages = {26},
+keywords = {Clinical Dashboard, Multimodal Data, Narrative Visualization, Natural Language Processing, Mental Healthcare},
+series = {CHI '26}
 }
 `
 
@@ -235,9 +244,9 @@ export default function PubPage() {
             🏅 Best Paper Honorable Mention Award
         </div>
         <div className="flex flex-row flex-wrap gap-4 mb-4 w-full justify-center sm:justify-center max-w-xl mx-auto">
-          <Button disabled variant="outline" className="">
+          <Button variant="outline" className="">
             <a
-              href="https://arxiv.org/abs/xxxx.xxxxx"
+              href="https://dl.acm.org/doi/10.1145/3772318.3790529"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 justify-center"
