@@ -1,6 +1,6 @@
 # MIND: Multimodal Integrated Narrative Dashboard
 
-[![ACM Digital Library](https://img.shields.io/badge/ACM–DL-000000?logo=acm&logoColor=white)](https://dl.acm.org/doi/10.1145/10.1145/3772318.3790529) [![arXiv](https://img.shields.io/badge/arXiv-2601.14641-b31b1b.svg)](https://arxiv.org/abs/2601.14641) [![BSD-3-Clause License](https://img.shields.io/github/license/sea-lab-space/MIND)](/LICENSE)
+[![ACM Digital Library](https://img.shields.io/badge/ACM–DL-000000?logo=acm&logoColor=white)](https://dl.acm.org/doi/10.1145/3772318.3790529) [![arXiv](https://img.shields.io/badge/arXiv-2601.14641-b31b1b.svg)](https://arxiv.org/abs/2601.14641) [![BSD-3-Clause License](https://img.shields.io/github/license/sea-lab-space/MIND)](/LICENSE)
 
 
 ![Teaser](FE-mh-narrative-dashboard/src/assets/teaser.webp)
